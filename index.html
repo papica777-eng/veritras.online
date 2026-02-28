@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veritras AI | Autonomous QA & Security Matrix</title>
+    <style>
+        :root {
+            --bg-base: #050505;
+            --glass-bg: rgba(20, 20, 25, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --neon-blue: #00f3ff;
+            --neon-purple: #bc13fe;
+            --neon-green: #00ff66;
+            --text-main: #f0f0f0;
+            --text-muted: #888890;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-main);
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image:
+                radial-gradient(circle at 15% 50%, rgba(0, 243, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 85% 30%, rgba(188, 19, 254, 0.05) 0%, transparent 50%);
+        }
+
+        /* Abstract Grid Background */
+        .cyber-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image:
+                linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: -1;
+            perspective: 1000px;
+            transform: rotateX(60deg) translateY(-100px) scale(2);
+            transform-origin: top;
+            opacity: 0.3;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% {
+                transform: rotateX(60deg) translateY(0) scale(2);
+            }
+
+            100% {
+                transform: rotateX(60deg) translateY(40px) scale(2);
+            }
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 5%;
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 10vh 5%;
+            position: relative;
+            z-index: 10;
+        }
+
+        .badge {
+            background: rgba(0, 243, 255, 0.1);
+            border: 1px solid rgba(0, 243, 255, 0.3);
+            color: var(--neon-blue);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: clamp(3rem, 6vw, 5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            max-width: 1000px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #fff, var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p.subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            color: var(--text-muted);
+            max-width: 700px;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .btn-primary {
+            background: var(--text-main);
+            color: var(--bg-base);
+            border: none;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 0 30px rgba(0, 243, 255, 0.5);
+            background: var(--neon-blue);
+            color: #000;
+            transform: translateY(-2px);
+        }
+
+        .btn-glass {
+            background: var(--glass-bg);
+            color: var(--text-main);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .btn-glass:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--neon-purple);
+            transform: translateY(-2px);
+        }
+
+        .matrix-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 2.5rem;
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            transition: transform 0.4s ease, border-color 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--neon-blue), transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0, 243, 255, 0.3);
+        }
+
+        .glass-card:hover::before {
+            opacity: 1;
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .glass-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .glass-card p {
+            color: var(--text-muted);
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        /* Terminal Simulation */
+        .terminal {
+            margin: 4rem auto;
+            width: 100%;
+            max-width: 800px;
+            background: #0a0a0c;
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            text-align: left;
+        }
+
+        .terminal-header {
+            background: #15151a;
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            gap: 8px;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .dot.red {
+            background: #ff5f56;
+        }
+
+        .dot.yellow {
+            background: #ffbd2e;
+        }
+
+        .dot.green {
+            background: #27c93f;
+        }
+
+        .terminal-body {
+            padding: 1.5rem;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            color: var(--neon-green);
+            line-height: 1.5;
+        }
+
+        .prompt::before {
+            content: "aeterna@nexus:~$ ";
+            color: var(--neon-purple);
+        }
+
+        .metrics-bar {
+            background: var(--glass-bg);
+            border-top: 1px solid var(--glass-border);
+            border-bottom: 1px solid var(--glass-border);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-around;
+            padding: 2rem 5%;
+            margin-top: 4rem;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .metric {
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 3rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #fff, var(--neon-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cyber-grid"></div>
+
+    <nav>
+        <div class="logo">VERITRAS</div>
+        <a href="mailto:dimitar.prodromov@aeterna.dev?subject=Request Enterprise Audit" class="btn btn-glass"
+            style="padding: 0.5rem 1.5rem; font-size: 0.85rem;">Request Enterprise Audit</a>
+    </nav>
+
+    <section class="hero">
+        <div class="badge">Aeterna Engine Powered</div>
+        <h1 class="gradient-text">Zero Entropy. Autonomous QA & Security.</h1>
+        <p class="subtitle">Stop rewriting broken tests. Veritras is a self-healing automation matrix that secures your
+            deployment pipelines, fixes failing selectors autonomously, and guarantees 100% determinism.</p>
+
+        <div class="cta-group">
+            <a href="mailto:dimitar.prodromov@aeterna.dev?subject=Deploy Veritras" class="btn btn-primary">Deploy
+                Veritras</a>
+        </div>
+
+        <div class="terminal">
+            <div class="terminal-header">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
+            </div>
+            <div class="terminal-body" id="term-content">
+                <div class="prompt" id="typewriter"></div>
+                <!-- Log output will be appended here by JS -->
+            </div>
+        </div>
+    </section>
+
+    <div class="metrics-bar">
+        <div class="metric">
+            <div class="metric-value">O(1)</div>
+            <div class="metric-label">Execution Complexity</div>
+        </div>
+        <div class="metric">
+            <div class="metric-value">100%</div>
+            <div class="metric-label">Deterministic Output</div>
+        </div>
+        <div class="metric">
+            <div class="metric-value">0.00</div>
+            <div class="metric-label">Entropy Variance</div>
+        </div>
+    </div>
+
+    <section class="matrix-container">
+        <div class="glass-card">
+            <span class="card-icon">🧬</span>
+            <h3>Self-Healing Architecture</h3>
+            <p>Veritras utilizes the Aeterna Engine to dynamically adjust to DOM mutations and API changes. Tests heal
+                themselves before the build fails.</p>
+        </div>
+        <div class="glass-card">
+            <span class="card-icon">🛡️</span>
+            <h3>Zero-Trust Security</h3>
+            <p>Every execution operates with absolute mathematical rigor. Penetration testing and vulnerability scanning
+                integrated directly into the CI/CD matrix.</p>
+        </div>
+        <div class="glass-card">
+            <span class="card-icon">⚡</span>
+            <h3>DevSecOps Native</h3>
+            <p>Designed for Enterprise pipelines. Shadow-File Protocol ensures atomic surgery on your codebase with zero
+                downtime or hypothetical scenarios.</p>
+        </div>
+    </section>
+
+    <script>
+        const textToType = "npx veritras-core --audit --target=\"production\"";
+        const typewriterEl = document.getElementById('typewriter');
+        const termContent = document.getElementById('term-content');
+        let i = 0;
+
+        function typeWriter() {
+            if (i < textToType.length) {
+                typewriterEl.innerHTML += textToType.charAt(i);
+                i++;
+                setTimeout(typeWriter, 50);
+            } else {
+                setTimeout(showLogs, 500);
+            }
+        }
+
+        function showLogs() {
+            const logs = [
+                { text: "[System] Initiating Shadow-File Protocol...", color: "var(--text-muted)", delay: 400 },
+                { text: "[System] Bypassing localized friction...", color: "var(--text-muted)", delay: 800 },
+                { text: "> Injecting Self-Healing Layer... <span style='color: var(--neon-blue);'>SUCCESS</span>", color: "var(--neon-green)", delay: 1500 },
+                { text: "> Executing Knox-Verification... <span style='color: var(--neon-blue);'>SUCCESS</span>", color: "var(--neon-green)", delay: 2200 },
+                { text: "STATUS: ZERO ENTROPY REACHED.", color: "#fff", delay: 2800, bold: true }
+            ];
+
+            logs.forEach(log => {
+                setTimeout(() => {
+                    const div = document.createElement('div');
+                    div.innerHTML = log.text;
+                    div.style.color = log.color;
+                    div.style.marginTop = "0.5rem";
+                    if (log.bold) div.style.fontWeight = "bold";
+                    termContent.appendChild(div);
+                }, log.delay);
+            });
+        }
+
+        setTimeout(typeWriter, 1000);
+    </script>
+</body>
+
+</html>
