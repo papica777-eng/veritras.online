@@ -592,55 +592,89 @@
         }
 
         /* CHRONOS NEON GOLD GLASSMORPHISM */
-        .chrono-zone { position: relative; overflow: hidden }
+        .chrono-zone {
+            position: relative;
+            overflow: hidden
+        }
+
         .chrono-zone::before {
             content: '';
             position: absolute;
-            top: -50%; left: -50%; width: 200%; height: 200%;
-            background: conic-gradient(from 0deg, transparent, rgba(255,210,63,.06), transparent, rgba(255,180,0,.04), transparent);
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(255, 210, 63, .06), transparent, rgba(255, 180, 0, .04), transparent);
             animation: cg-spin 12s linear infinite;
         }
-        @keyframes cg-spin { to { transform: rotate(360deg) } }
-        .chrono-zone .slbl { color: #FFD23F }
-        .chrono-zone .stitle { background: linear-gradient(135deg, #FFD23F, #FFB700, #FFF4CC, #FFD23F); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text }
+
+        @keyframes cg-spin {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        .chrono-zone .slbl {
+            color: #FFD23F
+        }
+
+        .chrono-zone .stitle {
+            background: linear-gradient(135deg, #FFD23F, #FFB700, #FFF4CC, #FFD23F);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text
+        }
 
         .glass-gold {
-            background: linear-gradient(135deg, rgba(255,210,63,.03), rgba(255,183,0,.02), rgba(12,12,22,.7));
-            border: 1px solid rgba(255,210,63,.12);
+            background: linear-gradient(135deg, rgba(255, 210, 63, .03), rgba(255, 183, 0, .02), rgba(12, 12, 22, .7));
+            border: 1px solid rgba(255, 210, 63, .12);
             border-radius: 20px;
             padding: 2.2rem;
             backdrop-filter: blur(20px);
             position: relative;
             overflow: hidden;
-            transition: all .5s cubic-bezier(.19,1,.22,1);
+            transition: all .5s cubic-bezier(.19, 1, .22, 1);
         }
+
         .glass-gold::before {
             content: '';
             position: absolute;
             inset: 0;
             border-radius: 20px;
             padding: 1px;
-            background: linear-gradient(135deg, rgba(255,210,63,.3), transparent 40%, transparent 60%, rgba(255,183,0,.2));
+            background: linear-gradient(135deg, rgba(255, 210, 63, .3), transparent 40%, transparent 60%, rgba(255, 183, 0, .2));
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
             -webkit-mask-composite: xor;
             mask-composite: exclude;
             pointer-events: none;
         }
+
         .glass-gold::after {
             content: '';
             position: absolute;
-            top: -1px; right: -1px;
-            width: 80px; height: 80px;
-            background: radial-gradient(circle, rgba(255,210,63,.15), transparent 70%);
+            top: -1px;
+            right: -1px;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, rgba(255, 210, 63, .15), transparent 70%);
             pointer-events: none;
         }
+
         .glass-gold:hover {
-            border-color: rgba(255,210,63,.25);
-            box-shadow: 0 0 60px rgba(255,210,63,.08), 0 20px 60px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,210,63,.1);
+            border-color: rgba(255, 210, 63, .25);
+            box-shadow: 0 0 60px rgba(255, 210, 63, .08), 0 20px 60px rgba(0, 0, 0, .3), inset 0 1px 0 rgba(255, 210, 63, .1);
             transform: translateY(-4px);
         }
-        .glass-gold h3 { display: flex; align-items: center; gap: .6rem; font-size: 1.15rem; margin-bottom: 1.2rem }
+
+        .glass-gold h3 {
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+            font-size: 1.15rem;
+            margin-bottom: 1.2rem
+        }
+
         .gold-tag {
             font-size: .55rem;
             padding: .25rem .65rem;
@@ -650,12 +684,14 @@
             font-weight: 700;
             text-transform: uppercase;
         }
+
         .gold-tag.live {
-            background: linear-gradient(135deg, rgba(255,210,63,.15), rgba(255,183,0,.08));
+            background: linear-gradient(135deg, rgba(255, 210, 63, .15), rgba(255, 183, 0, .08));
             color: #FFD23F;
-            border: 1px solid rgba(255,210,63,.2);
-            box-shadow: 0 0 12px rgba(255,210,63,.1);
+            border: 1px solid rgba(255, 210, 63, .2);
+            box-shadow: 0 0 12px rgba(255, 210, 63, .1);
         }
+
         .gold-metrics {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -663,23 +699,37 @@
             margin-bottom: 1.5rem;
             font-size: .85rem;
         }
+
         .gold-metric {
             padding: .8rem;
-            background: rgba(255,210,63,.02);
-            border: 1px solid rgba(255,210,63,.06);
+            background: rgba(255, 210, 63, .02);
+            border: 1px solid rgba(255, 210, 63, .06);
             border-radius: 10px;
         }
+
         .gold-metric .gm-l {
             font-size: .6rem;
-            color: rgba(255,210,63,.5);
+            color: rgba(255, 210, 63, .5);
             text-transform: uppercase;
             letter-spacing: 1.5px;
             font-family: 'JetBrains Mono', monospace;
             margin-bottom: .3rem;
         }
-        .gold-metric .gm-v { font-weight: 700; font-size: 1rem }
-        .gold-metric .gm-v.neon-gold { color: #FFD23F; text-shadow: 0 0 20px rgba(255,210,63,.3) }
-        .gold-metric .gm-v.neon-green { color: var(--green); text-shadow: 0 0 15px rgba(0,255,136,.2) }
+
+        .gold-metric .gm-v {
+            font-weight: 700;
+            font-size: 1rem
+        }
+
+        .gold-metric .gm-v.neon-gold {
+            color: #FFD23F;
+            text-shadow: 0 0 20px rgba(255, 210, 63, .3)
+        }
+
+        .gold-metric .gm-v.neon-green {
+            color: var(--green);
+            text-shadow: 0 0 15px rgba(0, 255, 136, .2)
+        }
 
         .gold-tbl {
             width: 100%;
@@ -688,47 +738,78 @@
             margin: .5rem 0;
             font-size: .82rem;
         }
+
         .gold-tbl th {
             text-align: left;
             padding: .6rem .7rem;
-            color: rgba(255,210,63,.4);
+            color: rgba(255, 210, 63, .4);
             font-size: .6rem;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             font-family: 'JetBrains Mono', monospace;
             border: none;
         }
+
         .gold-tbl td {
             padding: .65rem .7rem;
-            background: rgba(255,210,63,.015);
-            border-top: 1px solid rgba(255,210,63,.04);
-            border-bottom: 1px solid rgba(255,210,63,.04);
+            background: rgba(255, 210, 63, .015);
+            border-top: 1px solid rgba(255, 210, 63, .04);
+            border-bottom: 1px solid rgba(255, 210, 63, .04);
         }
-        .gold-tbl td:first-child { border-left: 1px solid rgba(255,210,63,.04); border-radius: 8px 0 0 8px }
-        .gold-tbl td:last-child { border-right: 1px solid rgba(255,210,63,.04); border-radius: 0 8px 8px 0 }
-        .gold-tbl tr:hover td { background: rgba(255,210,63,.035); }
-        .gold-tbl .dir-dn { color: #FF6B6B }
-        .gold-tbl .dir-sw { color: rgba(255,210,63,.6) }
-        .gold-tbl .chg { font-family: 'JetBrains Mono', monospace; font-weight: 600 }
-        .gold-tbl .chg.neg { color: #FF6B6B }
+
+        .gold-tbl td:first-child {
+            border-left: 1px solid rgba(255, 210, 63, .04);
+            border-radius: 8px 0 0 8px
+        }
+
+        .gold-tbl td:last-child {
+            border-right: 1px solid rgba(255, 210, 63, .04);
+            border-radius: 0 8px 8px 0
+        }
+
+        .gold-tbl tr:hover td {
+            background: rgba(255, 210, 63, .035);
+        }
+
+        .gold-tbl .dir-dn {
+            color: #FF6B6B
+        }
+
+        .gold-tbl .dir-sw {
+            color: rgba(255, 210, 63, .6)
+        }
+
+        .gold-tbl .chg {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600
+        }
+
+        .gold-tbl .chg.neg {
+            color: #FF6B6B
+        }
+
         .gold-tbl .conf-bar {
             display: inline-flex;
             align-items: center;
             gap: .4rem;
             font-family: 'JetBrains Mono', monospace;
         }
+
         .conf-fill {
-            width: 40px; height: 4px;
-            background: rgba(255,255,255,.06);
+            width: 40px;
+            height: 4px;
+            background: rgba(255, 255, 255, .06);
             border-radius: 2px;
             overflow: hidden;
         }
+
         .conf-fill span {
             display: block;
             height: 100%;
             border-radius: 2px;
             background: linear-gradient(90deg, #FFD23F, #FFB700);
         }
+
         .state-badge {
             padding: .2rem .5rem;
             border-radius: 4px;
@@ -737,20 +818,48 @@
             font-weight: 600;
             letter-spacing: .5px;
         }
-        .state-badge.s-trans { background: rgba(255,210,63,.08); color: #FFD23F; border: 1px solid rgba(255,210,63,.15) }
-        .state-badge.s-true { background: rgba(0,255,136,.06); color: var(--green); border: 1px solid rgba(0,255,136,.12) }
-        .state-badge.s-para { background: rgba(178,77,255,.08); color: var(--purple); border: 1px solid rgba(178,77,255,.15); animation: para-pulse 2s infinite }
-        @keyframes para-pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(178,77,255,.15) } 50% { box-shadow: 0 0 12px 2px rgba(178,77,255,.1) } }
+
+        .state-badge.s-trans {
+            background: rgba(255, 210, 63, .08);
+            color: #FFD23F;
+            border: 1px solid rgba(255, 210, 63, .15)
+        }
+
+        .state-badge.s-true {
+            background: rgba(0, 255, 136, .06);
+            color: var(--green);
+            border: 1px solid rgba(0, 255, 136, .12)
+        }
+
+        .state-badge.s-para {
+            background: rgba(178, 77, 255, .08);
+            color: var(--purple);
+            border: 1px solid rgba(178, 77, 255, .15);
+            animation: para-pulse 2s infinite
+        }
+
+        @keyframes para-pulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(178, 77, 255, .15)
+            }
+
+            50% {
+                box-shadow: 0 0 12px 2px rgba(178, 77, 255, .1)
+            }
+        }
 
         .paradox-alert {
             margin-top: 1rem;
             padding: 1rem 1.2rem;
-            background: linear-gradient(135deg, rgba(178,77,255,.04), rgba(255,210,63,.02));
-            border: 1px solid rgba(178,77,255,.12);
+            background: linear-gradient(135deg, rgba(178, 77, 255, .04), rgba(255, 210, 63, .02));
+            border: 1px solid rgba(178, 77, 255, .12);
             border-left: 3px solid var(--purple);
             border-radius: 0 10px 10px 0;
             font-size: .8rem;
         }
+
         .paradox-alert strong {
             color: var(--purple);
             display: flex;
@@ -760,21 +869,29 @@
             font-size: .75rem;
             letter-spacing: .5px;
         }
-        .paradox-alert p { color: var(--dim); line-height: 1.5 }
+
+        .paradox-alert p {
+            color: var(--dim);
+            line-height: 1.5
+        }
+
         .gold-targets {
             margin-top: .8rem;
             padding: .6rem .8rem;
-            background: rgba(255,210,63,.02);
-            border: 1px solid rgba(255,210,63,.06);
+            background: rgba(255, 210, 63, .02);
+            border: 1px solid rgba(255, 210, 63, .06);
             border-radius: 8px;
             font-family: 'JetBrains Mono', monospace;
             font-size: .72rem;
-            color: rgba(255,210,63,.5);
+            color: rgba(255, 210, 63, .5);
             display: flex;
             align-items: center;
             gap: .5rem;
         }
-        .gold-targets .tgt-arr { color: rgba(255,210,63,.3) }
+
+        .gold-targets .tgt-arr {
+            color: rgba(255, 210, 63, .3)
+        }
 
         /* CODE BLOCKS */
         .code {
@@ -857,9 +974,46 @@
             display: flex;
             justify-content: center
         }
-        .cat-cell .em svg { width: 32px; height: 32px }
-        .ico { display: inline-flex; vertical-align: middle }
-        .ico svg { width: 16px; height: 16px }
+
+        .cat-cell .em svg {
+            width: 32px;
+            height: 32px
+        }
+
+        .ico {
+            display: inline-flex;
+            vertical-align: middle
+        }
+
+        .ico svg {
+            width: 16px;
+            height: 16px
+        }
+
+        /* LANGUAGE BRAND COLORS */
+        .lang-rust {
+            color: #CE422B;
+            text-shadow: 0 0 12px rgba(206, 66, 43, .4);
+            font-weight: 700
+        }
+
+        .lang-ts {
+            color: #3178C6;
+            text-shadow: 0 0 12px rgba(49, 120, 198, .4);
+            font-weight: 700
+        }
+
+        .lang-soul {
+            color: #B24DFF;
+            text-shadow: 0 0 12px rgba(178, 77, 255, .4);
+            font-weight: 700
+        }
+
+        .lang-mojo {
+            color: #FF6F00;
+            text-shadow: 0 0 12px rgba(255, 111, 0, .4);
+            font-weight: 700
+        }
 
         .cat-cell h4 {
             font-size: .9rem;
@@ -1129,7 +1283,8 @@
         <h1 class="an d2"><span class="gr">Three Systems.</span><br>One Architect.</h1>
         <p class="hero-sub an d3">Autonomous QA that <strong>heals itself</strong>. Sovereign infrastructure with a
             <strong>custom language</strong>. Trading intelligence with <strong>four-valued logic</strong> that knows
-            when "wrong" is actually right.</p>
+            when "wrong" is actually right.
+        </p>
         <div class="hctas an d4">
             <a href="#services" class="btn-p">Explore Services →</a>
             <a href="#demo" class="btn-s">See Live Results</a>
@@ -1138,7 +1293,9 @@
             <div class="stat"><span class="stat-l">Codebase</span><span class="stat-v p">715,861 lines</span></div>
             <div class="stat"><span class="stat-l">Entropy</span><span class="stat-v gn">0.0000</span></div>
             <div class="stat"><span class="stat-l">Logic</span><span class="stat-v g">CATUSKOTI</span></div>
-            <div class="stat"><span class="stat-l">Stack</span><span class="stat-v c">Rust · TS · .soul · Mojo</span>
+            <div class="stat"><span class="stat-l">Stack</span><span class="stat-v"><span class="lang-rust">Rust</span>
+                    · <span class="lang-ts">TS</span> · <span class="lang-soul">.soul</span> · <span
+                        class="lang-mojo">Mojo</span></span>
             </div>
             <div class="stat"><span class="stat-l">Location</span><span class="stat-v">Sofia, BG</span></div>
         </div>
@@ -1153,7 +1310,13 @@
 
         <div class="srv-grid">
             <a class="srv an d3" href="https://veritras.website" target="_blank">
-                <div class="srv-icon ic"><svg width="24" height="24" fill="none" stroke="var(--cyan)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9 3h6v5l4 9H5l4-9V3z"/><path d="M9 3h6" stroke-linecap="round"/><circle cx="11" cy="14" r="1" fill="var(--cyan)"/><circle cx="14" cy="16" r=".8" fill="var(--cyan)"/></svg></div>
+                <div class="srv-icon ic"><svg width="24" height="24" fill="none" stroke="var(--cyan)" stroke-width="1.5"
+                        viewBox="0 0 24 24">
+                        <path d="M9 3h6v5l4 9H5l4-9V3z" />
+                        <path d="M9 3h6" stroke-linecap="round" />
+                        <circle cx="11" cy="14" r="1" fill="var(--cyan)" />
+                        <circle cx="14" cy="16" r=".8" fill="var(--cyan)" />
+                    </svg></div>
                 <p class="srv-num c">Service 01 — QA Automation</p>
                 <h2>QAntum Prime</h2>
                 <p class="srv-desc">The AI That Tests Itself. Ghost Protocol bypasses all bot detection. Self-healing
@@ -1172,10 +1335,18 @@
             </a>
 
             <a class="srv an d4" href="https://aeterna.website" target="_blank">
-                <div class="srv-icon ip"><svg width="24" height="24" fill="none" stroke="var(--purple)" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2a10 10 0 0 1 7 17"/><path d="M12 22a10 10 0 0 1-7-17"/><path d="M2 12a10 10 0 0 1 17-7"/><path d="M22 12a10 10 0 0 1-17 7"/></svg></div>
+                <div class="srv-icon ip"><svg width="24" height="24" fill="none" stroke="var(--purple)"
+                        stroke-width="1.5" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="3" />
+                        <path d="M12 2a10 10 0 0 1 7 17" />
+                        <path d="M12 22a10 10 0 0 1-7-17" />
+                        <path d="M2 12a10 10 0 0 1 17-7" />
+                        <path d="M22 12a10 10 0 0 1-17 7" />
+                    </svg></div>
                 <p class="srv-num p">Service 02 — Sovereign Infrastructure</p>
                 <h2>AETERNA Logos</h2>
-                <p class="srv-desc">Custom .soul language compiled to bytecode via Rust VM. Autonomous node deployment
+                <p class="srv-desc">Custom <span class="lang-soul">.soul</span> language compiled to bytecode via <span
+                        class="lang-rust">Rust</span> VM. Autonomous node deployment
                     with Manifold clustering, Logic Surgery, and The Scribe mutation engine.</p>
                 <ul class="srv-feats">
                     <li><span class="p">✓</span> Manifold Node deployment clusters</li>
@@ -1190,7 +1361,12 @@
             </a>
 
             <a class="srv an d5" href="#demo">
-                <div class="srv-icon ig"><svg width="24" height="24" fill="none" stroke="var(--gold)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2L2 12l10 10 10-10L12 2z"/><circle cx="12" cy="12" r="4" stroke-opacity=".6"/><circle cx="12" cy="12" r="1.5" fill="var(--gold)" stroke="none"/></svg></div>
+                <div class="srv-icon ig"><svg width="24" height="24" fill="none" stroke="var(--gold)" stroke-width="1.5"
+                        viewBox="0 0 24 24">
+                        <path d="M12 2L2 12l10 10 10-10L12 2z" />
+                        <circle cx="12" cy="12" r="4" stroke-opacity=".6" />
+                        <circle cx="12" cy="12" r="1.5" fill="var(--gold)" stroke="none" />
+                    </svg></div>
                 <p class="srv-num g">Service 03 — Trading Intelligence <span class="new-tag">NEW</span></p>
                 <h2>CHRONOS Sovereign</h2>
                 <p class="srv-desc">Trading bot with Catuskoti four-valued logic. Knows when "wrong now" means "right
@@ -1214,101 +1390,204 @@
     <section id="demo" class="chrono-zone">
         <p class="slbl an">Real Results</p>
         <h2 class="stitle an d1">CHRONOS — Live Prediction Output</h2>
-        <p class="sdesc an d2" style="color:rgba(255,210,63,.45)">Real data from Binance API, processed through Soul Engine + OBI Manifold + Catuskoti Logic. These are actual outputs:</p>
+        <p class="sdesc an d2" style="color:rgba(255,210,63,.45)">Real data from Binance API, processed through Soul
+            Engine + OBI Manifold + Catuskoti Logic. These are actual outputs:</p>
 
         <div class="demo-grid">
             <div class="glass-gold an d3">
                 <h3>
-                    <span class="ico"><svg width="16" height="16" fill="none" stroke="#FFD23F" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+                    <span class="ico"><svg width="16" height="16" fill="none" stroke="#FFD23F" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                        </svg></span>
                     BTCEUR Analysis
                     <span class="gold-tag live">REAL DATA</span>
                 </h3>
                 <div class="gold-metrics">
-                    <div class="gold-metric"><div class="gm-l">Price</div><div class="gm-v">€62,276</div></div>
-                    <div class="gold-metric"><div class="gm-l">Soul State</div><div class="gm-v neon-gold">CONSUME · K:30</div></div>
-                    <div class="gold-metric"><div class="gm-l">Manifold</div><div class="gm-v">Curvature: <span style="color:#FFD23F">0.83</span> · STABLE</div></div>
-                    <div class="gold-metric"><div class="gm-l">Catuskoti</div><div class="gm-v neon-gold"><span class="ico"><svg width="14" height="14" fill="#FFD23F" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path stroke="#FFD23F" stroke-width="2" d="M12 1v4M12 19v4M1 12h4M19 12h4M4.2 4.2l2.8 2.8M17 17l2.8 2.8M4.2 19.8l2.8-2.8M17 7l2.8-2.8"/></svg></span> TRANSCENDENT</div></div>
+                    <div class="gold-metric">
+                        <div class="gm-l">Price</div>
+                        <div class="gm-v">€62,276</div>
+                    </div>
+                    <div class="gold-metric">
+                        <div class="gm-l">Soul State</div>
+                        <div class="gm-v neon-gold">CONSUME · K:30</div>
+                    </div>
+                    <div class="gold-metric">
+                        <div class="gm-l">Manifold</div>
+                        <div class="gm-v">Curvature: <span style="color:#FFD23F">0.83</span> · STABLE</div>
+                    </div>
+                    <div class="gold-metric">
+                        <div class="gm-l">Catuskoti</div>
+                        <div class="gm-v neon-gold"><span class="ico"><svg width="14" height="14" fill="#FFD23F"
+                                    viewBox="0 0 24 24">
+                                    <circle cx="12" cy="12" r="5" />
+                                    <path stroke="#FFD23F" stroke-width="2"
+                                        d="M12 1v4M12 19v4M1 12h4M19 12h4M4.2 4.2l2.8 2.8M17 17l2.8 2.8M4.2 19.8l2.8-2.8M17 7l2.8-2.8" />
+                                </svg></span> TRANSCENDENT</div>
+                    </div>
                 </div>
                 <table class="gold-tbl">
-                    <tr><th>Timeframe</th><th>Direction</th><th>Change</th><th>Confidence</th><th>State</th></tr>
+                    <tr>
+                        <th>Timeframe</th>
+                        <th>Direction</th>
+                        <th>Change</th>
+                        <th>Confidence</th>
+                        <th>State</th>
+                    </tr>
                     <tr>
                         <td>1 hour</td>
-                        <td class="dir-sw"><span class="ico"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M15 8l4 4-4 4"/></svg></span> SIDEWAYS</td>
+                        <td class="dir-sw"><span class="ico"><svg width="14" height="14" fill="none"
+                                    stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path d="M5 12h14M15 8l4 4-4 4" />
+                                </svg></span> SIDEWAYS</td>
                         <td class="chg neg">-0.35%</td>
-                        <td><span class="conf-bar"><div class="conf-fill"><span style="width:90%"></span></div>90%</span></td>
+                        <td><span class="conf-bar">
+                                <div class="conf-fill"><span style="width:90%"></span></div>90%
+                            </span></td>
                         <td><span class="state-badge s-trans">TRANSCENDENT</span></td>
                     </tr>
                     <tr>
                         <td>4 hours</td>
-                        <td class="dir-dn"><span class="ico"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 17L14 9l-4 4L2 5"/><path d="M16 17h6v-6"/></svg></span> DOWN</td>
+                        <td class="dir-dn"><span class="ico"><svg width="14" height="14" fill="none"
+                                    stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path d="M22 17L14 9l-4 4L2 5" />
+                                    <path d="M16 17h6v-6" />
+                                </svg></span> DOWN</td>
                         <td class="chg neg">-1.47%</td>
-                        <td><span class="conf-bar"><div class="conf-fill"><span style="width:88%"></span></div>88%</span></td>
+                        <td><span class="conf-bar">
+                                <div class="conf-fill"><span style="width:88%"></span></div>88%
+                            </span></td>
                         <td><span class="state-badge s-true">TRUE</span></td>
                     </tr>
                     <tr>
                         <td>24 hours</td>
-                        <td class="dir-dn"><span class="ico"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 17L14 9l-4 4L2 5"/><path d="M16 17h6v-6"/></svg></span> DOWN</td>
+                        <td class="dir-dn"><span class="ico"><svg width="14" height="14" fill="none"
+                                    stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path d="M22 17L14 9l-4 4L2 5" />
+                                    <path d="M16 17h6v-6" />
+                                </svg></span> DOWN</td>
                         <td class="chg neg">-3.61%</td>
-                        <td><span class="conf-bar"><div class="conf-fill"><span style="width:78%"></span></div>78%</span></td>
+                        <td><span class="conf-bar">
+                                <div class="conf-fill"><span style="width:78%"></span></div>78%
+                            </span></td>
                         <td><span class="state-badge s-true">TRUE</span></td>
                     </tr>
                     <tr>
                         <td>7 days</td>
-                        <td class="dir-dn"><span class="ico"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 17L14 9l-4 4L2 5"/><path d="M16 17h6v-6"/></svg></span> DOWN</td>
+                        <td class="dir-dn"><span class="ico"><svg width="14" height="14" fill="none"
+                                    stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path d="M22 17L14 9l-4 4L2 5" />
+                                    <path d="M16 17h6v-6" />
+                                </svg></span> DOWN</td>
                         <td class="chg neg">-9.54%</td>
-                        <td><span class="conf-bar"><div class="conf-fill"><span style="width:20%"></span></div>20%</span></td>
+                        <td><span class="conf-bar">
+                                <div class="conf-fill"><span style="width:20%"></span></div>20%
+                            </span></td>
                         <td><span class="state-badge s-trans">TRANSCENDENT</span></td>
                     </tr>
                 </table>
-                <div class="gold-targets">TARGETS <span class="tgt-arr">→</span> €62,059 (1h) <span class="tgt-arr">→</span> €61,362 (4h) <span class="tgt-arr">→</span> €60,029 (24h)</div>
+                <div class="gold-targets">TARGETS <span class="tgt-arr">→</span> €62,059 (1h) <span
+                        class="tgt-arr">→</span> €61,362 (4h) <span class="tgt-arr">→</span> €60,029 (24h)</div>
             </div>
 
             <div class="glass-gold an d4">
                 <h3>
-                    <span class="ico"><svg width="16" height="16" fill="none" stroke="#FFD23F" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+                    <span class="ico"><svg width="16" height="16" fill="none" stroke="#FFD23F" stroke-width="2"
+                            viewBox="0 0 24 24">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+                        </svg></span>
                     ETHEUR Analysis
                     <span class="gold-tag live">REAL DATA</span>
                 </h3>
                 <div class="gold-metrics">
-                    <div class="gold-metric"><div class="gm-l">Price</div><div class="gm-v">€1,822.65</div></div>
-                    <div class="gold-metric"><div class="gm-l">Soul State</div><div class="gm-v neon-gold">CONSUME · K:32</div></div>
-                    <div class="gold-metric"><div class="gm-l">Manifold</div><div class="gm-v">Imbalance: <span class="neon-green">+24.63% BID</span></div></div>
-                    <div class="gold-metric"><div class="gm-l">Catuskoti</div><div class="gm-v neon-green"><span class="ico"><svg width="14" height="14" fill="none" stroke="var(--green)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span> TRUE → BUY 89%</div></div>
+                    <div class="gold-metric">
+                        <div class="gm-l">Price</div>
+                        <div class="gm-v">€1,822.65</div>
+                    </div>
+                    <div class="gold-metric">
+                        <div class="gm-l">Soul State</div>
+                        <div class="gm-v neon-gold">CONSUME · K:32</div>
+                    </div>
+                    <div class="gold-metric">
+                        <div class="gm-l">Manifold</div>
+                        <div class="gm-v">Imbalance: <span class="neon-green">+24.63% BID</span></div>
+                    </div>
+                    <div class="gold-metric">
+                        <div class="gm-l">Catuskoti</div>
+                        <div class="gm-v neon-green"><span class="ico"><svg width="14" height="14" fill="none"
+                                    stroke="var(--green)" stroke-width="2.5" viewBox="0 0 24 24">
+                                    <path d="M20 6L9 17l-5-5" />
+                                </svg></span> TRUE → BUY 89%</div>
+                    </div>
                 </div>
                 <table class="gold-tbl">
-                    <tr><th>Timeframe</th><th>Direction</th><th>Change</th><th>Confidence</th><th>State</th></tr>
+                    <tr>
+                        <th>Timeframe</th>
+                        <th>Direction</th>
+                        <th>Change</th>
+                        <th>Confidence</th>
+                        <th>State</th>
+                    </tr>
                     <tr>
                         <td>1 hour</td>
-                        <td class="dir-sw"><span class="ico"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M15 8l4 4-4 4"/></svg></span> SIDEWAYS</td>
+                        <td class="dir-sw"><span class="ico"><svg width="14" height="14" fill="none"
+                                    stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path d="M5 12h14M15 8l4 4-4 4" />
+                                </svg></span> SIDEWAYS</td>
                         <td class="chg neg">-0.13%</td>
-                        <td><span class="conf-bar"><div class="conf-fill"><span style="width:90%"></span></div>90%</span></td>
+                        <td><span class="conf-bar">
+                                <div class="conf-fill"><span style="width:90%"></span></div>90%
+                            </span></td>
                         <td><span class="state-badge s-para">PARADOX</span></td>
                     </tr>
                     <tr>
                         <td>4 hours</td>
-                        <td class="dir-dn"><span class="ico"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 17L14 9l-4 4L2 5"/><path d="M16 17h6v-6"/></svg></span> DOWN</td>
+                        <td class="dir-dn"><span class="ico"><svg width="14" height="14" fill="none"
+                                    stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path d="M22 17L14 9l-4 4L2 5" />
+                                    <path d="M16 17h6v-6" />
+                                </svg></span> DOWN</td>
                         <td class="chg neg">-1.71%</td>
-                        <td><span class="conf-bar"><div class="conf-fill"><span style="width:88%"></span></div>88%</span></td>
+                        <td><span class="conf-bar">
+                                <div class="conf-fill"><span style="width:88%"></span></div>88%
+                            </span></td>
                         <td><span class="state-badge s-true">TRUE</span></td>
                     </tr>
                     <tr>
                         <td>24 hours</td>
-                        <td class="dir-dn"><span class="ico"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 17L14 9l-4 4L2 5"/><path d="M16 17h6v-6"/></svg></span> DOWN</td>
+                        <td class="dir-dn"><span class="ico"><svg width="14" height="14" fill="none"
+                                    stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path d="M22 17L14 9l-4 4L2 5" />
+                                    <path d="M16 17h6v-6" />
+                                </svg></span> DOWN</td>
                         <td class="chg neg">-4.57%</td>
-                        <td><span class="conf-bar"><div class="conf-fill"><span style="width:78%"></span></div>78%</span></td>
+                        <td><span class="conf-bar">
+                                <div class="conf-fill"><span style="width:78%"></span></div>78%
+                            </span></td>
                         <td><span class="state-badge s-true">TRUE</span></td>
                     </tr>
                     <tr>
                         <td>7 days</td>
-                        <td class="dir-dn"><span class="ico"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 17L14 9l-4 4L2 5"/><path d="M16 17h6v-6"/></svg></span> DOWN</td>
+                        <td class="dir-dn"><span class="ico"><svg width="14" height="14" fill="none"
+                                    stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                                    <path d="M22 17L14 9l-4 4L2 5" />
+                                    <path d="M16 17h6v-6" />
+                                </svg></span> DOWN</td>
                         <td class="chg neg">-12.1%</td>
-                        <td><span class="conf-bar"><div class="conf-fill"><span style="width:20%"></span></div>20%</span></td>
+                        <td><span class="conf-bar">
+                                <div class="conf-fill"><span style="width:20%"></span></div>20%
+                            </span></td>
                         <td><span class="state-badge s-trans">TRANSCENDENT</span></td>
                     </tr>
                 </table>
                 <div class="paradox-alert">
-                    <strong><span class="ico"><svg width="14" height="14" fill="none" stroke="var(--purple)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2L2 12l10 10 10-10L12 2z"/><circle cx="12" cy="12" r="3" stroke-opacity=".6"/></svg></span> PARADOX DETECTED — 1H WINDOW</strong>
-                    <p>Catuskoti says BUY (order book +24.6% bid pressure) — but 1h forecast is -0.13%. Classic PARADOX: short-term dip, but buy fundamentals will play out later.</p>
+                    <strong><span class="ico"><svg width="14" height="14" fill="none" stroke="var(--purple)"
+                                stroke-width="1.5" viewBox="0 0 24 24">
+                                <path d="M12 2L2 12l10 10 10-10L12 2z" />
+                                <circle cx="12" cy="12" r="3" stroke-opacity=".6" />
+                            </svg></span> PARADOX DETECTED — 1H WINDOW</strong>
+                    <p>Catuskoti says BUY (order book +24.6% bid pressure) — but 1h forecast is -0.13%. Classic PARADOX:
+                        short-term dip, but buy fundamentals will play out later.</p>
                 </div>
             </div>
         </div>
@@ -1321,22 +1600,40 @@
         <p class="sdesc an d2">Every other trading bot sees buy/don't buy. CHRONOS sees the full spectrum.</p>
         <div class="cat-grid an d3">
             <div class="cat-cell ct">
-                <div class="em"><svg width="32" height="32" fill="none" stroke="var(--green)" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="1.5"/><path d="M8 12l3 3 5-6"/></svg></div>
+                <div class="em"><svg width="32" height="32" fill="none" stroke="var(--green)" stroke-width="2.5"
+                        viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" stroke-width="1.5" />
+                        <path d="M8 12l3 3 5-6" />
+                    </svg></div>
                 <h4>TRUE</h4>
                 <p>Signal confirmed. Execute.</p>
             </div>
             <div class="cat-cell cf">
-                <div class="em"><svg width="32" height="32" fill="none" stroke="var(--red)" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="1.5"/><path d="M15 9l-6 6M9 9l6 6"/></svg></div>
+                <div class="em"><svg width="32" height="32" fill="none" stroke="var(--red)" stroke-width="2.5"
+                        viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" stroke-width="1.5" />
+                        <path d="M15 9l-6 6M9 9l6 6" />
+                    </svg></div>
                 <h4>FALSE</h4>
                 <p>Signal rejected. Protect capital.</p>
             </div>
             <div class="cat-cell cp">
-                <div class="em"><svg width="32" height="32" fill="none" stroke="var(--purple)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2L2 12l10 10 10-10L12 2z"/><circle cx="12" cy="12" r="4" stroke-opacity=".5"/><circle cx="12" cy="12" r="1.5" fill="var(--purple)" stroke="none"/></svg></div>
+                <div class="em"><svg width="32" height="32" fill="none" stroke="var(--purple)" stroke-width="1.5"
+                        viewBox="0 0 24 24">
+                        <path d="M12 2L2 12l10 10 10-10L12 2z" />
+                        <circle cx="12" cy="12" r="4" stroke-opacity=".5" />
+                        <circle cx="12" cy="12" r="1.5" fill="var(--purple)" stroke="none" />
+                    </svg></div>
                 <h4>PARADOX</h4>
                 <p>Wrong now. Right later. Hold.</p>
             </div>
             <div class="cat-cell cx">
-                <div class="em"><svg width="32" height="32" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="var(--gold)" opacity=".3"/><circle cx="12" cy="12" r="4" stroke="var(--gold)" stroke-width="1.5"/><path stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" d="M12 1v3M12 20v3M1 12h3M20 12h3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></div>
+                <div class="em"><svg width="32" height="32" fill="none" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="4" fill="var(--gold)" opacity=".3" />
+                        <circle cx="12" cy="12" r="4" stroke="var(--gold)" stroke-width="1.5" />
+                        <path stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round"
+                            d="M12 1v3M12 20v3M1 12h3M20 12h3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" />
+                    </svg></div>
                 <h4>TRANSCENDENT</h4>
                 <p>Beyond analysis. Learn from chaos.</p>
             </div>
@@ -1375,32 +1672,54 @@
         <div class="flow">
             <div class="flow-s an d2" data-n="1">
                 <div>
-                    <h3><span class="ico"><svg width="16" height="16" fill="none" stroke="var(--cyan)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 20v-6M7 14l5-5 5 5"/><path d="M4.93 4.93a10 10 0 0 1 14.14 0" opacity=".4"/><path d="M7.76 7.76a6 6 0 0 1 8.48 0" opacity=".7"/></svg></span> Real-Time Ingestion</h3>
+                    <h3><span class="ico"><svg width="16" height="16" fill="none" stroke="var(--cyan)"
+                                stroke-width="1.5" viewBox="0 0 24 24">
+                                <path d="M12 20v-6M7 14l5-5 5 5" />
+                                <path d="M4.93 4.93a10 10 0 0 1 14.14 0" opacity=".4" />
+                                <path d="M7.76 7.76a6 6 0 0 1 8.48 0" opacity=".7" />
+                            </svg></span> Real-Time Ingestion</h3>
                     <p>Prices, order books (20+ levels), 100h candle history from Binance every 30 seconds.</p>
                 </div>
             </div>
             <div class="flow-s an d3" data-n="2">
                 <div>
-                    <h3><span class="ico"><svg width="16" height="16" fill="none" stroke="var(--purple)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2v20M8 6c0 2 4 4 4 4s4-2 4-4M8 18c0-2 4-4 4-4s4 2 4 4"/><circle cx="12" cy="12" r="2"/></svg></span> Soul Processing</h3>
+                    <h3><span class="ico"><svg width="16" height="16" fill="none" stroke="var(--purple)"
+                                stroke-width="1.5" viewBox="0 0 24 24">
+                                <path d="M12 2v20M8 6c0 2 4 4 4 4s4-2 4-4M8 18c0-2 4-4 4-4s4 2 4 4" />
+                                <circle cx="12" cy="12" r="2" />
+                            </svg></span> Soul Processing</h3>
                     <p>Signal passes through AWAKEN → CONSUME → PROTECT → EVOLVE → TRANSMUTE opcodes. Karma accumulates.
                     </p>
                 </div>
             </div>
             <div class="flow-s an d4" data-n="3">
                 <div>
-                    <h3><span class="ico"><svg width="16" height="16" fill="none" stroke="var(--cyan)" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(30 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(-30 12 12)"/></svg></span> Manifold Curvature</h3>
+                    <h3><span class="ico"><svg width="16" height="16" fill="none" stroke="var(--cyan)"
+                                stroke-width="1.5" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="3" />
+                                <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(30 12 12)" />
+                                <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(-30 12 12)" />
+                            </svg></span> Manifold Curvature</h3>
                     <p>Order book imbalance computed as Gaussian curvature. SINGULARITY triggers OMEGA alerts.</p>
                 </div>
             </div>
             <div class="flow-s an d5" data-n="4">
                 <div>
-                    <h3><span class="ico"><svg width="16" height="16" fill="none" stroke="var(--gold)" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M5.6 18.4l12.8-12.8"/></svg></span> Catuskoti Decision</h3>
+                    <h3><span class="ico"><svg width="16" height="16" fill="none" stroke="var(--gold)"
+                                stroke-width="1.5" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="9" />
+                                <path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M5.6 18.4l12.8-12.8" />
+                            </svg></span> Catuskoti Decision</h3>
                     <p>All data converges into TRUE / FALSE / PARADOX / TRANSCENDENT with confidence percentage.</p>
                 </div>
             </div>
             <div class="flow-s an d6" data-n="5">
                 <div>
-                    <h3><span class="ico"><svg width="16" height="16" fill="none" stroke="var(--purple)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2L2 12l10 10 10-10L12 2z"/><circle cx="12" cy="12" r="3"/></svg></span> Retrocausal Projection</h3>
+                    <h3><span class="ico"><svg width="16" height="16" fill="none" stroke="var(--purple)"
+                                stroke-width="1.5" viewBox="0 0 24 24">
+                                <path d="M12 2L2 12l10 10 10-10L12 2z" />
+                                <circle cx="12" cy="12" r="3" />
+                            </svg></span> Retrocausal Projection</h3>
                     <p>Predictions for 1h, 4h, 24h, 7d, 30d with PARADOX detection for decisions that only make sense
                         later.</p>
                 </div>
