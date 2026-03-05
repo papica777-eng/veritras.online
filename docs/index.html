@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>VERITRAS — Sovereign AI Ecosystem | QAntum · AETERNA · CHRONOS</title>
+    <meta name="description"
+        content="Three autonomous AI systems by Dimitar Prodromov. QAntum Prime (The AI That Tests Itself), AETERNA Logos (Sovereign Infrastructure), CHRONOS (Trading Intelligence with 4-valued Catuskoti logic). 715,861 lines. Zero entropy.">
+    <meta property="og:title" content="VERITRAS — Three Systems. One Architect.">
+    <meta property="og:description"
+        content="Self-healing QA, sovereign infrastructure, and trading intelligence powered by retrocausal analysis.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://veritras.online">
+    <link rel="canonical" href="https://veritras.online">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        :root {
+            --bg: #030306;
+            --bg2: #080810;
+            --card: rgba(12, 12, 22, 0.7);
+            --bdr: rgba(255, 255, 255, 0.06);
+            --txt: #eef;
+            --dim: #7779aa;
+            --mut: #445;
+            --cyan: #00e5ff;
+            --purple: #b24dff;
+            --gold: #ffd700;
+            --green: #00ff88;
+            --red: #ff4466;
+            --pink: #ff66aa
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--txt);
+            overflow-x: hidden;
+            line-height: 1.6
+        }
+
+        .bg-fx {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            background: radial-gradient(ellipse 900px 700px at 15% 25%, rgba(0, 229, 255, .04), transparent), radial-gradient(ellipse 700px 900px at 85% 75%, rgba(178, 77, 255, .04), transparent), radial-gradient(ellipse 500px 500px at 50% 50%, rgba(255, 215, 0, .02), transparent)
+        }
+
+        .grid-bg {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            background-image: linear-gradient(rgba(255, 255, 255, .012) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .012) 1px, transparent 1px);
+            background-size: 80px 80px
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 1rem 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(3, 3, 6, .88);
+            backdrop-filter: blur(24px);
+            border-bottom: 1px solid var(--bdr)
+        }
+
+        .logo {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--cyan);
+            text-decoration: none;
+            letter-spacing: 2px
+        }
+
+        .logo span {
+            color: var(--mut);
+            font-weight: 400;
+            font-size: .85rem
+        }
+
+        .nav-r {
+            display: flex;
+            gap: 1.8rem;
+            align-items: center
+        }
+
+        .nav-r a {
+            color: var(--dim);
+            text-decoration: none;
+            font-size: .85rem;
+            font-weight: 500;
+            transition: color .3s
+        }
+
+        .nav-r a:hover {
+            color: var(--cyan)
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--cyan), var(--purple));
+            color: #000 !important;
+            padding: .5rem 1.2rem;
+            border-radius: 8px;
+            font-weight: 700 !important
+        }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 7rem 2rem 4rem
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            padding: .45rem 1rem;
+            border: 1px solid rgba(0, 229, 255, .2);
+            border-radius: 100px;
+            font-size: .75rem;
+            color: var(--cyan);
+            font-family: 'JetBrains Mono', monospace;
+            margin-bottom: 2rem;
+            background: rgba(0, 229, 255, .04);
+            animation: bpulse 3s infinite
+        }
+
+        @keyframes bpulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(0, 229, 255, .1)
+            }
+
+            50% {
+                box-shadow: 0 0 20px 5px rgba(0, 229, 255, .04)
+            }
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--green);
+            border-radius: 50%;
+            animation: dp 2s infinite
+        }
+
+        @keyframes dp {
+
+            0%,
+            100% {
+                opacity: 1
+            }
+
+            50% {
+                opacity: .4
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.8rem, 7vw, 5.5rem);
+            font-weight: 900;
+            letter-spacing: -3px;
+            line-height: 1.05;
+            margin-bottom: 1.5rem
+        }
+
+        .gr {
+            background: linear-gradient(135deg, var(--cyan), var(--purple), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text
+        }
+
+        .hero-sub {
+            font-size: clamp(1rem, 2.2vw, 1.3rem);
+            color: var(--dim);
+            max-width: 680px;
+            margin-bottom: 3rem;
+            font-weight: 300
+        }
+
+        .hero-sub strong {
+            color: var(--cyan);
+            font-weight: 600
+        }
+
+        .hctas {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 3.5rem
+        }
+
+        .btn-p {
+            background: linear-gradient(135deg, var(--cyan), var(--purple));
+            color: #000;
+            padding: .9rem 2.2rem;
+            border: none;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all .3s;
+            text-decoration: none
+        }
+
+        .btn-p:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 40px rgba(0, 229, 255, .3)
+        }
+
+        .btn-s {
+            background: transparent;
+            color: var(--txt);
+            padding: .9rem 2.2rem;
+            border: 1px solid var(--bdr);
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all .3s
+        }
+
+        .btn-s:hover {
+            border-color: var(--cyan);
+            background: rgba(0, 229, 255, .04)
+        }
+
+        /* STATS BAR */
+        .stats {
+            display: flex;
+            gap: 2.5rem;
+            padding: 1rem 2rem;
+            border: 1px solid var(--bdr);
+            border-radius: 16px;
+            background: var(--card);
+            backdrop-filter: blur(20px);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: .8rem;
+            flex-wrap: wrap;
+            justify-content: center
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: .2rem
+        }
+
+        .stat-l {
+            color: var(--mut);
+            font-size: .65rem;
+            text-transform: uppercase;
+            letter-spacing: 1px
+        }
+
+        .stat-v {
+            font-weight: 700;
+            font-size: .95rem
+        }
+
+        .c {
+            color: var(--cyan)
+        }
+
+        .p {
+            color: var(--purple)
+        }
+
+        .g {
+            color: var(--gold)
+        }
+
+        .gn {
+            color: var(--green)
+        }
+
+        /* SECTIONS */
+        section {
+            position: relative;
+            z-index: 1;
+            padding: 5rem 2rem;
+            max-width: 1300px;
+            margin: 0 auto
+        }
+
+        .slbl {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: .7rem;
+            color: var(--purple);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: .8rem
+        }
+
+        .stitle {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: .8rem;
+            letter-spacing: -1px
+        }
+
+        .sdesc {
+            color: var(--dim);
+            font-size: 1.05rem;
+            max-width: 620px;
+            margin-bottom: 2.5rem
+        }
+
+        /* 3 SERVICES GRID */
+        .srv-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem
+        }
+
+        .srv {
+            background: var(--card);
+            border: 1px solid var(--bdr);
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            backdrop-filter: blur(12px);
+            transition: all .5s cubic-bezier(.19, 1, .22, 1);
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+            position: relative;
+            overflow: hidden
+        }
+
+        .srv::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            opacity: 0;
+            transition: opacity .5s
+        }
+
+        .srv:hover {
+            transform: translateY(-6px)
+        }
+
+        .srv:hover::before {
+            opacity: 1
+        }
+
+        .srv:nth-child(1):hover {
+            border-color: rgba(0, 229, 255, .2);
+            box-shadow: 0 16px 50px rgba(0, 229, 255, .08)
+        }
+
+        .srv:nth-child(1)::before {
+            background: linear-gradient(90deg, transparent, var(--cyan), transparent)
+        }
+
+        .srv:nth-child(2):hover {
+            border-color: rgba(178, 77, 255, .2);
+            box-shadow: 0 16px 50px rgba(178, 77, 255, .08)
+        }
+
+        .srv:nth-child(2)::before {
+            background: linear-gradient(90deg, transparent, var(--purple), transparent)
+        }
+
+        .srv:nth-child(3):hover {
+            border-color: rgba(255, 215, 0, .2);
+            box-shadow: 0 16px 50px rgba(255, 215, 0, .08)
+        }
+
+        .srv:nth-child(3)::before {
+            background: linear-gradient(90deg, transparent, var(--gold), transparent)
+        }
+
+        .srv-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem
+        }
+
+        .srv-icon.ic {
+            background: rgba(0, 229, 255, .08);
+            border: 1px solid rgba(0, 229, 255, .15)
+        }
+
+        .srv-icon.ip {
+            background: rgba(178, 77, 255, .08);
+            border: 1px solid rgba(178, 77, 255, .15)
+        }
+
+        .srv-icon.ig {
+            background: rgba(255, 215, 0, .08);
+            border: 1px solid rgba(255, 215, 0, .15)
+        }
+
+        .srv-num {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: .6rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: .6rem
+        }
+
+        .srv h2 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: .6rem
+        }
+
+        .srv-desc {
+            color: var(--dim);
+            font-size: .92rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 1
+        }
+
+        .srv-feats {
+            list-style: none;
+            margin-bottom: 1.5rem
+        }
+
+        .srv-feats li {
+            font-size: .87rem;
+            color: var(--dim);
+            padding: .45rem 0;
+            display: flex;
+            gap: .6rem;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, .025)
+        }
+
+        .srv-feats li:last-child {
+            border: none
+        }
+
+        .srv-price {
+            display: flex;
+            align-items: baseline;
+            gap: .3rem;
+            margin-bottom: 1.2rem
+        }
+
+        .srv-price .fr {
+            font-size: .75rem;
+            color: var(--mut)
+        }
+
+        .srv-price .am {
+            font-size: 2.2rem;
+            font-weight: 900;
+            letter-spacing: -1px
+        }
+
+        .srv-price .pr {
+            font-size: .8rem;
+            color: var(--mut)
+        }
+
+        .srv-cta {
+            display: block;
+            width: 100%;
+            padding: .85rem;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 700;
+            font-size: .9rem;
+            text-decoration: none;
+            transition: all .3s
+        }
+
+        .sc-c {
+            background: rgba(0, 229, 255, .08);
+            border: 1px solid rgba(0, 229, 255, .2);
+            color: var(--cyan)
+        }
+
+        .sc-c:hover {
+            background: rgba(0, 229, 255, .15)
+        }
+
+        .sc-p {
+            background: linear-gradient(135deg, var(--purple), var(--cyan));
+            border: none;
+            color: #000
+        }
+
+        .sc-p:hover {
+            box-shadow: 0 8px 30px rgba(178, 77, 255, .3)
+        }
+
+        .sc-g {
+            background: rgba(255, 215, 0, .08);
+            border: 1px solid rgba(255, 215, 0, .2);
+            color: var(--gold)
+        }
+
+        .sc-g:hover {
+            background: rgba(255, 215, 0, .15)
+        }
+
+        .new-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold), var(--pink));
+            color: #000;
+            padding: .15rem .6rem;
+            border-radius: 6px;
+            font-size: .6rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-left: .5rem;
+            vertical-align: middle
+        }
+
+        /* LIVE DEMO SECTION */
+        .demo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem
+        }
+
+        .demo-card {
+            background: var(--card);
+            border: 1px solid var(--bdr);
+            border-radius: 16px;
+            padding: 2rem;
+            backdrop-filter: blur(10px)
+        }
+
+        .demo-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: .5rem
+        }
+
+        .demo-card h3 .tag {
+            font-size: .6rem;
+            padding: .2rem .5rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            letter-spacing: 1px
+        }
+
+        .tag-live {
+            background: rgba(0, 255, 136, .1);
+            color: var(--green)
+        }
+
+        .tag-soul {
+            background: rgba(178, 77, 255, .1);
+            color: var(--purple)
+        }
+
+        /* CHRONOS NEON GOLD GLASSMORPHISM */
+        .chrono-zone { position: relative; overflow: hidden }
+        .chrono-zone::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%; width: 200%; height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(255,210,63,.06), transparent, rgba(255,180,0,.04), transparent);
+            animation: cg-spin 12s linear infinite;
+        }
+        @keyframes cg-spin { to { transform: rotate(360deg) } }
+        .chrono-zone .slbl { color: #FFD23F }
+        .chrono-zone .stitle { background: linear-gradient(135deg, #FFD23F, #FFB700, #FFF4CC, #FFD23F); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text }
+
+        .glass-gold {
+            background: linear-gradient(135deg, rgba(255,210,63,.03), rgba(255,183,0,.02), rgba(12,12,22,.7));
+            border: 1px solid rgba(255,210,63,.12);
+            border-radius: 20px;
+            padding: 2.2rem;
+            backdrop-filter: blur(20px);
+            position: relative;
+            overflow: hidden;
+            transition: all .5s cubic-bezier(.19,1,.22,1);
+        }
+        .glass-gold::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(255,210,63,.3), transparent 40%, transparent 60%, rgba(255,183,0,.2));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+        .glass-gold::after {
+            content: '';
+            position: absolute;
+            top: -1px; right: -1px;
+            width: 80px; height: 80px;
+            background: radial-gradient(circle, rgba(255,210,63,.15), transparent 70%);
+            pointer-events: none;
+        }
+        .glass-gold:hover {
+            border-color: rgba(255,210,63,.25);
+            box-shadow: 0 0 60px rgba(255,210,63,.08), 0 20px 60px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,210,63,.1);
+            transform: translateY(-4px);
+        }
+        .glass-gold h3 { display: flex; align-items: center; gap: .6rem; font-size: 1.15rem; margin-bottom: 1.2rem }
+        .gold-tag {
+            font-size: .55rem;
+            padding: .25rem .65rem;
+            border-radius: 100px;
+            font-family: 'JetBrains Mono', monospace;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        .gold-tag.live {
+            background: linear-gradient(135deg, rgba(255,210,63,.15), rgba(255,183,0,.08));
+            color: #FFD23F;
+            border: 1px solid rgba(255,210,63,.2);
+            box-shadow: 0 0 12px rgba(255,210,63,.1);
+        }
+        .gold-metrics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: .85rem;
+        }
+        .gold-metric {
+            padding: .8rem;
+            background: rgba(255,210,63,.02);
+            border: 1px solid rgba(255,210,63,.06);
+            border-radius: 10px;
+        }
+        .gold-metric .gm-l {
+            font-size: .6rem;
+            color: rgba(255,210,63,.5);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-family: 'JetBrains Mono', monospace;
+            margin-bottom: .3rem;
+        }
+        .gold-metric .gm-v { font-weight: 700; font-size: 1rem }
+        .gold-metric .gm-v.neon-gold { color: #FFD23F; text-shadow: 0 0 20px rgba(255,210,63,.3) }
+        .gold-metric .gm-v.neon-green { color: var(--green); text-shadow: 0 0 15px rgba(0,255,136,.2) }
+
+        .gold-tbl {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 4px;
+            margin: .5rem 0;
+            font-size: .82rem;
+        }
+        .gold-tbl th {
+            text-align: left;
+            padding: .6rem .7rem;
+            color: rgba(255,210,63,.4);
+            font-size: .6rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-family: 'JetBrains Mono', monospace;
+            border: none;
+        }
+        .gold-tbl td {
+            padding: .65rem .7rem;
+            background: rgba(255,210,63,.015);
+            border-top: 1px solid rgba(255,210,63,.04);
+            border-bottom: 1px solid rgba(255,210,63,.04);
+        }
+        .gold-tbl td:first-child { border-left: 1px solid rgba(255,210,63,.04); border-radius: 8px 0 0 8px }
+        .gold-tbl td:last-child { border-right: 1px solid rgba(255,210,63,.04); border-radius: 0 8px 8px 0 }
+        .gold-tbl tr:hover td { background: rgba(255,210,63,.035); }
+        .gold-tbl .dir-dn { color: #FF6B6B }
+        .gold-tbl .dir-sw { color: rgba(255,210,63,.6) }
+        .gold-tbl .chg { font-family: 'JetBrains Mono', monospace; font-weight: 600 }
+        .gold-tbl .chg.neg { color: #FF6B6B }
+        .gold-tbl .conf-bar {
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .conf-fill {
+            width: 40px; height: 4px;
+            background: rgba(255,255,255,.06);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        .conf-fill span {
+            display: block;
+            height: 100%;
+            border-radius: 2px;
+            background: linear-gradient(90deg, #FFD23F, #FFB700);
+        }
+        .state-badge {
+            padding: .2rem .5rem;
+            border-radius: 4px;
+            font-size: .7rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 600;
+            letter-spacing: .5px;
+        }
+        .state-badge.s-trans { background: rgba(255,210,63,.08); color: #FFD23F; border: 1px solid rgba(255,210,63,.15) }
+        .state-badge.s-true { background: rgba(0,255,136,.06); color: var(--green); border: 1px solid rgba(0,255,136,.12) }
+        .state-badge.s-para { background: rgba(178,77,255,.08); color: var(--purple); border: 1px solid rgba(178,77,255,.15); animation: para-pulse 2s infinite }
+        @keyframes para-pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(178,77,255,.15) } 50% { box-shadow: 0 0 12px 2px rgba(178,77,255,.1) } }
+
+        .paradox-alert {
+            margin-top: 1rem;
+            padding: 1rem 1.2rem;
+            background: linear-gradient(135deg, rgba(178,77,255,.04), rgba(255,210,63,.02));
+            border: 1px solid rgba(178,77,255,.12);
+            border-left: 3px solid var(--purple);
+            border-radius: 0 10px 10px 0;
+            font-size: .8rem;
+        }
+        .paradox-alert strong {
+            color: var(--purple);
+            display: flex;
+            align-items: center;
+            gap: .4rem;
+            margin-bottom: .3rem;
+            font-size: .75rem;
+            letter-spacing: .5px;
+        }
+        .paradox-alert p { color: var(--dim); line-height: 1.5 }
+        .gold-targets {
+            margin-top: .8rem;
+            padding: .6rem .8rem;
+            background: rgba(255,210,63,.02);
+            border: 1px solid rgba(255,210,63,.06);
+            border-radius: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: .72rem;
+            color: rgba(255,210,63,.5);
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+        .gold-targets .tgt-arr { color: rgba(255,210,63,.3) }
+
+        /* CODE BLOCKS */
+        .code {
+            background: rgba(8, 8, 14, .9);
+            border: 1px solid var(--bdr);
+            border-radius: 12px;
+            padding: 1.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: .78rem;
+            line-height: 1.8;
+            overflow-x: auto
+        }
+
+        .code .cm {
+            color: var(--mut)
+        }
+
+        .code .kw {
+            color: var(--purple)
+        }
+
+        .code .st {
+            color: var(--green)
+        }
+
+        .code .sp {
+            color: var(--cyan)
+        }
+
+        .code .vl {
+            color: var(--gold)
+        }
+
+        .code .fn {
+            color: var(--pink)
+        }
+
+        /* CATUSKOTI */
+        .cat-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin: 2rem 0
+        }
+
+        .cat-cell {
+            padding: 1.5rem 1rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid var(--bdr);
+            transition: all .3s
+        }
+
+        .cat-cell:hover {
+            transform: scale(1.04)
+        }
+
+        .cat-cell.ct {
+            background: rgba(0, 255, 136, .04);
+            border-color: rgba(0, 255, 136, .15)
+        }
+
+        .cat-cell.cf {
+            background: rgba(255, 68, 102, .04);
+            border-color: rgba(255, 68, 102, .15)
+        }
+
+        .cat-cell.cp {
+            background: rgba(178, 77, 255, .04);
+            border-color: rgba(178, 77, 255, .15)
+        }
+
+        .cat-cell.cx {
+            background: rgba(255, 215, 0, .04);
+            border-color: rgba(255, 215, 0, .15)
+        }
+
+        .cat-cell .em {
+            margin-bottom: .6rem;
+            display: flex;
+            justify-content: center
+        }
+        .cat-cell .em svg { width: 32px; height: 32px }
+        .ico { display: inline-flex; vertical-align: middle }
+        .ico svg { width: 16px; height: 16px }
+
+        .cat-cell h4 {
+            font-size: .9rem;
+            margin-bottom: .3rem
+        }
+
+        .cat-cell p {
+            font-size: .75rem;
+            color: var(--dim)
+        }
+
+        /* REAL PREDICTION TABLE */
+        .pred-tbl {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: .85rem
+        }
+
+        .pred-tbl th {
+            text-align: left;
+            padding: .7rem .8rem;
+            color: var(--mut);
+            font-size: .7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--bdr);
+            font-family: 'JetBrains Mono', monospace
+        }
+
+        .pred-tbl td {
+            padding: .7rem .8rem;
+            border-bottom: 1px solid rgba(255, 255, 255, .025)
+        }
+
+        .pred-tbl .up {
+            color: var(--green)
+        }
+
+        .pred-tbl .dn {
+            color: var(--red)
+        }
+
+        .pred-tbl .sw {
+            color: var(--dim)
+        }
+
+        .pred-tbl .conf {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: .8rem
+        }
+
+        .pred-tbl .para {
+            color: var(--purple);
+            font-weight: 600
+        }
+
+        .pred-tbl .trans {
+            color: var(--gold);
+            font-weight: 600
+        }
+
+        /* FLOW */
+        .flow {
+            display: flex;
+            flex-direction: column;
+            position: relative
+        }
+
+        .flow-s {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            padding: 1.5rem 0;
+            border-left: 2px solid var(--bdr);
+            padding-left: 1.5rem;
+            position: relative
+        }
+
+        .flow-s::before {
+            content: attr(data-n);
+            position: absolute;
+            left: -14px;
+            width: 26px;
+            height: 26px;
+            background: var(--bg);
+            border: 2px solid var(--cyan);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: .7rem;
+            font-weight: 700;
+            color: var(--cyan)
+        }
+
+        .flow-s h3 {
+            font-size: 1rem;
+            margin-bottom: .2rem
+        }
+
+        .flow-s p {
+            color: var(--dim);
+            font-size: .9rem
+        }
+
+        /* ARCHITECT */
+        .arch {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem 5rem
+        }
+
+        .arch-line {
+            width: 60px;
+            height: 2px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(90deg, var(--cyan), var(--purple))
+        }
+
+        .arch h2 {
+            font-size: 1.6rem;
+            margin-bottom: .8rem
+        }
+
+        .arch p {
+            color: var(--dim);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1rem
+        }
+
+        /* FOOTER */
+        footer {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--bdr)
+        }
+
+        footer .q {
+            color: var(--dim);
+            font-style: italic;
+            font-size: .9rem;
+            margin-bottom: .8rem
+        }
+
+        footer .links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 1rem;
+            flex-wrap: wrap
+        }
+
+        footer .links a {
+            color: var(--dim);
+            text-decoration: none;
+            font-size: .82rem;
+            transition: color .3s
+        }
+
+        footer .links a:hover {
+            color: var(--cyan)
+        }
+
+        footer .cp {
+            color: var(--mut);
+            font-size: .75rem
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:900px) {
+
+            .srv-grid,
+            .demo-grid {
+                grid-template-columns: 1fr
+            }
+
+            .cat-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .nav-r {
+                display: none
+            }
+
+            nav {
+                padding: .8rem 1.2rem
+            }
+
+            .stats {
+                gap: 1.2rem
+            }
+        }
+
+        /* ANIMS */
+        @keyframes fu {
+            from {
+                opacity: 0;
+                transform: translateY(30px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        .an {
+            opacity: 0;
+            animation: fu .8s ease forwards
+        }
+
+        .d1 {
+            animation-delay: .05s
+        }
+
+        .d2 {
+            animation-delay: .12s
+        }
+
+        .d3 {
+            animation-delay: .2s
+        }
+
+        .d4 {
+            animation-delay: .28s
+        }
+
+        .d5 {
+            animation-delay: .36s
+        }
+
+        .d6 {
+            animation-delay: .44s
+        }
+
+        .d7 {
+            animation-delay: .52s
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg-fx"></div>
+    <div class="grid-bg"></div>
+
+    <nav>
+        <a href="#" class="logo">VERITRAS<span> // sovereign ecosystem</span></a>
+        <div class="nav-r">
+            <a href="#services">Services</a>
+            <a href="#demo">Live Demo</a>
+            <a href="#logic">Catuskoti</a>
+            <a href="https://veritras.website" target="_blank">QAntum</a>
+            <a href="https://aeterna.website" target="_blank">AETERNA</a>
+            <a href="#services" class="nav-cta">Get Started</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="badge an d1"><span class="dot"></span>ALL SYSTEMS OPERATIONAL</div>
+        <h1 class="an d2"><span class="gr">Three Systems.</span><br>One Architect.</h1>
+        <p class="hero-sub an d3">Autonomous QA that <strong>heals itself</strong>. Sovereign infrastructure with a
+            <strong>custom language</strong>. Trading intelligence with <strong>four-valued logic</strong> that knows
+            when "wrong" is actually right.</p>
+        <div class="hctas an d4">
+            <a href="#services" class="btn-p">Explore Services →</a>
+            <a href="#demo" class="btn-s">See Live Results</a>
+        </div>
+        <div class="stats an d5">
+            <div class="stat"><span class="stat-l">Codebase</span><span class="stat-v p">715,861 lines</span></div>
+            <div class="stat"><span class="stat-l">Entropy</span><span class="stat-v gn">0.0000</span></div>
+            <div class="stat"><span class="stat-l">Logic</span><span class="stat-v g">CATUSKOTI</span></div>
+            <div class="stat"><span class="stat-l">Stack</span><span class="stat-v c">Rust · TS · .soul · Mojo</span>
+            </div>
+            <div class="stat"><span class="stat-l">Location</span><span class="stat-v">Sofia, BG</span></div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+        <p class="slbl an">Ecosystem</p>
+        <h2 class="stitle an d1">Three Products. Zero Compromise.</h2>
+        <p class="sdesc an d2">Each system operates independently. Together, they form a sovereign AI ecosystem built
+            from scratch by one architect.</p>
+
+        <div class="srv-grid">
+            <a class="srv an d3" href="https://veritras.website" target="_blank">
+                <div class="srv-icon ic"><svg width="24" height="24" fill="none" stroke="var(--cyan)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M9 3h6v5l4 9H5l4-9V3z"/><path d="M9 3h6" stroke-linecap="round"/><circle cx="11" cy="14" r="1" fill="var(--cyan)"/><circle cx="14" cy="16" r=".8" fill="var(--cyan)"/></svg></div>
+                <p class="srv-num c">Service 01 — QA Automation</p>
+                <h2>QAntum Prime</h2>
+                <p class="srv-desc">The AI That Tests Itself. Ghost Protocol bypasses all bot detection. Self-healing
+                    tests repair themselves. 715,861 lines of battle-tested code powering autonomous test generation.
+                </p>
+                <ul class="srv-feats">
+                    <li><span class="c">✓</span> Ghost Protocol — invisible to anti-bot systems</li>
+                    <li><span class="c">✓</span> Self-Healing Engine — broken selectors auto-repair</li>
+                    <li><span class="c">✓</span> Swarm Execution — 100+ parallel workers</li>
+                    <li><span class="c">✓</span> Auto Test Factory — generates API, E2E, UI tests</li>
+                    <li><span class="c">✓</span> Executive PDF & DOCX reports</li>
+                </ul>
+                <div class="srv-price"><span class="fr">from</span><span class="am">€29</span><span
+                        class="pr">/mo</span></div>
+                <span class="srv-cta sc-c">Visit veritras.website →</span>
+            </a>
+
+            <a class="srv an d4" href="https://aeterna.website" target="_blank">
+                <div class="srv-icon ip"><svg width="24" height="24" fill="none" stroke="var(--purple)" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2a10 10 0 0 1 7 17"/><path d="M12 22a10 10 0 0 1-7-17"/><path d="M2 12a10 10 0 0 1 17-7"/><path d="M22 12a10 10 0 0 1-17 7"/></svg></div>
+                <p class="srv-num p">Service 02 — Sovereign Infrastructure</p>
+                <h2>AETERNA Logos</h2>
+                <p class="srv-desc">Custom .soul language compiled to bytecode via Rust VM. Autonomous node deployment
+                    with Manifold clustering, Logic Surgery, and The Scribe mutation engine.</p>
+                <ul class="srv-feats">
+                    <li><span class="p">✓</span> Manifold Node deployment clusters</li>
+                    <li><span class="p">✓</span> 24/7 Logic Pulse monitoring</li>
+                    <li><span class="p">✓</span> Wealth Bridge API integration</li>
+                    <li><span class="p">✓</span> LwaS — custom .soul language</li>
+                    <li><span class="p">✓</span> Sovereign Encryption Vault</li>
+                </ul>
+                <div class="srv-price"><span class="fr">from</span><span class="am">€49</span><span
+                        class="pr">/mo</span></div>
+                <span class="srv-cta sc-p">Visit aeterna.website →</span>
+            </a>
+
+            <a class="srv an d5" href="#demo">
+                <div class="srv-icon ig"><svg width="24" height="24" fill="none" stroke="var(--gold)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2L2 12l10 10 10-10L12 2z"/><circle cx="12" cy="12" r="4" stroke-opacity=".6"/><circle cx="12" cy="12" r="1.5" fill="var(--gold)" stroke="none"/></svg></div>
+                <p class="srv-num g">Service 03 — Trading Intelligence <span class="new-tag">NEW</span></p>
+                <h2>CHRONOS Sovereign</h2>
+                <p class="srv-desc">Trading bot with Catuskoti four-valued logic. Knows when "wrong now" means "right
+                    later." Retrocausal analysis re-evaluates past decisions from the future. Anti-panic PARADOX state.
+                </p>
+                <ul class="srv-feats">
+                    <li><span class="g">✓</span> Catuskoti: TRUE / FALSE / PARADOX / TRANSCENDENT</li>
+                    <li><span class="g">✓</span> Retrocausal temporal re-evaluation</li>
+                    <li><span class="g">✓</span> OBI Manifold curvature (order book topology)</li>
+                    <li><span class="g">✓</span> Soul Karma evolution engine</li>
+                    <li><span class="g">✓</span> Anti-panic — never stop-loss in PARADOX</li>
+                </ul>
+                <div class="srv-price"><span class="fr">from</span><span class="am">€99</span><span
+                        class="pr">/mo</span></div>
+                <span class="srv-cta sc-g">See Live Results ↓</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- LIVE DEMO WITH REAL DATA -->
+    <section id="demo" class="chrono-zone">
+        <p class="slbl an">Real Results</p>
+        <h2 class="stitle an d1">CHRONOS — Live Prediction Output</h2>
+        <p class="sdesc an d2" style="color:rgba(255,210,63,.45)">Real data from Binance API, processed through Soul Engine + OBI Manifold + Catuskoti Logic. These are actual outputs:</p>
+
+        <div class="demo-grid">
+            <div class="glass-gold an d3">
+                <h3>
+                    <span class="ico"><svg width="16" height="16" fill="none" stroke="#FFD23F" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+                    BTCEUR Analysis
+                    <span class="gold-tag live">REAL DATA</span>
+                </h3>
+                <div class="gold-metrics">
+                    <div class="gold-metric"><div class="gm-l">Price</div><div class="gm-v">€62,276</div></div>
+                    <div class="gold-metric"><div class="gm-l">Soul State</div><div class="gm-v neon-gold">CONSUME · K:30</div></div>
+                    <div class="gold-metric"><div class="gm-l">Manifold</div><div class="gm-v">Curvature: <span style="color:#FFD23F">0.83</span> · STABLE</div></div>
+                    <div class="gold-metric"><div class="gm-l">Catuskoti</div><div class="gm-v neon-gold"><span class="ico"><svg width="14" height="14" fill="#FFD23F" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path stroke="#FFD23F" stroke-width="2" d="M12 1v4M12 19v4M1 12h4M19 12h4M4.2 4.2l2.8 2.8M17 17l2.8 2.8M4.2 19.8l2.8-2.8M17 7l2.8-2.8"/></svg></span> TRANSCENDENT</div></div>
+                </div>
+                <table class="gold-tbl">
+                    <tr><th>Timeframe</th><th>Direction</th><th>Change</th><th>Confidence</th><th>State</th></tr>
+                    <tr>
+                        <td>1 hour</td>
+                        <td class="dir-sw"><span class="ico"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M15 8l4 4-4 4"/></svg></span> SIDEWAYS</td>
+                        <td class="chg neg">-0.35%</td>
+                        <td><span class="conf-bar"><div class="conf-fill"><span style="width:90%"></span></div>90%</span></td>
+                        <td><span class="state-badge s-trans">TRANSCENDENT</span></td>
+                    </tr>
+                    <tr>
+                        <td>4 hours</td>
+                        <td class="dir-dn"><span class="ico"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 17L14 9l-4 4L2 5"/><path d="M16 17h6v-6"/></svg></span> DOWN</td>
+                        <td class="chg neg">-1.47%</td>
+                        <td><span class="conf-bar"><div class="conf-fill"><span style="width:88%"></span></div>88%</span></td>
+                        <td><span class="state-badge s-true">TRUE</span></td>
+                    </tr>
+                    <tr>
+                        <td>24 hours</td>
+                        <td class="dir-dn"><span class="ico"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 17L14 9l-4 4L2 5"/><path d="M16 17h6v-6"/></svg></span> DOWN</td>
+                        <td class="chg neg">-3.61%</td>
+                        <td><span class="conf-bar"><div class="conf-fill"><span style="width:78%"></span></div>78%</span></td>
+                        <td><span class="state-badge s-true">TRUE</span></td>
+                    </tr>
+                    <tr>
+                        <td>7 days</td>
+                        <td class="dir-dn"><span class="ico"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 17L14 9l-4 4L2 5"/><path d="M16 17h6v-6"/></svg></span> DOWN</td>
+                        <td class="chg neg">-9.54%</td>
+                        <td><span class="conf-bar"><div class="conf-fill"><span style="width:20%"></span></div>20%</span></td>
+                        <td><span class="state-badge s-trans">TRANSCENDENT</span></td>
+                    </tr>
+                </table>
+                <div class="gold-targets">TARGETS <span class="tgt-arr">→</span> €62,059 (1h) <span class="tgt-arr">→</span> €61,362 (4h) <span class="tgt-arr">→</span> €60,029 (24h)</div>
+            </div>
+
+            <div class="glass-gold an d4">
+                <h3>
+                    <span class="ico"><svg width="16" height="16" fill="none" stroke="#FFD23F" stroke-width="2" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></span>
+                    ETHEUR Analysis
+                    <span class="gold-tag live">REAL DATA</span>
+                </h3>
+                <div class="gold-metrics">
+                    <div class="gold-metric"><div class="gm-l">Price</div><div class="gm-v">€1,822.65</div></div>
+                    <div class="gold-metric"><div class="gm-l">Soul State</div><div class="gm-v neon-gold">CONSUME · K:32</div></div>
+                    <div class="gold-metric"><div class="gm-l">Manifold</div><div class="gm-v">Imbalance: <span class="neon-green">+24.63% BID</span></div></div>
+                    <div class="gold-metric"><div class="gm-l">Catuskoti</div><div class="gm-v neon-green"><span class="ico"><svg width="14" height="14" fill="none" stroke="var(--green)" stroke-width="2.5" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></span> TRUE → BUY 89%</div></div>
+                </div>
+                <table class="gold-tbl">
+                    <tr><th>Timeframe</th><th>Direction</th><th>Change</th><th>Confidence</th><th>State</th></tr>
+                    <tr>
+                        <td>1 hour</td>
+                        <td class="dir-sw"><span class="ico"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M5 12h14M15 8l4 4-4 4"/></svg></span> SIDEWAYS</td>
+                        <td class="chg neg">-0.13%</td>
+                        <td><span class="conf-bar"><div class="conf-fill"><span style="width:90%"></span></div>90%</span></td>
+                        <td><span class="state-badge s-para">PARADOX</span></td>
+                    </tr>
+                    <tr>
+                        <td>4 hours</td>
+                        <td class="dir-dn"><span class="ico"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 17L14 9l-4 4L2 5"/><path d="M16 17h6v-6"/></svg></span> DOWN</td>
+                        <td class="chg neg">-1.71%</td>
+                        <td><span class="conf-bar"><div class="conf-fill"><span style="width:88%"></span></div>88%</span></td>
+                        <td><span class="state-badge s-true">TRUE</span></td>
+                    </tr>
+                    <tr>
+                        <td>24 hours</td>
+                        <td class="dir-dn"><span class="ico"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 17L14 9l-4 4L2 5"/><path d="M16 17h6v-6"/></svg></span> DOWN</td>
+                        <td class="chg neg">-4.57%</td>
+                        <td><span class="conf-bar"><div class="conf-fill"><span style="width:78%"></span></div>78%</span></td>
+                        <td><span class="state-badge s-true">TRUE</span></td>
+                    </tr>
+                    <tr>
+                        <td>7 days</td>
+                        <td class="dir-dn"><span class="ico"><svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 17L14 9l-4 4L2 5"/><path d="M16 17h6v-6"/></svg></span> DOWN</td>
+                        <td class="chg neg">-12.1%</td>
+                        <td><span class="conf-bar"><div class="conf-fill"><span style="width:20%"></span></div>20%</span></td>
+                        <td><span class="state-badge s-trans">TRANSCENDENT</span></td>
+                    </tr>
+                </table>
+                <div class="paradox-alert">
+                    <strong><span class="ico"><svg width="14" height="14" fill="none" stroke="var(--purple)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2L2 12l10 10 10-10L12 2z"/><circle cx="12" cy="12" r="3" stroke-opacity=".6"/></svg></span> PARADOX DETECTED — 1H WINDOW</strong>
+                    <p>Catuskoti says BUY (order book +24.6% bid pressure) — but 1h forecast is -0.13%. Classic PARADOX: short-term dip, but buy fundamentals will play out later.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATUSKOTI -->
+    <section id="logic">
+        <p class="slbl an">The Secret Weapon</p>
+        <h2 class="stitle an d1">Four States of Truth</h2>
+        <p class="sdesc an d2">Every other trading bot sees buy/don't buy. CHRONOS sees the full spectrum.</p>
+        <div class="cat-grid an d3">
+            <div class="cat-cell ct">
+                <div class="em"><svg width="32" height="32" fill="none" stroke="var(--green)" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="1.5"/><path d="M8 12l3 3 5-6"/></svg></div>
+                <h4>TRUE</h4>
+                <p>Signal confirmed. Execute.</p>
+            </div>
+            <div class="cat-cell cf">
+                <div class="em"><svg width="32" height="32" fill="none" stroke="var(--red)" stroke-width="2.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke-width="1.5"/><path d="M15 9l-6 6M9 9l6 6"/></svg></div>
+                <h4>FALSE</h4>
+                <p>Signal rejected. Protect capital.</p>
+            </div>
+            <div class="cat-cell cp">
+                <div class="em"><svg width="32" height="32" fill="none" stroke="var(--purple)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2L2 12l10 10 10-10L12 2z"/><circle cx="12" cy="12" r="4" stroke-opacity=".5"/><circle cx="12" cy="12" r="1.5" fill="var(--purple)" stroke="none"/></svg></div>
+                <h4>PARADOX</h4>
+                <p>Wrong now. Right later. Hold.</p>
+            </div>
+            <div class="cat-cell cx">
+                <div class="em"><svg width="32" height="32" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="var(--gold)" opacity=".3"/><circle cx="12" cy="12" r="4" stroke="var(--gold)" stroke-width="1.5"/><path stroke="var(--gold)" stroke-width="1.5" stroke-linecap="round" d="M12 1v3M12 20v3M1 12h3M20 12h3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/></svg></div>
+                <h4>TRANSCENDENT</h4>
+                <p>Beyond analysis. Learn from chaos.</p>
+            </div>
+        </div>
+
+        <div class="code an d4">
+            <span class="cm">// manifest_axioms.soul — The Causal Chain</span><br>
+            <span class="kw">manifold</span> <span class="sp">SINGULARITY</span> {<br>
+            &nbsp;&nbsp;<span class="kw">axiom</span> CAUSALITY : <span class="st">"Reason → Action →
+                Equity"</span>;<br>
+            &nbsp;&nbsp;<span class="sp">ENTROPY</span> causes <span class="sp">HARMONY</span> via <span
+                class="vl">RETROCAUSAL</span>;<br>
+            &nbsp;&nbsp;<span class="sp">INNOVATION</span> causes <span class="sp">MRR</span> via <span
+                class="vl">QUANTUM</span>;<br>
+            &nbsp;&nbsp;<span class="kw">collapse</span> ENTROPY(<span class="vl">0.0000</span>);<br>
+            }<br><br>
+            <span class="cm">// ArbitrageSpirit.soul — Trading Soul</span><br>
+            <span class="kw">spirit</span> <span class="fn">ArbitrageSpirit</span> {<br>
+            &nbsp;&nbsp;<span class="kw">intention</span> <span class="fn">seek_profit</span>(market_a: <span
+                class="sp">price</span>, market_b: <span class="sp">price</span>) → <span
+                class="sp">karma</span>&lt;bool&gt; {<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">let</span> delta = market_a - market_b;<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">if</span> delta &gt; <span class="vl">0.002</span> { <span
+                class="kw">return</span> <span class="fn">nirvana</span>(<span class="vl">true</span>); }<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">else</span> { <span class="kw">return</span> <span
+                class="fn">entropy</span>(<span class="vl">false</span>); }<br>
+            &nbsp;&nbsp;}<br>
+            }
+        </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section>
+        <p class="slbl an">Process</p>
+        <h2 class="stitle an d1">How CHRONOS Thinks</h2>
+        <div class="flow">
+            <div class="flow-s an d2" data-n="1">
+                <div>
+                    <h3><span class="ico"><svg width="16" height="16" fill="none" stroke="var(--cyan)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 20v-6M7 14l5-5 5 5"/><path d="M4.93 4.93a10 10 0 0 1 14.14 0" opacity=".4"/><path d="M7.76 7.76a6 6 0 0 1 8.48 0" opacity=".7"/></svg></span> Real-Time Ingestion</h3>
+                    <p>Prices, order books (20+ levels), 100h candle history from Binance every 30 seconds.</p>
+                </div>
+            </div>
+            <div class="flow-s an d3" data-n="2">
+                <div>
+                    <h3><span class="ico"><svg width="16" height="16" fill="none" stroke="var(--purple)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2v20M8 6c0 2 4 4 4 4s4-2 4-4M8 18c0-2 4-4 4-4s4 2 4 4"/><circle cx="12" cy="12" r="2"/></svg></span> Soul Processing</h3>
+                    <p>Signal passes through AWAKEN → CONSUME → PROTECT → EVOLVE → TRANSMUTE opcodes. Karma accumulates.
+                    </p>
+                </div>
+            </div>
+            <div class="flow-s an d4" data-n="3">
+                <div>
+                    <h3><span class="ico"><svg width="16" height="16" fill="none" stroke="var(--cyan)" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(30 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(-30 12 12)"/></svg></span> Manifold Curvature</h3>
+                    <p>Order book imbalance computed as Gaussian curvature. SINGULARITY triggers OMEGA alerts.</p>
+                </div>
+            </div>
+            <div class="flow-s an d5" data-n="4">
+                <div>
+                    <h3><span class="ico"><svg width="16" height="16" fill="none" stroke="var(--gold)" stroke-width="1.5" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M5.6 18.4l12.8-12.8"/></svg></span> Catuskoti Decision</h3>
+                    <p>All data converges into TRUE / FALSE / PARADOX / TRANSCENDENT with confidence percentage.</p>
+                </div>
+            </div>
+            <div class="flow-s an d6" data-n="5">
+                <div>
+                    <h3><span class="ico"><svg width="16" height="16" fill="none" stroke="var(--purple)" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2L2 12l10 10 10-10L12 2z"/><circle cx="12" cy="12" r="3"/></svg></span> Retrocausal Projection</h3>
+                    <p>Predictions for 1h, 4h, 24h, 7d, 30d with PARADOX detection for decisions that only make sense
+                        later.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ARCHITECT -->
+    <section class="arch">
+        <div class="arch-line"></div>
+        <h2>Built by Dimitar Prodromov</h2>
+        <p>Every line of code, every system, every axiom — designed and built by one person in Sofia, Bulgaria. No VC
+            funding. No corporate backing. Pure engineering sovereignty. Three products. Three domains. Zero entropy.
+        </p>
+        <p style="margin-top:1rem"><a href="mailto:dimitar.prodromov@aeterna.dev" class="btn-p"
+                style="display:inline-block">Contact the Architect →</a></p>
+    </section>
+
+    <footer>
+        <p class="q">"The World is Data. The Soul is Code." — AETERNA_ANIMA.soul</p>
+        <div class="links">
+            <a href="https://veritras.website" target="_blank">veritras.website</a>
+            <a href="https://aeterna.website" target="_blank">aeterna.website</a>
+            <a href="https://github.com/papica777-eng" target="_blank">GitHub</a>
+            <a href="https://revolut.me/dimitar7776" target="_blank">Support</a>
+        </div>
+        <p class="cp">© 2025-2026 Dimitar Prodromov · VERITRAS · Sofia, Bulgaria<br>Trading involves risk. Past
+            performance ≠ future results.</p>
+    </footer>
+
+    <script>
+        const o = new IntersectionObserver(e => { e.forEach(e => { e.isIntersecting && (e.target.style.animationPlayState = 'running') }) }, { threshold: .1 });
+        document.querySelectorAll('.an').forEach(e => { e.style.animationPlayState = 'paused'; o.observe(e) });
+    </script>
+</body>
+
+</html>
