@@ -78,6 +78,7 @@
             letter-spacing: 2px;
             background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
@@ -116,6 +117,7 @@
         .gradient-text {
             background: linear-gradient(to right, #fff, var(--text-muted));
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
@@ -284,7 +286,7 @@
         }
 
         .prompt::before {
-            content: "aeterna@nexus:~$ ";
+            content: "qantum@nexus:~$ ";
             color: var(--neon-purple);
         }
 
@@ -310,6 +312,7 @@
             font-weight: 900;
             background: linear-gradient(135deg, #fff, var(--neon-blue));
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 0.5rem;
         }
@@ -328,20 +331,23 @@
     <div class="cyber-grid"></div>
 
     <nav>
-        <div class="logo">VERITRAS</div>
-        <a href="mailto:dimitar.prodromov@aeterna.dev?subject=Request Enterprise Audit" class="btn btn-glass"
+        <div class="logo">AETERNA | QANTUM LABS</div>
+        <a href="mailto:dp@qantum.site?subject=Request Enterprise Audit" class="btn btn-glass"
             style="padding: 0.5rem 1.5rem; font-size: 0.85rem;">Request Enterprise Audit</a>
     </nav>
 
     <section class="hero">
-        <div class="badge">Aeterna Engine Powered</div>
+        <div class="badge">AETERNA | QANTUM LABS INFRASTRUCTURE</div>
         <h1 class="gradient-text">Zero Entropy. Autonomous QA & Security.</h1>
         <p class="subtitle">Stop rewriting broken tests. Veritras is a self-healing automation matrix that secures your
             deployment pipelines, fixes failing selectors autonomously, and guarantees 100% determinism.</p>
 
         <div class="cta-group">
-            <a href="mailto:dimitar.prodromov@aeterna.dev?subject=Deploy Veritras" class="btn btn-primary">Deploy
-                Veritras</a>
+            <a href="mailto:dp@qantum.site?subject=Claim 1 FREE Audit" class="btn btn-primary"
+                style="background-color: var(--neon-purple); color: white; box-shadow: 0 0 20px rgba(188, 19, 254, 0.4);">Claim
+                1 FREE Audit</a>
+            <a href="mailto:dp@qantum.site?subject=Deploy QAntum" class="btn btn-glass">Deploy
+                QAntum</a>
         </div>
 
         <div class="terminal">
@@ -354,6 +360,16 @@
                 <div class="prompt" id="typewriter"></div>
                 <!-- Log output will be appended here by JS -->
             </div>
+        </div>
+
+        <div style="margin-top: 3rem; width: 100%; max-width: 800px; text-align: center;">
+            <h3 style="margin-bottom: 1rem; color: var(--neon-blue); letter-spacing: 1px; text-transform: uppercase;">
+                Autonomous Agent Proof</h3>
+            <video controls autoplay muted loop
+                style="width: 100%; border-radius: 8px; border: 1px solid var(--glass-border); box-shadow: 0 10px 30px rgba(0, 243, 255, 0.2);">
+                <source src="demo-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
     </section>
 
