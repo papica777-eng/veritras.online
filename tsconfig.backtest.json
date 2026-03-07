@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es2020",
+        "esModuleInterop": true,
+        "skipLibCheck": true,
+        "strict": false,
+        "resolveJsonModule": true,
+        "outDir": "./tmp-backtest",
+        "moduleResolution": "node"
+    },
+    "include": [
+        "QANTUM_TIME_TRAVEL_BACKTEST.ts",
+        "src/**/*.ts"
+    ]
+}

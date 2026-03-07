@@ -1,0 +1,53 @@
+[package]
+name = "magnet-protocol"
+version = "0.1.0"
+edition = "2021"
+authors = ["Dimitar Prodromov <dimitar@qantum.io>"]
+description = "🧲 MAGNET PROTOCOL - Deep-substrate data extraction (Scavenger AI)"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+# Async runtime
+tokio = { version = "1.35", features = ["full"] }
+async-trait = "0.1"
+
+# File system scanning
+walkdir = "2.4"
+glob = "0.3"
+rayon = "1.8"  # Parallel processing
+
+# Data extraction
+regex = "1.10"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Crypto for key detection
+hex = "0.4"
+base64 = "0.21"
+
+# HTTP client for API validation
+reqwest = { version = "0.11", features = ["json"] }
+
+# Database
+rusqlite = { version = "0.30", features = ["bundled"] }
+
+# CLI
+clap = { version = "4.4", features = ["derive"] }
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = "0.3"
+
+# FFI for TypeScript bridge
+napi = { version = "2.14", features = ["async"] }
+napi-derive = "2.14"
+
+[build-dependencies]
+napi-build = "2.1"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1

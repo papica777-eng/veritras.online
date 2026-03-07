@@ -1,0 +1,51 @@
+[
+  {
+    "slide": 1,
+    "title": "QAntum AI Security Scanner",
+    "subtitle": "Found critical vulnerabilities in < 10 minutes",
+    "background": "#050505",
+    "accent": "#00f2ff"
+  },
+  {
+    "slide": 2,
+    "title": "The Problem",
+    "body": "Traditional pentests: $15K-$50K\n2-3 weeks of waiting\nDone once a year\nHackers don't wait.",
+    "accent": "#ff003c"
+  },
+  {
+    "slide": 3,
+    "title": "What QAntum Found",
+    "body": "🔴 Auth Bypass (CVSS ~9.0)\n🔴 PII Exposure (GDPR violation)\n🟠 API Data Leak\n🟠 Cookie Compliance Issue",
+    "accent": "#ff003c"
+  },
+  {
+    "slide": 4,
+    "title": "Ghost Protocol",
+    "body": "Invisible crawling\nBiometric timing jitter\nBypasses WAF detection\nZero alerts triggered",
+    "accent": "#00f2ff"
+  },
+  {
+    "slide": 5,
+    "title": "Self-Healing Tests",
+    "body": "7 selector strategies\nAuto-repairs broken tests\nZero manual intervention\n24/7 autonomous scanning",
+    "accent": "#ff00ff"
+  },
+  {
+    "slide": 6,
+    "title": "The Architecture",
+    "body": "260+ modules\\n1.8M+ lines of code\\n3,641 files\\nTypeScript + Rust NAPI",
+    "accent": "#00f2ff"
+  },
+  {
+    "slide": 7,
+    "title": "Pricing",
+    "body": "NODE ACCESS: €29/mo (100 scans)\nSOVEREIGN EMPIRE: €99/mo (1,000 scans)\nGALACTIC CORE: €499/mo (unlimited)",
+    "accent": "#ff00ff"
+  },
+  {
+    "slide": 8,
+    "title": "Start Scanning Today",
+    "body": "aeterna.website\nqantum-dashboard.vercel.app\n\n14/14 E2E Tests Passed\nGrade A+",
+    "accent": "#00ff88"
+  }
+]

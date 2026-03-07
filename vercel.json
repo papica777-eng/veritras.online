@@ -1,0 +1,40 @@
+{
+    "version": 2,
+    "name": "qantum-monolith",
+    "builds": [
+        {
+            "src": "src/apps/mister-mind/veritas.html",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "dashboard/index.html",
+            "use": "@vercel/static"
+        }
+    ],
+    "rewrites": [
+        {
+            "source": "/",
+            "destination": "/src/apps/mister-mind/veritas.html",
+            "has": [
+                {
+                    "type": "host",
+                    "value": "veritras.website"
+                }
+            ]
+        },
+        {
+            "source": "/",
+            "destination": "/dashboard/index.html",
+            "has": [
+                {
+                    "type": "host",
+                    "value": "qantum.site"
+                }
+            ]
+        },
+        {
+            "source": "/(.*)",
+            "destination": "/src/apps/mister-mind/veritas.html"
+        }
+    ]
+}

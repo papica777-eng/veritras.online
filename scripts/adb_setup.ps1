@@ -1,0 +1,1 @@
+& "C:\Users\papic\AppData\Local\Android\Sdk\platform-tools\adb.exe" reverse tcp:3847 tcp:3847; & "C:\Users\papic\AppData\Local\Android\Sdk\platform-tools\adb.exe" reverse tcp:8890 tcp:8890; Write-Host "ADB Reverse Tunnel Established"

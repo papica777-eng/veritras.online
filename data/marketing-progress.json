@@ -1,0 +1,984 @@
+{
+  "statuses": {
+    "1": "completed",
+    "4": "completed",
+    "5": "completed",
+    "6": "completed",
+    "9": "completed",
+    "10": "completed",
+    "11": "in-progress",
+    "12": "in-progress",
+    "13": "in-progress",
+    "14": "in-progress",
+    "15": "in-progress",
+    "24": "completed",
+    "31": "completed",
+    "32": "completed",
+    "33": "completed",
+    "40": "completed"
+  },
+  "lastUpdated": "2026-02-28T00:43:12.633Z",
+  "updatedBy": "autonomous-cycle-v3",
+  "cycles": {
+    "1": {
+      "started": "2026-02-27T03:05:25.440Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T03:46:06.213Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-27T03:47:35.442Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 8,
+        "ts": "2026-02-27T03:53:24.858Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 453,
+        "ts": "2026-02-27T03:53:30.298Z"
+      }
+    },
+    "2": {
+      "started": "2026-02-27T04:23:39.142Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T04:23:39.142Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-27T04:25:13.186Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 8,
+        "ts": "2026-02-27T04:31:00.474Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 456,
+        "ts": "2026-02-27T04:31:05.925Z"
+      }
+    },
+    "3": {
+      "started": "2026-02-27T05:01:14.676Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T05:01:14.676Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-27T05:02:38.242Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 8,
+        "ts": "2026-02-27T05:08:47.395Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 467,
+        "ts": "2026-02-27T05:08:52.793Z"
+      }
+    },
+    "4": {
+      "started": "2026-02-27T05:39:03.995Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T05:39:03.995Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-27T05:40:27.234Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 8,
+        "ts": "2026-02-27T05:46:15.324Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 448,
+        "ts": "2026-02-27T05:46:20.585Z"
+      }
+    },
+    "5": {
+      "started": "2026-02-27T06:16:29.295Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T06:16:29.295Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-27T06:18:12.573Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 8,
+        "ts": "2026-02-27T06:24:02.074Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 467,
+        "ts": "2026-02-27T06:24:07.511Z"
+      }
+    },
+    "6": {
+      "started": "2026-02-27T06:54:18.853Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T06:54:18.853Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-27T06:55:42.503Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 8,
+        "ts": "2026-02-27T07:01:40.091Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 458,
+        "ts": "2026-02-27T07:01:45.413Z"
+      }
+    },
+    "7": {
+      "started": "2026-02-27T07:31:54.427Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T07:31:54.427Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-27T07:33:38.418Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 8,
+        "ts": "2026-02-27T07:39:34.214Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 474,
+        "ts": "2026-02-27T07:39:39.636Z"
+      }
+    },
+    "8": {
+      "started": "2026-02-27T08:09:50.933Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T08:09:50.933Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-27T08:11:14.386Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 8,
+        "ts": "2026-02-27T08:17:03.256Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 449,
+        "ts": "2026-02-27T08:17:08.621Z"
+      }
+    },
+    "9": {
+      "started": "2026-02-27T08:47:17.321Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T08:47:17.321Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-27T08:48:51.265Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 8,
+        "ts": "2026-02-27T08:54:37.538Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 454,
+        "ts": "2026-02-27T08:54:42.819Z"
+      }
+    },
+    "10": {
+      "started": "2026-02-27T09:24:54.091Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T09:24:54.091Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-27T09:26:18.661Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 8,
+        "ts": "2026-02-27T09:32:07.290Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 450,
+        "ts": "2026-02-27T09:32:12.575Z"
+      }
+    },
+    "11": {
+      "started": "2026-02-27T10:02:21.312Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T10:02:21.312Z"
+      },
+      "analyze": {
+        "ok": false,
+        "leads": 0,
+        "ts": "2026-02-27T10:02:24.490Z"
+      },
+      "act": {
+        "ok": false,
+        "sent": 0,
+        "ts": "2026-02-27T10:02:27.332Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 20,
+        "ts": "2026-02-27T10:02:32.625Z"
+      }
+    },
+    "12": {
+      "started": "2026-02-27T10:32:41.279Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T10:32:41.279Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-27T10:32:44.347Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 0,
+        "ts": "2026-02-27T10:32:47.160Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 20,
+        "ts": "2026-02-27T10:32:52.295Z"
+      }
+    },
+    "13": {
+      "started": "2026-02-27T11:03:00.990Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T11:03:00.990Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-27T11:03:04.035Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 0,
+        "ts": "2026-02-27T11:03:06.891Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 20,
+        "ts": "2026-02-27T11:03:12.607Z"
+      }
+    },
+    "14": {
+      "started": "2026-02-27T11:33:24.048Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T11:33:24.048Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-27T11:33:27.646Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 0,
+        "ts": "2026-02-27T11:33:30.647Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 24,
+        "ts": "2026-02-27T11:33:36.658Z"
+      }
+    },
+    "15": {
+      "started": "2026-02-27T12:03:45.393Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T12:03:45.393Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-27T12:03:48.726Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 0,
+        "ts": "2026-02-27T12:03:51.636Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 20,
+        "ts": "2026-02-27T12:03:57.140Z"
+      }
+    },
+    "16": {
+      "started": "2026-02-27T12:34:05.912Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T12:34:05.912Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-27T12:34:08.980Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 0,
+        "ts": "2026-02-27T12:34:12.093Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 21,
+        "ts": "2026-02-27T12:34:17.964Z"
+      }
+    },
+    "17": {
+      "started": "2026-02-27T13:04:26.754Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T13:04:26.754Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-27T13:04:29.918Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 0,
+        "ts": "2026-02-27T13:04:32.728Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 23,
+        "ts": "2026-02-27T13:04:38.399Z"
+      }
+    },
+    "18": {
+      "started": "2026-02-27T13:34:47.276Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T13:34:47.276Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-27T13:34:50.908Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 0,
+        "ts": "2026-02-27T13:34:54.137Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 22,
+        "ts": "2026-02-27T13:35:00.570Z"
+      }
+    },
+    "19": {
+      "started": "2026-02-27T14:05:12.030Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T14:05:12.030Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-27T14:05:15.657Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 0,
+        "ts": "2026-02-27T14:05:18.717Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 24,
+        "ts": "2026-02-27T14:05:24.714Z"
+      }
+    },
+    "20": {
+      "started": "2026-02-27T14:35:33.357Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T14:35:33.357Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-27T14:35:36.532Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 0,
+        "ts": "2026-02-27T14:35:39.455Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 20,
+        "ts": "2026-02-27T14:35:44.951Z"
+      }
+    },
+    "21": {
+      "started": "2026-02-27T15:05:53.711Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T15:05:53.711Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-27T15:05:57.537Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 0,
+        "ts": "2026-02-27T15:06:00.872Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 22,
+        "ts": "2026-02-27T15:06:07.102Z"
+      }
+    },
+    "22": {
+      "started": "2026-02-27T15:36:15.908Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T15:36:15.908Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-27T15:36:19.169Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 0,
+        "ts": "2026-02-27T15:36:22.129Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 21,
+        "ts": "2026-02-27T15:36:27.718Z"
+      }
+    },
+    "23": {
+      "started": "2026-02-27T16:06:36.989Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T16:06:36.989Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-27T16:06:40.327Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 0,
+        "ts": "2026-02-27T16:06:43.235Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 21,
+        "ts": "2026-02-27T16:06:48.899Z"
+      }
+    },
+    "24": {
+      "started": "2026-02-27T16:36:57.556Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T16:36:57.556Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-27T16:37:01.707Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 0,
+        "ts": "2026-02-27T16:37:05.776Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 24,
+        "ts": "2026-02-27T16:37:12.642Z"
+      }
+    },
+    "25": {
+      "started": "2026-02-27T17:07:21.408Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T17:07:21.408Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-27T17:07:25.987Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 0,
+        "ts": "2026-02-27T17:07:29.143Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 23,
+        "ts": "2026-02-27T17:07:35.415Z"
+      }
+    },
+    "26": {
+      "started": "2026-02-27T17:37:44.165Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T17:37:44.165Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-27T17:37:48.103Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 0,
+        "ts": "2026-02-27T17:37:51.281Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 22,
+        "ts": "2026-02-27T17:37:57.626Z"
+      }
+    },
+    "27": {
+      "started": "2026-02-27T18:08:08.908Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T18:08:08.908Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-27T18:08:13.377Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 0,
+        "ts": "2026-02-27T18:08:17.703Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 28,
+        "ts": "2026-02-27T18:08:26.114Z"
+      }
+    },
+    "28": {
+      "started": "2026-02-27T18:38:34.755Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T18:38:34.755Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-27T18:38:38.126Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 0,
+        "ts": "2026-02-27T18:38:41.399Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 21,
+        "ts": "2026-02-27T18:38:47.573Z"
+      }
+    },
+    "29": {
+      "started": "2026-02-27T19:08:56.492Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T19:08:56.492Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-27T19:09:00.165Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 0,
+        "ts": "2026-02-27T19:09:03.479Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 22,
+        "ts": "2026-02-27T19:09:09.526Z"
+      }
+    },
+    "30": {
+      "started": "2026-02-27T19:39:18.210Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T19:39:18.210Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-27T19:39:21.399Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 0,
+        "ts": "2026-02-27T19:39:24.466Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 21,
+        "ts": "2026-02-27T19:39:30.437Z"
+      }
+    },
+    "31": {
+      "started": "2026-02-27T20:09:39.189Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T20:09:39.189Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-27T20:09:42.622Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 0,
+        "ts": "2026-02-27T20:09:45.960Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 22,
+        "ts": "2026-02-27T20:09:52.021Z"
+      }
+    },
+    "32": {
+      "started": "2026-02-27T20:40:03.351Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T20:40:03.351Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-27T20:40:06.552Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 0,
+        "ts": "2026-02-27T20:40:09.775Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 24,
+        "ts": "2026-02-27T20:40:15.579Z"
+      }
+    },
+    "33": {
+      "started": "2026-02-27T21:10:24.232Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T21:10:24.232Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-27T21:10:27.380Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 0,
+        "ts": "2026-02-27T21:10:30.677Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 21,
+        "ts": "2026-02-27T21:10:36.632Z"
+      }
+    },
+    "34": {
+      "started": "2026-02-27T21:40:45.352Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T21:40:45.352Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-27T21:40:48.960Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 0,
+        "ts": "2026-02-27T21:40:51.976Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 21,
+        "ts": "2026-02-27T21:40:57.433Z"
+      }
+    },
+    "35": {
+      "started": "2026-02-27T22:11:06.132Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T22:11:06.132Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-27T22:11:09.567Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 0,
+        "ts": "2026-02-27T22:11:12.646Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 21,
+        "ts": "2026-02-27T22:11:18.731Z"
+      }
+    },
+    "36": {
+      "started": "2026-02-27T22:41:30.292Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T22:41:30.292Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-27T22:41:33.974Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 0,
+        "ts": "2026-02-27T22:41:37.078Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 24,
+        "ts": "2026-02-27T22:41:43.138Z"
+      }
+    },
+    "37": {
+      "started": "2026-02-27T23:11:54.384Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T23:11:54.384Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-27T23:11:57.787Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 0,
+        "ts": "2026-02-27T23:12:00.720Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 23,
+        "ts": "2026-02-27T23:12:06.532Z"
+      }
+    },
+    "38": {
+      "started": "2026-02-27T23:42:15.183Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-27T23:42:15.183Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-27T23:42:18.676Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 0,
+        "ts": "2026-02-27T23:42:21.835Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 22,
+        "ts": "2026-02-27T23:42:28.298Z"
+      }
+    },
+    "39": {
+      "started": "2026-02-28T00:12:39.496Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-28T00:12:39.496Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-28T00:12:42.681Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 0,
+        "ts": "2026-02-28T00:12:45.922Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 23,
+        "ts": "2026-02-28T00:12:51.612Z"
+      }
+    },
+    "40": {
+      "started": "2026-02-28T00:43:00.266Z",
+      "search": {
+        "ok": true,
+        "script": "mass-hunter-fast",
+        "ts": "2026-02-28T00:43:00.266Z"
+      },
+      "analyze": {
+        "ok": true,
+        "leads": 0,
+        "ts": "2026-02-28T00:43:03.792Z"
+      },
+      "act": {
+        "ok": true,
+        "sent": 0,
+        "ts": "2026-02-28T00:43:06.800Z"
+      },
+      "result": {
+        "selfAnalysis": true,
+        "report": true,
+        "duration": 21,
+        "ts": "2026-02-28T00:43:12.633Z"
+      }
+    }
+  }
+}

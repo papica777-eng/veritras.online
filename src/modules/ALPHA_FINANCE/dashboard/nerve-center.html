@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧠 NERVE CENTER - QAntum Empire v34.0</title>
+    <style>
+        :root {
+            --bg-primary: #0a0e17;
+            --bg-secondary: #111827;
+            --bg-card: #1f2937;
+            --text-primary: #f9fafb;
+            --text-secondary: #9ca3af;
+            --accent-green: #10b981;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --accent-yellow: #f59e0b;
+            --accent-red: #ef4444;
+            --accent-cyan: #06b6d4;
+            --accent-pink: #ec4899;
+            --border-color: #374151;
+            --glow-green: 0 0 20px rgba(16, 185, 129, 0.3);
+            --glow-blue: 0 0 20px rgba(59, 130, 246, 0.3);
+            --glow-red: 0 0 20px rgba(239, 68, 68, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            font-size: 2.5rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .logo-text h1 {
+            font-size: 1.5rem;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-text p {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .status-bar {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--bg-card);
+            border-radius: 0.5rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            animation: blink 1s ease-in-out infinite;
+        }
+
+        .status-dot.green {
+            background: var(--accent-green);
+            box-shadow: var(--glow-green);
+        }
+
+        .status-dot.yellow {
+            background: var(--accent-yellow);
+        }
+
+        .status-dot.red {
+            background: var(--accent-red);
+            box-shadow: var(--glow-red);
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        /* Main Container */
+        .main-container {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1rem;
+            padding: 1rem;
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--accent-blue);
+            box-shadow: var(--glow-blue);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Health Overview - Span 4 columns */
+        .health-overview {
+            grid-column: span 4;
+        }
+
+        .health-score {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .health-circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: conic-gradient(var(--accent-green) 0deg 356deg,
+                    var(--bg-secondary) 356deg 360deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            position: relative;
+        }
+
+        .health-circle::before {
+            content: '';
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            background: var(--bg-card);
+            border-radius: 50%;
+        }
+
+        .health-value {
+            position: relative;
+            z-index: 1;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--accent-green);
+        }
+
+        .health-label {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        /* Predictive Cables - Span 5 columns */
+        .predictive-cables {
+            grid-column: span 5;
+        }
+
+        .cable-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem;
+        }
+
+        .cable-item {
+            background: var(--bg-secondary);
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            font-size: 0.75rem;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .cable-item.safe {
+            border-color: var(--accent-green);
+        }
+
+        .cable-item.warning {
+            border-color: var(--accent-yellow);
+            background: rgba(245, 158, 11, 0.1);
+        }
+
+        .cable-item.danger {
+            border-color: var(--accent-red);
+            background: rgba(239, 68, 68, 0.1);
+        }
+
+        .cable-name {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .cable-status {
+            color: var(--text-secondary);
+        }
+
+        /* Threat Timeline - Span 3 columns */
+        .threat-timeline {
+            grid-column: span 3;
+        }
+
+        .timeline-list {
+            max-height: 250px;
+            overflow-y: auto;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .timeline-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+        }
+
+        .timeline-icon.critical {
+            background: var(--accent-red);
+        }
+
+        .timeline-icon.warning {
+            background: var(--accent-yellow);
+            color: #000;
+        }
+
+        .timeline-icon.safe {
+            background: var(--accent-green);
+        }
+
+        .timeline-content {
+            flex: 1;
+        }
+
+        .timeline-title {
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .timeline-time {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        /* Mnemosyne Panel - Span 4 columns */
+        .mnemosyne-panel {
+            grid-column: span 4;
+        }
+
+        .memory-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .memory-stat {
+            background: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+
+        .memory-stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-purple);
+        }
+
+        .memory-stat-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .memory-bar {
+            margin-top: 1rem;
+            background: var(--bg-secondary);
+            border-radius: 0.5rem;
+            padding: 1rem;
+        }
+
+        .memory-bar-fill {
+            height: 8px;
+            background: linear-gradient(90deg, var(--accent-green), var(--accent-yellow), var(--accent-red));
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .memory-bar-indicator {
+            position: absolute;
+            top: -6px;
+            width: 20px;
+            height: 20px;
+            background: var(--accent-cyan);
+            border-radius: 50%;
+            border: 2px solid var(--bg-card);
+            left: 35%;
+        }
+
+        /* Hunter Mode - Span 4 columns */
+        .hunter-panel {
+            grid-column: span 4;
+        }
+
+        .lead-pipeline {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .pipeline-stage {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem;
+            background: var(--bg-secondary);
+            border-radius: 0.5rem;
+        }
+
+        .stage-name {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .stage-count {
+            background: var(--accent-blue);
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-weight: bold;
+        }
+
+        .stage-value {
+            color: var(--accent-green);
+            font-weight: 600;
+        }
+
+        /* Module Classes - Span 4 columns */
+        .module-classes {
+            grid-column: span 4;
+        }
+
+        .class-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem;
+        }
+
+        .class-item {
+            background: var(--bg-secondary);
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .class-item:hover {
+            transform: scale(1.05);
+        }
+
+        .class-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .class-name {
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .class-modules {
+            font-size: 0.6rem;
+            color: var(--text-secondary);
+        }
+
+        /* Quick Actions - Span 4 columns */
+        .quick-actions {
+            grid-column: span 4;
+        }
+
+        .action-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+
+        .action-btn {
+            background: linear-gradient(135deg, var(--bg-secondary), var(--bg-card));
+            border: 1px solid var(--border-color);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            color: var(--text-primary);
+        }
+
+        .action-btn:hover {
+            border-color: var(--accent-cyan);
+            transform: translateY(-2px);
+        }
+
+        .action-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .action-label {
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        /* Live Stats Bar - Full Width */
+        .live-stats {
+            grid-column: span 12;
+            display: flex;
+            justify-content: space-around;
+            background: linear-gradient(90deg, var(--bg-secondary), var(--bg-card));
+            border-radius: 1rem;
+            padding: 1rem 2rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .live-stat {
+            text-align: center;
+        }
+
+        .live-stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .live-stat-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-blue);
+        }
+
+        /* Responsive */
+        @media (max-width: 1400px) {
+            .main-container {
+                grid-template-columns: repeat(6, 1fr);
+            }
+
+            .health-overview {
+                grid-column: span 3;
+            }
+
+            .predictive-cables {
+                grid-column: span 3;
+            }
+
+            .threat-timeline {
+                grid-column: span 6;
+            }
+
+            .mnemosyne-panel {
+                grid-column: span 3;
+            }
+
+            .hunter-panel {
+                grid-column: span 3;
+            }
+
+            .module-classes {
+                grid-column: span 3;
+            }
+
+            .quick-actions {
+                grid-column: span 3;
+            }
+
+            .live-stats {
+                grid-column: span 6;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon">🧠</span>
+            <div class="logo-text">
+                <h1>NERVE CENTER</h1>
+                <p>QAntum Empire v34.0 | Централен Команден Панел</p>
+            </div>
+        </div>
+        <div class="status-bar">
+            <div class="status-item">
+                <span class="status-dot green"></span>
+                <span>Systems Online</span>
+            </div>
+            <div class="status-item">
+                <span class="status-dot green"></span>
+                <span>24 Cables Active</span>
+            </div>
+            <div class="status-item">
+                <span id="clock">--:--:--</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <!-- Live Stats Bar -->
+        <div class="live-stats">
+            <div class="live-stat">
+                <div class="live-stat-value" style="color: var(--accent-cyan);">590,757</div>
+                <div class="live-stat-label">Lines of Code</div>
+            </div>
+            <div class="live-stat">
+                <div class="live-stat-value" style="color: var(--accent-purple);">1,789</div>
+                <div class="live-stat-label">Total Files</div>
+            </div>
+            <div class="live-stat">
+                <div class="live-stat-value" style="color: var(--accent-blue);">1,156</div>
+                <div class="live-stat-label">Active Modules</div>
+            </div>
+            <div class="live-stat">
+                <div class="live-stat-value" style="color: var(--accent-green);">24</div>
+                <div class="live-stat-label">System Cables</div>
+            </div>
+            <div class="live-stat">
+                <div class="live-stat-value" style="color: var(--accent-yellow);">0</div>
+                <div class="live-stat-label">Active Threats</div>
+            </div>
+            <div class="live-stat">
+                <div class="live-stat-value" style="color: var(--accent-pink);">3</div>
+                <div class="live-stat-label">Repositories</div>
+            </div>
+        </div>
+
+        <!-- Health Overview -->
+        <div class="card health-overview">
+            <div class="card-header">
+                <span class="card-title">🏥 System Health</span>
+                <span style="color: var(--accent-green);">● Live</span>
+            </div>
+            <div class="health-score">
+                <div class="health-circle">
+                    <span class="health-value">99</span>
+                </div>
+                <div class="health-label">Overall Health Score</div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-top: 1rem;">
+                <div style="text-align: center;">
+                    <div style="color: var(--accent-green); font-weight: bold;">✓ 0</div>
+                    <div style="font-size: 0.7rem; color: var(--text-secondary);">Errors</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="color: var(--accent-yellow); font-weight: bold;">⚠ 2</div>
+                    <div style="font-size: 0.7rem; color: var(--text-secondary);">Warnings</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="color: var(--accent-blue); font-weight: bold;">ℹ 5</div>
+                    <div style="font-size: 0.7rem; color: var(--text-secondary);">Info</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Predictive Cables -->
+        <div class="card predictive-cables">
+            <div class="card-header">
+                <span class="card-title">🔭 Predictive Cables</span>
+                <span style="color: var(--text-secondary); font-size: 0.75rem;">Датчик-Телескоп</span>
+            </div>
+            <div class="cable-grid" id="cableGrid">
+                <!-- Cables populated by JS -->
+            </div>
+        </div>
+
+        <!-- Threat Timeline -->
+        <div class="card threat-timeline">
+            <div class="card-header">
+                <span class="card-title">⏰ Threat Timeline</span>
+                <span style="color: var(--text-secondary); font-size: 0.75rem;">Последни 24ч</span>
+            </div>
+            <div class="timeline-list" id="timelineList">
+                <!-- Timeline populated by JS -->
+            </div>
+        </div>
+
+        <!-- Mnemosyne Panel -->
+        <div class="card mnemosyne-panel">
+            <div class="card-header">
+                <span class="card-title">🧬 Mnemosyne Protocol</span>
+                <span style="color: var(--accent-purple);">● Active</span>
+            </div>
+            <div class="memory-stats">
+                <div class="memory-stat">
+                    <div class="memory-stat-value">87,432</div>
+                    <div class="memory-stat-label">Memory Vectors</div>
+                </div>
+                <div class="memory-stat">
+                    <div class="memory-stat-value" style="color: var(--accent-green);">92%</div>
+                    <div class="memory-stat-label">Health Score</div>
+                </div>
+                <div class="memory-stat">
+                    <div class="memory-stat-value" style="color: var(--accent-yellow);">8%</div>
+                    <div class="memory-stat-label">Stale Data</div>
+                </div>
+                <div class="memory-stat">
+                    <div class="memory-stat-value" style="color: var(--accent-cyan);">15d</div>
+                    <div class="memory-stat-label">Next Prune</div>
+                </div>
+            </div>
+            <div class="memory-bar">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.75rem;">
+                    <span>Memory Usage</span>
+                    <span style="color: var(--accent-yellow);">35% / 100K vectors</span>
+                </div>
+                <div class="memory-bar-fill">
+                    <div class="memory-bar-indicator"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hunter Mode -->
+        <div class="card hunter-panel">
+            <div class="card-header">
+                <span class="card-title">🎯 Hunter Mode</span>
+                <span style="color: var(--accent-red);">● Hunting</span>
+            </div>
+            <div class="lead-pipeline">
+                <div class="pipeline-stage">
+                    <span class="stage-name">🎣 Discovered</span>
+                    <span class="stage-count">24</span>
+                </div>
+                <div class="pipeline-stage">
+                    <span class="stage-name">🔍 Qualified</span>
+                    <span class="stage-count" style="background: var(--accent-purple);">12</span>
+                </div>
+                <div class="pipeline-stage">
+                    <span class="stage-name">📧 Contacted</span>
+                    <span class="stage-count" style="background: var(--accent-yellow); color: #000;">5</span>
+                </div>
+                <div class="pipeline-stage">
+                    <span class="stage-name">💰 Pipeline Value</span>
+                    <span class="stage-value">€47,500</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Module Classes -->
+        <div class="card module-classes">
+            <div class="card-header">
+                <span class="card-title">🧩 Module Classes</span>
+                <span style="color: var(--text-secondary); font-size: 0.75rem;">8 Classes</span>
+            </div>
+            <div class="class-grid">
+                <div class="class-item" style="border-left: 3px solid var(--accent-cyan);">
+                    <div class="class-icon">🧠</div>
+                    <div class="class-name">INTEL</div>
+                    <div class="class-modules">145 modules</div>
+                </div>
+                <div class="class-item" style="border-left: 3px solid var(--accent-yellow);">
+                    <div class="class-icon">⚡</div>
+                    <div class="class-name">OMEGA</div>
+                    <div class="class-modules">89 modules</div>
+                </div>
+                <div class="class-item" style="border-left: 3px solid var(--accent-blue);">
+                    <div class="class-icon">🔬</div>
+                    <div class="class-name">PHYSICS</div>
+                    <div class="class-modules">67 modules</div>
+                </div>
+                <div class="class-item" style="border-left: 3px solid var(--accent-red);">
+                    <div class="class-icon">🏰</div>
+                    <div class="class-name">FORTRESS</div>
+                    <div class="class-modules">112 modules</div>
+                </div>
+                <div class="class-item" style="border-left: 3px solid var(--accent-purple);">
+                    <div class="class-icon">🧬</div>
+                    <div class="class-name">BIOLOGY</div>
+                    <div class="class-modules">78 modules</div>
+                </div>
+                <div class="class-item" style="border-left: 3px solid var(--accent-green);">
+                    <div class="class-icon">🛡️</div>
+                    <div class="class-name">GUARDIANS</div>
+                    <div class="class-modules">156 modules</div>
+                </div>
+                <div class="class-item" style="border-left: 3px solid var(--accent-pink);">
+                    <div class="class-icon">🌐</div>
+                    <div class="class-name">REALITY</div>
+                    <div class="class-modules">94 modules</div>
+                </div>
+                <div class="class-item" style="border-left: 3px solid #f97316;">
+                    <div class="class-icon">🔗</div>
+                    <div class="class-name">CHEMISTRY</div>
+                    <div class="class-modules">45 modules</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="card quick-actions">
+            <div class="card-header">
+                <span class="card-title">⚡ Quick Actions</span>
+            </div>
+            <div class="action-grid">
+                <button class="action-btn" onclick="runGuardian()">
+                    <div class="action-icon">🛡️</div>
+                    <div class="action-label">Run Guardian</div>
+                </button>
+                <button class="action-btn" onclick="runHunt()">
+                    <div class="action-icon">🎯</div>
+                    <div class="action-label">Start Hunt</div>
+                </button>
+                <button class="action-btn" onclick="runMnemosyne()">
+                    <div class="action-icon">🧹</div>
+                    <div class="action-label">Memory Prune</div>
+                </button>
+                <button class="action-btn" onclick="runDocs()">
+                    <div class="action-icon">📚</div>
+                    <div class="action-label">Generate Docs</div>
+                </button>
+                <button class="action-btn" onclick="viewReports()">
+                    <div class="action-icon">📊</div>
+                    <div class="action-label">View Reports</div>
+                </button>
+                <button class="action-btn" onclick="syncEmpire()">
+                    <div class="action-icon">🔄</div>
+                    <div class="action-label">Sync Empire</div>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/11.4.0/firebase-app.js';
+        import { getFirestore, collection, doc, setDoc, getDocs, addDoc, onSnapshot, query, orderBy, limit, serverTimestamp } from 'https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore.js';
+
+        const app = initializeApp({
+            apiKey: "AIzaSyB1V5V0lHseHNmE7UVvZB9ZHW7LpF7ZHYo",
+            authDomain: "aeterna-sovereign.firebaseapp.com",
+            projectId: "aeterna-sovereign",
+            storageBucket: "aeterna-sovereign.firebasestorage.app",
+            messagingSenderId: "720895110316",
+            appId: "1:720895110316:web:0b44c29f6add3da9a90309"
+        });
+        const db = getFirestore(app);
+
+        // === CABLES ===
+        const defaultCables = [
+            { from: 'INTEL', to: 'OMEGA', status: 'safe' },
+            { from: 'INTEL', to: 'GUARD', status: 'safe' },
+            { from: 'OMEGA', to: 'GUARD', status: 'safe' },
+            { from: 'OMEGA', to: 'INTEL', status: 'safe' },
+            { from: 'OMEGA', to: 'REAL', status: 'safe' },
+            { from: 'PHYS', to: 'OMEGA', status: 'safe' },
+            { from: 'PHYS', to: 'INTEL', status: 'safe' },
+            { from: 'PHYS', to: 'BIO', status: 'safe' },
+            { from: 'PHYS', to: 'FORT', status: 'safe' },
+            { from: 'FORT', to: 'OMEGA', status: 'safe' },
+            { from: 'FORT', to: 'REAL', status: 'safe' },
+            { from: 'BIO', to: 'INTEL', status: 'safe' },
+            { from: 'GUARD', to: 'OMEGA', status: 'safe' },
+            { from: 'GUARD', to: 'INTEL', status: 'safe' },
+            { from: 'GUARD', to: 'BIO', status: 'safe' },
+            { from: 'GUARD', to: 'PHYS', status: 'safe' },
+            { from: 'GUARD', to: 'FORT', status: 'safe' },
+            { from: 'GUARD', to: 'REAL', status: 'safe' },
+            { from: 'REAL', to: 'FORT', status: 'safe' },
+            { from: 'REAL', to: 'INTEL', status: 'safe' },
+            { from: 'CHEM', to: 'OMEGA', status: 'safe' },
+            { from: 'CHEM', to: 'REAL', status: 'safe' },
+            { from: 'INTEL', to: 'BIO', status: 'safe' },
+            { from: 'INTEL', to: 'OMEGA', status: 'safe' }
+        ];
+        let cables = [...defaultCables];
+
+        function renderCables() {
+            const grid = document.getElementById('cableGrid');
+            grid.innerHTML = cables.map(c => `
+                <div class="cable-item ${c.status}">
+                    <div class="cable-name">${c.from}→${c.to}</div>
+                    <div class="cable-status">${c.status === 'safe' ? '✓ OK' : c.status === 'warning' ? '⚠ Warn' : '✗ FAIL'}</div>
+                </div>
+            `).join('');
+        }
+
+        // Real-time cable listener
+        onSnapshot(doc(db, 'nerve-center', 'cables'), snap => {
+            if (snap.exists()) {
+                const data = snap.data();
+                if (data.list) cables = data.list;
+                renderCables();
+            }
+        });
+
+        // === HEALTH ===
+        onSnapshot(doc(db, 'nerve-center', 'health'), snap => {
+            if (snap.exists()) {
+                const d = snap.data();
+                document.querySelector('.health-value').textContent = d.score || 99;
+                const circle = document.querySelector('.health-circle');
+                const deg = (d.score || 99) / 100 * 360;
+                circle.style.background = `conic-gradient(var(--accent-green) 0deg ${deg}deg, var(--bg-secondary) ${deg}deg 360deg)`;
+            }
+        });
+
+        // === LIVE STATS ===
+        onSnapshot(doc(db, 'nerve-center', 'stats'), snap => {
+            if (snap.exists()) {
+                const d = snap.data();
+                const vals = document.querySelectorAll('.live-stat-value');
+                if (d.lines) vals[0].textContent = Number(d.lines).toLocaleString();
+                if (d.files) vals[1].textContent = Number(d.files).toLocaleString();
+                if (d.modules) vals[2].textContent = Number(d.modules).toLocaleString();
+                if (d.cables) vals[3].textContent = d.cables;
+                if (d.threats) vals[4].textContent = d.threats;
+                if (d.repos) vals[5].textContent = d.repos;
+            }
+        });
+
+        // === TIMELINE (real-time) ===
+        function renderTimeline(items) {
+            const list = document.getElementById('timelineList');
+            list.innerHTML = items.map(item => `
+                <div class="timeline-item">
+                    <div class="timeline-icon ${item.type}">
+                        ${item.type === 'safe' ? '✓' : item.type === 'warning' ? '!' : '⚠'}
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-title">${item.title}</div>
+                        <div class="timeline-time">${item.time} • ${item.cable}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        onSnapshot(query(collection(db, 'nerve-center', 'timeline', 'events'), orderBy('ts', 'desc'), limit(10)), snap => {
+            const items = [];
+            snap.forEach(d => {
+                const ev = d.data();
+                const ago = ev.ts ? timeAgo(ev.ts.toDate()) : 'just now';
+                items.push({ type: ev.type || 'safe', title: ev.title, time: ago, cable: ev.cable || '' });
+            });
+            if (items.length > 0) renderTimeline(items);
+        });
+
+        function timeAgo(date) {
+            const s = Math.floor((Date.now() - date.getTime()) / 1000);
+            if (s < 60) return s + 's ago';
+            if (s < 3600) return Math.floor(s / 60) + 'm ago';
+            if (s < 86400) return Math.floor(s / 3600) + 'h ago';
+            return Math.floor(s / 86400) + 'd ago';
+        }
+
+        // === COMMANDS (Quick Actions) ===
+        async function sendCommand(action, label) {
+            const statusEl = event.target.closest('.action-btn');
+            const origHTML = statusEl.innerHTML;
+            statusEl.innerHTML = `<div class="action-icon">⏳</div><div class="action-label">Executing...</div>`;
+            statusEl.style.borderColor = 'var(--accent-yellow)';
+
+            try {
+                await addDoc(collection(db, 'commands'), {
+                    action: action,
+                    status: 'pending',
+                    ts: serverTimestamp(),
+                    source: 'nerve-center-app'
+                });
+
+                // Log to timeline
+                await addDoc(collection(db, 'nerve-center', 'timeline', 'events'), {
+                    type: 'safe',
+                    title: `${label} executed`,
+                    cable: 'NERVE-CENTER',
+                    ts: serverTimestamp()
+                });
+
+                statusEl.innerHTML = `<div class="action-icon">✓</div><div class="action-label">Done!</div>`;
+                statusEl.style.borderColor = 'var(--accent-green)';
+            } catch (e) {
+                statusEl.innerHTML = `<div class="action-icon">✗</div><div class="action-label">Error</div>`;
+                statusEl.style.borderColor = 'var(--accent-red)';
+            }
+
+            setTimeout(() => {
+                statusEl.innerHTML = origHTML;
+                statusEl.style.borderColor = '';
+            }, 2000);
+        }
+
+        // Expose to global scope for onclick handlers
+        window.runGuardian = () => sendCommand('guardian_scan', 'Guardian Scan');
+        window.runHunt = () => sendCommand('start_hunt', 'Hunter Mode');
+        window.runMnemosyne = () => sendCommand('memory_prune', 'Memory Prune');
+        window.runDocs = () => sendCommand('generate_docs', 'Doc Generation');
+        window.viewReports = () => sendCommand('view_reports', 'Reports Loaded');
+        window.syncEmpire = () => sendCommand('sync_empire', 'Empire Sync');
+
+        // === CLOCK ===
+        function updateClock() {
+            document.getElementById('clock').textContent = new Date().toLocaleTimeString('bg-BG');
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // === SEED DATA (runs once if DB empty) ===
+        async function seedIfEmpty() {
+            const statsSnap = await getDocs(collection(db, 'nerve-center'));
+            if (statsSnap.empty) {
+                console.log('[NERVE CENTER] Seeding Firebase...');
+                await setDoc(doc(db, 'nerve-center', 'health'), { score: 99, errors: 0, warnings: 2, info: 5 });
+                await setDoc(doc(db, 'nerve-center', 'stats'), { lines: 715861, files: 1789, modules: 1156, cables: 24, threats: 0, repos: 3 });
+                await setDoc(doc(db, 'nerve-center', 'cables'), { list: defaultCables });
+                await setDoc(doc(db, 'nerve-center', 'mnemosyne'), { vectors: 87432, health: 92, stale: 8, nextPrune: '15d' });
+
+                const events = [
+                    { type: 'safe', title: 'System initialized', cable: 'CORE', ts: serverTimestamp() },
+                    { type: 'safe', title: 'All cables verified', cable: 'GUARDIANS', ts: serverTimestamp() },
+                    { type: 'safe', title: 'Firestore connected', cable: 'NERVE-CENTER', ts: serverTimestamp() },
+                ];
+                for (const ev of events) {
+                    await addDoc(collection(db, 'nerve-center', 'timeline', 'events'), ev);
+                }
+                console.log('[NERVE CENTER] Seed complete.');
+            }
+        }
+
+        // === MNEMOSYNE real-time ===
+        onSnapshot(doc(db, 'nerve-center', 'mnemosyne'), snap => {
+            if (snap.exists()) {
+                const d = snap.data();
+                const memStats = document.querySelectorAll('.memory-stat-value');
+                if (memStats.length >= 4) {
+                    memStats[0].textContent = Number(d.vectors || 87432).toLocaleString();
+                    memStats[1].textContent = (d.health || 92) + '%';
+                    memStats[2].textContent = (d.stale || 8) + '%';
+                    memStats[3].textContent = d.nextPrune || '15d';
+                }
+            }
+        });
+
+        // === INIT ===
+        renderCables();
+        renderTimeline([
+            { type: 'safe', title: 'Connecting to Firebase...', time: 'now', cable: 'INIT' }
+        ]);
+        seedIfEmpty();
+    </script>
+</body>
+
+</html>

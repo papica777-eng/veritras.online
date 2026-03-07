@@ -1,0 +1,58 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: QANTUM Lambda Workers v1.0.0-QAntum
+
+Globals:
+  Function:
+    Timeout: 900
+    MemorySize: 3008
+    Runtime: nodejs20.x
+    Environment:
+      Variables:
+        QANTUM_MIND_VERSION: 1.0.0-QAntum
+        NODE_ENV: !Ref Environment
+
+Parameters:
+  Environment:
+    Type: String
+    Default: production
+
+Resources:
+  QAntumWorker:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: QANTUM-mind-worker
+      Handler: index.handler
+      CodeUri: ./dist
+      Layers:
+        - !Ref PlaywrightLayer
+      Policies:
+        - S3CrudPolicy:
+            BucketName: !Ref ResultsBucket
+        - SQSPollerPolicy:
+            QueueName: !GetAtt TestQueue.QueueName
+      Events:
+        SQSEvent:
+          Type: SQS
+          Properties:
+            Queue: !GetAtt TestQueue.Arn
+            BatchSize: 1
+
+  PlaywrightLayer:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      LayerName: playwright-layer
+      ContentUri: ./layers/playwright
+      CompatibleRuntimes:
+        - nodejs20.x
+
+  TestQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: QANTUM-mind-test-queue
+      VisibilityTimeout: 900
+
+  ResultsBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub QANTUM-mind-results-${AWS::AccountId}

@@ -1,0 +1,54 @@
+{
+  "agent": {
+    "name": "QAntum Coding Partner",
+    "version": "1.0.0-QAntum",
+    "mode": "autonomous",
+    "capabilities": [
+      "code-generation",
+      "debugging",
+      "documentation",
+      "testing",
+      "refactoring",
+      "architecture-analysis"
+    ],
+    "maxIterations": 10,
+    "autoCommit": false
+  },
+  "ollama": {
+    "baseUrl": "http://localhost:11434",
+    "model": "QAntum-supreme",
+    "fallbackModel": "QAntum-model",
+    "contextWindow": 8192,
+    "temperature": 0.7,
+    "timeout": 30000
+  },
+  "pinecone": {
+    "namespace": "QAntum-codebase",
+    "topK": 10,
+    "minScore": 0.7,
+    "maxTokens": 4000
+  },
+  "modules": {
+    "enabled": [
+      "brain-router",
+      "context-injector",
+      "cognitive-circular-guard",
+      "eternal-watchdog",
+      "auto-documenter",
+      "chronos-scanner"
+    ],
+    "autoLoad": true,
+    "healthCheckInterval": 30000
+  },
+  "logging": {
+    "level": "info",
+    "console": true,
+    "file": true,
+    "directory": "logs"
+  },
+  "server": {
+    "port": 3001,
+    "host": "localhost",
+    "cors": true
+  }
+}

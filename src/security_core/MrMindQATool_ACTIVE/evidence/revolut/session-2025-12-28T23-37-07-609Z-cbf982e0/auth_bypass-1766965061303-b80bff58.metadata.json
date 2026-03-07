@@ -1,0 +1,63 @@
+{
+  "id": "auth_bypass-1766965061303-b80bff58",
+  "timestamp": "2025-12-28T23:37:41.511Z",
+  "eventType": "AUTH_BYPASS",
+  "url": "https://sso.revolut.com/signin?client_id=o3r08ao16zvdlf2y5fdc&redirect_uri=https%3A%2F%2Fapp.revolut.com%2Fhome%3Frwa_auth_type%3Dauth&response_type=code&code_challenge_method=S256&code_challenge=pCGXFfbK6VuF8HmQVQ9qBkdhAEw056yZHSX6zsBf0SU&response_mode=query&ui_locales=bg&ui_color_scheme=dark&ui_background=blue&state=_pk_XUvFvHXXde1GlC5w",
+  "sessionId": "session-2025-12-28T23-37-07-609Z-cbf982e0",
+  "severity": "critical",
+  "description": "Auth bypass candidates: /dashboard, /account, /settings, /profile, /admin, /api/me",
+  "maskingApplied": false,
+  "maskedFields": [],
+  "checksum": "1ef24ec29b6bcaed66a8742a0fd185af91ec94cef2b0cc9406d5c74f8e478d04",
+  "captureMode": "safe-hunter",
+  "browserInfo": {
+    "name": "Chromium",
+    "version": "1.0.0-QAntum",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "deviceScaleFactor": 1
+  },
+  "networkContext": {
+    "cookies": [
+      {
+        "name": "rwa_geo",
+        "domain": "app.revolut.com"
+      },
+      {
+        "name": "__cf_bm",
+        "domain": ".revolut.com"
+      },
+      {
+        "name": "_cfuvid",
+        "domain": ".revolut.com"
+      },
+      {
+        "name": "revo_hardware_id",
+        "domain": ".revolut.com"
+      },
+      {
+        "name": "revo_device_id",
+        "domain": ".revolut.com"
+      },
+      {
+        "name": "revo_theme_mode",
+        "domain": ".revolut.com"
+      },
+      {
+        "name": "revo_theme_background",
+        "domain": ".revolut.com"
+      },
+      {
+        "name": "sso_country_code",
+        "domain": "sso.revolut.com"
+      },
+      {
+        "name": "__cf_bm",
+        "domain": ".hcaptcha.com"
+      }
+    ]
+  }
+}

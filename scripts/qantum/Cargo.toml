@@ -1,0 +1,28 @@
+[package]
+name = "qantum-arb-hotpath"
+version = "36.0.0"
+edition = "2021"
+authors = ["Dimitar Prodromov <architect@qantum.io>"]
+description = "Hot-path arbitrage calculations for QAntum Prime v36.0. Replaces Node.js V8 JIT with native NEON SIMD on Snapdragon 8 Gen 3."
+
+[dependencies]
+rust_decimal = "1.33"
+rust_decimal_macros = "1.33"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+reqwest = { version = "0.12", features = ["json", "rustls-tls"], default-features = false }
+tokio = { version = "1", features = ["full"] }
+hmac = "0.12"
+sha2 = "0.10"
+hex = "0.4"
+chrono = "0.4"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
+
+# For Snapdragon 8 Gen 3 (Cortex-X4 / aarch64)
+# Compile with: RUSTFLAGS="-C target-cpu=cortex-x4 -C target-feature=+neon" cargo build --release

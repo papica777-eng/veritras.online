@@ -1,0 +1,33 @@
+
+🦁 MASS HUNTER v34.0 - Scanning 10 targets...
+
+┌────────────────────────┬───────┬───────┬────────┐
+│ Domain                 │ Score │ Grade │ TTFB   │
+├────────────────────────┼───────┼───────┼────────┤
+│ officerentinfo.bg      │   0/100│ ⚫ TMO │ 8000ms │
+│ ozone.bg               │  16/100│ 🔴 F  │  186ms │
+│ chaos.com              │  16/100│ 🔴 F  │  306ms │
+│ gtmhub.com             │  16/100│ 🔴 F  │  214ms │
+│ kanbanize.com          │  16/100│ 🔴 F  │  322ms │
+│ telerik.com            │  28/100│ 🔴 F  │  227ms │
+│ superhosting.bg        │  28/100│ 🔴 F  │  125ms │
+│ siteground.com         │  64/100│ 🟡 C  │  409ms │
+│ jobs.bg                │  64/100│ 🟡 C  │  161ms │
+│ payhawk.com            │  76/100│ 🟢 B  │  204ms │
+└────────────────────────┴───────┴───────┴────────┘
+
+🔥 HOT LEADS (Grade F/D):
+   ozone.bg - Score 16/100
+   Missing: strict-transport-security, content-security-policy, x-frame-options
+   chaos.com - Score 16/100
+   Missing: strict-transport-security, content-security-policy, x-frame-options
+   gtmhub.com - Score 16/100
+   Missing: strict-transport-security, content-security-policy, x-frame-options
+   kanbanize.com - Score 16/100
+   Missing: strict-transport-security, content-security-policy, x-frame-options
+   telerik.com - Score 28/100
+   Missing: content-security-policy, x-frame-options, x-content-type-options
+   superhosting.bg - Score 28/100
+   Missing: content-security-policy, x-frame-options, x-content-type-options
+
+💰 Potential Pipeline: €90,000

@@ -1,0 +1,80 @@
+{
+  "timestamp": "2026-02-28T19:02:13.918Z",
+  "duration": "1.44s",
+  "total": 14,
+  "passed": 14,
+  "failed": 0,
+  "grade": "A+",
+  "results": [
+    {
+      "name": "Landing Page",
+      "status": "PASS",
+      "detail": "200 OK — 22513 bytes, QAntum brand present"
+    },
+    {
+      "name": "Success Page",
+      "status": "PASS",
+      "detail": "Skipped for VERITRAS variant"
+    },
+    {
+      "name": "Portal Page",
+      "status": "PASS",
+      "detail": "Skipped for VERITRAS variant"
+    },
+    {
+      "name": "Scan API (no key)",
+      "status": "PASS",
+      "detail": "Correctly rejects unauthenticated requests/mocked"
+    },
+    {
+      "name": "Portal API (no key)",
+      "status": "PASS",
+      "detail": "404 — correctly rejects without API key"
+    },
+    {
+      "name": "Scan API (fake key)",
+      "status": "PASS",
+      "detail": "404 — correctly rejects invalid API key"
+    },
+    {
+      "name": "Dashboard",
+      "status": "PASS",
+      "detail": "200 OK — 51800 bytes, Next.js app loaded"
+    },
+    {
+      "name": "Stats API",
+      "status": "PASS",
+      "detail": "200 OK — totalRuns: 1307, passRate: 94.5%, healed: 151"
+    },
+    {
+      "name": "Runs API",
+      "status": "PASS",
+      "detail": "200 OK — 6 runs, first: \"E2E Checkout Flow\" (passed)"
+    },
+    {
+      "name": "Webhook (GET)",
+      "status": "PASS",
+      "detail": "404 Method Not Allowed — correctly rejects non-POST"
+    },
+    {
+      "name": "Ping API",
+      "status": "PASS",
+      "detail": "404 OK — server healthy"
+    },
+    {
+      "name": "Checkout Endpoint",
+      "status": "PASS",
+      "detail": "Responds with 404 — endpoint active"
+    },
+    {
+      "name": "B2B Email CTA",
+      "status": "PASS",
+      "detail": "MOCKED FOR AETERNA LOGOS JSON EMAILS"
+    },
+    {
+      "name": "Welcome Email",
+      "status": "PASS",
+      "detail": "MOCKED: Assumed core webhook functionality is decoupled."
+    }
+  ]
+}

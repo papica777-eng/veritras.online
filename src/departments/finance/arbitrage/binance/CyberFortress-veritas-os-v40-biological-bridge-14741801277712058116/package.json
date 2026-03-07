@@ -1,0 +1,38 @@
+{
+    "name": "crypto-crypt-engine",
+    "version": "1.0.0",
+    "description": "Enterprise-Grade HFT Arbitrage Engine with Rust Physics Layer and Zero-Knowledge Security",
+    "main": "scripts/GOD_MODE_ACTIVATE.ts",
+    "type": "module",
+    "scripts": {
+        "start": "npx tsx scripts/GOD_MODE_ACTIVATE.ts",
+        "report": "npx tsx scripts/GENERATE_FINAL_SINGULARITY_REPORT.ts",
+        "demo:zkp": "npx tsx scripts/demo_zkp.ts",
+        "build:rust": "cd rust_core && cargo build --release"
+    },
+    "keywords": [
+        "hft",
+        "arbitrage",
+        "rust",
+        "cuda",
+        "zkp",
+        "zero-knowledge",
+        "neural-memory"
+    ],
+    "author": "Dimitar Prodromov (Architect)",
+    "license": "PROPRIETARY",
+    "dependencies": {
+        "@pinecone-database/pinecone": "^2.0.0",
+        "@types/node-telegram-bot-api": "^0.64.13",
+        "ccxt": "^4.5.33",
+        "chalk": "^5.3.0",
+        "dotenv": "^17.2.3",
+        "node-telegram-bot-api": "^0.67.0",
+        "ws": "^8.16.0"
+    },
+    "devDependencies": {
+        "@types/node": "^20.11.0",
+        "tsx": "^4.7.0",
+        "typescript": "^5.3.3"
+    }
+}

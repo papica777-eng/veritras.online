@@ -1,0 +1,21 @@
+// === defense_grid — Qantum Soul Manifold ===
+// Path: soul/defense_grid.soul
+// Auto-documented by BrutalDocEngine v2.1
+
+// defense_grid.soul - Active Defense Matrix
+// Complexity: O(1) — declarative binding
+// Safety: compile-time validated
+manifold AegisShield { curvature: 0.999 }
+// Complexity: O(1) — declarative binding
+// Safety: compile-time validated
+manifold Intruders { curvature: 0.001 }
+
+// Complexity: O(1) — declarative binding
+// Safety: compile-time validated
+resonate AegisShield with Intruders
+// Complexity: O(1) — declarative binding
+// Safety: compile-time validated
+collapse AegisShield
+// Complexity: O(1) — declarative binding
+// Safety: compile-time validated
+entrench AegisShield

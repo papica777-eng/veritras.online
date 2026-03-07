@@ -1,0 +1,57 @@
+{
+  "searchTests": [
+    {
+      "id": 1,
+      "query": "Playwright",
+      "description": "Modern automation tool by Microsoft",
+      "expectedInTitle": true
+    },
+    {
+      "id": 2,
+      "query": "Cypress",
+      "description": "JavaScript E2E testing framework",
+      "expectedInTitle": true
+    },
+    {
+      "id": 3,
+      "query": "Selenium",
+      "description": "Classic browser automation",
+      "expectedInTitle": true
+    },
+    {
+      "id": 4,
+      "query": "QAntum QA",
+      "description": "Our custom QA agent project",
+      "expectedInTitle": true
+    },
+    {
+      "id": 5,
+      "query": "Jest Framework",
+      "description": "JavaScript testing by Facebook",
+      "expectedInTitle": true
+    }
+  ],
+  "apiTests": [
+    {
+      "id": 1,
+      "endpoint": "/posts/1",
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedFields": ["id", "title", "body", "userId"]
+    },
+    {
+      "id": 2,
+      "endpoint": "/posts/999",
+      "method": "GET",
+      "expectedStatus": 404,
+      "expectedFields": []
+    },
+    {
+      "id": 3,
+      "endpoint": "/users/1",
+      "method": "GET",
+      "expectedStatus": 200,
+      "expectedFields": ["id", "name", "email"]
+    }
+  ]
+}

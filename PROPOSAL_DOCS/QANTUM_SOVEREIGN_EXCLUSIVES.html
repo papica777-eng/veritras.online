@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QANTUM-1 — Sovereign Exclusives</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+        :root {
+            --bg-deep: #0e0906;
+            --bg-page: #1a120a;
+            --bg-content: #211710;
+            --gold: #c9a84c;
+            --gold-dark: #8a6d2b;
+            --gold-bright: #e8c84a;
+            --accent-red: #8b2020;
+            --text-main: #d4c4a8;
+            --text-light: #9a8b70;
+            --text-heading: #f0e6d0;
+            --border-gold: #6b5a2e;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg-deep);
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 20px auto;
+            background: var(--bg-page);
+            position: relative;
+            overflow: hidden;
+            page-break-after: always;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .page {
+                margin: 0;
+                box-shadow: none;
+                width: 100%;
+                min-height: 100vh;
+            }
+        }
+
+        /* ══════ BORDERS & ORNAMENTS ══════ */
+        .side-border-left,
+        .side-border-right {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 12px;
+            background: linear-gradient(180deg, var(--gold-dark), var(--gold), var(--gold-dark));
+            opacity: 0.3;
+        }
+
+        .side-border-left {
+            left: 0;
+        }
+
+        .side-border-right {
+            right: 0;
+        }
+
+        .inner-border {
+            position: absolute;
+            top: 18px;
+            left: 18px;
+            right: 18px;
+            bottom: 18px;
+            border: 1px solid var(--border-gold);
+            pointer-events: none;
+            opacity: 0.4;
+        }
+
+        .corner-ornament {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-color: var(--gold);
+            border-style: solid;
+            border-width: 0;
+            opacity: 0.5;
+        }
+
+        .corner-tl {
+            top: 14px;
+            left: 14px;
+            border-top-width: 3px;
+            border-left-width: 3px;
+        }
+
+        .corner-tr {
+            top: 14px;
+            right: 14px;
+            border-top-width: 3px;
+            border-right-width: 3px;
+        }
+
+        .corner-bl {
+            bottom: 14px;
+            left: 14px;
+            border-bottom-width: 3px;
+            border-left-width: 3px;
+        }
+
+        .corner-br {
+            bottom: 14px;
+            right: 14px;
+            border-bottom-width: 3px;
+            border-right-width: 3px;
+        }
+
+        .page-number {
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Playfair Display', serif;
+            font-size: 0.75em;
+            color: var(--gold-dark);
+            letter-spacing: 3px;
+        }
+
+        .watermark {
+            position: absolute;
+            bottom: 50px;
+            right: 35px;
+            font-family: 'Playfair Display', serif;
+            font-size: 0.55em;
+            color: var(--gold-dark);
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            opacity: 0.2;
+        }
+
+        /* ══════ GEOMETRIC PATTERN ══════ */
+        .geo-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.03;
+            pointer-events: none;
+            background-image:
+                repeating-linear-gradient(0deg, transparent, transparent 39px, var(--gold) 39px, var(--gold) 40px),
+                repeating-linear-gradient(90deg, transparent, transparent 39px, var(--gold) 39px, var(--gold) 40px),
+                repeating-linear-gradient(45deg, transparent, transparent 55px, var(--gold) 55px, var(--gold) 56px),
+                repeating-linear-gradient(-45deg, transparent, transparent 55px, var(--gold) 55px, var(--gold) 56px);
+        }
+
+        /* ══════ CONTENT ══════ */
+        .page-content {
+            position: relative;
+            z-index: 2;
+            padding: 50px 55px 60px;
+        }
+
+        .islamic-divider {
+            height: 2px;
+            margin: 15px 0;
+            background: linear-gradient(90deg, transparent, var(--gold-dark), var(--gold), var(--gold-dark), transparent);
+            opacity: 0.5;
+        }
+
+        /* ══════ COVER ══════ */
+        .cover-badge {
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .cover-badge .pre-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7em;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            color: var(--gold-dark);
+            margin-bottom: 20px;
+        }
+
+        .cover-badge .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 3em;
+            font-weight: 900;
+            color: var(--gold);
+            letter-spacing: 6px;
+            text-shadow: 0 2px 20px rgba(201, 168, 76, 0.3);
+        }
+
+        .cover-badge .sub-logo {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8em;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: var(--text-light);
+            margin-top: 10px;
+        }
+
+        .cover-title {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .cover-title h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--text-heading);
+            letter-spacing: 2px;
+            line-height: 1.3;
+        }
+
+        .cover-title .accent {
+            color: var(--gold-bright);
+            font-style: italic;
+        }
+
+        .cover-title .subtitle {
+            font-size: 0.7em;
+            color: var(--text-light);
+            margin-top: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .stamp {
+            text-align: center;
+            margin-top: 50px;
+            padding: 18px 30px;
+            border: 2px solid var(--accent-red);
+            display: inline-block;
+            margin-left: 50%;
+            transform: translateX(-50%) rotate(-2deg);
+            font-family: 'Playfair Display', serif;
+            color: var(--accent-red);
+            font-size: 1em;
+            font-weight: 900;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            opacity: 0.7;
+        }
+
+        .cover-metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            margin-top: 50px;
+            border: 1px solid var(--border-gold);
+        }
+
+        .cover-metric {
+            text-align: center;
+            padding: 20px 10px;
+            border-right: 1px solid var(--border-gold);
+        }
+
+        .cover-metric:last-child {
+            border-right: none;
+        }
+
+        .cover-metric .number {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8em;
+            font-weight: 900;
+            color: var(--gold);
+        }
+
+        .cover-metric .unit {
+            font-size: 0.65em;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 4px;
+        }
+
+        .cover-footer {
+            position: absolute;
+            bottom: 60px;
+            left: 55px;
+            right: 55px;
+            text-align: center;
+        }
+
+        .cover-footer .name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1em;
+            color: var(--gold);
+            letter-spacing: 3px;
+        }
+
+        .cover-footer .role {
+            font-size: 0.7em;
+            color: var(--text-light);
+            letter-spacing: 2px;
+            margin-top: 4px;
+        }
+
+        /* ══════ SECTION HEADERS ══════ */
+        .section-header {
+            margin-bottom: 25px;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5em;
+            font-weight: 700;
+            color: var(--text-heading);
+            letter-spacing: 1px;
+        }
+
+        .section-header .sub {
+            font-size: 0.75em;
+            color: var(--text-light);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        /* ══════ EXCLUSIVE CARDS ══════ */
+        .exclusive {
+            margin-bottom: 22px;
+            border: 1px solid var(--border-gold);
+            border-radius: 4px;
+            overflow: hidden;
+            background: rgba(26, 18, 10, 0.6);
+        }
+
+        .exclusive-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 20px;
+            background: linear-gradient(135deg, #1a120a, #251a0e);
+            border-bottom: 1px solid var(--border-gold);
+        }
+
+        .exclusive-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent-red), #5a1515);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3em;
+            flex-shrink: 0;
+            border: 2px solid var(--gold-dark);
+        }
+
+        .exclusive-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15em;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .exclusive-tag {
+            margin-left: auto;
+            font-size: 0.6em;
+            background: var(--accent-red);
+            color: #f0d0d0;
+            padding: 3px 10px;
+            border-radius: 3px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .exclusive-body {
+            padding: 16px 20px;
+        }
+
+        .ex-row {
+            display: grid;
+            grid-template-columns: 90px 1fr;
+            gap: 10px;
+            margin-bottom: 10px;
+            align-items: start;
+        }
+
+        .ex-label {
+            font-size: 0.7em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold-dark);
+            padding-top: 3px;
+        }
+
+        .ex-value {
+            font-size: 0.82em;
+            line-height: 1.6;
+            color: var(--text-main);
+        }
+
+        .highlight {
+            background: rgba(201, 168, 76, 0.2);
+            color: var(--gold-bright);
+            padding: 1px 6px;
+            border-radius: 2px;
+            font-weight: 600;
+        }
+
+        .impossible {
+            background: rgba(139, 32, 32, 0.25);
+            color: #e87070;
+            padding: 1px 6px;
+            border-radius: 2px;
+            font-weight: 600;
+        }
+
+        /* ══════ TECH PILLS ══════ */
+        .tech-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 3px 10px;
+            border-radius: 3px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75em;
+            font-weight: 500;
+            margin: 2px 1px;
+        }
+
+        .tech-pill i {
+            font-size: 1.4em;
+            line-height: 1;
+        }
+
+        .pill-rust {
+            background: #2a1a0e;
+            color: #c9a84c;
+            border: 1px solid #3a2a1a;
+        }
+
+        .pill-ts {
+            background: #0e1a2a;
+            color: #5b9bd5;
+            border: 1px solid #1a2a3a;
+        }
+
+        .pill-mojo {
+            background: #2a1a0a;
+            color: #e8a040;
+            border: 1px solid #3a2a1a;
+        }
+
+        .pill-pqc {
+            background: #1a0e1a;
+            color: #b080d0;
+            border: 1px solid #2a1a2a;
+        }
+
+        /* ══════ PRICE ══════ */
+        .ex-price {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: linear-gradient(135deg, #1a0f07, #251a0e);
+            padding: 10px 16px;
+            border-radius: 4px;
+            border: 1px solid var(--border-gold);
+        }
+
+        .price-amount {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2em;
+            font-weight: 900;
+            color: var(--gold);
+        }
+
+        .price-note {
+            font-size: 0.7em;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ══════ WHY IMPOSSIBLE ══════ */
+        .why-box {
+            background: rgba(139, 32, 32, 0.1);
+            border-left: 3px solid var(--accent-red);
+            padding: 10px 16px;
+            margin-top: 8px;
+            border-radius: 0 4px 4px 0;
+            font-size: 0.78em;
+            color: #c09090;
+            line-height: 1.6;
+        }
+
+        .why-box strong {
+            color: #e87070;
+        }
+
+        /* ══════ SUMMARY TABLE ══════ */
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8em;
+            margin-top: 15px;
+        }
+
+        .summary-table th {
+            background: linear-gradient(135deg, #1a0f07, #251a0e);
+            color: var(--gold);
+            padding: 10px 12px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.85em;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--gold-dark);
+        }
+
+        .summary-table td {
+            padding: 10px 12px;
+            border-bottom: 1px solid rgba(107, 90, 46, 0.2);
+            color: var(--text-main);
+        }
+
+        .summary-table tr:hover {
+            background: rgba(201, 168, 76, 0.03);
+        }
+
+        .total-row td {
+            border-top: 2px solid var(--gold);
+            font-weight: 700;
+            color: var(--gold) !important;
+            font-size: 1.1em;
+            padding-top: 14px;
+        }
+
+        .price-cell {
+            font-family: 'Playfair Display', serif;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        /* ══════ CLOSING ══════ */
+        .closing-statement {
+            text-align: center;
+            padding: 25px 30px;
+            margin-top: 20px;
+            border: 1px solid var(--border-gold);
+            background: linear-gradient(135deg, rgba(26, 15, 7, 0.8), rgba(37, 26, 14, 0.8));
+            border-radius: 4px;
+        }
+
+        .closing-statement p {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.9em;
+            color: var(--text-light);
+            line-height: 2;
+            font-style: italic;
+        }
+
+        .closing-statement strong {
+            color: var(--gold);
+        }
+
+        .contact-block {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .contact-block .name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1em;
+            color: var(--gold);
+            letter-spacing: 3px;
+        }
+
+        .contact-block .role {
+            font-size: 0.75em;
+            color: var(--text-light);
+            letter-spacing: 2px;
+            margin-top: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ═══════════════════════ PAGE 1: COVER ═══════════════════════ -->
+    <div class="page">
+        <div class="side-border-left"></div>
+        <div class="side-border-right"></div>
+        <div class="inner-border"></div>
+        <div class="geo-pattern"></div>
+        <div class="corner-ornament corner-tl"></div>
+        <div class="corner-ornament corner-tr"></div>
+        <div class="corner-ornament corner-bl"></div>
+        <div class="corner-ornament corner-br"></div>
+
+        <div class="page-content">
+            <div class="cover-badge">
+                <div class="pre-title">Classified Portfolio</div>
+                <div class="logo">QANTUM-1</div>
+                <div class="sub-logo">Sovereign Exclusives</div>
+            </div>
+
+            <div class="islamic-divider" style="margin-top: 30px;"></div>
+
+            <div class="cover-title">
+                <h1>Solutions That<br><span class="accent">Do Not Exist</span><br>Anywhere Else</h1>
+                <div class="subtitle">Zero Competition · Zero Dependency · Zero Alternative</div>
+            </div>
+
+            <div class="stamp">RESTRICTED DISTRIBUTION</div>
+
+            <div class="cover-metrics">
+                <div class="cover-metric">
+                    <div class="number">4</div>
+                    <div class="unit">Exclusive Solutions</div>
+                </div>
+                <div class="cover-metric">
+                    <div class="number">$2.9B</div>
+                    <div class="unit">Combined Portfolio</div>
+                </div>
+                <div class="cover-metric">
+                    <div class="number">0</div>
+                    <div class="unit">Competitors</div>
+                </div>
+            </div>
+
+            <div class="cover-footer">
+                <div class="islamic-divider" style="margin-bottom: 15px;"></div>
+                <div class="name">Dimitar Prodromov</div>
+                <div class="role">Sovereign Systems Architect</div>
+            </div>
+        </div>
+        <div class="page-number">— 1 —</div>
+        <div class="watermark">SOVEREIGN EXCLUSIVES</div>
+    </div>
+
+    <!-- ═══════════════════════ PAGE 2: EXCLUSIVE 1 & 2 ═══════════════════════ -->
+    <div class="page">
+        <div class="side-border-left"></div>
+        <div class="side-border-right"></div>
+        <div class="inner-border"></div>
+        <div class="geo-pattern"></div>
+        <div class="corner-ornament corner-tl"></div>
+        <div class="corner-ornament corner-tr"></div>
+        <div class="corner-ornament corner-bl"></div>
+        <div class="corner-ornament corner-br"></div>
+
+        <div class="page-content">
+            <div class="section-header">
+                <h2>Sovereign Exclusives</h2>
+                <div class="sub">What No One Else Can Build</div>
+                <div class="islamic-divider" style="margin-top: 15px;"></div>
+            </div>
+
+            <!-- EXCLUSIVE 1: Sovereign LLM -->
+            <div class="exclusive">
+                <div class="exclusive-header">
+                    <div class="exclusive-icon">🧠</div>
+                    <div class="exclusive-title">Sovereign LLM Infrastructure</div>
+                    <div class="exclusive-tag">Zero Alternative</div>
+                </div>
+                <div class="exclusive-body">
+                    <div class="ex-row">
+                        <div class="ex-label">Problem</div>
+                        <div class="ex-value">Every nation using AI today is <span class="impossible">completely
+                                dependent</span> on OpenAI, Google, or Meta. Every prompt, every response, every model
+                            weight is processed on <span class="impossible">foreign servers</span>. Abu Dhabi's Falcon
+                            was trained on external GPU clusters. No sovereign AI exists.</div>
+                    </div>
+                    <div class="ex-row">
+                        <div class="ex-label">Solution</div>
+                        <div class="ex-value">
+                            <span class="tech-pill pill-mojo">🔥 Mojo 35,000×</span>
+                            <span class="tech-pill pill-rust"><i class="devicon-rust-original"></i>
+                                inference_engine.rs</span>
+                            <span class="tech-pill pill-pqc">🔐 PQC Encryption</span>
+                            <br><br>
+                            <span class="highlight">Sovereign AI training and inference on bare-metal</span>. The model
+                            never leaves sovereign territory. Not a single prompt, not a single weight, not a single
+                            gradient is processed by foreign infrastructure. Mojo 35,000× acceleration makes training
+                            feasible <span class="highlight">without renting foreign GPU clouds</span>.
+                        </div>
+                    </div>
+                    <div class="why-box">
+                        <strong>Why impossible without QANTUM:</strong> Every AI company forces clients into their
+                        cloud. We are the only entity offering <strong>bare-metal AI sovereignty</strong> with 35,000×
+                        acceleration that makes it economically viable.
+                    </div>
+                    <div class="ex-row" style="margin-top: 12px;">
+                        <div class="ex-label">Investment</div>
+                        <div class="ex-value">
+                            <div class="ex-price">
+                                <span class="price-amount">$50M — $400M</span>
+                                <span class="price-note">national AI independence</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EXCLUSIVE 2: Sovereign CBDC -->
+            <div class="exclusive">
+                <div class="exclusive-header">
+                    <div class="exclusive-icon">🪙</div>
+                    <div class="exclusive-title">Sovereign CBDC Engine</div>
+                    <div class="exclusive-tag">Zero Alternative</div>
+                </div>
+                <div class="exclusive-body">
+                    <div class="ex-row">
+                        <div class="ex-label">Problem</div>
+                        <div class="ex-value">Project mBridge (Saudi, UAE) depends on <span class="impossible">Western
+                                blockchain companies</span>. Existing CBDC solutions use floating-point arithmetic —
+                            <span class="impossible">incompatible with Sharia finance</span> (rounding creates implicit
+                            interest). No sovereign, Halal-by-design digital currency engine exists.</div>
+                    </div>
+                    <div class="ex-row">
+                        <div class="ex-label">Solution</div>
+                        <div class="ex-value">
+                            <span class="tech-pill pill-rust"><i class="devicon-rust-original"></i>
+                                wealth_bridge.rs</span>
+                            <span class="tech-pill pill-rust"><i class="devicon-rust-original"></i> ledger.rs</span>
+                            <span class="tech-pill pill-rust"><i class="devicon-rust-original"></i> mempool.rs</span>
+                            <span class="tech-pill pill-ts"><i class="devicon-typescript-plain"></i> ghost/</span>
+                            <span class="tech-pill pill-pqc">🔐 Kyber + Dilithium</span>
+                            <br><br>
+                            <span class="highlight">Integer-only arithmetic (AtomicU64)</span> — zero floating-point
+                            operations means <span class="highlight">zero rounding, zero implicit interest, Halal by
+                                mathematics</span>. PQC encryption quantum-proofs the currency for 100+ years. Ghost
+                            protocol ensures zero foreign surveillance on sovereign monetary flows.
+                        </div>
+                    </div>
+                    <div class="why-box">
+                        <strong>Why impossible without QANTUM:</strong> No company on Earth offers <strong>integer-only
+                            + PQC + ghost protocol</strong> CBDC infrastructure. Zero competitors. The market does not
+                        know this product can exist.
+                    </div>
+                    <div class="ex-row" style="margin-top: 12px;">
+                        <div class="ex-label">Investment</div>
+                        <div class="ex-value">
+                            <div class="ex-price">
+                                <span class="price-amount">$30M — $300M</span>
+                                <span class="price-note">central bank / sovereign fund</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="page-number">— 2 —</div>
+        <div class="watermark">SOVEREIGN EXCLUSIVES</div>
+    </div>
+
+    <!-- ═══════════════════════ PAGE 3: EXCLUSIVE 3 & 4 ═══════════════════════ -->
+    <div class="page">
+        <div class="side-border-left"></div>
+        <div class="side-border-right"></div>
+        <div class="inner-border"></div>
+        <div class="geo-pattern"></div>
+        <div class="corner-ornament corner-tl"></div>
+        <div class="corner-ornament corner-tr"></div>
+        <div class="corner-ornament corner-bl"></div>
+        <div class="corner-ornament corner-br"></div>
+
+        <div class="page-content">
+
+            <!-- EXCLUSIVE 3: Sovereign Comms Mesh -->
+            <div class="exclusive">
+                <div class="exclusive-header">
+                    <div class="exclusive-icon">🛰️</div>
+                    <div class="exclusive-title">Sovereign Communications Mesh</div>
+                    <div class="exclusive-tag">Zero Alternative</div>
+                </div>
+                <div class="exclusive-body">
+                    <div class="ex-row">
+                        <div class="ex-label">Problem</div>
+                        <div class="ex-value">Military and government communications depend on <span
+                                class="impossible">foreign satellite constellations</span> (Starlink = Musk, Kuiper =
+                            Bezos, Iridium = US DoD). If access is revoked — <span class="impossible">an entire nation
+                                goes blind</span>. No sovereign ground-based alternative exists with quantum-grade
+                            encryption.</div>
+                    </div>
+                    <div class="ex-row">
+                        <div class="ex-label">Solution</div>
+                        <div class="ex-value">
+                            <span class="tech-pill pill-pqc">🔐 Kyber-1024 (FIPS 203)</span>
+                            <span class="tech-pill pill-pqc">🔐 Dilithium-5 (FIPS 204)</span>
+                            <span class="tech-pill pill-ts"><i class="devicon-typescript-plain"></i> ghost/</span>
+                            <span class="tech-pill pill-rust"><i class="devicon-rust-original"></i>
+                                sovereign_sentinel.rs</span>
+                            <br><br>
+                            PQC-encrypted <span class="highlight">ground-based mesh network</span> with sovereign relay
+                            nodes. Ghost protocol makes all traffic <span class="highlight">invisible to external
+                                analysis</span>. Sentinel detects eavesdropping attempts in real-time. <span
+                                class="highlight">Zero dependency on foreign orbits</span>.
+                        </div>
+                    </div>
+                    <div class="why-box">
+                        <strong>Why impossible without QANTUM:</strong> Mesh + PQC + Ghost Protocol + Self-Preserving
+                        Sentinel in <strong>one unified system</strong>? This product does not exist anywhere on the
+                        market. We invented it.
+                    </div>
+                    <div class="ex-row" style="margin-top: 12px;">
+                        <div class="ex-label">Investment</div>
+                        <div class="ex-value">
+                            <div class="ex-price">
+                                <span class="price-amount">$20M — $200M</span>
+                                <span class="price-note">sovereign communications backbone</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EXCLUSIVE 4: Sovereign Health AI -->
+            <div class="exclusive">
+                <div class="exclusive-header">
+                    <div class="exclusive-icon">🧬</div>
+                    <div class="exclusive-title">Sovereign Health AI — Genomic Fortress</div>
+                    <div class="exclusive-tag">Zero Alternative</div>
+                </div>
+                <div class="exclusive-body">
+                    <div class="ex-row">
+                        <div class="ex-label">Problem</div>
+                        <div class="ex-value">Royal family genomic data is a <span class="impossible">national security
+                                matter</span>. But genomic analysis requires cloud AI (Google Health, IBM Watson). Every
+                            byte of DNA data passes through <span class="impossible">foreign servers</span>. A single
+                            leak exposes hereditary vulnerabilities of an entire ruling dynasty.</div>
+                    </div>
+                    <div class="ex-row">
+                        <div class="ex-label">Solution</div>
+                        <div class="ex-value">
+                            <span class="tech-pill pill-rust"><i class="devicon-rust-original"></i>
+                                genomic_engine.rs</span>
+                            <span class="tech-pill pill-mojo">🔥 Mojo 35,000×</span>
+                            <span class="tech-pill pill-pqc">🔐 PQC Full Stack</span>
+                            <span class="tech-pill pill-rust"><i class="devicon-rust-original"></i>
+                                SurvivalInstinct</span>
+                            <br><br>
+                            <span class="highlight">Deterministic integer-based genomic analysis</span> on bare-metal.
+                            Zero-drift mathematics ensures nucleotide-level precision. PQC encryption on every file,
+                            every stream, every result. Genetic data of the royal family <span class="highlight">never
+                                leaves the building</span>. Analysis that takes weeks in the cloud runs in hours with
+                            Mojo 35,000×.
+                        </div>
+                    </div>
+                    <div class="why-box">
+                        <strong>Why impossible without QANTUM:</strong> Genomic analysis without cloud? With
+                        <strong>integer math instead of float</strong>? On bare-metal with PQC at every layer?
+                        <strong>This product does not exist.</strong> We are creating the category.
+                    </div>
+                    <div class="ex-row" style="margin-top: 12px;">
+                        <div class="ex-label">Investment</div>
+                        <div class="ex-value">
+                            <div class="ex-price">
+                                <span class="price-amount">$15M — $100M</span>
+                                <span class="price-note">sovereign genomic infrastructure</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="page-number">— 3 —</div>
+        <div class="watermark">SOVEREIGN EXCLUSIVES</div>
+    </div>
+
+    <!-- ═══════════════════════ PAGE 4: SUMMARY ═══════════════════════ -->
+    <div class="page">
+        <div class="side-border-left"></div>
+        <div class="side-border-right"></div>
+        <div class="inner-border"></div>
+        <div class="geo-pattern"></div>
+        <div class="corner-ornament corner-tl"></div>
+        <div class="corner-ornament corner-tr"></div>
+        <div class="corner-ornament corner-bl"></div>
+        <div class="corner-ornament corner-br"></div>
+
+        <div class="page-content">
+            <div class="section-header">
+                <h2>Combined Portfolio</h2>
+                <div class="sub">Complete QANTUM-1 Sovereign Arsenal</div>
+                <div class="islamic-divider" style="margin-top: 15px;"></div>
+            </div>
+
+            <table class="summary-table">
+                <thead>
+                    <tr>
+                        <th style="width: 30%;">Category</th>
+                        <th>Solutions</th>
+                        <th style="text-align: right;">Value Range</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="font-weight: 600;">Core Solutions</td>
+                        <td>Financial · Smart City · Cloud · Energy · Aerial Defense · Desalination · Quantum Comms</td>
+                        <td class="price-cell" style="text-align: right;">$50M — $465M</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 600;">Mega-Hybrids</td>
+                        <td>Digital Twin · Invisible Banking · Fortress AI · Desert Nexus · Sovereign Oracle</td>
+                        <td class="price-cell" style="text-align: right;">$240M — $1.4B</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 600; color: #e87070;">Sovereign Exclusives</td>
+                        <td style="color: #e87070;">Sovereign LLM · CBDC Engine · Comms Mesh · Genomic Fortress</td>
+                        <td class="price-cell" style="text-align: right; color: #e87070;">$115M — $1B</td>
+                    </tr>
+                    <tr class="total-row">
+                        <td>GRAND TOTAL</td>
+                        <td>16 Sovereign Solutions</td>
+                        <td class="price-cell" style="text-align: right; font-size: 1.3em;">$405M — $2.9B</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="islamic-divider" style="margin-top: 30px;"></div>
+
+            <div class="closing-statement">
+                <p>
+                    "These solutions do not exist on any market,<br>
+                    in any catalog, from any vendor.<br><br>
+                    They exist here — because we <strong>invented the category</strong>.<br><br>
+                    Every nation that deploys QANTUM-1 doesn't just<br>
+                    buy technology — it buys <strong>technological sovereignty</strong>.<br><br>
+                    The question is not whether you need this.<br>
+                    The question is: <strong>can you afford not to have it?</strong>"
+                </p>
+            </div>
+
+            <div class="islamic-divider" style="margin-top: 30px;"></div>
+
+            <div class="contact-block">
+                <div class="name">Dimitar Prodromov</div>
+                <div class="role">Sovereign Systems Architect</div>
+                <div style="margin-top: 15px; font-size: 0.7em; color: var(--text-light);">
+                    QANTUM-1 Sovereign Infrastructure<br>
+                    Post-Quantum Cryptography · Bare-Metal Architecture · Zero-Entropy Systems
+                </div>
+            </div>
+        </div>
+        <div class="page-number">— 4 —</div>
+        <div class="watermark">SOVEREIGN EXCLUSIVES</div>
+    </div>
+
+</body>
+
+</html>

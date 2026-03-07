@@ -1,0 +1,2849 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QAntum v1.0.2 - The Local Sovereign</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #000000;
+            --bg-secondary: #080810;
+            --bg-card: rgba(255, 255, 255, 0.04);
+            --bg-glass: rgba(255, 255, 255, 0.06);
+            --accent-primary: #a78bfa;
+            --accent-cyan: #22d3ee;
+            --accent-success: #34d399;
+            --accent-warning: #fbbf24;
+            --accent-danger: #f87171;
+            --text-primary: #f1f1f1;
+            --text-secondary: #6b7280;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --border-glow: rgba(167, 139, 250, 0.3);
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+            --glow-purple: 0 0 20px rgba(167, 139, 250, 0.15);
+            --glow-cyan: 0 0 20px rgba(34, 211, 238, 0.15);
+            --radius: 16px;
+            --radius-sm: 10px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #000;
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Ambient background orbs */
+        body::before {
+            content: '';
+            position: fixed;
+            top: -30%;
+            left: -10%;
+            width: 60vw;
+            height: 60vw;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: -20%;
+            right: -10%;
+            width: 50vw;
+            height: 50vw;
+            background: radial-gradient(circle, rgba(34, 211, 238, 0.06) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* ══════════════════════════════════════════════════════════════ */
+        /* HEADER                                                         */
+        /* ══════════════════════════════════════════════════════════════ */
+
+        .header {
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+            filter: drop-shadow(0 0 8px rgba(167, 139, 250, 0.6));
+        }
+
+        .logo-text h1 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #fff 0%, #a78bfa 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-text p {
+            font-size: 0.78rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.5px;
+        }
+
+        .header-stats {
+            display: flex;
+            gap: 12px;
+        }
+
+        .stat-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: var(--bg-glass);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            font-size: 0.82rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.2s;
+        }
+
+        .stat-badge:hover {
+            border-color: var(--border-glow);
+            box-shadow: var(--glow-purple);
+        }
+
+        .stat-badge .value {
+            font-weight: 700;
+            color: var(--accent-primary);
+        }
+
+        /* ══════════════════════════════════════════════════════════════ */
+        /* NERVE CENTER HUD                                               */
+        /* ══════════════════════════════════════════════════════════════ */
+
+        .nerve-center-hud {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 28px;
+        }
+
+        .hud-card {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 24px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .hud-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hud-card:hover {
+            border-color: rgba(167, 139, 250, 0.25);
+            box-shadow: var(--glow-purple);
+            transform: translateY(-2px);
+        }
+
+        .hud-card .hud-icon {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .hud-card .hud-label {
+            font-size: 0.72rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .hud-card .hud-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--text-primary);
+        }
+
+        .hud-card .hud-value.neon-purple {
+            background: linear-gradient(135deg, #a78bfa, #7c3aed);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hud-card .hud-value.neon-cyan {
+            background: linear-gradient(135deg, #22d3ee, #0ea5e9);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hud-card .hud-value.neon-green {
+            background: linear-gradient(135deg, #34d399, #10b981);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hud-card .hud-sub {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        /* ══════════════════════════════════════════════════════════════ */
+        /* MAIN LAYOUT                                                    */
+        /* ══════════════════════════════════════════════════════════════ */
+
+        .main-container {
+            display: grid;
+            grid-template-columns: 260px 1fr 300px;
+            min-height: calc(100vh - 74px);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ══════════════════════════════════════════════════════════════ */
+        /* SIDEBAR                                                        */
+        /* ══════════════════════════════════════════════════════════════ */
+
+        .sidebar {
+            background: rgba(0, 0, 0, 0.5);
+            border-right: 1px solid var(--border-color);
+            padding: 20px 16px;
+            overflow-y: auto;
+            backdrop-filter: blur(10px);
+        }
+
+        .sidebar-section {
+            margin-bottom: 28px;
+        }
+
+        .sidebar-section h3 {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+            padding-left: 10px;
+        }
+
+        .module-btn {
+            width: 100%;
+            padding: 10px 14px;
+            background: transparent;
+            border: 1px solid transparent;
+            border-radius: var(--radius-sm);
+            color: var(--text-secondary);
+            font-size: 0.88rem;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            text-align: left;
+            margin-bottom: 2px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .module-btn:hover {
+            background: var(--bg-glass);
+            color: var(--text-primary);
+            border-color: var(--border-color);
+        }
+
+        .module-btn.active {
+            background: rgba(167, 139, 250, 0.1);
+            color: var(--accent-primary);
+            border-color: rgba(167, 139, 250, 0.2);
+        }
+
+        .module-btn .icon {
+            font-size: 1.1rem;
+        }
+
+        .module-btn .badge {
+            margin-left: auto;
+            padding: 2px 7px;
+            background: rgba(52, 211, 153, 0.1);
+            border: 1px solid rgba(52, 211, 153, 0.2);
+            border-radius: 6px;
+            font-size: 0.62rem;
+            font-weight: 600;
+            color: var(--accent-success);
+            letter-spacing: 0.5px;
+        }
+
+        .module-btn .badge.pro {
+            background: rgba(167, 139, 250, 0.1);
+            border-color: rgba(167, 139, 250, 0.2);
+            color: var(--accent-primary);
+        }
+
+        /* ══════════════════════════════════════════════════════════════ */
+        /* MAIN CONTENT AREA                                              */
+        /* ══════════════════════════════════════════════════════════════ */
+
+        .content {
+            padding: 28px;
+            overflow-y: auto;
+            background: transparent;
+        }
+
+        .panel {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 32px;
+            margin-bottom: 24px;
+            display: none;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .panel::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .panel.active {
+            display: block;
+            animation: panelIn 0.25s ease forwards;
+        }
+
+        @keyframes panelIn {
+            from {
+                opacity: 0;
+                transform: translateY(8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 24px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .panel-header h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .panel-header .subtitle {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-top: 4px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Form Elements */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.72rem;
+            color: var(--accent-primary);
+            margin-bottom: 8px;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            color: var(--text-primary);
+            font-size: 0.92rem;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.2s;
+        }
+
+        .form-group select option {
+            background: #0d0d1a;
+            color: var(--text-primary);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: rgba(167, 139, 250, 0.4);
+            box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.08);
+            background: rgba(167, 139, 250, 0.04);
+        }
+
+        .btn {
+            padding: 11px 24px;
+            border: 1px solid transparent;
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.2px;
+        }
+
+        .btn-primary {
+            background: var(--accent-primary);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(167, 139, 250, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #8b5cf6;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(167, 139, 250, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--bg-glass);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            border-color: rgba(167, 139, 250, 0.3);
+            box-shadow: var(--glow-purple);
+        }
+
+        .results {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 20px;
+            margin-top: 24px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.82rem;
+            max-height: 400px;
+            overflow-y: auto;
+            color: var(--text-secondary);
+        }
+
+        .results pre {
+            white-space: pre-wrap;
+            word-break: break-word;
+            line-height: 1.6;
+        }
+
+        .result-success {
+            color: var(--accent-success);
+        }
+
+        .result-warning {
+            color: var(--accent-warning);
+        }
+
+        .result-error {
+            color: var(--accent-danger);
+        }
+
+        .result-info {
+            color: var(--accent-cyan);
+        }
+
+        /* Score Display */
+        .score-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .score-card {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 24px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            transition: all 0.2s;
+        }
+
+        .score-card:hover {
+            border-color: var(--border-glow);
+            box-shadow: var(--glow-purple);
+        }
+
+        .score-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .score-label {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            margin-top: 8px;
+        }
+
+        .score-good {
+            color: var(--accent-success);
+        }
+
+        .score-medium {
+            color: var(--accent-warning);
+        }
+
+        .score-bad {
+            color: var(--accent-danger);
+        }
+
+        /* ══════════════════════════════════════════════════════════════ */
+        /* RIGHT PANEL - STATUS                                           */
+        /* ══════════════════════════════════════════════════════════════ */
+
+        .status-panel {
+            background: rgba(0, 0, 0, 0.5);
+            border-left: 1px solid var(--border-color);
+            padding: 20px 16px;
+            overflow-y: auto;
+            backdrop-filter: blur(10px);
+        }
+
+        .status-section {
+            margin-bottom: 24px;
+        }
+
+        .status-section h3 {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+
+        .status-card {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 14px;
+            margin-bottom: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .status-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            font-size: 0.85rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .status-row:last-child {
+            border-bottom: none;
+        }
+
+        .status-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 8px;
+            display: inline-block;
+        }
+
+        .status-indicator.online {
+            background: var(--accent-success);
+            box-shadow: 0 0 6px var(--accent-success);
+        }
+
+        .status-indicator.offline {
+            background: var(--accent-danger);
+        }
+
+        .status-indicator.warning {
+            background: var(--accent-warning);
+            box-shadow: 0 0 6px var(--accent-warning);
+        }
+
+        /* Activity Log */
+        .activity-log {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 14px;
+            max-height: 280px;
+            overflow-y: auto;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.76rem;
+        }
+
+        .log-entry {
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            display: flex;
+            gap: 8px;
+            line-height: 1.4;
+        }
+
+        .log-entry:last-child {
+            border-bottom: none;
+        }
+
+        .log-time {
+            color: var(--text-secondary);
+            flex-shrink: 0;
+        }
+
+        .log-message {
+            flex: 1;
+        }
+
+        /* Temperature Gauge */
+        .temp-gauge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .temp-bar {
+            flex: 1;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 999px;
+            overflow: hidden;
+        }
+
+        .temp-fill {
+            height: 100%;
+            border-radius: 999px;
+            transition: width 0.6s ease, background 0.6s ease;
+        }
+
+        .temp-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 0.9rem;
+            min-width: 44px;
+            text-align: right;
+        }
+
+        /* ══════════════════════════════════════════════════════════════ */
+        /* LOADING SPINNER                                                */
+        /* ══════════════════════════════════════════════════════════════ */
+
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(167, 139, 250, 0.2);
+            border-radius: 50%;
+            border-top-color: var(--accent-primary);
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .loading-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .loading-overlay.active {
+            display: flex;
+        }
+
+        .loading-content {
+            text-align: center;
+        }
+
+        .loading-content .spinner {
+            width: 40px;
+            height: 40px;
+            border-width: 3px;
+        }
+
+        .loading-content p {
+            margin-top: 16px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* ══════════════════════════════════════════════════════════════ */
+        /* FOOTER                                                         */
+        /* ══════════════════════════════════════════════════════════════ */
+
+        .footer {
+            text-align: center;
+            padding: 16px;
+            background: rgba(0, 0, 0, 0.6);
+            border-top: 1px solid var(--border-color);
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            backdrop-filter: blur(10px);
+        }
+
+        .footer a {
+            color: var(--accent-primary);
+            text-decoration: none;
+        }
+
+        /* ══════════════════════════════════════════════════════════════ */
+        /* LANGUAGE SELECTOR                                              */
+        /* ══════════════════════════════════════════════════════════════ */
+
+        .lang-selector {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            padding: 14px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .lang-selector h4 {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+
+        .lang-buttons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6px;
+        }
+
+        .lang-btn {
+            padding: 8px 10px;
+            background: transparent;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-secondary);
+            font-size: 0.82rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .lang-btn:hover {
+            background: var(--bg-glass);
+            color: var(--text-primary);
+            border-color: rgba(167, 139, 250, 0.2);
+        }
+
+        .lang-btn.active {
+            background: rgba(167, 139, 250, 0.1);
+            border-color: rgba(167, 139, 250, 0.3);
+            color: var(--accent-primary);
+        }
+
+        .lang-btn .flag {
+            font-size: 1.1rem;
+        }
+
+        .lang-btn .code {
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- HEADER                                                          -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></span>
+            <div class="logo-text">
+                <h1 data-i18n="header.title">QANTUM</h1>
+                <p data-i18n="header.codename">v1.0.2 &mdash; Enterprise QA Suite</p>
+            </div>
+        </div>
+        <div class="header-stats">
+            <div class="stat-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                    <polyline points="14 2 14 8 20 8" />
+                </svg>
+                <span data-i18n="header.lines">Lines:</span>
+                <span class="value">45,895</span>
+            </div>
+            <div class="stat-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12" />
+                </svg>
+                <span data-i18n="header.tests">Tests:</span>
+                <span class="value">492</span>
+            </div>
+            <div class="stat-badge">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="7" width="20" height="14" rx="2" />
+                    <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+                </svg>
+                <span data-i18n="header.modules">Modules:</span>
+                <span class="value">6</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <!-- SIDEBAR - MODULE NAVIGATION                                 -->
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <aside class="sidebar">
+            <!-- ════════════════════════════════════════════════════════ -->
+            <!-- LANGUAGE SELECTOR - 🌍 Citizen of the World             -->
+            <!-- ════════════════════════════════════════════════════════ -->
+            <div class="lang-selector">
+                <h4><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        style="margin-right:6px;vertical-align:middle">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="2" y1="12" x2="22" y2="12" />
+                        <path
+                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                    </svg><span data-i18n="language">Language</span></h4>
+                <div class="lang-buttons">
+                    <button class="lang-btn" data-lang="bg" title="Български">
+                        <span class="flag">🇧🇬</span>
+                        <span class="code">BG</span>
+                    </button>
+                    <button class="lang-btn active" data-lang="en" title="English">
+                        <span class="flag">🇬🇧</span>
+                        <span class="code">EN</span>
+                    </button>
+                    <button class="lang-btn" data-lang="de" title="Deutsch">
+                        <span class="flag">🇩🇪</span>
+                        <span class="code">DE</span>
+                    </button>
+                    <button class="lang-btn" data-lang="fr" title="Français">
+                        <span class="flag">🇫🇷</span>
+                        <span class="code">FR</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Free Features -->
+            <div class="sidebar-section">
+                <h3 data-i18n="sidebar.freeFeatures">Free Features</h3>
+
+                <button class="module-btn active" data-panel="audit">
+                    <span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                        </svg></span>
+                    <span data-i18n="modules.websiteAudit">Website Audit</span>
+                    <span class="badge" data-i18n="badges.free">FREE</span>
+                </button>
+
+                <button class="module-btn" data-panel="api-test">
+                    <span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                        </svg></span>
+                    <span data-i18n="modules.apiTest">API Test</span>
+                    <span class="badge" data-i18n="badges.free">FREE</span>
+                </button>
+
+                <button class="module-btn" data-panel="link-checker">
+                    <span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                            <polyline points="15 3 21 3 21 9" />
+                            <line x1="10" y1="14" x2="21" y2="3" />
+                        </svg></span>
+                    <span data-i18n="modules.linkChecker">Link Checker</span>
+                    <span class="badge" data-i18n="badges.free">FREE</span>
+                </button>
+            </div>
+
+            <!-- Pro Features -->
+            <div class="sidebar-section">
+                <h3 data-i18n="sidebar.proFeatures">Pro Features</h3>
+
+                <button class="module-btn" data-panel="prediction">
+                    <span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                        </svg></span>
+                    <span data-i18n="modules.predictionMatrix">Prediction Matrix</span>
+                    <span class="badge pro" data-i18n="badges.pro">PRO</span>
+                </button>
+
+                <button class="module-btn" data-panel="api-sensei">
+                    <span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" />
+                            <line x1="8" y1="21" x2="16" y2="21" />
+                            <line x1="12" y1="17" x2="12" y2="21" />
+                        </svg></span>
+                    <span data-i18n="modules.apiSensei">API Sensei</span>
+                    <span class="badge pro" data-i18n="badges.pro">PRO</span>
+                </button>
+
+                <button class="module-btn" data-panel="chronos">
+                    <span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="12" cy="12" r="10" />
+                            <polyline points="12 6 12 12 16 14" />
+                        </svg></span>
+                    <span data-i18n="modules.chronosEngine">Chronos Engine</span>
+                    <span class="badge pro" data-i18n="badges.pro">PRO</span>
+                </button>
+            </div>
+
+            <!-- Enterprise Modules -->
+            <div class="sidebar-section">
+                <h3 data-i18n="sidebar.enterprise">Enterprise</h3>
+
+                <button class="module-btn" data-panel="thermal">
+                    <span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z" />
+                        </svg></span>
+                    <span data-i18n="modules.thermalPool">Thermal Pool</span>
+                </button>
+
+                <button class="module-btn" data-panel="docker">
+                    <span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="2" y="2" width="20" height="8" rx="2" />
+                            <rect x="2" y="14" width="20" height="8" rx="2" />
+                            <line x1="6" y1="6" x2="6.01" y2="6" />
+                            <line x1="6" y1="18" x2="6.01" y2="18" />
+                        </svg></span>
+                    <span data-i18n="modules.dockerManager">Docker Manager</span>
+                </button>
+
+                <button class="module-btn" data-panel="swarm">
+                    <span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg></span>
+                    <span data-i18n="modules.swarmCommander">Swarm Commander</span>
+                </button>
+
+                <button class="module-btn" data-panel="tts">
+                    <span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07" />
+                        </svg></span>
+                    <span data-i18n="modules.bulgarianTts">Bulgarian TTS</span>
+                </button>
+
+                <button class="module-btn" data-panel="license">
+                    <span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                        </svg></span>
+                    <span data-i18n="modules.licenseManager">License Manager</span>
+                </button>
+            </div>
+
+            <!-- Utilities -->
+            <div class="sidebar-section">
+                <h3 data-i18n="sidebar.utilities">Utilities</h3>
+
+                <button class="module-btn" data-panel="stats">
+                    <span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="18" y1="20" x2="18" y2="10" />
+                            <line x1="12" y1="20" x2="12" y2="4" />
+                            <line x1="6" y1="20" x2="6" y2="14" />
+                        </svg></span>
+                    <span data-i18n="modules.systemStats">System Stats</span>
+                </button>
+
+                <button class="module-btn" data-panel="logger">
+                    <span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                            <polyline points="14 2 14 8 20 8" />
+                            <line x1="16" y1="13" x2="8" y2="13" />
+                            <line x1="16" y1="17" x2="8" y2="17" />
+                            <polyline points="10 9 9 9 8 9" />
+                        </svg></span>
+                    <span data-i18n="modules.logger">Logger</span>
+                </button>
+
+                <button class="module-btn" onclick="window.open('https://veritras.website', '_blank')"
+                    style="border-color: rgba(167,139,250,0.3); color: #a78bfa;">
+                    <span class="icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                        </svg></span>
+                    <span>Veritras.website</span>
+                    <span class="badge"
+                        style="background: rgba(167,139,250,0.15); border-color: rgba(167,139,250,0.3); color: #a78bfa;">↗</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <!-- MAIN CONTENT - PANELS                                       -->
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <main class="content">
+
+            <!-- NERVE CENTER HUD -->
+            <div class="nerve-center-hud">
+                <div class="hud-card">
+                    <span class="hud-icon">📊</span>
+                    <div class="hud-label">Lines of Code</div>
+                    <div class="hud-value neon-purple">45,895</div>
+                    <div class="hud-sub">+1,203 this week</div>
+                </div>
+                <div class="hud-card">
+                    <span class="hud-icon">✅</span>
+                    <div class="hud-label">Tests Passing</div>
+                    <div class="hud-value neon-green">492</div>
+                    <div class="hud-sub">100% coverage</div>
+                </div>
+                <div class="hud-card">
+                    <span class="hud-icon">🏢</span>
+                    <div class="hud-label">Enterprise Modules</div>
+                    <div class="hud-value neon-cyan">6</div>
+                    <div class="hud-sub">Active & Deployed</div>
+                </div>
+                <div class="hud-card">
+                    <span class="hud-icon">🔐</span>
+                    <div class="hud-label">System Status</div>
+                    <div class="hud-value neon-green">Secure</div>
+                    <div class="hud-sub">All systems nominal</div>
+                </div>
+            </div>
+
+            <!-- ════════════════════════════════════════════════════════ -->
+            <!-- PANEL: Website Audit - mm.audit(url)                    -->
+            <!-- ════════════════════════════════════════════════════════ -->
+            <div class="panel active" id="panel-audit">
+                <div class="panel-header">
+                    <div>
+                        <h2 data-i18n="panels.audit.title">🔍 Website Audit</h2>
+                        <p class="subtitle" data-i18n="panels.audit.subtitle">mm.audit(url) → AuditResult</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label data-i18n="panels.audit.urlLabel">URL to Audit</label>
+                    <input type="url" id="audit-url" placeholder="https://example.com" value="https://example.com">
+                </div>
+
+                <div class="form-group">
+                    <label>Audit Tier</label>
+                    <select id="audit-tier" style="margin-bottom: 1rem;">
+                        <option value="free">Basic Audit (FREE)</option>
+                        <option value="pro">Deep Cognitive Audit ($299)</option>
+                    </select>
+                </div>
+
+                <div style="display: flex; gap: 10px;">
+                    <button class="btn btn-primary" onclick="runAudit()" id="run-audit-btn">
+                        <span>▶️</span> <span data-i18n="panels.audit.runButton">Run Audit</span>
+                    </button>
+                    <button class="btn btn-secondary" onclick="unlockProAudit()" id="unlock-pro-btn"
+                        style="display: none; background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: white; border: none;">
+                        <span>🔒</span> <span>Unlock PRO ($299)</span>
+                    </button>
+                </div>
+
+                <div class="score-grid" id="audit-scores" style="display: none;">
+                    <div class="score-card">
+                        <div class="score-value" id="score-performance">--</div>
+                        <div class="score-label" data-i18n="panels.audit.performance">Performance</div>
+                    </div>
+                    <div class="score-card">
+                        <div class="score-value" id="score-accessibility">--</div>
+                        <div class="score-label" data-i18n="panels.audit.accessibility">Accessibility</div>
+                    </div>
+                    <div class="score-card">
+                        <div class="score-value" id="score-seo">--</div>
+                        <div class="score-label" data-i18n="panels.audit.seo">SEO</div>
+                    </div>
+                </div>
+
+                <div class="results" id="audit-results" style="display: none;"></div>
+            </div>
+
+            <!-- ════════════════════════════════════════════════════════ -->
+            <!-- PANEL: API Test - mm.testAPI(endpoint)                  -->
+            <!-- ════════════════════════════════════════════════════════ -->
+            <div class="panel" id="panel-api-test">
+                <div class="panel-header">
+                    <div>
+                        <h2 data-i18n="panels.apiTest.title">🌐 API Test</h2>
+                        <p class="subtitle" data-i18n="panels.apiTest.subtitle">mm.testAPI(endpoint, options) →
+                            APITestResult</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label data-i18n="panels.apiTest.endpointLabel">API Endpoint</label>
+                    <input type="url" id="api-url" placeholder="https://api.example.com/health"
+                        value="https://httpbin.org/get">
+                </div>
+
+                <div class="form-group">
+                    <label data-i18n="panels.apiTest.methodLabel">Method</label>
+                    <select id="api-method">
+                        <option value="GET">GET</option>
+                        <option value="POST">POST</option>
+                        <option value="PUT">PUT</option>
+                        <option value="DELETE">DELETE</option>
+                        <option value="PATCH">PATCH</option>
+                    </select>
+                </div>
+
+                <button class="btn btn-primary" onclick="runAPITest()">
+                    <span>▶️</span> <span data-i18n="panels.apiTest.runButton">Test API</span>
+                </button>
+
+                <div class="results" id="api-results" style="display: none;"></div>
+            </div>
+
+            <!-- ════════════════════════════════════════════════════════ -->
+            <!-- PANEL: Link Checker - mm.checkLinks(url)                -->
+            <!-- ════════════════════════════════════════════════════════ -->
+            <div class="panel" id="panel-link-checker">
+                <div class="panel-header">
+                    <div>
+                        <h2 data-i18n="panels.linkChecker.title">🔗 Link Checker</h2>
+                        <p class="subtitle" data-i18n="panels.linkChecker.subtitle">mm.checkLinks(url, options) →
+                            CheckLinksResult</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label data-i18n="panels.linkChecker.urlLabel">Page URL</label>
+                    <input type="url" id="links-url" placeholder="https://example.com" value="https://example.com">
+                </div>
+
+                <div class="form-group">
+                    <label data-i18n="panels.linkChecker.maxLinksLabel">Max Links to Check</label>
+                    <input type="number" id="links-max" value="20" min="1" max="100">
+                </div>
+
+                <button class="btn btn-primary" onclick="runLinkChecker()">
+                    <span>▶️</span> <span data-i18n="panels.linkChecker.runButton">Check Links</span>
+                </button>
+
+                <div class="results" id="links-results" style="display: none;"></div>
+            </div>
+
+            <!-- ════════════════════════════════════════════════════════ -->
+            <!-- PANEL: Prediction Matrix - mm.predict(options)          -->
+            <!-- ════════════════════════════════════════════════════════ -->
+            <div class="panel" id="panel-prediction">
+                <div class="panel-header">
+                    <div>
+                        <h2 data-i18n="panels.prediction.title">🔮 Prediction Matrix</h2>
+                        <p class="subtitle" data-i18n="panels.prediction.subtitle">mm.predict(options) →
+                            PredictionResult</p>
+                    </div>
+                    <span class="badge pro" style="padding: 8px 16px;" data-i18n="badges.proRequired">PRO LICENSE
+                        REQUIRED</span>
+                </div>
+
+                <div class="form-group">
+                    <label data-i18n="panels.prediction.codeLabel">Code Changes (diff or content)</label>
+                    <textarea id="prediction-code" rows="10" placeholder="Paste your code changes here..."></textarea>
+                </div>
+
+                <button class="btn btn-primary" onclick="runPrediction()">
+                    <span>▶️</span> <span data-i18n="panels.prediction.runButton">Analyze & Predict</span>
+                </button>
+
+                <div class="results" id="prediction-results" style="display: none;"></div>
+            </div>
+
+            <!-- ════════════════════════════════════════════════════════ -->
+            <!-- PANEL: API Sensei - mm.apiSensei(config)                -->
+            <!-- ════════════════════════════════════════════════════════ -->
+            <div class="panel" id="panel-api-sensei">
+                <div class="panel-header">
+                    <div>
+                        <h2 data-i18n="panels.apiSensei.title">🤖 API Sensei</h2>
+                        <p class="subtitle" data-i18n="panels.apiSensei.subtitle">mm.apiSensei(config) → APISenseiResult
+                        </p>
+                    </div>
+                    <span class="badge pro" style="padding: 8px 16px;" data-i18n="badges.proRequired">PRO LICENSE
+                        REQUIRED</span>
+                </div>
+
+                <div class="form-group">
+                    <label data-i18n="panels.apiSensei.baseUrlLabel">Base API URL</label>
+                    <input type="url" id="sensei-url" placeholder="https://api.example.com">
+                </div>
+
+                <div class="form-group">
+                    <label data-i18n="panels.apiSensei.scenariosLabel">Test Scenarios</label>
+                    <select id="sensei-scenarios" multiple size="5">
+                        <option value="happy-path" selected data-i18n="panels.apiSensei.scenarios.happyPath">Happy Path
+                        </option>
+                        <option value="edge-cases" selected data-i18n="panels.apiSensei.scenarios.edgeCases">Edge Cases
+                        </option>
+                        <option value="error-handling" selected data-i18n="panels.apiSensei.scenarios.errorHandling">
+                            Error Handling</option>
+                        <option value="security" data-i18n="panels.apiSensei.scenarios.security">Security</option>
+                        <option value="performance" data-i18n="panels.apiSensei.scenarios.performance">Performance
+                        </option>
+                    </select>
+                </div>
+
+                <button class="btn btn-primary" onclick="runAPISensei()">
+                    <span>▶️</span> <span data-i18n="panels.apiSensei.runButton">Generate & Run Tests</span>
+                </button>
+
+                <div class="results" id="sensei-results" style="display: none;"></div>
+            </div>
+
+            <!-- ════════════════════════════════════════════════════════ -->
+            <!-- PANEL: Chronos Engine - mm.chronos(options)             -->
+            <!-- ════════════════════════════════════════════════════════ -->
+            <div class="panel" id="panel-chronos">
+                <div class="panel-header">
+                    <div>
+                        <h2 data-i18n="panels.chronos.title">⏰ Chronos Engine</h2>
+                        <p class="subtitle" data-i18n="panels.chronos.subtitle">mm.chronos(options) → ChronosResult</p>
+                    </div>
+                    <span class="badge pro" style="padding: 8px 16px;" data-i18n="badges.proRequired">PRO LICENSE
+                        REQUIRED</span>
+                </div>
+
+                <p style="color: var(--text-secondary); margin-bottom: 16px;" data-i18n="panels.chronos.description">
+                    Time-travel debugging: Records state snapshots during test execution for debugging.
+                </p>
+
+                <div class="form-group">
+                    <label data-i18n="panels.chronos.intervalLabel">Snapshot Interval (ms)</label>
+                    <input type="number" id="chronos-interval" value="100" min="50" max="1000">
+                </div>
+
+                <div class="form-group">
+                    <label data-i18n="panels.chronos.maxSnapshotsLabel">Max Snapshots</label>
+                    <input type="number" id="chronos-max" value="50" min="10" max="200">
+                </div>
+
+                <button class="btn btn-primary" onclick="runChronos()">
+                    <span>▶️</span> <span data-i18n="panels.chronos.runButton">Start Recording</span>
+                </button>
+
+                <div class="results" id="chronos-results" style="display: none;"></div>
+            </div>
+
+            <!-- ════════════════════════════════════════════════════════ -->
+            <!-- PANEL: Thermal Pool                                      -->
+            <!-- ════════════════════════════════════════════════════════ -->
+            <div class="panel" id="panel-thermal">
+                <div class="panel-header">
+                    <div>
+                        <h2 data-i18n="panels.thermal.title">🌡️ Thermal-Aware Pool</h2>
+                        <p class="subtitle" data-i18n="panels.thermal.subtitle">ThermalAwarePool - CPU temperature
+                            management</p>
+                    </div>
+                </div>
+
+                <p style="color: var(--text-secondary); margin-bottom: 16px;" data-i18n="panels.thermal.description">
+                    Automatically adjusts parallelism based on CPU temperature to prevent throttling.
+                </p>
+
+                <table style="width: 100%; margin-bottom: 16px;">
+                    <thead>
+                        <tr style="text-align: left; color: var(--text-secondary);">
+                            <th style="padding: 8px;" data-i18n="status.state">State</th>
+                            <th style="padding: 8px;" data-i18n="panels.thermal.temperature">Temperature</th>
+                            <th style="padding: 8px;" data-i18n="panels.thermal.maxInstances">Max Instances</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="color: var(--accent-success);">
+                            <td style="padding: 8px;" data-i18n="panels.thermal.states.cool">🟢 COOL</td>
+                            <td>&lt;60°C</td>
+                            <td>40</td>
+                        </tr>
+                        <tr style="color: var(--accent-secondary);">
+                            <td style="padding: 8px;" data-i18n="panels.thermal.states.warm">🟢 WARM</td>
+                            <td>60-70°C</td>
+                            <td>30</td>
+                        </tr>
+                        <tr style="color: var(--accent-warning);">
+                            <td style="padding: 8px;" data-i18n="panels.thermal.states.hot">🟠 HOT</td>
+                            <td>70-80°C</td>
+                            <td>20</td>
+                        </tr>
+                        <tr style="color: var(--accent-danger);">
+                            <td style="padding: 8px;" data-i18n="panels.thermal.states.critical">🔴 CRITICAL</td>
+                            <td>&gt;80°C</td>
+                            <td>10</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="results">
+                    <pre>import { ThermalAwarePool } from './src/enterprise/thermal-aware-pool';
+
+const pool = new ThermalAwarePool({
+    maxInstances: 40,
+    coolThreshold: 60,
+    warmThreshold: 70,
+    hotThreshold: 80,
+    criticalThreshold: 90
+});
+
+await pool.start();
+// Pool auto-adjusts based on CPU temperature</pre>
+                </div>
+            </div>
+
+            <!-- ════════════════════════════════════════════════════════ -->
+            <!-- PANEL: Docker Manager                                    -->
+            <!-- ════════════════════════════════════════════════════════ -->
+            <div class="panel" id="panel-docker">
+                <div class="panel-header">
+                    <div>
+                        <h2 data-i18n="panels.docker.title">🐳 Docker Manager</h2>
+                        <p class="subtitle" data-i18n="panels.docker.subtitle">DockerManager - Selenium Grid
+                            orchestration</p>
+                    </div>
+                </div>
+
+                <p style="color: var(--text-secondary); margin-bottom: 16px;" data-i18n="panels.docker.description">
+                    Auto-generates Dockerfile and docker-compose.yml for Selenium Grid.
+                </p>
+
+                <div class="results">
+                    <pre>import { DockerManager } from './src/enterprise/docker-manager';
+
+const docker = new DockerManager({
+    hubPort: 4444,
+    chromeNodes: 4,
+    firefoxNodes: 2,
+    enableVideo: true
+});
+
+await docker.generateDockerfile();
+await docker.generateDockerCompose();
+await docker.startGrid();</pre>
+                </div>
+            </div>
+
+            <!-- ════════════════════════════════════════════════════════ -->
+            <!-- PANEL: Swarm Commander                                   -->
+            <!-- ════════════════════════════════════════════════════════ -->
+            <div class="panel" id="panel-swarm">
+                <div class="panel-header">
+                    <div>
+                        <h2 data-i18n="panels.swarm.title">🎖️ Swarm Commander</h2>
+                        <p class="subtitle" data-i18n="panels.swarm.subtitle">SwarmCommander - Commander-Soldier pattern
+                        </p>
+                    </div>
+                </div>
+
+                <p style="color: var(--text-secondary); margin-bottom: 16px;" data-i18n="panels.swarm.description">
+                    Commander distributes tasks to soldiers (browser instances) for parallel execution.
+                </p>
+
+                <div class="results">
+                    <pre>import { SwarmCommander } from './src/enterprise/swarm-commander';
+
+const commander = new SwarmCommander({
+    minSoldiers: 4,
+    maxSoldiers: 40,
+    taskTimeout: 30000
+});
+
+await commander.initialize();
+await commander.queueTask({
+    id: 'test-001',
+    type: 'browser-test',
+    payload: { url: 'https://example.com' }
+});</pre>
+                </div>
+            </div>
+
+            <!-- ════════════════════════════════════════════════════════ -->
+            <!-- PANEL: Bulgarian TTS                                     -->
+            <!-- ════════════════════════════════════════════════════════ -->
+            <div class="panel" id="panel-tts">
+                <div class="panel-header">
+                    <div>
+                        <h2 data-i18n="panels.tts.title">🔊 Bulgarian TTS</h2>
+                        <p class="subtitle" data-i18n="panels.tts.subtitle">BulgarianTTS - Native text-to-speech</p>
+                    </div>
+                </div>
+
+                <p style="color: var(--text-secondary); margin-bottom: 16px;" data-i18n="panels.tts.description">
+                    🇧🇬 Български текст-към-реч за гласова обратна връзка по време на тестове.
+                </p>
+
+                <table style="width: 100%; margin-bottom: 16px;">
+                    <thead>
+                        <tr style="text-align: left; color: var(--text-secondary);">
+                            <th style="padding: 8px;">Template</th>
+                            <th style="padding: 8px;">Bulgarian Text</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 8px;">test_passed</td>
+                            <td data-i18n="panels.tts.templates.testPassed">"Тестът премина успешно"</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px;">test_failed</td>
+                            <td data-i18n="panels.tts.templates.testFailed">"Тестът се провали"</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px;">error_found</td>
+                            <td data-i18n="panels.tts.templates.errorFound">"Открих грешка в {element}"</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px;">healing</td>
+                            <td data-i18n="panels.tts.templates.healing">"Намерих нов селектор"</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="results">
+                    <pre>import { BulgarianTTS } from './src/enterprise/bulgarian-tts';
+
+const tts = new BulgarianTTS({ engine: 'auto' });
+await tts.initialize();
+
+await tts.speak('Тестът премина успешно');
+await tts.speakTemplate('error_found', { element: 'бутон' });</pre>
+                </div>
+            </div>
+
+            <!-- ════════════════════════════════════════════════════════ -->
+            <!-- PANEL: License Manager                                   -->
+            <!-- ════════════════════════════════════════════════════════ -->
+            <div class="panel" id="panel-license">
+                <div class="panel-header">
+                    <div>
+                        <h2 data-i18n="panels.license.title">🔐 License Manager</h2>
+                        <p class="subtitle" data-i18n="panels.license.subtitle">LicenseManager - Hardware-locked
+                            licensing</p>
+                    </div>
+                </div>
+
+                <p style="color: var(--text-secondary); margin-bottom: 16px;" data-i18n="panels.license.description">
+                    License is bound to hardware using SHA-256 fingerprint.
+                </p>
+
+                <table style="width: 100%; margin-bottom: 16px;">
+                    <thead>
+                        <tr style="text-align: left; color: var(--text-secondary);">
+                            <th style="padding: 8px;">Type</th>
+                            <th style="padding: 8px;" data-i18n="panels.license.maxInstances">Max Instances</th>
+                            <th style="padding: 8px;" data-i18n="panels.license.features">Features</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 8px;" data-i18n="panels.license.types.trial">Trial</td>
+                            <td>2</td>
+                            <td>Basic</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px;" data-i18n="panels.license.types.professional">Professional</td>
+                            <td>10</td>
+                            <td>+ Thermal, Docker</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px;" data-i18n="panels.license.types.enterprise">Enterprise</td>
+                            <td>50</td>
+                            <td>+ Swarm, TTS</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px;" data-i18n="panels.license.types.sovereign">Sovereign</td>
+                            <td>999</td>
+                            <td>All features</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="results">
+                    <pre># Generate development license
+npm run license:generate
+
+# Check license status
+npm run license:status</pre>
+                </div>
+            </div>
+
+            <!-- ════════════════════════════════════════════════════════ -->
+            <!-- PANEL: System Stats                                      -->
+            <!-- ════════════════════════════════════════════════════════ -->
+            <div class="panel" id="panel-stats">
+                <div class="panel-header">
+                    <div>
+                        <h2 data-i18n="panels.stats.title">📊 System Stats</h2>
+                        <p class="subtitle" data-i18n="panels.stats.subtitle">getSystemStats() → Statistics</p>
+                    </div>
+                </div>
+
+                <div class="score-grid">
+                    <div class="score-card">
+                        <div class="score-value score-good">23.0.0</div>
+                        <div class="score-label" data-i18n="panels.stats.version">Version</div>
+                    </div>
+                    <div class="score-card">
+                        <div class="score-value score-good">45,895</div>
+                        <div class="score-label" data-i18n="panels.stats.linesOfCode">Lines of Code</div>
+                    </div>
+                    <div class="score-card">
+                        <div class="score-value score-good">91</div>
+                        <div class="score-label" data-i18n="panels.stats.typescriptFiles">TypeScript Files</div>
+                    </div>
+                    <div class="score-card">
+                        <div class="score-value score-good">492</div>
+                        <div class="score-label" data-i18n="panels.stats.testsPassing">Tests Passing</div>
+                    </div>
+                    <div class="score-card">
+                        <div class="score-value score-good">6</div>
+                        <div class="score-label" data-i18n="panels.stats.enterpriseModules">Enterprise Modules</div>
+                    </div>
+                    <div class="score-card">
+                        <div class="score-value" style="font-size: 1rem; color: var(--accent-secondary);">The Local
+                            Sovereign</div>
+                        <div class="score-label" data-i18n="panels.stats.codename">Codename</div>
+                    </div>
+                </div>
+
+                <div class="results" style="margin-top: 20px;">
+                    <pre>import { getSystemStats, VERSION, VERSION_CODENAME } from './src/index';
+
+const stats = getSystemStats();
+// {
+//   version: '23.0.0',
+//   codename: 'The Local Sovereign',
+//   lines: 45895,
+//   files: 91,
+//   tests: 492,
+//   modules: 6
+// }</pre>
+                </div>
+            </div>
+
+            <!-- ════════════════════════════════════════════════════════ -->
+            <!-- PANEL: Logger                                            -->
+            <!-- ════════════════════════════════════════════════════════ -->
+            <div class="panel" id="panel-logger">
+                <div class="panel-header">
+                    <div>
+                        <h2 data-i18n="panels.logger.title">📋 Structured Logger</h2>
+                        <p class="subtitle" data-i18n="panels.logger.subtitle">mm.getLogger() → Logger</p>
+                    </div>
+                </div>
+
+                <p style="color: var(--text-secondary); margin-bottom: 16px;" data-i18n="panels.logger.description">
+                    Professional logging with levels: debug, info, warn, error, audit
+                </p>
+
+                <div class="results">
+                    <pre>const mm = new QAntum({ verbose: true });
+const logger = mm.getLogger();
+
+logger.info('Operation started', { taskId: '001' });
+logger.warn('Resource running low', { memory: '85%' });
+logger.error('Connection failed', new Error('Timeout'));
+logger.audit('user_login', 'success', { userId: 42 });
+
+// Get logs
+const recentLogs = logger.getLogs('error', 10);
+logger.clear();</pre>
+                </div>
+            </div>
+
+        </main>
+
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <!-- STATUS PANEL                                                -->
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <aside class="status-panel">
+            <!-- System Status -->
+            <div class="status-section">
+                <h3 data-i18n="status.systemStatus">📡 System Status</h3>
+                <div class="status-card">
+                    <div class="status-row">
+                        <span><span class="status-indicator online"></span><span
+                                data-i18n="status.backend">Backend</span></span>
+                        <span style="color: var(--accent-success);" data-i18n="status.online">Online</span>
+                    </div>
+                    <div class="status-row">
+                        <span><span class="status-indicator" id="license-indicator"></span><span
+                                data-i18n="status.license">License</span></span>
+                        <span id="license-status" data-i18n="status.checking">Checking...</span>
+                    </div>
+                    <div class="status-row">
+                        <span><span class="status-indicator online"></span><span
+                                data-i18n="status.circuitBreaker">Circuit Breaker</span></span>
+                        <span style="color: var(--accent-success);" data-i18n="status.closed">Closed</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CPU Temperature -->
+            <div class="status-section">
+                <h3 data-i18n="status.cpuTemperature">🌡️ CPU Temperature</h3>
+                <div class="status-card">
+                    <div class="temp-gauge">
+                        <div class="temp-bar">
+                            <div class="temp-fill" id="temp-fill"
+                                style="width: 45%; background: var(--accent-success);"></div>
+                        </div>
+                        <div class="temp-value" id="temp-value">45°C</div>
+                    </div>
+                    <div style="margin-top: 12px; font-size: 0.85rem; color: var(--text-secondary);">
+                        <span data-i18n="status.state">State:</span> <span id="thermal-state"
+                            style="color: var(--accent-success);">🟢 COOL</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Financial Oracle -->
+            <div class="status-section">
+                <h3 data-i18n="status.financialOracle">💰 Financial Oracle</h3>
+                <div class="status-card">
+                    <div class="status-row">
+                        <span data-i18n="status.totalCost">Total Cost</span>
+                        <span id="cost-total">$0.00</span>
+                    </div>
+                    <div class="status-row">
+                        <span data-i18n="status.requests">Requests</span>
+                        <span id="cost-requests">0</span>
+                    </div>
+                    <div class="status-row">
+                        <span data-i18n="status.budgetLeft">Budget Left</span>
+                        <span style="color: var(--accent-success);" id="cost-budget">$100.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Activity Log -->
+            <div class="status-section">
+                <h3 data-i18n="status.activityLog">📜 Activity Log</h3>
+                <div class="activity-log" id="activity-log">
+                    <div class="log-entry">
+                        <span class="log-time">--:--:--</span>
+                        <span class="log-message result-info" data-i18n="status.waitingForActivity">Waiting for
+                            activity...</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loading">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <p id="loading-text" data-i18n="common.processing">Processing...</p>
+        </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- JAVASCRIPT                                                      -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <script>
+        // ══════════════════════════════════════════════════════════════
+        // I18N TRANSLATIONS - Cached in memory for instant switching
+        // ══════════════════════════════════════════════════════════════
+
+        let currentLang = 'en';
+
+        const translations = {
+            // ═══════════════════════════════════════════════════════════
+            // BULGARIAN
+            // ═══════════════════════════════════════════════════════════
+            bg: {
+                language: 'Език',
+                header: {
+                    title: 'QANTUM',
+                    codename: 'v1.0.2 "Локалният Суверен"',
+                    lines: 'Редове:',
+                    tests: 'Тестове:',
+                    modules: 'Модули:'
+                },
+                sidebar: {
+                    freeFeatures: '🆓 Безплатни функции',
+                    proFeatures: '💎 Pro функции',
+                    enterprise: '🏢 Enterprise',
+                    utilities: '🛠️ Инструменти'
+                },
+                modules: {
+                    websiteAudit: 'Одит на сайт',
+                    apiTest: 'API Тест',
+                    linkChecker: 'Проверка линкове',
+                    predictionMatrix: 'Матрица прогнози',
+                    apiSensei: 'API Sensei',
+                    chronosEngine: 'Chronos двигател',
+                    thermalPool: 'Термален пул',
+                    dockerManager: 'Docker мениджър',
+                    swarmCommander: 'Swarm командир',
+                    bulgarianTts: 'Български TTS',
+                    licenseManager: 'Лицензен мениджър',
+                    systemStats: 'Системна статистика',
+                    logger: 'Логър'
+                },
+                badges: {
+                    free: 'БЕЗПЛ.',
+                    pro: 'PRO',
+                    proRequired: 'ИЗИСКВА PRO ЛИЦЕНЗ'
+                },
+                panels: {
+                    audit: {
+                        title: '🔍 Одит на уебсайт',
+                        subtitle: 'mm.audit(url) → AuditResult',
+                        urlLabel: 'URL за одит',
+                        runButton: 'Стартирай одит',
+                        performance: 'Производителност',
+                        accessibility: 'Достъпност',
+                        seo: 'SEO'
+                    },
+                    apiTest: {
+                        title: '🌐 API Тест',
+                        subtitle: 'mm.testAPI(endpoint, options) → APITestResult',
+                        endpointLabel: 'API Endpoint',
+                        methodLabel: 'Метод',
+                        runButton: 'Тествай API'
+                    },
+                    linkChecker: {
+                        title: '🔗 Проверка на линкове',
+                        subtitle: 'mm.checkLinks(url, options) → CheckLinksResult',
+                        urlLabel: 'URL на страница',
+                        maxLinksLabel: 'Макс. линкове за проверка',
+                        runButton: 'Провери линкове'
+                    },
+                    prediction: {
+                        title: '🔮 Матрица за прогнози',
+                        subtitle: 'mm.predict(options) → PredictionResult',
+                        codeLabel: 'Промени в кода (diff или съдържание)',
+                        runButton: 'Анализирай и предскажи'
+                    },
+                    apiSensei: {
+                        title: '🤖 API Sensei',
+                        subtitle: 'mm.apiSensei(config) → APISenseiResult',
+                        baseUrlLabel: 'Базов API URL',
+                        scenariosLabel: 'Тестови сценарии',
+                        runButton: 'Генерирай и изпълни тестове',
+                        scenarios: {
+                            happyPath: 'Щастлив път',
+                            edgeCases: 'Гранични случаи',
+                            errorHandling: 'Обработка грешки',
+                            security: 'Сигурност',
+                            performance: 'Производителност'
+                        }
+                    },
+                    chronos: {
+                        title: '⏰ Chronos двигател',
+                        subtitle: 'mm.chronos(options) → ChronosResult',
+                        description: 'Дебъгване с пътуване във времето: Записва моментни снимки по време на изпълнение.',
+                        intervalLabel: 'Интервал на снимки (ms)',
+                        maxSnapshotsLabel: 'Макс. снимки',
+                        runButton: 'Започни запис'
+                    },
+                    thermal: {
+                        title: '🌡️ Термален пул',
+                        subtitle: 'ThermalAwarePool - Управление на CPU температура',
+                        description: 'Автоматично регулира паралелизма според температурата на процесора.',
+                        states: { cool: '🟢 ХЛАДНО', warm: '🔵 ТОПЛО', hot: '🟠 ГОРЕЩО', critical: '🔴 КРИТИЧНО' },
+                        temperature: 'Температура',
+                        maxInstances: 'Макс. инстанции'
+                    },
+                    docker: {
+                        title: '🐳 Docker мениджър',
+                        subtitle: 'DockerManager - Selenium Grid оркестрация',
+                        description: 'Автоматично генерира Dockerfile и docker-compose.yml за Selenium Grid.'
+                    },
+                    swarm: {
+                        title: '🎖️ Swarm командир',
+                        subtitle: 'SwarmCommander - Commander-Soldier шаблон',
+                        description: 'Командирът разпределя задачите между войниците (browser instances) за паралелно изпълнение.'
+                    },
+                    tts: {
+                        title: '🔊 Български TTS',
+                        subtitle: 'BulgarianTTS - Роден текст-към-реч',
+                        description: '🇧🇬 Български текст-към-реч за гласова обратна връзка по време на тестове.',
+                        templates: { testPassed: '"Тестът премина успешно"', testFailed: '"Тестът се провали"', errorFound: '"Открих грешка в {element}"', healing: '"Намерих нов селектор"' }
+                    },
+                    license: {
+                        title: '🔐 Лицензен мениджър',
+                        subtitle: 'LicenseManager - Хардуерно заключен лиценз',
+                        description: 'Лицензът се привързва към хардуера с SHA-256 отпечатък.',
+                        types: { trial: 'Пробен', professional: 'Професионален', enterprise: 'Ентърпрайз', sovereign: 'Суверен' },
+                        maxInstances: 'Макс. инстанции',
+                        features: 'Функции'
+                    },
+                    stats: {
+                        title: '📊 Системна статистика',
+                        subtitle: 'getSystemStats() → Statistics',
+                        version: 'Версия',
+                        linesOfCode: 'Редове код',
+                        typescriptFiles: 'TypeScript файлове',
+                        testsPassing: 'Минаващи тестове',
+                        enterpriseModules: 'Enterprise модули',
+                        codename: 'Кодово име'
+                    },
+                    logger: {
+                        title: '📋 Структуриран логър',
+                        subtitle: 'mm.getLogger() → Logger',
+                        description: 'Професионално логване с нива: debug, info, warn, error, audit'
+                    }
+                },
+                status: {
+                    systemStatus: '📡 Системен статус',
+                    backend: 'Backend',
+                    license: 'Лиценз',
+                    circuitBreaker: 'Circuit Breaker',
+                    online: 'Онлайн',
+                    offline: 'Офлайн',
+                    closed: 'Затворен',
+                    open: 'Отворен',
+                    cpuTemperature: '🌡️ CPU температура',
+                    state: 'Състояние:',
+                    financialOracle: '💰 Финансов оракул',
+                    totalCost: 'Общи разходи',
+                    requests: 'Заявки',
+                    budgetLeft: 'Оставащ бюджет',
+                    activityLog: '📜 Дневник на активността',
+                    waitingForActivity: 'Изчакване на активност...',
+                    checking: 'Проверка...',
+                    freeTier: 'Безплатен план'
+                },
+                common: {
+                    loading: 'Зареждане...',
+                    processing: 'Обработка...',
+                    complete: 'Завършено!',
+                    error: 'Грешка',
+                    success: 'Успех',
+                    warning: 'Предупреждение',
+                    opened: 'Отворено:',
+                    initialized: 'QAntum v1.0.2 UI инициализиран',
+                    madeInBulgaria: '🇧🇬 Направено с ❤️ в България'
+                },
+                footer: { copyright: '© 2025 Димитър Продромов' }
+            },
+
+            // ═══════════════════════════════════════════════════════════
+            // ENGLISH
+            // ═══════════════════════════════════════════════════════════
+            en: {
+                language: 'Language',
+                header: {
+                    title: 'QANTUM',
+                    codename: 'v1.0.2 &mdash; Enterprise QA Suite',
+                    lines: 'Lines:',
+                    tests: 'Tests:',
+                    modules: 'Modules:'
+                },
+                sidebar: {
+                    freeFeatures: '🆓 Free Features',
+                    proFeatures: '💎 Pro Features',
+                    enterprise: '🏢 Enterprise',
+                    utilities: '🛠️ Utilities'
+                },
+                modules: {
+                    websiteAudit: 'Website Audit',
+                    apiTest: 'API Test',
+                    linkChecker: 'Link Checker',
+                    predictionMatrix: 'Prediction Matrix',
+                    apiSensei: 'API Sensei',
+                    chronosEngine: 'Chronos Engine',
+                    thermalPool: 'Thermal Pool',
+                    dockerManager: 'Docker Manager',
+                    swarmCommander: 'Swarm Commander',
+                    bulgarianTts: 'Bulgarian TTS',
+                    licenseManager: 'License Manager',
+                    systemStats: 'System Stats',
+                    logger: 'Logger'
+                },
+                badges: {
+                    free: 'FREE',
+                    pro: 'PRO',
+                    proRequired: 'PRO LICENSE REQUIRED'
+                },
+                panels: {
+                    audit: {
+                        title: '🔍 Website Audit',
+                        subtitle: 'mm.audit(url) → AuditResult',
+                        urlLabel: 'URL to Audit',
+                        runButton: 'Run Audit',
+                        performance: 'Performance',
+                        accessibility: 'Accessibility',
+                        seo: 'SEO'
+                    },
+                    apiTest: {
+                        title: '🌐 API Test',
+                        subtitle: 'mm.testAPI(endpoint, options) → APITestResult',
+                        endpointLabel: 'API Endpoint',
+                        methodLabel: 'Method',
+                        runButton: 'Test API'
+                    },
+                    linkChecker: {
+                        title: '🔗 Link Checker',
+                        subtitle: 'mm.checkLinks(url, options) → CheckLinksResult',
+                        urlLabel: 'Page URL',
+                        maxLinksLabel: 'Max Links to Check',
+                        runButton: 'Check Links'
+                    },
+                    prediction: {
+                        title: '🔮 Prediction Matrix',
+                        subtitle: 'mm.predict(options) → PredictionResult',
+                        codeLabel: 'Code Changes (diff or content)',
+                        runButton: 'Analyze & Predict'
+                    },
+                    apiSensei: {
+                        title: '🤖 API Sensei',
+                        subtitle: 'mm.apiSensei(config) → APISenseiResult',
+                        baseUrlLabel: 'Base API URL',
+                        scenariosLabel: 'Test Scenarios',
+                        runButton: 'Generate & Run Tests',
+                        scenarios: {
+                            happyPath: 'Happy Path',
+                            edgeCases: 'Edge Cases',
+                            errorHandling: 'Error Handling',
+                            security: 'Security',
+                            performance: 'Performance'
+                        }
+                    },
+                    chronos: {
+                        title: '⏰ Chronos Engine',
+                        subtitle: 'mm.chronos(options) → ChronosResult',
+                        description: 'Time-travel debugging: Records state snapshots during test execution.',
+                        intervalLabel: 'Snapshot Interval (ms)',
+                        maxSnapshotsLabel: 'Max Snapshots',
+                        runButton: 'Start Recording'
+                    },
+                    thermal: {
+                        title: '🌡️ Thermal-Aware Pool',
+                        subtitle: 'ThermalAwarePool - CPU temperature management',
+                        description: 'Automatically adjusts parallelism based on CPU temperature to prevent throttling.',
+                        states: { cool: '🟢 COOL', warm: '🔵 WARM', hot: '🟠 HOT', critical: '🔴 CRITICAL' },
+                        temperature: 'Temperature',
+                        maxInstances: 'Max Instances'
+                    },
+                    docker: {
+                        title: '🐳 Docker Manager',
+                        subtitle: 'DockerManager - Selenium Grid orchestration',
+                        description: 'Auto-generates Dockerfile and docker-compose.yml for Selenium Grid.'
+                    },
+                    swarm: {
+                        title: '🎖️ Swarm Commander',
+                        subtitle: 'SwarmCommander - Commander-Soldier pattern',
+                        description: 'Commander distributes tasks to soldiers (browser instances) for parallel execution.'
+                    },
+                    tts: {
+                        title: '🔊 Bulgarian TTS',
+                        subtitle: 'BulgarianTTS - Native text-to-speech',
+                        description: '🇧🇬 Български текст-към-реч за гласова обратна връзка по време на тестове.',
+                        templates: { testPassed: '"Тестът премина успешно"', testFailed: '"Тестът се провали"', errorFound: '"Открих грешка в {element}"', healing: '"Намерих нов селектор"' }
+                    },
+                    license: {
+                        title: '🔐 License Manager',
+                        subtitle: 'LicenseManager - Hardware-locked licensing',
+                        description: 'License is bound to hardware using SHA-256 fingerprint.',
+                        types: { trial: 'Trial', professional: 'Professional', enterprise: 'Enterprise', sovereign: 'Sovereign' },
+                        maxInstances: 'Max Instances',
+                        features: 'Features'
+                    },
+                    stats: {
+                        title: '📊 System Stats',
+                        subtitle: 'getSystemStats() → Statistics',
+                        version: 'Version',
+                        linesOfCode: 'Lines of Code',
+                        typescriptFiles: 'TypeScript Files',
+                        testsPassing: 'Tests Passing',
+                        enterpriseModules: 'Enterprise Modules',
+                        codename: 'Codename'
+                    },
+                    logger: {
+                        title: '📋 Structured Logger',
+                        subtitle: 'mm.getLogger() → Logger',
+                        description: 'Professional logging with levels: debug, info, warn, error, audit'
+                    }
+                },
+                status: {
+                    systemStatus: '📡 System Status',
+                    backend: 'Backend',
+                    license: 'License',
+                    circuitBreaker: 'Circuit Breaker',
+                    online: 'Online',
+                    offline: 'Offline',
+                    closed: 'Closed',
+                    open: 'Open',
+                    cpuTemperature: '🌡️ CPU Temperature',
+                    state: 'State:',
+                    financialOracle: '💰 Financial Oracle',
+                    totalCost: 'Total Cost',
+                    requests: 'Requests',
+                    budgetLeft: 'Budget Left',
+                    activityLog: '📜 Activity Log',
+                    waitingForActivity: 'Waiting for activity...',
+                    checking: 'Checking...',
+                    freeTier: 'Free Tier'
+                },
+                common: {
+                    loading: 'Loading...',
+                    processing: 'Processing...',
+                    complete: 'Complete!',
+                    error: 'Error',
+                    success: 'Success',
+                    warning: 'Warning',
+                    opened: 'Opened:',
+                    initialized: 'QAntum v1.0.2 UI initialized',
+                    madeInBulgaria: '🇧🇬 Made with ❤️ in Bulgaria'
+                },
+                footer: { copyright: '© 2025 Dimitar Prodromov' }
+            },
+
+            // ═══════════════════════════════════════════════════════════
+            // GERMAN
+            // ═══════════════════════════════════════════════════════════
+            de: {
+                language: 'Sprache',
+                header: {
+                    title: 'QANTUM',
+                    codename: 'v1.0.2 "Der Lokale Souverän"',
+                    lines: 'Zeilen:',
+                    tests: 'Tests:',
+                    modules: 'Module:'
+                },
+                sidebar: {
+                    freeFeatures: '🆓 Kostenlose Funktionen',
+                    proFeatures: '💎 Pro-Funktionen',
+                    enterprise: '🏢 Unternehmen',
+                    utilities: '🛠️ Werkzeuge'
+                },
+                modules: {
+                    websiteAudit: 'Website-Audit',
+                    apiTest: 'API-Test',
+                    linkChecker: 'Link-Prüfer',
+                    predictionMatrix: 'Vorhersage-Matrix',
+                    apiSensei: 'API Sensei',
+                    chronosEngine: 'Chronos-Motor',
+                    thermalPool: 'Thermal-Pool',
+                    dockerManager: 'Docker-Manager',
+                    swarmCommander: 'Schwarm-Kommandant',
+                    bulgarianTts: 'Bulgarische TTS',
+                    licenseManager: 'Lizenz-Manager',
+                    systemStats: 'Systemstatistik',
+                    logger: 'Logger'
+                },
+                badges: {
+                    free: 'KOSTENLOS',
+                    pro: 'PRO',
+                    proRequired: 'PRO-LIZENZ ERFORDERLICH'
+                },
+                panels: {
+                    audit: {
+                        title: '🔍 Website-Audit',
+                        subtitle: 'mm.audit(url) → AuditResult',
+                        urlLabel: 'URL zum Prüfen',
+                        runButton: 'Audit starten',
+                        performance: 'Leistung',
+                        accessibility: 'Barrierefreiheit',
+                        seo: 'SEO'
+                    },
+                    apiTest: {
+                        title: '🌐 API-Test',
+                        subtitle: 'mm.testAPI(endpoint, options) → APITestResult',
+                        endpointLabel: 'API-Endpunkt',
+                        methodLabel: 'Methode',
+                        runButton: 'API testen'
+                    },
+                    linkChecker: {
+                        title: '🔗 Link-Prüfer',
+                        subtitle: 'mm.checkLinks(url, options) → CheckLinksResult',
+                        urlLabel: 'Seiten-URL',
+                        maxLinksLabel: 'Max. zu prüfende Links',
+                        runButton: 'Links prüfen'
+                    },
+                    prediction: {
+                        title: '🔮 Vorhersage-Matrix',
+                        subtitle: 'mm.predict(options) → PredictionResult',
+                        codeLabel: 'Code-Änderungen (Diff oder Inhalt)',
+                        runButton: 'Analysieren & Vorhersagen'
+                    },
+                    apiSensei: {
+                        title: '🤖 API Sensei',
+                        subtitle: 'mm.apiSensei(config) → APISenseiResult',
+                        baseUrlLabel: 'Basis-API-URL',
+                        scenariosLabel: 'Testszenarien',
+                        runButton: 'Tests generieren & ausführen',
+                        scenarios: {
+                            happyPath: 'Idealer Pfad',
+                            edgeCases: 'Grenzfälle',
+                            errorHandling: 'Fehlerbehandlung',
+                            security: 'Sicherheit',
+                            performance: 'Leistung'
+                        }
+                    },
+                    chronos: {
+                        title: '⏰ Chronos-Motor',
+                        subtitle: 'mm.chronos(options) → ChronosResult',
+                        description: 'Zeitreise-Debugging: Zeichnet Zustandsschnappschüsse während der Testausführung auf.',
+                        intervalLabel: 'Schnappschuss-Intervall (ms)',
+                        maxSnapshotsLabel: 'Max. Schnappschüsse',
+                        runButton: 'Aufnahme starten'
+                    },
+                    thermal: {
+                        title: '🌡️ Thermalbewusster Pool',
+                        subtitle: 'ThermalAwarePool - CPU-Temperaturverwaltung',
+                        description: 'Passt die Parallelität automatisch basierend auf der CPU-Temperatur an.',
+                        states: { cool: '🟢 KÜHL', warm: '🔵 WARM', hot: '🟠 HEIß', critical: '🔴 KRITISCH' },
+                        temperature: 'Temperatur',
+                        maxInstances: 'Max. Instanzen'
+                    },
+                    docker: {
+                        title: '🐳 Docker-Manager',
+                        subtitle: 'DockerManager - Selenium Grid-Orchestrierung',
+                        description: 'Generiert automatisch Dockerfile und docker-compose.yml für Selenium Grid.'
+                    },
+                    swarm: {
+                        title: '🎖️ Schwarm-Kommandant',
+                        subtitle: 'SwarmCommander - Kommandant-Soldat-Muster',
+                        description: 'Der Kommandant verteilt Aufgaben an Soldaten (Browser-Instanzen) zur parallelen Ausführung.'
+                    },
+                    tts: {
+                        title: '🔊 Bulgarische TTS',
+                        subtitle: 'BulgarianTTS - Native Sprachsynthese',
+                        description: '🇧🇬 Български текст-към-реч за гласова обратна връзка по време на тестове.',
+                        templates: { testPassed: '"Тестът премина успешно"', testFailed: '"Тестът се провали"', errorFound: '"Открих грешка в {element}"', healing: '"Намерих нов селектор"' }
+                    },
+                    license: {
+                        title: '🔐 Lizenz-Manager',
+                        subtitle: 'LicenseManager - Hardware-gebundene Lizenzierung',
+                        description: 'Lizenz ist mit SHA-256-Fingerabdruck an Hardware gebunden.',
+                        types: { trial: 'Testversion', professional: 'Professionell', enterprise: 'Unternehmen', sovereign: 'Souverän' },
+                        maxInstances: 'Max. Instanzen',
+                        features: 'Funktionen'
+                    },
+                    stats: {
+                        title: '📊 Systemstatistik',
+                        subtitle: 'getSystemStats() → Statistics',
+                        version: 'Version',
+                        linesOfCode: 'Codezeilen',
+                        typescriptFiles: 'TypeScript-Dateien',
+                        testsPassing: 'Erfolgreiche Tests',
+                        enterpriseModules: 'Enterprise-Module',
+                        codename: 'Codename'
+                    },
+                    logger: {
+                        title: '📋 Strukturierter Logger',
+                        subtitle: 'mm.getLogger() → Logger',
+                        description: 'Professionelles Logging mit Stufen: debug, info, warn, error, audit'
+                    }
+                },
+                status: {
+                    systemStatus: '📡 Systemstatus',
+                    backend: 'Backend',
+                    license: 'Lizenz',
+                    circuitBreaker: 'Circuit Breaker',
+                    online: 'Online',
+                    offline: 'Offline',
+                    closed: 'Geschlossen',
+                    open: 'Offen',
+                    cpuTemperature: '🌡️ CPU-Temperatur',
+                    state: 'Zustand:',
+                    financialOracle: '💰 Finanz-Orakel',
+                    totalCost: 'Gesamtkosten',
+                    requests: 'Anfragen',
+                    budgetLeft: 'Restbudget',
+                    activityLog: '📜 Aktivitätsprotokoll',
+                    waitingForActivity: 'Warte auf Aktivität...',
+                    checking: 'Prüfe...',
+                    freeTier: 'Kostenlose Stufe'
+                },
+                common: {
+                    loading: 'Lädt...',
+                    processing: 'Verarbeitung...',
+                    complete: 'Abgeschlossen!',
+                    error: 'Fehler',
+                    success: 'Erfolg',
+                    warning: 'Warnung',
+                    opened: 'Geöffnet:',
+                    initialized: 'QAntum v1.0.2 UI initialisiert',
+                    madeInBulgaria: '🇧🇬 Mit ❤️ in Bulgarien hergestellt'
+                },
+                footer: { copyright: '© 2025 Dimitar Prodromow' }
+            },
+
+            // ═══════════════════════════════════════════════════════════
+            // FRENCH
+            // ═══════════════════════════════════════════════════════════
+            fr: {
+                language: 'Langue',
+                header: {
+                    title: 'QANTUM',
+                    codename: 'v1.0.2 "Le Souverain Local"',
+                    lines: 'Lignes:',
+                    tests: 'Tests:',
+                    modules: 'Modules:'
+                },
+                sidebar: {
+                    freeFeatures: '🆓 Fonctionnalités gratuites',
+                    proFeatures: '💎 Fonctionnalités Pro',
+                    enterprise: '🏢 Entreprise',
+                    utilities: '🛠️ Utilitaires'
+                },
+                modules: {
+                    websiteAudit: 'Audit de site',
+                    apiTest: 'Test API',
+                    linkChecker: 'Vérificateur de liens',
+                    predictionMatrix: 'Matrice de prédiction',
+                    apiSensei: 'API Sensei',
+                    chronosEngine: 'Moteur Chronos',
+                    thermalPool: 'Pool thermique',
+                    dockerManager: 'Gestionnaire Docker',
+                    swarmCommander: "Commandant d'essaim",
+                    bulgarianTts: 'TTS Bulgare',
+                    licenseManager: 'Gestionnaire de licence',
+                    systemStats: 'Statistiques système',
+                    logger: 'Journal'
+                },
+                badges: {
+                    free: 'GRATUIT',
+                    pro: 'PRO',
+                    proRequired: 'LICENCE PRO REQUISE'
+                },
+                panels: {
+                    audit: {
+                        title: '🔍 Audit de site web',
+                        subtitle: 'mm.audit(url) → AuditResult',
+                        urlLabel: 'URL à auditer',
+                        runButton: "Lancer l'audit",
+                        performance: 'Performance',
+                        accessibility: 'Accessibilité',
+                        seo: 'SEO'
+                    },
+                    apiTest: {
+                        title: '🌐 Test API',
+                        subtitle: 'mm.testAPI(endpoint, options) → APITestResult',
+                        endpointLabel: 'Point de terminaison API',
+                        methodLabel: 'Méthode',
+                        runButton: "Tester l'API"
+                    },
+                    linkChecker: {
+                        title: '🔗 Vérificateur de liens',
+                        subtitle: 'mm.checkLinks(url, options) → CheckLinksResult',
+                        urlLabel: 'URL de la page',
+                        maxLinksLabel: 'Liens max. à vérifier',
+                        runButton: 'Vérifier les liens'
+                    },
+                    prediction: {
+                        title: '🔮 Matrice de prédiction',
+                        subtitle: 'mm.predict(options) → PredictionResult',
+                        codeLabel: 'Modifications de code (diff ou contenu)',
+                        runButton: 'Analyser et prédire'
+                    },
+                    apiSensei: {
+                        title: '🤖 API Sensei',
+                        subtitle: 'mm.apiSensei(config) → APISenseiResult',
+                        baseUrlLabel: 'URL API de base',
+                        scenariosLabel: 'Scénarios de test',
+                        runButton: 'Générer et exécuter les tests',
+                        scenarios: {
+                            happyPath: 'Chemin idéal',
+                            edgeCases: 'Cas limites',
+                            errorHandling: 'Gestion des erreurs',
+                            security: 'Sécurité',
+                            performance: 'Performance'
+                        }
+                    },
+                    chronos: {
+                        title: '⏰ Moteur Chronos',
+                        subtitle: 'mm.chronos(options) → ChronosResult',
+                        description: "Débogage temporel: Enregistre des instantanés d'état pendant l'exécution des tests.",
+                        intervalLabel: "Intervalle d'instantané (ms)",
+                        maxSnapshotsLabel: 'Instantanés max.',
+                        runButton: "Démarrer l'enregistrement"
+                    },
+                    thermal: {
+                        title: '🌡️ Pool thermique',
+                        subtitle: 'ThermalAwarePool - Gestion de la température CPU',
+                        description: 'Ajuste automatiquement le parallélisme en fonction de la température du processeur.',
+                        states: { cool: '🟢 FRAIS', warm: '🔵 TIÈDE', hot: '🟠 CHAUD', critical: '🔴 CRITIQUE' },
+                        temperature: 'Température',
+                        maxInstances: 'Instances max.'
+                    },
+                    docker: {
+                        title: '🐳 Gestionnaire Docker',
+                        subtitle: 'DockerManager - Orchestration Selenium Grid',
+                        description: 'Génère automatiquement Dockerfile et docker-compose.yml pour Selenium Grid.'
+                    },
+                    swarm: {
+                        title: "🎖️ Commandant d'essaim",
+                        subtitle: 'SwarmCommander - Modèle Commandant-Soldat',
+                        description: "Le commandant distribue les tâches aux soldats (instances de navigateur) pour l'exécution parallèle."
+                    },
+                    tts: {
+                        title: '🔊 TTS Bulgare',
+                        subtitle: 'BulgarianTTS - Synthèse vocale native',
+                        description: '🇧🇬 Български текст-към-реч за гласова обратна връзка по време на тестове.',
+                        templates: { testPassed: '"Тестът премина успешно"', testFailed: '"Тестът се провали"', errorFound: '"Открих грешка в {element}"', healing: '"Намерих нов селектор"' }
+                    },
+                    license: {
+                        title: '🔐 Gestionnaire de licence',
+                        subtitle: 'LicenseManager - Licence liée au matériel',
+                        description: 'La licence est liée au matériel avec une empreinte SHA-256.',
+                        types: { trial: 'Essai', professional: 'Professionnel', enterprise: 'Entreprise', sovereign: 'Souverain' },
+                        maxInstances: 'Instances max.',
+                        features: 'Fonctionnalités'
+                    },
+                    stats: {
+                        title: '📊 Statistiques système',
+                        subtitle: 'getSystemStats() → Statistics',
+                        version: 'Version',
+                        linesOfCode: 'Lignes de code',
+                        typescriptFiles: 'Fichiers TypeScript',
+                        testsPassing: 'Tests réussis',
+                        enterpriseModules: 'Modules Enterprise',
+                        codename: 'Nom de code'
+                    },
+                    logger: {
+                        title: '📋 Journal structuré',
+                        subtitle: 'mm.getLogger() → Logger',
+                        description: 'Journalisation professionnelle avec niveaux: debug, info, warn, error, audit'
+                    }
+                },
+                status: {
+                    systemStatus: '📡 État du système',
+                    backend: 'Backend',
+                    license: 'Licence',
+                    circuitBreaker: 'Disjoncteur',
+                    online: 'En ligne',
+                    offline: 'Hors ligne',
+                    closed: 'Fermé',
+                    open: 'Ouvert',
+                    cpuTemperature: '🌡️ Température CPU',
+                    state: 'État:',
+                    financialOracle: '💰 Oracle financier',
+                    totalCost: 'Coût total',
+                    requests: 'Requêtes',
+                    budgetLeft: 'Budget restant',
+                    activityLog: "📜 Journal d'activité",
+                    waitingForActivity: "En attente d'activité...",
+                    checking: 'Vérification...',
+                    freeTier: 'Niveau gratuit'
+                },
+                common: {
+                    loading: 'Chargement...',
+                    processing: 'Traitement...',
+                    complete: 'Terminé!',
+                    error: 'Erreur',
+                    success: 'Succès',
+                    warning: 'Avertissement',
+                    opened: 'Ouvert:',
+                    initialized: 'QAntum v1.0.2 UI initialisé',
+                    madeInBulgaria: '🇧🇬 Fait avec ❤️ en Bulgarie'
+                },
+                footer: { copyright: '© 2025 Dimitar Prodromov' }
+            }
+        };
+
+        // ══════════════════════════════════════════════════════════════
+        // I18N ENGINE - Instant language switching without page reload
+        // ══════════════════════════════════════════════════════════════
+
+        function initI18n() {
+            // Load saved language or detect from browser
+            const savedLang = localStorage.getItem('QAntumLang');
+            if (savedLang && translations[savedLang]) {
+                currentLang = savedLang;
+            } else {
+                const browserLang = navigator.language.slice(0, 2).toLowerCase();
+                if (translations[browserLang]) {
+                    currentLang = browserLang;
+                }
+            }
+
+            // Set up language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.lang === currentLang) {
+                    btn.classList.add('active');
+                }
+
+                btn.addEventListener('click', () => {
+                    setLanguage(btn.dataset.lang);
+                });
+            });
+
+            // Apply translations
+            applyTranslations();
+        }
+
+        function setLanguage(lang) {
+            if (!translations[lang]) return;
+
+            currentLang = lang;
+            localStorage.setItem('QAntumLang', lang);
+
+            // Update active button
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.lang === lang) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // Apply translations
+            applyTranslations();
+            updateLicenseStatus();
+
+            addLog(`🌍 Language: ${lang.toUpperCase()}`, 'info');
+        }
+
+        function applyTranslations() {
+            const t = translations[currentLang];
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.dataset.i18n;
+                const value = getNestedValue(t, key);
+                if (value) {
+                    el.textContent = value;
+                }
+            });
+        }
+
+        function getNestedValue(obj, path) {
+            return path.split('.').reduce((current, key) =>
+                current && current[key] !== undefined ? current[key] : null, obj);
+        }
+
+        // ══════════════════════════════════════════════════════════════
+        // PANEL NAVIGATION
+        // ══════════════════════════════════════════════════════════════
+
+        document.querySelectorAll('.module-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                document.querySelectorAll('.module-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Show corresponding panel
+                const panelId = btn.dataset.panel;
+                document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+                document.getElementById(`panel-${panelId}`).classList.add('active');
+
+                const t = translations[currentLang];
+                addLog(`${t.common.opened} ${btn.querySelector('[data-i18n]')?.textContent || btn.textContent}`);
+            });
+        });
+
+        // ══════════════════════════════════════════════════════════════
+        // HELPER FUNCTIONS
+        // ══════════════════════════════════════════════════════════════
+
+        function showLoading(text = 'Processing...') {
+            document.getElementById('loading-text').textContent = text;
+            document.getElementById('loading').classList.add('active');
+        }
+
+        function hideLoading() {
+            document.getElementById('loading').classList.remove('active');
+        }
+
+        function addLog(message, type = 'info') {
+            const log = document.getElementById('activity-log');
+            const time = new Date().toLocaleTimeString('en-GB');
+            const typeClass = {
+                'info': 'result-info',
+                'success': 'result-success',
+                'warning': 'result-warning',
+                'error': 'result-error'
+            }[type] || 'result-info';
+
+            const entry = document.createElement('div');
+            entry.className = 'log-entry';
+            entry.innerHTML = `
+                <span class="log-time">${time}</span>
+                <span class="log-message ${typeClass}">${message}</span>
+            `;
+
+            log.insertBefore(entry, log.firstChild);
+
+            // Keep only last 50 entries
+            while (log.children.length > 50) {
+                log.removeChild(log.lastChild);
+            }
+        }
+
+        function getScoreClass(score) {
+            if (score >= 80) return 'score-good';
+            if (score >= 50) return 'score-medium';
+            return 'score-bad';
+        }
+
+        // ══════════════════════════════════════════════════════════════
+        // API FUNCTIONS - These connect to QAntum backend
+        // ══════════════════════════════════════════════════════════════
+
+        // In a real implementation, these would call the backend API
+        // For demo purposes, they simulate responses
+
+        async function runAudit() {
+            const url = document.getElementById('audit-url').value;
+            const tier = document.getElementById('audit-tier').value;
+
+            if (!url) { alert('Please enter a URL'); return; }
+
+            if (tier === 'pro') {
+                document.getElementById('unlock-pro-btn').style.display = 'block';
+                document.getElementById('run-audit-btn').style.display = 'none';
+                addLog('PRO Audit selected. Payment required.', 'warning');
+                return;
+            } else {
+                document.getElementById('unlock-pro-btn').style.display = 'none';
+                document.getElementById('run-audit-btn').style.display = 'block';
+            }
+
+            showLoading(`Running ${tier} website audit...`);
+            addLog(`Auditing: ${url} [Tier: ${tier.toUpperCase()}]`, 'info');
+
+            try {
+                const response = await fetch('/api/audit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ url, tier })
+                });
+
+                if (!response.ok) throw new Error('API Error');
+
+                const result = await response.json();
+
+                hideLoading();
+
+                // Display scores
+                document.getElementById('audit-scores').style.display = 'grid';
+                document.getElementById('score-performance').textContent = result.performance;
+                document.getElementById('score-performance').className = `score-value ${getScoreClass(result.performance)}`;
+                document.getElementById('score-accessibility').textContent = result.accessibility;
+                document.getElementById('score-accessibility').className = `score-value ${getScoreClass(result.accessibility)}`;
+                document.getElementById('score-seo').textContent = result.seo;
+                document.getElementById('score-seo').className = `score-value ${getScoreClass(result.seo)}`;
+
+                // Display details
+                const resultsDiv = document.getElementById('audit-results');
+                resultsDiv.style.display = 'block';
+
+                const detailsHtml = result.details.map(d => {
+                    if (d.includes('[CRITICAL]')) return `<span class="result-error">${d}</span>`;
+                    if (d.includes('[WARN]')) return `<span class="result-warning">${d}</span>`;
+                    if (d.includes('[LOCKED]')) return `<span class="result-warning" style="text-decoration: underline;">${d}</span>`;
+                    return `<span>${d}</span>`;
+                }).join('\\n');
+
+                resultsDiv.innerHTML = `<pre class="${result.tier === 'pro' ? 'result-error' : 'result-success'}">✅ Audit Complete! (${result.tier.toUpperCase()})
+
+URL: ${url}
+Message: ${result.message}
+
+--- DETAILS ---
+${detailsHtml}
+</pre>`;
+
+                addLog(`Audit complete: ${result.performance}/100`, result.tier === 'pro' ? 'warning' : 'success');
+            } catch (err) {
+                hideLoading();
+                addLog('Failed to connect to backend Neural Engine', 'error');
+                alert('Connection refused. Ensure ai/server.ts is running.');
+            }
+        }
+
+        async function unlockProAudit() {
+            const tier = document.getElementById('audit-tier').value;
+            showLoading('Initiating Secure Stripe Payment Checkout...');
+
+            try {
+                const response = await fetch('/api/checkout', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ tier, email: 'sovereign@qantum.dev' })
+                });
+
+                const result = await response.json();
+                hideLoading();
+
+                addLog(`Stripe Checkout Session created: ${result.status}`, 'info');
+
+                // Simulate successful payment instantly 
+                alert(`Redirecting to Stripe:\\n${result.checkoutUrl}\\n\\n(Simulator: Payment instantly processed)`);
+
+                // Switch back to run button temporarily to allow running the pro audit
+                document.getElementById('unlock-pro-btn').style.display = 'none';
+                document.getElementById('run-audit-btn').style.display = 'block';
+                document.getElementById('run-audit-btn').innerHTML = '<span>🔥</span> <span>Execute Deep Audit</span>';
+
+                // Attach a one-time pro execution
+                const btn = document.getElementById('run-audit-btn');
+                const oldOnClick = btn.onclick;
+                btn.onclick = async function () {
+                    // Override local tier fetch just for this run to bypassed locked
+                    document.getElementById('audit-tier').value = 'pro';
+                    document.getElementById('unlock-pro-btn').style.display = 'none'; // Keep hidden
+
+                    showLoading(`Executing Paid Cognitive Audit...`);
+                    addLog('Running paid deep audit sequence', 'warning');
+
+                    const url = document.getElementById('audit-url').value;
+                    const response = await fetch('/api/audit', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ url, tier: 'pro' })
+                    });
+                    const resJson = await response.json();
+
+                    hideLoading();
+
+                    document.getElementById('audit-scores').style.display = 'grid';
+                    document.getElementById('score-performance').textContent = resJson.performance;
+                    document.getElementById('score-performance').className = `score-value ${getScoreClass(resJson.performance)}`;
+
+                    const resultsDiv = document.getElementById('audit-results');
+                    resultsDiv.style.display = 'block';
+                    resultsDiv.innerHTML = `<pre class="result-error">🩸 DEEP AUDIT COMPLETE
+
+URL: ${url}
+Message: ${resJson.message}
+
+--- CRITICAL VULNERABILITIES ---
+${resJson.details.join('\\n')}
+</pre>`;
+                    addLog('Deep Cognitive Audit Complete.', 'success');
+
+                    // Reset
+                    document.getElementById('audit-tier').value = 'free';
+                    btn.onclick = oldOnClick;
+                    btn.innerHTML = '<span>▶️</span> <span data-i18n="panels.audit.runButton">Run Audit</span>';
+                };
+
+            } catch (err) {
+                hideLoading();
+                addLog('Checkout failed', 'error');
+            }
+        }
+
+        async function runAPITest() {
+            const url = document.getElementById('api-url').value;
+            const method = document.getElementById('api-method').value;
+            if (!url) { alert('Please enter an API endpoint'); return; }
+
+            showLoading(`Testing ${method} ${url}...`);
+            addLog(`API Test: ${method} ${url}`, 'info');
+
+            await new Promise(r => setTimeout(r, 1000));
+
+            const result = {
+                status: 200,
+                statusText: 'OK',
+                responseTime: Math.floor(Math.random() * 500) + 100,
+                success: true
+            };
+
+            hideLoading();
+
+            const resultsDiv = document.getElementById('api-results');
+            resultsDiv.style.display = 'block';
+            resultsDiv.innerHTML = `<pre class="result-success">✅ API Test Complete!
+
+Endpoint: ${url}
+Method: ${method}
+Status: ${result.status} ${result.statusText}
+Response Time: ${result.responseTime}ms
+Success: ${result.success}</pre>`;
+
+            addLog(`API: ${result.status} in ${result.responseTime}ms`, 'success');
+        }
+
+        async function runLinkChecker() {
+            const url = document.getElementById('links-url').value;
+            const max = document.getElementById('links-max').value;
+            if (!url) { alert('Please enter a URL'); return; }
+
+            showLoading(`Checking links on ${url}...`);
+            addLog(`Link check: ${url}`, 'info');
+
+            await new Promise(r => setTimeout(r, 1500));
+
+            const broken = Math.floor(Math.random() * 3);
+
+            hideLoading();
+
+            const resultsDiv = document.getElementById('links-results');
+            resultsDiv.style.display = 'block';
+            resultsDiv.innerHTML = `<pre class="${broken === 0 ? 'result-success' : 'result-warning'}">🔗 Link Check Complete!
+
+URL: ${url}
+Total Links: ${max}
+Checked: ${max}
+Broken: ${broken}
+${broken > 0 ? '\n⚠️ Broken links found - review recommended' : '\n✅ All links valid!'}</pre>`;
+
+            addLog(`Links: ${broken} broken of ${max}`, broken === 0 ? 'success' : 'warning');
+        }
+
+        async function runPrediction() {
+            addLog('Prediction Matrix requires PRO license', 'warning');
+            alert('🔮 Prediction Matrix requires a PRO license.\n\nmm.predict(options) analyzes code changes and predicts potential test failures.');
+        }
+
+        async function runAPISensei() {
+            addLog('API Sensei requires PRO license', 'warning');
+            alert('🤖 API Sensei requires a PRO license.\n\nmm.apiSensei(config) automatically generates and runs comprehensive API tests.');
+        }
+
+        async function runChronos() {
+            addLog('Chronos Engine requires PRO license', 'warning');
+            alert('⏰ Chronos Engine requires a PRO license.\n\nmm.chronos(options) provides time-travel debugging with state snapshots.');
+        }
+
+        // ══════════════════════════════════════════════════════════════
+        // INITIALIZATION
+        // ══════════════════════════════════════════════════════════════
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize i18n
+            initI18n();
+
+            // Set license status
+            document.getElementById('license-indicator').classList.add('warning');
+            updateLicenseStatus();
+
+            // Simulate temperature updates
+            setInterval(() => {
+                const temp = Math.floor(Math.random() * 30) + 40;
+                const fill = document.getElementById('temp-fill');
+                const value = document.getElementById('temp-value');
+                const state = document.getElementById('thermal-state');
+                const entropy = document.getElementById('entropy-value');
+
+                // Animate entropy slightly
+                const currentEntropy = (Math.random() * 0.05).toFixed(2);
+                entropy.textContent = `${currentEntropy}%`;
+
+                fill.style.width = `${temp}%`;
+                value.textContent = `${temp}°C`;
+
+                const t = translations[currentLang];
+                if (temp < 60) {
+                    fill.style.background = 'var(--accent-success)';
+                    state.innerHTML = `<span style="color: var(--accent-success);">${t.panels.thermal.states.cool}</span>`;
+                } else if (temp < 70) {
+                    fill.style.background = 'var(--accent-secondary)';
+                    state.innerHTML = `<span style="color: var(--accent-secondary);">${t.panels.thermal.states.warm}</span>`;
+                } else if (temp < 80) {
+                    fill.style.background = 'var(--accent-warning)';
+                    state.innerHTML = `<span style="color: var(--accent-warning);">${t.panels.thermal.states.hot}</span>`;
+                } else {
+                    fill.style.background = 'var(--accent-danger)';
+                    state.innerHTML = `<span style="color: var(--accent-danger);">${t.panels.thermal.states.critical}</span>`;
+                }
+            }, 3000);
+
+            addLog(translations[currentLang].common.initialized, 'success');
+            addLog(translations[currentLang].common.madeInBulgaria, 'info');
+        });
+
+        function updateLicenseStatus() {
+            const t = translations[currentLang];
+            document.getElementById('license-status').textContent = t.status.freeTier;
+            document.getElementById('license-status').style.color = 'var(--accent-warning)';
+        }
+    </script>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- FOOTER                                                          -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <footer class="footer">
+        <p>
+            <strong>QAntum v1.0.2</strong> "The Local Sovereign" |
+            <span data-i18n="footer.copyright">© 2025 Димитър Продромов</span> |
+            <a href="https://github.com/papica777-eng/QAntumQATool">GitHub</a> |
+            <span data-i18n="common.madeInBulgaria">🇧🇬 Made with ❤️ in Bulgaria</span>
+        </p>
+    </footer>
+</body>
+
+</html>

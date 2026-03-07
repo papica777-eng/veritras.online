@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QAntum Control Center</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0f;
+            --surface: #12121a;
+            --border: #1e1e2e;
+            --cyan: #00f5ff;
+            --green: #00ff88;
+            --red: #ff4757;
+            --purple: #a855f7;
+            --yellow: #fbbf24;
+            --text: #e4e4e7;
+            --gray: #71717a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+        }
+
+        .header {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--cyan);
+        }
+
+        .status-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid var(--green);
+            border-radius: 9999px;
+            font-size: 0.875rem;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--green);
+            animation: pulse 2s infinite;
+        }
+
+        .status-badge.offline {
+            background: rgba(255, 71, 87, 0.1);
+            border-color: var(--red);
+        }
+
+        .status-badge.offline .status-dot {
+            background: var(--red);
+            animation: none;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .main {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .stat-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .stat-card:hover {
+            border-color: var(--cyan);
+            transform: translateY(-2px);
+        }
+
+        .stat-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--cyan);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--gray);
+            text-transform: uppercase;
+            margin-top: 0.25rem;
+        }
+
+        /* Terminal */
+        .terminal {
+            background: #000;
+            border-radius: 8px;
+            font-family: 'JetBrains Mono', 'Consolas', monospace;
+            font-size: 0.875rem;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .terminal-header {
+            background: #1a1a1a;
+            padding: 0.5rem 1rem;
+            display: flex;
+            gap: 0.5rem;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .terminal-dot.red { background: #ff5f57; }
+        .terminal-dot.yellow { background: #febc2e; }
+        .terminal-dot.green { background: #28c840; }
+
+        .terminal-output {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1rem;
+        }
+
+        .terminal-line {
+            margin-bottom: 0.25rem;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        .terminal-input-wrapper {
+            display: flex;
+            padding: 0.75rem 1rem;
+            background: #0a0a0a;
+            border-top: 1px solid #222;
+            border-radius: 0 0 8px 8px;
+        }
+
+        .terminal-prompt {
+            color: var(--green);
+            margin-right: 0.5rem;
+        }
+
+        .terminal-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: var(--text);
+            font-family: inherit;
+            font-size: inherit;
+            outline: none;
+        }
+
+        .text-cyan { color: var(--cyan); }
+        .text-green { color: var(--green); }
+        .text-red { color: var(--red); }
+        .text-yellow { color: var(--yellow); }
+        .text-gray { color: var(--gray); }
+        .text-purple { color: var(--purple); }
+
+        /* Quick Actions */
+        .actions-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+
+        .action-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.875rem;
+        }
+
+        .action-btn:hover {
+            border-color: var(--cyan);
+            background: rgba(0, 245, 255, 0.05);
+        }
+
+        .action-btn:active {
+            transform: scale(0.98);
+        }
+
+        .action-btn i {
+            font-size: 1.25rem;
+            width: 24px;
+            text-align: center;
+        }
+
+        .action-btn.running {
+            border-color: var(--yellow);
+            background: rgba(251, 191, 36, 0.1);
+        }
+
+        /* Scripts List */
+        .scripts-list {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .script-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .script-item:hover {
+            background: var(--bg);
+        }
+
+        .script-name {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.875rem;
+        }
+
+        .script-run {
+            padding: 0.25rem 0.75rem;
+            background: var(--cyan);
+            color: var(--bg);
+            border: none;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .script-item:hover .script-run {
+            opacity: 1;
+        }
+
+        /* Logs */
+        .log-entry {
+            display: flex;
+            gap: 1rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.875rem;
+        }
+
+        .log-time {
+            color: var(--gray);
+            font-family: monospace;
+            white-space: nowrap;
+        }
+
+        .log-message {
+            flex: 1;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .main {
+                grid-template-columns: 1fr;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <i class="fas fa-atom"></i>
+            QAntum Control Center
+        </div>
+        <div class="status-badge" id="connection-status">
+            <span class="status-dot"></span>
+            <span id="status-text">Connecting...</span>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="left-column">
+            <!-- Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon text-cyan"><i class="fas fa-file-code"></i></div>
+                    <div class="stat-value" id="stat-files">---</div>
+                    <div class="stat-label">Files</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon text-purple"><i class="fas fa-folder-tree"></i></div>
+                    <div class="stat-value" id="stat-modules">---</div>
+                    <div class="stat-label">Modules</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon text-green"><i class="fas fa-code"></i></div>
+                    <div class="stat-value" id="stat-lines">---</div>
+                    <div class="stat-label">Lines of Code</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon text-yellow"><i class="fas fa-database"></i></div>
+                    <div class="stat-value" id="stat-vectors">---</div>
+                    <div class="stat-label">Vectors</div>
+                </div>
+            </div>
+
+            <!-- Terminal -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title"><i class="fas fa-terminal"></i> Terminal</span>
+                    <button onclick="clearTerminal()" style="background:none;border:none;color:var(--gray);cursor:pointer;">
+                        <i class="fas fa-trash"></i> Clear
+                    </button>
+                </div>
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <span class="terminal-dot red"></span>
+                        <span class="terminal-dot yellow"></span>
+                        <span class="terminal-dot green"></span>
+                    </div>
+                    <div class="terminal-output" id="terminal-output">
+                        <div class="terminal-line text-cyan">═══ QAntum Terminal v34.1 ═══</div>
+                        <div class="terminal-line text-gray">Type 'help' for commands</div>
+                        <div class="terminal-line"></div>
+                    </div>
+                    <div class="terminal-input-wrapper">
+                        <span class="terminal-prompt">quantum@nexus:~$</span>
+                        <input type="text" class="terminal-input" id="terminal-input" placeholder="Enter command..." autofocus>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-column">
+            <!-- Quick Actions -->
+            <div class="card" style="margin-bottom: 1.5rem;">
+                <div class="card-header">
+                    <span class="card-title"><i class="fas fa-bolt"></i> Quick Actions</span>
+                </div>
+                <div class="actions-grid">
+                    <button class="action-btn" onclick="runCommand('npm run guardian')">
+                        <i class="fas fa-shield-alt text-green"></i>
+                        <span>Run Guardian</span>
+                    </button>
+                    <button class="action-btn" onclick="runCommand('npm run hunt')">
+                        <i class="fas fa-crosshairs text-cyan"></i>
+                        <span>Hunt Leads</span>
+                    </button>
+                    <button class="action-btn" onclick="runCommand('npm run heal')">
+                        <i class="fas fa-heart-pulse text-red"></i>
+                        <span>Self Heal</span>
+                    </button>
+                    <button class="action-btn" onclick="runCommand('npm run build')">
+                        <i class="fas fa-hammer text-yellow"></i>
+                        <span>Build</span>
+                    </button>
+                    <button class="action-btn" onclick="runCommand('git status')">
+                        <i class="fab fa-git-alt text-purple"></i>
+                        <span>Git Status</span>
+                    </button>
+                    <button class="action-btn" onclick="runCommand('dir /b')">
+                        <i class="fas fa-folder text-cyan"></i>
+                        <span>List Files</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Scripts -->
+            <div class="card" style="margin-bottom: 1.5rem;">
+                <div class="card-header">
+                    <span class="card-title"><i class="fas fa-scroll"></i> Scripts</span>
+                    <button onclick="loadScripts()" style="background:none;border:none;color:var(--cyan);cursor:pointer;">
+                        <i class="fas fa-sync"></i>
+                    </button>
+                </div>
+                <div class="scripts-list" id="scripts-list">
+                    <div class="text-gray" style="padding:1rem;text-align:center;">Loading scripts...</div>
+                </div>
+            </div>
+
+            <!-- Activity Log -->
+            <div class="card">
+                <div class="card-header">
+                    <span class="card-title"><i class="fas fa-history"></i> Activity Log</span>
+                </div>
+                <div id="activity-log" style="max-height: 200px; overflow-y: auto;">
+                    <div class="log-entry">
+                        <span class="log-time">--:--:--</span>
+                        <span class="log-message text-gray">Waiting for activity...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // ═══════════════════════════════════════════════════════════════════════════
+        // QANTUM CONTROL CENTER - FUNCTIONAL JAVASCRIPT
+        // ═══════════════════════════════════════════════════════════════════════════
+
+        const API_BASE = '/api';
+        let ws = null;
+        let isConnected = false;
+        let commandHistory = [];
+        let historyIndex = -1;
+
+        // ─────────────────────────────────────────────────────────────────────────
+        // INITIALIZATION
+        // ─────────────────────────────────────────────────────────────────────────
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initTerminal();
+            loadStats();
+            loadScripts();
+            connectWebSocket();
+
+            // Auto-refresh stats every 30s
+            setInterval(loadStats, 30000);
+
+            log('System initialized', 'success');
+        });
+
+        // ─────────────────────────────────────────────────────────────────────────
+        // TERMINAL
+        // ─────────────────────────────────────────────────────────────────────────
+
+        function initTerminal() {
+            const input = document.getElementById('terminal-input');
+
+            input.addEventListener('keydown', async (e) => {
+                if (e.key === 'Enter') {
+                    const cmd = input.value.trim();
+                    if (cmd) {
+                        commandHistory.push(cmd);
+                        historyIndex = commandHistory.length;
+                        await executeCommand(cmd);
+                        input.value = '';
+                    }
+                } else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    if (historyIndex > 0) {
+                        historyIndex--;
+                        input.value = commandHistory[historyIndex];
+                    }
+                } else if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    if (historyIndex < commandHistory.length - 1) {
+                        historyIndex++;
+                        input.value = commandHistory[historyIndex];
+                    } else {
+                        historyIndex = commandHistory.length;
+                        input.value = '';
+                    }
+                }
+            });
+        }
+
+        async function executeCommand(cmd) {
+            terminalPrint(`<span class="text-green">$</span> ${escapeHtml(cmd)}`, 'command');
+
+            // Built-in commands
+            const builtIn = {
+                'help': () => showHelp(),
+                'clear': () => clearTerminal(),
+                'status': () => showStatus(),
+                'stats': () => loadStats(true),
+            };
+
+            if (builtIn[cmd.toLowerCase()]) {
+                builtIn[cmd.toLowerCase()]();
+                return;
+            }
+
+            // Execute via API
+            terminalPrint('<span class="text-gray">Executing...</span>');
+
+            try {
+                const response = await fetch(`${API_BASE}/execute`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ command: cmd })
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    if (result.output) {
+                        terminalPrint(escapeHtml(result.output));
+                    }
+                    terminalPrint(`<span class="text-green">✓ Exit code: ${result.exitCode}</span>`);
+                    log(`Command executed: ${cmd}`, 'success');
+                } else {
+                    terminalPrint(`<span class="text-red">✗ Error: ${result.error || 'Command failed'}</span>`);
+                    if (result.output) {
+                        terminalPrint(escapeHtml(result.output));
+                    }
+                    log(`Command failed: ${cmd}`, 'error');
+                }
+            } catch (e) {
+                terminalPrint(`<span class="text-red">✗ Connection error: ${e.message}</span>`);
+                log(`Error: ${e.message}`, 'error');
+            }
+        }
+
+        function terminalPrint(text, type = '') {
+            const output = document.getElementById('terminal-output');
+            const line = document.createElement('div');
+            line.className = 'terminal-line';
+            line.innerHTML = text;
+            output.appendChild(line);
+            output.scrollTop = output.scrollHeight;
+        }
+
+        function clearTerminal() {
+            document.getElementById('terminal-output').innerHTML =
+                '<div class="terminal-line text-cyan">═══ Terminal Cleared ═══</div>';
+        }
+
+        function showHelp() {
+            terminalPrint(`
+<span class="text-cyan">═══ AVAILABLE COMMANDS ═══</span>
+
+<span class="text-green">Built-in:</span>
+  help     - Show this help
+  clear    - Clear terminal
+  status   - Show connection status
+  stats    - Refresh statistics
+
+<span class="text-green">System:</span>
+  Any shell command will be executed on the server.
+  Examples:
+    dir              - List files
+    npm run build    - Build project
+    git status       - Git status
+    type file.txt    - Show file contents
+`);
+        }
+
+        function showStatus() {
+            terminalPrint(`
+<span class="text-cyan">═══ CONNECTION STATUS ═══</span>
+
+API:       <span class="${isConnected ? 'text-green' : 'text-red'}">${isConnected ? 'CONNECTED' : 'DISCONNECTED'}</span>
+WebSocket: <span class="${ws?.readyState === 1 ? 'text-green' : 'text-red'}">${ws?.readyState === 1 ? 'CONNECTED' : 'DISCONNECTED'}</span>
+Endpoint:  ${window.location.origin}${API_BASE}
+`);
+        }
+
+        // ─────────────────────────────────────────────────────────────────────────
+        // STATS
+        // ─────────────────────────────────────────────────────────────────────────
+
+        async function loadStats(showInTerminal = false) {
+            try {
+                const response = await fetch(`${API_BASE}/stats`);
+                const stats = await response.json();
+
+                document.getElementById('stat-files').textContent = formatNumber(stats.files);
+                document.getElementById('stat-modules').textContent = formatNumber(stats.folders);
+                document.getElementById('stat-lines').textContent = formatNumber(stats.lines);
+                document.getElementById('stat-vectors').textContent = formatNumber(stats.vectors);
+
+                updateConnectionStatus(true);
+
+                if (showInTerminal) {
+                    terminalPrint(`
+<span class="text-cyan">═══ PROJECT STATISTICS ═══</span>
+
+Files:    <span class="text-green">${formatNumber(stats.files)}</span>
+Modules:  <span class="text-green">${formatNumber(stats.folders)}</span>
+Lines:    <span class="text-green">${formatNumber(stats.lines)}</span>
+Vectors:  <span class="text-green">${formatNumber(stats.vectors)}</span>
+Updated:  ${new Date(stats.lastUpdated).toLocaleTimeString()}
+`);
+                }
+            } catch (e) {
+                updateConnectionStatus(false);
+                console.error('Failed to load stats:', e);
+            }
+        }
+
+        // ─────────────────────────────────────────────────────────────────────────
+        // SCRIPTS
+        // ─────────────────────────────────────────────────────────────────────────
+
+        async function loadScripts() {
+            const container = document.getElementById('scripts-list');
+
+            try {
+                const response = await fetch(`${API_BASE}/scripts`);
+                const scripts = await response.json();
+
+                if (scripts.length === 0) {
+                    container.innerHTML = '<div class="text-gray" style="padding:1rem;text-align:center;">No scripts found</div>';
+                    return;
+                }
+
+                container.innerHTML = scripts.map(s => `
+                    <div class="script-item" onclick="runScript('${escapeHtml(s.path)}')">
+                        <span class="script-name">${escapeHtml(s.name)}</span>
+                        <button class="script-run">Run</button>
+                    </div>
+                `).join('');
+
+            } catch (e) {
+                container.innerHTML = '<div class="text-red" style="padding:1rem;text-align:center;">Failed to load scripts</div>';
+            }
+        }
+
+        function runScript(path) {
+            const cmd = path.endsWith('.ts') ? `npx ts-node ${path}` : `node ${path}`;
+            runCommand(cmd);
+        }
+
+        function runCommand(cmd) {
+            document.getElementById('terminal-input').value = cmd;
+            executeCommand(cmd);
+        }
+
+        // ─────────────────────────────────────────────────────────────────────────
+        // WEBSOCKET
+        // ─────────────────────────────────────────────────────────────────────────
+
+        function connectWebSocket() {
+            try {
+                ws = new WebSocket(`ws://${window.location.hostname}:3401`);
+
+                ws.onopen = () => {
+                    log('WebSocket connected', 'success');
+                };
+
+                ws.onmessage = (event) => {
+                    try {
+                        const data = JSON.parse(event.data);
+                        if (data.type === 'output') {
+                            terminalPrint(escapeHtml(data.data));
+                        } else if (data.message) {
+                            log(data.message, 'info');
+                        }
+                    } catch (e) {
+                        console.log('WS message:', event.data);
+                    }
+                };
+
+                ws.onclose = () => {
+                    log('WebSocket disconnected', 'warning');
+                    setTimeout(connectWebSocket, 5000);
+                };
+
+                ws.onerror = () => {
+                    console.error('WebSocket error');
+                };
+            } catch (e) {
+                console.error('WebSocket failed:', e);
+            }
+        }
+
+        // ─────────────────────────────────────────────────────────────────────────
+        // UI HELPERS
+        // ─────────────────────────────────────────────────────────────────────────
+
+        function updateConnectionStatus(connected) {
+            isConnected = connected;
+            const badge = document.getElementById('connection-status');
+            const text = document.getElementById('status-text');
+
+            if (connected) {
+                badge.classList.remove('offline');
+                text.textContent = 'Connected';
+            } else {
+                badge.classList.add('offline');
+                text.textContent = 'Offline';
+            }
+        }
+
+        function log(message, type = 'info') {
+            const container = document.getElementById('activity-log');
+            const time = new Date().toLocaleTimeString();
+            const colorClass = {
+                'success': 'text-green',
+                'error': 'text-red',
+                'warning': 'text-yellow',
+                'info': 'text-cyan'
+            }[type] || 'text-gray';
+
+            const entry = document.createElement('div');
+            entry.className = 'log-entry';
+            entry.innerHTML = `
+                <span class="log-time">${time}</span>
+                <span class="log-message ${colorClass}">${escapeHtml(message)}</span>
+            `;
+
+            container.insertBefore(entry, container.firstChild);
+
+            // Keep only last 50 entries
+            while (container.children.length > 50) {
+                container.removeChild(container.lastChild);
+            }
+        }
+
+        function formatNumber(num) {
+            if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
+            if (num >= 1000) return (num / 1000).toFixed(1) + 'K';
+            return num?.toLocaleString() || '---';
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+    </script>
+</body>
+</html>

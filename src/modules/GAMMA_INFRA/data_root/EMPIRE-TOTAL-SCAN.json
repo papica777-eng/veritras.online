@@ -1,0 +1,136 @@
+{
+  "timestamp": "2026-01-08T19:01:55.688Z",
+  "target": 7000000,
+  "achieved": 7899960,
+  "percentage": 112.9,
+  "locations": [
+    {
+      "name": "UNSTAPPABLE",
+      "path": "C:\\Users\\papic\\Downloads\\UNSTAPPABLE-papica777-eng-patch-2",
+      "files": 5874,
+      "lines": 3602849,
+      "codeLines": 2598414,
+      "git": {
+        "commits": 0,
+        "branch": "N/A",
+        "remotes": 0
+      }
+    },
+    {
+      "name": "QA-SAAS",
+      "path": "C:\\Users\\papic\\Documents\\GitHub\\QA-SAAS",
+      "files": 2364,
+      "lines": 1614875,
+      "codeLines": 1039553,
+      "git": {
+        "commits": 0,
+        "branch": "N/A",
+        "remotes": 0
+      }
+    },
+    {
+      "name": "QAntum-NEXUS",
+      "path": "C:\\Users\\papic\\Documents\\GitHub\\QAntum-NEXUS",
+      "files": 2344,
+      "lines": 1602876,
+      "codeLines": 1039282,
+      "git": {
+        "commits": 0,
+        "branch": "N/A",
+        "remotes": 0
+      }
+    },
+    {
+      "name": "MisteMind-ROOT",
+      "path": "C:\\MisteMind",
+      "files": 1330,
+      "lines": 1032557,
+      "codeLines": 612188,
+      "git": {
+        "commits": 0,
+        "branch": "N/A",
+        "remotes": 0
+      }
+    },
+    {
+      "name": "Fortress",
+      "path": "C:\\Users\\papic\\Downloads\\7-QAntum-Fortres-patch-1",
+      "files": 200,
+      "lines": 32800,
+      "codeLines": 30501,
+      "git": {
+        "commits": 0,
+        "branch": "N/A",
+        "remotes": 0
+      }
+    },
+    {
+      "name": "ghostshield-sdk",
+      "path": "C:\\Users\\papic\\Documents\\GitHub\\ghostshield-sdk",
+      "files": 22,
+      "lines": 11897,
+      "codeLines": 7251,
+      "git": {
+        "commits": 0,
+        "branch": "N/A",
+        "remotes": 0
+      }
+    },
+    {
+      "name": "QAntum-debugger",
+      "path": "C:\\Users\\papic\\Documents\\GitHub\\QAntum-debugger",
+      "files": 7,
+      "lines": 1598,
+      "codeLines": 1348,
+      "git": {
+        "commits": 0,
+        "branch": "N/A",
+        "remotes": 0
+      }
+    },
+    {
+      "name": "PRIVATE-vault",
+      "path": "C:\\MisteMind\\PROJECT\\PRIVATE",
+      "files": 1,
+      "lines": 288,
+      "codeLines": 288,
+      "git": {
+        "commits": 0,
+        "branch": "N/A",
+        "remotes": 0
+      }
+    },
+    {
+      "name": "training-framework",
+      "path": "C:\\MisteMind\\TRAINING",
+      "files": 11,
+      "lines": 220,
+      "codeLines": 91,
+      "git": {
+        "commits": 0,
+        "branch": "N/A",
+        "remotes": 0
+      }
+    }
+  ],
+  "cloud": {
+    "GEMINI": false,
+    "PINECONE": true,
+    "DEEPSEEK": true,
+    "VERTEX": true,
+    "OLLAMA": true
+  },
+  "github_repos": 12,
+  "totals": {
+    "files": 12153,
+    "lines": 7899960,
+    "codeLines": 5328916,
+    "millionLines": "7.90",
+    "millionCodeLines": "5.33"
+  },
+  "summary": {
+    "localRepos": 10,
+    "githubRepos": 12,
+    "cloudServices": 4
+  }
+}

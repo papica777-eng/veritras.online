@@ -1,0 +1,58 @@
+{
+  "startedAt": "2026-02-24T23:33:51.843Z",
+  "lastRun": "2026-02-26T20:08:33.509Z",
+  "phase1_infra": {
+    "status": "completed",
+    "checks": {
+      "landing": true,
+      "success": true,
+      "portal": true,
+      "ping": true,
+      "dashboard": true,
+      "statsApi": true,
+      "runsApi": true,
+      "stripe_plans": true
+    }
+  },
+  "phase2_content": {
+    "status": "completed",
+    "caseStudy": true,
+    "socialPosts": true,
+    "templates": false
+  },
+  "phase3_outreach": {
+    "status": "ready",
+    "emailsSent": 0,
+    "lastBatch": ""
+  },
+  "phase4_monitor": {
+    "status": "healthy",
+    "healthChecks": 2,
+    "lastCheck": "2026-02-26T20:08:33.509Z",
+    "uptime": 100
+  },
+  "completedSteps": [
+    "phase1",
+    "phase2",
+    "phase3",
+    "phase4"
+  ],
+  "metrics": {
+    "totalRuns": 1307,
+    "passRate": 94.5,
+    "outreachSent": 0,
+    "feedbackReceived": 0
+  },
+  "phase0_sync": {
+    "lastRun": "2026-02-26T20:08:27.979Z",
+    "loc": 1848570,
+    "files": 3641,
+    "modules": 60,
+    "source": "nerve-center",
+    "patchedFiles": [
+      "DOCUMENTATION.md",
+      "marketing\\social-posts-ready.md"
+    ],
+    "duration": 1519
+  }
+}

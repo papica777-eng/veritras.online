@@ -1,0 +1,43 @@
+{
+  "scan": {
+    "domain": "telerik.com",
+    "score": 23,
+    "grade": "F",
+    "ttfb": 190,
+    "missingHeaders": [
+      "content-security-policy",
+      "x-frame-options",
+      "x-content-type-options",
+      "x-xss-protection",
+      "referrer-policy",
+      "permissions-policy"
+    ],
+    "issues": [
+      "Missing: content-security-policy",
+      "Missing: x-frame-options",
+      "Missing: x-content-type-options",
+      "Missing: x-xss-protection",
+      "Missing: referrer-policy",
+      "Missing: permissions-policy",
+      "HSTS: no preload",
+      "HSTS: no includeSubDomains"
+    ],
+    "sslDaysLeft": 34,
+    "sslIssuer": "Google Trust Services"
+  },
+  "target": {
+    "domain": "telerik.com",
+    "email": "info@telerik.com",
+    "company": "Telerik",
+    "industry": "SaaS"
+  },
+  "evidence": {
+    "screenshotFull": "C:\\Users\\papic\\Desktop\\ALL-POSITIONS\\Blockchain\\QAntum-1\\data\\visual-evidence\\telerik.com\\screenshots\\desktop.png",
+    "screenshotMobile": "C:\\Users\\papic\\Desktop\\ALL-POSITIONS\\Blockchain\\QAntum-1\\data\\visual-evidence\\telerik.com\\screenshots\\mobile.png",
+    "screenshotHeaders": "C:\\Users\\papic\\Desktop\\ALL-POSITIONS\\Blockchain\\QAntum-1\\data\\visual-evidence\\telerik.com\\screenshots\\missing-headers.png",
+    "videoPath": "C:\\Users\\papic\\Desktop\\ALL-POSITIONS\\Blockchain\\QAntum-1\\data\\visual-evidence\\telerik.com\\00d802f3b50bfbd0811507626d6b4e6e.webm",
+    "videoSizeKb": 1059,
+    "video": true
+  },
+  "ts": "2026-02-27T09:28:08.213Z"
+}

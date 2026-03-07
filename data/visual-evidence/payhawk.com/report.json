@@ -1,0 +1,34 @@
+{
+  "scan": {
+    "domain": "payhawk.com",
+    "score": 73,
+    "grade": "B",
+    "ttfb": 198,
+    "missingHeaders": [
+      "x-xss-protection",
+      "referrer-policy"
+    ],
+    "issues": [
+      "Missing: x-xss-protection",
+      "Missing: referrer-policy",
+      "HSTS: no preload"
+    ],
+    "sslDaysLeft": 57,
+    "sslIssuer": "Google Trust Services"
+  },
+  "target": {
+    "domain": "payhawk.com",
+    "email": "hello@payhawk.com",
+    "company": "Payhawk",
+    "industry": "FinTech"
+  },
+  "evidence": {
+    "screenshotFull": "C:\\Users\\papic\\Desktop\\ALL-POSITIONS\\Blockchain\\QAntum-1\\data\\visual-evidence\\payhawk.com\\screenshots\\desktop.png",
+    "screenshotMobile": "C:\\Users\\papic\\Desktop\\ALL-POSITIONS\\Blockchain\\QAntum-1\\data\\visual-evidence\\payhawk.com\\screenshots\\mobile.png",
+    "screenshotHeaders": "C:\\Users\\papic\\Desktop\\ALL-POSITIONS\\Blockchain\\QAntum-1\\data\\visual-evidence\\payhawk.com\\screenshots\\missing-headers.png",
+    "videoPath": "C:\\Users\\papic\\Desktop\\ALL-POSITIONS\\Blockchain\\QAntum-1\\data\\visual-evidence\\payhawk.com\\0267925db55aaa41075f20509e398655.webm",
+    "videoSizeKb": 976,
+    "video": true
+  },
+  "ts": "2026-02-27T09:27:21.364Z"
+}

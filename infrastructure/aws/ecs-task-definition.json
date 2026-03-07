@@ -1,0 +1,30 @@
+{
+  "family": "qantum",
+  "networkMode": "awsvpc",
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "cpu": "2000m",
+  "memory": "4096",
+  "containerDefinitions": [
+    {
+      "name": "qantum",
+      "image": "qantum:1.0.0-QAntum",
+      "portMappings": [
+        {
+          "containerPort": 3000
+        }
+      ],
+      "environment": [
+        {
+          "name": "NODE_ENV",
+          "value": "production"
+        },
+        {
+          "name": "QANTUM_VERSION",
+          "value": "1.0.0-QAntum"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+[package]
+name = "cyberfortress-trading"
+version = "0.1.0"
+edition = "2021"
+authors = ["Dimitar Prodromov <dimitar@qantum.io>"]
+description = "💹 CYBERFORTRESS TRADING - HFT + AI Consensus Engine (Rust Core)"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+# Async Runtime
+tokio = { version = "1.35", features = ["full", "rt-multi-thread"] }
+async-trait = "0.1"
+futures = "0.3"
+
+# Trading
+rust_decimal = { version = "1.33", features = ["serde"] }
+chrono = { version = "0.4", features = ["serde"] }
+
+# WebSocket for real-time data
+tokio-tungstenite = { version = "0.21", features = ["native-tls"] }
+
+# HTTP Client
+reqwest = { version = "0.11", features = ["json", "native-tls"] }
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Math & Statistics
+statrs = "0.16"
+ndarray = "0.15"
+
+# Physics Engine (OBI)
+nalgebra = "0.32"
+
+# Concurrent Data Structures
+dashmap = "5.5"
+crossbeam = "0.8"
+parking_lot = "0.12"
+
+# Ring buffer for order book
+ringbuf = "0.3"
+
+# FFI for TypeScript/Mojo bridge
+napi = { version = "2.14", features = ["async"] }
+napi-derive = "2.14"
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = "0.3"
+
+[build-dependencies]
+napi-build = "2.1"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+
+[features]
+default = ["binance", "physics"]
+binance = []
+physics = []

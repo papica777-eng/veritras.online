@@ -1,0 +1,39 @@
+{
+  "id": "url_change-1766963185647-afdabd84",
+  "timestamp": "2025-12-28T23:06:25.850Z",
+  "eventType": "URL_CHANGE",
+  "url": "https://app.revolut.com/",
+  "sessionId": "session-2025-12-28T23-06-25-457Z-5a6014a1",
+  "severity": "medium",
+  "description": "[AUTO] URL_CHANGE: {\"url\":\"https://app.revolut.com/\"}",
+  "maskingApplied": false,
+  "maskedFields": [],
+  "checksum": "197dc0cf99d50c1387ab64437814395ff866a943845bbd2050e35f0a609e7f15",
+  "captureMode": "safe-hunter",
+  "browserInfo": {
+    "name": "Chromium",
+    "version": "1.0.0-QAntum",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "deviceScaleFactor": 1
+  },
+  "networkContext": {
+    "cookies": [
+      {
+        "name": "rwa_geo",
+        "domain": "app.revolut.com"
+      },
+      {
+        "name": "__cf_bm",
+        "domain": ".revolut.com"
+      },
+      {
+        "name": "_cfuvid",
+        "domain": ".revolut.com"
+      }
+    ]
+  }
+}

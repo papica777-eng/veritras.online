@@ -1,0 +1,90 @@
+{
+  "scannedAt": "2026-02-28T21:32:04.334Z",
+  "projectRoot": "C:\\Users\\papic\\Desktop\\ALL-POSITIONS\\Blockchain\\QAntum-1",
+  "duration": 527,
+  "modules": {
+    "DepartmentEngine": [
+      {
+        "name": "DepartmentEngine",
+        "path": "C:\\Users\\papic\\Desktop\\ALL-POSITIONS\\Blockchain\\QAntum-1\\core\\DepartmentEngine.ts",
+        "relativePath": "core\\DepartmentEngine.ts",
+        "type": "ts"
+      },
+      {
+        "name": "DepartmentEngine",
+        "path": "C:\\Users\\papic\\Desktop\\ALL-POSITIONS\\Blockchain\\QAntum-1\\src\\core\\DepartmentEngine.ts",
+        "relativePath": "src\\core\\DepartmentEngine.ts",
+        "type": "ts"
+      }
+    ],
+    "ModuleAdapter": [
+      {
+        "name": "ModuleAdapter",
+        "path": "C:\\Users\\papic\\Desktop\\ALL-POSITIONS\\Blockchain\\QAntum-1\\core\\ModuleAdapter.ts",
+        "relativePath": "core\\ModuleAdapter.ts",
+        "type": "ts"
+      }
+    ],
+    "ModuleRegistry": [
+      {
+        "name": "ModuleRegistry",
+        "path": "C:\\Users\\papic\\Desktop\\ALL-POSITIONS\\Blockchain\\QAntum-1\\core\\ModuleRegistry.ts",
+        "relativePath": "core\\ModuleRegistry.ts",
+        "type": "ts"
+      }
+    ],
+    "NeuralHub": [
+      {
+        "name": "NeuralHub",
+        "path": "C:\\Users\\papic\\Desktop\\ALL-POSITIONS\\Blockchain\\QAntum-1\\core\\NeuralHub.ts",
+        "relativePath": "core\\NeuralHub.ts",
+        "type": "ts"
+      },
+      {
+        "name": "NeuralHub",
+        "path": "C:\\Users\\papic\\Desktop\\ALL-POSITIONS\\Blockchain\\QAntum-1\\src\\core\\NeuralHub.ts",
+        "relativePath": "src\\core\\NeuralHub.ts",
+        "type": "ts"
+      }
+    ],
+    "SystemOrchestrator": [
+      {
+        "name": "SystemOrchestrator",
+        "path": "C:\\Users\\papic\\Desktop\\ALL-POSITIONS\\Blockchain\\QAntum-1\\core\\SystemOrchestrator.ts",
+        "relativePath": "core\\SystemOrchestrator.ts",
+        "type": "ts"
+      },
+      {
+        "name": "SystemOrchestrator",
+        "path": "C:\\Users\\papic\\Desktop\\ALL-POSITIONS\\Blockchain\\QAntum-1\\JS-Framework\\scripts\\SystemOrchestrator.ts",
+        "relativePath": "JS-Framework\\scripts\\SystemOrchestrator.ts",
+        "type": "ts"
+      },
+      {
+        "name": "SystemOrchestrator",
+        "path": "C:\\Users\\papic\\Desktop\\ALL-POSITIONS\\Blockchain\\QAntum-1\\src\\core\\SystemOrchestrator.ts",
+        "relativePath": "src\\core\\SystemOrchestrator.ts",
+        "type": "ts"
+      }
+    ],
+    "QAntumConsole": [
+      {
+        "name": "QAntumConsole",
+        "path": "C:\\Users\\papic\\Desktop\\ALL-POSITIONS\\Blockchain\\QAntum-1\\JS-Framework\\scripts\\console\\QAntumConsole.ts",
+        "relativePath": "JS-Framework\\scripts\\console\\QAntumConsole.ts",
+        "type": "ts"
+      },
+      {
+        "name": "QAntumConsole",
+        "path": "C:\\Users\\papic\\Desktop\\ALL-POSITIONS\\Blockchain\\QAntum-1\\src\\pinecone-bridge\\src\\console\\QAntumConsole.ts",
+        "relativePath": "src\\pinecone-bridge\\src\\console\\QAntumConsole.ts",
+        "type": "ts"
+      }
+    ]
+  },
+  "summary": {
+    "total": 11,
+    "unique": 6,
+    "missing": 0
+  }
+}

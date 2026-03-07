@@ -1,0 +1,17 @@
+{
+  "goal": "Verify we are on the Turing Test article",
+  "url": "https://en.wikipedia.org/wiki/Turing_test",
+  "domHash": "{\"counts\":{\"html\":1,\"head\":1,\"meta\":14,\"title\":1,\"script\":5,\"link\":167,\"style\":18,\"body\":1,\"div\":312,\"a\":1491,\"header\":2,\"nav\":12,\"input\":20,\"label\":16,\"span\":1443,\"button\":29,\"ul\":104,\"li\":516,\"img\":12,\"form\":5,\"h2\":15,\"main\":1,\"h1\":1,\"p\":111,\"figure\":5,\"figcaption\":5,\"sup\":227,\"table\":3,\"tbody\":3,\"tr\":19,\"td\":16,\"th\":8,\"i\":211,\"abbr\":6,\"b\":212,\"h3\":34,\"blockquote\":11,\"h4\":2,\"dl\":10,\"dd\":10,\"dt\":2,\"ol\":1,\"cite\":130,\"bdi\":33,\"q\":3,\"noscript\":1,\"footer\":1,\"picture\":2,\"source\":2},\"textLen\":86423}",
+  "description": "",
+  "elements": [],
+  "confidence": 0.4,
+  "hasCaptcha": false,
+  "hasTarget": false,
+  "decision": {
+    "action": "wait",
+    "reasoning": "No clear action from observation. Waiting for page state to change.",
+    "confidence": 0.3
+  },
+  "oodaCycle": 1,
+  "timestamp": "2026-02-23T19:28:35.551Z"
+}

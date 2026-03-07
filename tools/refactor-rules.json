@@ -1,0 +1,96 @@
+{
+    "$schema": "./refactor-schema.json",
+    "name": "QAntum Rebrand Rules",
+    "description": "Mass refactoring rules for complete project rebrand",
+    "version": "1.0.0",
+    "author": "dp | QAntum Labs",
+    
+    "rules": [
+        {
+            "description": "Rename QAntum class to QAntum",
+            "type": "class",
+            "pattern": "QAntum",
+            "replacement": "QAntum"
+        },
+        {
+            "description": "Rename createMM factory to createQA",
+            "type": "function",
+            "pattern": "createMM",
+            "replacement": "createQA"
+        },
+        {
+            "description": "Update version to 1.0.0",
+            "pattern": "v27\\.[0-9]+\\.[0-9]+",
+            "replacement": "v1.0.0",
+            "isRegex": true
+        },
+        {
+            "description": "Update version in strings",
+            "pattern": "\"version\": \"27\\.",
+            "replacement": "\"version\": \"1.",
+            "isRegex": true
+        },
+        {
+            "description": "Replace old brand name",
+            "pattern": "QANTUM",
+            "replacement": "QAntum"
+        },
+        {
+            "description": "Replace abbreviated brand",
+            "pattern": "QAntum",
+            "replacement": "QAntum"
+        }
+    ],
+    
+    "presets": {
+        "logo-update": {
+            "description": "Update all logo references",
+            "rules": [
+                {
+                    "pattern": "SystemLogo:\\s*['\"].*?['\"]",
+                    "replacement": "SystemLogo: 'assets/brand/qantum-logo.svg'",
+                    "isRegex": true
+                },
+                {
+                    "pattern": "logo-old\\.svg",
+                    "replacement": "qantum-logo.svg"
+                },
+                {
+                    "pattern": "class=\"old-logo\"",
+                    "replacement": "class=\"qantum-logo\""
+                }
+            ]
+        },
+        
+        "interface-rename": {
+            "description": "Rename interfaces",
+            "rules": [
+                {
+                    "type": "class",
+                    "pattern": "IConfig",
+                    "replacement": "IQAntumConfig"
+                },
+                {
+                    "type": "class", 
+                    "pattern": "IOptions",
+                    "replacement": "IQAntumOptions"
+                }
+            ]
+        },
+        
+        "error-fix": {
+            "description": "Fix common errors",
+            "rules": [
+                {
+                    "pattern": "console.log\\(error\\)",
+                    "replacement": "logger.error(error)",
+                    "isRegex": true
+                },
+                {
+                    "pattern": "any\\[\\]",
+                    "replacement": "unknown[]"
+                }
+            ]
+        }
+    }
+}

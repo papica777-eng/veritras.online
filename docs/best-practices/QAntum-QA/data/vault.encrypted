@@ -1,0 +1,52 @@
+{
+  "manifest": {
+    "version": "19.0.0",
+    "machineId": "fa6aa7e937c4e782",
+    "createdAt": "2025-12-28T07:17:56.210Z",
+    "entryCount": 2,
+    "totalSize": 1335,
+    "manifestChecksum": "fe910e0239a7251112dd1b98e457106c918bd559ffb2ec3ec5ab37a8bf651ee6",
+    "lastSync": "2025-12-31T13:48:52.501Z"
+  },
+  "salt": "2Yfofj0OVxOcWTsXeK2piI1UW61Z/7VqMfalrTf/nhw=",
+  "entries": [
+    [
+      "mutation-result-001",
+      {
+        "id": "mutation-result-001",
+        "type": "mutations",
+        "payload": {
+          "algorithm": "aes-256-gcm",
+          "iv": "cqwzEbSGkQqvqs/+",
+          "data": "kn5Xu12HYBEf8MFXSEe11Rc3J6wgESzjRLbOCbenlOQHPmekcmPU4Q3NZ7MuaSidXF0Ep60Bu6pLxGaBc8bxdbpJUg8TwVXzDwYLLYwMMeKAZAvn1oxnn8BXuxp5NwQ4o8iEitDiuSHoczYK3NnqL/2f/SIbeOrMiJWkVekcFShCBAbjvb5jUp2Rjn9kx8uALVFZ3tmki3Z577zodP/fxh3JPPwsPZ3C1onG7heXxLHDrboxEHaVLBiv+m5jtkLYMIm9ICUr7AmA+SILaR+Bb5ipoZsdrzlxfpO9e16T8YV478Hc6qrQbniidP90b/mpmuQ39H3nkf7We6tec8y9j3iitRGSpKVK8UDWKQq/z4d9muDHkkts+gMYKLgTATNmkuvBCqzjlbT8AnZEr8xF616LAgLJHwN3wJjp2dluytR/9VzwWYQULGSO4ez0qyctTWCCIfOX0KOQcT7EDjLDmLTseQW/PVE3FQjX7hi5pMV4gyBaRVllp6FSX0KxtPwufx0UEP+UnFYv07DBzhQn0NEQJhRaWnqVzVl7zjkrEknnb9kuJXqM9xPJGTrCRw4LONnX47QG+MuFVH3Gg9PIYhDA6vArtb4VtekIqVZQUy8OAHSeqgN+mDIsopeFVqzbqzc3fNpEyQUr0Da4Z05jKgW7WCdqvTKnpCclXWQstTJ3QlBVJk+Bs9gXv/Z2Y4xDbjTngq2kXkvvoBGNUC7TM2g6JUSqxxN/bvPJt+hKo/NZFDqIC0OPvbobdx5KN0mx5jK12QNit92YqXL1ZU/p4ZuymFJaQ+uRtW6P7oSpLd+fdAlSWJunFZNAN76qOQUg/ufC7w7m4wFblzsvRBH41xBd9KiQ6VY9hLaka6343Xw=",
+          "authTag": "0jbiMD1sPjJM5GCsNEF10Q==",
+          "salt": "2Yfofj0OVxOcWTsXeK2piI1UW61Z/7VqMfalrTf/nhw=",
+          "encryptedAt": "2025-12-31T13:48:52.301Z",
+          "version": 1
+        },
+        "checksum": "74332a2b4f43cd885dc5a747bd31832c7f83a43cb8478154bcac4d8ff85b756a",
+        "lastModified": "2025-12-31T13:48:52.301Z",
+        "originalSize": 1217
+      }
+    ],
+    [
+      "integrity-test",
+      {
+        "id": "integrity-test",
+        "type": "metrics",
+        "payload": {
+          "algorithm": "aes-256-gcm",
+          "iv": "DfzncUhvb/rmBhH2",
+          "data": "K/Fl7E+yKfZ7bs2mSSN20Vv9HiWEP1V6DgMahLmaqiKbt4sVDBG9Tt0H2FpPP5gRIv1PTjs6uHiMN6c6dcEX0EiUjF/niATCvQ05AkZdv1hq/E75fZ3wc8Bzh4IhA44RarVfgs0H7n0im1FWZ9qX5dA176JromcYWi0EuaM1nwYcZuD8ObDSgtelR0DBaQu+Eu+kdknk+Hd4+63lpF60tg==",
+          "authTag": "0u0eyU5cAIi+vCXF3g/7fg==",
+          "salt": "2Yfofj0OVxOcWTsXeK2piI1UW61Z/7VqMfalrTf/nhw=",
+          "encryptedAt": "2025-12-31T13:48:52.501Z",
+          "version": 1
+        },
+        "checksum": "8b018c78d97914b9ff23bd690b32152cf2bce3472d2b096afb55aa0630478ebe",
+        "lastModified": "2025-12-31T13:48:52.501Z",
+        "originalSize": 118
+      }
+    ]
+  ]
+}

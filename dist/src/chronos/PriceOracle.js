@@ -1,0 +1,451 @@
+"use strict";
+/**
+ * ╔═══════════════════════════════════════════════════════════════════════════╗
+ * ║  QAntum Prime v28.0 - PRICE ORACLE                                        ║
+ * ║  "Времевият Парадокс" - Chronos Arbitrage Predictor                       ║
+ * ║                                                                           ║
+ * ║  T+30s предсказване на цени, блокиране на сделки с риск >15%              ║
+ * ║  Zero-Loss Trading чрез времева симулация                                  ║
+ * ╚═══════════════════════════════════════════════════════════════════════════╝
+ */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.priceOracle = exports.PriceOracle = void 0;
+const events_1 = require("events");
+// ═══════════════════════════════════════════════════════════════════════════
+// PRICE ORACLE - CHRONOS PARADOX ENGINE
+// ═══════════════════════════════════════════════════════════════════════════
+class PriceOracle extends events_1.EventEmitter {
+    config;
+    priceHistory = new Map();
+    currentPrices = new Map();
+    predictions = new Map();
+    updateInterval = null;
+    isRunning = false;
+    // Model parameters learned from historical data
+    volatilityModels = new Map();
+    driftModels = new Map();
+    correlationMatrix = new Map();
+    // Statistics
+    totalPredictions = 0;
+    accuratePredictions = 0;
+    constructor(config = {}) {
+        super();
+        this.config = {
+            predictionHorizonSeconds: config.predictionHorizonSeconds ?? 30,
+            monteCarloSimulations: config.monteCarloSimulations ?? 1000,
+            confidenceThreshold: config.confidenceThreshold ?? 0.7,
+            maxRiskPercent: config.maxRiskPercent ?? 15,
+            butterflyEffectWeight: config.butterflyEffectWeight ?? 0.1,
+            updateIntervalMs: config.updateIntervalMs ?? 1000,
+        };
+        this.initializeModels();
+        console.log('[PriceOracle] 🔮 Chronos Paradox Engine initialized');
+    }
+    // ═══════════════════════════════════════════════════════════════════════
+    // MODEL INITIALIZATION
+    // ═══════════════════════════════════════════════════════════════════════
+    // Complexity: O(N*M) — nested iteration
+    initializeModels() {
+        const symbols = ['BTC', 'ETH', 'SOL', 'XRP', 'ADA', 'DOGE', 'MATIC', 'AVAX'];
+        // Initialize volatility models (annualized volatility)
+        const volatilities = {
+            'BTC': 0.65, // 65% annualized
+            'ETH': 0.80, // 80% annualized
+            'SOL': 1.20, // 120% annualized
+            'XRP': 0.90, // 90% annualized
+            'ADA': 0.95, // 95% annualized
+            'DOGE': 1.50, // 150% annualized (very volatile)
+            'MATIC': 1.10, // 110% annualized
+            'AVAX': 1.05, // 105% annualized
+        };
+        // Initialize drift models (expected return tendency)
+        const drifts = {
+            'BTC': 0.05, // Slight upward bias
+            'ETH': 0.03,
+            'SOL': 0.02,
+            'XRP': 0.01,
+            'ADA': 0.01,
+            'DOGE': 0.00, // Random walk
+            'MATIC': 0.02,
+            'AVAX': 0.02,
+        };
+        for (const symbol of symbols) {
+            this.volatilityModels.set(symbol, volatilities[symbol] ?? 1.0);
+            this.driftModels.set(symbol, drifts[symbol] ?? 0.0);
+            this.priceHistory.set(symbol, this.generateSyntheticHistory(symbol));
+        }
+        // Initialize correlation matrix
+        this.initializeCorrelations(symbols);
+        console.log(`[PriceOracle] 📊 Initialized models for ${symbols.length} assets`);
+    }
+    // Complexity: O(N) — loop
+    generateSyntheticHistory(symbol) {
+        // Generate 1000 candles of 1-minute data
+        const candles = [];
+        const basePrice = this.getBasePrice(symbol);
+        let price = basePrice;
+        const volatility = this.volatilityModels.get(symbol) ?? 1.0;
+        const minuteVolatility = volatility / Math.sqrt(365 * 24 * 60); // Convert to per-minute
+        for (let i = 0; i < 1000; i++) {
+            const timestamp = Date.now() - (1000 - i) * 60000;
+            const change = (Math.random() - 0.5) * 2 * minuteVolatility * price;
+            const open = price;
+            price += change;
+            const high = Math.max(open, price) * (1 + Math.random() * 0.001);
+            const low = Math.min(open, price) * (1 - Math.random() * 0.001);
+            candles.push({
+                timestamp,
+                open,
+                high,
+                low,
+                close: price,
+                volume: Math.random() * 1000000,
+            });
+        }
+        return candles;
+    }
+    // Complexity: O(1)
+    getBasePrice(symbol) {
+        const prices = {
+            'BTC': 42500,
+            'ETH': 2250,
+            'SOL': 110,
+            'XRP': 0.62,
+            'ADA': 0.61,
+            'DOGE': 0.092,
+            'MATIC': 0.87,
+            'AVAX': 38.5,
+        };
+        return prices[symbol] ?? 100;
+    }
+    // Complexity: O(N*M) — nested iteration
+    initializeCorrelations(symbols) {
+        // BTC-ETH correlation is typically high
+        // ALTs are correlated with BTC but less so with each other
+        const baseCorrelations = {
+            'BTC': { 'ETH': 0.85, 'SOL': 0.70, 'XRP': 0.60, 'ADA': 0.65, 'DOGE': 0.50, 'MATIC': 0.70, 'AVAX': 0.70 },
+            'ETH': { 'BTC': 0.85, 'SOL': 0.75, 'XRP': 0.55, 'ADA': 0.60, 'DOGE': 0.45, 'MATIC': 0.80, 'AVAX': 0.75 },
+        };
+        for (const s1 of symbols) {
+            const corrMap = new Map();
+            for (const s2 of symbols) {
+                if (s1 === s2) {
+                    corrMap.set(s2, 1.0);
+                }
+                else {
+                    const corr = baseCorrelations[s1]?.[s2] ?? 0.5;
+                    corrMap.set(s2, corr);
+                }
+            }
+            this.correlationMatrix.set(s1, corrMap);
+        }
+    }
+    // ═══════════════════════════════════════════════════════════════════════
+    // CORE PREDICTION ENGINE - MONTE CARLO SIMULATION
+    // ═══════════════════════════════════════════════════════════════════════
+    /**
+     * Predict price using Monte Carlo simulation with Geometric Brownian Motion
+     * This is the core of the "Chronos Paradox" - simulating the future
+     */
+    // Complexity: O(1) — lookup
+    predictPrice(symbol, currentPrice, horizonSeconds = this.config.predictionHorizonSeconds) {
+        const volatility = this.volatilityModels.get(symbol) ?? 1.0;
+        const drift = this.driftModels.get(symbol) ?? 0.0;
+        // Convert annual volatility to per-second
+        const secondsPerYear = 365 * 24 * 60 * 60;
+        const sigmaPerSecond = volatility / Math.sqrt(secondsPerYear);
+        const muPerSecond = drift / secondsPerYear;
+        // Run Monte Carlo simulations
+        const simulation = this.runMonteCarloSimulation(currentPrice, muPerSecond, sigmaPerSecond, horizonSeconds);
+        // Calculate prediction metrics
+        const predictedPrice = simulation.consensus.meanPrice;
+        const priceChange = predictedPrice - currentPrice;
+        const changePercent = (priceChange / currentPrice) * 100;
+        // Calculate confidence based on simulation convergence
+        const relativeStdDev = simulation.consensus.stdDev / currentPrice;
+        const confidence = Math.max(0, Math.min(1, 1 - relativeStdDev * 2));
+        // Determine trend
+        let trend;
+        if (changePercent > 0.5)
+            trend = 'bullish';
+        else if (changePercent < -0.5)
+            trend = 'bearish';
+        else
+            trend = 'neutral';
+        // Determine risk level based on VaR and max drawdown
+        let riskLevel;
+        if (simulation.riskMetrics.valueAtRisk < 3)
+            riskLevel = 'low';
+        else if (simulation.riskMetrics.valueAtRisk < 7)
+            riskLevel = 'medium';
+        else if (simulation.riskMetrics.valueAtRisk < 15)
+            riskLevel = 'high';
+        else
+            riskLevel = 'extreme';
+        const prediction = {
+            symbol,
+            exchange: 'aggregate',
+            currentPrice,
+            predictedPrice,
+            priceChange,
+            changePercent,
+            confidence,
+            horizonSeconds,
+            volatilityBand: {
+                upper: simulation.consensus.meanPrice + simulation.consensus.stdDev * 2,
+                lower: simulation.consensus.meanPrice - simulation.consensus.stdDev * 2,
+            },
+            trend,
+            riskLevel,
+            timestamp: Date.now(),
+        };
+        this.predictions.set(symbol, prediction);
+        this.totalPredictions++;
+        return prediction;
+    }
+    // Complexity: O(N*M) — nested iteration
+    runMonteCarloSimulation(startPrice, mu, // drift per second
+    sigma, // volatility per second
+    horizonSeconds) {
+        const trajectories = [];
+        const finalPrices = [];
+        // Butterfly effect: small random perturbations that cascade
+        const butterflyNoise = (Math.random() - 0.5) * this.config.butterflyEffectWeight;
+        for (let sim = 0; sim < this.config.monteCarloSimulations; sim++) {
+            const trajectory = this.simulateTrajectory(startPrice, mu + butterflyNoise * (sim / this.config.monteCarloSimulations), sigma, horizonSeconds);
+            trajectories.push(trajectory);
+            finalPrices.push(trajectory.finalPrice);
+        }
+        // Calculate consensus statistics
+        finalPrices.sort((a, b) => a - b);
+        const mean = finalPrices.reduce((a, b) => a + b) / finalPrices.length;
+        const median = finalPrices[Math.floor(finalPrices.length / 2)];
+        const squaredDiffs = finalPrices.map(p => Math.pow(p - mean, 2));
+        const variance = squaredDiffs.reduce((a, b) => a + b) / squaredDiffs.length;
+        const stdDev = Math.sqrt(variance);
+        // Value at Risk (95th percentile loss)
+        const var95Index = Math.floor(finalPrices.length * 0.05);
+        const valueAtRisk = ((startPrice - finalPrices[var95Index]) / startPrice) * 100;
+        // Max drawdown across all trajectories
+        const maxDrawdown = Math.max(...trajectories.map(t => t.maxDrawdown));
+        // Probability of loss
+        const lossPaths = finalPrices.filter(p => p < startPrice).length;
+        const probabilityOfLoss = lossPaths / finalPrices.length;
+        // Sharpe ratio (simplified)
+        const expectedReturn = (mean - startPrice) / startPrice;
+        const sharpeRatio = stdDev > 0 ? expectedReturn / (stdDev / startPrice) : 0;
+        return {
+            id: `SIM-${Date.now()}`,
+            symbol: '',
+            simulationSteps: horizonSeconds,
+            timeHorizonMs: horizonSeconds * 1000,
+            trajectories: trajectories.slice(0, 10), // Keep only first 10 for memory
+            consensus: {
+                meanPrice: mean,
+                medianPrice: median,
+                stdDev,
+                worstCase: finalPrices[0],
+                bestCase: finalPrices[finalPrices.length - 1],
+            },
+            riskMetrics: {
+                valueAtRisk: Math.max(0, valueAtRisk),
+                maxDrawdown,
+                sharpeRatio,
+                probabilityOfLoss,
+            },
+        };
+    }
+    // Complexity: O(N) — loop
+    simulateTrajectory(startPrice, mu, sigma, steps) {
+        const prices = [startPrice];
+        let price = startPrice;
+        let minPrice = startPrice;
+        let maxPrice = startPrice;
+        for (let i = 0; i < steps; i++) {
+            // Geometric Brownian Motion step
+            const randomShock = this.boxMullerTransform();
+            const drift = (mu - 0.5 * sigma * sigma);
+            const diffusion = sigma * randomShock;
+            price = price * Math.exp(drift + diffusion);
+            prices.push(price);
+            minPrice = Math.min(minPrice, price);
+            maxPrice = Math.max(maxPrice, price);
+        }
+        const maxDrawdown = ((maxPrice - minPrice) / maxPrice) * 100;
+        const volatility = this.calculateVolatility(prices);
+        return {
+            pathId: Math.floor(Math.random() * 1000000),
+            prices,
+            finalPrice: price,
+            maxDrawdown,
+            volatility,
+        };
+    }
+    // Complexity: O(1)
+    boxMullerTransform() {
+        // Generate standard normal random variable
+        const u1 = Math.random();
+        const u2 = Math.random();
+        return Math.sqrt(-2 * Math.log(u1)) * Math.cos(2 * Math.PI * u2);
+    }
+    // Complexity: O(N) — linear scan
+    calculateVolatility(prices) {
+        if (prices.length < 2)
+            return 0;
+        const returns = [];
+        for (let i = 1; i < prices.length; i++) {
+            returns.push(Math.log(prices[i] / prices[i - 1]));
+        }
+        const mean = returns.reduce((a, b) => a + b) / returns.length;
+        const squaredDiffs = returns.map(r => Math.pow(r - mean, 2));
+        const variance = squaredDiffs.reduce((a, b) => a + b) / squaredDiffs.length;
+        return Math.sqrt(variance);
+    }
+    // ═══════════════════════════════════════════════════════════════════════
+    // ARBITRAGE RISK ASSESSMENT
+    // ═══════════════════════════════════════════════════════════════════════
+    /**
+     * Evaluate if an arbitrage trade should proceed based on predicted price movement
+     * Returns true if safe to proceed, false if risk is too high
+     */
+    // Complexity: O(1)
+    evaluateArbitrageRisk(symbol, buyPrice, sellPrice, expectedProfit, executionTimeMs = 5000) {
+        // Predict where sell price will be when we execute
+        const horizonSeconds = executionTimeMs / 1000;
+        const prediction = this.predictPrice(symbol, sellPrice, horizonSeconds);
+        // Calculate worst case scenario
+        const worstCaseSellPrice = prediction.volatilityBand.lower;
+        const worstCaseProfit = worstCaseSellPrice - buyPrice;
+        const worstCaseProfitPercent = (worstCaseProfit / buyPrice) * 100;
+        // Calculate best case scenario
+        const bestCaseSellPrice = prediction.volatilityBand.upper;
+        const bestCaseProfit = bestCaseSellPrice - buyPrice;
+        // Decision logic
+        const maxRisk = this.config.maxRiskPercent;
+        const potentialLoss = ((sellPrice - worstCaseSellPrice) / sellPrice) * 100;
+        let shouldProceed = true;
+        let riskAssessment = '';
+        if (prediction.riskLevel === 'extreme') {
+            shouldProceed = false;
+            riskAssessment = `🚫 БЛОКИРАНО: Екстремен риск (${prediction.riskLevel}). Пазарът е твърде волатилен.`;
+        }
+        else if (potentialLoss > maxRisk) {
+            shouldProceed = false;
+            riskAssessment = `🚫 БЛОКИРАНО: Потенциална загуба ${potentialLoss.toFixed(2)}% > максимален риск ${maxRisk}%`;
+        }
+        else if (worstCaseProfitPercent < -maxRisk) {
+            shouldProceed = false;
+            riskAssessment = `🚫 БЛОКИРАНО: Най-лош сценарий = ${worstCaseProfitPercent.toFixed(2)}% загуба`;
+        }
+        else if (prediction.trend === 'bearish' && prediction.confidence > 0.8) {
+            shouldProceed = false;
+            riskAssessment = `🚫 БЛОКИРАНО: Chronos предвижда мечи пазар с ${(prediction.confidence * 100).toFixed(0)}% увереност`;
+        }
+        else if (prediction.confidence < this.config.confidenceThreshold) {
+            shouldProceed = false;
+            riskAssessment = `⚠️ ПАУЗИРАНО: Ниска увереност в предсказването (${(prediction.confidence * 100).toFixed(0)}%)`;
+        }
+        else {
+            shouldProceed = true;
+            riskAssessment = `✅ ОДОБРЕНО: Риск ${potentialLoss.toFixed(2)}% е в допустимите граници. Очаквана печалба: $${expectedProfit.toFixed(2)}`;
+        }
+        console.log(`[PriceOracle] ${riskAssessment}`);
+        return {
+            shouldProceed,
+            riskAssessment,
+            prediction,
+            worstCaseProfit,
+            bestCaseProfit,
+        };
+    }
+    // ═══════════════════════════════════════════════════════════════════════
+    // CONTINUOUS MONITORING
+    // ═══════════════════════════════════════════════════════════════════════
+    // Complexity: O(1)
+    start() {
+        if (this.isRunning)
+            return;
+        this.isRunning = true;
+        console.log('[PriceOracle] 🔮 Chronos Paradox ACTIVATED - Predicting futures...');
+        this.updateInterval = setInterval(() => {
+            this.updateAllPredictions();
+        }, this.config.updateIntervalMs);
+        this.emit('started');
+    }
+    // Complexity: O(1)
+    stop() {
+        if (!this.isRunning)
+            return;
+        this.isRunning = false;
+        if (this.updateInterval) {
+            // Complexity: O(1)
+            clearInterval(this.updateInterval);
+            this.updateInterval = null;
+        }
+        console.log('[PriceOracle] 🛑 Chronos Paradox DEACTIVATED');
+        this.emit('stopped');
+    }
+    // Complexity: O(1) — lookup
+    updatePrice(symbol, price) {
+        this.currentPrices.set(symbol, price);
+        // Update history
+        const history = this.priceHistory.get(symbol) || [];
+        history.push({
+            timestamp: Date.now(),
+            open: price,
+            high: price,
+            low: price,
+            close: price,
+            volume: 0,
+        });
+        // Keep last 1000 candles
+        if (history.length > 1000) {
+            history.shift();
+        }
+        this.priceHistory.set(symbol, history);
+    }
+    // Complexity: O(N) — loop
+    updateAllPredictions() {
+        for (const [symbol, price] of this.currentPrices) {
+            this.predictPrice(symbol, price);
+        }
+        this.emit('predictions-updated', this.predictions);
+    }
+    // ═══════════════════════════════════════════════════════════════════════
+    // PUBLIC API
+    // ═══════════════════════════════════════════════════════════════════════
+    // Complexity: O(1) — lookup
+    getPrediction(symbol) {
+        return this.predictions.get(symbol);
+    }
+    // Complexity: O(1)
+    getAllPredictions() {
+        return new Map(this.predictions);
+    }
+    // Complexity: O(1)
+    getAccuracy() {
+        if (this.totalPredictions === 0)
+            return 0;
+        return (this.accuratePredictions / this.totalPredictions) * 100;
+    }
+    // Complexity: O(N)
+    recordOutcome(symbol, predictedPrice, actualPrice) {
+        // Within 2% is considered accurate
+        const error = Math.abs(predictedPrice - actualPrice) / actualPrice;
+        if (error < 0.02) {
+            this.accuratePredictions++;
+        }
+        // Emit for learning
+        this.emit('outcome', { symbol, predictedPrice, actualPrice, error });
+    }
+    // Complexity: O(1)
+    updateConfig(config) {
+        this.config = { ...this.config, ...config };
+    }
+}
+exports.PriceOracle = PriceOracle;
+// ═══════════════════════════════════════════════════════════════════════════
+// SINGLETON EXPORT
+// ═══════════════════════════════════════════════════════════════════════════
+exports.priceOracle = new PriceOracle();
+exports.default = PriceOracle;

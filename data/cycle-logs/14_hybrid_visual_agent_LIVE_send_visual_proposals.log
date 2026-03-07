@@ -1,0 +1,19 @@
+[CHRONOS] ⏰ Paradox Engine initialized
+[CHRONOS] 🔮 "Проблемите са решени преди да съществуват."
+
+🔮 ChronosParadox — pre-run risk simulation (48h)
+
+[CHRONOS] 🚀 FastForward: Simulating 48h for visual-outreach
+[CHRONOS] ✅ Simulation complete in 1ms
+[CHRONOS] 🦋 Found 0 butterfly effects
+  FastForward: ✅ Safe
+  → Use behavioral_mimicry (90.0% success rate)
+  ⏭  Filtered 8/13 targets (recent contact)
+🔍 [VERITAS] Verifying email deliverability for 5 targets...
+   ⚠️ [DNS_FAIL] Domain accedia.com has no valid MX records. Skipping.
+   ⚠️ [DNS_FAIL] Domain company.com has no valid MX records. Skipping.
+   ⚠️ [DNS_FAIL] Domain 2x.webp has no valid MX records. Skipping.
+   ⚠️ [DNS_FAIL] Domain canesta.com has no valid MX records. Skipping.
+   ⚠️ [DNS_FAIL] Domain 5.0.4 has no valid MX records. Skipping.
+
+⏸️  No viable targets left in the queue (all filtered by DNS or 24h dedup). Waiting for next cycle.

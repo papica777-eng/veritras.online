@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head><title>Backend Test</title></head>
+<body style="background:#111;color:#0f0;font-family:monospace;padding:20px;">
+<h1>Backend Connection Test</h1>
+<div id="results"></div>
+<script>
+async function test() {
+    const results = document.getElementById('results');
+
+    // Test 1: API Status
+    try {
+        const r1 = await fetch('/api/status');
+        const d1 = await r1.json();
+        results.innerHTML += '<p style="color:lime"> /api/status: ' + JSON.stringify(d1) + '</p>';
+    } catch(e) {
+        results.innerHTML += '<p style="color:red"> /api/status: ' + e.message + '</p>';
+    }
+
+    // Test 2: API Stats
+    try {
+        const r2 = await fetch('/api/stats');
+        const d2 = await r2.json();
+        results.innerHTML += '<p style="color:lime"> /api/stats: ' + JSON.stringify(d2) + '</p>';
+    } catch(e) {
+        results.innerHTML += '<p style="color:red"> /api/stats: ' + e.message + '</p>';
+    }
+
+    // Test 3: WebSocket
+    try {
+        const ws = new WebSocket('ws://localhost:3401');
+        ws.onopen = () => results.innerHTML += '<p style="color:lime"> WebSocket Connected!</p>';
+        ws.onerror = (e) => results.innerHTML += '<p style="color:red"> WebSocket Error</p>';
+        ws.onmessage = (m) => results.innerHTML += '<p style="color:cyan">WS Message: ' + m.data + '</p>';
+    } catch(e) {
+        results.innerHTML += '<p style="color:red"> WebSocket: ' + e.message + '</p>';
+    }
+}
+test();
+</script>
+</body>
+</html>

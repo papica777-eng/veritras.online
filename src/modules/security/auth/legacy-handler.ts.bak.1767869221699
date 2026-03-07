@@ -1,0 +1,19 @@
+
+export class LegacyHandler {
+    constructor() {
+        this.sessions = new Map();
+    }
+
+    async handle(req, res) {
+        // Line 156 below
+        console.log('Handling legacy request...');
+        this.lock();
+        await this.process(req);
+        // Memory leak here: cleanup not guaranteed
+    }
+
+    lock() { /* ... */ }
+    releaseLock() { /* ... */ }
+    async cleanupStaleSessions() { /* ... */ }
+    async process(req) { /* ... */ }
+}

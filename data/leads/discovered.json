@@ -1,0 +1,32 @@
+[
+  {
+    "domain": "accedia.com",
+    "email": "info@accedia.com",
+    "company": "ACCEDIA",
+    "ts": "2026-02-27T10:05:47.085Z"
+  },
+  {
+    "domain": "agileengine.com",
+    "email": "you@company.com",
+    "company": "AGILEENGINE",
+    "ts": "2026-02-27T10:05:50.442Z"
+  },
+  {
+    "domain": "bgosoftware.com",
+    "email": "hero-bkg@2x.webp",
+    "company": "BGOSOFTWARE",
+    "ts": "2026-02-27T10:17:28.239Z"
+  },
+  {
+    "domain": "canesta.com",
+    "email": "info@canesta.com",
+    "company": "CANESTA",
+    "ts": "2026-02-27T10:17:35.599Z"
+  },
+  {
+    "domain": "coherentsolutions.com",
+    "email": "basiclightbox@5.0.4",
+    "company": "COHERENTSOLUTIONS",
+    "ts": "2026-02-27T10:17:37.413Z"
+  }
+]

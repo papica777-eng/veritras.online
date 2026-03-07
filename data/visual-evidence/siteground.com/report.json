@@ -1,0 +1,36 @@
+{
+  "scan": {
+    "domain": "siteground.com",
+    "score": 62,
+    "grade": "C",
+    "ttfb": 484,
+    "missingHeaders": [
+      "content-security-policy",
+      "referrer-policy",
+      "permissions-policy"
+    ],
+    "issues": [
+      "Missing: content-security-policy",
+      "Missing: referrer-policy",
+      "Missing: permissions-policy",
+      "HSTS: no includeSubDomains"
+    ],
+    "sslDaysLeft": 63,
+    "sslIssuer": "Google Trust Services"
+  },
+  "target": {
+    "domain": "siteground.com",
+    "email": "security@siteground.com",
+    "company": "SiteGround",
+    "industry": "Hosting"
+  },
+  "evidence": {
+    "screenshotFull": "C:\\Users\\papic\\Desktop\\ALL-POSITIONS\\Blockchain\\QAntum-1\\data\\visual-evidence\\siteground.com\\screenshots\\desktop.png",
+    "screenshotMobile": "C:\\Users\\papic\\Desktop\\ALL-POSITIONS\\Blockchain\\QAntum-1\\data\\visual-evidence\\siteground.com\\screenshots\\mobile.png",
+    "screenshotHeaders": "C:\\Users\\papic\\Desktop\\ALL-POSITIONS\\Blockchain\\QAntum-1\\data\\visual-evidence\\siteground.com\\screenshots\\missing-headers.png",
+    "videoPath": "C:\\Users\\papic\\Desktop\\ALL-POSITIONS\\Blockchain\\QAntum-1\\data\\visual-evidence\\siteground.com\\06d3ce24d69c500996a50c4db4bad08d.webm",
+    "videoSizeKb": 1189,
+    "video": true
+  },
+  "ts": "2026-02-27T09:31:18.576Z"
+}

@@ -1,0 +1,570 @@
+[
+  {
+    "id": "VB-MM0LECC9",
+    "targetDomain": "techsolutions.bg",
+    "targetCompany": "TechSolutions BG",
+    "generatedAt": "2026-02-24T12:39:22.617Z",
+    "totalEstimatedValue": 7500,
+    "pricingTier": "SUPREME"
+  },
+  {
+    "id": "VB-MM0LF0RF",
+    "targetDomain": "primerealestate.bg",
+    "targetCompany": "Prime Real Estate",
+    "generatedAt": "2026-02-24T12:39:54.267Z",
+    "totalEstimatedValue": 7500,
+    "pricingTier": "SUPREME"
+  },
+  {
+    "id": "VB-MM0QDGRS",
+    "targetDomain": "techsolutions.bg",
+    "targetCompany": "TechSolutions BG",
+    "generatedAt": "2026-02-24T14:58:39.784Z",
+    "totalEstimatedValue": 7500,
+    "pricingTier": "SUPREME"
+  },
+  {
+    "id": "VB-MM0S3DZL",
+    "targetDomain": "devrix.com",
+    "targetCompany": "DevriX",
+    "generatedAt": "2026-02-24T15:46:48.849Z",
+    "totalEstimatedValue": 8500,
+    "pricingTier": "GROWTH"
+  },
+  {
+    "id": "VB-MM0S4BQA",
+    "targetDomain": "xplora.bg",
+    "targetCompany": "Xplora",
+    "generatedAt": "2026-02-24T15:47:32.578Z",
+    "totalEstimatedValue": 21000,
+    "pricingTier": "SUPREME"
+  },
+  {
+    "id": "VB-MM0S4GG7",
+    "targetDomain": "netinfo.bg",
+    "targetCompany": "Netinfo",
+    "generatedAt": "2026-02-24T15:47:38.695Z",
+    "totalEstimatedValue": 5500,
+    "pricingTier": "GROWTH"
+  },
+  {
+    "id": "VB-MM0S4M8D",
+    "targetDomain": "speedflow.bg",
+    "targetCompany": "SpeedFlow",
+    "generatedAt": "2026-02-24T15:47:46.189Z",
+    "totalEstimatedValue": 14500,
+    "pricingTier": "ENTERPRISE"
+  },
+  {
+    "id": "VB-MM0S4RCW",
+    "targetDomain": "stenik.bg",
+    "targetCompany": "Stenik",
+    "generatedAt": "2026-02-24T15:47:52.832Z",
+    "totalEstimatedValue": 7000,
+    "pricingTier": "GROWTH"
+  },
+  {
+    "id": "VB-MM0S4ZL7",
+    "targetDomain": "payhawk.com",
+    "targetCompany": "Payhawk",
+    "generatedAt": "2026-02-24T15:48:03.499Z",
+    "totalEstimatedValue": 13500,
+    "pricingTier": "GROWTH"
+  },
+  {
+    "id": "VB-MM0S555S",
+    "targetDomain": "nexo.com",
+    "targetCompany": "Nexo",
+    "generatedAt": "2026-02-24T15:48:10.720Z",
+    "totalEstimatedValue": 7000,
+    "pricingTier": "GROWTH"
+  },
+  {
+    "id": "VB-MM0S5AWP",
+    "targetDomain": "icanpreneur.com",
+    "targetCompany": "ICan",
+    "generatedAt": "2026-02-24T15:48:18.169Z",
+    "totalEstimatedValue": 2500,
+    "pricingTier": "STARTUP"
+  },
+  {
+    "id": "VB-MM0S5GMM",
+    "targetDomain": "softuni.bg",
+    "targetCompany": "SoftUni",
+    "generatedAt": "2026-02-24T15:48:25.582Z",
+    "totalEstimatedValue": 11500,
+    "pricingTier": "ENTERPRISE"
+  },
+  {
+    "id": "VB-MM0S5M2U",
+    "targetDomain": "sumup.com",
+    "targetCompany": "SumUp",
+    "generatedAt": "2026-02-24T15:48:32.646Z",
+    "totalEstimatedValue": 4000,
+    "pricingTier": "STARTUP"
+  },
+  {
+    "id": "VB-MM0S5RSD",
+    "targetDomain": "mypos.com",
+    "targetCompany": "myPOS",
+    "generatedAt": "2026-02-24T15:48:40.045Z",
+    "totalEstimatedValue": 13000,
+    "pricingTier": "ENTERPRISE"
+  },
+  {
+    "id": "VB-MM0S5WV7",
+    "targetDomain": "hop.bg",
+    "targetCompany": "Hop Online",
+    "generatedAt": "2026-02-24T15:48:46.627Z",
+    "totalEstimatedValue": 13000,
+    "pricingTier": "ENTERPRISE"
+  },
+  {
+    "id": "VB-MM3X9GZ8",
+    "targetDomain": "devrix.com",
+    "targetCompany": "DevriX",
+    "generatedAt": "2026-02-26T20:34:49.268Z",
+    "totalEstimatedValue": 8500,
+    "pricingTier": "GROWTH"
+  },
+  {
+    "id": "VB-MM3X9NXT",
+    "targetDomain": "xplora.bg",
+    "targetCompany": "Xplora",
+    "generatedAt": "2026-02-26T20:34:58.289Z",
+    "totalEstimatedValue": 21000,
+    "pricingTier": "SUPREME"
+  },
+  {
+    "id": "VB-MM3X9RFV",
+    "targetDomain": "netinfo.bg",
+    "targetCompany": "Netinfo",
+    "generatedAt": "2026-02-26T20:35:02.827Z",
+    "totalEstimatedValue": 5500,
+    "pricingTier": "GROWTH"
+  },
+  {
+    "id": "VB-MM3X9VF6",
+    "targetDomain": "speedflow.bg",
+    "targetCompany": "SpeedFlow",
+    "generatedAt": "2026-02-26T20:35:07.986Z",
+    "totalEstimatedValue": 14500,
+    "pricingTier": "ENTERPRISE"
+  },
+  {
+    "id": "VB-MM3XA022",
+    "targetDomain": "stenik.bg",
+    "targetCompany": "Stenik",
+    "generatedAt": "2026-02-26T20:35:13.994Z",
+    "totalEstimatedValue": 10000,
+    "pricingTier": "GROWTH"
+  },
+  {
+    "id": "VB-MM3XA578",
+    "targetDomain": "payhawk.com",
+    "targetCompany": "Payhawk",
+    "generatedAt": "2026-02-26T20:35:20.660Z",
+    "totalEstimatedValue": 8500,
+    "pricingTier": "GROWTH"
+  },
+  {
+    "id": "VB-MM3XA9CB",
+    "targetDomain": "nexo.com",
+    "targetCompany": "Nexo",
+    "generatedAt": "2026-02-26T20:35:26.027Z",
+    "totalEstimatedValue": 10000,
+    "pricingTier": "GROWTH"
+  },
+  {
+    "id": "VB-MM3XACVZ",
+    "targetDomain": "icanpreneur.com",
+    "targetCompany": "ICan",
+    "generatedAt": "2026-02-26T20:35:30.623Z",
+    "totalEstimatedValue": 5500,
+    "pricingTier": "GROWTH"
+  },
+  {
+    "id": "VB-MM3XAGNW",
+    "targetDomain": "softuni.bg",
+    "targetCompany": "SoftUni",
+    "generatedAt": "2026-02-26T20:35:35.516Z",
+    "totalEstimatedValue": 11500,
+    "pricingTier": "ENTERPRISE"
+  },
+  {
+    "id": "VB-MM3XAKUT",
+    "targetDomain": "sumup.com",
+    "targetCompany": "SumUp",
+    "generatedAt": "2026-02-26T20:35:40.949Z",
+    "totalEstimatedValue": 7000,
+    "pricingTier": "GROWTH"
+  },
+  {
+    "id": "VB-MM3XAP26",
+    "targetDomain": "mypos.com",
+    "targetCompany": "myPOS",
+    "generatedAt": "2026-02-26T20:35:46.398Z",
+    "totalEstimatedValue": 13000,
+    "pricingTier": "ENTERPRISE"
+  },
+  {
+    "id": "VB-MM3XAT9A",
+    "targetDomain": "hop.bg",
+    "targetCompany": "Hop Online",
+    "generatedAt": "2026-02-26T20:35:51.838Z",
+    "totalEstimatedValue": 13000,
+    "pricingTier": "ENTERPRISE"
+  },
+  {
+    "id": "VB-MM3XFYIT",
+    "targetDomain": "devrix.com",
+    "targetCompany": "DevriX",
+    "generatedAt": "2026-02-26T20:39:51.941Z",
+    "totalEstimatedValue": 8500,
+    "pricingTier": "GROWTH"
+  },
+  {
+    "id": "VB-MM3XG3Z4",
+    "targetDomain": "xplora.bg",
+    "targetCompany": "Xplora",
+    "generatedAt": "2026-02-26T20:39:59.008Z",
+    "totalEstimatedValue": 21000,
+    "pricingTier": "SUPREME"
+  },
+  {
+    "id": "VB-MM3XH885",
+    "targetDomain": "devrix.com",
+    "targetCompany": "DevriX",
+    "generatedAt": "2026-02-26T20:40:51.173Z",
+    "totalEstimatedValue": 8500,
+    "pricingTier": "GROWTH"
+  },
+  {
+    "id": "VB-MM3XHKA1",
+    "targetDomain": "devrix.com",
+    "targetCompany": "DevriX",
+    "generatedAt": "2026-02-26T20:41:06.793Z",
+    "totalEstimatedValue": 8500,
+    "pricingTier": "GROWTH"
+  },
+  {
+    "id": "VB-MM3XMM16",
+    "targetDomain": "devrix.com",
+    "targetCompany": "DevriX",
+    "generatedAt": "2026-02-26T20:45:02.346Z",
+    "totalEstimatedValue": 11500,
+    "pricingTier": "GROWTH"
+  },
+  {
+    "id": "VB-MM3XMTDR",
+    "targetDomain": "xplora.bg",
+    "targetCompany": "Xplora",
+    "generatedAt": "2026-02-26T20:45:11.871Z",
+    "totalEstimatedValue": 21000,
+    "pricingTier": "SUPREME"
+  },
+  {
+    "id": "VB-MM3XMZJ5",
+    "targetDomain": "netinfo.bg",
+    "targetCompany": "Netinfo",
+    "generatedAt": "2026-02-26T20:45:19.841Z",
+    "totalEstimatedValue": 5500,
+    "pricingTier": "GROWTH"
+  },
+  {
+    "id": "VB-MM3XN4WK",
+    "targetDomain": "speedflow.bg",
+    "targetCompany": "SpeedFlow",
+    "generatedAt": "2026-02-26T20:45:26.804Z",
+    "totalEstimatedValue": 14500,
+    "pricingTier": "ENTERPRISE"
+  },
+  {
+    "id": "VB-MM3XNA8Z",
+    "targetDomain": "stenik.bg",
+    "targetCompany": "Stenik",
+    "generatedAt": "2026-02-26T20:45:33.731Z",
+    "totalEstimatedValue": 7000,
+    "pricingTier": "GROWTH"
+  },
+  {
+    "id": "VB-MM3XNG9C",
+    "targetDomain": "payhawk.com",
+    "targetCompany": "Payhawk",
+    "generatedAt": "2026-02-26T20:45:41.520Z",
+    "totalEstimatedValue": 8500,
+    "pricingTier": "GROWTH"
+  },
+  {
+    "id": "VB-MM3XNKZF",
+    "targetDomain": "nexo.com",
+    "targetCompany": "Nexo",
+    "generatedAt": "2026-02-26T20:45:47.643Z",
+    "totalEstimatedValue": 7000,
+    "pricingTier": "GROWTH"
+  },
+  {
+    "id": "VB-MM3XNR4Q",
+    "targetDomain": "icanpreneur.com",
+    "targetCompany": "ICan",
+    "generatedAt": "2026-02-26T20:45:55.610Z",
+    "totalEstimatedValue": 2500,
+    "pricingTier": "STARTUP"
+  },
+  {
+    "id": "VB-MM3XNWP1",
+    "targetDomain": "softuni.bg",
+    "targetCompany": "SoftUni",
+    "generatedAt": "2026-02-26T20:46:02.821Z",
+    "totalEstimatedValue": 11500,
+    "pricingTier": "ENTERPRISE"
+  },
+  {
+    "id": "VB-MM3XO0K8",
+    "targetDomain": "sumup.com",
+    "targetCompany": "SumUp",
+    "generatedAt": "2026-02-26T20:46:07.832Z",
+    "totalEstimatedValue": 4000,
+    "pricingTier": "STARTUP"
+  },
+  {
+    "id": "VB-MM3XO5LA",
+    "targetDomain": "mypos.com",
+    "targetCompany": "myPOS",
+    "generatedAt": "2026-02-26T20:46:14.350Z",
+    "totalEstimatedValue": 13000,
+    "pricingTier": "ENTERPRISE"
+  },
+  {
+    "id": "VB-MM3XOA0M",
+    "targetDomain": "hop.bg",
+    "targetCompany": "Hop Online",
+    "generatedAt": "2026-02-26T20:46:20.086Z",
+    "totalEstimatedValue": 13000,
+    "pricingTier": "ENTERPRISE"
+  },
+  {
+    "id": "VB-MM3YTGTF",
+    "targetDomain": "devrix.com",
+    "targetCompany": "DevriX",
+    "generatedAt": "2026-02-26T21:18:21.795Z",
+    "totalEstimatedValue": 11500,
+    "pricingTier": "GROWTH"
+  },
+  {
+    "id": "VB-MM3YTPN2",
+    "targetDomain": "xplora.bg",
+    "targetCompany": "Xplora",
+    "generatedAt": "2026-02-26T21:18:33.230Z",
+    "totalEstimatedValue": 21000,
+    "pricingTier": "SUPREME"
+  },
+  {
+    "id": "VB-MM3YTVC4",
+    "targetDomain": "netinfo.bg",
+    "targetCompany": "Netinfo",
+    "generatedAt": "2026-02-26T21:18:40.612Z",
+    "totalEstimatedValue": 5500,
+    "pricingTier": "GROWTH"
+  },
+  {
+    "id": "VB-MM3YU1B3",
+    "targetDomain": "speedflow.bg",
+    "targetCompany": "SpeedFlow",
+    "generatedAt": "2026-02-26T21:18:48.351Z",
+    "totalEstimatedValue": 14500,
+    "pricingTier": "ENTERPRISE"
+  },
+  {
+    "id": "VB-MM3YU6GC",
+    "targetDomain": "stenik.bg",
+    "targetCompany": "Stenik",
+    "generatedAt": "2026-02-26T21:18:55.020Z",
+    "totalEstimatedValue": 10000,
+    "pricingTier": "GROWTH"
+  },
+  {
+    "id": "VB-MM3YUD8Y",
+    "targetDomain": "payhawk.com",
+    "targetCompany": "Payhawk",
+    "generatedAt": "2026-02-26T21:19:03.826Z",
+    "totalEstimatedValue": 8500,
+    "pricingTier": "GROWTH"
+  },
+  {
+    "id": "VB-MM3YUIOA",
+    "targetDomain": "nexo.com",
+    "targetCompany": "Nexo",
+    "generatedAt": "2026-02-26T21:19:10.858Z",
+    "totalEstimatedValue": 7000,
+    "pricingTier": "GROWTH"
+  },
+  {
+    "id": "VB-MM3YUNNU",
+    "targetDomain": "icanpreneur.com",
+    "targetCompany": "ICan",
+    "generatedAt": "2026-02-26T21:19:17.322Z",
+    "totalEstimatedValue": 2500,
+    "pricingTier": "STARTUP"
+  },
+  {
+    "id": "VB-MM3YUSU3",
+    "targetDomain": "softuni.bg",
+    "targetCompany": "SoftUni",
+    "generatedAt": "2026-02-26T21:19:24.027Z",
+    "totalEstimatedValue": 11500,
+    "pricingTier": "ENTERPRISE"
+  },
+  {
+    "id": "VB-MM3YUYD5",
+    "targetDomain": "sumup.com",
+    "targetCompany": "SumUp",
+    "generatedAt": "2026-02-26T21:19:31.193Z",
+    "totalEstimatedValue": 7000,
+    "pricingTier": "GROWTH"
+  },
+  {
+    "id": "VB-MM3YV544",
+    "targetDomain": "mypos.com",
+    "targetCompany": "myPOS",
+    "generatedAt": "2026-02-26T21:19:39.940Z",
+    "totalEstimatedValue": 13000,
+    "pricingTier": "GROWTH"
+  },
+  {
+    "id": "VB-MM3YVBX3",
+    "targetDomain": "hop.bg",
+    "targetCompany": "Hop Online",
+    "generatedAt": "2026-02-26T21:19:48.759Z",
+    "totalEstimatedValue": 13000,
+    "pricingTier": "ENTERPRISE"
+  },
+  {
+    "id": "VB-MM3YYTGN",
+    "targetDomain": "devrix.com",
+    "targetCompany": "DevriX",
+    "generatedAt": "2026-02-26T21:22:31.463Z",
+    "totalEstimatedValue": 8500,
+    "pricingTier": "GROWTH"
+  },
+  {
+    "id": "VB-MM3YZ0CU",
+    "targetDomain": "xplora.bg",
+    "targetCompany": "Xplora",
+    "generatedAt": "2026-02-26T21:22:40.398Z",
+    "totalEstimatedValue": 21000,
+    "pricingTier": "SUPREME"
+  },
+  {
+    "id": "VB-MM3YZ7JC",
+    "targetDomain": "netinfo.bg",
+    "targetCompany": "Netinfo",
+    "generatedAt": "2026-02-26T21:22:49.704Z",
+    "totalEstimatedValue": 5500,
+    "pricingTier": "GROWTH"
+  },
+  {
+    "id": "VB-MM3YZDBG",
+    "targetDomain": "speedflow.bg",
+    "targetCompany": "SpeedFlow",
+    "generatedAt": "2026-02-26T21:22:57.196Z",
+    "totalEstimatedValue": 14500,
+    "pricingTier": "ENTERPRISE"
+  },
+  {
+    "id": "VB-MM3YZJS3",
+    "targetDomain": "stenik.bg",
+    "targetCompany": "Stenik",
+    "generatedAt": "2026-02-26T21:23:05.571Z",
+    "totalEstimatedValue": 7000,
+    "pricingTier": "GROWTH"
+  },
+  {
+    "id": "VB-MM3YZQ4Y",
+    "targetDomain": "payhawk.com",
+    "targetCompany": "Payhawk",
+    "generatedAt": "2026-02-26T21:23:13.810Z",
+    "totalEstimatedValue": 8500,
+    "pricingTier": "GROWTH"
+  },
+  {
+    "id": "VB-MM3YZV13",
+    "targetDomain": "nexo.com",
+    "targetCompany": "Nexo",
+    "generatedAt": "2026-02-26T21:23:20.151Z",
+    "totalEstimatedValue": 7000,
+    "pricingTier": "GROWTH"
+  },
+  {
+    "id": "VB-MM3Z018V",
+    "targetDomain": "icanpreneur.com",
+    "targetCompany": "ICan",
+    "generatedAt": "2026-02-26T21:23:28.207Z",
+    "totalEstimatedValue": 2500,
+    "pricingTier": "STARTUP"
+  },
+  {
+    "id": "VB-MM3Z0622",
+    "targetDomain": "softuni.bg",
+    "targetCompany": "SoftUni",
+    "generatedAt": "2026-02-26T21:23:34.442Z",
+    "totalEstimatedValue": 11500,
+    "pricingTier": "ENTERPRISE"
+  },
+  {
+    "id": "VB-MM3Z0BSZ",
+    "targetDomain": "sumup.com",
+    "targetCompany": "SumUp",
+    "generatedAt": "2026-02-26T21:23:41.891Z",
+    "totalEstimatedValue": 4000,
+    "pricingTier": "STARTUP"
+  },
+  {
+    "id": "VB-MM3Z0I7G",
+    "targetDomain": "mypos.com",
+    "targetCompany": "myPOS",
+    "generatedAt": "2026-02-26T21:23:50.188Z",
+    "totalEstimatedValue": 13000,
+    "pricingTier": "ENTERPRISE"
+  },
+  {
+    "id": "VB-MM3Z0NIX",
+    "targetDomain": "hop.bg",
+    "targetCompany": "Hop Online",
+    "generatedAt": "2026-02-26T21:23:57.081Z",
+    "totalEstimatedValue": 13000,
+    "pricingTier": "ENTERPRISE"
+  },
+  {
+    "id": "VB-MM3Z0V2G",
+    "targetDomain": "devrix.com",
+    "targetCompany": "DevriX",
+    "generatedAt": "2026-02-26T21:24:06.856Z",
+    "totalEstimatedValue": 8500,
+    "pricingTier": "GROWTH"
+  },
+  {
+    "id": "VB-MM3Z12SO",
+    "targetDomain": "xplora.bg",
+    "targetCompany": "Xplora",
+    "generatedAt": "2026-02-26T21:24:16.872Z",
+    "totalEstimatedValue": 21000,
+    "pricingTier": "SUPREME"
+  },
+  {
+    "id": "VB-MM3Z16ZY",
+    "targetDomain": "netinfo.bg",
+    "targetCompany": "Netinfo",
+    "generatedAt": "2026-02-26T21:24:22.318Z",
+    "totalEstimatedValue": 5500,
+    "pricingTier": "GROWTH"
+  },
+  {
+    "id": "VB-MM3Z1C7M",
+    "targetDomain": "speedflow.bg",
+    "targetCompany": "SpeedFlow",
+    "generatedAt": "2026-02-26T21:24:29.074Z",
+    "totalEstimatedValue": 14500,
+    "pricingTier": "ENTERPRISE"
+  }
+]

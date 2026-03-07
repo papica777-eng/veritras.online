@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QANTUM EMPIRE | ENTERPRISE SOVEREIGNTY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&family=JetBrains+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050505;
+      --accent: #00f3ff;
+      --accent-dim: rgba(0, 243, 255, 0.2);
+      --text: #ffffff;
+      --text-dim: #888888;
+      --glass: rgba(255, 255, 255, 0.03);
+      --border: rgba(0, 243, 255, 0.1);
+      --font-main: 'Outfit', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      cursor: crosshair;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-main);
+      overflow-x: hidden;
+      line-height: 1.5;
+    }
+
+    /* Brutalist Background */
+    .viewport-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('assets/storefront_bg.png') no-repeat center center;
+      background-size: cover;
+      opacity: 0.4;
+      z-index: -1;
+      filter: grayscale(0.5) contrast(1.2);
+    }
+
+    .scanlines {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
+      background-size: 100% 2px, 3px 100%;
+      pointer-events: none;
+      z-index: 100;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    /* Header */
+    header {
+      padding: 40px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    .logo {
+      font-weight: 900;
+      font-size: 1.5rem;
+      letter-spacing: -1px;
+      text-transform: uppercase;
+      color: var(--accent);
+      text-shadow: 0 0 10px var(--accent-dim);
+    }
+
+    .status-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      margin-right: 10px;
+      box-shadow: 0 0 10px var(--accent);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      50% {
+        transform: scale(1.5);
+        opacity: 0.5;
+      }
+
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    /* Hero */
+    .hero {
+      padding: 120px 0 80px;
+      text-align: left;
+    }
+
+    .kicker {
+      font-family: var(--font-mono);
+      color: var(--accent);
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+      display: block;
+      opacity: 0.8;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 10vw, 7rem);
+      font-weight: 900;
+      line-height: 0.9;
+      margin-bottom: 40px;
+      letter-spacing: -4px;
+    }
+
+    h1 span {
+      color: transparent;
+      -webkit-text-stroke: 1px var(--text);
+    }
+
+    .hero-desc {
+      font-size: 1.5rem;
+      max-width: 800px;
+      color: var(--text-dim);
+      margin-bottom: 60px;
+    }
+
+    .cta-group {
+      display: flex;
+      gap: 20px;
+    }
+
+    .btn {
+      padding: 20px 40px;
+      font-weight: 700;
+      text-transform: uppercase;
+      border: 1px solid var(--text);
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+      position: relative;
+      overflow: hidden;
+      font-size: 0.9rem;
+      background: transparent;
+    }
+
+    .btn-primary {
+      background: var(--text);
+      color: var(--bg);
+    }
+
+    .btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .btn-primary:hover {
+      background: var(--accent);
+      color: var(--bg);
+      border-color: var(--accent);
+    }
+
+    /* Features / Soul Grid */
+    .soul-grid {
+      margin-top: 100px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+    }
+
+    .soul-card {
+      background: var(--glass);
+      border: 1px solid var(--border);
+      padding: 40px;
+      transition: all 0.4s ease;
+    }
+
+    .soul-card:hover {
+      border-color: var(--accent);
+      background: rgba(0, 243, 255, 0.02);
+      transform: scale(1.02);
+    }
+
+    .soul-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .soul-card p {
+      color: var(--text-dim);
+      margin-bottom: 30px;
+    }
+
+    .tag {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      background: var(--accent-dim);
+      color: var(--accent);
+      padding: 4px 8px;
+      border-radius: 4px;
+      margin-right: 5px;
+    }
+
+    /* Products Section */
+    .products {
+      padding: 100px 0;
+    }
+
+    .product-item {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      margin-bottom: 120px;
+    }
+
+    .product-item:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .product-visual {
+      flex: 1;
+      position: relative;
+    }
+
+    .product-visual img {
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--border);
+      filter: grayscale(0.2);
+      transition: filter 0.5s ease;
+    }
+
+    .product-visual:hover img {
+      filter: grayscale(0);
+      border-color: var(--accent);
+    }
+
+    .product-info {
+      flex: 1;
+    }
+
+    /* Stats */
+    .stats {
+      background: var(--text);
+      color: var(--bg);
+      padding: 100px 0;
+      margin: 100px 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 40px;
+    }
+
+    .stat-item h4 {
+      font-size: 4rem;
+      font-weight: 900;
+      letter-spacing: -2px;
+    }
+
+    .stat-item p {
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      opacity: 0.7;
+    }
+
+    /* Footer */
+    footer {
+      padding: 80px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      opacity: 0.5;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+    }
+
+    /* Glitch Effect */
+    .glitch-wrapper {
+      position: relative;
+    }
+
+    .glitch-text::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 2px;
+      text-shadow: -1px 0 red;
+      background: var(--bg);
+      top: 0;
+      color: white;
+      overflow: hidden;
+      clip: rect(0, 900px, 0, 0);
+      animation: glitch 2s infinite linear alternate-reverse;
+    }
+
+    @keyframes glitch {
+      0% {
+        clip: rect(44px, 9999px, 56px, 0);
+      }
+
+      5% {
+        clip: rect(62px, 9999px, 99px, 0);
+      }
+
+      10% {
+        clip: rect(12px, 9999px, 34px, 0);
+      }
+
+      15% {
+        clip: rect(98px, 9999px, 67px, 0);
+      }
+
+      20% {
+        clip: rect(3px, 9999px, 65px, 0);
+      }
+
+      100% {
+        clip: rect(0, 0, 0, 0);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .product-item {
+        flex-direction: column !important;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="viewport-bg"></div>
+  <div class="scanlines"></div>
+
+  <div class="container">
+    <header>
+      <div class="logo">QANTUM // EMPIRE</div>
+      <nav style="display: flex; gap: 30px; font-weight: 700; font-size: 0.8rem; letter-spacing: 1px;">
+        <a href="#soul" style="color: var(--text); text-decoration: none;">SOUL</a>
+        <a href="#products" style="color: var(--text); text-decoration: none;">PRODUCTS</a>
+        <a href="#mojo" style="color: var(--text); text-decoration: none;">MOJO_CORE</a>
+        <a href="mailto:architect@qantum.site" style="color: var(--accent); text-decoration: none;">[ CONTACT ]</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <span class="kicker"><span class="status-dot"></span> SYSTEM_ONLINE // v23.0.0-SOVEREIGN</span>
+      <h1 class="glitch-wrapper"><span data-text="ENTERPRISE">ENTERPRISE</span><br><span>SINGULARITY</span></h1>
+      <p class="hero-desc">
+        Манифестираната реалност на софтуерната доминация. Екосистема с нулева ентропия, захранвана от <b>Soul</b>
+        мета-логика и <b>Mojo</b> неврални субстрати.
+      </p>
+      <div class="cta-group">
+        <a href="https://github.com/QAntum-Fortres/QAntum" class="btn btn-primary">Source Manifest</a>
+        <a href="#products" class="btn">View Products</a>
+      </div>
+    </section>
+
+    <section id="soul" class="soul-grid">
+      <div class="soul-card">
+        <span class="tag">SOUL_INFRA</span>
+        <h3>Neural Soul Layer</h3>
+        <p>Детерминирана неврална архитектура, която предсказва и лекува ентропията преди тя да се материализира в
+          изпълнимия код.</p>
+        <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent);">
+          // Complexity: O(log n)<br>
+          // Status: RESONATING
+        </div>
+      </div>
+      <div class="soul-card" id="mojo">
+        <span class="tag">MOJO_SUBSTRATE</span>
+        <h3>Mojo Intelligence</h3>
+        <p>SIMD-оптимизирани неврални изчисления през 16-нишкови Ryzen ядра. Максимален паралелизъм. Нулева загуба на
+          цикли.</p>
+        <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent);">
+          // Performance: AVX-512<br>
+          // Latency: < 1ms </div>
+        </div>
+        <div class="soul-card">
+          <span class="tag">KNOX_BRIDGE</span>
+          <h3>Sovereign Bridge</h3>
+          <p>Хардуерно-защитена синхронизация със Samsung Knox TEE. Криптографски доказана идентичност на Архитекта.</p>
+          <div style="font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent);">
+            // Security: TEE_ENCLAVE<br>
+            // Verified: YES
+          </div>
+        </div>
+    </section>
+
+    <section id="products" class="products">
+      <div class="product-item">
+        <div class="product-visual">
+          <img src="assets/mrmind_qa.png" alt="Mr. Mind QA">
+        </div>
+        <div class="product-info">
+          <span class="tag">QA_NEXUS</span>
+          <h2>MR.MIND QA ULTRA</h2>
+          <p>Автономна QA машина, която замества цели екипи. Самообучава се от Shadow DOM промени и генерира
+            самовъзстановяващи се тестове в реално време.</p>
+          <a href="#" class="btn btn-primary" style="padding: 12px 24px; font-size: 0.7rem;">Book Enterprise Demo</a>
+        </div>
+      </div>
+
+      <div class="product-item">
+        <div class="product-visual">
+          <img src="assets/cybercody.png" alt="Cyber-Cody Agent">
+        </div>
+        <div class="product-info">
+          <span class="tag">GHOST_PROTOCOL</span>
+          <h2>CYBER-CODY AGENT</h2>
+          <p>Неврален агент за писане на код. Директна интеграция в VS Code. Анализира Big O сложност в реално време и
+            налага MEMORY_SAFETY стандарти.</p>
+          <a href="#" class="btn btn-primary" style="padding: 12px 24px; font-size: 0.7rem;">Initiate Ingestion</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <h4>0.00</h4>
+            <p>Entropy Rating</p>
+          </div>
+          <div class="stat-item">
+            <h4>1.1M</h4>
+            <p>Lines of Steel</p>
+          </div>
+          <div class="stat-item">
+            <h4>2M+</h4>
+            <p>Neural Nodes</p>
+          </div>
+          <div class="stat-item">
+            <h4>∞</h4>
+            <p>Growth Potential</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>/// IDENTITY: QANTUM_EMPIRE_SINGULARITY /// OWNER: DIMITAR PRODROMOV /// STATUS: MANIFESTED ///</p>
+      <p style="margin-top: 10px;">© 2026 ZERO ENTROPY LOGIC. ALL RIGHTS RESERVED.</p>
+    </footer>
+  </div>
+
+  <script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Mouse move parallax for hero text
+    const hero = document.querySelector('h1');
+    document.addEventListener('mousemove', (e) => {
+      const x = (window.innerWidth / 2 - e.pageX) / 25;
+      const y = (window.innerHeight / 2 - e.pageY) / 25;
+      hero.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+    });
+  </script>
+</body>
+
+</html>

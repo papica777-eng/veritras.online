@@ -1,0 +1,52 @@
+{
+  "manifest": {
+    "version": "19.0.0",
+    "machineId": "fa6aa7e937c4e782",
+    "createdAt": "2026-02-28T03:07:36.821Z",
+    "entryCount": 2,
+    "totalSize": 1780,
+    "manifestChecksum": "bb023411b4534a64e3e7a59234463836fd324b9d4c37290aefb40e26c7f369eb",
+    "lastSync": "2026-03-06T15:44:42.351Z"
+  },
+  "salt": "hvCJm6CYE5uqLn1bOrZIGn1BDviVjrtB9L4VkJYkmO8=",
+  "entries": [
+    [
+      "mutation-result-001",
+      {
+        "id": "mutation-result-001",
+        "type": "mutations",
+        "payload": {
+          "algorithm": "aes-256-gcm",
+          "iv": "iaSUM8AxFV56EUZQ",
+          "data": "Z9mp56fpXqHrTJ64Is+iOiI7N8BCAobHgSmxDTVmUeR7T3mVD5rKkbdfbDxb/g6u0qUHfVSbblDUHlzYZpnJ/G4rNbnCdVyWl5fBvyiwnI2lWkgyd7G2r+VyGgCp5LsZajsdK0Bv34UU7eMHD6VOKW7n2+km2ycF74beWPNhHQ8C+8TnkjaTi6BJEYoK4K7ZUemTtGPyds4Bm42RYE9TM7Bdqv58M39RhHyxbeuAE47Z5hZ9dC69VkBY6IhKdNSrQjuy9skzp8+WR8YadlIRoK/j7kiP9e9LgMiHoMV0fN25Nmd5ZjkESH3U0JnGpntsWRrrJQnfq/i6lJewgd50P5TZsZhuyBcLsjQZhslckQyMTviua4vO6UKjxoVTeJMJoYTHqrqdUKYVoQI9qY1/6CbxE76BX1jzzDEzNpn6I2XfHG3CaN0ORFXMEamfVK8aGuQaWaJOV54jtAoMsFpDvEnSA+qTmeLnE0p+Tr9BMDjzttJ3ME0ZhP0FDhfkmN13RhJ3NdlRjNqkqpTTBHbYaP6X5xo1M5l1hKwNcOwmL4bufEeMBbqmRLiK9jQci1LDLUi44BquQXv7HkN9p7FVuyaPBozhqQ1tgQBPiYTuHMWuvSiLh004jHOYc8DsMm+5OatOZ8nFidsMnyxk1NsCULNa2RyWWE6fYCZpW/RQia1x389Jk6uUfOLse+e1Sb8tFO1SQ715AWtCA+G9YLvBi3IQ71JCtuETcB9OoPaO8C9DU7wuA08txLPFGkH9/TlYU2rSjOqSO2SifkffGbMIKW0TfNaqnsjry6RqXn/83CW0WOT2dy8DNRYRF0oxwDzSXlXAY5JG5vk7VvIAWzGkYexEof2qvrf7GB9ChbqGHsUmxzSPIuoga0BIEeEjUuw1FPwYp9mUGeb1t8zQ3yBJOx3WaFy/wISBURhJCh2P0emTUUneWoLHErvD0GTeSOh18CDX9A8sGtDDthFFvrj1DVTRlovrKe6e",
+          "authTag": "KOt+SIDCBs/Zuu106Rcd2w==",
+          "salt": "hvCJm6CYE5uqLn1bOrZIGn1BDviVjrtB9L4VkJYkmO8=",
+          "encryptedAt": "2026-03-06T15:44:42.003Z",
+          "version": 1
+        },
+        "checksum": "0be81075497015b46503552516aae26cf2a1f9a3c78c438e3b9e5d16cc5c5b32",
+        "lastModified": "2026-03-06T15:44:42.003Z",
+        "originalSize": 1662
+      }
+    ],
+    [
+      "integrity-test",
+      {
+        "id": "integrity-test",
+        "type": "metrics",
+        "payload": {
+          "algorithm": "aes-256-gcm",
+          "iv": "nz6z9PgzqrTXQ1FT",
+          "data": "BmUZyxULY6r+Tg2f7S8AWnvPidFljk4ClihYysJ0TvB4LhydW7LhIAGCqp0R4Nh0n+FRyqdItKoGdgq3+gW4Ha4M9RZlbYeCse+0qg3GWoxZ3ozJEKX5S5w/BVtS/XWQCtKZjnPrcJuUWzTnf9tjUgk3rhNhfj9V9RFsdeFplQrdxKggyUBt96XaKsYdsMxA0002sMw1t+tzpVK5NlEZZw==",
+          "authTag": "UQOjhMB2dI9Y1DaqiLjq5Q==",
+          "salt": "hvCJm6CYE5uqLn1bOrZIGn1BDviVjrtB9L4VkJYkmO8=",
+          "encryptedAt": "2026-03-06T15:44:42.350Z",
+          "version": 1
+        },
+        "checksum": "8b018c78d97914b9ff23bd690b32152cf2bce3472d2b096afb55aa0630478ebe",
+        "lastModified": "2026-03-06T15:44:42.350Z",
+        "originalSize": 118
+      }
+    ]
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "session": {
+    "sessionId": "session-2025-12-28T23-29-45-675Z-4fdc12bf",
+    "startTime": "2025-12-28T23:29:45.676Z",
+    "totalCaptures": 4,
+    "capturesByType": {
+      "URL_CHANGE": 1,
+      "PII_LEAK": 1,
+      "AUTH_BYPASS": 1,
+      "BOLA_DETECTED": 1
+    },
+    "storageUsedMB": 1.11,
+    "aiAnnotationsCount": 0,
+    "maskedFieldsCount": 0
+  },
+  "config": {
+    "outputDir": "./evidence",
+    "targetApp": "juice-shop",
+    "mode": "aggressive",
+    "imageFormat": "webp",
+    "imageQuality": 85,
+    "aiAnnotations": "disabled",
+    "maskingLevel": "strict",
+    "autoCaptureEvents": [
+      "IDOR_CANDIDATE",
+      "PII_LEAK",
+      "URL_CHANGE",
+      "BOLA_DETECTED",
+      "SENSITIVE_DATA_EXPOSURE"
+    ],
+    "compress": true,
+    "maxStorageMB": 1024,
+    "verbose": false
+  },
+  "evidence": []
+}

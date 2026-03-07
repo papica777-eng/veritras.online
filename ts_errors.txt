@@ -1,0 +1,1781 @@
+﻿01-MICRO-SAAS-FACTORY/src/engines/ParadoxEngine.ts(694,25): error TS1002: Unterminated string literal.
+01-MICRO-SAAS-FACTORY/src/engines/ParadoxEngine.ts(973,46): error TS1002: Unterminated string literal.
+backups/1772832445078_cli.ts(8,1): error TS18026: '#!' can only be used at the start of a file.
+backups/1772832445078_cli.ts(8,16): error TS1005: ';' expected.
+backups/1772832445208_GenesisRealityProvider.ts(841,22): error TS1002: Unterminated string literal.
+backups/1772832445208_GenesisRealityProvider.ts(842,22): error TS1002: Unterminated string literal.
+backups/1772832445208_GenesisRealityProvider.ts(900,18): error TS1002: Unterminated string literal.
+backups/1772832445321_ExchangeConnectors_Security.ts(71,30): error TS1002: Unterminated string literal.
+backups/1772832445321_ExchangeConnectors_Security.ts(72,33): error TS1002: Unterminated string literal.
+backups/1772832445321_ExchangeConnectors_Security.ts(251,22): error TS1002: Unterminated string literal.
+backups/1772832445321_ExchangeConnectors_Security.ts(252,7): error TS1005: ',' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(276,30): error TS1002: Unterminated string literal.
+backups/1772832445321_ExchangeConnectors_Security.ts(277,33): error TS1002: Unterminated string literal.
+backups/1772832445321_ExchangeConnectors_Security.ts(425,22): error TS1002: Unterminated string literal.
+backups/1772832445321_ExchangeConnectors_Security.ts(426,7): error TS1005: ',' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(454,22): error TS1002: Unterminated string literal.
+backups/1772832445321_ExchangeConnectors_Security.ts(455,7): error TS1005: ',' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(466,30): error TS1002: Unterminated string literal.
+backups/1772832445321_ExchangeConnectors_Security.ts(467,33): error TS1002: Unterminated string literal.
+backups/1772832445321_ExchangeConnectors_Security.ts(468,34): error TS1002: Unterminated string literal.
+backups/1772832445321_ExchangeConnectors_Security.ts(477,51): error TS1002: Unterminated string literal.
+backups/1772832445321_ExchangeConnectors_Security.ts(483,92): error TS1002: Unterminated string literal.
+backups/1772832445321_ExchangeConnectors_Security.ts(484,5): error TS1005: ',' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(484,11): error TS1005: ',' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(484,53): error TS1005: ',' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(485,5): error TS1359: Identifier expected. 'const' is a reserved word that cannot be used here.
+backups/1772832445321_ExchangeConnectors_Security.ts(485,11): error TS1005: ',' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(485,84): error TS1005: ',' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(486,9): error TS1005: ',' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(486,16): error TS1005: ',' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(488,3): error TS1128: Declaration or statement expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(491,3): error TS1128: Declaration or statement expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(491,11): error TS1434: Unexpected keyword or identifier.
+backups/1772832445321_ExchangeConnectors_Security.ts(492,13): error TS1005: ',' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(493,11): error TS1005: ',' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(494,10): error TS1109: Expression expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(495,4): error TS1005: ';' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(496,9): error TS1003: Identifier expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(496,14): error TS1005: ',' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(496,27): error TS1005: ',' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(496,35): error TS1005: ':' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(496,71): error TS1005: ',' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(498,11): error TS1005: ':' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(498,53): error TS1005: ',' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(499,11): error TS1005: ':' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(499,53): error TS1002: Unterminated string literal.
+backups/1772832445321_ExchangeConnectors_Security.ts(500,5): error TS1005: ',' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(500,11): error TS1005: ':' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(500,70): error TS1005: ',' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(502,11): error TS1005: ':' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(502,18): error TS1005: ',' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(502,43): error TS1005: '(' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(502,45): error TS1136: Property assignment expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(503,22): error TS1005: ';' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(504,23): error TS1005: ';' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(505,28): error TS1005: ';' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(506,29): error TS1005: ';' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(507,21): error TS1005: ';' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(508,5): error TS1109: Expression expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(525,3): error TS1128: Declaration or statement expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(528,3): error TS1434: Unexpected keyword or identifier.
+backups/1772832445321_ExchangeConnectors_Security.ts(528,28): error TS1005: ',' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(528,37): error TS1005: ';' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(530,11): error TS1005: ':' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(530,69): error TS1005: ',' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(532,12): error TS1005: ':' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(539,6): error TS1005: ',' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(543,3): error TS1434: Unexpected keyword or identifier.
+backups/1772832445321_ExchangeConnectors_Security.ts(543,22): error TS1005: ';' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(543,40): error TS1011: An element access expression should take an argument.
+backups/1772832445321_ExchangeConnectors_Security.ts(545,11): error TS1005: ':' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(545,49): error TS1005: ',' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(547,12): error TS1005: ':' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(554,10): error TS1005: ',' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(558,3): error TS1434: Unexpected keyword or identifier.
+backups/1772832445321_ExchangeConnectors_Security.ts(558,27): error TS1005: ',' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(558,41): error TS1005: ';' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(559,11): error TS1005: ':' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(559,22): error TS1005: ',' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(564,6): error TS1005: ',' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(566,15): error TS1005: ',' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(566,32): error TS1005: ',' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(566,34): error TS1136: Property assignment expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(586,22): error TS1002: Unterminated string literal.
+backups/1772832445321_ExchangeConnectors_Security.ts(587,7): error TS1005: ',' expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(590,3): error TS1128: Declaration or statement expected.
+backups/1772832445321_ExchangeConnectors_Security.ts(591,1): error TS1128: Declaration or statement expected.
+backups/1772832445492_qantum-debugger.ts(327,48): error TS1002: Unterminated string literal.
+backups/1772832445492_qantum-debugger.ts(513,11): error TS1002: Unterminated string literal.
+backups/1772832445508_dashboard-server.ts(192,27): error TS1002: Unterminated string literal.
+backups/1772832445517_OllamaAgent.ts(425,28): error TS1002: Unterminated string literal.
+backups/1772832445517_OllamaAgent.ts(447,60): error TS1002: Unterminated string literal.
+backups/1772832445517_OllamaAgent.ts(510,34): error TS1005: '}' expected.
+backups/1772832445517_OllamaAgent.ts(510,35): error TS1005: ',' expected.
+backups/1772832445517_OllamaAgent.ts(510,41): error TS1128: Declaration or statement expected.
+backups/1772832445517_OllamaAgent.ts(510,43): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(516,1): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(516,4): error TS1435: Unknown keyword or identifier. Did you mean 'module'?
+backups/1772832445517_OllamaAgent.ts(516,11): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(517,1): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(517,2): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(517,3): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(517,4): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(517,5): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(517,6): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(517,7): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(517,8): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(517,9): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(517,10): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(517,11): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(517,12): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(517,13): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(517,14): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(517,15): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(517,16): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(517,17): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(517,18): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(517,19): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(517,20): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(517,21): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(517,22): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(518,1): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(520,1): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(520,20): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(532,51): error TS1005: ';' expected.
+backups/1772832445517_OllamaAgent.ts(532,54): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(532,76): error TS1109: Expression expected.
+backups/1772832445517_OllamaAgent.ts(532,83): error TS1005: ';' expected.
+backups/1772832445517_OllamaAgent.ts(532,92): error TS1005: ';' expected.
+backups/1772832445517_OllamaAgent.ts(532,97): error TS1443: Module declaration names may only use ' or " quoted strings.
+backups/1772832445517_OllamaAgent.ts(533,51): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(533,54): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(533,76): error TS1109: Expression expected.
+backups/1772832445517_OllamaAgent.ts(533,83): error TS1005: ';' expected.
+backups/1772832445517_OllamaAgent.ts(533,92): error TS1005: ';' expected.
+backups/1772832445517_OllamaAgent.ts(534,48): error TS1005: ';' expected.
+backups/1772832445517_OllamaAgent.ts(534,51): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(534,73): error TS1109: Expression expected.
+backups/1772832445517_OllamaAgent.ts(534,80): error TS1005: ';' expected.
+backups/1772832445517_OllamaAgent.ts(534,86): error TS1005: ';' expected.
+backups/1772832445517_OllamaAgent.ts(539,1): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(539,4): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(540,1): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(540,2): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(540,3): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(540,4): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(540,5): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(540,6): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(540,7): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(540,8): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(540,9): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(540,10): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(540,11): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(540,12): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(540,13): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(541,9): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(544,1): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(546,1): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(547,1): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(560,24): error TS1005: ';' expected.
+backups/1772832445517_OllamaAgent.ts(560,27): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(560,49): error TS1109: Expression expected.
+backups/1772832445517_OllamaAgent.ts(560,56): error TS1005: ';' expected.
+backups/1772832445517_OllamaAgent.ts(563,43): error TS1005: ';' expected.
+backups/1772832445517_OllamaAgent.ts(563,46): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(563,68): error TS1109: Expression expected.
+backups/1772832445517_OllamaAgent.ts(563,75): error TS1005: ';' expected.
+backups/1772832445517_OllamaAgent.ts(563,85): error TS1005: ';' expected.
+backups/1772832445517_OllamaAgent.ts(563,97): error TS1443: Module declaration names may only use ' or " quoted strings.
+backups/1772832445517_OllamaAgent.ts(567,18): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(567,18): error TS1128: Declaration or statement expected.
+backups/1772832445517_OllamaAgent.ts(567,31): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(567,41): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(567,43): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(567,44): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(588,43): error TS1005: ';' expected.
+backups/1772832445517_OllamaAgent.ts(588,48): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(588,59): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(601,1): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(601,4): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(601,19): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(602,1): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,2): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,3): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,4): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,5): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,6): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,7): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,8): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,9): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,10): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,11): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,12): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,13): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,14): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,15): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,16): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,17): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,18): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,19): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,20): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,21): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,22): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,23): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,24): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,25): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,26): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,27): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,28): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,29): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,30): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,31): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,32): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,33): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,34): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,35): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,36): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,37): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,38): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,39): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(602,40): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(603,8): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(604,10): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(605,10): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(606,12): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(607,10): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(627,21): error TS1005: ';' expected.
+backups/1772832445517_OllamaAgent.ts(629,18): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(636,15): error TS1005: ',' expected.
+backups/1772832445517_OllamaAgent.ts(636,33): error TS1005: '>' expected.
+backups/1772832445517_OllamaAgent.ts(636,39): error TS1005: ',' expected.
+backups/1772832445517_OllamaAgent.ts(636,44): error TS1005: ',' expected.
+backups/1772832445517_OllamaAgent.ts(636,46): error TS1109: Expression expected.
+backups/1772832445517_OllamaAgent.ts(638,10): error TS1005: '>' expected.
+backups/1772832445517_OllamaAgent.ts(638,19): error TS1005: ')' expected.
+backups/1772832445517_OllamaAgent.ts(639,12): error TS1005: ';' expected.
+backups/1772832445517_OllamaAgent.ts(639,19): error TS1110: Type expected.
+backups/1772832445517_OllamaAgent.ts(641,6): error TS1110: Type expected.
+backups/1772832445517_OllamaAgent.ts(642,3): error TS1128: Declaration or statement expected.
+backups/1772832445517_OllamaAgent.ts(645,17): error TS1005: ';' expected.
+backups/1772832445517_OllamaAgent.ts(655,21): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(656,3): error TS1128: Declaration or statement expected.
+backups/1772832445517_OllamaAgent.ts(656,29): error TS1442: Expected '=' for property initializer.
+backups/1772832445517_OllamaAgent.ts(658,3): error TS1128: Declaration or statement expected.
+backups/1772832445517_OllamaAgent.ts(658,25): error TS1005: ';' expected.
+backups/1772832445517_OllamaAgent.ts(660,3): error TS1128: Declaration or statement expected.
+backups/1772832445517_OllamaAgent.ts(660,10): error TS1128: Declaration or statement expected.
+backups/1772832445517_OllamaAgent.ts(660,30): error TS1005: ';' expected.
+backups/1772832445517_OllamaAgent.ts(660,32): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(660,39): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(661,11): error TS1005: ')' expected.
+backups/1772832445517_OllamaAgent.ts(661,33): error TS1005: ';' expected.
+backups/1772832445517_OllamaAgent.ts(662,7): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(662,38): error TS1005: ';' expected.
+backups/1772832445517_OllamaAgent.ts(664,13): error TS1005: ';' expected.
+backups/1772832445517_OllamaAgent.ts(668,1): error TS1128: Declaration or statement expected.
+backups/1772832445517_OllamaAgent.ts(670,15): error TS1005: ',' expected.
+backups/1772832445517_OllamaAgent.ts(670,20): error TS1005: ',' expected.
+backups/1772832445517_OllamaAgent.ts(670,32): error TS1005: ',' expected.
+backups/1772832445517_OllamaAgent.ts(670,33): error TS1109: Expression expected.
+backups/1772832445517_OllamaAgent.ts(670,34): error TS1128: Declaration or statement expected.
+backups/1772832445517_OllamaAgent.ts(670,46): error TS1005: ';' expected.
+backups/1772832445517_OllamaAgent.ts(675,21): error TS1005: ';' expected.
+backups/1772832445517_OllamaAgent.ts(693,43): error TS1005: ';' expected.
+backups/1772832445517_OllamaAgent.ts(693,51): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(693,62): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(698,16): error TS1005: ';' expected.
+backups/1772832445517_OllamaAgent.ts(698,26): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(698,34): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(698,47): error TS1005: '(' expected.
+backups/1772832445517_OllamaAgent.ts(698,48): error TS1005: ';' expected.
+backups/1772832445517_OllamaAgent.ts(698,54): error TS1005: ';' expected.
+backups/1772832445517_OllamaAgent.ts(698,55): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(698,57): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(698,58): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(763,34): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(763,36): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(763,38): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(763,50): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(763,51): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(765,34): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(765,36): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(765,38): error TS1127: Invalid character.
+backups/1772832445517_OllamaAgent.ts(765,48): error TS1434: Unexpected keyword or identifier.
+backups/1772832445517_OllamaAgent.ts(800,1): error TS1160: Unterminated template literal.
+backups/1772832445529_AdaptiveOllamaAgent.ts(373,23): error TS1002: Unterminated string literal.
+backups/1772832445529_AdaptiveOllamaAgent.ts(441,60): error TS1002: Unterminated string literal.
+backups/1772832445529_AdaptiveOllamaAgent.ts(442,11): error TS1005: ')' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(446,9): error TS1472: 'catch' or 'finally' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(467,9): error TS1005: 'try' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(493,5): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(493,12): error TS1068: Unexpected token. A constructor, method, accessor, or property was expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(493,19): error TS1003: Identifier expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(493,51): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(493,62): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(493,64): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(493,86): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(493,93): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(497,18): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(497,35): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(497,45): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(497,48): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(497,53): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(497,56): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(497,59): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(497,68): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(497,73): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(497,108): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(497,116): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(508,27): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(508,40): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(526,50): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(526,66): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(547,52): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(547,55): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(547,77): error TS1109: Expression expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(547,91): error TS1109: Expression expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(547,95): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(547,114): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(547,116): error TS1443: Module declaration names may only use ' or " quoted strings.
+backups/1772832445529_AdaptiveOllamaAgent.ts(548,52): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(548,55): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(548,77): error TS1109: Expression expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(548,91): error TS1109: Expression expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(548,95): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(548,114): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,1): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,2): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,3): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,4): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,5): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,6): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,7): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,8): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,9): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,10): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,11): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,12): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,13): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,14): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,15): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,16): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,17): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,18): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,19): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,20): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,21): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,22): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,23): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,24): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,25): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,26): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,27): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,28): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,29): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,30): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,31): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,32): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,33): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,34): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,35): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,36): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,37): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,38): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,39): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,40): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,41): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,42): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,43): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,44): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,45): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,46): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,47): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,48): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,49): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,50): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,51): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,52): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,53): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,54): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,55): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,56): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,57): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,58): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,59): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,60): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,61): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,62): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,63): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,64): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,65): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,66): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,67): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,68): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,69): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,70): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,71): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,72): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,73): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,74): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,75): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,76): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,77): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,78): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,79): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(556,80): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(557,1): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(557,22): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(557,29): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(557,36): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(557,43): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(557,49): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(557,80): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,1): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,2): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,3): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,4): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,5): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,6): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,7): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,8): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,9): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,10): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,11): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,12): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,13): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,14): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,15): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,16): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,17): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,18): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,19): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,20): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,21): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,22): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,23): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,24): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,25): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,26): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,27): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,28): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,29): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,30): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,31): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,32): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,33): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,34): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,35): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,36): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,37): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,38): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,39): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,40): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,41): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,42): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,43): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,44): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,45): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,46): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,47): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,48): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,49): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,50): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,51): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,52): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,53): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,54): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,55): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,56): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,57): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,58): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,59): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,60): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,61): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,62): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,63): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,64): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,65): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,66): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,67): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,68): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,69): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,70): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,71): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,72): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,73): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,74): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,75): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,76): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,77): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,78): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,79): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(558,80): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(559,1): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(559,14): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(559,44): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(560,1): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(560,3): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(560,17): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(560,49): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(561,1): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(561,13): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(561,42): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(562,1): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(562,3): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(562,16): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(562,73): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(562,124): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(562,143): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(563,1): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(563,11): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(563,39): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(563,57): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,1): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,2): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,3): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,4): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,5): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,6): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,7): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,8): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,9): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,10): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,11): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,12): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,13): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,14): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,15): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,16): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,17): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,18): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,19): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,20): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,21): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,22): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,23): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,24): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,25): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,26): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,27): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,28): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,29): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,30): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,31): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,32): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,33): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,34): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,35): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,36): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,37): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,38): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,39): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,40): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,41): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,42): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,43): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,44): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,45): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,46): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,47): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,48): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,49): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,50): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,51): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,52): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,53): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,54): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,55): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,56): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,57): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,58): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,59): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,60): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,61): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,62): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,63): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,64): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,65): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,66): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,67): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,68): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,69): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,70): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,71): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,72): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,73): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,74): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,75): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,76): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,77): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,78): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,79): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(564,80): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(565,1): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(565,3): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(565,21): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(565,77): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(566,1): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(566,3): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(566,21): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(566,77): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(567,1): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(567,3): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(567,18): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(567,70): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(567,87): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(568,1): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(568,3): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(568,18): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(568,91): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,1): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,2): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,3): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,4): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,5): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,6): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,7): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,8): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,9): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,10): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,11): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,12): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,13): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,14): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,15): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,16): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,17): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,18): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,19): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,20): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,21): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,22): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,23): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,24): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,25): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,26): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,27): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,28): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,29): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,30): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,31): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,32): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,33): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,34): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,35): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,36): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,37): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,38): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,39): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,40): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,41): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,42): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,43): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,44): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,45): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,46): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,47): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,48): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,49): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,50): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,51): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,52): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,53): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,54): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,55): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,56): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,57): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,58): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,59): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,60): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,61): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,62): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,63): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,64): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,65): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,66): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,67): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,68): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,69): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,70): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,71): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,72): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,73): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,74): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,75): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,76): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,77): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,78): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,79): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(569,80): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(570,1): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(570,14): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(570,46): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(571,1): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(571,11): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(571,79): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,1): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,2): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,3): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,4): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,5): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,6): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,7): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,8): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,9): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,10): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,11): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,12): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,13): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,14): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,15): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,16): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,17): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,18): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,19): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,20): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,21): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,22): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,23): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,24): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,25): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,26): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,27): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,28): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,29): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,30): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,31): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,32): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,33): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,34): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,35): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,36): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,37): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,38): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,39): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,40): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,41): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,42): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,43): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,44): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,45): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,46): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,47): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,48): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,49): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,50): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,51): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,52): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,53): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,54): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,55): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,56): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,57): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,58): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,59): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,60): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,61): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,62): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,63): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,64): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,65): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,66): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,67): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,68): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,69): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,70): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,71): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,72): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,73): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,74): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,75): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,76): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,77): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,78): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,79): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(572,80): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(596,1): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(596,4): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(596,9): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(597,1): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(597,2): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(597,3): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(597,4): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(597,5): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(597,6): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(597,7): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(597,8): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(597,9): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(597,10): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(597,11): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(597,12): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(597,13): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(597,14): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(597,15): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(597,16): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(597,17): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(597,18): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(597,19): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(597,20): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(597,21): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(597,22): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(597,23): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(597,24): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(598,1): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(598,16): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(599,1): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(599,14): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(600,1): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(602,1): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(603,1): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(604,1): error TS1443: Module declaration names may only use ' or " quoted strings.
+backups/1772832445529_AdaptiveOllamaAgent.ts(619,45): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(619,48): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(619,70): error TS1109: Expression expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(619,77): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(619,89): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(619,97): error TS1109: Expression expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(620,23): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(620,34): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(622,23): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(622,34): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(630,45): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(630,48): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(630,70): error TS1109: Expression expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(630,77): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(630,83): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(630,92): error TS1109: Expression expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(631,23): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(631,35): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(633,23): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(633,35): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(633,41): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(633,56): error TS1005: '(' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(639,1): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(639,17): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(640,1): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(640,2): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(640,3): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(640,4): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(640,5): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(640,6): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(640,7): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(640,8): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(640,9): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(640,10): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(640,11): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(640,12): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(640,13): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(640,14): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(640,15): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(640,16): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(640,17): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(640,18): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(640,19): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(640,20): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(640,21): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(640,22): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(640,23): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(640,24): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(640,25): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(640,26): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(640,27): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(640,28): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(640,29): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(640,30): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(640,31): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(640,32): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(640,33): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(641,1): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(645,1): error TS1443: Module declaration names may only use ' or " quoted strings.
+backups/1772832445529_AdaptiveOllamaAgent.ts(656,52): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(656,55): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(656,77): error TS1109: Expression expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(656,91): error TS1109: Expression expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(656,95): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(656,114): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(656,116): error TS1443: Module declaration names may only use ' or " quoted strings.
+backups/1772832445529_AdaptiveOllamaAgent.ts(657,52): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(657,55): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(657,77): error TS1109: Expression expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(657,91): error TS1109: Expression expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(657,95): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(657,114): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(657,116): error TS1443: Module declaration names may only use ' or " quoted strings.
+backups/1772832445529_AdaptiveOllamaAgent.ts(658,54): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(658,57): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(658,79): error TS1109: Expression expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(658,93): error TS1109: Expression expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(658,99): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(658,118): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(658,120): error TS1443: Module declaration names may only use ' or " quoted strings.
+backups/1772832445529_AdaptiveOllamaAgent.ts(659,54): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(659,57): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(659,79): error TS1109: Expression expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(659,93): error TS1109: Expression expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(659,99): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(659,118): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(677,1): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(677,4): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(677,11): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(678,1): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(678,2): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(678,3): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(678,4): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(678,5): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(678,6): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(678,7): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(678,8): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(678,9): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(678,10): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(678,11): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(678,12): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(678,13): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(678,14): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(678,15): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(678,16): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(678,17): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(678,18): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(678,19): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(678,20): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(678,21): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(678,22): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(678,23): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(678,24): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(678,25): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(678,26): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(678,27): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(679,1): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(679,19): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(680,1): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(680,19): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(681,1): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(681,13): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(682,1): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(682,13): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(683,1): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(683,2): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(683,3): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(683,4): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(683,5): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(683,6): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(683,7): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(683,8): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(683,9): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(683,10): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(683,11): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(683,12): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(683,13): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(683,14): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(683,15): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(683,16): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(683,17): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(683,18): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(683,19): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(683,20): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(683,21): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(683,22): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(683,23): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(683,24): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(683,25): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(683,26): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(683,27): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(684,1): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(684,7): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(684,19): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(685,1): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(685,7): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(685,18): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(687,1): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(687,62): error TS1002: Unterminated string literal.
+backups/1772832445529_AdaptiveOllamaAgent.ts(753,34): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(753,36): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(753,55): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(753,57): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(753,92): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,1): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,2): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,3): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,4): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,5): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,6): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,7): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,8): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,9): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,10): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,11): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,12): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,13): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,14): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,15): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,16): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,17): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,18): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,19): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,20): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,21): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,22): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,23): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,24): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,25): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,26): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,27): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,28): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,29): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,30): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,31): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,32): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,33): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,34): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,35): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,36): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,37): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,38): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,39): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(759,40): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(760,1): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(760,9): error TS1435: Unknown keyword or identifier. Did you mean 'module'?
+backups/1772832445529_AdaptiveOllamaAgent.ts(760,16): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(760,40): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,1): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,2): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,3): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,4): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,5): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,6): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,7): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,8): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,9): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,10): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,11): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,12): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,13): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,14): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,15): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,16): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,17): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,18): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,19): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,20): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,21): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,22): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,23): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,24): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,25): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,26): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,27): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,28): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,29): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,30): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,31): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,32): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,33): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,34): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,35): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,36): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,37): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,38): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,39): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(761,40): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(762,1): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,1): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,2): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,3): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,4): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,5): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,6): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,7): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,8): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,9): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,10): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,11): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,12): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,13): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,14): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,15): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,16): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,17): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,18): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,19): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,20): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,21): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,22): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,23): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,24): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,25): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,26): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,27): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,28): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,29): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,30): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,31): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,32): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,33): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,34): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,35): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,36): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,37): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,38): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,39): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(763,40): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(764,1): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(764,3): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(764,22): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(764,77): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,1): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,2): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,3): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,4): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,5): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,6): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,7): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,8): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,9): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,10): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,11): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,12): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,13): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,14): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,15): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,16): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,17): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,18): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,19): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,20): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,21): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,22): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,23): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,24): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,25): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,26): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,27): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,28): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,29): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,30): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,31): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,32): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,33): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,34): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,35): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,36): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,37): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,38): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,39): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(765,40): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(777,51): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(777,54): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(777,76): error TS1109: Expression expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(777,83): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(777,92): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(777,97): error TS1443: Module declaration names may only use ' or " quoted strings.
+backups/1772832445529_AdaptiveOllamaAgent.ts(778,51): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(778,54): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(778,76): error TS1109: Expression expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(778,83): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(778,92): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(779,48): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(779,51): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(779,73): error TS1109: Expression expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(779,80): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(779,86): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(784,1): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(784,4): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(784,8): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(785,1): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(785,2): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(785,3): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(785,4): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(785,5): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(785,6): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(785,7): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(785,8): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(785,9): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(785,10): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(785,11): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(785,12): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(785,13): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(785,14): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(785,15): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(785,16): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(785,17): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(785,18): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(785,19): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(785,20): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(785,21): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(785,22): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(785,23): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(785,24): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(786,9): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(789,1): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(791,1): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(792,1): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(808,24): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(808,27): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(808,49): error TS1109: Expression expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(808,56): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(809,43): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(809,46): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(809,68): error TS1109: Expression expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(809,75): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(809,85): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(809,97): error TS1443: Module declaration names may only use ' or " quoted strings.
+backups/1772832445529_AdaptiveOllamaAgent.ts(813,18): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(813,18): error TS1128: Declaration or statement expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(813,31): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(813,41): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(813,43): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(813,44): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(834,43): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(834,48): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(834,59): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(849,1): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(849,4): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(849,19): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,1): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,2): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,3): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,4): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,5): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,6): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,7): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,8): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,9): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,10): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,11): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,12): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,13): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,14): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,15): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,16): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,17): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,18): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,19): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,20): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,21): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,22): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,23): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,24): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,25): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,26): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,27): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,28): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,29): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,30): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,31): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,32): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,33): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,34): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,35): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,36): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,37): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,38): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,39): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,40): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,41): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,42): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,43): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,44): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(850,45): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(851,1): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(851,7): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(851,16): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(852,10): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(853,10): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(854,12): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(855,10): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(856,13): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(857,8): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(858,7): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(886,18): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(887,13): error TS1109: Expression expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(891,15): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(891,33): error TS1005: '>' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(891,39): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(891,44): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(891,46): error TS1109: Expression expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(900,10): error TS1005: '>' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(900,19): error TS1005: ')' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(900,21): error TS1127: Invalid character.
+backups/1772832445529_AdaptiveOllamaAgent.ts(900,22): error TS1136: Property assignment expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(910,7): error TS1128: Declaration or statement expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(910,21): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(942,7): error TS1128: Declaration or statement expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(942,18): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(966,7): error TS1128: Declaration or statement expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(966,14): error TS1128: Declaration or statement expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(978,3): error TS1128: Declaration or statement expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(978,11): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(978,37): error TS1109: Expression expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(978,46): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(979,9): error TS1003: Identifier expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(983,5): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(983,12): error TS1005: ':' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(995,6): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(999,3): error TS1128: Declaration or statement expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(999,11): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(999,34): error TS1109: Expression expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(999,43): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1000,11): error TS1005: ':' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1000,31): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1002,9): error TS1005: ':' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1003,13): error TS1005: ':' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1003,104): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1005,14): error TS1005: ':' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1016,8): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1017,7): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1023,3): error TS1128: Declaration or statement expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1023,11): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1023,31): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1024,9): error TS1005: ':' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1025,11): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1025,23): error TS1002: Unterminated string literal.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1028,7): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1028,11): error TS1005: ':' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1029,15): error TS1005: ':' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1029,107): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1030,17): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1030,20): error TS1136: Property assignment expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1030,65): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1031,9): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1035,7): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1035,14): error TS1005: ':' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1046,8): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1047,7): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1050,3): error TS1128: Declaration or statement expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1053,3): error TS1128: Declaration or statement expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1053,11): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1053,37): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1054,11): error TS1005: ':' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1054,41): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1056,12): error TS1005: ':' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1071,6): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1079,3): error TS1434: Unexpected keyword or identifier.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1079,25): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1079,34): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1080,21): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1081,26): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1082,34): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1083,21): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1085,12): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1085,75): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1088,9): error TS1005: ':' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1088,74): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1092,11): error TS1005: ':' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1092,66): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1094,9): error TS1003: Identifier expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1094,16): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1094,24): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1094,26): error TS1136: Property assignment expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1156,3): error TS1128: Declaration or statement expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1160,3): error TS1128: Declaration or statement expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1160,19): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1160,28): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1160,42): error TS1109: Expression expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1161,12): error TS1005: ':' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1161,59): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1165,22): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1166,9): error TS1005: ':' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1166,83): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1167,9): error TS1005: ':' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1167,22): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1168,9): error TS1005: ':' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1168,27): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1169,12): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1169,47): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1173,13): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1182,16): error TS1005: ',' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1182,30): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1182,49): error TS1011: An element access expression should take an argument.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1182,51): error TS1005: ';' expected.
+backups/1772832445529_AdaptiveOllamaAgent.ts(1185,1): error TS1128: Declaration or statement expected.
+backups/1772832445541_automation.ts(176,62): error TS1002: Unterminated string literal.
+backups/1772832445541_automation.ts(184,20): error TS1005: ',' expected.
+backups/1772832445541_automation.ts(184,29): error TS1005: ';' expected.
+backups/1772832445541_automation.ts(185,9): error TS1003: Identifier expected.
+backups/1772832445541_automation.ts(185,12): error TS1005: ',' expected.
+backups/1772832445541_automation.ts(185,32): error TS1005: ',' expected.
+backups/1772832445541_automation.ts(185,34): error TS1136: Property assignment expected.
+backups/1772832445541_automation.ts(466,97): error TS1127: Invalid character.
+backups/1772832445541_automation.ts(466,99): error TS1005: ',' expected.
+backups/1772832445541_automation.ts(466,102): error TS1002: Unterminated string literal.
+backups/1772832445541_automation.ts(468,1): error TS1005: ',' expected.
+backups/1772832445541_automation.ts(468,3): error TS1109: Expression expected.
+backups/1772832445541_automation.ts(470,1): error TS1127: Invalid character.
+backups/1772832445541_automation.ts(470,2): error TS1127: Invalid character.
+backups/1772832445541_automation.ts(470,4): error TS1005: ',' expected.
+backups/1772832445541_automation.ts(472,1): error TS1127: Invalid character.
+backups/1772832445541_automation.ts(953,20): error TS1002: Unterminated string literal.
+backups/1772832445541_automation.ts(956,5): error TS1005: ',' expected.
+backups/1772832445541_automation.ts(956,48): error TS1005: ')' expected.
+backups/1772832445545_docker-manager.ts(447,28): error TS1002: Unterminated string literal.
+backups/1772832445545_docker-manager.ts(448,33): error TS1002: Unterminated string literal.
+backups/1772832445545_docker-manager.ts(630,22): error TS1002: Unterminated string literal.
+backups/1772832445549_hybrid-vision-controller.ts(327,82): error TS1002: Unterminated string literal.
+backups/1772832445549_hybrid-vision-controller.ts(370,48): error TS1002: Unterminated string literal.
+backups/1772832445561_openapi-generator.ts(538,93): error TS1002: Unterminated string literal.
+backups/1772832445561_openapi-generator.ts(539,5): error TS1005: ',' expected.
+backups/1772832445561_openapi-generator.ts(554,18): error TS1002: Unterminated string literal.
+backups/1772832445561_openapi-generator.ts(555,5): error TS1005: ',' expected.
+backups/1772832445611_vector-health.ts(8,1): error TS18026: '#!' can only be used at the start of a file.
+backups/1772832445611_vector-health.ts(8,16): error TS1005: ';' expected.
+chronos/ParadoxEngine.ts(973,46): error TS1002: Unterminated string literal.
+core/memory/Memoryals.ts(8,1): error TS18026: '#!' can only be used at the start of a file.
+core/memory/Memoryals.ts(8,16): error TS1005: ';' expected.
+ENGINES/chronos-engine-v2.ts(356,39): error TS1002: Unterminated string literal.
+ENGINES/chronos-engine-v2.ts(357,7): error TS1005: ',' expected.
+ENGINES/decryption-engine.ts(54,59): error TS1002: Unterminated string literal.
+ENGINES/decryption-engine.ts(57,9): error TS1005: ',' expected.
+ENGINES/ParadoxEngine.ts(694,25): error TS1002: Unterminated string literal.
+ENGINES/ParadoxEngine.ts(973,46): error TS1002: Unterminated string literal.
+gateway/AutoOnboarder.ts(455,19): error TS1002: Unterminated string literal.
+gateway/AutoOnboarder.ts(456,7): error TS1005: ',' expected.
+interview_generated_tests/e2e/e2e_tf_1.spec.ts(19,5): error TS1135: Argument expression expected.
+JS-Framework/scripts/orchestration/_qantum_pinecone-bridge_packages/launch-aeterna.ts(207,44): error TS1128: Declaration or statement expected.
+JS-Framework/scripts/orchestration/_qantum_pinecone-bridge_packages/launch-aeterna.ts(208,17): error TS1128: Declaration or statement expected.
+JS-Framework/scripts/orchestration/_qantum_pinecone-bridge_packages/launch-aeterna.ts(209,13): error TS1128: Declaration or statement expected.
+JS-Framework/scripts/orchestration/_qantum_pinecone-bridge_packages/launch-aeterna.ts(210,9): error TS1128: Declaration or statement expected.
+JS-Framework/scripts/orchestration/_qantum_pinecone-bridge_packages/launch-aeterna.ts(210,11): error TS1005: 'try' expected.
+JS-Framework/scripts/orchestration/_qantum_pinecone-bridge_packages/launch-aeterna.ts(211,5): error TS1128: Declaration or statement expected.
+JS-Framework/scripts/orchestration/_qantum_pinecone-bridge_packages/launch-aeterna.ts(215,1): error TS1128: Declaration or statement expected.
+omni_core/console/QAntumConsole.ts(8,1): error TS18026: '#!' can only be used at the start of a file.
+omni_core/console/QAntumConsole.ts(8,16): error TS1005: ';' expected.
+ops/qantum-cli.ts(14,13): error TS18026: '#!' can only be used at the start of a file.
+ops/qantum-cli.ts(14,28): error TS1005: ';' expected.
+scripts/qantum/SaaS-Framework/01_ECOSYSTEM_APPS/MisterMind-Site/dpengeneering/cybercody/src/cli.ts(8,1): error TS18026: '#!' can only be used at the start of a file.
+scripts/qantum/SaaS-Framework/01_ECOSYSTEM_APPS/MisterMind-Site/dpengeneering/cybercody/src/cli.ts(8,16): error TS1005: ';' expected.
+src/accessibility/index.ts(148,20): error TS1002: Unterminated string literal.
+src/accessibility/index.ts(150,9): error TS1005: ',' expected.
+src/accessibility/index.ts(228,15): error TS1002: Unterminated string literal.
+src/accessibility/index.ts(231,15): error TS1002: Unterminated string literal.
+src/accessibility/index.ts(232,13): error TS1005: ',' expected.
+src/accessibility/index.ts(235,15): error TS1002: Unterminated string literal.
+src/accessibility/index.ts(241,15): error TS1002: Unterminated string literal.
+src/accessibility/index.ts(243,14): error TS1002: Unterminated string literal.
+src/accessibility/index.ts(251,18): error TS1002: Unterminated string literal.
+src/accessibility/index.ts(259,22): error TS1002: Unterminated string literal.
+src/accessibility/index.ts(266,26): error TS1002: Unterminated string literal.
+src/agility/checksum-validator.ts(222,61): error TS1002: Unterminated string literal.
+src/agility/checksum-validator.ts(223,5): error TS1005: ',' expected.
+src/agility/checksum-validator.ts(344,70): error TS1002: Unterminated string literal.
+src/agility/checksum-validator.ts(345,5): error TS1005: ',' expected.
+src/chronos/ParadoxEngine.ts(704,25): error TS1002: Unterminated string literal.
+src/chronos/ParadoxEngine.ts(989,46): error TS1002: Unterminated string literal.
+src/cli.ts(8,1): error TS18026: '#!' can only be used at the start of a file.
+src/cli.ts(8,16): error TS1005: ';' expected.
+src/config/loader.ts(245,36): error TS1002: Unterminated string literal.
+src/config/loader.ts(246,9): error TS1005: ',' expected.
+src/config/loader.ts(260,65): error TS1002: Unterminated string literal.
+src/config/loader.ts(261,17): error TS1005: ',' expected.
+src/config/loader.ts(356,75): error TS1002: Unterminated string literal.
+src/core/memory/Memoryals.ts(8,1): error TS18026: '#!' can only be used at the start of a file.
+src/core/memory/Memoryals.ts(8,16): error TS1005: ';' expected.
+src/data/faker.ts(397,22): error TS1002: Unterminated string literal.
+src/data/faker.ts(415,86): error TS1002: Unterminated string literal.
+src/data/faker.ts(416,5): error TS1005: ',' expected.
+src/data/faker.ts(435,91): error TS1002: Unterminated string literal.
+src/data/faker.ts(436,5): error TS1005: ',' expected.
+src/departments/energy/BasePage.ts(331,89): error TS1002: Unterminated string literal.
+src/departments/energy/BasePage.ts(332,7): error TS1005: ',' expected.
+src/departments/energy/cognitive-ux-auditor.ts(288,17): error TS1002: Unterminated string literal.
+src/departments/energy/cognitive-ux-auditor.ts(420,41): error TS1002: Unterminated string literal.
+src/departments/energy/cognitive-ux-auditor.ts(421,21): error TS1005: ',' expected.
+src/departments/energy/cognitive-ux-auditor.ts(533,23): error TS1002: Unterminated string literal.
+src/departments/energy/cognitive-ux-auditor.ts(534,9): error TS1005: ',' expected.
+src/departments/energy/cognitive-ux-auditor.ts(534,99): error TS1005: ')' expected.
+src/departments/energy/cognitive-ux-auditor.ts(535,23): error TS1002: Unterminated string literal.
+src/departments/energy/cognitive-ux-auditor.ts(536,9): error TS1005: ',' expected.
+src/departments/energy/cognitive-ux-auditor.ts(536,103): error TS1005: ')' expected.
+src/departments/energy/cognitive-ux-auditor.ts(556,23): error TS1002: Unterminated string literal.
+src/departments/energy/cognitive-ux-auditor.ts(558,9): error TS1005: ',' expected.
+src/departments/energy/cognitive-ux-auditor.ts(579,31): error TS1002: Unterminated string literal.
+src/departments/energy/cognitive-ux-auditor.ts(580,13): error TS1005: ',' expected.
+src/departments/energy/cognitive-ux-auditor.ts(591,27): error TS1002: Unterminated string literal.
+src/departments/energy/cognitive-ux-auditor.ts(592,9): error TS1005: ',' expected.
+src/departments/energy/cognitive-ux-auditor.ts(608,31): error TS1002: Unterminated string literal.
+src/departments/energy/cognitive-ux-auditor.ts(609,13): error TS1005: ',' expected.
+src/departments/energy/GenesisRealityProvider.ts(841,22): error TS1002: Unterminated string literal.
+src/departments/energy/GenesisRealityProvider.ts(842,22): error TS1002: Unterminated string literal.
+src/departments/energy/GenesisRealityProvider.ts(900,18): error TS1002: Unterminated string literal.
+src/departments/energy/multi-language-cognition.ts(959,62): error TS1002: Unterminated string literal.
+src/departments/energy/multi-language-cognition.ts(960,21): error TS1005: ',' expected.
+src/departments/energy/multi-language-cognition.ts(961,18): error TS1005: ',' expected.
+src/departments/energy/multi-language-cognition.ts(963,18): error TS1005: ':' expected.
+src/departments/energy/multi-language-cognition.ts(963,24): error TS1005: ',' expected.
+src/departments/energy/multi-language-cognition.ts(964,24): error TS1005: ':' expected.
+src/departments/energy/multi-language-cognition.ts(966,31): error TS1002: Unterminated string literal.
+src/departments/energy/multi-language-cognition.ts(967,21): error TS1005: ',' expected.
+src/departments/energy/multi-language-cognition.ts(969,18): error TS1005: ',' expected.
+src/departments/energy/multi-language-cognition.ts(971,18): error TS1005: ':' expected.
+src/departments/energy/multi-language-cognition.ts(971,29): error TS1005: ',' expected.
+src/departments/energy/multi-language-cognition.ts(972,24): error TS1005: ':' expected.
+src/departments/energy/multi-language-cognition.ts(977,18): error TS1005: ',' expected.
+src/departments/energy/multi-language-cognition.ts(979,18): error TS1005: ':' expected.
+src/departments/energy/multi-language-cognition.ts(979,30): error TS1005: ',' expected.
+src/departments/energy/multi-language-cognition.ts(980,24): error TS1005: ':' expected.
+src/departments/energy/multi-language-cognition.ts(985,18): error TS1005: ',' expected.
+src/departments/energy/multi-language-cognition.ts(987,18): error TS1005: ':' expected.
+src/departments/energy/multi-language-cognition.ts(987,25): error TS1005: ',' expected.
+src/departments/energy/multi-language-cognition.ts(988,24): error TS1005: ':' expected.
+src/departments/energy/multi-language-cognition.ts(993,18): error TS1005: ',' expected.
+src/departments/energy/multi-language-cognition.ts(996,17): error TS1109: Expression expected.
+src/departments/energy/multi-language-cognition.ts(996,24): error TS1005: ':' expected.
+src/departments/energy/multi-language-cognition.ts(996,28): error TS1005: ',' expected.
+src/departments/energy/multi-language-cognition.ts(1004,5): error TS1128: Declaration or statement expected.
+src/departments/energy/multi-language-cognition.ts(1009,67): error TS1002: Unterminated string literal.
+src/departments/energy/multi-language-cognition.ts(1012,9): error TS1005: ',' expected.
+src/departments/energy/multi-language-cognition.ts(1034,67): error TS1002: Unterminated string literal.
+src/departments/energy/multi-language-cognition.ts(1036,9): error TS1005: ',' expected.
+src/departments/energy/neural-optimizer.ts(391,55): error TS1002: Unterminated string literal.
+src/departments/energy/neural-optimizer.ts(393,9): error TS1005: ',' expected.
+src/departments/energy/neural-vault.ts(74,48): error TS1002: Unterminated string literal.
+src/departments/energy/neural-vault.ts(75,7): error TS1005: ',' expected.
+src/departments/energy/neural-vault.ts(113,28): error TS1002: Unterminated string literal.
+src/departments/energy/neural-vault.ts(360,64): error TS1002: Unterminated string literal.
+src/departments/energy/neural-vault.ts(361,5): error TS1005: ',' expected.
+src/departments/energy/neural-vault.ts(361,6): error TS1005: ')' expected.
+src/departments/energy/neural-vault.ts(415,64): error TS1002: Unterminated string literal.
+src/departments/energy/neural-vault.ts(416,5): error TS1005: ',' expected.
+src/departments/energy/neural-vault.ts(416,6): error TS1005: ')' expected.
+src/departments/finance/check-wallet.ts(22,13): error TS18026: '#!' can only be used at the start of a file.
+src/departments/finance/check-wallet.ts(22,28): error TS1005: ';' expected.
+src/departments/finance/PaymentGateway.ts(229,35): error TS1002: Unterminated string literal.
+src/departments/intelligence/decryption-engine.ts(63,59): error TS1002: Unterminated string literal.
+src/departments/intelligence/decryption-engine.ts(66,9): error TS1005: ',' expected.
+src/engines/chronos-engine-v2.ts(362,39): error TS1002: Unterminated string literal.
+src/engines/chronos-engine-v2.ts(363,7): error TS1005: ',' expected.
+src/global-nexus/index.ts(182,18): error TS1002: Unterminated string literal.
+src/global-nexus/index.ts(183,7): error TS1005: ',' expected.
+src/global-nexus/index.ts(200,31): error TS1002: Unterminated string literal.
+src/global-nexus/index.ts(201,9): error TS1005: ',' expected.
+src/global-nexus/index.ts(201,22): error TS1002: Unterminated string literal.
+src/global-nexus/index.ts(202,9): error TS1005: ',' expected.
+src/global-nexus/index.ts(203,19): error TS1002: Unterminated string literal.
+src/global-nexus/index.ts(204,9): error TS1005: ',' expected.
+src/hydrated/cognitive/index.ts(124,24): error TS1002: Unterminated string literal.
+src/hydrated/cognitive/index.ts(125,9): error TS1005: ',' expected.
+src/hydrated/cognitive/index.ts(125,51): error TS1005: ')' expected.
+src/hydrated/cognitive/index.ts(133,24): error TS1002: Unterminated string literal.
+src/hydrated/cognitive/index.ts(134,9): error TS1005: ',' expected.
+src/hydrated/cognitive/index.ts(134,56): error TS1005: ')' expected.
+src/hydrated/cognitive/index.ts(141,24): error TS1002: Unterminated string literal.
+src/hydrated/cognitive/index.ts(142,9): error TS1005: ',' expected.
+src/hydrated/cognitive/index.ts(142,89): error TS1005: ')' expected.
+src/hydrated/fortress/obfuscation-engine.ts(105,24): error TS1002: Unterminated string literal.
+src/hydrated/fortress/obfuscation-engine.ts(107,9): error TS1005: ',' expected.
+src/hydrated/fortress/obfuscation-engine.ts(145,24): error TS1002: Unterminated string literal.
+src/hydrated/fortress/obfuscation-engine.ts(146,9): error TS1005: ',' expected.
+src/hydrated/fortress/obfuscation-engine.ts(146,75): error TS1005: ')' expected.
+src/hydrated/fortress/obfuscation-engine.ts(217,26): error TS1002: Unterminated string literal.
+src/hydrated/fortress/obfuscation-engine.ts(510,20): error TS1002: Unterminated string literal.
+src/hydrated/fortress/obfuscation-engine.ts(511,5): error TS1005: ',' expected.
+src/hydrated/fortress/obfuscation-engine.ts(511,87): error TS1005: ')' expected.
+src/hydrated/ghost/biometric-jitter.ts(466,37): error TS1002: Unterminated string literal.
+src/hydrated/ghost/biometric-jitter.ts(467,9): error TS1005: ',' expected.
+src/hydrated/singularity/final-stress-test.ts(179,24): error TS1002: Unterminated string literal.
+src/hydrated/singularity/final-stress-test.ts(181,9): error TS1005: ',' expected.
+src/hydrated/singularity/final-stress-test.ts(181,30): error TS1005: ')' expected.
+src/hydrated/singularity/final-stress-test.ts(194,28): error TS1002: Unterminated string literal.
+src/hydrated/singularity/final-stress-test.ts(196,13): error TS1005: ',' expected.
+src/hydrated/singularity/final-stress-test.ts(196,38): error TS1005: ')' expected.
+src/hydrated/singularity/final-stress-test.ts(250,24): error TS1002: Unterminated string literal.
+src/hydrated/singularity/final-stress-test.ts(251,5): error TS1005: ',' expected.
+src/hydrated/singularity/final-stress-test.ts(451,24): error TS1002: Unterminated string literal.
+src/hydrated/singularity/final-stress-test.ts(452,9): error TS1005: ',' expected.
+src/hydrated/singularity/final-stress-test.ts(452,89): error TS1005: ')' expected.
+src/hydrated/singularity/final-stress-test.ts(479,28): error TS1002: Unterminated string literal.
+src/hydrated/singularity/final-stress-test.ts(480,13): error TS1005: ',' expected.
+src/hydrated/singularity/final-stress-test.ts(480,44): error TS1005: ')' expected.
+src/infrastructure/api/versioning.ts(463,66): error TS1002: Unterminated string literal.
+src/infrastructure/api/versioning.ts(464,14): error TS1005: ')' expected.
+src/infrastructure/distributed/load-balancer.ts(215,72): error TS1002: Unterminated string literal.
+src/infrastructure/distributed/load-balancer.ts(216,17): error TS1005: ',' expected.
+src/infrastructure/performance/cache.ts(332,27): error TS1002: Unterminated string literal.
+src/infrastructure/performance/cache.ts(347,24): error TS1002: Unterminated string literal.
+src/infrastructure/performance/cache.ts(362,27): error TS1002: Unterminated string literal.
+src/modules/ALPHA_FINANCE/PRODUCTS/qantum-debugger/src/qantum-debugger.ts(327,48): error TS1002: Unterminated string literal.
+src/modules/ALPHA_FINANCE/PRODUCTS/qantum-debugger/src/qantum-debugger.ts(513,11): error TS1002: Unterminated string literal.
+src/modules/GAMMA_INFRA/core/mouth/energy/entitlement.ts(335,50): error TS1005: ']' expected.
+src/modules/GAMMA_INFRA/core/mouth/energy/entitlement.ts(335,57): error TS1005: ',' expected.
+src/modules/GAMMA_INFRA/core/mouth/energy/entitlement.ts(335,59): error TS1002: Unterminated string literal.
+src/modules/GAMMA_INFRA/core/mouth/energy/entitlement.ts(336,5): error TS1005: ':' expected.
+src/modules/GAMMA_INFRA/core/mouth/energy/entitlement.ts(336,46): error TS1005: ',' expected.
+src/modules/GAMMA_INFRA/core/mouth/energy/entitlement.ts(336,49): error TS1005: ',' expected.
+src/modules/GAMMA_INFRA/core/mouth/energy/entitlement.ts(336,51): error TS1002: Unterminated string literal.
+src/modules/GAMMA_INFRA/core/mouth/energy/entitlement.ts(337,47): error TS1005: ']' expected.
+src/modules/GAMMA_INFRA/core/mouth/energy/entitlement.ts(337,51): error TS1005: ',' expected.
+src/modules/GAMMA_INFRA/core/mouth/energy/entitlement.ts(337,53): error TS1002: Unterminated string literal.
+src/modules/GAMMA_INFRA/core/mouth/energy/entitlement.ts(338,53): error TS1005: ']' expected.
+src/modules/GAMMA_INFRA/core/mouth/energy/entitlement.ts(338,63): error TS1005: ',' expected.
+src/modules/GAMMA_INFRA/core/mouth/energy/entitlement.ts(338,65): error TS1002: Unterminated string literal.
+src/modules/GAMMA_INFRA/core/mouth/energy/entitlement.ts(339,3): error TS1005: ',' expected.
+src/modules/GAMMA_INFRA/core/mouth/energy/entitlement.ts(341,37): error TS1005: ']' expected.
+src/modules/GAMMA_INFRA/core/mouth/energy/entitlement.ts(341,37): error TS1434: Unexpected keyword or identifier.
+src/modules/GAMMA_INFRA/core/mouth/energy/entitlement.ts(341,46): error TS1002: Unterminated string literal.
+src/modules/hydrated/cognitive/index.ts(124,24): error TS1002: Unterminated string literal.
+src/modules/hydrated/cognitive/index.ts(125,9): error TS1005: ',' expected.
+src/modules/hydrated/cognitive/index.ts(125,51): error TS1005: ')' expected.
+src/modules/hydrated/cognitive/index.ts(133,24): error TS1002: Unterminated string literal.
+src/modules/hydrated/cognitive/index.ts(134,9): error TS1005: ',' expected.
+src/modules/hydrated/cognitive/index.ts(134,56): error TS1005: ')' expected.
+src/modules/hydrated/cognitive/index.ts(141,24): error TS1002: Unterminated string literal.
+src/modules/hydrated/cognitive/index.ts(142,9): error TS1005: ',' expected.
+src/modules/hydrated/cognitive/index.ts(142,89): error TS1005: ')' expected.
+src/modules/hydrated/fortress/obfuscation-engine.ts(105,24): error TS1002: Unterminated string literal.
+src/modules/hydrated/fortress/obfuscation-engine.ts(107,9): error TS1005: ',' expected.
+src/modules/hydrated/fortress/obfuscation-engine.ts(145,24): error TS1002: Unterminated string literal.
+src/modules/hydrated/fortress/obfuscation-engine.ts(146,9): error TS1005: ',' expected.
+src/modules/hydrated/fortress/obfuscation-engine.ts(146,75): error TS1005: ')' expected.
+src/modules/hydrated/fortress/obfuscation-engine.ts(217,26): error TS1002: Unterminated string literal.
+src/modules/hydrated/fortress/obfuscation-engine.ts(510,20): error TS1002: Unterminated string literal.
+src/modules/hydrated/fortress/obfuscation-engine.ts(511,5): error TS1005: ',' expected.
+src/modules/hydrated/fortress/obfuscation-engine.ts(511,87): error TS1005: ')' expected.
+src/modules/hydrated/ghost/biometric-jitter.ts(466,37): error TS1002: Unterminated string literal.
+src/modules/hydrated/ghost/biometric-jitter.ts(467,9): error TS1005: ',' expected.
+src/modules/hydrated/singularity/final-stress-test.ts(179,24): error TS1002: Unterminated string literal.
+src/modules/hydrated/singularity/final-stress-test.ts(181,9): error TS1005: ',' expected.
+src/modules/hydrated/singularity/final-stress-test.ts(181,30): error TS1005: ')' expected.
+src/modules/hydrated/singularity/final-stress-test.ts(194,28): error TS1002: Unterminated string literal.
+src/modules/hydrated/singularity/final-stress-test.ts(196,13): error TS1005: ',' expected.
+src/modules/hydrated/singularity/final-stress-test.ts(196,38): error TS1005: ')' expected.
+src/modules/hydrated/singularity/final-stress-test.ts(250,24): error TS1002: Unterminated string literal.
+src/modules/hydrated/singularity/final-stress-test.ts(251,5): error TS1005: ',' expected.
+src/modules/hydrated/singularity/final-stress-test.ts(451,24): error TS1002: Unterminated string literal.
+src/modules/hydrated/singularity/final-stress-test.ts(452,9): error TS1005: ',' expected.
+src/modules/hydrated/singularity/final-stress-test.ts(452,89): error TS1005: ')' expected.
+src/modules/hydrated/singularity/final-stress-test.ts(479,28): error TS1002: Unterminated string literal.
+src/modules/hydrated/singularity/final-stress-test.ts(480,13): error TS1005: ',' expected.
+src/modules/hydrated/singularity/final-stress-test.ts(480,44): error TS1005: ')' expected.
+src/operations/ghost/proxy-chain.ts(216,77): error TS1002: Unterminated string literal.
+src/operations/ghost/proxy-chain.ts(217,9): error TS1005: ',' expected.
+src/operations/ghost/proxy-chain.ts(538,17): error TS1002: Unterminated string literal.
+src/operations/strength/core.test.ts(155,28): error TS1002: Unterminated string literal.
+src/operations/swarm/SwarmAgents.ts(231,73): error TS1002: Unterminated string literal.
+src/operations/swarm/SwarmAgents.ts(232,21): error TS1005: ',' expected.
+src/pinecone-bridge/src/cli.ts(8,1): error TS18026: '#!' can only be used at the start of a file.
+src/pinecone-bridge/src/cli.ts(8,16): error TS1005: ';' expected.
+src/pinecone-bridge/src/console/QAntumConsole.ts(8,1): error TS18026: '#!' can only be used at the start of a file.
+src/pinecone-bridge/src/console/QAntumConsole.ts(8,16): error TS1005: ';' expected.
+src/pinecone-bridge/src/daemon/MegaSupremeDaemon.ts(8,1): error TS18026: '#!' can only be used at the start of a file.
+src/pinecone-bridge/src/daemon/MegaSupremeDaemon.ts(8,16): error TS1005: ';' expected.
+src/pinecone-bridge/src/scripts/auto-watch.ts(8,1): error TS18026: '#!' can only be used at the start of a file.
+src/pinecone-bridge/src/scripts/auto-watch.ts(8,16): error TS1005: ';' expected.
+src/pinecone-bridge/src/scripts/ecosystem-health-monitor.ts(8,1): error TS18026: '#!' can only be used at the start of a file.
+src/pinecone-bridge/src/scripts/ecosystem-health-monitor.ts(8,16): error TS1005: ';' expected.
+src/pinecone-bridge/src/scripts/vector-health.ts(8,1): error TS18026: '#!' can only be used at the start of a file.
+src/pinecone-bridge/src/scripts/vector-health.ts(8,16): error TS1005: ';' expected.
+src/pinecone-bridge/src/scripts/vector-sync.ts(8,1): error TS18026: '#!' can only be used at the start of a file.
+src/pinecone-bridge/src/scripts/vector-sync.ts(8,16): error TS1005: ';' expected.
+src/plugins/plugin.ts(485,21): error TS1002: Unterminated string literal.
+src/plugins/plugin.ts(486,13): error TS1005: ',' expected.
+src/presentation/visual/engine.ts(380,69): error TS1002: Unterminated string literal.
+src/presentation/visual/engine.ts(381,14): error TS1005: ')' expected.
+src/presentation/visual/snapshot.ts(360,27): error TS1002: Unterminated string literal.
+src/presentation/visual/snapshot.ts(420,29): error TS1002: Unterminated string literal.
+src/presentation/visual/snapshot.ts(447,37): error TS1002: Unterminated string literal.
+src/presentation/visual/snapshot.ts(468,47): error TS1002: Unterminated string literal.
+src/presentation/visual/snapshot.ts(469,45): error TS1002: Unterminated string literal.
+src/reporter/index.ts(37,31): error TS1002: Unterminated string literal.
+src/reporter/index.ts(351,24): error TS1002: Unterminated string literal.
+src/security_core/src/docs/CaseStudyGenerator.ts(771,16): error TS1002: Unterminated string literal.
+src/security_core/src/security/encryption.ts(192,28): error TS1002: Unterminated string literal.
+src/security_core/src/security/encryption.ts(193,17): error TS1005: ',' expected.
+src/security_core/src/security/GlobalThreatIntel.ts(1018,22): error TS1002: Unterminated string literal.
+src/security_core/src/security/GlobalThreatIntel.ts(1019,7): error TS1005: ',' expected.
+src/security_core/src/security/GlobalThreatIntel.ts(1028,31): error TS1002: Unterminated string literal.
+src/security_core/src/security/GlobalThreatIntel.ts(1029,9): error TS1005: ',' expected.
+src/security_core/src/security/GlobalThreatIntel.ts(1029,22): error TS1002: Unterminated string literal.
+src/security_core/src/security/GlobalThreatIntel.ts(1030,9): error TS1005: ',' expected.
+src/security_core/src/security/validator.ts(57,21): error TS1002: Unterminated string literal.
+src/security_core/src/security/validator.ts(58,13): error TS1005: ',' expected.
+src/security_core/src/security/validator.ts(68,21): error TS1002: Unterminated string literal.
+src/security_core/src/security/validator.ts(69,13): error TS1005: ',' expected.
+src/security_core/src/security/validator.ts(79,21): error TS1002: Unterminated string literal.
+src/security_core/src/security/validator.ts(80,13): error TS1005: ',' expected.
+src/security_core/src/security/validator.ts(103,21): error TS1002: Unterminated string literal.
+src/security_core/src/security/validator.ts(104,13): error TS1005: ',' expected.
+src/security_core/src/security/validator.ts(120,25): error TS1002: Unterminated string literal.
+src/security_core/src/security/validator.ts(121,17): error TS1005: ',' expected.
+src/security_core/src/security/validator.ts(131,21): error TS1002: Unterminated string literal.
+src/security_core/src/security/validator.ts(132,13): error TS1005: ',' expected.
+src/security_core/src/security/validator.ts(142,21): error TS1002: Unterminated string literal.
+src/security_core/src/security/validator.ts(143,13): error TS1005: ',' expected.
+src/security_core/src/security/validator.ts(153,21): error TS1002: Unterminated string literal.
+src/security_core/src/security/validator.ts(154,13): error TS1005: ',' expected.
+src/security_core/src/security/validator.ts(162,21): error TS1002: Unterminated string literal.
+src/security_core/src/security/validator.ts(163,13): error TS1005: ',' expected.
+src/security_core/src/security/validator.ts(172,21): error TS1002: Unterminated string literal.
+src/security_core/src/security/validator.ts(173,13): error TS1005: ',' expected.
+src/security_core/src/security/validator.ts(183,21): error TS1002: Unterminated string literal.
+src/security_core/src/security/validator.ts(184,13): error TS1005: ',' expected.
+src/security_core/src/security/validator.ts(196,25): error TS1002: Unterminated string literal.
+src/security_core/src/security/validator.ts(197,17): error TS1005: ',' expected.
+src/security_core/src/security/validator.ts(207,21): error TS1002: Unterminated string literal.
+src/security_core/src/security/validator.ts(208,13): error TS1005: ',' expected.
+src/security_core/src/security/validator.ts(218,21): error TS1002: Unterminated string literal.
+src/security_core/src/security/validator.ts(219,13): error TS1005: ',' expected.
+src/security_core/src/security/validator.ts(246,45): error TS1002: Unterminated string literal.
+src/security_core/src/security/validator.ts(247,5): error TS1005: ',' expected.
+src/security_core/src/security/validator.ts(647,29): error TS1002: Unterminated string literal.
+src/security_core/src/security/validator.ts(648,21): error TS1005: ',' expected.
+src/sovereign-market/index.ts(217,65): error TS1002: Unterminated string literal.
+src/sovereign-market/index.ts(218,5): error TS1005: ',' expected.
+src/synthesis/index.ts(228,55): error TS1002: Unterminated string literal.
+src/synthesis/index.ts(242,18): error TS1005: ',' expected.
+src/synthesis/index.ts(243,15): error TS1005: ',' expected.
+src/synthesis/index.ts(244,17): error TS1005: ',' expected.
+src/synthesis/index.ts(245,6): error TS1005: ';' expected.
+src/synthesis/index.ts(246,13): error TS1005: ':' expected.
+src/synthesis/index.ts(246,33): error TS1005: ',' expected.
+src/synthesis/index.ts(247,15): error TS1005: ':' expected.
+src/synthesis/index.ts(247,62): error TS1005: ',' expected.
+src/synthesis/index.ts(255,16): error TS1005: ';' expected.
+src/synthesis/index.ts(257,25): error TS1011: An element access expression should take an argument.
+src/synthesis/index.ts(273,5): error TS1128: Declaration or statement expected.
+src/synthesis/visual-ghosting.ts(404,24): error TS1002: Unterminated string literal.
+../src/accessibility/index.ts(141,20): error TS1002: Unterminated string literal.
+../src/accessibility/index.ts(143,9): error TS1005: ',' expected.
+../src/accessibility/index.ts(220,15): error TS1002: Unterminated string literal.
+../src/accessibility/index.ts(223,15): error TS1002: Unterminated string literal.
+../src/accessibility/index.ts(224,13): error TS1005: ',' expected.
+../src/accessibility/index.ts(227,15): error TS1002: Unterminated string literal.
+../src/accessibility/index.ts(233,15): error TS1002: Unterminated string literal.
+../src/accessibility/index.ts(235,14): error TS1002: Unterminated string literal.
+../src/accessibility/index.ts(243,18): error TS1002: Unterminated string literal.
+../src/accessibility/index.ts(251,22): error TS1002: Unterminated string literal.
+../src/accessibility/index.ts(258,26): error TS1002: Unterminated string literal.
+../src/api/versioning.ts(453,66): error TS1002: Unterminated string literal.
+../src/api/versioning.ts(454,14): error TS1005: ')' expected.
+../src/config/loader.ts(237,36): error TS1002: Unterminated string literal.
+../src/config/loader.ts(238,9): error TS1005: ',' expected.
+../src/config/loader.ts(251,65): error TS1002: Unterminated string literal.
+../src/config/loader.ts(252,17): error TS1005: ',' expected.
+../src/config/loader.ts(342,75): error TS1002: Unterminated string literal.
+../src/data/faker.ts(354,22): error TS1002: Unterminated string literal.
+../src/data/faker.ts(371,86): error TS1002: Unterminated string literal.
+../src/data/faker.ts(372,5): error TS1005: ',' expected.
+../src/data/faker.ts(388,91): error TS1002: Unterminated string literal.
+../src/data/faker.ts(389,5): error TS1005: ',' expected.
+../src/distributed/load-balancer.ts(207,72): error TS1002: Unterminated string literal.
+../src/distributed/load-balancer.ts(208,17): error TS1005: ',' expected.
+../src/ghost/proxy-chain.ts(206,77): error TS1002: Unterminated string literal.
+../src/ghost/proxy-chain.ts(207,9): error TS1005: ',' expected.
+../src/ghost/proxy-chain.ts(506,17): error TS1002: Unterminated string literal.
+../src/modules/hydrated/cognitive/index.ts(122,24): error TS1002: Unterminated string literal.
+../src/modules/hydrated/cognitive/index.ts(123,9): error TS1005: ',' expected.
+../src/modules/hydrated/cognitive/index.ts(123,51): error TS1005: ')' expected.
+../src/modules/hydrated/cognitive/index.ts(130,24): error TS1002: Unterminated string literal.
+../src/modules/hydrated/cognitive/index.ts(131,9): error TS1005: ',' expected.
+../src/modules/hydrated/cognitive/index.ts(131,56): error TS1005: ')' expected.
+../src/modules/hydrated/cognitive/index.ts(138,24): error TS1002: Unterminated string literal.
+../src/modules/hydrated/cognitive/index.ts(139,9): error TS1005: ',' expected.
+../src/modules/hydrated/cognitive/index.ts(139,89): error TS1005: ')' expected.
+../src/modules/hydrated/ghost/biometric-jitter.ts(458,37): error TS1002: Unterminated string literal.
+../src/modules/hydrated/ghost/biometric-jitter.ts(459,9): error TS1005: ',' expected.
+../src/modules/hydrated/singularity/final-stress-test.ts(178,24): error TS1002: Unterminated string literal.
+../src/modules/hydrated/singularity/final-stress-test.ts(180,9): error TS1005: ',' expected.
+../src/modules/hydrated/singularity/final-stress-test.ts(180,30): error TS1005: ')' expected.
+../src/modules/hydrated/singularity/final-stress-test.ts(193,28): error TS1002: Unterminated string literal.
+../src/modules/hydrated/singularity/final-stress-test.ts(195,13): error TS1005: ',' expected.
+../src/modules/hydrated/singularity/final-stress-test.ts(195,38): error TS1005: ')' expected.
+../src/modules/hydrated/singularity/final-stress-test.ts(245,24): error TS1002: Unterminated string literal.
+../src/modules/hydrated/singularity/final-stress-test.ts(246,5): error TS1005: ',' expected.
+../src/modules/hydrated/singularity/final-stress-test.ts(438,24): error TS1002: Unterminated string literal.
+../src/modules/hydrated/singularity/final-stress-test.ts(439,9): error TS1005: ',' expected.
+../src/modules/hydrated/singularity/final-stress-test.ts(439,89): error TS1005: ')' expected.
+../src/modules/hydrated/singularity/final-stress-test.ts(466,28): error TS1002: Unterminated string literal.
+../src/modules/hydrated/singularity/final-stress-test.ts(467,13): error TS1005: ',' expected.
+../src/modules/hydrated/singularity/final-stress-test.ts(467,44): error TS1005: ')' expected.
+../src/performance/cache.ts(315,27): error TS1002: Unterminated string literal.
+../src/performance/cache.ts(329,24): error TS1002: Unterminated string literal.
+../src/performance/cache.ts(343,27): error TS1002: Unterminated string literal.
+../src/plugins/plugin.ts(449,21): error TS1002: Unterminated string literal.
+../src/plugins/plugin.ts(450,13): error TS1005: ',' expected.
+../src/reporter/index.ts(37,31): error TS1002: Unterminated string literal.
+../src/reporter/index.ts(330,24): error TS1002: Unterminated string literal.
+../src/visual/engine.ts(362,69): error TS1002: Unterminated string literal.
+../src/visual/engine.ts(363,14): error TS1005: ')' expected.
+../src/visual/snapshot.ts(348,27): error TS1002: Unterminated string literal.
+../src/visual/snapshot.ts(403,29): error TS1002: Unterminated string literal.
+../src/visual/snapshot.ts(428,37): error TS1002: Unterminated string literal.
+../src/visual/snapshot.ts(447,47): error TS1002: Unterminated string literal.
+../src/visual/snapshot.ts(448,45): error TS1002: Unterminated string literal.

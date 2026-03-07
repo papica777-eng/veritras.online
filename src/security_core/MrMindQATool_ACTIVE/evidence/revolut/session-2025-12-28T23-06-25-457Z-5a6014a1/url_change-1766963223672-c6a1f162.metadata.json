@@ -1,0 +1,75 @@
+{
+  "id": "url_change-1766963223672-c6a1f162",
+  "timestamp": "2025-12-28T23:07:03.911Z",
+  "eventType": "URL_CHANGE",
+  "url": "https://app.revolut.com/",
+  "sessionId": "session-2025-12-28T23-06-25-457Z-5a6014a1",
+  "severity": "medium",
+  "description": "[AUTO] URL_CHANGE: {\"url\":\"https://app.revolut.com/api/me\"}",
+  "maskingApplied": false,
+  "maskedFields": [],
+  "checksum": "74396868a186d9dcc9badd67ba4584fa5406c856c482f5cabcdf521debb9c8bc",
+  "captureMode": "safe-hunter",
+  "browserInfo": {
+    "name": "Chromium",
+    "version": "1.0.0-QAntum",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "deviceScaleFactor": 1
+  },
+  "networkContext": {
+    "cookies": [
+      {
+        "name": "rwa_geo",
+        "domain": "app.revolut.com"
+      },
+      {
+        "name": "__cf_bm",
+        "domain": ".revolut.com"
+      },
+      {
+        "name": "_cfuvid",
+        "domain": ".revolut.com"
+      },
+      {
+        "name": "revo_hardware_id",
+        "domain": ".revolut.com"
+      },
+      {
+        "name": "revo_device_id",
+        "domain": ".revolut.com"
+      },
+      {
+        "name": "revo_theme_mode",
+        "domain": ".revolut.com"
+      },
+      {
+        "name": "revo_theme_background",
+        "domain": ".revolut.com"
+      },
+      {
+        "name": "sso_country_code",
+        "domain": "sso.revolut.com"
+      },
+      {
+        "name": "__cf_bm",
+        "domain": ".hcaptcha.com"
+      },
+      {
+        "name": "__Host-GAPS",
+        "domain": "accounts.google.com"
+      },
+      {
+        "name": "OTZ",
+        "domain": "accounts.google.com"
+      },
+      {
+        "name": "__Secure-ENID",
+        "domain": ".google.com"
+      }
+    ]
+  }
+}

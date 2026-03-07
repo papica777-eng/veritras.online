@@ -1,0 +1,11 @@
+{
+    "name": "ChronosEngine SDK",
+    "version": "1.0.0-QAntum",
+    "type": "State Management",
+    "description": "Time-Travel State Machine for reverting critical system errors.",
+    "price_model": "License (starts at €10k/year)",
+    "files": [
+        "core/Engine.ts"
+    ],
+    "status": "READY"
+}

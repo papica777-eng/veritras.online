@@ -1,0 +1,75 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: QANTUM-mind
+  labels:
+    app: QANTUM-mind
+    version: "1.0.0-QAntum"
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: QANTUM-mind
+  template:
+    metadata:
+      labels:
+        app: QANTUM-mind
+        version: "1.0.0-QAntum"
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "3000"
+        prometheus.io/path: "/metrics"
+    spec:
+      containers:
+        - name: QANTUM-mind
+          image: QANTUM-mind:1.0.0-QAntum
+          ports:
+            - containerPort: 3000
+              name: http
+          env:
+            - name: NODE_ENV
+              value: production
+            - name: QANTUM_MIND_VERSION
+              value: 1.0.0-QAntum
+          resources:
+            requests:
+              memory: "1Gi"
+              cpu: "500m"
+            limits:
+              memory: "4096Mi"
+              cpu: "2000mm"
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 3000
+            initialDelaySeconds: 30
+            periodSeconds: 30
+            timeoutSeconds: 10
+            failureThreshold: 3
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 3000
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            timeoutSeconds: 5
+            failureThreshold: 3
+          volumeMounts:
+            - name: screenshots
+              mountPath: /app/screenshots
+            - name: reports
+              mountPath: /app/reports
+      volumes:
+        - name: screenshots
+          emptyDir: {}
+        - name: reports
+          emptyDir: {}
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchLabels:
+                    app: QANTUM-mind
+                topologyKey: kubernetes.io/hostname

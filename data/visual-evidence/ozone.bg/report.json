@@ -1,0 +1,43 @@
+{
+  "scan": {
+    "domain": "ozone.bg",
+    "score": 16,
+    "grade": "F",
+    "ttfb": 147,
+    "missingHeaders": [
+      "strict-transport-security",
+      "content-security-policy",
+      "x-frame-options",
+      "x-content-type-options",
+      "x-xss-protection",
+      "referrer-policy",
+      "permissions-policy"
+    ],
+    "issues": [
+      "Missing: strict-transport-security",
+      "Missing: content-security-policy",
+      "Missing: x-frame-options",
+      "Missing: x-content-type-options",
+      "Missing: x-xss-protection",
+      "Missing: referrer-policy",
+      "Missing: permissions-policy"
+    ],
+    "sslDaysLeft": 262,
+    "sslIssuer": "GlobalSign nv-sa"
+  },
+  "target": {
+    "domain": "ozone.bg",
+    "email": "privacy@ozone.bg",
+    "company": "Ozone",
+    "industry": "E-commerce"
+  },
+  "evidence": {
+    "screenshotFull": "C:\\Users\\papic\\Desktop\\ALL-POSITIONS\\Blockchain\\QAntum-1\\data\\visual-evidence\\ozone.bg\\screenshots\\desktop.png",
+    "screenshotMobile": "C:\\Users\\papic\\Desktop\\ALL-POSITIONS\\Blockchain\\QAntum-1\\data\\visual-evidence\\ozone.bg\\screenshots\\mobile.png",
+    "screenshotHeaders": "C:\\Users\\papic\\Desktop\\ALL-POSITIONS\\Blockchain\\QAntum-1\\data\\visual-evidence\\ozone.bg\\screenshots\\missing-headers.png",
+    "videoPath": "C:\\Users\\papic\\Desktop\\ALL-POSITIONS\\Blockchain\\QAntum-1\\data\\visual-evidence\\ozone.bg\\134524c6b1b181ce01399d5ce98fcd2d.webm",
+    "videoSizeKb": 906,
+    "video": true
+  },
+  "ts": "2026-02-27T09:26:33.983Z"
+}

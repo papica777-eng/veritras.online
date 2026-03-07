@@ -1,0 +1,1223 @@
+{
+  "id": "sim-80804a750ead2897",
+  "startTime": 1772406120874,
+  "currentTick": 3000,
+  "timeMultiplier": 120,
+  "loadMultiplier": 50,
+  "workers": [
+    {
+      "id": "shadow-000",
+      "state": "idle",
+      "transactions": 145,
+      "errors": 7,
+      "lastActivity": 1772406445619,
+      "metrics": {
+        "avgResponseTime": 221.68621249693018,
+        "successRate": 0.9616174759559889,
+        "detectionScore": 0.18186900088365573
+      }
+    },
+    {
+      "id": "shadow-001",
+      "state": "idle",
+      "transactions": 146,
+      "errors": 4,
+      "lastActivity": 1772406441411,
+      "metrics": {
+        "avgResponseTime": 246.62159570187808,
+        "successRate": 0.9574519824341452,
+        "detectionScore": 0.13790330968113843
+      }
+    },
+    {
+      "id": "shadow-002",
+      "state": "idle",
+      "transactions": 161,
+      "errors": 1,
+      "lastActivity": 1772406445955,
+      "metrics": {
+        "avgResponseTime": 263.09383211325445,
+        "successRate": 0.9822531820278104,
+        "detectionScore": 0.06458596446505821
+      }
+    },
+    {
+      "id": "shadow-003",
+      "state": "idle",
+      "transactions": 146,
+      "errors": 0,
+      "lastActivity": 1772406444848,
+      "metrics": {
+        "avgResponseTime": 206.22491382582984,
+        "successRate": 0.9932784487175688,
+        "detectionScore": 0.11664685023598462
+      }
+    },
+    {
+      "id": "shadow-004",
+      "state": "idle",
+      "transactions": 166,
+      "errors": 6,
+      "lastActivity": 1772406446059,
+      "metrics": {
+        "avgResponseTime": 228.03433500823812,
+        "successRate": 0.9565378172459281,
+        "detectionScore": 0.1228761752571362
+      }
+    },
+    {
+      "id": "shadow-005",
+      "state": "idle",
+      "transactions": 144,
+      "errors": 0,
+      "lastActivity": 1772406446059,
+      "metrics": {
+        "avgResponseTime": 255.14735598998493,
+        "successRate": 0.9885993630431453,
+        "detectionScore": 0.1109841226434818
+      }
+    },
+    {
+      "id": "shadow-006",
+      "state": "idle",
+      "transactions": 139,
+      "errors": 2,
+      "lastActivity": 1772406443883,
+      "metrics": {
+        "avgResponseTime": 273.7393455906774,
+        "successRate": 0.9628796364949002,
+        "detectionScore": 0.1457108518353006
+      }
+    },
+    {
+      "id": "shadow-007",
+      "state": "idle",
+      "transactions": 112,
+      "errors": 8,
+      "lastActivity": 1772406438426,
+      "metrics": {
+        "avgResponseTime": 218.8028642335468,
+        "successRate": 0.9545765211653124,
+        "detectionScore": 0.13697570605310586
+      }
+    },
+    {
+      "id": "shadow-008",
+      "state": "idle",
+      "transactions": 128,
+      "errors": 6,
+      "lastActivity": 1772406443457,
+      "metrics": {
+        "avgResponseTime": 271.68859088296836,
+        "successRate": 0.958631815108145,
+        "detectionScore": 0.15199512606242366
+      }
+    },
+    {
+      "id": "shadow-009",
+      "state": "idle",
+      "transactions": 147,
+      "errors": 12,
+      "lastActivity": 1772406443243,
+      "metrics": {
+        "avgResponseTime": 201.69875181447335,
+        "successRate": 0.9537584952758157,
+        "detectionScore": 0.16250412588521754
+      }
+    },
+    {
+      "id": "shadow-010",
+      "state": "idle",
+      "transactions": 160,
+      "errors": 8,
+      "lastActivity": 1772406446059,
+      "metrics": {
+        "avgResponseTime": 218.37140421535543,
+        "successRate": 0.9602810532058985,
+        "detectionScore": 0.17630944613516578
+      }
+    },
+    {
+      "id": "shadow-011",
+      "state": "idle",
+      "transactions": 150,
+      "errors": 1,
+      "lastActivity": 1772406445299,
+      "metrics": {
+        "avgResponseTime": 222.32938869977082,
+        "successRate": 0.9802416285506033,
+        "detectionScore": 0.06659699400810815
+      }
+    },
+    {
+      "id": "shadow-012",
+      "state": "idle",
+      "transactions": 132,
+      "errors": 1,
+      "lastActivity": 1772406443672,
+      "metrics": {
+        "avgResponseTime": 202.65774206620307,
+        "successRate": 0.9851178803494873,
+        "detectionScore": 0.10813433956175324
+      }
+    },
+    {
+      "id": "shadow-013",
+      "state": "idle",
+      "transactions": 143,
+      "errors": 3,
+      "lastActivity": 1772406444626,
+      "metrics": {
+        "avgResponseTime": 237.3872660442735,
+        "successRate": 0.9682854392167469,
+        "detectionScore": 0.11763258035857481
+      }
+    },
+    {
+      "id": "shadow-014",
+      "state": "idle",
+      "transactions": 133,
+      "errors": 4,
+      "lastActivity": 1772406441831,
+      "metrics": {
+        "avgResponseTime": 228.8164696396986,
+        "successRate": 0.9583428117649219,
+        "detectionScore": 0.13616264050130455
+      }
+    },
+    {
+      "id": "shadow-015",
+      "state": "idle",
+      "transactions": 146,
+      "errors": 0,
+      "lastActivity": 1772406445619,
+      "metrics": {
+        "avgResponseTime": 258.56809663439543,
+        "successRate": 0.994469681960314,
+        "detectionScore": 0.04427048090778423
+      }
+    },
+    {
+      "id": "shadow-016",
+      "state": "idle",
+      "transactions": 165,
+      "errors": 1,
+      "lastActivity": 1772406444737,
+      "metrics": {
+        "avgResponseTime": 276.47962654892655,
+        "successRate": 0.9785143026961958,
+        "detectionScore": 0.07620580869138655
+      }
+    },
+    {
+      "id": "shadow-017",
+      "state": "idle",
+      "transactions": 164,
+      "errors": 1,
+      "lastActivity": 1772406444523,
+      "metrics": {
+        "avgResponseTime": 256.5254267336246,
+        "successRate": 0.9757241432478457,
+        "detectionScore": 0.09470876864690753
+      }
+    },
+    {
+      "id": "shadow-018",
+      "state": "idle",
+      "transactions": 137,
+      "errors": 0,
+      "lastActivity": 1772406445299,
+      "metrics": {
+        "avgResponseTime": 280.7967086580107,
+        "successRate": 0.9911260117772033,
+        "detectionScore": 0.09365582792447913
+      }
+    },
+    {
+      "id": "shadow-019",
+      "state": "idle",
+      "transactions": 145,
+      "errors": 1,
+      "lastActivity": 1772406443985,
+      "metrics": {
+        "avgResponseTime": 282.19309530596996,
+        "successRate": 0.9916720722101565,
+        "detectionScore": 0.1246623251284372
+      }
+    },
+    {
+      "id": "shadow-020",
+      "state": "idle",
+      "transactions": 153,
+      "errors": 6,
+      "lastActivity": 1772406444197,
+      "metrics": {
+        "avgResponseTime": 224.03942395424338,
+        "successRate": 0.9692921198767925,
+        "detectionScore": 0.1693646116783048
+      }
+    },
+    {
+      "id": "shadow-021",
+      "state": "idle",
+      "transactions": 158,
+      "errors": 0,
+      "lastActivity": 1772406444197,
+      "metrics": {
+        "avgResponseTime": 200.60776116299655,
+        "successRate": 0.980880203188357,
+        "detectionScore": 0.08481941912035382
+      }
+    },
+    {
+      "id": "shadow-022",
+      "state": "idle",
+      "transactions": 142,
+      "errors": 0,
+      "lastActivity": 1772406444523,
+      "metrics": {
+        "avgResponseTime": 257.3893945958549,
+        "successRate": 0.9950795754191596,
+        "detectionScore": 0.06676242160944748
+      }
+    },
+    {
+      "id": "shadow-023",
+      "state": "idle",
+      "transactions": 131,
+      "errors": 5,
+      "lastActivity": 1772406441089,
+      "metrics": {
+        "avgResponseTime": 298.3161367810477,
+        "successRate": 0.9534838990587693,
+        "detectionScore": 0.12837017739011303
+      }
+    },
+    {
+      "id": "shadow-024",
+      "state": "idle",
+      "transactions": 174,
+      "errors": 0,
+      "lastActivity": 1772406444086,
+      "metrics": {
+        "avgResponseTime": 287.625154613389,
+        "successRate": 0.9930063077938093,
+        "detectionScore": 0.0884956809916394
+      }
+    },
+    {
+      "id": "shadow-025",
+      "state": "idle",
+      "transactions": 148,
+      "errors": 3,
+      "lastActivity": 1772406445955,
+      "metrics": {
+        "avgResponseTime": 206.46239067269795,
+        "successRate": 0.9812497722271185,
+        "detectionScore": 0.1358649961420384
+      }
+    },
+    {
+      "id": "shadow-026",
+      "state": "idle",
+      "transactions": 132,
+      "errors": 4,
+      "lastActivity": 1772406440987,
+      "metrics": {
+        "avgResponseTime": 202.06301250455212,
+        "successRate": 0.964371265852496,
+        "detectionScore": 0.12387113398770735
+      }
+    },
+    {
+      "id": "shadow-027",
+      "state": "idle",
+      "transactions": 146,
+      "errors": 1,
+      "lastActivity": 1772406445512,
+      "metrics": {
+        "avgResponseTime": 276.1792191344447,
+        "successRate": 0.9840542094096224,
+        "detectionScore": 0.11024496353447802
+      }
+    },
+    {
+      "id": "shadow-028",
+      "state": "idle",
+      "transactions": 128,
+      "errors": 6,
+      "lastActivity": 1772406445955,
+      "metrics": {
+        "avgResponseTime": 288.30936581722517,
+        "successRate": 0.9472749196597797,
+        "detectionScore": 0.13571834372665587
+      }
+    },
+    {
+      "id": "shadow-029",
+      "state": "idle",
+      "transactions": 143,
+      "errors": 1,
+      "lastActivity": 1772406445512,
+      "metrics": {
+        "avgResponseTime": 232.91324592062693,
+        "successRate": 0.9827796601555142,
+        "detectionScore": 0.07565456064412261
+      }
+    },
+    {
+      "id": "shadow-030",
+      "state": "idle",
+      "transactions": 137,
+      "errors": 7,
+      "lastActivity": 1772406444419,
+      "metrics": {
+        "avgResponseTime": 269.16897743485004,
+        "successRate": 0.9470058080932187,
+        "detectionScore": 0.11879980479248795
+      }
+    },
+    {
+      "id": "shadow-031",
+      "state": "idle",
+      "transactions": 128,
+      "errors": 1,
+      "lastActivity": 1772406445845,
+      "metrics": {
+        "avgResponseTime": 241.76436969363374,
+        "successRate": 0.9848854056152776,
+        "detectionScore": 0.04601642838331812
+      }
+    },
+    {
+      "id": "shadow-032",
+      "state": "idle",
+      "transactions": 160,
+      "errors": 3,
+      "lastActivity": 1772406444737,
+      "metrics": {
+        "avgResponseTime": 252.4890701000908,
+        "successRate": 0.9792769568697776,
+        "detectionScore": 0.093398815853952
+      }
+    },
+    {
+      "id": "shadow-033",
+      "state": "idle",
+      "transactions": 123,
+      "errors": 4,
+      "lastActivity": 1772406443354,
+      "metrics": {
+        "avgResponseTime": 249.71755237235948,
+        "successRate": 0.9684885314309929,
+        "detectionScore": 0.07679979380697138
+      }
+    },
+    {
+      "id": "shadow-034",
+      "state": "idle",
+      "transactions": 154,
+      "errors": 6,
+      "lastActivity": 1772406443457,
+      "metrics": {
+        "avgResponseTime": 241.74937093175757,
+        "successRate": 0.9590108820817878,
+        "detectionScore": 0.11138497968985925
+      }
+    },
+    {
+      "id": "shadow-035",
+      "state": "idle",
+      "transactions": 178,
+      "errors": 1,
+      "lastActivity": 1772406443672,
+      "metrics": {
+        "avgResponseTime": 225.07804804607383,
+        "successRate": 0.9821512151651568,
+        "detectionScore": 0.09371172867693718
+      }
+    },
+    {
+      "id": "shadow-036",
+      "state": "idle",
+      "transactions": 134,
+      "errors": 0,
+      "lastActivity": 1772406443985,
+      "metrics": {
+        "avgResponseTime": 211.63185633369156,
+        "successRate": 0.9947435476001775,
+        "detectionScore": 0.05600794126667729
+      }
+    },
+    {
+      "id": "shadow-037",
+      "state": "idle",
+      "transactions": 140,
+      "errors": 6,
+      "lastActivity": 1772406445619,
+      "metrics": {
+        "avgResponseTime": 215.07423610500044,
+        "successRate": 0.9475772673900881,
+        "detectionScore": 0.17875676068290425
+      }
+    },
+    {
+      "id": "shadow-038",
+      "state": "idle",
+      "transactions": 154,
+      "errors": 4,
+      "lastActivity": 1772406444959,
+      "metrics": {
+        "avgResponseTime": 298.78250501342916,
+        "successRate": 0.9688936381610574,
+        "detectionScore": 0.15273665376073645
+      }
+    },
+    {
+      "id": "shadow-039",
+      "state": "idle",
+      "transactions": 169,
+      "errors": 0,
+      "lastActivity": 1772406441192,
+      "metrics": {
+        "avgResponseTime": 220.37332709379214,
+        "successRate": 0.9960917227732707,
+        "detectionScore": 0.05170331689824267
+      }
+    },
+    {
+      "id": "shadow-040",
+      "state": "idle",
+      "transactions": 146,
+      "errors": 4,
+      "lastActivity": 1772406445409,
+      "metrics": {
+        "avgResponseTime": 225.15873452224338,
+        "successRate": 0.9852866005367249,
+        "detectionScore": 0.17124332166193054
+      }
+    },
+    {
+      "id": "shadow-041",
+      "state": "idle",
+      "transactions": 140,
+      "errors": 1,
+      "lastActivity": 1772406443457,
+      "metrics": {
+        "avgResponseTime": 257.5529416012995,
+        "successRate": 0.9765895409387205,
+        "detectionScore": 0.04987543952591038
+      }
+    },
+    {
+      "id": "shadow-042",
+      "state": "idle",
+      "transactions": 155,
+      "errors": 6,
+      "lastActivity": 1772406445069,
+      "metrics": {
+        "avgResponseTime": 296.03330485605636,
+        "successRate": 0.9766832832502106,
+        "detectionScore": 0.1603307631075531
+      }
+    },
+    {
+      "id": "shadow-043",
+      "state": "idle",
+      "transactions": 138,
+      "errors": 4,
+      "lastActivity": 1772406444419,
+      "metrics": {
+        "avgResponseTime": 278.2431019519473,
+        "successRate": 0.9471187171425296,
+        "detectionScore": 0.08469597521735786
+      }
+    },
+    {
+      "id": "shadow-044",
+      "state": "idle",
+      "transactions": 148,
+      "errors": 2,
+      "lastActivity": 1772406445955,
+      "metrics": {
+        "avgResponseTime": 253.6014399466738,
+        "successRate": 0.9801313398064241,
+        "detectionScore": 0.087421934319739
+      }
+    },
+    {
+      "id": "shadow-045",
+      "state": "idle",
+      "transactions": 146,
+      "errors": 1,
+      "lastActivity": 1772406445069,
+      "metrics": {
+        "avgResponseTime": 218.580303733467,
+        "successRate": 0.9617223374000837,
+        "detectionScore": 0.13631290456842324
+      }
+    },
+    {
+      "id": "shadow-046",
+      "state": "idle",
+      "transactions": 159,
+      "errors": 9,
+      "lastActivity": 1772406445845,
+      "metrics": {
+        "avgResponseTime": 254.7649284990166,
+        "successRate": 0.9673952360743496,
+        "detectionScore": 0.1693376821041953
+      }
+    },
+    {
+      "id": "shadow-047",
+      "state": "idle",
+      "transactions": 179,
+      "errors": 0,
+      "lastActivity": 1772406445845,
+      "metrics": {
+        "avgResponseTime": 253.7372657254891,
+        "successRate": 0.9835000815197538,
+        "detectionScore": 0.0746813965069649
+      }
+    },
+    {
+      "id": "shadow-048",
+      "state": "idle",
+      "transactions": 164,
+      "errors": 1,
+      "lastActivity": 1772406445512,
+      "metrics": {
+        "avgResponseTime": 241.33965422041183,
+        "successRate": 0.9917310758024686,
+        "detectionScore": 0.05940551692207545
+      }
+    },
+    {
+      "id": "shadow-049",
+      "state": "idle",
+      "transactions": 148,
+      "errors": 6,
+      "lastActivity": 1772406442385,
+      "metrics": {
+        "avgResponseTime": 207.20020377879894,
+        "successRate": 0.9723518073700234,
+        "detectionScore": 0.16446371781524055
+      }
+    },
+    {
+      "id": "shadow-050",
+      "state": "idle",
+      "transactions": 129,
+      "errors": 1,
+      "lastActivity": 1772406445195,
+      "metrics": {
+        "avgResponseTime": 224.09359245225514,
+        "successRate": 0.9736841216348006,
+        "detectionScore": 0.059446972427340324
+      }
+    },
+    {
+      "id": "shadow-051",
+      "state": "idle",
+      "transactions": 163,
+      "errors": 7,
+      "lastActivity": 1772406445619,
+      "metrics": {
+        "avgResponseTime": 294.89062216780417,
+        "successRate": 0.9467083095335125,
+        "detectionScore": 0.19635144510337843
+      }
+    },
+    {
+      "id": "shadow-052",
+      "state": "idle",
+      "transactions": 158,
+      "errors": 5,
+      "lastActivity": 1772406442385,
+      "metrics": {
+        "avgResponseTime": 243.3852858651228,
+        "successRate": 0.9719478086618512,
+        "detectionScore": 0.18643894085235382
+      }
+    },
+    {
+      "id": "shadow-053",
+      "state": "idle",
+      "transactions": 158,
+      "errors": 4,
+      "lastActivity": 1772406437212,
+      "metrics": {
+        "avgResponseTime": 204.09911225416937,
+        "successRate": 0.9724312882560219,
+        "detectionScore": 0.12574336530248612
+      }
+    },
+    {
+      "id": "shadow-054",
+      "state": "idle",
+      "transactions": 160,
+      "errors": 5,
+      "lastActivity": 1772406444086,
+      "metrics": {
+        "avgResponseTime": 234.91825622426154,
+        "successRate": 0.9699485651978796,
+        "detectionScore": 0.17829012038413447
+      }
+    },
+    {
+      "id": "shadow-055",
+      "state": "idle",
+      "transactions": 136,
+      "errors": 7,
+      "lastActivity": 1772406444848,
+      "metrics": {
+        "avgResponseTime": 210.54548693601072,
+        "successRate": 0.9743810513824719,
+        "detectionScore": 0.17359050345657667
+      }
+    },
+    {
+      "id": "shadow-056",
+      "state": "idle",
+      "transactions": 142,
+      "errors": 1,
+      "lastActivity": 1772406444848,
+      "metrics": {
+        "avgResponseTime": 244.96310097736614,
+        "successRate": 0.9871241764553562,
+        "detectionScore": 0.12279954071284345
+      }
+    },
+    {
+      "id": "shadow-057",
+      "state": "idle",
+      "transactions": 117,
+      "errors": 8,
+      "lastActivity": 1772406442167,
+      "metrics": {
+        "avgResponseTime": 272.9828324203885,
+        "successRate": 0.9489516236687475,
+        "detectionScore": 0.1472897113273457
+      }
+    },
+    {
+      "id": "shadow-058",
+      "state": "idle",
+      "transactions": 126,
+      "errors": 0,
+      "lastActivity": 1772406443777,
+      "metrics": {
+        "avgResponseTime": 275.7328829441294,
+        "successRate": 0.9913321250957893,
+        "detectionScore": 0.09484743307137551
+      }
+    },
+    {
+      "id": "shadow-059",
+      "state": "idle",
+      "transactions": 152,
+      "errors": 0,
+      "lastActivity": 1772406441411,
+      "metrics": {
+        "avgResponseTime": 201.319745925819,
+        "successRate": 0.9900212932894343,
+        "detectionScore": 0.03476802060691661
+      }
+    },
+    {
+      "id": "shadow-060",
+      "state": "idle",
+      "transactions": 154,
+      "errors": 6,
+      "lastActivity": 1772406445299,
+      "metrics": {
+        "avgResponseTime": 261.0040933410284,
+        "successRate": 0.9653145499253899,
+        "detectionScore": 0.18183663015911897
+      }
+    },
+    {
+      "id": "shadow-061",
+      "state": "idle",
+      "transactions": 146,
+      "errors": 9,
+      "lastActivity": 1772406444308,
+      "metrics": {
+        "avgResponseTime": 211.40685838262624,
+        "successRate": 0.947332442312813,
+        "detectionScore": 0.14524556297024774
+      }
+    },
+    {
+      "id": "shadow-062",
+      "state": "idle",
+      "transactions": 160,
+      "errors": 0,
+      "lastActivity": 1772406438628,
+      "metrics": {
+        "avgResponseTime": 274.7380557740075,
+        "successRate": 0.9936892733293996,
+        "detectionScore": 0.05973595415080814
+      }
+    },
+    {
+      "id": "shadow-063",
+      "state": "idle",
+      "transactions": 138,
+      "errors": 0,
+      "lastActivity": 1772406445069,
+      "metrics": {
+        "avgResponseTime": 208.17972205505058,
+        "successRate": 0.9955260346472944,
+        "detectionScore": 0.0599019538291989
+      }
+    },
+    {
+      "id": "shadow-064",
+      "state": "idle",
+      "transactions": 126,
+      "errors": 0,
+      "lastActivity": 1772406445195,
+      "metrics": {
+        "avgResponseTime": 234.9319166083258,
+        "successRate": 0.9934717572017393,
+        "detectionScore": 0.07765187965516246
+      }
+    },
+    {
+      "id": "shadow-065",
+      "state": "idle",
+      "transactions": 137,
+      "errors": 7,
+      "lastActivity": 1772406445619,
+      "metrics": {
+        "avgResponseTime": 227.19026991173317,
+        "successRate": 0.9610524636916755,
+        "detectionScore": 0.16336929073567763
+      }
+    },
+    {
+      "id": "shadow-066",
+      "state": "idle",
+      "transactions": 155,
+      "errors": 2,
+      "lastActivity": 1772406445512,
+      "metrics": {
+        "avgResponseTime": 237.8801073010991,
+        "successRate": 0.977573992724068,
+        "detectionScore": 0.058558629493166967
+      }
+    },
+    {
+      "id": "shadow-067",
+      "state": "idle",
+      "transactions": 146,
+      "errors": 0,
+      "lastActivity": 1772406427068,
+      "metrics": {
+        "avgResponseTime": 260.1956850769716,
+        "successRate": 0.9910079909437419,
+        "detectionScore": 0.11711436416288382
+      }
+    },
+    {
+      "id": "shadow-068",
+      "state": "idle",
+      "transactions": 133,
+      "errors": 8,
+      "lastActivity": 1772406443777,
+      "metrics": {
+        "avgResponseTime": 205.5965083611299,
+        "successRate": 0.9678031925849718,
+        "detectionScore": 0.17696530928192264
+      }
+    },
+    {
+      "id": "shadow-069",
+      "state": "idle",
+      "transactions": 154,
+      "errors": 0,
+      "lastActivity": 1772406443883,
+      "metrics": {
+        "avgResponseTime": 270.6050568468935,
+        "successRate": 0.9932840573506697,
+        "detectionScore": 0.12497374087010138
+      }
+    },
+    {
+      "id": "shadow-070",
+      "state": "idle",
+      "transactions": 155,
+      "errors": 4,
+      "lastActivity": 1772406445069,
+      "metrics": {
+        "avgResponseTime": 234.71975883430326,
+        "successRate": 0.9850615528191665,
+        "detectionScore": 0.10311019527970976
+      }
+    },
+    {
+      "id": "shadow-071",
+      "state": "idle",
+      "transactions": 137,
+      "errors": 2,
+      "lastActivity": 1772406444959,
+      "metrics": {
+        "avgResponseTime": 224.15114305882418,
+        "successRate": 0.9749370334658436,
+        "detectionScore": 0.06235576111820053
+      }
+    },
+    {
+      "id": "shadow-072",
+      "state": "idle",
+      "transactions": 120,
+      "errors": 3,
+      "lastActivity": 1772406445735,
+      "metrics": {
+        "avgResponseTime": 298.1602360558219,
+        "successRate": 0.9806938066048441,
+        "detectionScore": 0.06598780237362765
+      }
+    },
+    {
+      "id": "shadow-073",
+      "state": "idle",
+      "transactions": 149,
+      "errors": 5,
+      "lastActivity": 1772406442813,
+      "metrics": {
+        "avgResponseTime": 287.37950783741746,
+        "successRate": 0.9568591987206222,
+        "detectionScore": 0.17054835801783033
+      }
+    },
+    {
+      "id": "shadow-074",
+      "state": "idle",
+      "transactions": 158,
+      "errors": 0,
+      "lastActivity": 1772406444959,
+      "metrics": {
+        "avgResponseTime": 202.65983251468583,
+        "successRate": 0.9789856268214606,
+        "detectionScore": 0.11385304669441841
+      }
+    },
+    {
+      "id": "shadow-075",
+      "state": "idle",
+      "transactions": 128,
+      "errors": 0,
+      "lastActivity": 1772406445195,
+      "metrics": {
+        "avgResponseTime": 294.0729805103115,
+        "successRate": 0.9883592466087008,
+        "detectionScore": 0.09930418443818229
+      }
+    },
+    {
+      "id": "shadow-076",
+      "state": "idle",
+      "transactions": 135,
+      "errors": 5,
+      "lastActivity": 1772406442813,
+      "metrics": {
+        "avgResponseTime": 282.3992574110076,
+        "successRate": 0.9630153103463327,
+        "detectionScore": 0.12414810975366107
+      }
+    },
+    {
+      "id": "shadow-077",
+      "state": "idle",
+      "transactions": 155,
+      "errors": 9,
+      "lastActivity": 1772406436252,
+      "metrics": {
+        "avgResponseTime": 272.67287512414896,
+        "successRate": 0.960233668839404,
+        "detectionScore": 0.1515448923992018
+      }
+    },
+    {
+      "id": "shadow-078",
+      "state": "idle",
+      "transactions": 167,
+      "errors": 8,
+      "lastActivity": 1772406445299,
+      "metrics": {
+        "avgResponseTime": 278.0591579223852,
+        "successRate": 0.9728529045857158,
+        "detectionScore": 0.1225894931497719
+      }
+    },
+    {
+      "id": "shadow-079",
+      "state": "idle",
+      "transactions": 156,
+      "errors": 1,
+      "lastActivity": 1772406444626,
+      "metrics": {
+        "avgResponseTime": 218.50988471801978,
+        "successRate": 0.9865897617811299,
+        "detectionScore": 0.049319393250302664
+      }
+    },
+    {
+      "id": "shadow-080",
+      "state": "idle",
+      "transactions": 146,
+      "errors": 0,
+      "lastActivity": 1772406443242,
+      "metrics": {
+        "avgResponseTime": 237.90456806482413,
+        "successRate": 0.9898036017944201,
+        "detectionScore": 0.08560726088940032
+      }
+    },
+    {
+      "id": "shadow-081",
+      "state": "idle",
+      "transactions": 158,
+      "errors": 0,
+      "lastActivity": 1772406446059,
+      "metrics": {
+        "avgResponseTime": 213.0931670886867,
+        "successRate": 0.9795921381804598,
+        "detectionScore": 0.12463558807473099
+      }
+    },
+    {
+      "id": "shadow-082",
+      "state": "idle",
+      "transactions": 154,
+      "errors": 1,
+      "lastActivity": 1772406441624,
+      "metrics": {
+        "avgResponseTime": 211.32299105541435,
+        "successRate": 0.9852144603937555,
+        "detectionScore": 0.11298978184282417
+      }
+    },
+    {
+      "id": "shadow-083",
+      "state": "idle",
+      "transactions": 151,
+      "errors": 3,
+      "lastActivity": 1772406441295,
+      "metrics": {
+        "avgResponseTime": 261.56654314836976,
+        "successRate": 0.9492344021854113,
+        "detectionScore": 0.09079887159100403
+      }
+    },
+    {
+      "id": "shadow-084",
+      "state": "idle",
+      "transactions": 135,
+      "errors": 10,
+      "lastActivity": 1772406443672,
+      "metrics": {
+        "avgResponseTime": 220.23768966998668,
+        "successRate": 0.9519229046640578,
+        "detectionScore": 0.18961525421823974
+      }
+    },
+    {
+      "id": "shadow-085",
+      "state": "idle",
+      "transactions": 139,
+      "errors": 3,
+      "lastActivity": 1772406445409,
+      "metrics": {
+        "avgResponseTime": 247.38904191310797,
+        "successRate": 0.9722710143962756,
+        "detectionScore": 0.061115701710898175
+      }
+    },
+    {
+      "id": "shadow-086",
+      "state": "idle",
+      "transactions": 152,
+      "errors": 1,
+      "lastActivity": 1772406444848,
+      "metrics": {
+        "avgResponseTime": 241.92172184046444,
+        "successRate": 0.9703161320172053,
+        "detectionScore": 0.06296687876067689
+      }
+    },
+    {
+      "id": "shadow-087",
+      "state": "idle",
+      "transactions": 136,
+      "errors": 1,
+      "lastActivity": 1772406443130,
+      "metrics": {
+        "avgResponseTime": 282.36356403929994,
+        "successRate": 0.9939766106415517,
+        "detectionScore": 0.05357433858885183
+      }
+    },
+    {
+      "id": "shadow-088",
+      "state": "idle",
+      "transactions": 174,
+      "errors": 4,
+      "lastActivity": 1772406442279,
+      "metrics": {
+        "avgResponseTime": 208.3170030187253,
+        "successRate": 0.983355185197766,
+        "detectionScore": 0.1282427829104034
+      }
+    },
+    {
+      "id": "shadow-089",
+      "state": "idle",
+      "transactions": 160,
+      "errors": 1,
+      "lastActivity": 1772406443130,
+      "metrics": {
+        "avgResponseTime": 291.73428027247013,
+        "successRate": 0.9889843117734515,
+        "detectionScore": 0.14255607193511272
+      }
+    },
+    {
+      "id": "shadow-090",
+      "state": "idle",
+      "transactions": 113,
+      "errors": 4,
+      "lastActivity": 1772406445409,
+      "metrics": {
+        "avgResponseTime": 260.5588283332411,
+        "successRate": 0.9546934380968984,
+        "detectionScore": 0.1465028273603423
+      }
+    },
+    {
+      "id": "shadow-091",
+      "state": "idle",
+      "transactions": 147,
+      "errors": 4,
+      "lastActivity": 1772406445845,
+      "metrics": {
+        "avgResponseTime": 291.2499550099922,
+        "successRate": 0.9749520900242987,
+        "detectionScore": 0.16405444157592952
+      }
+    },
+    {
+      "id": "shadow-092",
+      "state": "idle",
+      "transactions": 138,
+      "errors": 8,
+      "lastActivity": 1772406443562,
+      "metrics": {
+        "avgResponseTime": 299.13122082300634,
+        "successRate": 0.9477946397464176,
+        "detectionScore": 0.1986620920177952
+      }
+    },
+    {
+      "id": "shadow-093",
+      "state": "idle",
+      "transactions": 130,
+      "errors": 4,
+      "lastActivity": 1772406445845,
+      "metrics": {
+        "avgResponseTime": 256.1880152564434,
+        "successRate": 0.9703546248203144,
+        "detectionScore": 0.0831365818834199
+      }
+    },
+    {
+      "id": "shadow-094",
+      "state": "idle",
+      "transactions": 158,
+      "errors": 1,
+      "lastActivity": 1772406446059,
+      "metrics": {
+        "avgResponseTime": 255.06055153013736,
+        "successRate": 0.9748745772920134,
+        "detectionScore": 0.08691123097163916
+      }
+    },
+    {
+      "id": "shadow-095",
+      "state": "idle",
+      "transactions": 160,
+      "errors": 5,
+      "lastActivity": 1772406445955,
+      "metrics": {
+        "avgResponseTime": 290.24871664999625,
+        "successRate": 0.9542170637934916,
+        "detectionScore": 0.16449784958904562
+      }
+    },
+    {
+      "id": "shadow-096",
+      "state": "idle",
+      "transactions": 148,
+      "errors": 3,
+      "lastActivity": 1772406445735,
+      "metrics": {
+        "avgResponseTime": 221.85638964354547,
+        "successRate": 0.9801540966993416,
+        "detectionScore": 0.1455572806435861
+      }
+    },
+    {
+      "id": "shadow-097",
+      "state": "idle",
+      "transactions": 159,
+      "errors": 3,
+      "lastActivity": 1772406443985,
+      "metrics": {
+        "avgResponseTime": 276.4006224571713,
+        "successRate": 0.9727459014779845,
+        "detectionScore": 0.15464627632119216
+      }
+    },
+    {
+      "id": "shadow-098",
+      "state": "idle",
+      "transactions": 163,
+      "errors": 0,
+      "lastActivity": 1772406444308,
+      "metrics": {
+        "avgResponseTime": 262.71632634877017,
+        "successRate": 0.9862734682383514,
+        "detectionScore": 0.1247362226216754
+      }
+    },
+    {
+      "id": "shadow-099",
+      "state": "idle",
+      "transactions": 131,
+      "errors": 13,
+      "lastActivity": 1772406445735,
+      "metrics": {
+        "avgResponseTime": 211.29694218460543,
+        "successRate": 0.9477162096082855,
+        "detectionScore": 0.17624381546240106
+      }
+    }
+  ],
+  "butterflyEffects": [],
+  "patches": [],
+  "metrics": {
+    "totalTransactions": 15000,
+    "successfulTransactions": 14666,
+    "failedTransactions": 334,
+    "detectionEvents": 0,
+    "averageResponseTime": 246.68811283482538,
+    "peakMemoryUsage": 163444042.4408,
+    "peakCpuLoad": 0,
+    "simulatedDuration": 36000000,
+    "realDuration": 325185
+  },
+  "status": "running"
+}

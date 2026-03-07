@@ -1,0 +1,30 @@
+{
+  "lastSync": 1772386617469,
+  "stats": [
+    {
+      "project": "MisteMind",
+      "filesScanned": 0,
+      "chunksCreated": 0,
+      "vectorsUpserted": 0,
+      "duration": 3,
+      "errors": []
+    },
+    {
+      "project": "MrMindQATool",
+      "filesScanned": 0,
+      "chunksCreated": 0,
+      "vectorsUpserted": 0,
+      "duration": 2,
+      "errors": []
+    },
+    {
+      "project": "MisterMindPage",
+      "filesScanned": 0,
+      "chunksCreated": 0,
+      "vectorsUpserted": 0,
+      "duration": 1,
+      "errors": []
+    }
+  ],
+  "totalVectors": 0
+}

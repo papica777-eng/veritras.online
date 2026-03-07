@@ -1,0 +1,300 @@
+[22:06:43]   API Status: ✅ API ключове заредени. Mode=LIVE
+[22:06:43]   Mode: LIVE
+[22:06:43]   Checking Binance account balance...
+[22:06:44] 
+[22:06:44]   --- ACCOUNT BALANCES ---
+[22:06:44]     EUR   : 21.80548326
+[22:06:44] 
+[22:06:44]   WARNING: USDT balance is $0.00 — minimum $5 needed to trade.
+[22:06:44]   FATAL: No USDT balance. Cannot trade.
+[22:09:04]   API Status: ✅ API ключове заредени. Mode=LIVE
+[22:09:04]   Mode: LIVE
+[22:09:04]   Checking Binance account balance...
+[22:09:04] 
+[22:09:04]   --- ACCOUNT BALANCES ---
+[22:09:04]     EUR   : 21.80548326
+[22:09:04] 
+[22:09:04]   Working capital: €21.00 (capped at €21)
+[22:09:04]   Initializing QAntum Cognitive Orchestrator...
+[22:09:04]   Orchestrator online.
+[22:09:04]   Loading initial price data...
+[22:09:12]   Price history loaded: BTCEUR(3), ETHEUR(3), BNBEUR(3), SOLEUR(3)
+[22:09:12] 
+[22:09:12] ======================================================================
+[22:09:12]   LIVE TRADING STARTED — Press Ctrl+C to stop
+[22:09:12] ======================================================================
+[22:09:12] 
+[22:09:12] 
+=== CYCLE #1 | EUR: €21.81 | Positions: 0 ===
+[22:09:12]   BTCEUR     $  63185.91 | TRUE           | MAXIMIZE               | BUY  | conf: 100%
+[22:09:12]   >> BUY BTCEUR: €5.00 @ 63185.91 (qty: 0.000079)
+[22:09:13]   !! BUY BTCEUR REJECTED: Binance -2010: Symbol not whitelisted for API key.
+[22:09:13]   ETHEUR     $   1858.16 | TRUE           | MAXIMIZE               | BUY  | conf: 100%
+[22:09:13]   >> BUY ETHEUR: €5.00 @ 1858.16 (qty: 0.002691)
+[22:09:13]   !! BUY ETHEUR REJECTED: Binance -2010: Symbol not whitelisted for API key.
+[22:09:13]   BNBEUR     $    569.18 | TRUE           | MAXIMIZE               | BUY  | conf: 100%
+[22:09:13]   >> BUY BNBEUR: €5.00 @ 569.18 (qty: 0.008785)
+[22:09:13]   !! BUY BNBEUR REJECTED: Binance -2010: Symbol not whitelisted for API key.
+[22:09:13]   SOLEUR     $     79.67 | TRUE           | MAXIMIZE               | BUY  | conf: 100%
+[22:09:13]   >> BUY SOLEUR: €5.00 @ 79.67 (qty: 0.062759)
+[22:09:14]   !! BUY SOLEUR REJECTED: Binance -2010: Symbol not whitelisted for API key.
+[22:09:45] 
+=== CYCLE #2 | EUR: €21.81 | Positions: 0 ===
+[22:09:45]   BTCEUR     $  63185.10 | FALSE          | HEAL                   | HOLD | conf: 57%
+[22:09:45]   ETHEUR     $   1859.60 | FALSE          | HEAL                   | HOLD | conf: 57%
+[22:09:45]   BNBEUR     $    569.34 | FALSE          | HEAL                   | HOLD | conf: 57%
+[22:09:45]   SOLEUR     $     79.71 | FALSE          | HEAL                   | HOLD | conf: 57%
+[22:09:50] 
+  CTRL+C detected — shutting down gracefully...
+[22:27:53] API keys loaded. Mode: LIVE
+[22:27:53] 
+[22:27:53] ═══ STEP 1: CHECKING ACCOUNT ═══
+[22:27:53]   EUR   : 21.80548326 free | 0.00000000 locked
+[22:27:53] 
+[22:27:53]   EUR available:  €21.81
+[22:27:53]   USDT available: $0.00
+[22:27:53] 
+[22:27:53] ═══ STEP 2: TESTING API PAIR ACCESS ═══
+[22:27:53]   ❌ BTCUSDT: blocked (-2010: Symbol not whitelisted for API key.)
+[22:27:54]   ❌ ETHUSDT: blocked (-2010: Symbol not whitelisted for API key.)
+[22:27:54]   ❌ BNBUSDT: blocked (-2010: Symbol not whitelisted for API key.)
+[22:27:54]   ❌ SOLUSDT: blocked (-2010: Symbol not whitelisted for API key.)
+[22:27:55]   ❌ BTCEUR: blocked (-2010: Symbol not whitelisted for API key.)
+[22:27:55]   ❌ ETHEUR: blocked (-2010: Symbol not whitelisted for API key.)
+[22:27:55]   ❌ EURUSDT: blocked (-2010: Symbol not whitelisted for API key.)
+[22:27:55] 
+[22:27:55]   Working pairs: NONE
+[22:27:55] 
+[22:27:55] ════════════════════════════════════════════════════════
+[22:27:55]   ПРОБЛЕМ: API ключът ти блокира ВСИЧКИ trading pairs.
+[22:27:55] 
+[22:27:55]   РЕШЕНИЕ (30 секунди в Binance ап):
+[22:27:55]   1. Отвори Binance app
+[22:27:55]   2. Отиди на Profile → API Management
+[22:27:55]   3. Натисни Edit на API ключа
+[22:27:55]   4. Под "Restrict access to trusted IPs only" виж
+[22:27:55]      "Enable Spot & Margin Trading" → нужно е ON
+[22:27:55]   5. Под "Restrict to specific symbols" → махни
+[22:27:55]      restriction-а или добави: BTCUSDT, ETHUSDT
+[22:27:55]   6. Save и пусни скрипта отново
+[22:27:55] ════════════════════════════════════════════════════════
+[22:33:37] API keys loaded. Mode: LIVE
+[22:33:37] 
+[22:33:37] ═══ STEP 1: CHECKING ACCOUNT ═══
+[22:33:38]   EUR   : 21.80548326 free | 0.00000000 locked
+[22:33:38] 
+[22:33:38]   EUR available:  €21.81
+[22:33:38]   USDT available: $0.00
+[22:33:38] 
+[22:33:38] ═══ STEP 2: TESTING API PAIR ACCESS ═══
+[22:33:38]   ✅ BTCUSDT: ACCESSIBLE
+[22:33:38]   ✅ ETHUSDT: ACCESSIBLE
+[22:33:39]   ✅ BNBUSDT: ACCESSIBLE
+[22:33:39]   ✅ SOLUSDT: ACCESSIBLE
+[22:33:39]   ✅ BTCEUR: ACCESSIBLE
+[22:33:40]   ✅ ETHEUR: ACCESSIBLE
+[22:33:40]   ✅ EURUSDT: ACCESSIBLE
+[22:33:40] 
+[22:33:40]   Working pairs: BTCUSDT, ETHUSDT, BNBUSDT, SOLUSDT, BTCEUR, ETHEUR, EURUSDT
+[22:33:40] 
+[22:33:40] ═══ STEP 3: CONVERTING EUR → USDT ═══
+[22:33:40]   EUR/USDT price: 1.163
+[22:33:40]   Selling €21.59 EUR for USDT...
+[22:33:41]   ❌ Convert failed: -1013: Filter failure: LOT_SIZE
+[22:33:41]   Falling back to EUR pairs
+[22:33:41] 
+[22:33:41]   Quote: EUR | Balance: 21.81 | Pairs: BTCEUR, ETHEUR
+[22:33:41] 
+[22:33:41] ═══ STEP 4: COGNITIVE LIVE TRADING ═══
+[22:33:41]   Initializing QAntum Orchestrator...
+[22:33:41]   Brain online. Starting live cycles...
+[22:33:41]   Press Ctrl+C to stop.
+[22:33:41] 
+[22:33:41] 
+═══ CYCLE #1 | EUR: 21.81 | Positions: 0 ═══
+[22:34:12] 
+═══ CYCLE #2 | EUR: 21.81 | Positions: 0 ═══
+[22:34:43] 
+═══ CYCLE #3 | EUR: 21.81 | Positions: 0 ═══
+[22:34:43]   BTCEUR     €  62923.91 | PARADOX        | FULL_DEFENSE           | SELL | 18%
+[22:34:43]   ETHEUR     €   1848.65 | PARADOX        | FULL_DEFENSE           | SELL | 18%
+[22:35:13] 
+═══ CYCLE #4 | EUR: 21.81 | Positions: 0 ═══
+[22:35:14]   BTCEUR     €  62895.36 | FALSE          | FULL_DEFENSE           | SELL | 13%
+[22:35:14]   ETHEUR     €   1847.30 | FALSE          | FULL_DEFENSE           | SELL | 12%
+[22:35:44] 
+═══ CYCLE #5 | EUR: 21.81 | Positions: 0 ═══
+[22:35:45]   BTCEUR     €  62865.24 | TRANSCENDENT   | FULL_DEFENSE           | SELL | 26%
+[22:35:45]   ETHEUR     €   1845.21 | TRANSCENDENT   | ENTROPY_FARM           | HOLD | 86%
+[22:36:15] 
+═══ CYCLE #6 | EUR: 21.81 | Positions: 0 ═══
+[22:36:15]   BTCEUR     €  62867.32 | TRANSCENDENT   | ENTROPY_FARM           | HOLD | 92%
+[22:36:15]   ETHEUR     €   1845.73 | FALSE          | BLOCKED                | HOLD | 0%
+[22:36:46] 
+═══ CYCLE #7 | EUR: 21.81 | Positions: 0 ═══
+[22:36:47]   BTCEUR     €  62877.71 | FALSE          | BLOCKED                | HOLD | 0%
+[22:36:47]   ETHEUR     €   1846.37 | FALSE          | BLOCKED                | HOLD | 0%
+[22:37:17] 
+═══ CYCLE #8 | EUR: 21.81 | Positions: 0 ═══
+[22:37:17]   BTCEUR     €  62909.65 | TRANSCENDENT   | ENTROPY_FARM           | HOLD | 99%
+[22:37:17]   ETHEUR     €   1847.38 | TRANSCENDENT   | ENTROPY_FARM           | HOLD | 99%
+[22:37:48] 
+═══ CYCLE #9 | EUR: 21.81 | Positions: 0 ═══
+[22:37:48]   BTCEUR     €  62850.03 | TRANSCENDENT   | ENTROPY_FARM           | HOLD | 97%
+[22:37:48]   ETHEUR     €   1844.66 | TRANSCENDENT   | ENTROPY_FARM           | HOLD | 100%
+[22:38:19] 
+═══ CYCLE #10 | EUR: 21.81 | Positions: 0 ═══
+[22:38:19]   BTCEUR     €  62861.46 | TRANSCENDENT   | ENTROPY_FARM           | HOLD | 92%
+[22:38:19]   ETHEUR     €   1845.19 | FALSE          | BLOCKED                | HOLD | 0%
+[22:38:50] 
+═══ CYCLE #11 | EUR: 21.81 | Positions: 0 ═══
+[22:38:50]   BTCEUR     €  62829.00 | FALSE          | BLOCKED                | HOLD | 0%
+[22:38:50]   ETHEUR     €   1845.26 | FALSE          | BLOCKED                | HOLD | 0%
+[22:39:20] 
+═══ CYCLE #12 | EUR: 21.81 | Positions: 0 ═══
+[22:39:21]   BTCEUR     €  62798.98 | TRANSCENDENT   | ENTROPY_FARM           | HOLD | 96%
+[22:39:21]   ETHEUR     €   1843.18 | TRANSCENDENT   | ENTROPY_FARM           | HOLD | 94%
+[22:39:51] 
+═══ CYCLE #13 | EUR: 21.81 | Positions: 0 ═══
+[22:39:52]   BTCEUR     €  62844.63 | TRANSCENDENT   | ENTROPY_FARM           | HOLD | 94%
+[22:39:52]   ETHEUR     €   1844.82 | TRANSCENDENT   | ENTROPY_FARM           | HOLD | 96%
+[22:40:22] 
+═══ CYCLE #14 | EUR: 21.81 | Positions: 0 ═══
+[22:40:22]   BTCEUR     €  62866.67 | TRANSCENDENT   | ENTROPY_FARM           | HOLD | 92%
+[22:40:22]   ETHEUR     €   1844.51 | FALSE          | BLOCKED                | HOLD | 0%
+[22:40:53] 
+═══ CYCLE #15 | EUR: 21.81 | Positions: 0 ═══
+[22:40:53]   BTCEUR     €  62843.77 | FALSE          | BLOCKED                | HOLD | 0%
+[22:40:53]   ETHEUR     €   1843.72 | FALSE          | BLOCKED                | HOLD | 0%
+[22:41:24] 
+═══ CYCLE #16 | EUR: 21.81 | Positions: 0 ═══
+[22:41:25]   BTCEUR     €  62845.08 | TRANSCENDENT   | ENTROPY_FARM           | HOLD | 88%
+[22:41:25]   ETHEUR     €   1843.06 | TRANSCENDENT   | ENTROPY_FARM           | HOLD | 94%
+[22:41:55] 
+═══ CYCLE #17 | EUR: 21.81 | Positions: 0 ═══
+[22:41:55]   BTCEUR     €  62798.02 | TRANSCENDENT   | ENTROPY_FARM           | HOLD | 89%
+[22:41:55]   ETHEUR     €   1841.35 | TRANSCENDENT   | ENTROPY_FARM           | HOLD | 92%
+[22:42:26] 
+═══ CYCLE #18 | EUR: 21.81 | Positions: 0 ═══
+[22:42:26]   BTCEUR     €  62812.80 | TRANSCENDENT   | ENTROPY_FARM           | HOLD | 99%
+[22:42:26]   ETHEUR     €   1840.83 | FALSE          | BLOCKED                | HOLD | 0%
+[22:42:57] 
+═══ CYCLE #19 | EUR: 21.81 | Positions: 0 ═══
+[22:42:57]   BTCEUR     €  62753.87 | FALSE          | BLOCKED                | HOLD | 0%
+[22:42:57]   ETHEUR     €   1837.36 | FALSE          | BLOCKED                | HOLD | 0%
+[22:43:28] 
+═══ CYCLE #20 | EUR: 21.81 | Positions: 0 ═══
+[22:43:28]   BTCEUR     €  62713.94 | TRANSCENDENT   | ENTROPY_FARM           | HOLD | 91%
+[22:43:28]   ETHEUR     €   1837.06 | TRANSCENDENT   | ENTROPY_FARM           | HOLD | 90%
+[22:43:59] 
+═══ CYCLE #21 | EUR: 21.81 | Positions: 0 ═══
+[22:43:59]   BTCEUR     €  62706.03 | TRANSCENDENT   | ENTROPY_FARM           | HOLD | 94%
+[22:43:59]   ETHEUR     €   1836.72 | TRANSCENDENT   | ENTROPY_FARM           | HOLD | 94%
+[22:44:30] 
+═══ CYCLE #22 | EUR: 21.81 | Positions: 0 ═══
+[22:44:30]   BTCEUR     €  62741.89 | TRANSCENDENT   | ENTROPY_FARM           | HOLD | 95%
+[22:44:30]   ETHEUR     €   1838.01 | FALSE          | BLOCKED                | HOLD | 0%
+[22:45:01] 
+═══ CYCLE #23 | EUR: 21.81 | Positions: 0 ═══
+[22:45:01]   BTCEUR     €  62703.85 | FALSE          | BLOCKED                | HOLD | 0%
+[22:45:01]   ETHEUR     €   1836.90 | FALSE          | BLOCKED                | HOLD | 0%
+[22:45:31] 
+═══ CYCLE #24 | EUR: 21.81 | Positions: 0 ═══
+[22:45:32]   BTCEUR     €  62639.79 | TRANSCENDENT   | ENTROPY_FARM           | HOLD | 85%
+[22:45:32]   ETHEUR     €   1836.39 | FALSE          | HEAL                   | HOLD | 54%
+[22:46:02] 
+═══ CYCLE #25 | EUR: 21.81 | Positions: 0 ═══
+[22:46:03]   BTCEUR     €  62559.27 | FALSE          | HEAL                   | HOLD | 92%
+[22:46:03]   ETHEUR     €   1833.91 | TRANSCENDENT   | ENTROPY_FARM           | HOLD | 92%
+[22:46:33] 
+═══ CYCLE #26 | EUR: 21.81 | Positions: 0 ═══
+[22:46:34]   BTCEUR     €  62625.94 | TRANSCENDENT   | ENTROPY_FARM           | HOLD | 89%
+[22:46:34]   ETHEUR     €   1834.13 | FALSE          | BLOCKED                | HOLD | 0%
+[22:47:04] 
+═══ CYCLE #27 | EUR: 21.81 | Positions: 0 ═══
+[22:47:04]   BTCEUR     €  62595.13 | FALSE          | BLOCKED                | HOLD | 0%
+[22:47:04]   ETHEUR     €   1835.38 | FALSE          | BLOCKED                | HOLD | 0%
+[22:47:35] 
+═══ CYCLE #28 | EUR: 21.81 | Positions: 0 ═══
+[22:47:35]   BTCEUR     €  62606.21 | TRANSCENDENT   | ENTROPY_FARM           | HOLD | 97%
+[22:47:35]   ETHEUR     €   1836.67 | TRANSCENDENT   | ENTROPY_FARM           | HOLD | 95%
+[22:48:06] 
+═══ CYCLE #29 | EUR: 21.81 | Positions: 0 ═══
+[22:48:07]   BTCEUR     €  62588.74 | TRANSCENDENT   | ENTROPY_FARM           | HOLD | 98%
+[22:48:07]   ETHEUR     €   1836.14 | TRANSCENDENT   | ENTROPY_FARM           | HOLD | 94%
+[22:48:38] 
+═══ CYCLE #30 | EUR: 21.81 | Positions: 0 ═══
+[22:48:38]   BTCEUR     €  62591.01 | TRANSCENDENT   | ENTROPY_FARM           | HOLD | 90%
+[22:48:38]   ETHEUR     €   1836.32 | FALSE          | BLOCKED                | HOLD | 0%
+[22:49:08] 
+═══ CYCLE #31 | EUR: 21.81 | Positions: 0 ═══
+[22:49:09]   BTCEUR     €  62578.91 | FALSE          | BLOCKED                | HOLD | 0%
+[22:49:09]   ETHEUR     €   1836.31 | FALSE          | BLOCKED                | HOLD | 0%
+[22:49:39] 
+═══ CYCLE #32 | EUR: 21.81 | Positions: 0 ═══
+[22:49:40]   BTCEUR     €  62595.63 | TRANSCENDENT   | ENTROPY_FARM           | HOLD | 92%
+[22:49:40]   ETHEUR     €   1835.91 | TRUE           | EXECUTE                | BUY  | 25%
+[22:50:10] 
+═══ CYCLE #33 | EUR: 21.81 | Positions: 0 ═══
+[22:50:10]   BTCEUR     €  62587.55 | TRANSCENDENT   | ENTROPY_FARM           | HOLD | 88%
+[22:50:11]   ETHEUR     €   1835.33 | TRUE           | EXECUTE                | BUY  | 29%
+[22:50:42] 
+═══ CYCLE #34 | EUR: 21.81 | Positions: 0 ═══
+[22:50:43]   BTCEUR     €  62609.59 | PARADOX        | EXPLOIT_PARADOX        | SELL | 61%
+[22:50:43]   ETHEUR     €   1835.96 | TRANSCENDENT   | ENTROPY_FARM           | HOLD | 89%
+[22:51:13] 
+═══ CYCLE #35 | EUR: 21.81 | Positions: 0 ═══
+[22:51:14]   BTCEUR     €  62587.49 | PARADOX        | EXPLOIT_PARADOX        | SELL | 61%
+[22:51:14]   ETHEUR     €   1834.61 | TRANSCENDENT   | ENTROPY_FARM           | HOLD | 89%
+[22:51:44] 
+═══ CYCLE #36 | EUR: 21.81 | Positions: 0 ═══
+[22:51:44]   BTCEUR     €  62582.94 | PARADOX        | EXPLOIT_PARADOX        | SELL | 61%
+[22:51:44]   ETHEUR     €   1835.91 | TRANSCENDENT   | ENTROPY_FARM           | HOLD | 85%
+[22:52:15] 
+═══ CYCLE #37 | EUR: 21.81 | Positions: 0 ═══
+[22:52:15]   BTCEUR     €  62597.18 | PARADOX        | EXPLOIT_PARADOX        | SELL | 61%
+[22:52:15]   ETHEUR     €   1834.99 | TRANSCENDENT   | ENTROPY_FARM           | HOLD | 87%
+[22:52:46] 
+═══ CYCLE #38 | EUR: 21.81 | Positions: 0 ═══
+[22:52:46]   BTCEUR     €  62590.27 | PARADOX        | APOPTOSIS              | HOLD | 61%
+[22:52:46]   ETHEUR     €   1835.06 | TRANSCENDENT   | ENTROPY_FARM           | HOLD | 99%
+[22:53:17] 
+═══ CYCLE #39 | EUR: 21.81 | Positions: 0 ═══
+[22:53:17]   BTCEUR     €  62549.96 | PARADOX        | APOPTOSIS              | HOLD | 61%
+[22:53:17]   ETHEUR     €   1834.98 | PARADOX        | EXPLOIT_PARADOX        | SELL | 61%
+[22:53:47] 
+═══ CYCLE #40 | EUR: 21.81 | Positions: 0 ═══
+[22:53:48]   BTCEUR     €  62502.00 | PARADOX        | APOPTOSIS              | HOLD | 61%
+[22:53:48]   ETHEUR     €   1832.00 | TRUE           | EXECUTE                | BUY  | 16%
+[22:54:18] 
+═══ CYCLE #41 | EUR: 21.81 | Positions: 0 ═══
+[22:54:19]   BTCEUR     €  62494.76 | PARADOX        | APOPTOSIS              | HOLD | 61%
+[22:54:19]   ETHEUR     €   1830.63 | TRUE           | EXECUTE                | BUY  | 32%
+[22:54:50] 
+═══ CYCLE #42 | EUR: 21.81 | Positions: 0 ═══
+[22:54:50]   BTCEUR     €  62482.78 | TRUE           | EXECUTE                | BUY  | 49%
+[22:54:50]   ETHEUR     €   1831.28 | PARADOX        | EXPLOIT_PARADOX        | SELL | 61%
+[22:55:21] 
+═══ CYCLE #43 | EUR: 21.81 | Positions: 0 ═══
+[22:55:21]   BTCEUR     €  62463.10 | FALSE          | HEAL                   | HOLD | 41%
+[22:55:21]   ETHEUR     €   1830.62 | PARADOX        | EXPLOIT_PARADOX        | SELL | 94%
+[22:55:52] 
+═══ CYCLE #44 | EUR: 21.81 | Positions: 0 ═══
+[22:55:53]   BTCEUR     €  62457.34 | FALSE          | HEAL                   | HOLD | 40%
+[22:55:53]   ETHEUR     €   1830.36 | TRUE           | EXECUTE                | BUY  | 29%
+[22:56:23] 
+═══ CYCLE #45 | EUR: 21.81 | Positions: 0 ═══
+[22:56:24]   BTCEUR     €  62444.32 | FALSE          | HEAL                   | HOLD | 41%
+[22:56:24]   ETHEUR     €   1829.22 | TRUE           | EXECUTE                | BUY  | 35%
+[22:56:54] 
+═══ CYCLE #46 | EUR: 21.81 | Positions: 0 ═══
+[22:56:55]   BTCEUR     €  62471.65 | TRUE           | EXECUTE                | BUY  | 18%
+[22:56:55]   ETHEUR     €   1829.35 | TRUE           | EXECUTE                | BUY  | 32%
+[22:57:25] 
+═══ CYCLE #47 | EUR: 21.81 | Positions: 0 ═══
+[22:57:26]   BTCEUR     €  62463.09 | TRUE           | EXECUTE                | BUY  | 16%
+[22:57:26]   ETHEUR     €   1828.63 | PARADOX        | EXPLOIT_PARADOX        | SELL | 61%
+[22:57:56] 
+═══ CYCLE #48 | EUR: 21.81 | Positions: 0 ═══
+[22:57:57]   BTCEUR     €  62458.41 | TRUE           | EXECUTE                | BUY  | 16%
+[22:57:57]   ETHEUR     €   1830.78 | PARADOX        | EXPLOIT_PARADOX        | SELL | 61%

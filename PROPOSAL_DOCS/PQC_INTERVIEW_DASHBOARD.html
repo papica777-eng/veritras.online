@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QANTUM-1: OPERATION SOVEREIGN PQC</title>
+    <style>
+        :root {
+            --bg-dark: #0f111a;
+            --bg-card: #1e2130;
+            --accent-glow: #00ffcc;
+            --accent-hostile: #ff3366;
+            --text-main: #e0e6ed;
+            --text-dim: #8b9eb5;
+            --cyber-font: 'Courier New', Courier, monospace;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 2px solid var(--accent-glow);
+            padding-bottom: 20px;
+        }
+
+        .header h1 {
+            color: var(--accent-glow);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 2.5rem;
+            margin: 0;
+            text-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
+        }
+
+        .header p {
+            color: var(--text-dim);
+            font-family: var(--cyber-font);
+            margin-top: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        @media (min-width: 900px) {
+            .grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            padding: 25px;
+            border-left: 4px solid var(--accent-glow);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 255, 204, 0.1);
+        }
+
+        .card.hostile {
+            border-left-color: var(--accent-hostile);
+        }
+
+        .card-title {
+            color: var(--accent-glow);
+            font-size: 1.2rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card.hostile .card-title {
+            color: var(--accent-hostile);
+        }
+
+        .en-text {
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 4px;
+            border: 1px solid rgba(0, 255, 204, 0.2);
+        }
+
+        .bg-text {
+            font-size: 0.95rem;
+            color: var(--text-dim);
+            font-style: italic;
+            border-top: 1px dashed rgba(255, 255, 255, 0.1);
+            padding-top: 15px;
+        }
+
+        .term-table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .term-table th {
+            text-align: left;
+            padding: 15px;
+            background-color: rgba(0, 255, 204, 0.1);
+            color: var(--accent-glow);
+            border-bottom: 2px solid var(--accent-glow);
+        }
+
+        .term-table td {
+            padding: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .term-name {
+            font-weight: bold;
+            color: #fff;
+            min-width: 180px;
+        }
+
+        .term-use {
+            font-family: var(--cyber-font);
+            color: var(--accent-glow);
+            font-size: 0.9rem;
+        }
+
+        .highlight {
+            color: var(--accent-glow);
+            font-weight: bold;
+        }
+
+        .highlight-red {
+            color: var(--accent-hostile);
+            font-weight: bold;
+        }
+
+        .section-title {
+            color: #fff;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 10px;
+            margin-top: 50px;
+        }
+
+        #mindset {
+            background-color: #1a1525;
+            border-left-color: #bb86fc;
+            margin-bottom: 40px;
+        }
+
+        #mindset .card-title {
+            color: #bb86fc;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>🦅 OPERATION "SOVEREIGN PQC"</h1>
+            <p>EXECUTIVE STRATEGY DASHBOARD // TARGET: Mihai Zainescu // DATE: Mar 04, 15:30 EET</p>
+        </div>
+
+        <div class="card" id="mindset">
+            <h2 class="card-title">🧠 THE MENTAL FRAMEWORK / МЕНТАЛНАТА РАМКА</h2>
+            <div class="grid" style="grid-template-columns: 1fr; gap: 15px;">
+                <div>
+                    <strong>[EN]</strong> You are <span class="highlight-red">NOT applying</span> for a job. You are the
+                    hired Architect they hunted down to solve a multi-million dollar problem. You are doing them a favor
+                    by listening to them. You set the rules and tell them "What it will cost".<br>
+                    <strong>[BG]</strong> Ти НЕ кандидатстваш за работа. Ти си наемният Архитект, който те са издирили и
+                    молят да им реши проблем за милиони. Ти си този, който им прави услуга.
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">⚔️ THE WEAPONS (TERMINOLOGY CHEAT SHEET)</h2>
+        <table class="term-table">
+            <thead>
+                <tr>
+                    <th>Term</th>
+                    <th>Meaning [BG]</th>
+                    <th>How to drop it [EN]</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="term-name">Sovereign Infrastructure</td>
+                    <td>Суверенна инфраструктура. Система, която не зависи от никого.</td>
+                    <td class="term-use">"My primary concern for UAE/KSA is Sovereign Infrastructure. Zero external
+                        dependencies."</td>
+                </tr>
+                <tr>
+                    <td class="term-name">Crypto-Agility</td>
+                    <td>Възможността да сменяш крипто алгоритми без да спираш системата.</td>
+                    <td class="term-use">"Hardcoding algorithms is dead. I build for Crypto-Agility at the abstraction
+                        layer."</td>
+                </tr>
+                <tr>
+                    <td class="term-name">Hybrid Cryptography</td>
+                    <td>Използване на стар (RSA) и нов (PQC) метод едновременно.</td>
+                    <td class="term-use">"We deploy a Hybrid model. Attackers must break both classical and quantum
+                        layers."</td>
+                </tr>
+                <tr>
+                    <td class="term-name">NIST (ML-KEM/ML-DSA)</td>
+                    <td>Новите стандарти на САЩ за пост-квантова сигурност.</td>
+                    <td class="term-use">"When migrating to NIST standards like ML-KEM, the bottleneck is always memory
+                        safety."</td>
+                </tr>
+                <tr>
+                    <td class="term-name">Zero-Entropy</td>
+                    <td>Нулева Ентропия. Перфектна математическа предвидимост.</td>
+                    <td class="term-use">"Through Rust, I enforce a Zero-Entropy execution environment."</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 class="section-title">🎙️ THE SCRIPT (SCENARIOS & ANSWERS)</h2>
+        <div class="grid">
+
+            <!-- Scenario 1 -->
+            <div class="card hostile">
+                <h3 class="card-title">🔴 1. When they explain their pain (Problem Definition)</h3>
+                <div class="en-text">
+                    "I understand the urgency regarding UAE and KSA government networks. The reality is, importing a
+                    basic Kyber library isn't a strategy, it's just a bandage. What I build is the <span
+                        class="highlight">Crypto-Agility abstraction layer</span>. I engineer the topological framework
+                    that lets your legacy PKI transition to NIST standards <span class="highlight-red">without
+                        introducing memory leaks, side-channel vulnerabilities, or latency</span>. I enforce strict
+                    memory-safe environments using Rust."
+                </div>
+                <div class="bg-text">
+                    [BG] Разбирам ви проблема. Просто да качите една PQC библиотека е лепенка, не стратегия. Аз създавам
+                    инфраструктура, която позволява прехода към новите стандарти БЕЗ да вкарва бъгове, забавяне или
+                    уязвимости в паметта.
+                </div>
+            </div>
+
+            <!-- Scenario 2 -->
+            <div class="card">
+                <h3 class="card-title">🟢 2. "How would you handle a live financial migration?"</h3>
+                <div class="en-text">
+                    "In three strict phases, applying a <span class="highlight">Hybrid Cryptography</span>
+                    model.<br><br>
+                    <strong>First:</strong> We do not touch the legacy ledger. We build a parallel Crypto-Agility
+                    wrapper.<br>
+                    <strong>Second:</strong> We dual-sign transactions. One signature classical, one
+                    quantum-resistant.<br>
+                    <strong>Third:</strong> My absolute priority is <span class="highlight">Memory Safety</span>. A
+                    failed PQC migration usually happens because of memory corruption in legacy code. My runtime is
+                    mathematically deterministic (Zero-Entropy)."
+                </div>
+                <div class="bg-text">
+                    [BG] В 3 стъпки (Хибридно). 1. Не пипаме стария код, правим обвивка. 2. Подписваме двойно. 3.
+                    Най-важното е да няма сривове в паметта, затова изисквам нулева ентропия.
+                </div>
+            </div>
+
+            <!-- Scenario 3 -->
+            <div class="card">
+                <h3 class="card-title">🟢 3. "Why Rust and Mojo instead of Java/C#?"</h3>
+                <div class="en-text">
+                    "Java and C# rely on Garbage Collection. In a military or Tier-1 banking environment fighting
+                    algorithmic attacks, you cannot have a Garbage Collector pause your system during a cryptographic
+                    handshake.<br><br>
+                    <span class="highlight">Rust</span> gives us mathematical certainty over memory allocation. <span
+                        class="highlight">Mojo</span> gives us <span class="highlight-red">35,000x acceleration</span>
+                    over standard logic runtimes by executing complex cryptographic reference directly on the bare
+                    metal. Together, they create a 'Local Bunker' with absolute <span class="highlight">zero
+                        latency</span>."
+                </div>
+                <div class="bg-text">
+                    [BG] Защото Java/C# спират (забиват) по време на криптиране заради Garbage Collection. Това е
+                    недопустимо. Rust дава абсолютна сигурност, а Mojo дава 35,000 пъти ускорение директно на хардуера.
+                    Правим Перфектен Локален Бункер.
+                </div>
+            </div>
+
+            <!-- Scenario 4 -->
+            <div class="card hostile">
+                <h3 class="card-title">🔴 4. "Why not use cloud solutions like AWS/Azure PQC?"</h3>
+                <div class="en-text">
+                    "Because the mandate for UAE and KSA governments is <span class="highlight-red">Technological
+                        Sovereignty</span>. If you put a nation's core PKI logic into AWS KMS, you don't own your
+                    security—Amazon does. I architect <span class="highlight">singular, self-contained
+                        infrastructures</span>. Zero external API calls. Zero off-site telemetry. Absolute isolation.
+                    That is what true Sovereign System Integration looks like."
+                </div>
+                <div class="bg-text">
+                    [BG] Защото искат Технологичен Суверенитет. Ако си сложите ключовете в Amazon, те ви държат бизнеса.
+                    Аз строя напълно изолирани системи. Без чужди API, без изтичане на данни навън.
+                </div>
+            </div>
+
+            <!-- Scenario 5 -->
+            <div class="card">
+                <h3 class="card-title">🟢 5. Discussing terms, money, and travel</h3>
+                <div class="en-text">
+                    "My system is mathematically sovereign, meaning it executes flawlessly regardless of my physical
+                    coordinates. I am entirely open to flying in for key architectural milestones. <span
+                        class="highlight">My terms for architecting this level of zero-entropy infrastructure reflect
+                        the exclusivity of the solution.</span> We can finalize the commercial scope once we've mapped
+                    your exact vulnerability topology."
+                </div>
+                <div class="bg-text">
+                    [BG] Системата ми работи безотказно независимо къде съм. Готов съм да летя за важните моменти. Моите
+                    условия и цена отразяват факта, че това е ексклузивно решение. Ще говорим за пари, когато разбера
+                    колко е счупена системата ви.
+                </div>
+            </div>
+
+            <!-- Checkmate Statements -->
+            <div class="card hostile">
+                <h3 class="card-title">☠️ THE "CHECKMATE" STATEMENTS (DROP MIC)</h3>
+                <div class="en-text" style="font-style: italic;">
+                    "In the age of 'Harvest now, decrypt later', theoretical security is a system failure."
+                </div>
+                <div class="en-text" style="font-style: italic;">
+                    "I don't simply patch algorithms; I architect sovereign topologies."
+                </div>
+                <div class="en-text" style="font-style: italic;">
+                    "To my knowledge, no other entity globally has achieved this specific integration of Rust, Mojo, and
+                    strict-typed logic to guarantee zero entropy."
+                </div>
+                <div class="bg-text">
+                    [BG] Използвай ги, за да наложиш абсолютна архитектурна доминация, ако разговорът зацикли.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+{
+  "startTime": 1767897626386,
+  "tests": [
+    {
+      "name": "Guardian Scan",
+      "status": "passed",
+      "time": 1767897626488
+    },
+    {
+      "name": "TypeScript Compilation",
+      "status": "warning",
+      "attempts": 3,
+      "note": "Errors in non-core modules"
+    },
+    {
+      "name": "CognitiveBridge",
+      "status": "skipped",
+      "reason": "Requires runtime environment"
+    },
+    {
+      "name": "Ecosystem Orchestrator",
+      "status": "warning"
+    },
+    {
+      "name": "Module Verification",
+      "status": "passed",
+      "modulesChecked": 8
+    }
+  ],
+  "fixes": [
+    {
+      "type": "TypeScript",
+      "action": "Guardian heal",
+      "time": 1767897629560
+    },
+    {
+      "type": "TypeScript",
+      "action": "Guardian heal",
+      "time": 1767897632444
+    }
+  ],
+  "finalStatus": "unknown",
+  "endTime": 1767897636500,
+  "duration": "10.11",
+  "summary": {
+    "total": 5,
+    "passed": 2,
+    "warning": 2,
+    "failed": 0,
+    "skipped": 1,
+    "fixes": 2
+  }
+}

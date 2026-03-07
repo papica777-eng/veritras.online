@@ -1,0 +1,33 @@
+{
+  "manifest": {
+    "version": "19.0.0",
+    "machineId": "fa6aa7e937c4e782",
+    "createdAt": "2026-03-06T15:44:41.108Z",
+    "entryCount": 1,
+    "totalSize": 13,
+    "manifestChecksum": "b2fc6955ad191982b043f8aadd4924f34a619bf22ab4d8cfaadcb2cab1d0e692",
+    "lastSync": "2026-03-06T15:44:41.110Z"
+  },
+  "salt": "AcAU2pC59ht0zqXkj+1+ErwRB5RVvyK1V7yIDFkX4Hw=",
+  "entries": [
+    [
+      "integrity-test",
+      {
+        "id": "integrity-test",
+        "type": "versions",
+        "payload": {
+          "algorithm": "aes-256-gcm",
+          "iv": "JOlUhTM7G8nDmF0v",
+          "data": "Ewu+tTVUrsgXl3sEgf36Cf1iOJ6Zqng+UJiX4OxuN1IxdYRx8LqOrPHdMS4=",
+          "authTag": "WZ6cz4RVd71AhcJl40K4jA==",
+          "salt": "AcAU2pC59ht0zqXkj+1+ErwRB5RVvyK1V7yIDFkX4Hw=",
+          "encryptedAt": "2026-03-06T15:44:41.109Z",
+          "version": 1
+        },
+        "checksum": "2430f1a2ad2982d0067885488a4c89e21ad1d7c83b115ba8f1b20acc88dfaea8",
+        "lastModified": "2026-03-06T15:44:41.109Z",
+        "originalSize": 13
+      }
+    ]
+  ]
+}

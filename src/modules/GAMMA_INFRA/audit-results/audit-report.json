@@ -1,0 +1,986 @@
+{
+  "timestamp": "2025-12-31T13:43:36.129Z",
+  "version": "1.0.0-QAntum",
+  "totalTests": 32,
+  "passed": 18,
+  "failed": 3,
+  "warnings": 11,
+  "skipped": 0,
+  "results": [
+    {
+      "category": "TypeScript",
+      "test": "Compilation",
+      "status": "FAIL",
+      "message": "0 TypeScript errors found",
+      "details": "\n\u001b[41m                                                                               \u001b[0m\n\u001b[41m\u001b[37m                This is not the tsc command you are looking for                \u001b[0m\n\u001b[41m                                                                               \u001b[0m\n\nTo get access to the TypeScript compiler, \u001b[34mtsc\u001b[0m, from the command line either:\n\n- Use \u001b[1mnpm install typescript\u001b[0m to first add TypeScript to your project \u001b[1mbefore\u001b[0m using npx\n- Use \u001b[1myarn\u001b[0m to avoid accidentally running code from un-installed packages\n"
+    },
+    {
+      "category": "TypeScript",
+      "test": "tsconfig.json",
+      "status": "WARN",
+      "message": "Could not read tsconfig.json"
+    },
+    {
+      "category": "Modules",
+      "test": "Total Files",
+      "status": "PASS",
+      "message": "25 TypeScript files found"
+    },
+    {
+      "category": "Modules",
+      "test": "Total Lines",
+      "status": "PASS",
+      "message": "27,882 lines of code"
+    },
+    {
+      "category": "Modules",
+      "test": "Classes",
+      "status": "PASS",
+      "message": "23 classes defined"
+    },
+    {
+      "category": "Modules",
+      "test": "Functions",
+      "status": "PASS",
+      "message": "30 functions defined"
+    },
+    {
+      "category": "Modules",
+      "test": "Exports",
+      "status": "PASS",
+      "message": "360 exports"
+    },
+    {
+      "category": "Functions",
+      "test": "Return Types",
+      "status": "PASS",
+      "message": "600% of functions have return types (24/4)"
+    },
+    {
+      "category": "Functions",
+      "test": "Type Safety",
+      "status": "PASS",
+      "message": "Good type coverage"
+    },
+    {
+      "category": "Imports",
+      "test": "Circular Imports",
+      "status": "PASS",
+      "message": "No circular imports detected"
+    },
+    {
+      "category": "Exports",
+      "test": "Index Files",
+      "status": "WARN",
+      "message": "2/14 modules have index.ts"
+    },
+    {
+      "category": "Security",
+      "test": "Critical Issues",
+      "status": "FAIL",
+      "message": "20 critical security issues",
+      "details": "CRITICAL: Hardcoded API key in index.js (1x)\nCRITICAL: Hardcoded password in demo-cognitive.js (1x)\nCRITICAL: Hardcoded password in tests.ts (1x)\nCRITICAL: Hardcoded secret in tests.ts (1x)\nCRITICAL: Hardcoded password in tests.ts (1x)\nCRITICAL: Hardcoded secret in tests.ts (1x)\nCRITICAL: Hardcoded password in demo-cognitive.js (1x)\nCRITICAL: Hardcoded password in tests.ts (1x)\nCRITICAL: Hardcoded secret in tests.ts (1x)\nCRITICAL: Hardcoded password in auto-test-factory.ts (2x)\nCRITICAL: Hardcoded password in logic-discovery.ts (1x)\nCRITICAL: Hardcoded API key in index.ts (1x)\nCRITICAL: Hardcoded API key in modules.test.js (1x)\nCRITICAL: Hardcoded password in MarketBlueprint.ts (1x)\nCRITICAL: Hardcoded password in index.ts (1x)\nCRITICAL: Hardcoded password in bastion.test.ts (2x)\nCRITICAL: Hardcoded secret in bastion.test.ts (1x)\nCRITICAL: Hardcoded API key in multimodal.test.ts (11x)\nCRITICAL: Hardcoded API key in phase3-intelligence.test.js (5x)\nCRITICAL: Hardcoded API key in ux-auditor.test.ts (2x)"
+    },
+    {
+      "category": "Security",
+      "test": "High Risk",
+      "status": "WARN",
+      "message": "10 high-risk patterns found",
+      "details": "HIGH: eval() usage in SecurityTesting.ts (1x)\nHIGH: eval() usage in SecurityTesting.ts (1x)\nHIGH: Command injection risk in reporter.ts (1x)\nHIGH: eval() usage in scanner.ts (4x)\nHIGH: new Function() usage in heavy-task-delegator.ts (1x)\nHIGH: eval() usage in index.ts (10x)\nHIGH: eval() usage in malicious-intent.test.ts (1x)\nHIGH: new Function() usage in malicious-intent.test.ts (1x)\nHIGH: eval() usage in core.test.ts (3x)\nHIGH: eval() usage in phase3-infrastructure.test.js (3x)"
+    },
+    {
+      "category": "Security",
+      "test": "Git History",
+      "status": "PASS",
+      "message": "Git repository is initialized"
+    },
+    {
+      "category": "Dependencies",
+      "test": "Count",
+      "status": "PASS",
+      "message": "1 dependencies, 0 devDependencies"
+    },
+    {
+      "category": "Dependencies",
+      "test": "Outdated",
+      "status": "PASS",
+      "message": "All packages up to date"
+    },
+    {
+      "category": "Dependencies",
+      "test": "Vulnerabilities",
+      "status": "PASS",
+      "message": "0 vulnerabilities"
+    },
+    {
+      "category": "Tests",
+      "test": "Test Files",
+      "status": "WARN",
+      "message": "0 test files found"
+    },
+    {
+      "category": "Tests",
+      "test": "Test Cases",
+      "status": "WARN",
+      "message": "0 test cases"
+    },
+    {
+      "category": "Tests",
+      "test": "Execution",
+      "status": "FAIL",
+      "message": "Some tests failed",
+      "details": "Command failed: npm test 2>&1"
+    },
+    {
+      "category": "Quality",
+      "test": "File Size",
+      "status": "WARN",
+      "message": "22 files over 500 lines",
+      "details": "HiveMind.ts (1481 lines), MarketBlueprint.ts (1815 lines), NeuralSelfEvolver.ts (1201 lines), OracleHumanizer.ts (949 lines), ProfitOptimizer.ts (1121 lines)"
+    },
+    {
+      "category": "Quality",
+      "test": "Function Size",
+      "status": "PASS",
+      "message": "All functions under 100 lines"
+    },
+    {
+      "category": "Quality",
+      "test": "TODOs",
+      "status": "PASS",
+      "message": "0 TODO comments found"
+    },
+    {
+      "category": "Docs",
+      "test": "README.md",
+      "status": "PASS",
+      "message": "Present and detailed"
+    },
+    {
+      "category": "Docs",
+      "test": "LICENSE",
+      "status": "PASS",
+      "message": "Present and detailed"
+    },
+    {
+      "category": "Docs",
+      "test": "CHANGELOG.md",
+      "status": "WARN",
+      "message": "Missing"
+    },
+    {
+      "category": "Docs",
+      "test": "CONTRIBUTING.md",
+      "status": "WARN",
+      "message": "Missing"
+    },
+    {
+      "category": "Docs",
+      "test": "API Documentation",
+      "status": "PASS",
+      "message": "13 documentation files in docs/"
+    },
+    {
+      "category": "Docs",
+      "test": "JSDoc Coverage",
+      "status": "PASS",
+      "message": "3373% functions documented (1012/30)"
+    },
+    {
+      "category": "Scripts",
+      "test": "build",
+      "status": "WARN",
+      "message": "Not defined"
+    },
+    {
+      "category": "Scripts",
+      "test": "test",
+      "status": "WARN",
+      "message": "Not defined"
+    },
+    {
+      "category": "Scripts",
+      "test": "start",
+      "status": "WARN",
+      "message": "Not defined"
+    }
+  ],
+  "modules": [
+    {
+      "file": "src\\biology\\evolution\\HiveMind.ts",
+      "classes": [
+        "HiveMind"
+      ],
+      "functions": [
+        "createHiveMind"
+      ],
+      "exports": [
+        "ModelType",
+        "LearningSource",
+        "WorkerNeuralState",
+        "NeuralWeightUpdate",
+        "AggregatedUpdate",
+        "FederatedRound",
+        "NeuralModel",
+        "LearningExperience",
+        "DifferentialPrivacyConfig",
+        "HiveMindConfig",
+        "HiveMind",
+        "HiveMindAnalytics",
+        "ModelStats",
+        "createHiveMind"
+      ],
+      "imports": [
+        "import { EventEmitter } from 'events'",
+        "import * as crypto from 'crypto'"
+      ],
+      "lineCount": 1481
+    },
+    {
+      "file": "src\\biology\\evolution\\MarketBlueprint.ts",
+      "classes": [
+        "MarketBlueprint"
+      ],
+      "functions": [
+        "createMarketBlueprint"
+      ],
+      "exports": [
+        "ComplexityTier",
+        "PackageCategory",
+        "PurchaseStatus",
+        "BlueprintSource",
+        "TestCaseBlueprint",
+        "AssertionBlueprint",
+        "DataRequirement",
+        "MarketablePackage",
+        "PriceFactor",
+        "PackageBundle",
+        "BonusFeature",
+        "PurchaseOrder",
+        "PurchaseItem",
+        "MarketBlueprintConfig",
+        "BlueprintGenerationResult",
+        "PackageRecommendation",
+        "MarketBlueprint",
+        "CrawlDataInput",
+        "PageInput",
+        "FormInput",
+        "FormFieldInput",
+        "APIEndpointInput",
+        "InteractionInput",
+        "UserFlowInput",
+        "FlowStepInput",
+        "NavigationInput",
+        "BlueprintAnalytics",
+        "createMarketBlueprint"
+      ],
+      "imports": [
+        "import { EventEmitter } from 'events'",
+        "import * as crypto from 'crypto'"
+      ],
+      "lineCount": 1815
+    },
+    {
+      "file": "src\\biology\\evolution\\NeuralSelfEvolver.ts",
+      "classes": [
+        "NeuralSelfEvolver"
+      ],
+      "functions": [
+        "createNeuralSelfEvolver"
+      ],
+      "exports": [
+        "PatternType",
+        "EvolutionTrigger",
+        "PatternSample",
+        "NetworkRequest",
+        "DOMSnapshot",
+        "EvolvableModel",
+        "TrainingJob",
+        "HotSwapOperation",
+        "EvolutionStats",
+        "NeuralSelfEvolverConfig",
+        "NeuralSelfEvolver",
+        "createNeuralSelfEvolver"
+      ],
+      "imports": [
+        "import { EventEmitter } from 'events'",
+        "import * as crypto from 'crypto'",
+        "import * as fs from 'fs'",
+        "import * as path from 'path'"
+      ],
+      "lineCount": 1201
+    },
+    {
+      "file": "src\\biology\\evolution\\OracleHumanizer.ts",
+      "classes": [
+        "OracleHumanizer"
+      ],
+      "functions": [
+        "createOracleHumanizer"
+      ],
+      "exports": [
+        "TypingAnalysis",
+        "MouseAnalysis",
+        "DecisionAnalysis",
+        "NeuralWeights",
+        "LearningSession",
+        "OracleHumanizerConfig",
+        "OracleHumanizer",
+        "OracleStatistics",
+        "createOracleHumanizer"
+      ],
+      "imports": [
+        "import { EventEmitter } from 'events'",
+        "import * as crypto from 'crypto'",
+        "import { ManualInput, HumanPatterns } from '../../physics/HardwareBridge'"
+      ],
+      "lineCount": 949
+    },
+    {
+      "file": "src\\biology\\metabolism\\ProfitOptimizer.ts",
+      "classes": [
+        "ProfitOptimizer"
+      ],
+      "functions": [
+        "createProfitOptimizer"
+      ],
+      "exports": [
+        "CloudProvider",
+        "InstanceType",
+        "PricingModel",
+        "MigrationStrategy",
+        "RegionPricing",
+        "InstancePricing",
+        "WorkerAllocation",
+        "MigrationRecommendation",
+        "CostForecast",
+        "ForecastPeriod",
+        "ArbitrageOpportunity",
+        "BudgetConfig",
+        "ProfitOptimizerConfig",
+        "ProfitOptimizer",
+        "ProfitOptimizerStatistics",
+        "createProfitOptimizer"
+      ],
+      "imports": [
+        "import { EventEmitter } from 'events'",
+        "import * as crypto from 'crypto'"
+      ],
+      "lineCount": 1121
+    },
+    {
+      "file": "src\\biology\\metabolism\\SelfReinvestment.ts",
+      "classes": [
+        "SelfReinvestment"
+      ],
+      "functions": [
+        "createSelfReinvestment"
+      ],
+      "exports": [
+        "ResourceType",
+        "InvestmentType",
+        "InvestmentPriority",
+        "RevenueStream",
+        "CostCenter",
+        "ResourceCapacity",
+        "InvestmentDecision",
+        "GrowthProjection",
+        "ExpansionPlan",
+        "ExpansionPhase",
+        "FinancialHealth",
+        "SelfReinvestmentConfig",
+        "SelfReinvestment",
+        "SelfReinvestmentStatistics",
+        "createSelfReinvestment"
+      ],
+      "imports": [
+        "import { EventEmitter } from 'events'",
+        "import * as crypto from 'crypto'"
+      ],
+      "lineCount": 1132
+    },
+    {
+      "file": "src\\chronos\\PredictiveScaler.ts",
+      "classes": [
+        "PredictiveScaler"
+      ],
+      "functions": [
+        "createPredictiveScaler"
+      ],
+      "exports": [
+        "ResourceType",
+        "ScalingAction",
+        "ConfidenceLevel",
+        "TemporalCoordinate",
+        "ButterflyEffect",
+        "ResourcePrediction",
+        "ResourceAllocation",
+        "WorkerAllocation",
+        "BrowserAllocation",
+        "ComputeAllocation",
+        "NetworkAllocation",
+        "StorageAllocation",
+        "TimeWindow",
+        "CostEstimate",
+        "AlternativeScenario",
+        "ScalingEvent",
+        "HistoricalExecution",
+        "PredictiveScalerConfig",
+        "PredictiveScaler",
+        "ScalerAnalytics",
+        "createPredictiveScaler"
+      ],
+      "imports": [
+        "import { EventEmitter } from 'events'",
+        "import * as crypto from 'crypto'"
+      ],
+      "lineCount": 1329
+    },
+    {
+      "file": "src\\dashboard\\ControlDashboard.ts",
+      "classes": [
+        "ControlDashboard"
+      ],
+      "functions": [
+        "createControlDashboard"
+      ],
+      "exports": [
+        "DashboardState",
+        "DashboardWorker",
+        "DashboardAlert",
+        "ModeTransitionRequest",
+        "DashboardConfig",
+        "ControlDashboard",
+        "createControlDashboard"
+      ],
+      "imports": [
+        "import { EventEmitter } from 'events'",
+        "import * as crypto from 'crypto'",
+        "import { HardwareBridge, ControlMode, BridgeStatus } from '../physics/HardwareBridge'",
+        "import { SpectatorMode, SpectatorStatus } from '../swarm/SpectatorMode'"
+      ],
+      "lineCount": 921
+    },
+    {
+      "file": "src\\dashboard\\SingularityDashboard.ts",
+      "classes": [
+        "SingularityDashboard"
+      ],
+      "functions": [
+        "formatCurrency",
+        "formatUptime",
+        "updateGauge",
+        "fetchMetrics",
+        "createSingularityDashboard"
+      ],
+      "exports": [
+        "EvolutionMetrics",
+        "RevenueMetrics",
+        "SwarmMetrics",
+        "SystemHealth",
+        "DashboardWidget",
+        "DashboardAlert",
+        "DashboardConfig",
+        "SingularityDashboard",
+        "createSingularityDashboard"
+      ],
+      "imports": [
+        "import { EventEmitter } from 'events'",
+        "import * as http from 'http'",
+        "import * as crypto from 'crypto'"
+      ],
+      "lineCount": 1317
+    },
+    {
+      "file": "src\\docs\\CaseStudyGenerator.ts",
+      "classes": [
+        "CaseStudyGenerator"
+      ],
+      "functions": [
+        "createCaseStudyGenerator"
+      ],
+      "exports": [
+        "CaseStudyStatus",
+        "Industry",
+        "ChallengeCategory",
+        "SuccessCrawlData",
+        "CaseStudy",
+        "CaseStudySection",
+        "CaseStudyMetrics",
+        "TemplateVariables",
+        "CaseStudyGeneratorConfig",
+        "CaseStudyGenerator",
+        "CaseStudyStatistics",
+        "createCaseStudyGenerator"
+      ],
+      "imports": [
+        "import { EventEmitter } from 'events'",
+        "import * as crypto from 'crypto'",
+        "import * as path from 'path'"
+      ],
+      "lineCount": 964
+    },
+    {
+      "file": "src\\ghost\\personality-engine.ts",
+      "classes": [
+        "GhostPersonalityEngine"
+      ],
+      "functions": [
+        "for",
+        "createGhostPersonalityEngine"
+      ],
+      "exports": [
+        "MouseCharacteristics",
+        "TypingCharacteristics",
+        "NavigationCharacteristics",
+        "TemporalCharacteristics",
+        "EmotionalCharacteristics",
+        "GhostPersonality",
+        "PersonalityArchetype",
+        "PersonalityTraits",
+        "HumanRecording",
+        "MouseEvent",
+        "KeyEvent",
+        "ScrollEvent",
+        "NavigationEvent",
+        "PersonalityAssignment",
+        "PersonalityEngineConfig",
+        "GhostPersonalityEngine",
+        "createGhostPersonalityEngine"
+      ],
+      "imports": [
+        "import { EventEmitter } from 'events'",
+        "import * as crypto from 'crypto'"
+      ],
+      "lineCount": 1354
+    },
+    {
+      "file": "src\\global-nexus\\index.ts",
+      "classes": [],
+      "functions": [
+        "createGlobalNexusSystem"
+      ],
+      "exports": [
+        "GlobalNexusConfig",
+        "GlobalNexusSystem",
+        "GlobalNexusStatus",
+        "createGlobalNexusSystem",
+        "VERSION",
+        "CODENAME",
+        "MARKET_VALUE"
+      ],
+      "imports": [
+        "import { NexusOrchestrator, createNexusOrchestrator } from '../swarm/mesh/NexusOrchestrator'",
+        "import { AutoOnboarder, createAutoOnboarder } from '../reality/gateway/AutoOnboarder'",
+        "import { GlobalThreatIntel, createGlobalThreatIntel } from '../security/GlobalThreatIntel'",
+        "import { CaseStudyGenerator, createCaseStudyGenerator } from '../docs/CaseStudyGenerator'"
+      ],
+      "lineCount": 266
+    },
+    {
+      "file": "src\\licensing\\ZeroKnowledgeLicense.ts",
+      "classes": [
+        "ZeroKnowledgeLicense"
+      ],
+      "functions": [
+        "createZeroKnowledgeLicense"
+      ],
+      "exports": [
+        "LicenseTier",
+        "ProofType",
+        "LicenseCommitment",
+        "ZKProof",
+        "LicenseSecret",
+        "WitnessData",
+        "MerkleProof",
+        "ProofRequest",
+        "ProofRequirements",
+        "VerificationResult",
+        "ECPoint",
+        "CircuitParams",
+        "ZeroKnowledgeLicenseConfig",
+        "TierLimits",
+        "ZeroKnowledgeLicense",
+        "ZKPAnalytics",
+        "createZeroKnowledgeLicense"
+      ],
+      "imports": [
+        "import { EventEmitter } from 'events'",
+        "import * as crypto from 'crypto'"
+      ],
+      "lineCount": 1299
+    },
+    {
+      "file": "src\\oracle\\market-intelligence\\index.ts",
+      "classes": [],
+      "functions": [
+        "createMarketIntelligencePipeline"
+      ],
+      "exports": [
+        "MarketIntelligencePipeline",
+        "createMarketIntelligencePipeline",
+        "VERSION",
+        "CODENAME",
+        "MARKET_VALUE",
+        "FEATURES"
+      ],
+      "imports": [
+        "import { EnterpriseDiscovery, createEnterpriseDiscovery } from '../oracle/EnterpriseDiscovery'",
+        "import { MarketBlueprint, createMarketBlueprint } from '../biology/evolution/MarketBlueprint'",
+        "import { PredictiveScaler, createPredictiveScaler } from '../chronos/PredictiveScaler'",
+        "import { SelfHealingSales, createSelfHealingSales } from '../sales/SelfHealingSales'"
+      ],
+      "lineCount": 182
+    },
+    {
+      "file": "src\\physics\\HardwareBridge.ts",
+      "classes": [
+        "HardwareBridge"
+      ],
+      "functions": [
+        "createHardwareBridge"
+      ],
+      "exports": [
+        "ConnectionRole",
+        "BridgeMessageType",
+        "ControlMode",
+        "ThreatLevel",
+        "TelemetryPacket",
+        "ManualInput",
+        "HijackSession",
+        "HumanPatterns",
+        "BridgeClient",
+        "WebSocketLike",
+        "BridgeMessage",
+        "HardwareBridgeConfig",
+        "HardwareBridge",
+        "BridgeStatus",
+        "createHardwareBridge"
+      ],
+      "imports": [
+        "import { EventEmitter } from 'events'",
+        "import * as crypto from 'crypto'",
+        "import * as http from 'http'"
+      ],
+      "lineCount": 1216
+    },
+    {
+      "file": "src\\physics\\NeuralAccelerator.ts",
+      "classes": [
+        "classification",
+        "NeuralAccelerator"
+      ],
+      "functions": [
+        "createNeuralAccelerator"
+      ],
+      "exports": [
+        "GPUBackend",
+        "TensorDType",
+        "ComputeTaskType",
+        "GPUDevice",
+        "Tensor",
+        "ComputeTask",
+        "NeuralModel",
+        "BatchConfig",
+        "MemoryPool",
+        "GPUPerformanceMetrics",
+        "NeuralAcceleratorConfig",
+        "NeuralAccelerator",
+        "AcceleratorAnalytics",
+        "createNeuralAccelerator"
+      ],
+      "imports": [
+        "import { EventEmitter } from 'events'",
+        "import * as crypto from 'crypto'"
+      ],
+      "lineCount": 1284
+    },
+    {
+      "file": "src\\reality\\gateway\\AutonomousSalesForce.ts",
+      "classes": [
+        "AutonomousSalesForce"
+      ],
+      "functions": [
+        "createAutonomousSalesForce"
+      ],
+      "exports": [
+        "BugSeverity",
+        "BugCategory",
+        "DiscoveredBug",
+        "CompanyProfile",
+        "ContactInfo",
+        "SalesPitch",
+        "VideoReport",
+        "OutreachCampaign",
+        "SalesForceConfig",
+        "AutonomousSalesForce",
+        "createAutonomousSalesForce"
+      ],
+      "imports": [
+        "import { EventEmitter } from 'events'",
+        "import * as crypto from 'crypto'",
+        "import * as path from 'path'"
+      ],
+      "lineCount": 1228
+    },
+    {
+      "file": "src\\reality\\gateway\\AutoOnboarder.ts",
+      "classes": [
+        "AutoOnboarder"
+      ],
+      "functions": [
+        "createAutoOnboarder"
+      ],
+      "exports": [
+        "CloudProvider",
+        "CloudRegion",
+        "SubscriptionTier",
+        "OnboardingStatus",
+        "ContainerStatus",
+        "StripeWebhookEvent",
+        "StripeSubscription",
+        "StripeInvoice",
+        "StripeCustomer",
+        "ClientProfile",
+        "TenantContainer",
+        "ContainerResources",
+        "PortMapping",
+        "OnboardingSession",
+        "OnboardingLog",
+        "OnboardingError",
+        "RegionLatency",
+        "AutoOnboarderConfig",
+        "AutoOnboarder",
+        "OnboarderAnalytics",
+        "createAutoOnboarder"
+      ],
+      "imports": [
+        "import { EventEmitter } from 'events'",
+        "import * as crypto from 'crypto'"
+      ],
+      "lineCount": 1145
+    },
+    {
+      "file": "src\\reality\\gateway\\GrowthHacker.ts",
+      "classes": [
+        "GrowthHacker"
+      ],
+      "functions": [
+        "createGrowthHacker"
+      ],
+      "exports": [
+        "LeadStatus",
+        "LeadSource",
+        "OutreachChannel",
+        "OfferType",
+        "Industry",
+        "LeadProfile",
+        "CaseStudyReference",
+        "ColdOffer",
+        "OutreachCampaign",
+        "OfferTemplate",
+        "GrowthHackerConfig",
+        "GrowthHacker",
+        "GrowthHackerStatistics",
+        "FunnelMetrics",
+        "createGrowthHacker"
+      ],
+      "imports": [
+        "import { EventEmitter } from 'events'",
+        "import * as crypto from 'crypto'"
+      ],
+      "lineCount": 1168
+    },
+    {
+      "file": "src\\reality\\gateway\\MarketplaceConnector.ts",
+      "classes": [
+        "MarketplaceConnector"
+      ],
+      "functions": [
+        "createMarketplaceConnector"
+      ],
+      "exports": [
+        "Marketplace",
+        "ListingStatus",
+        "PricingModel",
+        "ProductTier",
+        "MarketplaceListing",
+        "ProductTierConfig",
+        "TierLimits",
+        "DeploymentOption",
+        "MarketplaceSubscription",
+        "UsageRecord",
+        "MarketplaceCredentials",
+        "MarketplaceConnectorConfig",
+        "MarketplaceConnector",
+        "MarketplaceConnectorStatistics",
+        "createMarketplaceConnector"
+      ],
+      "imports": [
+        "import { EventEmitter } from 'events'",
+        "import * as crypto from 'crypto'"
+      ],
+      "lineCount": 1120
+    },
+    {
+      "file": "src\\sales\\SelfHealingSales.ts",
+      "classes": [
+        "SelfHealingSales"
+      ],
+      "functions": [
+        "createSelfHealingSales"
+      ],
+      "exports": [
+        "IssueSeverity",
+        "IssueCategory",
+        "OfferStatus",
+        "DiscoveredIssue",
+        "NetworkTraceEntry",
+        "IssueReport",
+        "IssueSummary",
+        "IndustryBenchmark",
+        "PrioritizedAction",
+        "ValueProposition",
+        "SalesOffer",
+        "ConversionEvent",
+        "SelfHealingSalesConfig",
+        "SelfHealingSales",
+        "CrawlResults",
+        "SalesAnalytics",
+        "createSelfHealingSales"
+      ],
+      "imports": [
+        "import { EventEmitter } from 'events'",
+        "import * as crypto from 'crypto'"
+      ],
+      "lineCount": 1452
+    },
+    {
+      "file": "src\\security\\GlobalThreatIntel.ts",
+      "classes": [
+        "GlobalThreatIntel"
+      ],
+      "functions": [
+        "createGlobalThreatIntel"
+      ],
+      "exports": [
+        "DetectionSource",
+        "ThreatSeverity",
+        "PatchType",
+        "PropagationStrategy",
+        "WorkerRegion",
+        "ThreatDetection",
+        "ThreatEvidence",
+        "ImmunityPatch",
+        "PatchConfiguration",
+        "FingerprintConfig",
+        "HeaderMutation",
+        "TimingConfig",
+        "BehaviorConfig",
+        "NetworkConfig",
+        "PropagationResult",
+        "RegionPropagationStats",
+        "WorkerState",
+        "DetectionSignature",
+        "GlobalThreatIntelConfig",
+        "GlobalThreatIntel",
+        "ThreatIntelAnalytics",
+        "createGlobalThreatIntel"
+      ],
+      "imports": [
+        "import { EventEmitter } from 'events'",
+        "import * as crypto from 'crypto'"
+      ],
+      "lineCount": 1191
+    },
+    {
+      "file": "src\\sovereign-market\\index.ts",
+      "classes": [],
+      "functions": [
+        "createSovereignMarketSystem"
+      ],
+      "exports": [
+        "SovereignMarketConfig",
+        "SovereignMarketSystem",
+        "EconomicStatus",
+        "FinancialDashboard",
+        "createSovereignMarketSystem",
+        "VERSION",
+        "CODENAME",
+        "MARKET_VALUE"
+      ],
+      "imports": [
+        "import { ProfitOptimizer, createProfitOptimizer } from '../biology/metabolism/ProfitOptimizer'",
+        "import { GrowthHacker, createGrowthHacker } from '../reality/gateway/GrowthHacker'",
+        "import { MarketplaceConnector, createMarketplaceConnector } from '../reality/gateway/MarketplaceConnector'",
+        "import { SelfReinvestment, createSelfReinvestment } from '../biology/metabolism/SelfReinvestment'"
+      ],
+      "lineCount": 335
+    },
+    {
+      "file": "src\\swarm\\mesh\\NexusOrchestrator.ts",
+      "classes": [
+        "NexusOrchestrator"
+      ],
+      "functions": [
+        "createNexusOrchestrator"
+      ],
+      "exports": [
+        "NodeStatus",
+        "MessageType",
+        "GeoRegion",
+        "TacticCategory",
+        "MeshNode",
+        "NodeCapabilities",
+        "MeshMessage",
+        "MessagePayload",
+        "HeartbeatPayload",
+        "StealthTacticPayload",
+        "ThreatAlertPayload",
+        "ImmunityPatchPayload",
+        "TopologyUpdatePayload",
+        "TopologySnapshot",
+        "ConsensusVotePayload",
+        "TaskBroadcastPayload",
+        "TaskRequirements",
+        "ResultSharePayload",
+        "ResourceUsage",
+        "EmergencyShutdownPayload",
+        "GossipConfig",
+        "NexusOrchestratorConfig",
+        "NexusOrchestrator",
+        "MeshAnalytics",
+        "createNexusOrchestrator"
+      ],
+      "imports": [
+        "import { EventEmitter } from 'events'",
+        "import * as crypto from 'crypto'"
+      ],
+      "lineCount": 1442
+    },
+    {
+      "file": "src\\swarm\\SpectatorMode.ts",
+      "classes": [
+        "SpectatorMode"
+      ],
+      "functions": [
+        "createSpectatorMode"
+      ],
+      "exports": [
+        "WorkerView",
+        "SpectatorSession",
+        "WorkerPage",
+        "SpectatorConfig",
+        "SpectatorMode",
+        "SpectatorStatus",
+        "createSpectatorMode"
+      ],
+      "imports": [
+        "import { EventEmitter } from 'events'",
+        "import * as crypto from 'crypto'"
+      ],
+      "lineCount": 970
+    }
+  ],
+  "summary": "⚠️ СРЕДНО / MODERATE - Има области за подобрение."
+}

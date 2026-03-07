@@ -1,0 +1,31 @@
+{
+  "id": "url_change-1766964668692-9cc346c7",
+  "timestamp": "2025-12-28T23:31:09.027Z",
+  "eventType": "URL_CHANGE",
+  "url": "https://juice-shop.herokuapp.com/#/search?q=test",
+  "sessionId": "session-2025-12-28T23-31-07-378Z-08828959",
+  "severity": "info",
+  "description": "Initial navigation to https://juice-shop.herokuapp.com/#/search?q=test",
+  "maskingApplied": false,
+  "maskedFields": [],
+  "checksum": "64f19f90960cea7afcf9d84200051f99144d0d9b396b0d434e4554e451fde3dc",
+  "captureMode": "aggressive",
+  "browserInfo": {
+    "name": "Chromium",
+    "version": "1.0.0-QAntum",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/143.0.7499.4 Safari/537.36",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "deviceScaleFactor": 1
+  },
+  "networkContext": {
+    "cookies": [
+      {
+        "name": "language",
+        "domain": "juice-shop.herokuapp.com"
+      }
+    ]
+  }
+}

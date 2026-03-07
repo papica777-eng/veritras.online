@@ -1,0 +1,43 @@
+{
+  "scan": {
+    "domain": "superhosting.bg",
+    "score": 23,
+    "grade": "F",
+    "ttfb": 137,
+    "missingHeaders": [
+      "content-security-policy",
+      "x-frame-options",
+      "x-content-type-options",
+      "x-xss-protection",
+      "referrer-policy",
+      "permissions-policy"
+    ],
+    "issues": [
+      "Missing: content-security-policy",
+      "Missing: x-frame-options",
+      "Missing: x-content-type-options",
+      "Missing: x-xss-protection",
+      "Missing: referrer-policy",
+      "Missing: permissions-policy",
+      "HSTS: no preload",
+      "HSTS: no includeSubDomains"
+    ],
+    "sslDaysLeft": 120,
+    "sslIssuer": "DigiCert Inc"
+  },
+  "target": {
+    "domain": "superhosting.bg",
+    "email": "support@superhosting.bg",
+    "company": "Superhosting",
+    "industry": "Hosting"
+  },
+  "evidence": {
+    "screenshotFull": "C:\\Users\\papic\\Desktop\\ALL-POSITIONS\\Blockchain\\QAntum-1\\data\\visual-evidence\\superhosting.bg\\screenshots\\desktop.png",
+    "screenshotMobile": "C:\\Users\\papic\\Desktop\\ALL-POSITIONS\\Blockchain\\QAntum-1\\data\\visual-evidence\\superhosting.bg\\screenshots\\mobile.png",
+    "screenshotHeaders": "C:\\Users\\papic\\Desktop\\ALL-POSITIONS\\Blockchain\\QAntum-1\\data\\visual-evidence\\superhosting.bg\\screenshots\\missing-headers.png",
+    "videoPath": "C:\\Users\\papic\\Desktop\\ALL-POSITIONS\\Blockchain\\QAntum-1\\data\\visual-evidence\\superhosting.bg\\02f3f367931661cab906b16ec88ffa35.webm",
+    "videoSizeKb": 1034,
+    "video": true
+  },
+  "ts": "2026-02-27T09:30:31.137Z"
+}

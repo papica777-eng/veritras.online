@@ -1,0 +1,33 @@
+{
+  "title": "QAntum Fortress Operations",
+  "description": "Real-time monitoring of system health, tests, and healing events.",
+  "refresh_rate": "30s",
+  "widgets": [
+    {
+      "title": "System Health Score",
+      "type": "gauge",
+      "metric": "system_health_score",
+      "thresholds": { "critical": 50, "warning": 80 }
+    },
+    {
+      "title": "Active Swarm Agents",
+      "type": "timeseries",
+      "metric": "swarm_agents_active"
+    },
+    {
+      "title": "Healing Events (Last 24h)",
+      "type": "counter",
+      "metric": "healing_events_total"
+    },
+    {
+      "title": "Test Pass Rate",
+      "type": "percentage",
+      "metric": "test_pass_rate"
+    },
+    {
+      "title": "API Latency (p95)",
+      "type": "heatmap",
+      "metric": "api_latency_ms"
+    }
+  ]
+}

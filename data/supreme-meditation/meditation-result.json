@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-01-02T21:35:28.288Z",
+  "duration": 20,
+  "assimilation": {
+    "totalFiles": 0,
+    "totalLines": 0,
+    "totalSymbols": 0,
+    "symbolRegistry": {
+      "classes": 0,
+      "functions": 0,
+      "interfaces": 0,
+      "types": 0,
+      "constants": 0,
+      "enums": 0
+    }
+  },
+  "layerAudit": {
+    "violations": [],
+    "circularDependencies": [],
+    "healthScore": 100
+  },
+  "deadSymbols": {
+    "unusedExports": [],
+    "unusedInterfaces": [],
+    "unusedTypes": [],
+    "totalDead": 0
+  },
+  "contextTest": {
+    "module": "ghost",
+    "extractedSymbols": 0,
+    "documentedSymbols": 0,
+    "mismatches": [],
+    "coverage": 0
+  },
+  "overallHealth": 80,
+  "recommendations": [
+    "📝 Documentation coverage is 0.0%. Document 0 undocumented symbols."
+  ]
+}

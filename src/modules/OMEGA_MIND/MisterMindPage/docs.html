@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation | QAntum Prime v1.0.0</title>
+    <meta name="description" content="Complete documentation for QAntum Prime. Learn how to use Ghost Protocol, Self-Healing, Swarm Execution and more.">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <style>
+        .docs-page {
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+        
+        .docs-layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        /* Sidebar */
+        .docs-sidebar {
+            position: sticky;
+            top: 80px;
+            height: calc(100vh - 80px);
+            overflow-y: auto;
+            padding: 2rem 1.5rem;
+            border-right: 1px solid var(--border-color);
+            background: var(--bg-dark);
+        }
+        
+        .docs-sidebar::-webkit-scrollbar {
+            width: 4px;
+        }
+        
+        .docs-sidebar::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .sidebar-section {
+            margin-bottom: 2rem;
+        }
+        
+        .sidebar-section h3 {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin-bottom: 0.75rem;
+            padding-left: 0.5rem;
+        }
+        
+        .sidebar-links {
+            list-style: none;
+        }
+        
+        .sidebar-links a {
+            display: block;
+            padding: 0.5rem 0.75rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+        }
+        
+        .sidebar-links a:hover,
+        .sidebar-links a.active {
+            color: var(--text-primary);
+            background: rgba(99, 102, 241, 0.1);
+        }
+        
+        .sidebar-links a.active {
+            border-left: 2px solid var(--primary);
+        }
+        
+        /* Main Content */
+        .docs-content {
+            padding: 2rem 4rem;
+            max-width: 900px;
+        }
+        
+        .docs-content h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .docs-content h2 {
+            font-size: 1.75rem;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+        
+        .docs-content h3 {
+            font-size: 1.25rem;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+        
+        .docs-content p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .docs-content ul,
+        .docs-content ol {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+        
+        .docs-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.7;
+        }
+        
+        .docs-content code {
+            background: var(--bg-card);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: var(--font-mono);
+            font-size: 0.9em;
+            color: var(--primary-light);
+        }
+        
+        .docs-content pre {
+            background: #0d1117;
+            border-radius: 12px;
+            padding: 1.5rem;
+            overflow-x: auto;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+        
+        .docs-content pre code {
+            background: none;
+            padding: 0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        .callout {
+            padding: 1.25rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .callout-info {
+            background: rgba(6, 182, 212, 0.1);
+            border-left: 4px solid var(--accent);
+        }
+        
+        .callout-warning {
+            background: rgba(245, 158, 11, 0.1);
+            border-left: 4px solid var(--warning);
+        }
+        
+        .callout-success {
+            background: rgba(16, 185, 129, 0.1);
+            border-left: 4px solid var(--success);
+        }
+        
+        .callout-title {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .api-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5rem;
+        }
+        
+        .api-table th,
+        .api-table td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .api-table th {
+            background: var(--bg-card);
+            font-weight: 600;
+        }
+        
+        .api-table td code {
+            font-size: 0.85rem;
+        }
+        
+        /* Mobile */
+        .mobile-docs-toggle {
+            display: none;
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 100;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        @media (max-width: 1024px) {
+            .docs-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .docs-sidebar {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 280px;
+                height: 100vh;
+                z-index: 1000;
+            }
+            
+            .docs-sidebar.open {
+                display: block;
+            }
+            
+            .docs-content {
+                padding: 2rem;
+            }
+            
+            .mobile-docs-toggle {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">⚛️</span>
+                <span class="logo-text">QAntum<span class="version">v1.0.0</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="demo.html">Demo</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="docs.html" class="active">Docs</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="pricing.html" class="btn btn-primary">Get Started →</a>
+            </div>
+            <button class="mobile-menu">☰</button>
+        </div>
+    </nav>
+
+    <!-- Documentation Page -->
+    <main class="docs-page">
+        <div class="docs-layout">
+            <!-- Sidebar -->
+            <aside class="docs-sidebar" id="docsSidebar">
+                <div class="sidebar-section">
+                    <h3>Getting Started</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="#introduction" class="active">Introduction</a></li>
+                        <li><a href="#installation">Installation</a></li>
+                        <li><a href="#quickstart">Quick Start</a></li>
+                        <li><a href="#configuration">Configuration</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3>Core Features</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="#ghost-protocol">Ghost Protocol</a></li>
+                        <li><a href="#self-healing">Self-Healing</a></li>
+                        <li><a href="#swarm">Swarm Execution</a></li>
+                        <li><a href="#oracle">The Oracle</a></li>
+                        <li><a href="#chronos">Chronos Engine</a></li>
+                        <li><a href="#fortress">Fortress Security</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3>API Reference</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="#api">API Overview</a></li>
+                        <li><a href="#methods">Methods</a></li>
+                        <li><a href="#options">Options</a></li>
+                    </ul>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3>Resources</h3>
+                    <ul class="sidebar-links">
+                        <li><a href="#changelog">Changelog</a></li>
+                        <li><a href="https://github.com/papica777-eng" target="_blank">GitHub</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+            </aside>
+            
+            <!-- Main Content -->
+            <div class="docs-content">
+                <h1 id="introduction">Introduction</h1>
+                
+                <p>Welcome to QAntum Prime – the AI-powered testing framework that refuses to die. With 715,861 lines of battle-tested code, QAntum brings enterprise-grade QA automation to teams of all sizes.</p>
+                
+                <div class="callout callout-info">
+                    <div class="callout-title">💡 What makes QAntum different?</div>
+                    <p style="margin-bottom: 0;">Unlike traditional testing frameworks, QAntum uses AI to heal broken tests, bypass bot detection, and predict failures before they happen.</p>
+                </div>
+                
+                <h2 id="installation">Installation</h2>
+                
+                <p>Install QAntum Prime via npm:</p>
+                
+                <pre><code>npm install qantum-prime</code></pre>
+                
+                <p>Or use the CLI to scaffold a new project:</p>
+                
+                <pre><code>npx qantum init my-project
+cd my-project
+npm test</code></pre>
+                
+                <h2 id="quickstart">Quick Start</h2>
+                
+                <p>Here's a simple example to get you started:</p>
+                
+                <pre><code>import { QAntum } from 'qantum-prime';
+
+// Initialize QAntum with default settings
+const qa = await QAntum.create({
+  ghost: true,      // Enable Ghost Protocol
+  selfHeal: true,   // Enable self-healing
+  parallel: 10      // Run 10 tests in parallel
+});
+
+// Write your first test
+await qa.test('Homepage loads', async ({ page }) => {
+  await page.goto('https://example.com');
+  await qa.expect(page).toHaveTitle(/Example/);
+});
+
+// Run all tests
+await qa.run();</code></pre>
+                
+                <div class="callout callout-success">
+                    <div class="callout-title">✅ That's it!</div>
+                    <p style="margin-bottom: 0;">You've just written your first QAntum test. The framework handles browser automation, self-healing, and reporting automatically.</p>
+                </div>
+                
+                <h2 id="configuration">Configuration</h2>
+                
+                <p>Create a <code>qantum.config.ts</code> file in your project root:</p>
+                
+                <pre><code>import { defineConfig } from 'qantum-prime';
+
+export default defineConfig({
+  // Ghost Protocol settings
+  ghost: {
+    enabled: true,
+    biometric: true,
+    fingerprint: 'random'
+  },
+  
+  // Self-healing settings
+  selfHeal: {
+    enabled: true,
+    strategies: ['data-testid', 'aria-label', 'text', 'visual'],
+    confidenceThreshold: 0.85
+  },
+  
+  // Execution settings
+  parallel: {
+    workers: 50,
+    retries: 2
+  },
+  
+  // Reporting
+  reporters: ['html', 'json', 'console']
+});</code></pre>
+                
+                <h2 id="ghost-protocol">Ghost Protocol v2</h2>
+                
+                <p>Ghost Protocol makes your automation completely invisible to bot detection systems. It simulates human behavior with uncanny accuracy.</p>
+                
+                <h3>Features</h3>
+                <ul>
+                    <li><strong>Biometric Simulation</strong> – Realistic mouse movements, typing patterns, and scroll behavior</li>
+                    <li><strong>Fingerprint Masking</strong> – Unique browser fingerprints for each session</li>
+                    <li><strong>Anti-Detection</strong> – Bypasses Cloudflare, Akamai, PerimeterX, and DataDome</li>
+                </ul>
+                
+                <pre><code>// Enable Ghost Protocol
+const qa = await QAntum.create({
+  ghost: {
+    enabled: true,
+    biometric: true,        // Human-like mouse movements
+    fingerprint: 'unique',  // New fingerprint per session
+    stealth: 'maximum'      // Full anti-detection suite
+  }
+});</code></pre>
+                
+                <div class="callout callout-warning">
+                    <div class="callout-title">⚠️ Important</div>
+                    <p style="margin-bottom: 0;">Use Ghost Protocol responsibly. It's designed for testing your own applications, not for bypassing security on sites you don't own.</p>
+                </div>
+                
+                <h2 id="self-healing">Self-Healing Tests</h2>
+                
+                <p>QAntum's self-healing engine automatically repairs broken selectors using machine learning. When UI changes, your tests adapt.</p>
+                
+                <h3>How it Works</h3>
+                <ol>
+                    <li>QAntum detects a broken selector</li>
+                    <li>ML engine analyzes 15+ alternative strategies</li>
+                    <li>Best match is selected (97%+ accuracy)</li>
+                    <li>Test continues without human intervention</li>
+                    <li>Healing is logged for review</li>
+                </ol>
+                
+                <h3>Healing Strategies</h3>
+                <table class="api-table">
+                    <thead>
+                        <tr>
+                            <th>Strategy</th>
+                            <th>Priority</th>
+                            <th>Accuracy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>data-testid</code></td>
+                            <td>1</td>
+                            <td>99.2%</td>
+                        </tr>
+                        <tr>
+                            <td><code>aria-label</code></td>
+                            <td>2</td>
+                            <td>94.7%</td>
+                        </tr>
+                        <tr>
+                            <td><code>text-content</code></td>
+                            <td>3</td>
+                            <td>91.3%</td>
+                        </tr>
+                        <tr>
+                            <td><code>visual-position</code></td>
+                            <td>4</td>
+                            <td>87.8%</td>
+                        </tr>
+                        <tr>
+                            <td><code>dom-structure</code></td>
+                            <td>5</td>
+                            <td>82.4%</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h2 id="swarm">Swarm Execution</h2>
+                
+                <p>Run thousands of tests in parallel across multiple regions. Swarm Intelligence distributes your test suite for maximum speed.</p>
+                
+                <pre><code>// Enable Swarm mode
+const qa = await QAntum.create({
+  swarm: {
+    enabled: true,
+    workers: 1000,
+    regions: ['us-east', 'eu-west', 'ap-south'],
+    loadBalancing: 'intelligent'
+  }
+});</code></pre>
+                
+                <h2 id="oracle">The Oracle</h2>
+                
+                <p>The Oracle is QAntum's AI-powered test discovery engine. Point it at a URL and it automatically generates comprehensive test cases.</p>
+                
+                <pre><code>// Auto-discover and generate tests
+await qa.oracle.discover({
+  url: 'https://your-app.com',
+  depth: 3,                    // Crawl depth
+  generateTests: true,         // Auto-generate test files
+  coverage: ['forms', 'navigation', 'api', 'auth']
+});</code></pre>
+                
+                <h2 id="chronos">Chronos Engine</h2>
+                
+                <p>Chronos predicts test failures before they happen using historical data analysis and pattern recognition.</p>
+                
+                <pre><code>// Get failure predictions
+const predictions = await qa.chronos.predict();
+
+predictions.forEach(p => {
+  console.log(`${p.test}: ${p.failureProbability}% chance of failure`);
+  console.log(`Recommendation: ${p.recommendation}`);
+});</code></pre>
+                
+                <h2 id="fortress">Fortress Security</h2>
+                
+                <p>Fortress integrates security scanning into your test suite. Find vulnerabilities while testing functionality.</p>
+                
+                <pre><code>// Enable security scanning
+const qa = await QAntum.create({
+  fortress: {
+    enabled: true,
+    scanTypes: ['xss', 'sqli', 'csrf', 'ssrf'],
+    reportVulnerabilities: true
+  }
+});</code></pre>
+                
+                <h2 id="api">API Reference</h2>
+                
+                <h3 id="methods">Core Methods</h3>
+                
+                <table class="api-table">
+                    <thead>
+                        <tr>
+                            <th>Method</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>QAntum.create(options)</code></td>
+                            <td>Initialize a new QAntum instance</td>
+                        </tr>
+                        <tr>
+                            <td><code>qa.test(name, fn)</code></td>
+                            <td>Define a test case</td>
+                        </tr>
+                        <tr>
+                            <td><code>qa.run()</code></td>
+                            <td>Execute all tests</td>
+                        </tr>
+                        <tr>
+                            <td><code>qa.expect(value)</code></td>
+                            <td>Create an assertion</td>
+                        </tr>
+                        <tr>
+                            <td><code>qa.oracle.discover()</code></td>
+                            <td>Auto-discover tests</td>
+                        </tr>
+                        <tr>
+                            <td><code>qa.chronos.predict()</code></td>
+                            <td>Get failure predictions</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3 id="options">Configuration Options</h3>
+                
+                <table class="api-table">
+                    <thead>
+                        <tr>
+                            <th>Option</th>
+                            <th>Type</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>ghost</code></td>
+                            <td>boolean | object</td>
+                            <td>false</td>
+                            <td>Enable Ghost Protocol</td>
+                        </tr>
+                        <tr>
+                            <td><code>selfHeal</code></td>
+                            <td>boolean | object</td>
+                            <td>true</td>
+                            <td>Enable self-healing</td>
+                        </tr>
+                        <tr>
+                            <td><code>parallel</code></td>
+                            <td>number</td>
+                            <td>4</td>
+                            <td>Parallel workers</td>
+                        </tr>
+                        <tr>
+                            <td><code>timeout</code></td>
+                            <td>number</td>
+                            <td>30000</td>
+                            <td>Test timeout (ms)</td>
+                        </tr>
+                        <tr>
+                            <td><code>retries</code></td>
+                            <td>number</td>
+                            <td>2</td>
+                            <td>Retry count</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h2 id="changelog">Changelog</h2>
+                
+                <h3>v1.0.0-IMMORTAL (Current)</h3>
+                <ul>
+                    <li>🚀 752,312 lines of code</li>
+                    <li>👻 Ghost Protocol v2 with biometric simulation</li>
+                    <li>🔮 Self-Healing with 15 strategies (97% accuracy)</li>
+                    <li>🐝 Swarm execution across 5 global regions</li>
+                    <li>🔍 The Oracle auto-discovery engine</li>
+                    <li>⏱️ Chronos predictive engine</li>
+                    <li>🛡️ Fortress security scanning</li>
+                </ul>
+                
+                <h3>v1.0.0</h3>
+                <ul>
+                    <li>PANTHEON architecture complete</li>
+                    <li>Fatality Engine v3</li>
+                    <li>Multi-region support</li>
+                </ul>
+                
+                <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-color); text-align: center;">
+                    <p style="color: var(--text-muted);">
+                        Built with ❤️ in Sofia, Bulgaria<br>
+                        © 2025 Dimitar Prodromov | QAntum Labs
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Mobile Toggle -->
+    <button class="mobile-docs-toggle" onclick="toggleSidebar()">📖</button>
+
+    <script src="js/main.js"></script>
+    <script>
+        function toggleSidebar() {
+            document.getElementById('docsSidebar').classList.toggle('open');
+        }
+        
+        // Active link tracking
+        const links = document.querySelectorAll('.sidebar-links a[href^="#"]');
+        const sections = document.querySelectorAll('.docs-content h1[id], .docs-content h2[id]');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            links.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

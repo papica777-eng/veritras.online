@@ -1,0 +1,31 @@
+[
+  {
+    "email": "papica777@gmail.com",
+    "name": "Dimitar",
+    "company": "QAntum Internal Test",
+    "need": "internal_test"
+  },
+  {
+    "name": "Binance Recruitment",
+    "email": "careers@binance.com",
+    "company": "Binance",
+    "role": "Senior SRE (Node.js & QA)",
+    "need": "sre_automation",
+    "context": "Seeing your open role for Senior SRE with Node.js and QA focus."
+  },
+  {
+    "name": "Ciklum Hiring",
+    "email": "careers.bulgaria@ciklum.com",
+    "company": "Ciklum",
+    "role": "Senior DevOps Engineer",
+    "need": "devops_automation",
+    "context": "Noticed you are expanding your DevOps capabilities in Bulgaria."
+  },
+  {
+    "name": "Svetlin Nakov / SoftUni Management",
+    "email": "partners@softuni.bg",
+    "company": "SoftUni",
+    "need": "grand_softuni_partnership",
+    "context": "as a student who just started my first course with you 5 days ago, but also as the architect of a 14.7M LOC AI system."
+  }
+]

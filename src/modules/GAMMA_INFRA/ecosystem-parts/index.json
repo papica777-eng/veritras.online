@@ -1,0 +1,67 @@
+{
+  "generatedAt": "2026-01-06T17:20:38.674Z",
+  "totalModules": 976,
+  "statistics": {
+    "total": 976,
+    "classified": 767,
+    "unclassified": 209,
+    "byCategory": {
+      "UNCLASSIFIED": 209,
+      "VITALITY": 170,
+      "SKILLS": 86,
+      "STRENGTH": 495,
+      "SECURITY": 16
+    }
+  },
+  "categories": [
+    {
+      "name": "SKILLS",
+      "subCategories": [
+        "integration",
+        "network",
+        "automation",
+        "business"
+      ],
+      "moduleCount": 86
+    },
+    {
+      "name": "STRENGTH",
+      "subCategories": [
+        "core",
+        "performance",
+        "output",
+        "physics",
+        "processing"
+      ],
+      "moduleCount": 495
+    },
+    {
+      "name": "VITALITY",
+      "subCategories": [
+        "cognition",
+        "health",
+        "learning",
+        "memory",
+        "growth"
+      ],
+      "moduleCount": 170
+    },
+    {
+      "name": "SECURITY",
+      "subCategories": [
+        "auth",
+        "threat",
+        "encryption",
+        "guardians"
+      ],
+      "moduleCount": 16
+    },
+    {
+      "name": "UNCLASSIFIED",
+      "subCategories": [
+        "unknown"
+      ],
+      "moduleCount": 209
+    }
+  ]
+}

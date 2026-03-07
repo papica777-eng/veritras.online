@@ -1,0 +1,11 @@
+{
+    "name": "MathBot (Logic Core)",
+    "version": "1.0.0-QAntum",
+    "type": "Autonomous Agent",
+    "description": "Strict Mathematical Logic Bot with N-Step Verification and Watchdog supervision.",
+    "price_model": "License (€25k/year)",
+    "files": [
+        "core/MathBot.ts"
+    ],
+    "status": "READY"
+}

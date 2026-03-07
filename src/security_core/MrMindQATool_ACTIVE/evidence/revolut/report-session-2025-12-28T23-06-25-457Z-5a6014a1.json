@@ -1,0 +1,36 @@
+{
+  "session": {
+    "sessionId": "session-2025-12-28T23-06-25-457Z-5a6014a1",
+    "startTime": "2025-12-28T23:06:25.459Z",
+    "totalCaptures": 13,
+    "capturesByType": {
+      "URL_CHANGE": 9,
+      "PII_LEAK": 3,
+      "AUTH_BYPASS": 1
+    },
+    "storageUsedMB": 2.4,
+    "aiAnnotationsCount": 0,
+    "maskedFieldsCount": 0
+  },
+  "config": {
+    "outputDir": "./evidence",
+    "targetApp": "revolut",
+    "mode": "safe-hunter",
+    "imageFormat": "webp",
+    "imageQuality": 85,
+    "aiAnnotations": "gemini",
+    "geminiApiKey": "[REDACTED]",
+    "maskingLevel": "strict",
+    "autoCaptureEvents": [
+      "IDOR_CANDIDATE",
+      "PII_LEAK",
+      "URL_CHANGE",
+      "BOLA_DETECTED",
+      "SENSITIVE_DATA_EXPOSURE"
+    ],
+    "compress": true,
+    "maxStorageMB": 1024,
+    "verbose": false
+  },
+  "evidence": []
+}

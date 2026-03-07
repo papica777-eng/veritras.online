@@ -1,0 +1,49 @@
+{
+  "name": "QAntum-debugger",
+  "version": "1.0.0-QAntum",
+  "description": "Self-Healing TypeScript/JavaScript Debugger with Auto-Fix & Learning",
+  "main": "dist/QAntum-debugger.js",
+  "types": "dist/QAntum-debugger.d.ts",
+  "bin": {
+    "QAntum-debug": "./dist/cli.js",
+    "qd": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "dev": "ts-node src/cli.ts",
+    "scan": "ts-node src/cli.ts scan",
+    "watch": "ts-node src/cli.ts watch",
+    "license": "ts-node src/license.ts",
+    "test": "vitest"
+  },
+  "keywords": ["debugger", "self-healing", "auto-fix", "typescript", "javascript", "eslint", "code-quality", "developer-tools", "automation", "QAntum"],
+  "author": {
+    "name": "Dimitar Prodromov",
+    "email": "dimitar@QAntum.dev",
+    "url": "https://QAntum.dev"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/QAntum-dev/QAntum-debugger"
+  },
+  "homepage": "https://QAntum.dev/debugger",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": ["dist", "README.md", "LICENSE"],
+  "dependencies": {
+    "chokidar": "^3.5.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3",
+    "vitest": "^1.1.0"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://QAntum.dev/sponsor"
+  }
+}

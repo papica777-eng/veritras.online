@@ -1,0 +1,43 @@
+{
+  "version": "1.0.0-QAntum",
+  "codename": "ASCENSION_CORE",
+  "consolidation_date": "2026-01-07T17:01:04.385Z",
+  "assets": [
+    {
+      "original_path": "data/vault.encrypted",
+      "vault_path": "data\\vault.encrypted",
+      "type": "ENCRYPTED_BLOB",
+      "migrated": true
+    },
+    {
+      "original_path": "MrMindQATool/data/vault.encrypted",
+      "vault_path": "MrMindQATool_data\\vault.encrypted",
+      "type": "ENCRYPTED_BLOB",
+      "migrated": true
+    },
+    {
+      "original_path": "MrMindQATool/test-bastion-vault.encrypted",
+      "vault_path": "MrMindQATool\\test-bastion-vault.encrypted",
+      "type": "ENCRYPTED_BLOB",
+      "migrated": true
+    },
+    {
+      "original_path": "MrMindQATool/test-vault.encrypted",
+      "vault_path": "MrMindQATool\\test-vault.encrypted",
+      "type": "ENCRYPTED_BLOB",
+      "migrated": true
+    },
+    {
+      "original_path": "src/security",
+      "vault_path": "src\\security",
+      "type": "SECURITY_MODULE",
+      "migrated": true
+    },
+    {
+      "original_path": "MrMindQATool/src/security",
+      "vault_path": "MrMindQATool_src\\security",
+      "type": "SECURITY_MODULE",
+      "migrated": true
+    }
+  ]
+}

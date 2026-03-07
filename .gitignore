@@ -1,0 +1,19 @@
+.env
+dashboard/trades/*.jsonl
+dashboard/trades/session-*.json
+
+node_modules/
+.env*
+*.mp4
+*.pdf
+blobs/
+*.bini/
+**/incremental/
+**/.sandbox/
+
+# RustBuilder sandbox artifacts (generated during testing / dry-run)
+native/.sandbox/
+
+# Rust build artifacts
+**/target/
+.vercel

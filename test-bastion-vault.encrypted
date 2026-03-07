@@ -1,0 +1,33 @@
+{
+  "manifest": {
+    "version": "19.0.0",
+    "machineId": "fa6aa7e937c4e782",
+    "createdAt": "2026-02-28T03:07:35.594Z",
+    "entryCount": 1,
+    "totalSize": 13,
+    "manifestChecksum": "5f12301a09219edf576b6042d5834002eed92691ceea2481b50b4ee2d65d2374",
+    "lastSync": "2026-02-28T12:17:12.174Z"
+  },
+  "salt": "TUWwuBldrZPyEZ+xpVvOS/l8OFbHWqBcnR1EeESzYSc=",
+  "entries": [
+    [
+      "bastion-test",
+      {
+        "id": "bastion-test",
+        "type": "metrics",
+        "payload": {
+          "algorithm": "aes-256-gcm",gitlens://7b22726566223a2266333964343938616234396165633335373562653030646166323332313961613530373830363039222c227265706f50617468223a22633a2f55736572732f70617069632f4465736b746f702f414c4c2d504f534954494f4e532f426c6f636b636861696e2f51416e74756d2d31227d/c%3A/Users/papic/Desktop/ALL-POSITIONS/Blockchain/QAntum-1?%7B%22ref%22%3A%22f39d498%22%7D
+          "iv": "TQ8Fh36aAVLhpBIH",
+          "data": "H9DxQKDibtAL0aPigiOIGlifgkpVphq0boaz1I9BjzheXTp5rfaLkcEk+MU=",
+          "authTag": "v3tChhhHn35Gm7la3at/4w==",
+          "salt": "TUWwuBldrZPyEZ+xpVvOS/l8OFbHWqBcnR1EeESzYSc=",
+          "encryptedAt": "2026-02-28T12:17:12.173Z",
+          "version": 1
+        },
+        "checksum": "f65a04fc8ad700ad00260653617fd76ad37f1a0791d867746dc8a6cca68188bf",
+        "lastModified": "2026-02-28T12:17:12.173Z",
+        "originalSize": 13
+      }
+    ]
+  ]
+}gitlens://7b22726566223a2266333964343938616234396165633335373562653030646166323332313961613530373830363039222c227265706f50617468223a22633a2f55736572732f70617069632f4465736b746f702f414c4c2d504f534954494f4e532f426c6f636b636861696e2f51416e74756d2d31227d/c%3A/Users/papic/Desktop/ALL-POSITIONS/Blockchain/QAntum-1?%7B%22ref%22%3A%22f39d498%22%7D

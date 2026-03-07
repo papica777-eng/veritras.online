@@ -1,0 +1,1814 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QAntum Master Control | Career Command Center</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        :root {
+            --bg: #0a0a0f;
+            --surface: #12121a;
+            --surface2: #1a1a2e;
+            --border: #2a2a3e;
+            --accent: #6c5ce7;
+            --accent2: #a29bfe;
+            --green: #00b894;
+            --red: #ff6b6b;
+            --orange: #fdcb6e;
+            --cyan: #00cec9;
+            --text: #e8e8f0;
+            --text2: #8888aa;
+            --glass: rgba(108, 92, 231, 0.08);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            overflow-x: hidden
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 20% 20%, rgba(108, 92, 231, 0.06), transparent 50%), radial-gradient(ellipse at 80% 80%, rgba(0, 206, 201, 0.04), transparent 50%);
+            pointer-events: none;
+            z-index: 0
+        }
+
+        /* HEADER */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(20px);
+            background: rgba(10, 10, 15, 0.85);
+            border-bottom: 1px solid var(--border);
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between
+        }
+
+        .header h1 {
+            font-size: 18px;
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--accent), var(--cyan));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .header .status {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+            font-size: 12px;
+            color: var(--text2)
+        }
+
+        .header .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--green);
+            box-shadow: 0 0 8px var(--green);
+            animation: pulse 2s infinite
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1
+            }
+
+            50% {
+                opacity: .4
+            }
+        }
+
+        .clock {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--accent2);
+            font-size: 13px
+        }
+
+        /* TABS */
+        .tabs {
+            display: flex;
+            gap: 4px;
+            padding: 8px 24px;
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 52px;
+            z-index: 99
+        }
+
+        .tab {
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text2);
+            transition: all .2s;
+            border: 1px solid transparent;
+            user-select: none
+        }
+
+        .tab:hover {
+            color: var(--text);
+            background: var(--glass)
+        }
+
+        .tab.active {
+            color: #fff;
+            background: var(--accent);
+            border-color: var(--accent)
+        }
+
+        /* GRID */
+        .content {
+            padding: 20px 24px;
+            position: relative;
+            z-index: 1
+        }
+
+        .panel {
+            display: none;
+            animation: fadeIn .3s ease
+        }
+
+        .panel.active {
+            display: block
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(8px)
+            }
+
+            to {
+                opacity: 1;
+                transform: none
+            }
+        }
+
+        .grid {
+            display: grid;
+            gap: 16px
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fill, minmax(420px, 1fr))
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr))
+        }
+
+        /* CARD */
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            transition: all .25s
+        }
+
+        .card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(108, 92, 231, 0.12)
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px
+        }
+
+        .card-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px
+        }
+
+        .card-icon.purple {
+            background: rgba(108, 92, 231, 0.15)
+        }
+
+        .card-icon.green {
+            background: rgba(0, 184, 148, 0.15)
+        }
+
+        .card-icon.cyan {
+            background: rgba(0, 206, 201, 0.15)
+        }
+
+        .card-icon.orange {
+            background: rgba(253, 203, 110, 0.15)
+        }
+
+        .card-icon.red {
+            background: rgba(255, 107, 107, 0.15)
+        }
+
+        .card-title {
+            font-size: 15px;
+            font-weight: 600
+        }
+
+        .card-sub {
+            font-size: 12px;
+            color: var(--text2);
+            margin-top: 2px
+        }
+
+        .card p {
+            font-size: 13px;
+            color: var(--text2);
+            line-height: 1.6;
+            margin-bottom: 12px
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 500;
+            margin: 2px 4px 2px 0
+        }
+
+        .tag-purple {
+            background: rgba(108, 92, 231, 0.15);
+            color: var(--accent2)
+        }
+
+        .tag-green {
+            background: rgba(0, 184, 148, 0.15);
+            color: var(--green)
+        }
+
+        .tag-cyan {
+            background: rgba(0, 206, 201, 0.15);
+            color: var(--cyan)
+        }
+
+        .tag-orange {
+            background: rgba(253, 203, 110, 0.15);
+            color: var(--orange)
+        }
+
+        /* METRICS */
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 10px;
+            margin-bottom: 16px
+        }
+
+        .metric {
+            background: var(--surface2);
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center
+        }
+
+        .metric .val {
+            font-size: 22px;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace
+        }
+
+        .metric .label {
+            font-size: 11px;
+            color: var(--text2);
+            margin-top: 4px
+        }
+
+        .metric .val.g {
+            color: var(--green)
+        }
+
+        .metric .val.p {
+            color: var(--accent2)
+        }
+
+        .metric .val.c {
+            color: var(--cyan)
+        }
+
+        .metric .val.o {
+            color: var(--orange)
+        }
+
+        /* BUTTONS */
+        .btn {
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: var(--surface2);
+            color: var(--text);
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all .2s;
+            font-family: 'Inter', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px
+        }
+
+        .btn:hover {
+            border-color: var(--accent);
+            background: var(--glass)
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #fff
+        }
+
+        .btn-primary:hover {
+            background: #5a4bd6;
+            box-shadow: 0 4px 16px rgba(108, 92, 231, 0.3)
+        }
+
+        .btn-sm {
+            padding: 6px 14px;
+            font-size: 12px
+        }
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px
+        }
+
+        /* TABLE */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px
+        }
+
+        th {
+            text-align: left;
+            padding: 10px 12px;
+            color: var(--text2);
+            font-weight: 500;
+            border-bottom: 1px solid var(--border);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: .5px
+        }
+
+        td {
+            padding: 10px 12px;
+            border-bottom: 1px solid rgba(42, 42, 62, 0.5)
+        }
+
+        tr:hover td {
+            background: var(--glass)
+        }
+
+        /* EMAIL COMPOSER */
+        .composer {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 16px
+        }
+
+        .composer label {
+            display: block;
+            font-size: 12px;
+            color: var(--text2);
+            margin-bottom: 6px;
+            font-weight: 500
+        }
+
+        .composer input,
+        .composer select,
+        .composer textarea {
+            width: 100%;
+            padding: 10px 14px;
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text);
+            font-size: 13px;
+            font-family: 'Inter', sans-serif;
+            margin-bottom: 14px;
+            transition: border-color .2s
+        }
+
+        .composer input:focus,
+        .composer select:focus,
+        .composer textarea:focus {
+            outline: none;
+            border-color: var(--accent)
+        }
+
+        .composer textarea {
+            min-height: 120px;
+            resize: vertical
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px
+        }
+
+        /* SWITCH TOGGLE */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 34px;
+            height: 18px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #2a2a3e;
+            transition: .4s;
+            border-radius: 34px;
+            border: 1px solid var(--border);
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 12px;
+            width: 12px;
+            left: 2px;
+            bottom: 2px;
+            background-color: var(--text2);
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked+.slider {
+            background-color: var(--cyan);
+            border-color: var(--cyan);
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(16px);
+            background-color: #fff;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.4;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* DASHBOARD LINKS */
+        .dash-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 12px
+        }
+
+        .dash-link {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all .2s;
+            text-decoration: none;
+            color: var(--text)
+        }
+
+        .dash-link:hover {
+            border-color: var(--accent);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(108, 92, 231, 0.1)
+        }
+
+        .dash-link .icon {
+            font-size: 28px;
+            width: 48px;
+            text-align: center
+        }
+
+        .dash-link .info h4 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 3px
+        }
+
+        .dash-link .info span {
+            font-size: 12px;
+            color: var(--text2)
+        }
+
+        /* LOG */
+        .log-area {
+            background: #0d0d14;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 14px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--green);
+            max-height: 200px;
+            overflow-y: auto;
+            line-height: 1.8;
+            margin-top: 12px
+        }
+
+        .log-area .warn {
+            color: var(--orange)
+        }
+
+        .log-area .err {
+            color: var(--red)
+        }
+
+        .log-area .info {
+            color: var(--cyan)
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:768px) {
+
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr
+            }
+
+            .form-row {
+                grid-template-columns: 1fr
+            }
+
+            .tabs {
+                overflow-x: auto;
+                flex-wrap: nowrap
+            }
+
+            .tab {
+                white-space: nowrap
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>⚛️ QAntum Master Control</h1>
+        <div class="status">
+            <span class="dot"></span> <span>ONLINE</span>
+            <span class="clock" id="clock"></span>
+        </div>
+    </div>
+
+    <!-- TABS -->
+    <div class="tabs" id="tabBar">
+        <div class="tab active" data-tab="overview">📊 Overview</div>
+        <div class="tab" data-tab="email">📧 Email Engine</div>
+        <div class="tab" data-tab="portfolio">💼 Portfolios</div>
+        <div class="tab" data-tab="profile">👤 Profile</div>
+        <div class="tab" data-tab="dashboards">🖥️ Dashboards</div>
+        <div class="tab" data-tab="tools">🛠️ Tools Guide</div>
+        <div class="tab" data-tab="gemini">✨ Gemini AI</div>
+        <div class="tab" data-tab="settings">⚙️ Settings</div>
+    </div>
+
+    <div class="content">
+
+        <!-- ═══════════ OVERVIEW ═══════════ -->
+        <div class="panel active" id="panel-overview">
+            <div class="metrics">
+                <div class="metric">
+                    <div class="val p">15M+</div>
+                    <div class="label">LINES OF CODE</div>
+                </div>
+                <div class="metric">
+                    <div class="val g">52,573</div>
+                    <div class="label">VECTORS INDEXED</div>
+                </div>
+                <div class="metric">
+                    <div class="val c">173</div>
+                    <div class="label">MODULES</div>
+                </div>
+                <div class="metric">
+                    <div class="val o">8</div>
+                    <div class="label">DEPARTMENTS</div>
+                </div>
+                <div class="metric">
+                    <div class="val g">63K+</div>
+                    <div class="label">TEST ASSETS</div>
+                </div>
+                <div class="metric">
+                    <div class="val p">100%</div>
+                    <div class="label">TEST COVERAGE</div>
+                </div>
+            </div>
+
+            <div class="grid grid-2">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon purple">📧</div>
+                        <div>
+                            <div class="card-title">Email Engine (SendGrid)</div>
+                            <div class="card-sub">aeterna-node/scripts/core/EmailEngine.ts</div>
+                        </div>
+                    </div>
+                    <p>720 реда | Enterprise-grade: Templates, Campaigns, Bulk send, Webhooks, Stats tracking. 3
+                        вградени шаблона: Bug Discovery, Follow-up, Pricing Offer.</p>
+                    <span class="tag tag-purple">SendGrid</span><span class="tag tag-green">TypeScript</span><span
+                        class="tag tag-cyan">Campaign Manager</span>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon green">🚀</div>
+                        <div>
+                            <div class="card-title">Resend Pitch Engine</div>
+                            <div class="card-sub">aeterna-node/scripts/core/EmailEngine.js</div>
+                        </div>
+                    </div>
+                    <p>141 реда | Quick outreach с targets_ghost.json. Поддържа: SRE, DevOps, Investment, Partnership,
+                        SaaS scaling pitches. Auto-localization.</p>
+                    <span class="tag tag-green">Resend API</span><span class="tag tag-orange">6 Pitch Types</span><span
+                        class="tag tag-purple">Auto-Rate-Limit</span>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon cyan">🌐</div>
+                        <div>
+                            <div class="card-title">Framework Dashboard</div>
+                            <div class="card-sub">QANTUM_HTML_VAULT_public_index.html</div>
+                        </div>
+                    </div>
+                    <p>2,311 реда | 4 езика (BG/EN/DE/FR). API Testing, Link Checker, Audit, Prediction Matrix, Docker
+                        Manager, Swarm Commander, License Manager.</p>
+                    <span class="tag tag-cyan">4 Languages</span><span class="tag tag-purple">13 Modules</span><span
+                        class="tag tag-green">Self-Contained</span>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon orange">📁</div>
+                        <div>
+                            <div class="card-title">Job Portfolios</div>
+                            <div class="card-sub">JOB_PORTFOLIOS/ (8 projects)</div>
+                        </div>
+                    </div>
+                    <p>Специализирани портфолиа за различни роли: AI/ML, Full-Stack, QA Lead, DevOps, Data Engineer,
+                        Platform Engineer, Backend.</p>
+                    <span class="tag tag-orange">8 Roles</span><span class="tag tag-purple">Markdown</span><span
+                        class="tag tag-green">Role-Targeted</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════ EMAIL ENGINE ═══════════ -->
+        <div class="panel" id="panel-email">
+            <h2 style="font-size:18px;margin-bottom:16px">📧 Email Outreach Systems</h2>
+
+            <div class="grid grid-2" style="margin-bottom:20px">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon purple">📨</div>
+                        <div>
+                            <div class="card-title">SendGrid Engine (EmailEngine.ts)</div>
+                            <div class="card-sub">Enterprise Campaign Manager</div>
+                        </div>
+                    </div>
+                    <table>
+                        <tr>
+                            <td><strong>sendEmail()</strong></td>
+                            <td>Единичен имейл с template</td>
+                        </tr>
+                        <tr>
+                            <td><strong>sendBulk()</strong></td>
+                            <td>До 1000 получатели/batch</td>
+                        </tr>
+                        <tr>
+                            <td><strong>sendWithTemplate()</strong></td>
+                            <td>Dynamic SendGrid templates</td>
+                        </tr>
+                        <tr>
+                            <td><strong>createCampaign()</strong></td>
+                            <td>Създай кампания (draft→sending→sent)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>runCampaign()</strong></td>
+                            <td>Автоматично изпращане + rate limit</td>
+                        </tr>
+                        <tr>
+                            <td><strong>sendBugDiscoveryEmail()</strong></td>
+                            <td>Outreach с намерен бъг</td>
+                        </tr>
+                        <tr>
+                            <td><strong>addContact()</strong></td>
+                            <td>CRM list management</td>
+                        </tr>
+                        <tr>
+                            <td><strong>getStats()</strong></td>
+                            <td>Open/Click/Bounce tracking</td>
+                        </tr>
+                        <tr>
+                            <td><strong>handleWebhook()</strong></td>
+                            <td>Real-time event processing</td>
+                        </tr>
+                    </table>
+                    <div style="margin-top:12px">
+                        <span class="tag tag-purple">Bug Discovery</span><span
+                            class="tag tag-orange">Follow-up</span><span class="tag tag-green">Pricing Offer</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon green">⚡</div>
+                        <div>
+                            <div class="card-title">Resend Pitch Engine (EmailEngine.js)</div>
+                            <div class="card-sub">Quick Outreach System</div>
+                        </div>
+                    </div>
+                    <table>
+                        <tr>
+                            <td><strong>sre_automation</strong></td>
+                            <td>SRE/Node.js team targeting</td>
+                        </tr>
+                        <tr>
+                            <td><strong>devops_automation</strong></td>
+                            <td>DevOps capacity expansion</td>
+                        </tr>
+                        <tr>
+                            <td><strong>deep_tech_investment</strong></td>
+                            <td>Deep Tech VC pitch</td>
+                        </tr>
+                        <tr>
+                            <td><strong>saas_scaling</strong></td>
+                            <td>SaaS partnership pitch</td>
+                        </tr>
+                        <tr>
+                            <td><strong>angel_investment</strong></td>
+                            <td>Angel investor outreach</td>
+                        </tr>
+                        <tr>
+                            <td><strong>grand_softuni_partnership</strong></td>
+                            <td>Educational partnership</td>
+                        </tr>
+                        <tr>
+                            <td><strong>internal_test</strong></td>
+                            <td>System verification</td>
+                        </tr>
+                    </table>
+                    <p style="margin-top:12px;font-size:12px;color:var(--text2)">📂 Targets: <code
+                            style="color:var(--accent2)">targets_ghost.json</code> | Rate: 1 email/2s</p>
+                </div>
+            </div>
+
+            <!-- COMPOSER -->
+            <div class="composer">
+                <h3 style="font-size:15px;margin-bottom:14px">✍️ Quick Email Composer</h3>
+                <div class="form-row">
+                    <div><label>Recipient Email</label><input type="email" id="emailTo"
+                            placeholder="recruiter@company.com"></div>
+                    <div><label>Recipient Name</label><input type="text" id="emailName" placeholder="John Smith"></div>
+                </div>
+                <div class="form-row">
+                    <div><label>Company</label><input type="text" id="emailCompany" placeholder="TechCorp"></div>
+                    <div>
+                        <label>Template</label>
+                        <select id="emailTemplate">
+                            <option value="bug-discovery">🐛 Bug Discovery</option>
+                            <option value="follow-up">📩 Follow-up</option>
+                            <option value="pricing-offer">💎 Pricing Offer</option>
+                            <option value="sre_automation">⚙️ SRE Automation</option>
+                            <option value="devops_automation">🔧 DevOps Pitch</option>
+                            <option value="deep_tech_investment">🏦 DeepTech Investment</option>
+                            <option value="saas_scaling">📈 SaaS Scaling</option>
+                            <option value="angel_investment">👼 Angel Investment</option>
+                        </select>
+                    </div>
+                </div>
+                <label>Custom Message (optional override)</label>
+                <textarea id="emailBody" placeholder="Leave empty to use template default..."></textarea>
+                <div class="btn-group">
+                    <button class="btn btn-primary" onclick="composeEmail()">🚀 Generate Email</button>
+                    <button class="btn" onclick="clearComposer()">🗑️ Clear</button>
+                </div>
+                <div class="log-area" id="emailLog" style="display:none"></div>
+            </div>
+        </div>
+
+        <!-- ═══════════ PORTFOLIOS ═══════════ -->
+        <div class="panel" id="panel-portfolio">
+            <h2 style="font-size:18px;margin-bottom:16px">💼 Job Portfolio Registry</h2>
+            <p style="font-size:13px;color:var(--text2);margin-bottom:16px">Всяко портфолио е оптимизирано за конкретна
+                роля. Избери правилното спрямо Job Description-а.</p>
+
+            <div class="grid grid-3">
+                <div class="card" onclick="showPortfolio(this)" data-id="01">
+                    <div class="card-header">
+                        <div class="card-icon purple">🚀</div>
+                        <div>
+                            <div class="card-title">01 — VORTEX AI</div>
+                            <div class="card-sub">AI/ML Engineer</div>
+                        </div>
+                    </div>
+                    <p>HFT trading engine. &lt;50ms latency, 10K+ trades/day, GPU-bound security, Neural Context.</p>
+                    <span class="tag tag-purple">TypeScript</span><span class="tag tag-green">CCXT</span><span
+                        class="tag tag-orange">Telegram</span>
+                </div>
+                <div class="card" onclick="showPortfolio(this)" data-id="03">
+                    <div class="card-header">
+                        <div class="card-icon cyan">🖥️</div>
+                        <div>
+                            <div class="card-title">03 — VERITAS DASHBOARD</div>
+                            <div class="card-sub">Frontend Architect</div>
+                        </div>
+                    </div>
+                    <p>Real-time financial UI. WebSockets &lt;10ms, Glassmorphism, 60FPS locked, dynamic DOM.</p>
+                    <span class="tag tag-cyan">HTML5/CSS3</span><span class="tag tag-purple">WebSockets</span><span
+                        class="tag tag-green">Chart.js</span>
+                </div>
+                <div class="card" onclick="showPortfolio(this)" data-id="08">
+                    <div class="card-header">
+                        <div class="card-icon green">🏥</div>
+                        <div>
+                            <div class="card-title">08 — BIO HEALER</div>
+                            <div class="card-sub">DevOps Engineer</div>
+                        </div>
+                    </div>
+                    <p>Self-healing | Само-лечение system. 94% recovery rate, error taxonomy (Viral/Genetic/Trauma),
+                        state
+                        reconstruction.</p>
+                    <span class="tag tag-green">Error Boundaries</span><span class="tag tag-orange">Backoff</span><span
+                        class="tag tag-purple">Redis</span>
+                </div>
+                <div class="card" onclick="showPortfolio(this)" data-id="09">
+                    <div class="card-header">
+                        <div class="card-icon orange">📱</div>
+                        <div>
+                            <div class="card-title">09 — TELEGRAM UPLINK</div>
+                            <div class="card-sub">Full-Stack Developer</div>
+                        </div>
+                    </div>
+                    <p>Mobile C2 integration. Rich media alerts, interactive menus, &lt;1s delivery, auth whitelist.</p>
+                    <span class="tag tag-orange">Telegram API</span><span class="tag tag-green">Webhooks</span><span
+                        class="tag tag-cyan">Node.js</span>
+                </div>
+                <div class="card" onclick="showPortfolio(this)" data-id="10">
+                    <div class="card-header">
+                        <div class="card-icon red">📉</div>
+                        <div>
+                            <div class="card-title">10 — ARCHITECT LEDGER</div>
+                            <div class="card-sub">Data Engineer</div>
+                        </div>
+                    </div>
+                    <p>Financial auditing. 100K+ records, 1ms resolution, PnL attribution, anomaly detection.</p>
+                    <span class="tag tag-orange">Streams</span><span class="tag tag-purple">CSV/SQL</span><span
+                        class="tag tag-green">FIFO/LIFO</span>
+                </div>
+                <div class="card" onclick="showPortfolio(this)" data-id="11">
+                    <div class="card-header">
+                        <div class="card-icon purple">🧪</div>
+                        <div>
+                            <div class="card-title">11 — Q-ALLRIGHT</div>
+                            <div class="card-sub">QA Lead / Architect</div>
+                        </div>
+                    </div>
+                    <p>Ghost Protocol 99.5% stealth, AI Self-healing | Само-лечение 97%, NLP test generation. Beats
+                        Playwright/Cypress.
+                    </p>
+                    <span class="tag tag-purple">Ghost Mode</span><span class="tag tag-green">GPT-4o</span><span
+                        class="tag tag-cyan">DOM Optimizer</span>
+                </div>
+                <div class="card" onclick="showPortfolio(this)" data-id="12">
+                    <div class="card-header">
+                        <div class="card-icon cyan">🌐</div>
+                        <div>
+                            <div class="card-title">12 — QANTUM NEXUS</div>
+                            <div class="card-sub">Platform Engineer</div>
+                        </div>
+                    </div>
+                    <p>Central nervous system. 52K vectors, 331+ modules, real-time thought Visualization |
+                        Визуализация, 10K rows.</p>
+                    <span class="tag tag-cyan">Next.js</span><span class="tag tag-purple">Zustand</span><span
+                        class="tag tag-green">Framer</span>
+                </div>
+                <div class="card" onclick="showPortfolio(this)" data-id="13">
+                    <div class="card-header">
+                        <div class="card-icon orange">📡</div>
+                        <div>
+                            <div class="card-title">13 — API SENSEI</div>
+                            <div class="card-sub">Backend/Test Engineer</div>
+                        </div>
+                    </div>
+                    <p>Intelligent API testing. 5K+ fuzz variations, schema validation, latency sentinel, real-time
+                        detection.</p>
+                    <span class="tag tag-orange">Fastify</span><span class="tag tag-purple">AJV</span><span
+                        class="tag tag-green">Fuzzing</span>
+                </div>
+            </div>
+
+            <div id="portfolioDetail" style="display:none;margin-top:20px" class="card">
+                <div id="portfolioContent"></div>
+            </div>
+        </div>
+
+        <!-- ═══════════ PROFILE (Skills / Achievements / Tech / Contact) ═══════════ -->
+        <div class="panel" id="panel-profile">
+            <!-- ABOUT ME -->
+            <h2 style="font-size:18px;margin-bottom:16px">👤 About Me</h2>
+            <div class="grid grid-3" style="margin-bottom:28px">
+                <div class="card" style="border-top:2px solid var(--accent2)">
+                    <div class="card-title" style="color:var(--accent2);display:flex;align-items:center;gap:8px">
+                        <span style="font-size:20px">🎯</span> Mission
+                    </div>
+                    <p style="font-size:13px;color:var(--text2);margin-top:10px;line-height:1.5">
+                        To revolutionize quality assurance through innovative automation solutions, AI integration, and
+                        cutting-edge testing methodologies that deliver 100% reliability at scale.
+                    </p>
+                </div>
+                <div class="card" style="border-top:2px solid var(--pink)">
+                    <div class="card-title" style="color:var(--pink);display:flex;align-items:center;gap:8px">
+                        <span style="font-size:20px">🚀</span> Vision
+                    </div>
+                    <p style="font-size:13px;color:var(--text2);margin-top:10px;line-height:1.5">
+                        Creating sovereign, high-frequency testing infrastructure with bare-metal performance
+                        optimization, utilizing Rust, DeepSeek AI, and zero-copy networking for nanosecond-level
+                        precision.
+                    </p>
+                </div>
+                <div class="card" style="border-top:20px solid var(--orange);border-top-width:2px">
+                    <div class="card-title" style="color:var(--orange);display:flex;align-items:center;gap:8px">
+                        <span style="font-size:20px">💡</span> Philosophy
+                    </div>
+                    <p style="font-size:13px;color:var(--text2);margin-top:10px;line-height:1.5">
+                        Quality is not an act, it's a habit. Every line of code, every test case, every automation
+                        framework is built with obsessive attention to detail and architectural excellence.
+                    </p>
+                </div>
+            </div>
+
+            <!-- SKILLS -->
+            <h2 style="font-size:18px;margin-bottom:16px">🧠 Technical Skills</h2>
+            <div class="grid grid-3" style="margin-bottom:28px">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon purple">💻</div>
+                        <div>
+                            <div class="card-title">Programming Languages</div>
+                        </div>
+                    </div>
+                    <ul style="list-style:none;margin-top:12px;font-size:13px;color:var(--text2)">
+                        <li style="padding:6px 0;border-bottom:1px solid var(--border)">TypeScript / JavaScript (Expert)
+                        </li>
+                        <li style="padding:6px 0;border-bottom:1px solid var(--border)">Python (Advanced)</li>
+                        <li style="padding:6px 0;border-bottom:1px solid var(--border)">Rust (Intermediate)</li>
+                        <li style="padding:6px 0;border-bottom:1px solid var(--border)">SQL (Advanced)</li>
+                        <li style="padding:6px 0">Bash/PowerShell (Advanced)</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon green">🧪</div>
+                        <div>
+                            <div class="card-title">Testing Frameworks</div>
+                        </div>
+                    </div>
+                    <ul style="list-style:none;margin-top:12px;font-size:13px;color:var(--text2)">
+                        <li style="padding:6px 0;border-bottom:1px solid var(--border)">Playwright (Expert)</li>
+                        <li style="padding:6px 0;border-bottom:1px solid var(--border)">Selenium WebDriver (Expert)</li>
+                        <li style="padding:6px 0;border-bottom:1px solid var(--border)">Cypress (Advanced)</li>
+                        <li style="padding:6px 0;border-bottom:1px solid var(--border)">Jest / Vitest (Expert)</li>
+                        <li style="padding:6px 0">Postman / Newman (Advanced)</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon cyan">🤖</div>
+                        <div>
+                            <div class="card-title">AI &amp; Machine Learning</div>
+                        </div>
+                    </div>
+                    <ul style="list-style:none;margin-top:12px;font-size:13px;color:var(--text2)">
+                        <li style="padding:6px 0;border-bottom:1px solid var(--border)">DeepSeek AI Integration</li>
+                        <li style="padding:6px 0;border-bottom:1px solid var(--border)">LLM Fine-tuning</li>
+                        <li style="padding:6px 0;border-bottom:1px solid var(--border)">Transformer Models</li>
+                        <li style="padding:6px 0;border-bottom:1px solid var(--border)">Time-series Forecasting</li>
+                        <li style="padding:6px 0">Agent Swarm Architecture</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon orange">⚙️</div>
+                        <div>
+                            <div class="card-title">DevOps &amp; Infrastructure</div>
+                        </div>
+                    </div>
+                    <ul style="list-style:none;margin-top:12px;font-size:13px;color:var(--text2)">
+                        <li style="padding:6px 0;border-bottom:1px solid var(--border)">Docker / Kubernetes</li>
+                        <li style="padding:6px 0;border-bottom:1px solid var(--border)">GitHub Actions / GitLab CI</li>
+                        <li style="padding:6px 0;border-bottom:1px solid var(--border)">AWS / GCP / Azure</li>
+                        <li style="padding:6px 0;border-bottom:1px solid var(--border)">Terraform / Ansible</li>
+                        <li style="padding:6px 0">Monitoring (Grafana/Prometheus)</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon purple">🛡️</div>
+                        <div>
+                            <div class="card-title">Specialized Technologies</div>
+                        </div>
+                    </div>
+                    <ul style="list-style:none;margin-top:12px;font-size:13px;color:var(--text2)">
+                        <li style="padding:6px 0;border-bottom:1px solid var(--border)">Bot Detection Bypass</li>
+                        <li style="padding:6px 0;border-bottom:1px solid var(--border)">Fingerprint Rotation</li>
+                        <li style="padding:6px 0;border-bottom:1px solid var(--border)">Zero-Copy Networking</li>
+                        <li style="padding:6px 0;border-bottom:1px solid var(--border)">io_uring / DPDK</li>
+                        <li style="padding:6px 0">WebSocket Real-time</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon green">📋</div>
+                        <div>
+                            <div class="card-title">Methodologies</div>
+                        </div>
+                    </div>
+                    <ul style="list-style:none;margin-top:12px;font-size:13px;color:var(--text2)">
+                        <li style="padding:6px 0;border-bottom:1px solid var(--border)">Test-Driven Development</li>
+                        <li style="padding:6px 0;border-bottom:1px solid var(--border)">Behavior-Driven Development</li>
+                        <li style="padding:6px 0;border-bottom:1px solid var(--border)">Agile / Scrum</li>
+                        <li style="padding:6px 0;border-bottom:1px solid var(--border)">CI/CD Pipeline Design</li>
+                        <li style="padding:6px 0">Performance Testing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ACHIEVEMENTS -->
+            <h2 style="font-size:18px;margin-bottom:16px">🏆 Key Achievements</h2>
+            <div class="grid grid-3" style="margin-bottom:28px">
+                <div class="card" style="border-left:3px solid var(--green)">
+                    <div class="card-title" style="color:var(--green)">🏆 15M+ Lines of Code</div>
+                    <p style="font-size:13px;color:var(--text2);margin-top:8px">Architected and maintained over 15
+                        million lines of proprietary test automation logic, equivalent to the work of 50+ senior
+                        engineers over 5 years.</p>
+                </div>
+                <div class="card" style="border-left:3px solid var(--green)">
+                    <div class="card-title" style="color:var(--green)">🎯 100% Test Coverage</div>
+                    <p style="font-size:13px;color:var(--text2);margin-top:8px">Achieved and maintained 100% test
+                        coverage across 63,110+ assets with zero production bugs in the last 2 years through
+                        comprehensive automation.</p>
+                </div>
+                <div class="card" style="border-left:3px solid var(--green)">
+                    <div class="card-title" style="color:var(--green)">⚡ 85% Faster Debugging</div>
+                    <p style="font-size:13px;color:var(--text2);margin-top:8px">Reduced debugging time by 85% through
+                        predictive testing with Chronos-Bolt transformer, capable of forecasting test failures 7 days in
+                        advance.</p>
+                </div>
+                <div class="card" style="border-left:3px solid var(--green)">
+                    <div class="card-title" style="color:var(--green)">🛡️ 100% Bypass Success</div>
+                    <p style="font-size:13px;color:var(--text2);margin-top:8px">Developed GhostShield SDK with 100%
+                        success rate against Cloudflare, Akamai, PerimeterX, and DataDome through advanced stealth
+                        techniques.</p>
+                </div>
+                <div class="card" style="border-left:3px solid var(--green)">
+                    <div class="card-title" style="color:var(--green)">🚀 Nanosecond Performance</div>
+                    <p style="font-size:13px;color:var(--text2);margin-top:8px">Implemented bare-metal Rust optimization
+                        with io_uring/DPDK for nanosecond-level test execution in Supreme Baseline infrastructure.</p>
+                </div>
+                <div class="card" style="border-left:3px solid var(--green)">
+                    <div class="card-title" style="color:var(--green)">🤖 AI-Driven Automation</div>
+                    <p style="font-size:13px;color:var(--text2);margin-top:8px">Integrated DeepSeek R1 agent swarm for
+                        autonomous test generation, achieving human-level reasoning in complex scenario planning.</p>
+                </div>
+            </div>
+
+            <!-- TECH ARSENAL -->
+            <h2 style="font-size:18px;margin-bottom:16px">⚡ Tech Arsenal</h2>
+            <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px">
+                <span class="tag tag-purple">TypeScript</span>
+                <span class="tag tag-orange">Rust</span>
+                <span class="tag tag-green">Python</span>
+                <span class="tag tag-cyan">Playwright</span>
+                <span class="tag tag-purple">Selenium</span>
+                <span class="tag tag-green">Node.js</span>
+                <span class="tag tag-orange">Docker</span>
+                <span class="tag tag-cyan">Kubernetes</span>
+                <span class="tag tag-purple">GitHub Actions</span>
+                <span class="tag tag-green">Jest</span>
+                <span class="tag tag-orange">Cypress</span>
+                <span class="tag tag-cyan">Postman</span>
+                <span class="tag tag-purple">AWS</span>
+                <span class="tag tag-green">DeepSeek AI</span>
+                <span class="tag tag-orange">DPDK</span>
+                <span class="tag tag-cyan">WebSockets</span>
+            </div>
+
+            <!-- CONTACT -->
+            <h2 style="font-size:18px;margin-bottom:16px">📧 Contact</h2>
+            <div class="grid grid-3" style="margin-bottom:20px">
+                <div class="card" style="text-align:center">
+                    <div style="font-size:28px;margin-bottom:8px">📧</div>
+                    <a href="mailto:papica777@gmail.com"
+                        style="color:var(--accent2);text-decoration:none;font-weight:500">papica777@gmail.com</a>
+                </div>
+                <div class="card" style="text-align:center">
+                    <div style="font-size:28px;margin-bottom:8px">💼</div>
+                    <a href="https://github.com/QAntum-Fortres" target="_blank"
+                        style="color:var(--accent2);text-decoration:none;font-weight:500">GitHub: @QAntum-Fortres</a>
+                </div>
+                <div class="card" style="text-align:center">
+                    <div style="font-size:28px;margin-bottom:8px">🔗</div>
+                    <a href="https://qantum-fortres.github.io/PORTFOLIO/" target="_blank"
+                        style="color:var(--accent2);text-decoration:none;font-weight:500">Portfolio Site</a>
+                </div>
+            </div>
+            <div style="text-align:center;padding:20px;border-top:1px solid var(--border);margin-top:12px">
+                <p style="font-size:13px;color:var(--text2)">© 2026 Dimitar Prodromov. All Rights Reserved.</p>
+                <p style="font-size:12px;color:var(--text2);margin-top:6px">Senior QA Engineer | Test Automation
+                    Architect | AI Integration Specialist</p>
+                <p style="font-size:11px;color:var(--text2);margin-top:4px">15M+ Lines of Code | 63K+ Assets | 100% Test
+                    Coverage</p>
+            </div>
+        </div>
+
+        <!-- ═══════════ DASHBOARDS ═══════════ -->
+        <div class="panel" id="panel-dashboards">
+            <h2 style="font-size:18px;margin-bottom:16px">🖥️ Dashboard Quick Launch</h2>
+            <div class="dash-grid">
+                <a href="/prime" class="dash-link">
+                    <div class="icon">🚀</div>
+                    <div class="info">
+                        <h4>QAntum Prime Hub</h4><span>Live Singularity Dashboard v35</span>
+                    </div>
+                </a>
+                <a href="javascript:void(0)" class="dash-link"
+                    onclick="openDash('QANTUM_HTML_VAULT_public_index.html')">
+                    <div class="icon">🌐</div>
+                    <div class="info">
+                        <h4>Framework Dashboard (4 Lang)</h4><span>API Test • Audit • Docker • Swarm • 13 Modules</span>
+                    </div>
+                </a>
+                <a href="javascript:void(0)" class="dash-link"
+                    onclick="openDash('INTERACTIVEDEMOS_QANTUM_NEXUS_PRESENTATION_EN.html')">
+                    <div class="icon">🎨</div>
+                    <div class="info">
+                        <h4>Interactive Presentation</h4><span>Client/Recruiter demo with pricing tiers</span>
+                    </div>
+                </a>
+                <a href="javascript:void(0)" class="dash-link" onclick="openDash('QAntum-Portfolio_index.html')">
+                    <div class="icon">💼</div>
+                    <div class="info">
+                        <h4>Portfolio Page</h4><span>Personal portfolio landing page</span>
+                    </div>
+                </a>
+                <a href="javascript:void(0)" class="dash-link" onclick="openDash('QANTUM_INTERACTIVE_PROOF.html')">
+                    <div class="icon">🔬</div>
+                    <div class="info">
+                        <h4>Interactive Proof</h4><span>Live demo proof of concept</span>
+                    </div>
+                </a>
+                <a href="javascript:void(0)" class="dash-link"
+                    onclick="openDash('QANTUM_SENIOR_BACKEND_MANIFESTO.html')">
+                    <div class="icon">📜</div>
+                    <div class="info">
+                        <h4>Senior Backend Manifesto</h4><span>Technical architecture document</span>
+                    </div>
+                </a>
+                <a href="javascript:void(0)" class="dash-link" onclick="openDash('qantum_prime_cv.html')">
+                    <div class="icon">📄</div>
+                    <div class="info">
+                        <h4>Visual CV</h4><span>Premium visual curriculum vitae</span>
+                    </div>
+                </a>
+                <a href="javascript:void(0)" class="dash-link" onclick="openDash('QANTUM-JULES_HeliosDashboard.html')">
+                    <div class="icon">☀️</div>
+                    <div class="info">
+                        <h4>Helios Dashboard</h4><span>System telemetry & monitoring</span>
+                    </div>
+                </a>
+                <a href="javascript:void(0)" class="dash-link" onclick="openDash('QANTUM-JULES_AeternaLogos.html')">
+                    <div class="icon">🏛️</div>
+                    <div class="info">
+                        <h4>Aeterna Logos</h4><span>Core intelligence interface</span>
+                    </div>
+                </a>
+                <a href="javascript:void(0)" class="dash-link"
+                    onclick="openDash('7_qantum-antigravity-dashboard.html')">
+                    <div class="icon">🚀</div>
+                    <div class="info">
+                        <h4>Antigravity Dashboard</h4><span>Advanced system control panel</span>
+                    </div>
+                </a>
+                <a href="javascript:void(0)" class="dash-link" onclick="openDash('INTERFACES_veritas-dashboard.html')">
+                    <div class="icon">✅</div>
+                    <div class="info">
+                        <h4>Veritas Dashboard</h4><span>Truth verification & validation</span>
+                    </div>
+                </a>
+                <a href="javascript:void(0)" class="dash-link"
+                    onclick="openDash('QANTUM_HTML_VAULT_dashboard_nerve-center.html')">
+                    <div class="icon">🧠</div>
+                    <div class="info">
+                        <h4>Nerve Center</h4><span>Central nervous system monitor</span>
+                    </div>
+                </a>
+                <a href="javascript:void(0)" class="dash-link"
+                    onclick="openDash('QANTUM_HTML_VAULT_dashboard_command-station.html')">
+                    <div class="icon">🎯</div>
+                    <div class="info">
+                        <h4>Command Station</h4><span>Operations command & control</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- ═══════════ TOOLS GUIDE ═══════════ -->
+        <div class="panel" id="panel-tools">
+            <h2 style="font-size:18px;margin-bottom:16px">🛠️ Career Tools — Quick Reference</h2>
+            <div class="grid grid-2">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon purple">📧</div>
+                        <div>
+                            <div class="card-title">Email Outreach</div>
+                            <div class="card-sub">Кога и как</div>
+                        </div>
+                    </div>
+                    <table>
+                        <tr>
+                            <th>Действие</th>
+                            <th>Инструмент</th>
+                        </tr>
+                        <tr>
+                            <td>Изпрати Bug Discovery</td>
+                            <td><code>EmailEngine.ts → sendBugDiscoveryEmail()</code></td>
+                        </tr>
+                        <tr>
+                            <td>Масов outreach</td>
+                            <td><code>EmailEngine.js → node EmailEngine.js</code></td>
+                        </tr>
+                        <tr>
+                            <td>Кампания с tracking</td>
+                            <td><code>EmailEngine.ts → createCampaign() + runCampaign()</code></td>
+                        </tr>
+                        <tr>
+                            <td>Генерирай имейл файл</td>
+                            <td><code>email-generator.js → Markdown output</code></td>
+                        </tr>
+                        <tr>
+                            <td>Check stats</td>
+                            <td><code>EmailEngine.ts → getStats()</code></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon green">🎯</div>
+                        <div>
+                            <div class="card-title">Portfolio Selection</div>
+                            <div class="card-sub">Кое портфолио за коя роля</div>
+                        </div>
+                    </div>
+                    <table>
+                        <tr>
+                            <th>Роля</th>
+                            <th>Портфолио</th>
+                        </tr>
+                        <tr>
+                            <td>AI/ML Engineer</td>
+                            <td><strong>01 Vortex AI</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Frontend Architect</td>
+                            <td><strong>03 Veritas Dashboard</strong></td>
+                        </tr>
+                        <tr>
+                            <td>DevOps / SRE</td>
+                            <td><strong>08 Bio Healer</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Full-Stack Dev</td>
+                            <td><strong>09 Telegram Uplink</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Data Engineer</td>
+                            <td><strong>10 Architect Ledger</strong></td>
+                        </tr>
+                        <tr>
+                            <td>QA Lead / SDET</td>
+                            <td><strong>11 Q-AllRight</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Platform Engineer</td>
+                            <td><strong>12 QAntum Nexus</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Backend / Test</td>
+                            <td><strong>13 API Sensei</strong></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon cyan">🌐</div>
+                        <div>
+                            <div class="card-title">Framework Dashboard</div>
+                            <div class="card-sub">13 API модула</div>
+                        </div>
+                    </div>
+                    <table>
+                        <tr>
+                            <th>Модул</th>
+                            <th>Команда</th>
+                        </tr>
+                        <tr>
+                            <td>Website Audit</td>
+                            <td><code>mm.audit(url)</code></td>
+                        </tr>
+                        <tr>
+                            <td>API Testing</td>
+                            <td><code>mm.testAPI(endpoint)</code></td>
+                        </tr>
+                        <tr>
+                            <td>Link Checker</td>
+                            <td><code>mm.checkLinks(url)</code></td>
+                        </tr>
+                        <tr>
+                            <td>Prediction Matrix</td>
+                            <td><code>mm.predict(options)</code></td>
+                        </tr>
+                        <tr>
+                            <td>API Sensei</td>
+                            <td><code>mm.apiSensei(config)</code></td>
+                        </tr>
+                        <tr>
+                            <td>Chronos Engine</td>
+                            <td><code>mm.chronos(options)</code></td>
+                        </tr>
+                        <tr>
+                            <td>Docker Manager</td>
+                            <td><code>DockerManager</code></td>
+                        </tr>
+                        <tr>
+                            <td>Swarm Commander</td>
+                            <td><code>SwarmCommander</code></td>
+                        </tr>
+                        <tr>
+                            <td>System Stats</td>
+                            <td><code>getSystemStats()</code></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon orange">🗂️</div>
+                        <div>
+                            <div class="card-title">File Paths</div>
+                            <div class="card-sub">Quick access</div>
+                        </div>
+                    </div>
+                    <table>
+                        <tr>
+                            <th>Asset</th>
+                            <th>Path</th>
+                        </tr>
+                        <tr>
+                            <td>SendGrid Engine</td>
+                            <td><code>aeterna-node/scripts/core/EmailEngine.ts</code></td>
+                        </tr>
+                        <tr>
+                            <td>Resend Engine</td>
+                            <td><code>aeterna-node/scripts/core/EmailEngine.js</code></td>
+                        </tr>
+                        <tr>
+                            <td>Email Generator</td>
+                            <td><code>_WEALTH_BRIDGE_/email-generator.js</code></td>
+                        </tr>
+                        <tr>
+                            <td>Target List</td>
+                            <td><code>scripts/core/targets_ghost.json</code></td>
+                        </tr>
+                        <tr>
+                            <td>Portfolios</td>
+                            <td><code>JOB_PORTFOLIOS/*.md</code></td>
+                        </tr>
+                        <tr>
+                            <td>Dashboards</td>
+                            <td><code>_QANTUM_VAULT_/dashboards/</code></td>
+                        </tr>
+                        <tr>
+                            <td>Framework</td>
+                            <td><code>dashboards/QANTUM_HTML_VAULT_public_index.html</code></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════ GEMINI AI ═══════════ -->
+        <div class="panel" id="panel-gemini">
+            <h2 style="font-size:18px;margin-bottom:16px">✨ QAntum AI (Nexus Engine)</h2>
+            <div class="grid grid-2" style="grid-template-columns: 1fr 300px;">
+                <div class="card" style="display: flex; flex-direction: column; height: 65vh;">
+                    <div class="card-header" style="justify-content: space-between;">
+                        <div style="display: flex; gap: 12px; align-items: center;">
+                            <div class="card-icon cyan">✨</div>
+                            <div>
+                                <div class="card-title">Neural Uplink</div>
+                                <div class="card-sub">Gemini 1.5 Flash | Nexus Enabled</div>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <span style="font-size: 10px; color: var(--cyan); letter-spacing: 1px;">EMPIRE SEARCH</span>
+                            <label class="switch" title="Toggle Empire RAG Search">
+                                <input type="checkbox" id="nexusToggle">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div id="chatHistory"
+                        style="flex: 1; overflow-y: auto; padding: 15px; font-family: 'Inter', sans-serif; font-size: 14px; background: rgba(0,0,0,0.3); border-radius: 10px; border: 1px solid var(--border); margin-bottom: 15px; line-height: 1.6;">
+                        <div
+                            style="color: var(--cyan); margin-bottom: 10px; font-family: 'JetBrains Mono', monospace; font-size: 12px;">
+                            /// QANTUM_AI ONLINE. NEXUS_READY. ///</div>
+                    </div>
+                    <div style="display: flex; gap: 10px; flex-direction: column;">
+                        <div id="nexusStatus"
+                            style="font-size: 10px; color: var(--cyan); display: none; margin-bottom: 5px; animation: pulse 2s infinite;">
+                            🔍 ANALYZING EMPIRE NEURAL NETWORK...</div>
+                        <div style="display: flex; gap: 10px;">
+                            <input type="text" id="chatInput"
+                                placeholder="Enter command or query (e.g. 'run eagle analysis')..."
+                                style="flex: 1; margin-bottom: 0;" onkeypress="if(event.key==='Enter') geminiChat()">
+                            <button class="btn btn-primary" onclick="geminiChat()">SEND</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon orange">⚙️</div>
+                        <div class="card-title">System Commands</div>
+                    </div>
+                    <p style="font-size: 12px;">Quick scripts for AI to trigger:</p>
+                    <div class="btn-group" style="flex-direction: column; align-items: stretch;">
+                        <button class="btn btn-sm" onclick="chatQuick('Run full empire analysis (eagle)')">🦅 Eagle
+                            Analysis</button>
+                        <button class="btn btn-sm" onclick="chatQuick('Search empire for critical vulnerabilities')">🛡️
+                            Shield Scan</button>
+                        <button class="btn btn-sm" onclick="chatQuick('Run performance benchmarks')">⚡
+                            Benchmark</button>
+                        <button class="btn btn-sm" onclick="chatQuick('Summarize project metrics')">📊 Metric
+                            Engine</button>
+                        <button class="btn btn-sm" onclick="chatQuick('Apply architectural surgeon (surgeon)')">🔪
+                            Auto-Fixer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div><!-- /content -->
+
+    <!-- ═══════════ SETTINGS ═══════════ -->
+    <div class="panel" id="panel-settings">
+        <h2 style="font-size:18px;margin-bottom:16px">⚙️ System Configuration</h2>
+        <div class="grid grid-2">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon cyan">🧠</div>
+                    <div>
+                        <div class="card-title">AI Platform Engine</div>
+                        <div class="card-sub">Choose your cognitive substrate</div>
+                    </div>
+                </div>
+                <div class="form-row" style="margin-top:20px; grid-template-columns: 1fr;">
+                    <div class="input-group">
+                        <label
+                            style="display:block; margin-bottom:8px; font-size:12px; color:var(--text2)">PLATFORM</label>
+                        <select id="aiPlatform"
+                            style="width:100%; background:var(--surface2); border:1px solid var(--border); color:white; padding:10px; border-radius:8px; outline:none">
+                            <option value="gemini">Google Gemini (1.5 Flash/Pro)</option>
+                            <option value="openai">OpenAI (GPT-4o/o1)</option>
+                            <option value="anthropic">Anthropic (Claude 3.5 Sonnet)</option>
+                            <option value="mistral">Mistral AI (Large/Codestral)</option>
+                        </select>
+                    </div>
+                    <div class="input-group" style="margin-top:20px">
+                        <label style="display:block; margin-bottom:8px; font-size:12px; color:var(--text2)">API
+                            KEY</label>
+                        <input type="password" id="aiApiKey" placeholder="Enter your API key..."
+                            style="width:100%; background:var(--surface2); border:1px solid var(--border); color:white; padding:10px; border-radius:8px; outline:none">
+                    </div>
+                    <button class="btn btn-primary" style="margin-top:24px; width:100%"
+                        onclick="saveAIConfig()">MANIFEST CONFIGURATION</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon orange">🛠️</div>
+                    <div class="card-title">Bridge Status</div>
+                </div>
+                <ul style="font-size: 13px; color: var(--text2); list-style: none; margin-top:10px">
+                    <li style="margin-bottom:10px"><strong>Port:</strong> 8890</li>
+                    <li style="margin-bottom:10px"><strong>Mode:</strong> Sovereign</li>
+                    <li style="margin-bottom:10px"><strong>Path:</strong> <code>c:/Users/papic/.../Automation/</code>
+                    </li>
+                </ul>
+                <div id="configStatus" style="margin-top:20px; font-size:12px; font-family:'JetBrains Mono', monospace">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // CLOCK
+        function updateClock() { const d = new Date(); document.getElementById('clock').textContent = d.toLocaleTimeString('en-GB') + ' | ' + d.toLocaleDateString('en-GB') }
+        setInterval(updateClock, 1000); updateClock();
+
+        // TABS
+        document.querySelectorAll('.tab').forEach(t => {
+            t.addEventListener('click', () => {
+                document.querySelectorAll('.tab').forEach(x => x.classList.remove('active'));
+                document.querySelectorAll('.panel').forEach(x => x.classList.remove('active'));
+                t.classList.add('active');
+                document.getElementById('panel-' + t.dataset.tab).classList.add('active');
+            });
+        });
+
+        // PORTFOLIO SELECTOR GUIDE
+        const portfolioMap = {
+            '01': { title: 'VORTEX AI', role: 'AI/ML Engineer', tech: 'TypeScript, Node.js, CCXT, Telegram API', status: 'Live / Proprietary', desc: 'Military-grade HFT system. <50ms latency, 10K+ trades/day, GPU-bound security.', metrics: [['Max Drawdown', '< 2.5%'], ['Daily Volume', '10,000+'], ['Uptime', '99.99%'], ['Latency', '45ms']] },
+            '03': { title: 'VERITAS DASHBOARD', role: 'Frontend Architect', tech: 'HTML5, CSS3, WebSockets, Chart.js', status: 'Prototype', desc: 'Glass Cockpit for real-time financial telemetry. Zero-latency socket stream.', metrics: [['First Paint', '0.4s'], ['FPS', '60 Locked'], ['Data Flow', '50 msg/sec']] },
+            '08': { title: 'BIO HEALER', role: 'DevOps Engineer', tech: 'TypeScript, Error Boundaries, Backoff', status: 'Live', desc: 'Immune system. Try-Catch-Heal paradigm. Error taxonomy + state reconstruction.', metrics: [['Recovery Rate', '94%'], ['Downtime', '0%'], ['Manual Fixes', '< 1/month']] },
+            '09': { title: 'TELEGRAM UPLINK', role: 'Full-Stack Developer', tech: 'Node.js, Telegram Bot API, Webhooks', status: 'Live', desc: 'Mobile C2 terminal. Rich media alerts, interactive menus, whitelist auth.', metrics: [['Delivery', '< 1s'], ['Uptime', '99.9%'], ['Usage', 'Daily']] },
+            '10': { title: 'ARCHITECT LEDGER', role: 'Data Engineer', tech: 'Node.js Streams, CSV, SQL', status: 'Live', desc: 'Black box flight recorder. Write-ahead logging, PnL attribution, anomaly detection.', metrics: [['Records', '100,000+'], ['Accuracy', '100%'], ['Resolution', '1ms']] },
+            '11': { title: 'Q-ALLRIGHT', role: 'QA Lead / Architect', tech: 'Node.js, Fastify, Selenium, GPT-4o', status: 'SaaS Platform', desc: 'Ghost Protocol 99.5% stealth. AI Self-healing | Само-лечение 97%. NLP test generation.', metrics: [['Stealth', '99.5%'], ['Self-Heal', '97%'], ['Maintenance', 'Near Zero']] },
+            '12': { title: 'QANTUM NEXUS', role: 'Platform Engineer', tech: 'Next.js 14.2, Zustand, React Query, Framer', status: 'Live', desc: 'Central nervous system. 52K vectors, 331+ module orchestration.', metrics: [['Latency', '< 10ms'], ['FPS', '60'], ['Table Rows', '10K']] },
+            '13': { title: 'API SENSEI', role: 'Backend/Test Engineer', tech: 'Node.js, Fastify, AJV, Axios', status: 'Active', desc: 'Intelligent API testing. Schema fuzzing, latency sentinel, real-time detection.', metrics: [['Coverage', '100%'], ['Fuzz Variations', '5,000+'], ['Detection', 'Real-time']] }
+        };
+
+        function showPortfolio(el) {
+            const id = el.dataset.id; const p = portfolioMap[id]; if (!p) return;
+            const d = document.getElementById('portfolioDetail');
+            const c = document.getElementById('portfolioContent');
+            let metricsHtml = p.metrics.map(m => `<div class="metric"><div class="val g">${m[1]}</div><div class="label">${m[0]}</div></div>`).join('');
+            c.innerHTML = `<div class="card-header"><div class="card-icon purple" style="font-size:24px">📋</div><div><div class="card-title">${p.title}</div><div class="card-sub">${p.role} | ${p.status}</div></div></div>
+  <p>${p.desc}</p><p style="font-size:12px"><strong>Tech:</strong> ${p.tech}</p>
+  <div class="metrics" style="margin-top:12px">${metricsHtml}</div>
+  <div class="btn-group"><button class="btn btn-sm" onclick="navigator.clipboard.writeText('${p.title} - ${p.role}')">📋 Copy Title</button></div>`;
+            d.style.display = 'block'; d.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // OPEN DASHBOARD
+        function openDash(file) {
+            window.open(file, '_blank');
+        }
+
+        // EMAIL COMPOSER
+        function composeEmail() {
+            const to = document.getElementById('emailTo').value;
+            const name = document.getElementById('emailName').value;
+            const company = document.getElementById('emailCompany').value;
+            const template = document.getElementById('emailTemplate').value;
+            const body = document.getElementById('emailBody').value;
+            const log = document.getElementById('emailLog');
+            log.style.display = 'block';
+
+            if (!to) { log.innerHTML = '<span class="err">[ERROR] Recipient email is required</span>'; return }
+
+            const ts = new Date().toLocaleTimeString('en-GB');
+            let output = `<span class="info">[${ts}] EMAIL COMPOSED</span>\n`;
+            output += `To: ${to} (${name || 'N/A'})\n`;
+            output += `Company: ${company || 'N/A'}\n`;
+            output += `Template: ${template}\n`;
+            if (body) output += `Custom Body: ${body.substring(0, 80)}...\n`;
+            output += `\n<span class="warn">[READY] Execute via CLI:</span>\n`;
+            output += `<span class="info">cd aeterna-node/scripts/core</span>\n`;
+
+            if (['sre_automation', 'devops_automation', 'deep_tech_investment', 'saas_scaling', 'angel_investment'].includes(template)) {
+                output += `<span class="info">node EmailEngine.js</span>\n`;
+                output += `(Edit targets_ghost.json first with target data)\n`;
+            } else {
+                output += `<span class="info">npx ts-node -e "import EmailEngine from './EmailEngine'; const e=new EmailEngine(); e.configure({apiKey:process.env.SENDGRID_API_KEY,fromEmail:'onboarding@dpengeneering.site',fromName:'QAntum Prime',trackOpens:true,trackClicks:true}); e.sendEmail('${template}',{email:'${to}',name:'${name}',company:'${company}'},{company_name:'${company}',first_name:'${name}'})"</span>`;
+            }
+            log.innerHTML = output;
+        }
+
+        function clearComposer() {
+            ['emailTo', 'emailName', 'emailCompany', 'emailBody'].forEach(id => document.getElementById(id).value = '');
+            document.getElementById('emailLog').style.display = 'none';
+        }
+
+        // GEMINI CHAT
+        let chatHistory = [];
+        const API_BASE = window.location.origin + '/api';
+
+        async function geminiChat() {
+            const input = document.getElementById('chatInput');
+            const historyDiv = document.getElementById('chatHistory');
+            const nexusToggle = document.getElementById('nexusToggle');
+            const nexusStatus = document.getElementById('nexusStatus');
+            const message = input.value.trim();
+
+            if (!message) return;
+
+            // Add user message to UI
+            historyDiv.innerHTML += `
+                <div style="margin-bottom: 15px;">
+                    <span style="color: var(--accent2); font-weight: 700; font-size: 12px;">[YOU]:</span>
+                    <div style="margin-top: 4px;">${message}</div>
+                </div>
+            `;
+            input.value = '';
+            historyDiv.scrollTop = historyDiv.scrollHeight;
+
+            if (nexusToggle.checked) {
+                nexusStatus.style.display = 'block';
+            }
+
+            const passphrase = document.getElementById('sovereignPass').value;
+
+            try {
+                const response = await fetch(`${API_BASE}/chat`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'x-sovereign-pass': passphrase
+                    },
+                    body: JSON.stringify({
+                        message,
+                        history: chatHistory,
+                        useNexus: nexusToggle.checked,
+                        passphrase
+                    })
+                });
+
+                nexusStatus.style.display = 'none';
+
+                if (response.ok) {
+                    const data = await response.json();
+                    const aiMsg = data.response;
+
+                    chatHistory.push({ role: 'user', parts: [{ text: message }] });
+                    chatHistory.push({ role: 'model', parts: [{ text: aiMsg }] });
+
+                    let formattedMsg = aiMsg.replace(/```([\s\S]*?)```/g, (match, code) => {
+                        const cleanCode = code.replace(/^[a-z]*\n/, '').trim();
+                        const escapedCode = cleanCode.replace(/`/g, '\\`').replace(/\$/g, '\\$');
+                        return `
+                        <div style="position: relative; margin: 10px 0;">
+                            <pre style="background: #000; padding: 10px; border-radius: 6px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--green); overflow-x: auto;">${code}</pre>
+                            <button class="btn btn-sm" style="position: absolute; top: 10px; right: 10px; background: var(--cyan); border: none; color: black; font-weight: bold;" onclick="execScript(\`${escapedCode}\`)">▶ RUN</button>
+                        </div>`;
+                    });
+
+                    historyDiv.innerHTML += `
+                    <div style="margin-bottom: 20px;">
+                        <span style="color: var(--cyan); font-weight: 700; font-size: 12px;">[AETERNA_ANIMA]:</span>
+                        <div style="margin-top: 4px;">${formattedMsg}</div>
+                    </div>`;
+                } else {
+                    historyDiv.innerHTML += `<div style="color: var(--red); font-size: 12px;">[ERROR] BRIDGE_FAILURE: ${await response.text()}</div>`;
+                }
+            } catch (e) {
+                nexusStatus.style.display = 'none';
+                historyDiv.innerHTML += `<div style="color: var(--red); font-size: 12px;">[ERROR] CONNECTION_REFUSED: Check if bridge server is running on port 8890.</div>`;
+            }
+            historyDiv.scrollTop = historyDiv.scrollHeight;
+        }
+
+        function chatQuick(msg) {
+            document.getElementById('chatInput').value = msg;
+            geminiChat();
+        }
+
+        async function execScript(command) {
+            const historyDiv = document.getElementById('chatHistory');
+            historyDiv.innerHTML += `<div style="color: var(--orange); font-size: 12px; margin-bottom: 5px;">/// EXECUTING: ${command} ///</div>`;
+
+            try {
+                const response = await fetch(`${API_BASE}/exec`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ command })
+                });
+                const data = await response.json();
+
+                let output = `<div style="background: rgba(0,0,0,0.5); padding: 8px; border-radius: 4px; font-family: 'JetBrains Mono', monospace; font-size: 11px; margin-bottom: 10px; border-left: 2px solid ${data.success ? 'var(--green)' : 'var(--red)'}">`;
+                if (data.stdout) output += `<div style="color: var(--text)">${data.stdout}</div>`;
+                if (data.stderr) output += `<div style="color: var(--orange)">${data.stderr}</div>`;
+                if (data.error) output += `<div style="color: var(--red)">${data.error}</div>`;
+                output += `</div>`;
+                historyDiv.innerHTML += output;
+            } catch (e) {
+                historyDiv.innerHTML += `<div style="color: var(--red); font-size: 12px;">[ERROR] EXEC_FAILURE: ${e.message}</div>`;
+            }
+            historyDiv.scrollTop = historyDiv.scrollHeight;
+        }
+        async function loadAIConfig() {
+            try {
+                const res = await fetch(`${API_BASE}/config`);
+                const data = await res.json();
+                if (data.platform) document.getElementById('aiPlatform').value = data.platform;
+                // We don't populate the password field for security
+            } catch (e) { console.error('Failed to load config', e); }
+        }
+
+        async function saveAIConfig() {
+            const platform = document.getElementById('aiPlatform').value;
+            const apiKey = document.getElementById('aiApiKey').value;
+            const status = document.getElementById('configStatus');
+
+            if (!apiKey) {
+                status.innerHTML = '<span style="color:var(--red)">❌ API KEY REQUIRED</span>';
+                return;
+            }
+
+            status.innerHTML = '<span style="color:var(--cyan)">⚡ MANIFESTING...</span>';
+
+            const passphrase = document.getElementById('sovereignPass').value;
+
+            try {
+                const response = await fetch(`${API_BASE}/config`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'x-sovereign-pass': passphrase
+                    },
+                    body: JSON.stringify({ platform, apiKey })
+                });
+
+                if (response.ok) {
+                    status.innerHTML = '<span style="color:var(--green)">✅ CONFIGURATION SYNCED. RESTART BRIDGE TO APPLY.</span>';
+                    document.getElementById('aiApiKey').value = '';
+                } else {
+                    throw new Error(await response.text());
+                }
+            } catch (e) {
+                status.innerHTML = `<span style="color:var(--red)">❌ FAILURE: ${e.message}</span>`;
+            }
+        }
+
+        // Initialize
+        loadAIConfig();
+    </script>
+</body>
+
+</html>

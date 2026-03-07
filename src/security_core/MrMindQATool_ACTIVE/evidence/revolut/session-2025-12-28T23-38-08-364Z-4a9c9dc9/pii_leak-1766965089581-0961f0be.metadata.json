@@ -1,0 +1,59 @@
+{
+  "id": "pii_leak-1766965089581-0961f0be",
+  "timestamp": "2025-12-28T23:38:09.742Z",
+  "eventType": "PII_LEAK",
+  "url": "https://sso.revolut.com/signin?client_id=o3r08ao16zvdlf2y5fdc&redirect_uri=https%3A%2F%2Fapp.revolut.com%2Fhome%3Frwa_auth_type%3Dauth&response_type=code&code_challenge_method=S256&code_challenge=nm3nYXNm9C-wOmzQzav4mb68CqA69Uxu3dytXNeSP2k&response_mode=query&ui_locales=bg&ui_color_scheme=dark&ui_background=blue&state=_pk_EpIERj2iBwfQnEWB",
+  "sessionId": "session-2025-12-28T23-38-08-364Z-4a9c9dc9",
+  "severity": "medium",
+  "description": "[AUTO] PII_LEAK: {\"url\":\"https://app.revolut.com/api/retail/config/common\",\"status\":200}",
+  "maskingApplied": false,
+  "maskedFields": [],
+  "checksum": "1f9c31e78bd666396c6408a074b4a82ccce508c341c351290408001f4e64789f",
+  "captureMode": "safe-hunter",
+  "browserInfo": {
+    "name": "Chromium",
+    "version": "1.0.0-QAntum",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "deviceScaleFactor": 1
+  },
+  "networkContext": {
+    "cookies": [
+      {
+        "name": "rwa_geo",
+        "domain": "app.revolut.com"
+      },
+      {
+        "name": "__cf_bm",
+        "domain": ".revolut.com"
+      },
+      {
+        "name": "_cfuvid",
+        "domain": ".revolut.com"
+      },
+      {
+        "name": "revo_hardware_id",
+        "domain": ".revolut.com"
+      },
+      {
+        "name": "revo_device_id",
+        "domain": ".revolut.com"
+      },
+      {
+        "name": "revo_theme_mode",
+        "domain": ".revolut.com"
+      },
+      {
+        "name": "revo_theme_background",
+        "domain": ".revolut.com"
+      },
+      {
+        "name": "sso_country_code",
+        "domain": "sso.revolut.com"
+      }
+    ]
+  }
+}

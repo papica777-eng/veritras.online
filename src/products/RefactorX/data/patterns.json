@@ -1,0 +1,62 @@
+{
+    "php": [
+        {
+            "regex": "mysql_query\\(",
+            "replace": "pdo->query(",
+            "msg": "Deprecated MySQL extension. Use PDO or MySQLi.",
+            "severity": "critical"
+        },
+        {
+            "regex": "die\\(",
+            "replace": "throw new Exception(",
+            "msg": "Uncontrolled termination. Use Exceptions.",
+            "severity": "high"
+        },
+        {
+            "regex": "\\$_GET\\[",
+            "replace": "filter_input(INPUT_GET, ",
+            "msg": "Direct Input Access. Potential XSS/SQLi.",
+            "severity": "critical"
+        }
+    ],
+    "java": [
+        {
+            "regex": "Vector<",
+            "replace": "ArrayList<",
+            "msg": "Legacy Collection. Use ArrayList.",
+            "severity": "medium"
+        },
+        {
+            "regex": "Hashtable<",
+            "replace": "HashMap<",
+            "msg": "Legacy Map. Use HashMap.",
+            "severity": "medium"
+        },
+        {
+            "regex": "StringBuffer",
+            "replace": "StringBuilder",
+            "msg": "Synchronized overhead. Use StringBuilder.",
+            "severity": "low"
+        }
+    ],
+    "js": [
+        {
+            "regex": "var\\s+",
+            "replace": "let ",
+            "msg": "Scope leakage. Use let/const.",
+            "severity": "medium"
+        },
+        {
+            "regex": "function\\s*\\(",
+            "replace": "(",
+            "msg": "Legacy syntax. Consider Arrow Functions.",
+            "severity": "low"
+        },
+        {
+            "regex": "document\\.write",
+            "replace": "document.body.append",
+            "msg": "Performance killer. Use DOM manipulation.",
+            "severity": "high"
+        }
+    ]
+}

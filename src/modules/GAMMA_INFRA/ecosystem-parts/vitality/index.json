@@ -1,0 +1,881 @@
+{
+  "category": "VITALITY",
+  "subCategories": {
+    "cognition": {
+      "moduleCount": 30,
+      "modules": [
+        {
+          "name": "neural.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\ai\\neural.ts",
+          "originalCategory": "brain/logic"
+        },
+        {
+          "name": "thought-chain.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\cognition\\thought-chain.ts",
+          "originalCategory": "brain/logic"
+        },
+        {
+          "name": "index.ts",
+          "path": "C:\\MisteMind\\src\\ai\\index.ts",
+          "originalCategory": "brain/logic"
+        },
+        {
+          "name": "distiller.ts",
+          "path": "C:\\MisteMind\\src\\cognition\\distiller.ts",
+          "originalCategory": "brain/logic"
+        },
+        {
+          "name": "pattern-recognizer.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\ai\\pattern-recognizer.ts",
+          "originalCategory": "brain/memory"
+        },
+        {
+          "name": "BrainRouter.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\biology\\evolution\\BrainRouter.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "cognitive-circular-guard.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\cognition\\cognitive-circular-guard.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "index.ts",
+          "path": "C:\\MisteMind\\src\\cognition\\index.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "CrossProjectSynergy.ts",
+          "path": "C:\\MisteMind\\src\\intelligence\\CrossProjectSynergy.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "DeepSeekLink.ts",
+          "path": "C:\\MisteMind\\src\\intelligence\\DeepSeekLink.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "EcosystemHarmonizer.ts",
+          "path": "C:\\MisteMind\\src\\intelligence\\EcosystemHarmonizer.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "SovereignAudit.ts",
+          "path": "C:\\MisteMind\\src\\intelligence\\SovereignAudit.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "TurnstileBypassAnalysis.ts",
+          "path": "C:\\MisteMind\\src\\intelligence\\TurnstileBypassAnalysis.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "VectorSync.ts",
+          "path": "C:\\MisteMind\\src\\intelligence\\VectorSync.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "ContextAnchor.ts",
+          "path": "C:\\MisteMind\\src\\cognition\\ContextAnchor.ts",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "EcosystemSyncValidator.ts",
+          "path": "C:\\MisteMind\\src\\intelligence\\EcosystemSyncValidator.ts",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "multi-language-cognition.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\enterprise\\multi-language-cognition.ts",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "ContextInjector.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\cognition\\ContextInjector.ts",
+          "originalCategory": "brain/learning"
+        },
+        {
+          "name": "uncertainty.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\cognition\\uncertainty.ts",
+          "originalCategory": "core/eyes"
+        },
+        {
+          "name": "intelligence-template.ts",
+          "path": "C:\\MisteMind\\scripts\\nerve-templates\\intelligence-template.ts",
+          "originalCategory": "core/eyes"
+        },
+        {
+          "name": "Holodeck.ts",
+          "path": "C:\\MisteMind\\src\\intelligence\\Holodeck.ts",
+          "originalCategory": "core/eyes"
+        },
+        {
+          "name": "multi-perspective.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\cognition\\multi-perspective.ts",
+          "originalCategory": "core/brain"
+        },
+        {
+          "name": "main.js",
+          "path": "C:\\MisteMind\\scripts\\main.js",
+          "originalCategory": "core/brain"
+        },
+        {
+          "name": "phase3-intelligence.test.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\tests\\unit\\phase3-intelligence.test.js",
+          "originalCategory": "core/brain"
+        },
+        {
+          "name": "DependencyGraph.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\cognition\\DependencyGraph.ts",
+          "originalCategory": "unclassified"
+        },
+        {
+          "name": "tailwind.config.js",
+          "path": "C:\\MisteMind\\QAntum-nerve-center\\tailwind.config.js",
+          "originalCategory": "unclassified"
+        },
+        {
+          "name": "self-critique.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\cognition\\self-critique.ts",
+          "originalCategory": "core/ears"
+        },
+        {
+          "name": "GeminiBrain.js",
+          "path": "C:\\MisteMind\\PROJECT\\PRIVATE\\QA-Framework\\src\\core\\GeminiBrain.js",
+          "originalCategory": "core/ears"
+        },
+        {
+          "name": "proxy-chain.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\ghost\\proxy-chain.ts",
+          "originalCategory": "security/guardians"
+        },
+        {
+          "name": "critique-distiller.ts",
+          "path": "C:\\MisteMind\\src\\cognition\\critique-distiller.ts",
+          "originalCategory": "security/firewall"
+        }
+      ]
+    },
+    "health": {
+      "moduleCount": 12,
+      "modules": [
+        {
+          "name": "self-healing.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\ai\\self-healing.ts",
+          "originalCategory": "brain/logic"
+        },
+        {
+          "name": "StrictCollar.ts",
+          "path": "C:\\MisteMind\\src\\guardians\\StrictCollar.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "index.ts",
+          "path": "C:\\MisteMind\\src\\guardians\\index.ts",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "eternal-guardian.js",
+          "path": "C:\\MisteMind\\scripts\\eternal-guardian.js",
+          "originalCategory": "core/eyes"
+        },
+        {
+          "name": "eternal-watchdog.js",
+          "path": "C:\\MisteMind\\scripts\\eternal-watchdog.js",
+          "originalCategory": "core/eyes"
+        },
+        {
+          "name": "guardians-template.ts",
+          "path": "C:\\MisteMind\\scripts\\nerve-templates\\guardians-template.ts",
+          "originalCategory": "core/eyes"
+        },
+        {
+          "name": "unified-guardian.js",
+          "path": "C:\\MisteMind\\scripts\\unified-guardian.js",
+          "originalCategory": "core/eyes"
+        },
+        {
+          "name": "HealthMonitor.ts",
+          "path": "C:\\MisteMind\\src\\healing\\HealthMonitor.ts",
+          "originalCategory": "core/eyes"
+        },
+        {
+          "name": "index.ts",
+          "path": "C:\\MisteMind\\src\\healing\\index.ts",
+          "originalCategory": "core/eyes"
+        },
+        {
+          "name": "error-detector.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\healing\\error-detector.js",
+          "originalCategory": "core/eyes"
+        },
+        {
+          "name": "health-check.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\bastion\\health\\health-check.ts",
+          "originalCategory": "core/eyes"
+        },
+        {
+          "name": "phase1-async-healing.test.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\tests\\unit\\phase1-async-healing.test.js",
+          "originalCategory": "core/eyes"
+        }
+      ]
+    },
+    "learning": {
+      "moduleCount": 120,
+      "modules": [
+        {
+          "name": "SelfCorrectionLoop.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\biology\\evolution\\SelfCorrectionLoop.ts",
+          "originalCategory": "brain/logic"
+        },
+        {
+          "name": "interfaces.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\architecture\\interfaces.js",
+          "originalCategory": "brain/logic"
+        },
+        {
+          "name": "decisions.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\autonomous\\decisions.js",
+          "originalCategory": "brain/logic"
+        },
+        {
+          "name": "look-ahead.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\chronos\\look-ahead.js",
+          "originalCategory": "brain/logic"
+        },
+        {
+          "name": "config-manager.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\config-manager.js",
+          "originalCategory": "brain/logic"
+        },
+        {
+          "name": "config.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\config.js",
+          "originalCategory": "brain/logic"
+        },
+        {
+          "name": "genetic.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\evolution\\genetic.js",
+          "originalCategory": "brain/logic"
+        },
+        {
+          "name": "mutations.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\evolution\\mutations.js",
+          "originalCategory": "brain/logic"
+        },
+        {
+          "name": "phase2-evolution-auto.test.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\tests\\unit\\phase2-evolution-auto.test.js",
+          "originalCategory": "brain/logic"
+        },
+        {
+          "name": "hybrid-verifier.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\verification\\hybrid-verifier.js",
+          "originalCategory": "brain/logic"
+        },
+        {
+          "name": "reinforcement-learning-bridge.ts",
+          "path": "C:\\MisteMind\\PROJECT\\PRIVATE\\QA-Framework\\src\\prediction-matrix\\reinforcement-learning-bridge.ts",
+          "originalCategory": "brain/memory"
+        },
+        {
+          "name": "pom-base.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\architecture\\pom-base.js",
+          "originalCategory": "brain/memory"
+        },
+        {
+          "name": "foundation.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\chronos\\foundation.js",
+          "originalCategory": "brain/memory"
+        },
+        {
+          "name": "learning.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\meta\\learning.js",
+          "originalCategory": "brain/memory"
+        },
+        {
+          "name": "scaling.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\quantum\\scaling.js",
+          "originalCategory": "brain/memory"
+        },
+        {
+          "name": "phase3-infrastructure.test.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\tests\\unit\\phase3-infrastructure.test.js",
+          "originalCategory": "brain/memory"
+        },
+        {
+          "name": "index.ts",
+          "path": "C:\\MisteMind\\src\\biology\\evolution\\index.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "revenue.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\business\\revenue.js",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "dependency-manager.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\dependency-manager.js",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "self-documenting.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\docs\\self-documenting.js",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "advanced-usage.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\examples\\advanced-usage.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "basic-example.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\examples\\basic-example.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "ml-pipeline.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\ml-pipeline.js",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "foundation.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\saas\\foundation.js",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "build-enterprise.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\scripts\\build-enterprise.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "security-baseline.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\security-baseline.js",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "bulgarian-tts.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\enterprise\\bulgarian-tts.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "docker-manager.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\enterprise\\docker-manager.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "i18n-manager.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\enterprise\\i18n-manager.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "swarm-commander.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\enterprise\\swarm-commander.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "hybrid-vision-controller.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\local\\hybrid-vision-controller.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "voice-commander.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\multimodal\\voice-commander.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "distillation-logger.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\swarm\\distillation\\distillation-logger.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "types.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\swarm\\types.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "test.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\test.js",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "local.test.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\tests\\local.test.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "multimodal.test.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\tests\\multimodal.test.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "phase3.test.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\tests\\phase3.test.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "run-all.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\tests\\run-all.js",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "phase1-cognitive.test.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\tests\\unit\\phase1-cognitive.test.js",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "run-all-tests.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\tests\\unit\\run-all-tests.js",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "ux-auditor.test.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\tests\\ux-auditor.test.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "OracleHumanizer.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\biology\\evolution\\OracleHumanizer.ts",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "intent-classifier.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\nlu\\intent-classifier.js",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "circuit-breaker.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\bastion\\circuit\\circuit-breaker.ts",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "checksum-validator.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\bastion\\neural\\checksum-validator.ts",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "neural-vault.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\bastion\\neural\\neural-vault.ts",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "types.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\bastion\\types.ts",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "index.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\multimodal\\index.ts",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "video-replay-analyzer.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\multimodal\\video-replay-analyzer.ts",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "index.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\neural\\index.ts",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "neural-optimizer.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\neural\\neural-optimizer.ts",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "index.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\persona\\index.ts",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "module-loader.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\segc\\hotswap\\module-loader.ts",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "types.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\segc\\types.ts",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "state-versioner.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\segc\\versioning\\state-versioner.ts",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "critic-agent.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\swarm\\agents\\critic-agent.ts",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "index.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\swarm\\agents\\index.ts",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "planner-agent.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\swarm\\agents\\planner-agent.ts",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "index.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\swarm\\distillation\\index.ts",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "index.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\swarm\\observability\\index.ts",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "observability-bridge.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\swarm\\observability\\observability-bridge.ts",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "index.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\telemetry\\index.ts",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "cognitive-ux-auditor.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\ux\\cognitive-ux-auditor.ts",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "index.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\ux\\index.ts",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "test-all.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\test-all.js",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "malicious-intent.test.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\tests\\chaos\\malicious-intent.test.ts",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "resource-exhaustion.test.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\tests\\chaos\\resource-exhaustion.test.ts",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "neural.test.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\tests\\neural.test.ts",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "persona.test.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\tests\\persona.test.ts",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "phase2-nlu-shadow.test.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\tests\\unit\\phase2-nlu-shadow.test.js",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "HiveMind.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\biology\\evolution\\HiveMind.ts",
+          "originalCategory": "security/encryption"
+        },
+        {
+          "name": "dom-evolution-tracker.ts",
+          "path": "C:\\MisteMind\\PROJECT\\PRIVATE\\QA-Framework\\src\\prediction-matrix\\dom-evolution-tracker.ts",
+          "originalCategory": "security/encryption"
+        },
+        {
+          "name": "model-versioning.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\model-versioning.js",
+          "originalCategory": "security/encryption"
+        },
+        {
+          "name": "visual-regression.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\visual\\visual-regression.js",
+          "originalCategory": "security/encryption"
+        },
+        {
+          "name": "NeuralSelfEvolver.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\biology\\evolution\\NeuralSelfEvolver.ts",
+          "originalCategory": "brain/learning"
+        },
+        {
+          "name": "index.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\index.js",
+          "originalCategory": "brain/learning"
+        },
+        {
+          "name": "distillation.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\knowledge\\distillation.js",
+          "originalCategory": "brain/learning"
+        },
+        {
+          "name": "negotiation.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\ai-to-ai\\negotiation.js",
+          "originalCategory": "core/eyes"
+        },
+        {
+          "name": "phase1-index.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\phase1-index.js",
+          "originalCategory": "core/eyes"
+        },
+        {
+          "name": "phase2-index.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\phase2-index.js",
+          "originalCategory": "core/eyes"
+        },
+        {
+          "name": "neuro-sentinel.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\security\\neuro-sentinel.js",
+          "originalCategory": "core/eyes"
+        },
+        {
+          "name": "neural-hud.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\multimodal\\neural-hud.ts",
+          "originalCategory": "core/eyes"
+        },
+        {
+          "name": "state-preloader.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\segc\\predictive\\state-preloader.ts",
+          "originalCategory": "core/eyes"
+        },
+        {
+          "name": "hive-mind.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\swarm\\hive-mind.js",
+          "originalCategory": "core/eyes"
+        },
+        {
+          "name": "telemetry.test.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\tests\\telemetry.test.ts",
+          "originalCategory": "core/eyes"
+        },
+        {
+          "name": "white-label.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\business\\white-label.js",
+          "originalCategory": "core/brain"
+        },
+        {
+          "name": "device-farm.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\cloud\\device-farm.js",
+          "originalCategory": "core/brain"
+        },
+        {
+          "name": "phase3-index.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\phase3-index.js",
+          "originalCategory": "core/brain"
+        },
+        {
+          "name": "bastion-controller.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\bastion\\bastion-controller.ts",
+          "originalCategory": "core/brain"
+        },
+        {
+          "name": "index.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\bastion\\index.ts",
+          "originalCategory": "core/brain"
+        },
+        {
+          "name": "license-manager.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\enterprise\\license-manager.ts",
+          "originalCategory": "core/brain"
+        },
+        {
+          "name": "index.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\local\\index.ts",
+          "originalCategory": "core/brain"
+        },
+        {
+          "name": "whisper-service.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\local\\whisper-service.ts",
+          "originalCategory": "core/brain"
+        },
+        {
+          "name": "ghost-execution-layer.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\segc\\ghost\\ghost-execution-layer.ts",
+          "originalCategory": "core/brain"
+        },
+        {
+          "name": "index.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\segc\\index.ts",
+          "originalCategory": "core/brain"
+        },
+        {
+          "name": "segc-controller.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\segc\\segc-controller.ts",
+          "originalCategory": "core/brain"
+        },
+        {
+          "name": "bastion.test.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\tests\\bastion.test.ts",
+          "originalCategory": "core/brain"
+        },
+        {
+          "name": "phase2.test.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\tests\\phase2.test.ts",
+          "originalCategory": "core/brain"
+        },
+        {
+          "name": "segc.test.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\tests\\segc.test.ts",
+          "originalCategory": "core/brain"
+        },
+        {
+          "name": "phase3-production.test.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\tests\\unit\\phase3-production.test.js",
+          "originalCategory": "core/brain"
+        },
+        {
+          "name": "test_structure.js",
+          "path": "C:\\MisteMind\\TRAINING\\extreme-mml\\mind\\tests\\test_structure.js",
+          "originalCategory": "unclassified"
+        },
+        {
+          "name": "timeout-manager.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\async\\timeout-manager.js",
+          "originalCategory": "unclassified"
+        },
+        {
+          "name": "index.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\dist\\index.js",
+          "originalCategory": "unclassified"
+        },
+        {
+          "name": "phase1-architecture.test.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\tests\\unit\\phase1-architecture.test.js",
+          "originalCategory": "unclassified"
+        },
+        {
+          "name": "phase1-selectors.test.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\tests\\unit\\phase1-selectors.test.js",
+          "originalCategory": "unclassified"
+        },
+        {
+          "name": "phase2-security-quantum.test.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\tests\\unit\\phase2-security-quantum.test.js",
+          "originalCategory": "unclassified"
+        },
+        {
+          "name": "phase2-visual-swarm.test.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\tests\\unit\\phase2-visual-swarm.test.js",
+          "originalCategory": "unclassified"
+        },
+        {
+          "name": "components.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\architecture\\components.js",
+          "originalCategory": "core/ears"
+        },
+        {
+          "name": "model-integrator.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\cognitive\\model-integrator.js",
+          "originalCategory": "core/ears"
+        },
+        {
+          "name": "services.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\cognitive\\services.js",
+          "originalCategory": "core/ears"
+        },
+        {
+          "name": "index.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\index.ts",
+          "originalCategory": "core/ears"
+        },
+        {
+          "name": "base-agent.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\swarm\\agents\\base-agent.ts",
+          "originalCategory": "core/ears"
+        },
+        {
+          "name": "index.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\swarm\\index.ts",
+          "originalCategory": "core/ears"
+        },
+        {
+          "name": "index.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\types\\index.ts",
+          "originalCategory": "core/ears"
+        },
+        {
+          "name": "flaky-infrastructure.test.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\tests\\chaos\\flaky-infrastructure.test.ts",
+          "originalCategory": "core/ears"
+        },
+        {
+          "name": "scaling.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\saas\\scaling.js",
+          "originalCategory": "security/guardians"
+        },
+        {
+          "name": "data-selector.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\selectors\\data-selector.js",
+          "originalCategory": "security/guardians"
+        },
+        {
+          "name": "feature-selector.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\selectors\\feature-selector.js",
+          "originalCategory": "security/firewall"
+        },
+        {
+          "name": "shadow-dom.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\shadow\\shadow-dom.js",
+          "originalCategory": "security/firewall"
+        }
+      ]
+    },
+    "memory": {
+      "moduleCount": 7,
+      "modules": [
+        {
+          "name": "file-storage.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\storage\\file-storage.ts",
+          "originalCategory": "brain/logic"
+        },
+        {
+          "name": "cache.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\storage\\cache.ts",
+          "originalCategory": "brain/memory"
+        },
+        {
+          "name": "kv-store.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\storage\\kv-store.ts",
+          "originalCategory": "brain/memory"
+        },
+        {
+          "name": "index.ts",
+          "path": "C:\\MisteMind\\src\\storage\\index.ts",
+          "originalCategory": "brain/memory"
+        },
+        {
+          "name": "VectorMemory.ts",
+          "path": "C:\\MisteMind\\src\\intelligence\\VectorMemory.ts",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "memory-hardening.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\bastion\\memory\\memory-hardening.ts",
+          "originalCategory": "core/eyes"
+        },
+        {
+          "name": "semantic-memory.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\cognition\\semantic-memory.ts",
+          "originalCategory": "core/brain"
+        }
+      ]
+    },
+    "growth": {
+      "moduleCount": 1,
+      "modules": [
+        {
+          "name": "GrowthHacker.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\reality\\gateway\\GrowthHacker.ts",
+          "originalCategory": "core/brain"
+        }
+      ]
+    }
+  },
+  "totalModules": 170
+}

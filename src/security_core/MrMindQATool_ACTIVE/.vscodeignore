@@ -1,0 +1,51 @@
+# ╔═══════════════════════════════════════════════════════════════════╗
+# ║  🛡️ QANTUM CORE - VS CODE IGNORE FILE                             ║
+# ║  Files to exclude from VSIX packaging & VS Code indexing          ║
+# ╚═══════════════════════════════════════════════════════════════════╝
+
+# === BUILD OUTPUTS ===
+dist/
+dist-forge/
+dist-protected/
+out/
+coverage/
+
+# === DEPENDENCIES (35,937 files) ===
+node_modules/
+
+# === PYTHON VIRTUAL ENV (398 files) ===
+.venv/
+
+# === DATA FOLDERS ===
+data/vectors/
+data/models/
+data/checkpoints/
+data/immune-backups/
+data/hive-mind/
+
+# === LOGS & TEMP ===
+*.log
+*.vsix
+.tsbuildinfo
+*.tsbuildinfo
+
+# === IDE ===
+.idea/
+*.swp
+*.swo
+
+# === OS ===
+.DS_Store
+Thumbs.db
+
+# === TEST OUTPUTS ===
+test-results/
+playwright-report/
+test-vault.encrypted
+test-bastion-vault.encrypted
+
+# === DOCUMENTATION (built separately) ===
+docs/api/
+
+# === SCRIPTS (dev only) ===
+scripts/logs/

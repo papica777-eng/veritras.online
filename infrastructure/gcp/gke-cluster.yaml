@@ -1,0 +1,9 @@
+apiVersion: container.cnrm.cloud.google.com/v1beta1
+kind: ContainerCluster
+metadata:
+  name: QANTUM-mind-cluster
+spec:
+  location: eu-central-1
+  initialNodeCount: 3
+  nodeConfig:
+    machineType: e2-standard-4

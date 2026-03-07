@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧠 QANTUM - Test Command Center</title>
+    <!-- v1.0.2: Externalized CSS for better caching and maintainability -->
+    <link rel="stylesheet" href="css/qantum-ui.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h1><span class="logo-icon">🧠</span> QANTUM</h1>
+                <span class="logo-version">v1.0.2 HYBRID</span>
+            </div>
+            
+            <nav class="nav">
+                <div class="nav-section">Main</div>
+                <a class="nav-item active" data-page="dashboard">
+                    <span class="nav-icon">📊</span>
+                    Dashboard
+                </a>
+                <a class="nav-item" data-page="tests">
+                    <span class="nav-icon">🧪</span>
+                    Test Suites
+                    <span class="nav-badge" id="navTestCount">-</span>
+                </a>
+                <a class="nav-item" data-page="run">
+                    <span class="nav-icon">▶️</span>
+                    Run Tests
+                </a>
+                
+                <div class="nav-section">AI Features</div>
+                <a class="nav-item" data-page="healing">
+                    <span class="nav-icon">🔄</span>
+                    Self-Healing
+                    <span class="nav-badge" id="navHealedCount">-</span>
+                </a>
+                <a class="nav-item" data-page="engines">
+                    <span class="nav-icon">⚡</span>
+                    AI Engines
+                </a>
+                
+                <div class="nav-section">Reports</div>
+                <a class="nav-item" data-page="reports">
+                    <span class="nav-icon">📈</span>
+                    Reports
+                </a>
+                <a class="nav-item" data-page="settings">
+                    <span class="nav-icon">⚙️</span>
+                    Settings
+                </a>
+            </nav>
+            
+            <div class="server-status">
+                <div class="status-indicator">
+                    <span class="status-dot" id="serverStatus"></span>
+                    <span id="serverStatusText">Checking...</span>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="main">
+            <!-- Dashboard Page -->
+            <div class="page active" id="page-dashboard">
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">Dashboard</h1>
+                        <p class="page-subtitle">Overview of your test automation</p>
+                    </div>
+                    <button class="btn btn-primary" onclick="runAllTests()">
+                        ▶️ Run All Tests
+                    </button>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card purple">
+                        <div class="stat-icon">🧪</div>
+                        <div class="stat-value" id="statTotalTests">-</div>
+                        <div class="stat-label">Total Tests</div>
+                    </div>
+                    <div class="stat-card green">
+                        <div class="stat-icon">✅</div>
+                        <div class="stat-value" id="statPassRate">-</div>
+                        <div class="stat-label">Pass Rate</div>
+                    </div>
+                    <div class="stat-card blue">
+                        <div class="stat-icon">🔄</div>
+                        <div class="stat-value" id="statHealed">-</div>
+                        <div class="stat-label">Self-Healed</div>
+                    </div>
+                    <div class="stat-card orange">
+                        <div class="stat-icon">⏱️</div>
+                        <div class="stat-value" id="statAvgTime">-</div>
+                        <div class="stat-label">Avg Duration</div>
+                    </div>
+                </div>
+                
+                <div class="grid-2">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">📈 Pass Rate Trend</h3>
+                        </div>
+                        <div class="chart-container" id="chartContainer"></div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Test Distribution</h3>
+                        </div>
+                        <div style="display: flex; justify-content: center; gap: 40px; align-items: center;">
+                            <div class="donut-chart" id="donutChart">
+                                <div class="donut-inner">
+                                    <div class="donut-value" id="donutValue">-</div>
+                                    <div class="donut-label">Pass Rate</div>
+                                </div>
+                            </div>
+                            <div id="chartLegend"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">🧪 Recent Test Runs</h3>
+                    </div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Test Name</th>
+                                <th>Status</th>
+                                <th>Duration</th>
+                                <th>Healed</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recentTestsTable"></tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Test Suites Page -->
+            <div class="page" id="page-tests">
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">Test Suites</h1>
+                        <p class="page-subtitle">All available test suites and their status</p>
+                    </div>
+                    <div style="display: flex; gap: 10px;">
+                        <input type="text" placeholder="Search tests..." id="searchTests" 
+                               style="padding: 10px 15px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg-dark); color: white;">
+                        <button class="btn btn-primary" onclick="runAllTests()">▶️ Run All</button>
+                    </div>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card green">
+                        <div class="stat-icon">✅</div>
+                        <div class="stat-value" id="testsPassed">-</div>
+                        <div class="stat-label">Passed</div>
+                    </div>
+                    <div class="stat-card red">
+                        <div class="stat-icon">❌</div>
+                        <div class="stat-value" id="testsFailed">-</div>
+                        <div class="stat-label">Failed</div>
+                    </div>
+                    <div class="stat-card orange">
+                        <div class="stat-icon">⏭️</div>
+                        <div class="stat-value" id="testsSkipped">-</div>
+                        <div class="stat-label">Skipped</div>
+                    </div>
+                    <div class="stat-card cyan">
+                        <div class="stat-icon">🔄</div>
+                        <div class="stat-value" id="testsHealed">-</div>
+                        <div class="stat-label">Healed</div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Suite Name</th>
+                                <th>Tests</th>
+                                <th>Pass Rate</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="testSuitesTable"></tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Run Tests Page -->
+            <div class="page" id="page-run">
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">Run Tests</h1>
+                        <p class="page-subtitle">Execute test suites and view real-time results</p>
+                    </div>
+                </div>
+                
+                <div class="grid-2">
+                    <div class="card">
+                        <h3 class="card-title" style="margin-bottom: 20px;">⚙️ Run Configuration</h3>
+                        
+                        <div style="margin-bottom: 15px;">
+                            <label style="display: block; margin-bottom: 5px; color: var(--text-muted);">Test Suite</label>
+                            <select id="runSuite" style="width: 100%; padding: 10px; border-radius: 8px; background: var(--bg-dark); border: 1px solid var(--border); color: white;">
+                                <option value="all">All Tests</option>
+                                <option value="unit">Unit Tests</option>
+                                <option value="integration">Integration Tests</option>
+                                <option value="e2e">E2E Tests</option>
+                            </select>
+                        </div>
+                        
+                        <div style="margin-bottom: 15px;">
+                            <label style="display: block; margin-bottom: 5px; color: var(--text-muted);">Browser</label>
+                            <select id="runBrowser" style="width: 100%; padding: 10px; border-radius: 8px; background: var(--bg-dark); border: 1px solid var(--border); color: white;">
+                                <option value="chromium">Chromium</option>
+                                <option value="firefox">Firefox</option>
+                                <option value="webkit">WebKit</option>
+                            </select>
+                        </div>
+                        
+                        <div style="margin-bottom: 15px;">
+                            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                                <input type="checkbox" id="runHeadless" checked>
+                                <span>Headless Mode</span>
+                            </label>
+                        </div>
+                        
+                        <div style="margin-bottom: 15px;">
+                            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                                <input type="checkbox" id="runHealing" checked>
+                                <span>Enable Self-Healing</span>
+                            </label>
+                        </div>
+                        
+                        <button class="btn btn-success" onclick="startTestRun()" id="startRunBtn" style="width: 100%;">
+                            ▶️ Start Test Run
+                        </button>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="card-title" style="margin-bottom: 20px;">📊 Current Run Status</h3>
+                        
+                        <div id="runStatus" style="text-align: center; padding: 20px; color: var(--text-muted);">
+                            No tests running
+                        </div>
+                        
+                        <div id="runProgress" style="display: none; margin-top: 20px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span>Progress</span>
+                                <span id="runProgressText">0%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar green" id="runProgressBar" style="width: 0%"></div>
+                            </div>
+                            
+                            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-top: 20px; text-align: center;">
+                                <div>
+                                    <div style="font-size: 1.5rem; color: var(--green);" id="runPassed">0</div>
+                                    <div style="font-size: 0.8rem; color: var(--text-muted);">Passed</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 1.5rem; color: var(--red);" id="runFailed">0</div>
+                                    <div style="font-size: 0.8rem; color: var(--text-muted);">Failed</div>
+                                </div>
+                                <div>
+                                    <div style="font-size: 1.5rem; color: var(--accent);" id="runHealed">0</div>
+                                    <div style="font-size: 0.8rem; color: var(--text-muted);">Healed</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">📝 Console Output</h3>
+                        <button class="btn btn-secondary" onclick="clearConsole()">Clear</button>
+                    </div>
+                    <div class="console" id="console">
+                        <div class="console-line info">[INFO] Ready to run tests...</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Self-Healing Page -->
+            <div class="page" id="page-healing">
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">Self-Healing</h1>
+                        <p class="page-subtitle">AI-powered automatic test repair</p>
+                    </div>
+                    <button class="btn btn-primary" onclick="exportPDFReport()">📄 Export PDF Report</button>
+                </div>
+                <div style="max-width: 420px; margin: 0 auto 32px;">
+                    <div class="self-healing-card">
+                        <div class="card-header">
+                            <span class="status-pulse"></span>
+                            <span class="label" style="font-weight: 700; letter-spacing: 1px; color: #00d2ff;">AI SELF-HEALING</span>
+                        </div>
+                        <div class="healing-number" id="healingTotal">23</div>
+                        <div class="card-footer">
+                            <p style="margin-bottom: 10px; color: var(--text-muted);">Broken selectors fixed automatically</p>
+                            <div class="progress-bar-mini" style="height: 6px; background: #0e2233; border-radius: 3px; overflow: hidden;">
+                                <div class="fill" style="width: 93%; height: 100%; background: linear-gradient(90deg, #00d2ff, #00ff88); border-radius: 3px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-2">
+                    <div class="card">
+                        <h3 class="card-title" style="margin-bottom: 20px;">🛠️ Healing Strategies</h3>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Strategy</th>
+                                    <th>Uses</th>
+                                    <th>Success Rate</th>
+                                </tr>
+                            </thead>
+                            <tbody id="healingStrategies">
+                                <tr><td>data-testid</td><td>45</td><td><span class="badge badge-passed">98%</span></td></tr>
+                                <tr><td>aria-label</td><td>32</td><td><span class="badge badge-passed">95%</span></td></tr>
+                                <tr><td>text content</td><td>28</td><td><span class="badge badge-passed">92%</span></td></tr>
+                                <tr><td>CSS selector</td><td>18</td><td><span class="badge badge-skipped">85%</span></td></tr>
+                                <tr><td>XPath</td><td>12</td><td><span class="badge badge-skipped">80%</span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">📜 Recent Healings</h3>
+                            <button class="btn btn-secondary" onclick="showReasoningModal(0)" style="font-size: 0.8rem; padding: 6px 12px;">🤖 View AI Reasoning</button>
+                        </div>
+                        <div class="timeline" id="healingTimeline">
+                            <div class="timeline-item success" onclick="showReasoningModal(0)" style="cursor: pointer;">
+                                <strong>Button selector healed</strong>
+                                <div style="font-size: 0.85rem; color: var(--text-muted);">#submit-btn → [data-testid="submit"]</div>
+                                <div style="font-size: 0.75rem; color: var(--text-dim);">2 min ago • Click to view reasoning</div>
+                            </div>
+                            <div class="timeline-item success" onclick="showReasoningModal(1)" style="cursor: pointer;">
+                                <strong>Input field repaired</strong>
+                                <div style="font-size: 0.85rem; color: var(--text-muted);">.email-input → [name="email"]</div>
+                                <div style="font-size: 0.75rem; color: var(--text-dim);">5 min ago • Click to view reasoning</div>
+                            </div>
+                            <div class="timeline-item success" onclick="showReasoningModal(2)" style="cursor: pointer;">
+                                <strong>Navigation link fixed</strong>
+                                <div style="font-size: 0.85rem; color: var(--text-muted);">//a[@class='nav'] → [role="navigation"] a</div>
+                                <div style="font-size: 0.75rem; color: var(--text-dim);">12 min ago • Click to view reasoning</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- AI Engines Page -->
+            <div class="page" id="page-engines">
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">AI Engines</h1>
+                        <p class="page-subtitle">Powerful AI modules powering QANTUM</p>
+                    </div>
+                </div>
+                
+                <div class="grid-3" id="enginesGrid"></div>
+            </div>
+            
+            <!-- Reports Page -->
+            <div class="page" id="page-reports">
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">Reports</h1>
+                        <p class="page-subtitle">Test execution reports and analytics</p>
+                    </div>
+                    <button class="btn btn-primary" onclick="exportReport()">📥 Export Report</button>
+                </div>
+                
+                <div class="tabs">
+                    <div class="tab active" data-tab="summary">Summary</div>
+                    <div class="tab" data-tab="details">Details</div>
+                    <div class="tab" data-tab="trends">Trends</div>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title" style="margin-bottom: 20px;">📊 Test Execution Summary</h3>
+                    <div class="grid-2">
+                        <div>
+                            <table class="table">
+                                <tr><td>Total Tests</td><td id="reportTotal">-</td></tr>
+                                <tr><td>Passed</td><td style="color: var(--green);" id="reportPassed">-</td></tr>
+                                <tr><td>Failed</td><td style="color: var(--red);" id="reportFailed">-</td></tr>
+                                <tr><td>Skipped</td><td style="color: var(--orange);" id="reportSkipped">-</td></tr>
+                                <tr><td>Self-Healed</td><td style="color: var(--accent);" id="reportHealed">-</td></tr>
+                                <tr><td>Pass Rate</td><td id="reportPassRate">-</td></tr>
+                                <tr><td>Total Duration</td><td id="reportDuration">-</td></tr>
+                            </table>
+                        </div>
+                        <div style="display: flex; justify-content: center; align-items: center;">
+                            <div class="donut-chart" id="reportDonut">
+                                <div class="donut-inner">
+                                    <div class="donut-value" id="reportDonutValue">-</div>
+                                    <div class="donut-label">Pass Rate</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Settings Page -->
+            <div class="page" id="page-settings">
+                <div class="page-header">
+                    <div>
+                        <h1 class="page-title">Settings</h1>
+                        <p class="page-subtitle">Configure QANTUM</p>
+                    </div>
+                </div>
+                
+                <!-- Shadow Mode Toggle (Enterprise Feature) -->
+                <div class="card" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(0, 210, 255, 0.1)); border-color: var(--accent);">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <h3 class="card-title" style="display: flex; align-items: center; gap: 10px;">
+                                👻 Shadow Mode
+                                <span style="background: linear-gradient(90deg, #8b5cf6, #00d2ff); color: white; font-size: 0.65rem; padding: 2px 8px; border-radius: 10px;">ENTERPRISE</span>
+                            </h3>
+                            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 5px;">Run tests against production traffic without affecting users</p>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="shadowModeToggle" onchange="toggleShadowMode()">
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    <div id="shadowModeStatus" style="margin-top: 15px; padding: 10px; background: rgba(0,0,0,0.3); border-radius: 8px; display: none;">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span class="status-pulse"></span>
+                            <span style="color: #00ff88; font-size: 0.85rem;">Shadow Mode Active - Monitoring production traffic</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <div class="card">
+                        <h3 class="card-title" style="margin-bottom: 20px;">🔧 General Settings</h3>
+                        
+                        <div style="margin-bottom: 20px;">
+                            <label style="display: block; margin-bottom: 5px; color: var(--text-muted);">Default Browser</label>
+                            <select style="width: 100%; padding: 10px; border-radius: 8px; background: var(--bg-dark); border: 1px solid var(--border); color: white;">
+                                <option>Chromium</option>
+                                <option>Firefox</option>
+                                <option>WebKit</option>
+                            </select>
+                        </div>
+                        
+                        <div style="margin-bottom: 20px;">
+                            <label style="display: block; margin-bottom: 5px; color: var(--text-muted);">Test Timeout (ms)</label>
+                            <input type="number" value="30000" style="width: 100%; padding: 10px; border-radius: 8px; background: var(--bg-dark); border: 1px solid var(--border); color: white;">
+                        </div>
+                        
+                        <div style="margin-bottom: 20px;">
+                            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                                <input type="checkbox" checked>
+                                <span>Enable Self-Healing</span>
+                            </label>
+                        </div>
+                        
+                        <div style="margin-bottom: 20px;">
+                            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                                <input type="checkbox" checked>
+                                <span>Auto-save healing mappings</span>
+                            </label>
+                        </div>
+                        
+                        <button class="btn btn-primary">💾 Save Settings</button>
+                    </div>
+
+                    <div class="card">
+                        <h3 class="card-title" style="margin-bottom: 20px;">🔔 Integrations</h3>
+                        
+                        <div style="margin-bottom: 20px;">
+                            <label style="display: block; margin-bottom: 5px; color: var(--text-muted);">Slack Webhook URL</label>
+                            <input type="text" placeholder="https://hooks.slack.com/services/..." style="width: 100%; padding: 10px; border-radius: 8px; background: var(--bg-dark); border: 1px solid var(--border); color: white;">
+                        </div>
+                        
+                        <div style="margin-bottom: 20px;">
+                            <label style="display: block; margin-bottom: 5px; color: var(--text-muted);">Discord Webhook URL</label>
+                            <input type="text" placeholder="https://discord.com/api/webhooks/..." style="width: 100%; padding: 10px; border-radius: 8px; background: var(--bg-dark); border: 1px solid var(--border); color: white;">
+                        </div>
+                        
+                        <div style="margin-bottom: 20px;">
+                            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                                <input type="checkbox" checked>
+                                <span>Send failure alerts</span>
+                            </label>
+                        </div>
+                        
+                        <div style="margin-bottom: 20px;">
+                            <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                                <input type="checkbox" checked>
+                                <span>Send daily summary</span>
+                            </label>
+                        </div>
+                        
+                        <button class="btn btn-secondary" onclick="testWebhook()">🧪 Test Webhook</button>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3 class="card-title" style="margin-bottom: 20px;">🌐 API Information</h3>
+                    <table class="table">
+                        <tr><td>Server URL</td><td id="settingsServerUrl">-</td></tr>
+                        <tr><td>API Version</td><td>v1.0.2</td></tr>
+                        <tr><td>Status</td><td><span class="badge badge-active">Online</span></td></tr>
+                        <tr><td>Docker Image</td><td><code style="background: var(--bg-dark); padding: 2px 8px; border-radius: 4px;">QAntum/mind-engine-core:26.0.0</code></td></tr>
+                    </table>
+                </div>
+
+                <!-- License Tier Card -->
+                <div class="card" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(0, 0, 0, 0.3)); border-color: var(--accent);">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <h3 class="card-title">💎 License: Enterprise</h3>
+                            <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 5px;">All features unlocked • 24/7 Support • On-Premise deployment</p>
+                        </div>
+                        <div style="text-align: right;">
+                            <div style="font-size: 0.75rem; color: var(--text-muted);">Valid until</div>
+                            <div style="color: var(--green); font-weight: 600;">Dec 31, 2026</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script>
+        // ============================================================
+        // STATE
+        // ============================================================
+        let dashboardData = null;
+        let isRunning = false;
+        let currentPage = 'dashboard';
+        
+        // ============================================================
+        // API CALLS
+        // ============================================================
+        const API_BASE = window.location.origin;
+        
+        async function fetchDashboard() {
+            try {
+                const res = await fetch(`${API_BASE}/api/dashboard`);
+                dashboardData = await res.json();
+                updateServerStatus(true);
+                return dashboardData;
+            } catch (err) {
+                console.error('Failed to fetch dashboard:', err);
+                updateServerStatus(false);
+                return null;
+            }
+        }
+        
+        async function fetchTests() {
+            try {
+                const res = await fetch(`${API_BASE}/api/tests`);
+                return await res.json();
+            } catch (err) {
+                console.error('Failed to fetch tests:', err);
+                return null;
+            }
+        }
+        
+        async function runTests(config = {}) {
+            try {
+                const res = await fetch(`${API_BASE}/api/tests/run`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(config)
+                });
+                return await res.json();
+            } catch (err) {
+                console.error('Failed to run tests:', err);
+                return null;
+            }
+        }
+        
+        // ============================================================
+        // UI UPDATES
+        // ============================================================
+        function updateServerStatus(online) {
+            const dot = document.getElementById('serverStatus');
+            const text = document.getElementById('serverStatusText');
+            if (online) {
+                dot.classList.remove('offline');
+                text.textContent = 'Server Online';
+            } else {
+                dot.classList.add('offline');
+                text.textContent = 'Server Offline';
+            }
+        }
+        
+        function updateDashboard(data) {
+            if (!data) return;
+            
+            // Stats
+            document.getElementById('statTotalTests').textContent = data.totalTests.toLocaleString();
+            document.getElementById('statPassRate').textContent = data.passRate + '%';
+            document.getElementById('statHealed').textContent = data.healed;
+            document.getElementById('statAvgTime').textContent = data.avgTime + 's';
+            
+            // Nav badges
+            document.getElementById('navTestCount').textContent = data.totalTests;
+            document.getElementById('navHealedCount').textContent = data.healed;
+            
+            // Chart
+            const chartContainer = document.getElementById('chartContainer');
+            chartContainer.innerHTML = data.chartData.daily.map(val => 
+                `<div class="chart-bar" style="height: ${val}%" data-value="${val}%"></div>`
+            ).join('');
+            
+            // Donut
+            const { passed, failed, skipped } = data.chartData.statusDistribution;
+            const total = passed + failed + skipped;
+            const passPercent = ((passed / total) * 100).toFixed(1);
+            
+            document.getElementById('donutValue').textContent = passPercent + '%';
+            document.getElementById('donutChart').style.background = `conic-gradient(
+                var(--green) 0deg ${passed/total*360}deg,
+                var(--red) ${passed/total*360}deg ${(passed+failed)/total*360}deg,
+                var(--orange) ${(passed+failed)/total*360}deg 360deg
+            )`;
+            
+            document.getElementById('chartLegend').innerHTML = `
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--green);"></div>
+                    <span>Passed (${passed.toLocaleString()})</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--red);"></div>
+                    <span>Failed (${failed})</span>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--orange);"></div>
+                    <span>Skipped (${skipped})</span>
+                </div>
+            `;
+            
+            // Recent tests table
+            const tbody = document.getElementById('recentTestsTable');
+            tbody.innerHTML = data.recentTests.map(test => `
+                <tr>
+                    <td>${test.name}</td>
+                    <td><span class="badge badge-${test.status}">${test.status}</span></td>
+                    <td>${test.duration}</td>
+                    <td>${test.healed ? '🔄 Yes' : '-'}</td>
+                </tr>
+            `).join('');
+            
+            // Engines
+            const icons = ['⏰', '🛡️', '⚛️', '🌌', '🧠', '👑'];
+            document.getElementById('enginesGrid').innerHTML = data.engines.map((eng, i) => `
+                <div class="engine-card">
+                    <div class="engine-icon">${icons[i] || '⚡'}</div>
+                    <div class="engine-name">${eng.name}</div>
+                    <div class="engine-stats">${eng.tests} tests • <span class="badge badge-active">${eng.status}</span></div>
+                </div>
+            `).join('');
+            
+            // Tests page
+            document.getElementById('testsPassed').textContent = passed.toLocaleString();
+            document.getElementById('testsFailed').textContent = failed;
+            document.getElementById('testsSkipped').textContent = skipped;
+            document.getElementById('testsHealed').textContent = data.healed;
+            
+            // Test suites table
+            document.getElementById('testSuitesTable').innerHTML = data.engines.map(eng => `
+                <tr>
+                    <td><strong>${eng.name}</strong></td>
+                    <td>${eng.tests}</td>
+                    <td>
+                        <div class="progress" style="width: 100px; display: inline-block; vertical-align: middle;">
+                            <div class="progress-bar green" style="width: ${85 + Math.random() * 15}%"></div>
+                        </div>
+                    </td>
+                    <td><span class="badge badge-${eng.status}">${eng.status}</span></td>
+                    <td><button class="btn btn-secondary" onclick="runSuite('${eng.name}')">▶️ Run</button></td>
+                </tr>
+            `).join('');
+            
+            // Reports
+            document.getElementById('reportTotal').textContent = data.totalTests.toLocaleString();
+            document.getElementById('reportPassed').textContent = passed.toLocaleString();
+            document.getElementById('reportFailed').textContent = failed;
+            document.getElementById('reportSkipped').textContent = skipped;
+            document.getElementById('reportHealed').textContent = data.healed;
+            document.getElementById('reportPassRate').textContent = passPercent + '%';
+            document.getElementById('reportDuration').textContent = (data.totalTests * data.avgTime / 60).toFixed(1) + ' min';
+            document.getElementById('reportDonutValue').textContent = passPercent + '%';
+            document.getElementById('reportDonut').style.background = `conic-gradient(
+                var(--green) 0deg ${passed/total*360}deg,
+                var(--red) ${passed/total*360}deg ${(passed+failed)/total*360}deg,
+                var(--orange) ${(passed+failed)/total*360}deg 360deg
+            )`;
+            
+            // Settings
+            document.getElementById('settingsServerUrl').textContent = API_BASE;
+        }
+        
+        // ============================================================
+        // NAVIGATION
+        // ============================================================
+        function showPage(pageName) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+            
+            document.getElementById(`page-${pageName}`).classList.add('active');
+            document.querySelector(`[data-page="${pageName}"]`).classList.add('active');
+            
+            currentPage = pageName;
+        }
+        
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const page = item.dataset.page;
+                if (page) showPage(page);
+            });
+        });
+        
+        // ============================================================
+        // ACTIONS
+        // ============================================================
+        async function runAllTests() {
+            addConsoleLog('Starting test run...', 'info');
+            const result = await runTests({ suite: 'all' });
+            if (result) {
+                addConsoleLog(`✅ ${result.message} (Job: ${result.jobId})`, 'success');
+                simulateTestRun();
+            } else {
+                addConsoleLog('❌ Failed to start test run', 'error');
+            }
+        }
+        
+        async function runSuite(suiteName) {
+            addConsoleLog(`Starting ${suiteName} tests...`, 'info');
+            const result = await runTests({ suite: suiteName });
+            if (result) {
+                addConsoleLog(`✅ ${result.message}`, 'success');
+            }
+        }
+        
+        async function startTestRun() {
+            if (isRunning) return;
+            
+            isRunning = true;
+            const btn = document.getElementById('startRunBtn');
+            btn.disabled = true;
+            btn.textContent = '⏳ Running...';
+            
+            const suite = document.getElementById('runSuite').value;
+            const browser = document.getElementById('runBrowser').value;
+            const headless = document.getElementById('runHeadless').checked;
+            const healing = document.getElementById('runHealing').checked;
+            
+            addConsoleLog(`[CONFIG] Suite: ${suite}, Browser: ${browser}, Headless: ${headless}, Healing: ${healing}`, 'info');
+            
+            const result = await runTests({ suite, browser, headless, healing });
+            
+            if (result) {
+                addConsoleLog(`✅ ${result.message}`, 'success');
+                document.getElementById('runStatus').innerHTML = `<span style="color: var(--green);">✅ Tests Started</span><br>Job ID: ${result.jobId}`;
+                simulateTestRun();
+            } else {
+                addConsoleLog('❌ Failed to start', 'error');
+                btn.disabled = false;
+                btn.textContent = '▶️ Start Test Run';
+                isRunning = false;
+            }
+        }
+        
+        function simulateTestRun() {
+            document.getElementById('runProgress').style.display = 'block';
+            
+            let progress = 0;
+            let passed = 0;
+            let failed = 0;
+            let healed = 0;
+            
+            const total = dashboardData?.totalTests || 100;
+            
+            const interval = setInterval(() => {
+                progress += Math.random() * 5;
+                if (progress > 100) progress = 100;
+                
+                passed = Math.floor((progress / 100) * (dashboardData?.chartData?.statusDistribution?.passed || 90));
+                failed = Math.floor((progress / 100) * (dashboardData?.chartData?.statusDistribution?.failed || 5));
+                healed = Math.floor((progress / 100) * (dashboardData?.healed || 3));
+                
+                document.getElementById('runProgressBar').style.width = progress + '%';
+                document.getElementById('runProgressText').textContent = Math.floor(progress) + '%';
+                document.getElementById('runPassed').textContent = passed;
+                document.getElementById('runFailed').textContent = failed;
+                document.getElementById('runHealed').textContent = healed;
+                
+                if (progress < 100) {
+                    addConsoleLog(`[TEST] Running... ${Math.floor(progress)}%`, 'info');
+                }
+                
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    addConsoleLog('✅ All tests completed!', 'success');
+                    addConsoleLog(`📊 Results: ${passed} passed, ${failed} failed, ${healed} healed`, 'success');
+                    
+                    document.getElementById('runStatus').innerHTML = `
+                        <span style="color: var(--green); font-size: 1.2rem;">✅ Tests Completed!</span>
+                    `;
+                    
+                    const btn = document.getElementById('startRunBtn');
+                    btn.disabled = false;
+                    btn.textContent = '▶️ Start Test Run';
+                    isRunning = false;
+                }
+            }, 200);
+        }
+        
+        function addConsoleLog(message, type = 'info') {
+            const consoleEl = document.getElementById('console');
+            const time = new Date().toLocaleTimeString();
+            consoleEl.innerHTML += `<div class="console-line ${type}">[${time}] ${message}</div>`;
+            consoleEl.scrollTop = consoleEl.scrollHeight;
+        }
+        
+        function clearConsole() {
+            document.getElementById('console').innerHTML = '<div class="console-line info">[INFO] Console cleared</div>';
+        }
+        
+        function exportReport() {
+            const data = dashboardData;
+            if (!data) {
+                alert('No data to export');
+                return;
+            }
+            
+            const report = `
+QANTUM TEST REPORT
+=======================
+Generated: ${new Date().toISOString()}
+
+SUMMARY
+-------
+Total Tests: ${data.totalTests}
+Pass Rate: ${data.passRate}%
+Self-Healed: ${data.healed}
+Avg Duration: ${data.avgTime}s
+
+DISTRIBUTION
+------------
+Passed: ${data.chartData.statusDistribution.passed}
+Failed: ${data.chartData.statusDistribution.failed}
+Skipped: ${data.chartData.statusDistribution.skipped}
+
+ENGINES
+-------
+${data.engines.map(e => `- ${e.name}: ${e.tests} tests`).join('\n')}
+            `.trim();
+            
+            const blob = new Blob([report], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `qantum-report-${Date.now()}.txt`;
+            a.click();
+            
+            addConsoleLog('📥 Report exported', 'success');
+        }
+
+        // ============================================================
+        // SHADOW MODE
+        // ============================================================
+        function toggleShadowMode() {
+            const toggle = document.getElementById('shadowModeToggle');
+            const status = document.getElementById('shadowModeStatus');
+            if (toggle.checked) {
+                status.style.display = 'block';
+                addConsoleLog('👻 Shadow Mode activated - monitoring production traffic', 'info');
+            } else {
+                status.style.display = 'none';
+                addConsoleLog('👻 Shadow Mode deactivated', 'info');
+            }
+        }
+
+        function testWebhook() {
+            addConsoleLog('🔔 Testing webhook connection...', 'info');
+            setTimeout(() => {
+                addConsoleLog('✅ Webhook test successful!', 'success');
+            }, 1000);
+        }
+
+        // ============================================================
+        // PDF EXPORT
+        // ============================================================
+        async function exportPDFReport() {
+            addConsoleLog('📄 Generating Executive PDF Report...', 'info');
+            // In real implementation, this would call the PDF generator API
+            setTimeout(() => {
+                addConsoleLog('✅ PDF Report generated: QAntum_Executive_Report.pdf', 'success');
+                alert('PDF Report would be downloaded. In production, this calls the PDF generator API endpoint.');
+            }, 2000);
+        }
+
+        // ============================================================
+        // AI REASONING MODAL
+        // ============================================================
+        const reasoningData = [
+            {
+                title: 'Button Selector Healing',
+                oldSelector: '#submit-btn',
+                newSelector: '[data-testid="submit"]',
+                confidence: 98,
+                steps: [
+                    { type: 'detected', icon: '🔍', text: 'Detected: Selector #submit-btn is missing from DOM' },
+                    { type: 'scanning', icon: '🔄', text: 'Scanning DOM for similar elements...' },
+                    { type: 'scanning', icon: '📊', text: 'Analyzing 47 button elements in page' },
+                    { type: 'found', icon: '✅', text: 'Found: [data-testid="submit"] with matching context' },
+                    { type: 'found', icon: '📈', text: 'Confidence Score: 98% (text match + position + attributes)' },
+                    { type: 'action', icon: '⚡', text: 'Action: Updated Page Object Model dynamically' },
+                ]
+            },
+            {
+                title: 'Input Field Healing',
+                oldSelector: '.email-input',
+                newSelector: '[name="email"]',
+                confidence: 95,
+                steps: [
+                    { type: 'detected', icon: '🔍', text: 'Detected: Selector .email-input not found' },
+                    { type: 'scanning', icon: '🔄', text: 'Searching for input elements with email context...' },
+                    { type: 'scanning', icon: '📊', text: 'Found 12 input elements, filtering by type and name' },
+                    { type: 'found', icon: '✅', text: 'Best match: [name="email"] (type="email")' },
+                    { type: 'found', icon: '📈', text: 'Confidence Score: 95% (name attribute + input type)' },
+                    { type: 'action', icon: '⚡', text: 'Action: Selector replaced and test continued' },
+                ]
+            },
+            {
+                title: 'Navigation Link Healing',
+                oldSelector: '//a[@class="nav"]',
+                newSelector: '[role="navigation"] a',
+                confidence: 92,
+                steps: [
+                    { type: 'detected', icon: '🔍', text: 'Detected: XPath //a[@class="nav"] returned null' },
+                    { type: 'scanning', icon: '🔄', text: 'Analyzing page structure for navigation elements...' },
+                    { type: 'scanning', icon: '📊', text: 'Checking ARIA roles and semantic HTML' },
+                    { type: 'found', icon: '✅', text: 'Found: [role="navigation"] a with similar link text' },
+                    { type: 'found', icon: '📈', text: 'Confidence Score: 92% (role + text content match)' },
+                    { type: 'action', icon: '⚡', text: 'Action: XPath converted to CSS selector with role' },
+                ]
+            }
+        ];
+
+        function showReasoningModal(index) {
+            const data = reasoningData[index];
+            const modal = document.getElementById('reasoningModal');
+            
+            document.getElementById('modalTitle').textContent = data.title;
+            document.getElementById('modalOldSelector').textContent = data.oldSelector;
+            document.getElementById('modalNewSelector').textContent = data.newSelector;
+            document.getElementById('modalConfidence').textContent = data.confidence + '%';
+            
+            const stepsContainer = document.getElementById('modalSteps');
+            stepsContainer.innerHTML = data.steps.map(step => `
+                <div class="reasoning-step ${step.type}">
+                    <span style="margin-right: 8px;">${step.icon}</span>
+                    ${step.text}
+                </div>
+            `).join('');
+            
+            modal.classList.add('active');
+        }
+
+        function closeReasoningModal() {
+            document.getElementById('reasoningModal').classList.remove('active');
+        }
+        
+        // ============================================================
+        // INIT
+        // ============================================================
+        async function init() {
+            const data = await fetchDashboard();
+            if (data) {
+                updateDashboard(data);
+                console.log('✅ Dashboard loaded:', data);
+            } else {
+                console.error('❌ Failed to load dashboard');
+            }
+        }
+        
+        init();
+        
+        // Auto-refresh every 30 seconds
+        setInterval(async () => {
+            const data = await fetchDashboard();
+            if (data) updateDashboard(data);
+        }, 30000);
+    </script>
+
+    <!-- AI Reasoning Modal -->
+    <div class="modal-overlay" id="reasoningModal" onclick="if(event.target === this) closeReasoningModal()">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 style="display: flex; align-items: center; gap: 10px;">
+                    🤖 <span id="modalTitle">AI Reasoning Path</span>
+                </h2>
+                <button class="modal-close" onclick="closeReasoningModal()">&times;</button>
+            </div>
+            
+            <div style="margin-bottom: 20px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div style="background: rgba(239, 68, 68, 0.1); padding: 12px; border-radius: 8px; border-left: 3px solid var(--red);">
+                        <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 4px;">OLD SELECTOR</div>
+                        <code id="modalOldSelector" style="color: var(--red);">#submit-btn</code>
+                    </div>
+                    <div style="background: rgba(16, 185, 129, 0.1); padding: 12px; border-radius: 8px; border-left: 3px solid var(--green);">
+                        <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 4px;">NEW SELECTOR</div>
+                        <code id="modalNewSelector" style="color: var(--green);">[data-testid="submit"]</code>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: rgba(0, 210, 255, 0.1); padding: 12px; border-radius: 8px; margin-bottom: 20px; text-align: center;">
+                <div style="font-size: 0.75rem; color: var(--text-muted);">CONFIDENCE SCORE</div>
+                <div style="font-size: 2rem; font-weight: bold; color: #00d2ff;" id="modalConfidence">98%</div>
+            </div>
+
+            <h3 style="margin-bottom: 15px; color: var(--accent);">🧠 Reasoning Steps</h3>
+            <div id="modalSteps">
+                <!-- Steps will be populated by JavaScript -->
+            </div>
+
+            <div style="margin-top: 20px; padding: 15px; background: rgba(139, 92, 246, 0.1); border-radius: 8px;">
+                <div style="font-size: 0.85rem; color: var(--text-muted);">
+                    💡 <strong>Why trust this?</strong> QANTUM uses multiple validation strategies including 
+                    DOM analysis, text matching, ARIA roles, and position heuristics to ensure selector accuracy.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

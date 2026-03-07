@@ -1,0 +1,43 @@
+{
+  "scan": {
+    "domain": "chaos.com",
+    "score": 16,
+    "grade": "F",
+    "ttfb": 431,
+    "missingHeaders": [
+      "strict-transport-security",
+      "content-security-policy",
+      "x-frame-options",
+      "x-content-type-options",
+      "x-xss-protection",
+      "referrer-policy",
+      "permissions-policy"
+    ],
+    "issues": [
+      "Missing: strict-transport-security",
+      "Missing: content-security-policy",
+      "Missing: x-frame-options",
+      "Missing: x-content-type-options",
+      "Missing: x-xss-protection",
+      "Missing: referrer-policy",
+      "Missing: permissions-policy"
+    ],
+    "sslDaysLeft": 34,
+    "sslIssuer": "Sectigo Limited"
+  },
+  "target": {
+    "domain": "chaos.com",
+    "email": "security@chaos.com",
+    "company": "Chaos",
+    "industry": "SaaS"
+  },
+  "evidence": {
+    "screenshotFull": "C:\\Users\\papic\\Desktop\\ALL-POSITIONS\\Blockchain\\QAntum-1\\data\\visual-evidence\\chaos.com\\screenshots\\desktop.png",
+    "screenshotMobile": "C:\\Users\\papic\\Desktop\\ALL-POSITIONS\\Blockchain\\QAntum-1\\data\\visual-evidence\\chaos.com\\screenshots\\mobile.png",
+    "screenshotHeaders": "C:\\Users\\papic\\Desktop\\ALL-POSITIONS\\Blockchain\\QAntum-1\\data\\visual-evidence\\chaos.com\\screenshots\\missing-headers.png",
+    "videoPath": "C:\\Users\\papic\\Desktop\\ALL-POSITIONS\\Blockchain\\QAntum-1\\data\\visual-evidence\\chaos.com\\05d608b5dc7eddc277d9c308dd2c2bc4.webm",
+    "videoSizeKb": 1028,
+    "video": true
+  },
+  "ts": "2026-02-27T09:29:42.944Z"
+}

@@ -1,0 +1,508 @@
+[
+  {
+    "timestamp": 1772419837378,
+    "error": "PARADOX: Exchange API returned 'RATE_LIMIT_EXCEEDED' but local counter is 0.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772419873490,
+    "error": "PARADOX: Exchange API returned 'RATE_LIMIT_EXCEEDED' but local counter is 0.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772419879499,
+    "error": "PARADOX: Exchange API returned 'RATE_LIMIT_EXCEEDED' but local counter is 0.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772420011625,
+    "error": "PARADOX: TypeScript interface drift. Property 'bidPrice' does not exist on type 'OrderBook'.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772420029656,
+    "error": "PARADOX: TypeScript interface drift. Property 'bidPrice' does not exist on type 'OrderBook'.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772420053687,
+    "error": "PARADOX: Exchange API returned 'RATE_LIMIT_EXCEEDED' but local counter is 0.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772420059703,
+    "error": "PARADOX: TypeScript interface drift. Property 'bidPrice' does not exist on type 'OrderBook'.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772420071720,
+    "error": "PARADOX: Exchange API returned 'RATE_LIMIT_EXCEEDED' but local counter is 0.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772420077738,
+    "error": "PARADOX: Exchange API returned 'RATE_LIMIT_EXCEEDED' but local counter is 0.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772420089788,
+    "error": "PARADOX: Exchange API returned 'RATE_LIMIT_EXCEEDED' but local counter is 0.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772420215948,
+    "error": "PARADOX: Exchange API returned 'RATE_LIMIT_EXCEEDED' but local counter is 0.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772420221950,
+    "error": "PARADOX: TypeScript interface drift. Property 'bidPrice' does not exist on type 'OrderBook'.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772420294034,
+    "error": "PARADOX: Exchange API returned 'RATE_LIMIT_EXCEEDED' but local counter is 0.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772420354095,
+    "error": "PARADOX: Exchange API returned 'RATE_LIMIT_EXCEEDED' but local counter is 0.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772420390169,
+    "error": "PARADOX: Exchange API returned 'RATE_LIMIT_EXCEEDED' but local counter is 0.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772420408194,
+    "error": "PARADOX: Exchange API returned 'RATE_LIMIT_EXCEEDED' but local counter is 0.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772420432217,
+    "error": "PARADOX: Exchange API returned 'RATE_LIMIT_EXCEEDED' but local counter is 0.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772420510331,
+    "error": "PARADOX: Exchange API returned 'RATE_LIMIT_EXCEEDED' but local counter is 0.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772420540356,
+    "error": "PARADOX: Exchange API returned 'RATE_LIMIT_EXCEEDED' but local counter is 0.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772420612453,
+    "error": "PARADOX: TypeScript interface drift. Property 'bidPrice' does not exist on type 'OrderBook'.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772420642472,
+    "error": "PARADOX: Exchange API returned 'RATE_LIMIT_EXCEEDED' but local counter is 0.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772420678527,
+    "error": "PARADOX: Exchange API returned 'RATE_LIMIT_EXCEEDED' but local counter is 0.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772420684533,
+    "error": "PARADOX: TypeScript interface drift. Property 'bidPrice' does not exist on type 'OrderBook'.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772420888812,
+    "error": "PARADOX: Exchange API returned 'RATE_LIMIT_EXCEEDED' but local counter is 0.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772420906837,
+    "error": "PARADOX: Exchange API returned 'RATE_LIMIT_EXCEEDED' but local counter is 0.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772420942899,
+    "error": "PARADOX: Exchange API returned 'RATE_LIMIT_EXCEEDED' but local counter is 0.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772420954916,
+    "error": "PARADOX: TypeScript interface drift. Property 'bidPrice' does not exist on type 'OrderBook'.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772421003035,
+    "error": "PARADOX: TypeScript interface drift. Property 'bidPrice' does not exist on type 'OrderBook'.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772421069108,
+    "error": "PARADOX: Exchange API returned 'RATE_LIMIT_EXCEEDED' but local counter is 0.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772421147245,
+    "error": "PARADOX: Exchange API returned 'RATE_LIMIT_EXCEEDED' but local counter is 0.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772421177294,
+    "error": "PARADOX: Exchange API returned 'RATE_LIMIT_EXCEEDED' but local counter is 0.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772421417561,
+    "error": "PARADOX: Exchange API returned 'RATE_LIMIT_EXCEEDED' but local counter is 0.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772421441582,
+    "error": "PARADOX: TypeScript interface drift. Property 'bidPrice' does not exist on type 'OrderBook'.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772421453599,
+    "error": "PARADOX: Exchange API returned 'RATE_LIMIT_EXCEEDED' but local counter is 0.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772421477624,
+    "error": "PARADOX: TypeScript interface drift. Property 'bidPrice' does not exist on type 'OrderBook'.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772421489647,
+    "error": "PARADOX: Exchange API returned 'RATE_LIMIT_EXCEEDED' but local counter is 0.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772421507680,
+    "error": "PARADOX: Exchange API returned 'RATE_LIMIT_EXCEEDED' but local counter is 0.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772421549728,
+    "error": "PARADOX: Exchange API returned 'RATE_LIMIT_EXCEEDED' but local counter is 0.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772421627825,
+    "error": "PARADOX: Exchange API returned 'RATE_LIMIT_EXCEEDED' but local counter is 0.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772421651867,
+    "error": "PARADOX: Exchange API returned 'RATE_LIMIT_EXCEEDED' but local counter is 0.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772421663881,
+    "error": "PARADOX: Exchange API returned 'RATE_LIMIT_EXCEEDED' but local counter is 0.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772421669886,
+    "error": "PARADOX: TypeScript interface drift. Property 'bidPrice' does not exist on type 'OrderBook'.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772421699918,
+    "error": "PARADOX: TypeScript interface drift. Property 'bidPrice' does not exist on type 'OrderBook'.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772421729956,
+    "error": "PARADOX: Exchange API returned 'RATE_LIMIT_EXCEEDED' but local counter is 0.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772421796076,
+    "error": "PARADOX: Exchange API returned 'RATE_LIMIT_EXCEEDED' but local counter is 0.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  },
+  {
+    "timestamp": 1772421802085,
+    "error": "PARADOX: TypeScript interface drift. Property 'bidPrice' does not exist on type 'OrderBook'.",
+    "component": "Wealth Manifestor",
+    "solution": {
+      "strategy": "NONE",
+      "confidence": 0,
+      "fix": "",
+      "action": "IGNORE"
+    }
+  }
+]

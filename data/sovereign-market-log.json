@@ -1,0 +1,697 @@
+[
+  {
+    "taskId": "c9659cf4b86deba7",
+    "success": true,
+    "channel": "email",
+    "executedAt": 1772239686311,
+    "durationMs": 0,
+    "data": {
+      "dryRun": true
+    }
+  },
+  {
+    "taskId": "174a64c3b5596844",
+    "success": true,
+    "channel": "email",
+    "executedAt": 1772239686311,
+    "durationMs": 0,
+    "data": {
+      "dryRun": true
+    }
+  },
+  {
+    "taskId": "d7502498059bd525",
+    "success": true,
+    "channel": "email",
+    "executedAt": 1772239686311,
+    "durationMs": 0,
+    "data": {
+      "dryRun": true
+    }
+  },
+  {
+    "taskId": "16601e67134eab1f",
+    "success": true,
+    "channel": "email",
+    "executedAt": 1772239686311,
+    "durationMs": 0,
+    "data": {
+      "dryRun": true
+    }
+  },
+  {
+    "taskId": "24515e0411733f79",
+    "success": true,
+    "channel": "email",
+    "executedAt": 1772239686311,
+    "durationMs": 0,
+    "data": {
+      "dryRun": true
+    }
+  },
+  {
+    "taskId": "98e25541806db0ce",
+    "success": true,
+    "channel": "android",
+    "executedAt": 1772240228564,
+    "durationMs": 0,
+    "data": {
+      "dryRun": true
+    }
+  },
+  {
+    "taskId": "8cea3f6c19131c15",
+    "success": true,
+    "channel": "android",
+    "executedAt": 1772240228564,
+    "durationMs": 0,
+    "data": {
+      "dryRun": true
+    }
+  },
+  {
+    "taskId": "baddc56ba925126d",
+    "success": true,
+    "channel": "android",
+    "executedAt": 1772288482441,
+    "durationMs": 0,
+    "data": {
+      "dryRun": true
+    }
+  },
+  {
+    "taskId": "079b24601dfbbe30",
+    "success": true,
+    "channel": "android",
+    "executedAt": 1772288482442,
+    "durationMs": 0,
+    "data": {
+      "dryRun": true
+    }
+  },
+  {
+    "taskId": "67c37c15ecdf125d",
+    "success": true,
+    "channel": "email",
+    "executedAt": 1772288482442,
+    "durationMs": 0,
+    "data": {
+      "dryRun": true
+    }
+  },
+  {
+    "taskId": "302cdcb30c74717b",
+    "success": true,
+    "channel": "email",
+    "executedAt": 1772288482442,
+    "durationMs": 0,
+    "data": {
+      "dryRun": true
+    }
+  },
+  {
+    "taskId": "5f01ad8378cdc8d9",
+    "success": true,
+    "channel": "email",
+    "executedAt": 1772288482442,
+    "durationMs": 0,
+    "data": {
+      "dryRun": true
+    }
+  },
+  {
+    "taskId": "3321a9e18dcc827d",
+    "success": true,
+    "channel": "email",
+    "executedAt": 1772288482442,
+    "durationMs": 0,
+    "data": {
+      "dryRun": true
+    }
+  },
+  {
+    "taskId": "17bc28216843d396",
+    "success": true,
+    "channel": "email",
+    "executedAt": 1772288482442,
+    "durationMs": 0,
+    "data": {
+      "dryRun": true
+    }
+  },
+  {
+    "taskId": "7674f12540d41aeb",
+    "success": true,
+    "channel": "x",
+    "executedAt": 1772288482442,
+    "durationMs": 0,
+    "data": {
+      "dryRun": true
+    }
+  },
+  {
+    "taskId": "58404df688fffe0b",
+    "success": true,
+    "channel": "linkedin",
+    "executedAt": 1772288482442,
+    "durationMs": 0,
+    "data": {
+      "dryRun": true
+    }
+  },
+  {
+    "taskId": "d0172801b3bff8ff",
+    "success": true,
+    "channel": "android",
+    "executedAt": 1772288677524,
+    "durationMs": 0,
+    "data": {
+      "dryRun": true
+    }
+  },
+  {
+    "taskId": "4c5fdd4a37974816",
+    "success": true,
+    "channel": "android",
+    "executedAt": 1772288677525,
+    "durationMs": 0,
+    "data": {
+      "dryRun": true
+    }
+  },
+  {
+    "taskId": "8e0a77bb5b8be38a",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "payhawk.com",
+      "quoteValue": 17856.44,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772360729290,
+    "durationMs": 5771
+  },
+  {
+    "taskId": "e5bef645517a020d",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "ozone.bg",
+      "quoteValue": 17856.44,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772360729280,
+    "durationMs": 6002
+  },
+  {
+    "taskId": "d2f62c8ba0a97074",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "telerik.com",
+      "quoteValue": 17856.44,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772360729289,
+    "durationMs": 6414
+  },
+  {
+    "taskId": "f34707e52ac7142b",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "kanbanize.com",
+      "quoteValue": 13528.550000000001,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772360735075,
+    "durationMs": 2798
+  },
+  {
+    "taskId": "70d4035a2807383d",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "siteground.com",
+      "quoteValue": 17856.44,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772360735295,
+    "durationMs": 5318
+  },
+  {
+    "taskId": "d3fd400a0d79200b",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "payhawk.com",
+      "quoteValue": 17856.44,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772361145964,
+    "durationMs": 5017
+  },
+  {
+    "taskId": "2225ba5fd46eccf6",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "telerik.com",
+      "quoteValue": 17856.44,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772361145964,
+    "durationMs": 5382
+  },
+  {
+    "taskId": "d7fc7e19a581b3a7",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "ozone.bg",
+      "quoteValue": 17856.44,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772361145959,
+    "durationMs": 6340
+  },
+  {
+    "taskId": "11b1f187d13d6c69",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "kanbanize.com",
+      "quoteValue": 13528.550000000001,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772361150994,
+    "durationMs": 4575
+  },
+  {
+    "taskId": "139aeecf5a4f3f35",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "siteground.com",
+      "quoteValue": 17856.44,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772361151347,
+    "durationMs": 6186
+  },
+  {
+    "taskId": "9c9a1bbffed61927",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "payhawk.com",
+      "quoteValue": 17856.44,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772364486246,
+    "durationMs": 4324
+  },
+  {
+    "taskId": "25a7a29a572f903d",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "kanbanize.com",
+      "quoteValue": 13528.550000000001,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772364486246,
+    "durationMs": 5489
+  },
+  {
+    "taskId": "9a59e4b7642cc611",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "telerik.com",
+      "quoteValue": 17856.44,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772364486246,
+    "durationMs": 7027
+  },
+  {
+    "taskId": "60a2a9ab7c2a30d2",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "siteground.com",
+      "quoteValue": 17856.44,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772364491811,
+    "durationMs": 5063
+  },
+  {
+    "taskId": "17d01bcc83a9bb85",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "chaos.com",
+      "quoteValue": 7757.21,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772364490612,
+    "durationMs": 6948
+  },
+  {
+    "taskId": "328dbdc3111a8329",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "zendesk.com",
+      "quoteValue": 17856.44,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772364493348,
+    "durationMs": 5153
+  },
+  {
+    "taskId": "d5f29d7887f193e2",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "atlassian.com",
+      "quoteValue": 13528.550000000001,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772364496966,
+    "durationMs": 3588
+  },
+  {
+    "taskId": "ceefa2d4a07601f0",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "gtmhub.com",
+      "quoteValue": 13528.550000000001,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772364498599,
+    "durationMs": 2487
+  },
+  {
+    "taskId": "75554c87483b3282",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "ozone.bg",
+      "quoteValue": 17856.44,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772364497621,
+    "durationMs": 4524
+  },
+  {
+    "taskId": "f89ab2c7e98e588f",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "pipedrive.com",
+      "quoteValue": 13528.550000000001,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772364500568,
+    "durationMs": 5228
+  },
+  {
+    "taskId": "63782d25f820dd70",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "bolt.eu",
+      "quoteValue": 13528.550000000001,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772364501116,
+    "durationMs": 6088
+  },
+  {
+    "taskId": "e70e6c28ed2491f6",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "transferwise.com",
+      "quoteValue": 13528.550000000001,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772364502206,
+    "durationMs": 5606
+  },
+  {
+    "taskId": "ecb910c267bef040",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "superhosting.bg",
+      "quoteValue": 7757.21,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772364505810,
+    "durationMs": 4120
+  },
+  {
+    "taskId": "864398d2167029eb",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "jobs.bg",
+      "quoteValue": 13528.550000000001,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772364507249,
+    "durationMs": 4332
+  },
+  {
+    "taskId": "938a5a4829117974",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "telerik.com",
+      "quoteValue": 17856.44,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772400835330,
+    "durationMs": 3959
+  },
+  {
+    "taskId": "3a40b40d85f92611",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "kanbanize.com",
+      "quoteValue": 13528.550000000001,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772400835330,
+    "durationMs": 5760
+  },
+  {
+    "taskId": "9468740ff963261d",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "payhawk.com",
+      "quoteValue": 17856.44,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772400835330,
+    "durationMs": 5958
+  },
+  {
+    "taskId": "c210eadeb421739b",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "chaos.com",
+      "quoteValue": 7757.21,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772400839379,
+    "durationMs": 4510
+  },
+  {
+    "taskId": "ee4b45db2ad73808",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "siteground.com",
+      "quoteValue": 17856.44,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772400841090,
+    "durationMs": 3947
+  },
+  {
+    "taskId": "61a1e89a4b8a7a94",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "zendesk.com",
+      "quoteValue": 17856.44,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772400841303,
+    "durationMs": 7380
+  },
+  {
+    "taskId": "623e48099949f684",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "atlassian.com",
+      "quoteValue": 13528.550000000001,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772400843976,
+    "durationMs": 6192
+  },
+  {
+    "taskId": "012246c7fd86cae1",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "ozone.bg",
+      "quoteValue": 17856.44,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772400845077,
+    "durationMs": 6421
+  },
+  {
+    "taskId": "be3fa4f4746c8454",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "gtmhub.com",
+      "quoteValue": 13528.550000000001,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772400848738,
+    "durationMs": 4924
+  },
+  {
+    "taskId": "2f99c68439c4a1f7",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "pipedrive.com",
+      "quoteValue": 13528.550000000001,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772400850198,
+    "durationMs": 4950
+  },
+  {
+    "taskId": "77b0b0491ee649ff",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "bolt.eu",
+      "quoteValue": 13528.550000000001,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772400851572,
+    "durationMs": 5083
+  },
+  {
+    "taskId": "5844a7ddb200a343",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "transferwise.com",
+      "quoteValue": 13528.550000000001,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772400853694,
+    "durationMs": 4810
+  },
+  {
+    "taskId": "c1921c22e985694f",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "superhosting.bg",
+      "quoteValue": 7757.21,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772400856730,
+    "durationMs": 4807
+  },
+  {
+    "taskId": "1462ea83a4262514",
+    "success": true,
+    "channel": "email",
+    "data": {
+      "channel": "email",
+      "domain": "jobs.bg",
+      "quoteValue": 13528.550000000001,
+      "packagesGenerated": 7
+    },
+    "executedAt": 1772400858546,
+    "durationMs": 7306
+  },
+  {
+    "taskId": "2c19620d205658d7",
+    "success": true,
+    "channel": "x",
+    "data": {
+      "channel": "x",
+      "action": "post"
+    },
+    "executedAt": 1772400855162,
+    "durationMs": 16589
+  },
+  {
+    "taskId": "9009bbfa48a49265",
+    "success": true,
+    "channel": "linkedin",
+    "data": {
+      "channel": "linkedin"
+    },
+    "executedAt": 1772400861626,
+    "durationMs": 23166
+  }
+]

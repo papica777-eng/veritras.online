@@ -1,0 +1,456 @@
+{
+  "category": "SKILLS",
+  "subCategories": {
+    "integration": {
+      "moduleCount": 13,
+      "modules": [
+        {
+          "name": "theme-engine.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\extensibility\\theme-engine.ts",
+          "originalCategory": "brain/logic"
+        },
+        {
+          "name": "index.ts",
+          "path": "C:\\MisteMind\\src\\extensibility\\index.ts",
+          "originalCategory": "brain/logic"
+        },
+        {
+          "name": "ci.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\integration\\ci.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "ci-integration.js",
+          "path": "C:\\MisteMind\\docs\\examples\\ci-integration.js",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "index.ts",
+          "path": "C:\\MisteMind\\src\\integration\\index.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "index.ts",
+          "path": "C:\\MisteMind\\src\\plugins\\index.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "jira.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\integrations\\jira.js",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "plugin.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\plugins\\plugin.ts",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "PhantomIntegration.ts",
+          "path": "C:\\MisteMind\\src\\ghost\\PhantomIntegration.ts",
+          "originalCategory": "core/eyes"
+        },
+        {
+          "name": "plugin-system.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\extensibility\\plugin-system.ts",
+          "originalCategory": "core/brain"
+        },
+        {
+          "name": "notifications.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\integration\\notifications.ts",
+          "originalCategory": "core/ears"
+        },
+        {
+          "name": "HumanInTheLoop.js",
+          "path": "C:\\MisteMind\\PROJECT\\PRIVATE\\QA-Framework\\src\\integrations\\HumanInTheLoop.js",
+          "originalCategory": "core/ears"
+        },
+        {
+          "name": "linear.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\integrations\\linear.js",
+          "originalCategory": "core/ears"
+        }
+      ]
+    },
+    "network": {
+      "moduleCount": 34,
+      "modules": [
+        {
+          "name": "prisma.ts",
+          "path": "C:\\MisteMind\\PROJECT\\QA-SAAS\\apps\\api\\src\\lib\\prisma.ts",
+          "originalCategory": "brain/logic"
+        },
+        {
+          "name": "rate-limiter.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\api\\rate-limiter.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "versioning.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\api\\versioning.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "network-interceptor.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\ghost\\network-interceptor.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "api-ddt.test.js",
+          "path": "C:\\MisteMind\\PROJECT\\PRIVATE\\test\\api-ddt.test.js",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "index.js",
+          "path": "C:\\MisteMind\\PROJECT\\QA-SAAS\\apps\\api\\dist\\index.js",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "auth.ts",
+          "path": "C:\\MisteMind\\PROJECT\\QA-SAAS\\apps\\api\\src\\middleware\\auth.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "entitlement.ts",
+          "path": "C:\\MisteMind\\PROJECT\\QA-SAAS\\apps\\api\\src\\middleware\\entitlement.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "ai.ts",
+          "path": "C:\\MisteMind\\PROJECT\\QA-SAAS\\apps\\api\\src\\routes\\ai.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "dashboard.ts",
+          "path": "C:\\MisteMind\\PROJECT\\QA-SAAS\\apps\\api\\src\\routes\\dashboard.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "genesis.ts",
+          "path": "C:\\MisteMind\\PROJECT\\QA-SAAS\\apps\\api\\src\\routes\\genesis.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "projects.ts",
+          "path": "C:\\MisteMind\\PROJECT\\QA-SAAS\\apps\\api\\src\\routes\\projects.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "runs.ts",
+          "path": "C:\\MisteMind\\PROJECT\\QA-SAAS\\apps\\api\\src\\routes\\runs.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "tests.ts",
+          "path": "C:\\MisteMind\\PROJECT\\QA-SAAS\\apps\\api\\src\\routes\\tests.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "api.ts",
+          "path": "C:\\MisteMind\\PROJECT\\QA-SAAS\\apps\\dashboard\\src\\lib\\api.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "api.js",
+          "path": "C:\\MisteMind\\PROJECT\\QA-SAAS\\packages\\cli\\dist\\lib\\api.js",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "api.ts",
+          "path": "C:\\MisteMind\\PROJECT\\QA-SAAS\\packages\\cli\\src\\lib\\api.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "api.js",
+          "path": "C:\\MisteMind\\QAntum-nerve-center\\dist-server\\api.js",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "api.js",
+          "path": "C:\\MisteMind\\QAntum-nerve-center\\server\\dist\\modules\\api.js",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "api.ts",
+          "path": "C:\\MisteMind\\QAntum-nerve-center\\server\\modules\\api.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "hydra-network.js",
+          "path": "C:\\MisteMind\\scripts\\archive\\hydra-network.js",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "index.ts",
+          "path": "C:\\MisteMind\\src\\api\\index.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "GenesisEvolutionLogist.ts",
+          "path": "C:\\MisteMind\\PROJECT\\QA-SAAS\\apps\\api\\src\\engines\\GenesisEvolutionLogist.ts",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "OntoGenerator.ts",
+          "path": "C:\\MisteMind\\PROJECT\\QA-SAAS\\apps\\api\\src\\engines\\OntoGenerator.ts",
+          "originalCategory": "security/encryption"
+        },
+        {
+          "name": "index.js",
+          "path": "C:\\MisteMind\\PROJECT\\PRIVATE\\api-sensei\\index.js",
+          "originalCategory": "core/eyes"
+        },
+        {
+          "name": "PhenomenonWeaver.ts",
+          "path": "C:\\MisteMind\\PROJECT\\QA-SAAS\\apps\\api\\src\\engines\\PhenomenonWeaver.ts",
+          "originalCategory": "core/eyes"
+        },
+        {
+          "name": "knowledge-base.ts",
+          "path": "C:\\MisteMind\\PROJECT\\QA-SAAS\\apps\\api\\src\\lib\\knowledge-base.ts",
+          "originalCategory": "core/eyes"
+        },
+        {
+          "name": "websocket-bridge.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\swarm\\orchestrator\\websocket-bridge.ts",
+          "originalCategory": "core/eyes"
+        },
+        {
+          "name": "CosmicTaxonomy.ts",
+          "path": "C:\\MisteMind\\PROJECT\\QA-SAAS\\apps\\api\\src\\engines\\CosmicTaxonomy.ts",
+          "originalCategory": "core/brain"
+        },
+        {
+          "name": "index.ts",
+          "path": "C:\\MisteMind\\PROJECT\\QA-SAAS\\apps\\api\\src\\index.ts",
+          "originalCategory": "core/ears"
+        },
+        {
+          "name": "billing.ts",
+          "path": "C:\\MisteMind\\PROJECT\\QA-SAAS\\apps\\api\\src\\routes\\billing.ts",
+          "originalCategory": "core/ears"
+        },
+        {
+          "name": "webhooks.ts",
+          "path": "C:\\MisteMind\\PROJECT\\QA-SAAS\\apps\\api\\src\\routes\\webhooks.ts",
+          "originalCategory": "core/ears"
+        },
+        {
+          "name": "api.ts",
+          "path": "C:\\MisteMind\\QAntum-nerve-center\\src\\services\\api.ts",
+          "originalCategory": "core/ears"
+        },
+        {
+          "name": "websocket-protocol.types.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\types\\websocket-protocol.types.ts",
+          "originalCategory": "core/ears"
+        }
+      ]
+    },
+    "automation": {
+      "moduleCount": 13,
+      "modules": [
+        {
+          "name": "atomic-runner.js",
+          "path": "C:\\MisteMind\\scripts\\atomic-runner.js",
+          "originalCategory": "brain/logic"
+        },
+        {
+          "name": "runner.ts",
+          "path": "C:\\MisteMind\\src\\distributed\\runner.ts",
+          "originalCategory": "brain/memory"
+        },
+        {
+          "name": "new-year-runner.js",
+          "path": "C:\\MisteMind\\scripts\\archive\\new-year-runner.js",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "real-ghost-runner.js",
+          "path": "C:\\MisteMind\\scripts\\archive\\real-ghost-runner.js",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "new-year-passive-runner.ts",
+          "path": "C:\\MisteMind\\scripts\\new-year-passive-runner.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "executor-agent.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\swarm\\agents\\executor-agent.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "executor.ts",
+          "path": "C:\\MisteMind\\PROJECT\\QA-SAAS\\apps\\worker\\src\\executor.ts",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "sandbox-executor.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\bastion\\sandbox\\sandbox-executor.ts",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "action-executor.ts",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\src\\persona\\action-executor.ts",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "unit.runner.js",
+          "path": "C:\\MisteMind\\TRAINING\\training-framework\\tests\\unit.runner.js",
+          "originalCategory": "security/auth"
+        },
+        {
+          "name": "paper-mode-runner.js",
+          "path": "C:\\MisteMind\\scripts\\archive\\paper-mode-runner.js",
+          "originalCategory": "core/eyes"
+        },
+        {
+          "name": "runner.ts",
+          "path": "C:\\MisteMind\\PROJECT\\PRIVATE\\MrMindQATool\\src\\runner.ts",
+          "originalCategory": "core/brain"
+        },
+        {
+          "name": "integrated-runner.js",
+          "path": "C:\\MisteMind\\scripts\\integrated-runner.js",
+          "originalCategory": "security/firewall"
+        }
+      ]
+    },
+    "business": {
+      "moduleCount": 26,
+      "modules": [
+        {
+          "name": "index.ts",
+          "path": "C:\\MisteMind\\src\\sovereign-market\\index.ts",
+          "originalCategory": "brain/logic"
+        },
+        {
+          "name": "MarketBlueprint.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\biology\\evolution\\MarketBlueprint.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "EmailEngine.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\reality\\economy\\EmailEngine.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "ExchangeConnectors.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\reality\\economy\\ExchangeConnectors.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "LiveWalletManager.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\reality\\economy\\LiveWalletManager.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "AutonomousSalesForce.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\reality\\gateway\\AutonomousSalesForce.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "SelfHealingSales.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\sales\\SelfHealingSales.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "ecommerce-testing.js",
+          "path": "C:\\MisteMind\\docs\\examples\\ecommerce-testing.js",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "autonomous-general.js",
+          "path": "C:\\MisteMind\\scripts\\sales-autopilot\\autonomous-general.js",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "proposal-factory.js",
+          "path": "C:\\MisteMind\\scripts\\sales-autopilot\\proposal-factory.js",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "EmailEngine.ts",
+          "path": "C:\\MisteMind\\src\\reality\\economy\\EmailEngine.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "ExchangeConnectors.ts",
+          "path": "C:\\MisteMind\\src\\reality\\economy\\ExchangeConnectors.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "MarketplaceConnector.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\reality\\gateway\\MarketplaceConnector.ts",
+          "originalCategory": "security/encryption"
+        },
+        {
+          "name": "ArbitrageOrchestrator.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\reality\\economy\\ArbitrageOrchestrator.ts",
+          "originalCategory": "core/eyes"
+        },
+        {
+          "name": "EmergencyKillSwitch.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\reality\\economy\\EmergencyKillSwitch.ts",
+          "originalCategory": "core/eyes"
+        },
+        {
+          "name": "MarketWatcher.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\reality\\economy\\MarketWatcher.ts",
+          "originalCategory": "core/eyes"
+        },
+        {
+          "name": "market-reaper.ts",
+          "path": "C:\\MisteMind\\src\\market-reaper.ts",
+          "originalCategory": "core/eyes"
+        },
+        {
+          "name": "index.ts",
+          "path": "C:\\MisteMind\\src\\reality\\economy\\index.ts",
+          "originalCategory": "core/eyes"
+        },
+        {
+          "name": "ArmedReaper.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\reality\\economy\\ArmedReaper.ts",
+          "originalCategory": "core/brain"
+        },
+        {
+          "name": "lead-enricher.js",
+          "path": "C:\\MisteMind\\scripts\\sales-autopilot\\lead-enricher.js",
+          "originalCategory": "core/brain"
+        },
+        {
+          "name": "ArmedReaper.ts",
+          "path": "C:\\MisteMind\\src\\reality\\economy\\ArmedReaper.ts",
+          "originalCategory": "core/brain"
+        },
+        {
+          "name": "PaymentGateway.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\reality\\economy\\PaymentGateway.ts",
+          "originalCategory": "core/ears"
+        },
+        {
+          "name": "SecureConfigLoader.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\reality\\economy\\SecureConfigLoader.ts",
+          "originalCategory": "core/ears"
+        },
+        {
+          "name": "sendgrid-dispatcher.js",
+          "path": "C:\\MisteMind\\scripts\\sales-autopilot\\sendgrid-dispatcher.js",
+          "originalCategory": "core/ears"
+        },
+        {
+          "name": "index.ts",
+          "path": "C:\\MisteMind\\src\\oracle\\market-intelligence\\index.ts",
+          "originalCategory": "core/ears"
+        },
+        {
+          "name": "PaymentGateway.ts",
+          "path": "C:\\MisteMind\\src\\reality\\economy\\PaymentGateway.ts",
+          "originalCategory": "core/ears"
+        }
+      ]
+    }
+  },
+  "totalModules": 86
+}

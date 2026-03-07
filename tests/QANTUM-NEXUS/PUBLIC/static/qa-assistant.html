@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧪 QAntum - QA Assistant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            background: linear-gradient(45deg, #00d9ff, #00ff88);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #888;
+            font-size: 1.1em;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .tool-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            border-color: #00d9ff;
+            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.2);
+        }
+
+        .tool-card.active {
+            border-color: #00ff88;
+            background: rgba(0, 255, 136, 0.1);
+        }
+
+        .tool-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .tool-card h3 {
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            color: #00d9ff;
+        }
+
+        .tool-card p {
+            color: #888;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        .workspace {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 900px) {
+            .workspace {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .input-section, .output-section {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 25px;
+        }
+
+        .section-title {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #00d9ff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 200px;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 10px;
+            padding: 15px;
+            color: #fff;
+            font-size: 1em;
+            resize: vertical;
+            font-family: inherit;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #00d9ff;
+        }
+
+        textarea::placeholder {
+            color: #666;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #00d9ff, #00ff88);
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            color: #000;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 20px rgba(0, 217, 255, 0.4);
+        }
+
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .output-content {
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 10px;
+            padding: 20px;
+            min-height: 300px;
+            max-height: 500px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            font-family: 'Consolas', monospace;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+
+        .output-content h1, .output-content h2, .output-content h3 {
+            color: #00d9ff;
+            margin: 15px 0 10px 0;
+        }
+
+        .output-content strong {
+            color: #00ff88;
+        }
+
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: #00d9ff;
+        }
+
+        .spinner {
+            width: 30px;
+            height: 30px;
+            border: 3px solid rgba(0, 217, 255, 0.3);
+            border-top-color: #00d9ff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .btn-secondary {
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            flex: 1;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.2);
+            box-shadow: none;
+        }
+
+        .status-bar {
+            margin-top: 15px;
+            padding: 10px 15px;
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            border-radius: 8px;
+            color: #00ff88;
+            font-size: 0.9em;
+            display: none;
+        }
+
+        .status-bar.show {
+            display: block;
+        }
+
+        .examples {
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 10px;
+        }
+
+        .examples h4 {
+            color: #888;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .example-chip {
+            display: inline-block;
+            background: rgba(0, 217, 255, 0.2);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            margin: 3px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .example-chip:hover {
+            background: rgba(0, 217, 255, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🧪 QAntum - QA Assistant</h1>
+            <p>Professional QA Documentation Generator powered by AI</p>
+        </header>
+
+        <div class="tools-grid">
+            <div class="tool-card active" data-type="testCase">
+                <div class="tool-icon">📝</div>
+                <h3>Test Case Generator</h3>
+                <p>Generate detailed test cases with steps, expected results, and test data</p>
+            </div>
+            <div class="tool-card" data-type="bugReport">
+                <div class="tool-icon">🐛</div>
+                <h3>Bug Report Generator</h3>
+                <p>Create professional bug reports with severity, steps to reproduce, and more</p>
+            </div>
+            <div class="tool-card" data-type="testPlan">
+                <div class="tool-icon">📋</div>
+                <h3>Test Plan Creator</h3>
+                <p>Generate comprehensive test plans with scope, approach, and schedule</p>
+            </div>
+            <div class="tool-card" data-type="checklist">
+                <div class="tool-icon">✅</div>
+                <h3>Testing Checklist</h3>
+                <p>Create thorough testing checklists covering all aspects</p>
+            </div>
+            <div class="tool-card" data-type="riskAnalysis">
+                <div class="tool-icon">⚠️</div>
+                <h3>Risk Analysis</h3>
+                <p>Identify and analyze potential risks with mitigation strategies</p>
+            </div>
+            <div class="tool-card" data-type="automationCandidate">
+                <div class="tool-icon">🤖</div>
+                <h3>Automation Analysis</h3>
+                <p>Determine which tests should be automated with ROI analysis</p>
+            </div>
+        </div>
+
+        <div class="workspace">
+            <div class="input-section">
+                <div class="section-title">
+                    <span>📥</span>
+                    <span>Input - Describe Your Feature/Requirement</span>
+                </div>
+                <textarea id="input" placeholder="Describe the feature, requirement, or issue you want to generate documentation for...
+
+Example: Login functionality for an e-commerce website with email/password authentication, social login options, and 'Remember Me' feature."></textarea>
+                
+                <div class="examples">
+                    <h4>💡 Quick Examples (click to use):</h4>
+                    <span class="example-chip" data-text="Login page with email/password, forgot password, and social login">Login Page</span>
+                    <span class="example-chip" data-text="Shopping cart with add/remove items, quantity update, and checkout">Shopping Cart</span>
+                    <span class="example-chip" data-text="User registration form with validation and email verification">Registration</span>
+                    <span class="example-chip" data-text="Search functionality with filters, sorting, and pagination">Search Feature</span>
+                    <span class="example-chip" data-text="Payment processing with credit card, PayPal, and invoice options">Payment System</span>
+                </div>
+
+                <button class="btn" id="generateBtn" onclick="generate()">
+                    🚀 Generate Documentation
+                </button>
+                
+                <div class="status-bar" id="statusBar"></div>
+            </div>
+
+            <div class="output-section">
+                <div class="section-title">
+                    <span>📤</span>
+                    <span>Output - Generated Documentation</span>
+                </div>
+                <div class="output-content" id="output">
+                    <p style="color: #666; text-align: center; margin-top: 100px;">
+                        Select a tool and describe your feature to generate QA documentation...
+                    </p>
+                </div>
+                <div class="actions">
+                    <button class="btn btn-secondary" onclick="copyOutput()">📋 Copy</button>
+                    <button class="btn btn-secondary" onclick="downloadOutput()">💾 Download</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let selectedType = 'testCase';
+        let lastOutput = '';
+
+        // Tool selection
+        document.querySelectorAll('.tool-card').forEach(card => {
+            card.addEventListener('click', () => {
+                document.querySelectorAll('.tool-card').forEach(c => c.classList.remove('active'));
+                card.classList.add('active');
+                selectedType = card.dataset.type;
+            });
+        });
+
+        // Example chips
+        document.querySelectorAll('.example-chip').forEach(chip => {
+            chip.addEventListener('click', () => {
+                document.getElementById('input').value = chip.dataset.text;
+            });
+        });
+
+        // Generate documentation
+        async function generate() {
+            const input = document.getElementById('input').value.trim();
+            if (!input) {
+                alert('Please describe a feature or requirement');
+                return;
+            }
+
+            const btn = document.getElementById('generateBtn');
+            const output = document.getElementById('output');
+            const statusBar = document.getElementById('statusBar');
+
+            btn.disabled = true;
+            btn.innerHTML = '⏳ Generating...';
+            output.innerHTML = '<div class="loading"><div class="spinner"></div><span>QAntum is thinking...</span></div>';
+
+            try {
+                const response = await fetch('/api/generate', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ type: selectedType, input })
+                });
+
+                const data = await response.json();
+                
+                if (data.success) {
+                    lastOutput = data.result;
+                    output.innerHTML = formatOutput(data.result);
+                    statusBar.textContent = `✅ Saved to: ${data.savedTo}`;
+                    statusBar.classList.add('show');
+                } else {
+                    output.innerHTML = `<p style="color: #ff6b6b;">Error: ${data.error}</p>`;
+                }
+            } catch (error) {
+                output.innerHTML = `<p style="color: #ff6b6b;">Error: ${error.message}</p>`;
+            }
+
+            btn.disabled = false;
+            btn.innerHTML = '🚀 Generate Documentation';
+        }
+
+        // Format output with markdown-like styling
+        function formatOutput(text) {
+            return text
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                .replace(/^### (.*$)/gm, '<h3>$1</h3>')
+                .replace(/^## (.*$)/gm, '<h2>$1</h2>')
+                .replace(/^# (.*$)/gm, '<h1>$1</h1>')
+                .replace(/☐/g, '☐')
+                .replace(/\n/g, '<br>');
+        }
+
+        // Copy to clipboard
+        function copyOutput() {
+            if (lastOutput) {
+                navigator.clipboard.writeText(lastOutput);
+                alert('Copied to clipboard!');
+            }
+        }
+
+        // Download as markdown
+        function downloadOutput() {
+            if (lastOutput) {
+                const blob = new Blob([lastOutput], { type: 'text/markdown' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `${selectedType}_${new Date().toISOString().slice(0,10)}.md`;
+                a.click();
+            }
+        }
+    </script>
+</body>
+</html>

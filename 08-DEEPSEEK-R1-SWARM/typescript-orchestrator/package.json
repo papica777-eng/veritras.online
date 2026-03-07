@@ -1,0 +1,36 @@
+{
+  "name": "@qantum-empire/deepseek-r1-swarm",
+  "version": "2.0.0",
+  "description": "🤖 Deca-Guard AI Agent Swarm for Autonomous Test Generation",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node src/index.ts",
+    "swarm:start": "node dist/index.js",
+    "swarm:status": "curl -s http://localhost:8002/swarm/status | node -e \"process.stdin.on('data',d=>console.log(JSON.stringify(JSON.parse(d),null,2)))\"",
+    "test": "jest --passWithNoTests",
+    "lint": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "dependencies": {
+    "openai": "^4.24.1",
+    "dotenv": "^16.3.1",
+    "fastify": "^4.25.2",
+    "pino": "^8.17.2",
+    "stripe": "^14.14.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.5",
+    "typescript": "^5.3.3",
+    "ts-node": "^10.9.2",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.1.2",
+    "@types/jest": "^29.5.11"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "author": "Dimitar Prodromov <dimitar@qantum.io>",
+  "license": "UNLICENSED"
+}

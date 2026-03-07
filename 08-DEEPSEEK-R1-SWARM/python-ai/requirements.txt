@@ -1,0 +1,27 @@
+# ═══════════════════════════════════════════════════════════════════════════
+# 🐍 DEEPSEEK-R1-SWARM v2.0 - Python Dependencies
+# ═══════════════════════════════════════════════════════════════════════════
+
+# DeepSeek API (OpenAI-compatible)
+openai>=1.7.2
+
+# FastAPI + ASGI
+fastapi>=0.108.0
+uvicorn[standard]>=0.25.0
+
+# Configuration
+python-dotenv>=1.0.0
+
+# Payments
+stripe>=7.9.0
+
+# Validation (included via FastAPI but pinned)
+pydantic>=2.5.0
+
+# Redis (optional — for swarm IPC)
+redis>=5.0.1
+
+# Testing
+pytest>=7.4.3
+pytest-asyncio>=0.21.1
+httpx>=0.26.0

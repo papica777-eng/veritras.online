@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Script V2 — PDF Already Sent</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0f;
+            color: #e0e0e0;
+            font-family: 'Inter', sans-serif;
+            padding: 15px 25px;
+            line-height: 1.5;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 1.2em;
+            color: #c9a84c;
+            margin-bottom: 4px;
+            letter-spacing: 2px;
+        }
+
+        .time {
+            text-align: center;
+            color: #666;
+            font-size: 0.75em;
+            margin-bottom: 15px;
+        }
+
+        .phase {
+            background: #111118;
+            border: 1px solid #1a1a2e;
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin-bottom: 10px;
+        }
+
+        .phase-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .phase-num {
+            background: #c9a84c;
+            color: #0a0a0f;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.75em;
+            flex-shrink: 0;
+        }
+
+        .phase-title {
+            font-weight: 800;
+            font-size: 0.95em;
+            color: #c9a84c;
+        }
+
+        .phase-time {
+            margin-left: auto;
+            font-size: 0.65em;
+            color: #666;
+            background: #1a1a2e;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 6px;
+        }
+
+        .bg,
+        .en {
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 0.8em;
+            line-height: 1.6;
+        }
+
+        .bg {
+            background: #0d1a0d;
+            border-left: 3px solid #22c55e;
+        }
+
+        .en {
+            background: #0d0d1a;
+            border-left: 3px solid #3b82f6;
+        }
+
+        .label {
+            font-size: 0.55em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #666;
+            margin-bottom: 3px;
+        }
+
+        .bg .label {
+            color: #22c55e;
+        }
+
+        .en .label {
+            color: #3b82f6;
+        }
+
+        strong {
+            color: #c9a84c;
+        }
+
+        .killer {
+            color: #ff4444;
+            font-weight: 800;
+        }
+
+        .tip {
+            background: #1a1a0a;
+            border-left: 3px solid #c9a84c;
+            padding: 6px 12px;
+            font-size: 0.75em;
+            color: #c9a84c;
+            border-radius: 0 5px 5px 0;
+            margin-top: 5px;
+        }
+
+        .warning {
+            background: #1a0a0a;
+            border-left: 3px solid #ff4444;
+            padding: 6px 12px;
+            font-size: 0.75em;
+            color: #ff6666;
+            border-radius: 0 5px 5px 0;
+            margin-top: 5px;
+        }
+
+        .scenario {
+            background: #0a0a1a;
+            border: 1px dashed #3b82f6;
+            padding: 8px 12px;
+            border-radius: 5px;
+            margin-top: 6px;
+            font-size: 0.8em;
+        }
+
+        .scenario-label {
+            color: #3b82f6;
+            font-weight: 800;
+            font-size: 0.7em;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #1a1a2e;
+            margin: 6px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🎯 SCRIPT V2 — PDF ВЕЧЕ ИЗПРАТЕН</h1>
+    <div class="time">15:30 — Mihai Zainescu | Той ВЕЧЕ е видял Proposal-а ($1.9B, 6 стр.)</div>
+
+    <!-- ═══ PHASE 1: OPENING ═══ -->
+    <div class="phase">
+        <div class="phase-header">
+            <div class="phase-num">1</div>
+            <div class="phase-title">OPENING — Той знае кой си</div>
+            <div class="phase-time">0:00 — 1:00</div>
+        </div>
+        <div class="row">
+            <div class="bg">
+                <div class="label">🇧🇬 Казваш</div>
+                Здравейте, Михай. Радвам се. Имахте ли възможност да разгледате документа, който изпратих?
+            </div>
+            <div class="en">
+                <div class="label">🇬🇧 You say</div>
+                Hi Mihai, good to meet you. Did you have a chance to look at the document I sent earlier?
+            </div>
+        </div>
+        <div class="tip">💡 Този въпрос му дава думата И ти казва дали е чел. Слушай внимателно отговора.</div>
+    </div>
+
+    <!-- ═══ PHASE 2: HIS REACTION TO PDF ═══ -->
+    <div class="phase">
+        <div class="phase-header">
+            <div class="phase-num">2</div>
+            <div class="phase-title">НЕГОВАТА РЕАКЦИЯ — 3 Сценария</div>
+            <div class="phase-time">1:00 — 5:00</div>
+        </div>
+
+        <div class="scenario">
+            <div class="scenario-label">📗 СЦЕНАРИЙ А: "Да, видях го, впечатляващо е"</div>
+            <div class="row">
+                <div class="bg">
+                    <div class="label">🇧🇬 Отговаряш</div>
+                    Благодаря. Кажете ми какво ви направи най-голямо впечатление — така ще знам <strong>къде да
+                        фокусирам</strong> разговора.
+                </div>
+                <div class="en">
+                    <div class="label">🇬🇧 You say</div>
+                    Thank you. Tell me what stood out to you the most — that way I'll know <strong>where to
+                        focus</strong> our conversation.
+                </div>
+            </div>
+        </div>
+
+        <div class="scenario">
+            <div class="scenario-label">📙 СЦЕНАРИЙ Б: "Да, но имам въпроси"</div>
+            <div class="row">
+                <div class="bg">
+                    <div class="label">🇧🇬 Отговаряш</div>
+                    Перфектно, точно затова сме тук. <strong>Питайте каквото искате</strong> — всичко в документа е
+                    реално и мога да покажа всяко нещо на живо.
+                </div>
+                <div class="en">
+                    <div class="label">🇬🇧 You say</div>
+                    Perfect, that's exactly why we're here. <strong>Ask me anything</strong> — everything in that
+                    document is real, and I can demonstrate any of it live.
+                </div>
+            </div>
+        </div>
+
+        <div class="scenario">
+            <div class="scenario-label">📕 СЦЕНАРИЙ В: "Не съм имал време да го видя"</div>
+            <div class="row">
+                <div class="bg">
+                    <div class="label">🇧🇬 Отговаряш</div>
+                    Няма проблем. Нека ви дам <strong>30-секунден преглед</strong>. Аз съм Sovereign Systems Architect —
+                    имам над 3,200 валидирани модула на Rust и Mojo, с вграден PQC криптографски слой.
+                </div>
+                <div class="en">
+                    <div class="label">🇬🇧 You say</div>
+                    No problem. Let me give you a <strong>30-second overview</strong>. I'm a Sovereign Systems Architect
+                    — I have over 3,200 validated modules in Rust and Mojo, with a built-in PQC cryptographic layer.
+                </div>
+            </div>
+        </div>
+        <div class="tip">💡 Който и сценарий да е — ТОЙ трябва да говори повече от теб в тази фаза.</div>
+    </div>
+
+    <!-- ═══ PHASE 3: HIS QUESTIONS ═══ -->
+    <div class="phase">
+        <div class="phase-header">
+            <div class="phase-num">3</div>
+            <div class="phase-title">НЕГОВИТЕ ВЪПРОСИ — Готови Отговори</div>
+            <div class="phase-time">5:00 — 15:00</div>
+        </div>
+
+        <div class="row">
+            <div class="bg">
+                <div class="label">🇧🇬 "Какъв е вашият опит с PQC?"</div>
+                Изградил съм <strong>пълен PQC слой</strong> — Kyber-1024 за ключообмен, Dilithium-5 за подписи. Не
+                ползвам библиотеки на трети страни. Всичко е <strong>zero-dependency Rust</strong>.
+            </div>
+            <div class="en">
+                <div class="label">🇬🇧 "What's your PQC experience?"</div>
+                I've built a <strong>complete PQC layer</strong> — Kyber-1024 for key exchange, Dilithium-5 for
+                signatures. No third-party libraries. Everything is <strong>zero-dependency Rust</strong>.
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="bg">
+                <div class="label">🇧🇬 "Можете ли да работите в екип?"</div>
+                Разбира се. Но искам да бъда честен — моята <strong>най-голяма стойност</strong> е като архитект. Аз
+                проектирам системата, дефинирам API-тата, и доставям модулите. Екипът интегрира.
+            </div>
+            <div class="en">
+                <div class="label">🇬🇧 "Can you work in a team?"</div>
+                Absolutely. But I want to be honest — my <strong>greatest value</strong> is as an architect. I design
+                the system, define the APIs, and deliver the modules. The team integrates.
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="bg">
+                <div class="label">🇧🇬 "Какъв е таймлайнът ви?"</div>
+                Зависи от обхвата. Но искам да подчертая — аз <strong>не започвам от нулата</strong>. Имам 3,200 готови
+                модула. Повечето проекти са въпрос на <strong>интеграция</strong>, не на разработка.
+            </div>
+            <div class="en">
+                <div class="label">🇬🇧 "What's your timeline?"</div>
+                Depends on scope. But I want to emphasize — I <strong>don't start from scratch</strong>. I have 3,200
+                pre-built modules. Most projects are about <strong>integration</strong>, not development.
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="bg">
+                <div class="label">🇧🇬 "Какво Mojo е точно?"</div>
+                Mojo е език за <strong>AI и ML от създателите на LLVM</strong>. Дава 35,000 пъти ускорение спрямо
+                Python. Ползвам го за inference и симулации. Работи на обикновен хардуер без GPU облаци.
+            </div>
+            <div class="en">
+                <div class="label">🇬🇧 "What is Mojo exactly?"</div>
+                Mojo is a language for <strong>AI and ML from the creators of LLVM</strong>. It delivers 35,000×
+                acceleration over Python. I use it for inference and simulations. Runs on commodity hardware, no GPU
+                clouds.
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+            <div class="bg">
+                <div class="label">🇧🇬 "Тези цени в документа... за кого са?"</div>
+                Документът показва <strong>пълния потенциал</strong> на платформата. За вашия конкретен проект
+                ценообразуването ще е различно. Кажете ми <strong>какъв е обхватът</strong> и ще ви дам точна оферта.
+            </div>
+            <div class="en">
+                <div class="label">🇬🇧 "Those prices in the document... who are they for?"</div>
+                The document shows the <strong>full platform potential</strong>. For your specific project, pricing will
+                be different. Tell me <strong>what the scope is</strong> and I'll give you a precise quote.
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ PHASE 4: YOUR QUESTIONS TO HIM ═══ -->
+    <div class="phase">
+        <div class="phase-header">
+            <div class="phase-num">4</div>
+            <div class="phase-title">ТВОИТЕ ВЪПРОСИ — Покажи Интерес</div>
+            <div class="phase-time">15:00 — 22:00</div>
+        </div>
+        <div class="row">
+            <div class="bg">
+                <div class="label">🇧🇬 Питай тези</div>
+                1. Какъв е <strong>конкретният проект</strong> за който търсите PQC специалист?<br>
+                2. Кой е <strong>крайният клиент</strong> — публичен или частен сектор?<br>
+                3. Какъв е <strong>бюджетният диапазон</strong> за тази фаза?<br>
+                4. Какъв е <strong>желаният срок</strong> за доставка?<br>
+                5. Ще работя <strong>самостоятелно или с екип</strong>?
+            </div>
+            <div class="en">
+                <div class="label">🇬🇧 Ask these</div>
+                1. What is the <strong>specific project</strong> you need a PQC specialist for?<br>
+                2. Who is the <strong>end client</strong> — public or private sector?<br>
+                3. What is the <strong>budget range</strong> for this phase?<br>
+                4. What is the <strong>desired delivery timeline</strong>?<br>
+                5. Will I be working <strong>solo or with a team</strong>?
+            </div>
+        </div>
+        <div class="warning">⚠️ Ако не пита за бюджет — ТИ питай. "What budget range are you working with?" Директно.
+        </div>
+    </div>
+
+    <!-- ═══ PHASE 5: DEMO MOMENT ═══ -->
+    <div class="phase">
+        <div class="phase-header">
+            <div class="phase-num">5</div>
+            <div class="phase-title">DEMO — "Let me show you"</div>
+            <div class="phase-time">Ако има интерес</div>
+        </div>
+        <div class="row">
+            <div class="bg">
+                <div class="label">🇧🇬 Предложи демо</div>
+                Мога да ви покажа на живо — имам <strong>sovereign_sentinel.rs</strong>, 701 реда Rust. Система за
+                детекция с тройна верификация. Искате ли да го видите?
+            </div>
+            <div class="en">
+                <div class="label">🇬🇧 Offer demo</div>
+                I can show you live — I have <strong>sovereign_sentinel.rs</strong>, 701 lines of Rust. A detection
+                system with triple-path verification. Would you like to see it?
+            </div>
+        </div>
+        <div class="tip">💡 Screen share → отвори sovereign_sentinel.rs → scroll бавно → покажи SurvivalInstinct →
+            покажи verify_or_die</div>
+    </div>
+
+    <!-- ═══ PHASE 6: CLOSING ═══ -->
+    <div class="phase">
+        <div class="phase-header">
+            <div class="phase-num">6</div>
+            <div class="phase-title">CLOSING — Затваряне С Next Step</div>
+            <div class="phase-time">Последните 3 мин</div>
+        </div>
+        <div class="row">
+            <div class="bg">
+                <div class="label">🇧🇬 Затваряш</div>
+                Михай, много продуктивен разговор. Имам и <strong>допълнителен документ</strong> с ексклузивни решения,
+                които не са в първия — ще ви го изпратя след срещата. Кога да уговорим <strong>следващата
+                    стъпка</strong>?
+            </div>
+            <div class="en">
+                <div class="label">🇬🇧 You close</div>
+                Mihai, very productive conversation. I also have an <strong>additional document</strong> with exclusive
+                solutions not in the first one — I'll send it after our call. When should we schedule the <strong>next
+                    step</strong>?
+            </div>
+        </div>
+        <div class="tip">💡 "Допълнителният документ" = Sovereign Exclusives (тежката артилерия). Пращаш го 1 час след
+            срещата.</div>
+    </div>
+
+    <!-- ═══ GOLDEN RULES ═══ -->
+    <div class="phase" style="border-color: #c9a84c;">
+        <div class="phase-header">
+            <div class="phase-num" style="background: #ff4444;">!</div>
+            <div class="phase-title" style="color: #ff4444;">GOLDEN RULES</div>
+        </div>
+        <div style="font-size: 0.85em; line-height: 1.9;">
+            🔴 Той ВЕЧЕ е видял $1.9B — <strong>ти си vendor, не кандидат</strong><br>
+            🔴 Казвай <strong>"I've already built this"</strong>, не "I can build this"<br>
+            🔴 Слушай 60%, говори 40%<br>
+            🔴 Не казвай цена пръв — <strong>"depends on scope"</strong><br>
+            🔴 Source code = само screen share, <strong>никога не пращай файлове</strong><br>
+            🔴 Sovereign Exclusives = <strong>след срещата</strong>, не по време на<br>
+            🔴 Затваряй с <strong>конкретен next step</strong> и дата
+        </div>
+    </div>
+
+</body>
+
+</html>

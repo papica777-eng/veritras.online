@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡ SCRIPT COMMAND CENTER - QAntum Empire v34.1</title>
+    <style>
+        :root {
+            --bg-primary: #0a0e17;
+            --bg-secondary: #111827;
+            --bg-card: #1f2937;
+            --bg-terminal: #0d1117;
+            --text-primary: #f9fafb;
+            --text-secondary: #9ca3af;
+            --text-code: #c9d1d9;
+            --accent-green: #10b981;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --accent-yellow: #f59e0b;
+            --accent-red: #ef4444;
+            --accent-cyan: #06b6d4;
+            --accent-pink: #ec4899;
+            --accent-orange: #f97316;
+            --border-color: #374151;
+            --glow-green: 0 0 20px rgba(16, 185, 129, 0.3);
+            --glow-blue: 0 0 20px rgba(59, 130, 246, 0.3);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .logo h1 {
+            font-size: 1.25rem;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .status-indicators {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .status-pill {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--bg-card);
+            border-radius: 2rem;
+            font-size: 0.75rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            animation: blink 1s infinite;
+        }
+
+        .status-dot.green { background: var(--accent-green); box-shadow: 0 0 10px var(--accent-green); }
+        .status-dot.yellow { background: var(--accent-yellow); }
+        .status-dot.red { background: var(--accent-red); box-shadow: 0 0 10px var(--accent-red); }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        /* Main Layout */
+        .main-container {
+            display: grid;
+            grid-template-columns: 320px 1fr 400px;
+            gap: 1rem;
+            padding: 1rem;
+            height: calc(100vh - 80px);
+        }
+
+        /* Sidebar - Script Categories */
+        .sidebar {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-header {
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .category-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 0.5rem;
+        }
+
+        .category {
+            margin-bottom: 0.5rem;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem;
+            background: var(--bg-secondary);
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 500;
+        }
+
+        .category-header:hover {
+            background: var(--bg-primary);
+            border-color: var(--accent-blue);
+        }
+
+        .category-header.active {
+            background: linear-gradient(90deg, rgba(59, 130, 246, 0.2), transparent);
+            border-left: 3px solid var(--accent-blue);
+        }
+
+        .category-icon {
+            font-size: 1.25rem;
+        }
+
+        .category-scripts {
+            display: none;
+            padding: 0.25rem 0 0.25rem 1.5rem;
+        }
+
+        .category.expanded .category-scripts {
+            display: block;
+        }
+
+        .script-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0.75rem;
+            margin: 0.25rem 0;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .script-item:hover {
+            background: var(--bg-primary);
+            border-color: var(--border-color);
+        }
+
+        .script-item.selected {
+            background: rgba(59, 130, 246, 0.15);
+            border-color: var(--accent-blue);
+        }
+
+        .script-status {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            margin-left: auto;
+        }
+
+        .script-status.ready { background: var(--accent-green); }
+        .script-status.running { background: var(--accent-yellow); animation: blink 0.5s infinite; }
+        .script-status.error { background: var(--accent-red); }
+
+        /* Center - Execution Panel */
+        .execution-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .script-info {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            padding: 1.5rem;
+        }
+
+        .script-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .script-description {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .script-actions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .action-btn {
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-color);
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .action-btn:hover {
+            background: var(--bg-primary);
+            border-color: var(--accent-blue);
+            box-shadow: var(--glow-blue);
+        }
+
+        .action-btn.primary {
+            background: var(--accent-blue);
+            border-color: var(--accent-blue);
+        }
+
+        .action-btn.primary:hover {
+            background: #2563eb;
+        }
+
+        .action-btn.danger {
+            background: rgba(239, 68, 68, 0.2);
+            border-color: var(--accent-red);
+        }
+
+        .action-btn.danger:hover {
+            background: var(--accent-red);
+        }
+
+        /* Terminal Output */
+        .terminal-container {
+            flex: 1;
+            background: var(--bg-terminal);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .terminal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .terminal-title {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+        }
+
+        .terminal-controls {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .terminal-btn {
+            padding: 0.25rem 0.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 0.25rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 0.75rem;
+        }
+
+        .terminal-btn:hover {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        .terminal-output {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            font-family: 'Cascadia Code', 'Fira Code', monospace;
+            font-size: 0.8125rem;
+            line-height: 1.6;
+            color: var(--text-code);
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .terminal-line {
+            margin-bottom: 0.25rem;
+        }
+
+        .terminal-line.success { color: var(--accent-green); }
+        .terminal-line.error { color: var(--accent-red); }
+        .terminal-line.warning { color: var(--accent-yellow); }
+        .terminal-line.info { color: var(--accent-cyan); }
+        .terminal-line.command { color: var(--accent-purple); }
+
+        .terminal-input-container {
+            display: flex;
+            padding: 0.5rem 1rem;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-color);
+            gap: 0.5rem;
+        }
+
+        .terminal-prompt {
+            color: var(--accent-green);
+            font-family: monospace;
+        }
+
+        .terminal-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: var(--text-primary);
+            font-family: 'Cascadia Code', monospace;
+            font-size: 0.875rem;
+            outline: none;
+        }
+
+        /* Right Panel - Logs & Status */
+        .right-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .panel-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+        .panel-header {
+            padding: 0.75rem 1rem;
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .panel-content {
+            padding: 1rem;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        /* Execution History */
+        .history-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            background: var(--bg-secondary);
+            border-radius: 0.5rem;
+            font-size: 0.8125rem;
+        }
+
+        .history-icon {
+            font-size: 1rem;
+        }
+
+        .history-content {
+            flex: 1;
+        }
+
+        .history-script {
+            font-weight: 500;
+        }
+
+        .history-time {
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+        }
+
+        .history-status {
+            padding: 0.125rem 0.5rem;
+            border-radius: 1rem;
+            font-size: 0.6875rem;
+            font-weight: 500;
+        }
+
+        .history-status.success { background: rgba(16, 185, 129, 0.2); color: var(--accent-green); }
+        .history-status.error { background: rgba(239, 68, 68, 0.2); color: var(--accent-red); }
+        .history-status.running { background: rgba(245, 158, 11, 0.2); color: var(--accent-yellow); }
+
+        /* Live Metrics */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+
+        .metric-card {
+            background: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+
+        .metric-value {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--accent-cyan);
+        }
+
+        .metric-label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        /* Quick Commands */
+        .quick-commands {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .quick-cmd {
+            padding: 0.5rem 0.75rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-color);
+            border-radius: 0.375rem;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .quick-cmd:hover {
+            background: var(--bg-primary);
+            border-color: var(--accent-purple);
+        }
+
+        /* Host Info */
+        .host-info {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(6, 182, 212, 0.1));
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: auto;
+        }
+
+        .host-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .host-url {
+            font-family: monospace;
+            font-size: 0.875rem;
+            padding: 0.5rem;
+            background: var(--bg-terminal);
+            border-radius: 0.25rem;
+            color: var(--accent-cyan);
+            word-break: break-all;
+        }
+
+        /* Responsive */
+        @media (max-width: 1400px) {
+            .main-container {
+                grid-template-columns: 280px 1fr;
+            }
+            .right-panel {
+                display: none;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                max-height: 300px;
+            }
+        }
+
+        /* Loading Animation */
+        .loading-spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid var(--text-secondary);
+            border-top-color: var(--accent-cyan);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <span class="logo-icon">⚡</span>
+            <h1>SCRIPT COMMAND CENTER v34.1</h1>
+        </div>
+        <div class="status-indicators">
+            <div class="status-pill">
+                <span class="status-dot green"></span>
+                <span>Server: <strong id="serverStatus">READY</strong></span>
+            </div>
+            <div class="status-pill">
+                <span class="status-dot" id="wsStatus"></span>
+                <span>WebSocket: <strong id="wsStatusText">Connecting...</strong></span>
+            </div>
+            <div class="status-pill">
+                <span>🕐</span>
+                <span id="currentTime">--:--:--</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="main-container">
+        <!-- Sidebar - Script Categories -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <span>📁</span> Script Library
+            </div>
+            <div class="category-list" id="categoryList">
+                <!-- Categories will be populated by JS -->
+            </div>
+        </aside>
+
+        <!-- Center - Execution Panel -->
+        <section class="execution-panel">
+            <!-- Script Info -->
+            <div class="script-info" id="scriptInfo">
+                <div class="script-title">
+                    <span>🎯</span>
+                    <span id="selectedScriptName">Select a Script</span>
+                </div>
+                <p class="script-description" id="selectedScriptDesc">
+                    Choose a script from the library to see details and available actions.
+                </p>
+                <div class="script-actions-grid" id="scriptActions">
+                    <!-- Actions populated by JS -->
+                </div>
+            </div>
+
+            <!-- Terminal Output -->
+            <div class="terminal-container">
+                <div class="terminal-header">
+                    <div class="terminal-title">
+                        <span>💻</span> Real-Time Output
+                        <span class="loading-spinner" id="loadingSpinner" style="display: none;"></span>
+                    </div>
+                    <div class="terminal-controls">
+                        <button class="terminal-btn" onclick="clearTerminal()">Clear</button>
+                        <button class="terminal-btn" onclick="copyOutput()">Copy</button>
+                        <button class="terminal-btn" onclick="downloadLog()">Save</button>
+                    </div>
+                </div>
+                <div class="terminal-output" id="terminalOutput">
+<span class="terminal-line info">╔══════════════════════════════════════════════════════════════════════════════╗</span>
+<span class="terminal-line info">║  ⚡ SCRIPT COMMAND CENTER v34.1 - Real-Time Execution                        ║</span>
+<span class="terminal-line info">║                                                                              ║</span>
+<span class="terminal-line info">║  "В QAntum не лъжем."                                                        ║</span>
+<span class="terminal-line info">╚══════════════════════════════════════════════════════════════════════════════╝</span>
+<span class="terminal-line">Ready to execute scripts. Select one from the library.</span>
+                </div>
+                <div class="terminal-input-container">
+                    <span class="terminal-prompt">$</span>
+                    <input type="text" class="terminal-input" id="terminalInput"
+                           placeholder="Enter custom command..."
+                           onkeypress="handleTerminalInput(event)">
+                </div>
+            </div>
+        </section>
+
+        <!-- Right Panel -->
+        <aside class="right-panel">
+            <!-- Execution History -->
+            <div class="panel-card">
+                <div class="panel-header">
+                    <span>📜</span> Execution History
+                </div>
+                <div class="panel-content" id="executionHistory">
+                    <div class="history-item">
+                        <span class="history-icon">⏳</span>
+                        <div class="history-content">
+                            <div class="history-script">No executions yet</div>
+                            <div class="history-time">Waiting for first run...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Live Metrics -->
+            <div class="panel-card">
+                <div class="panel-header">
+                    <span>📊</span> Live Metrics
+                </div>
+                <div class="panel-content">
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <div class="metric-value" id="metricExecutions">0</div>
+                            <div class="metric-label">Executions</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value" id="metricSuccess">0%</div>
+                            <div class="metric-label">Success Rate</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value" id="metricAvgTime">0s</div>
+                            <div class="metric-label">Avg Time</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-value" id="metricChanges">0</div>
+                            <div class="metric-label">Changes</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Commands -->
+            <div class="panel-card">
+                <div class="panel-header">
+                    <span>🚀</span> Quick Commands
+                </div>
+                <div class="panel-content">
+                    <div class="quick-commands">
+                        <button class="quick-cmd" onclick="runQuickCommand('scan')">🔍 Scan</button>
+                        <button class="quick-cmd" onclick="runQuickCommand('health')">💚 Health</button>
+                        <button class="quick-cmd" onclick="runQuickCommand('sync')">🔗 Sync</button>
+                        <button class="quick-cmd" onclick="runQuickCommand('backup')">💾 Backup</button>
+                        <button class="quick-cmd" onclick="runQuickCommand('commit')">📦 Commit</button>
+                        <button class="quick-cmd" onclick="runQuickCommand('stats')">📊 Stats</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Host Info -->
+            <div class="panel-card">
+                <div class="panel-header">
+                    <span>🖥️</span> Host Configuration
+                </div>
+                <div class="panel-content">
+                    <div class="host-info">
+                        <div class="host-title">🌐 Access URL</div>
+                        <div class="host-url" id="hostUrl">http://localhost:3400</div>
+                        <p style="font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.5rem;">
+                            За достъп от друга машина в мрежата използвай IP адреса.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <script>
+        // ═══════════════════════════════════════════════════════════════════════════════
+        // SCRIPT DEFINITIONS
+        // ═══════════════════════════════════════════════════════════════════════════════
+
+        const SCRIPTS = {
+            'nerve-system': {
+                icon: '🧠',
+                name: 'Nerve System',
+                scripts: [
+                    {
+                        id: 'change-detector',
+                        name: 'Change Detector',
+                        desc: 'Auto-detect and document all changes across repositories',
+                        file: 'scripts/change-detector.ts',
+                        actions: ['scan', 'watch', 'commit']
+                    },
+                    {
+                        id: 'existence-checker',
+                        name: 'Existence Checker',
+                        desc: 'Check if something already exists before creating',
+                        file: 'scripts/existence-checker.ts',
+                        actions: ['search', 'module', 'check-connections', 'list-all']
+                    }
+                ]
+            },
+            'intelligence': {
+                icon: '🧠',
+                name: 'Intelligence',
+                scripts: [
+                    {
+                        id: 'intelligence-template',
+                        name: 'Intelligence Actions',
+                        desc: 'AI/Analysis quick actions - scan, optimize, analyze, train',
+                        file: 'scripts/nerve-templates/intelligence-template.ts',
+                        actions: ['scan', 'optimize', 'analyze', 'train', 'export']
+                    },
+                    {
+                        id: 'autonomous-thought',
+                        name: 'Autonomous Thought',
+                        desc: 'Self-evolving thought patterns',
+                        file: 'scripts/autonomous-thought.ts',
+                        actions: ['run']
+                    }
+                ]
+            },
+            'omega': {
+                icon: '⚡',
+                name: 'Omega',
+                scripts: [
+                    {
+                        id: 'omega-template',
+                        name: 'Omega Actions',
+                        desc: 'Superpowers - ChronosWarp, Entanglement, Magnet',
+                        file: 'scripts/nerve-templates/omega-template.ts',
+                        actions: ['scan', 'stress', 'warp', 'entangle', 'magnet']
+                    }
+                ]
+            },
+            'physics': {
+                icon: '🔬',
+                name: 'Physics',
+                scripts: [
+                    {
+                        id: 'physics-template',
+                        name: 'Physics Actions',
+                        desc: 'Code Physics - Gravity, Atoms, Heal',
+                        file: 'scripts/nerve-templates/physics-template.ts',
+                        actions: ['scan', 'gravity', 'atoms', 'heal', 'place']
+                    }
+                ]
+            },
+            'fortress': {
+                icon: '🏰',
+                name: 'Fortress',
+                scripts: [
+                    {
+                        id: 'fortress-template',
+                        name: 'Fortress Actions',
+                        desc: 'Security - Audit, Encrypt, Evidence, Vault',
+                        file: 'scripts/nerve-templates/fortress-template.ts',
+                        actions: ['scan', 'audit', 'encrypt', 'evidence', 'vault']
+                    }
+                ]
+            },
+            'biology': {
+                icon: '🧬',
+                name: 'Biology',
+                scripts: [
+                    {
+                        id: 'biology-template',
+                        name: 'Biology Actions',
+                        desc: 'Memory/Mnemosyne - Prune, Evolve, Health',
+                        file: 'scripts/nerve-templates/biology-template.ts',
+                        actions: ['scan', 'prune', 'evolve', 'health', 'compress']
+                    },
+                    {
+                        id: 'hive-mind',
+                        name: 'Hive Mind',
+                        desc: 'Collective intelligence awakening',
+                        file: 'scripts/hive-mind-awakening.ts',
+                        actions: ['run']
+                    }
+                ]
+            },
+            'guardians': {
+                icon: '🛡️',
+                name: 'Guardians',
+                scripts: [
+                    {
+                        id: 'guardians-template',
+                        name: 'Guardians Actions',
+                        desc: 'Monitoring - Watch, Health, Fix, Report',
+                        file: 'scripts/nerve-templates/guardians-template.ts',
+                        actions: ['scan', 'watch', 'health', 'fix', 'report']
+                    },
+                    {
+                        id: 'eternal-guardian',
+                        name: 'Eternal Guardian',
+                        desc: 'Always-on protection system',
+                        file: 'scripts/eternal-guardian.js',
+                        actions: ['run']
+                    }
+                ]
+            },
+            'reality': {
+                icon: '🌐',
+                name: 'Reality',
+                scripts: [
+                    {
+                        id: 'reality-template',
+                        name: 'Reality Actions',
+                        desc: 'Business - Leads, Value Bombs, Outreach',
+                        file: 'scripts/nerve-templates/reality-template.ts',
+                        actions: ['scan', 'hunt', 'qualify', 'bomb', 'outreach']
+                    },
+                    {
+                        id: 'lead-hunter',
+                        name: 'Lead Hunter',
+                        desc: 'Automated lead generation',
+                        file: 'scripts/lead-hunter.js',
+                        actions: ['run']
+                    }
+                ]
+            },
+            'chemistry': {
+                icon: '🔗',
+                name: 'Chemistry',
+                scripts: [
+                    {
+                        id: 'chemistry-template',
+                        name: 'Chemistry Actions',
+                        desc: 'Sync/Bonding - Bond, Harmonize, Sync',
+                        file: 'scripts/nerve-templates/chemistry-template.ts',
+                        actions: ['scan', 'bond', 'harmonize', 'sync', 'validate']
+                    },
+                    {
+                        id: 'empire-sync',
+                        name: 'Empire Sync',
+                        desc: 'Cross-repository synchronization',
+                        file: 'scripts/empire-sync.js',
+                        actions: ['run']
+                    }
+                ]
+            },
+            'tools': {
+                icon: '🔧',
+                name: 'Tools',
+                scripts: [
+                    {
+                        id: 'nucleus-mapper',
+                        name: 'Nucleus Mapper',
+                        desc: 'Map the entire codebase structure',
+                        file: 'scripts/nucleus-mapper.js',
+                        actions: ['run']
+                    },
+                    {
+                        id: 'count-loc',
+                        name: 'Line Counter',
+                        desc: 'Count lines of code across projects',
+                        file: 'scripts/count-loc.js',
+                        actions: ['run']
+                    },
+                    {
+                        id: 'purge-engine',
+                        name: 'Purge Engine',
+                        desc: 'Clean up unused code and files',
+                        file: 'scripts/purge-engine.ts',
+                        actions: ['run']
+                    }
+                ]
+            }
+        };
+
+        // ═══════════════════════════════════════════════════════════════════════════════
+        // STATE
+        // ═══════════════════════════════════════════════════════════════════════════════
+
+        let selectedScript = null;
+        let executionHistory = [];
+        let metrics = {
+            executions: 0,
+            successes: 0,
+            totalTime: 0,
+            changes: 0
+        };
+        let ws = null;
+
+        // ═══════════════════════════════════════════════════════════════════════════════
+        // INITIALIZATION
+        // ═══════════════════════════════════════════════════════════════════════════════
+
+        function init() {
+            renderCategories();
+            updateTime();
+            setInterval(updateTime, 1000);
+            connectWebSocket();
+
+            // Get local IP for host info
+            updateHostInfo();
+        }
+
+        function renderCategories() {
+            const container = document.getElementById('categoryList');
+            container.innerHTML = '';
+
+            for (const [catId, category] of Object.entries(SCRIPTS)) {
+                const catDiv = document.createElement('div');
+                catDiv.className = 'category';
+                catDiv.id = `cat-${catId}`;
+
+                catDiv.innerHTML = `
+                    <div class="category-header" onclick="toggleCategory('${catId}')">
+                        <span class="category-icon">${category.icon}</span>
+                        <span>${category.name}</span>
+                        <span style="margin-left: auto; font-size: 0.75rem; color: var(--text-secondary);">
+                            ${category.scripts.length}
+                        </span>
+                    </div>
+                    <div class="category-scripts">
+                        ${category.scripts.map(s => `
+                            <div class="script-item" onclick="selectScript('${catId}', '${s.id}')">
+                                <span>📄</span>
+                                <span>${s.name}</span>
+                                <span class="script-status ready"></span>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+
+                container.appendChild(catDiv);
+            }
+        }
+
+        function toggleCategory(catId) {
+            const cat = document.getElementById(`cat-${catId}`);
+            cat.classList.toggle('expanded');
+        }
+
+        function selectScript(catId, scriptId) {
+            const category = SCRIPTS[catId];
+            const script = category.scripts.find(s => s.id === scriptId);
+
+            if (!script) return;
+
+            selectedScript = { ...script, category: catId };
+
+            // Update UI
+            document.getElementById('selectedScriptName').innerHTML = `
+                ${category.icon} ${script.name}
+            `;
+            document.getElementById('selectedScriptDesc').textContent = script.desc;
+
+            // Render actions
+            const actionsContainer = document.getElementById('scriptActions');
+            actionsContainer.innerHTML = script.actions.map((action, i) => `
+                <button class="action-btn ${i === 0 ? 'primary' : ''}"
+                        onclick="executeAction('${action}')">
+                    ${getActionIcon(action)} --${action}
+                </button>
+            `).join('');
+
+            // Mark selected
+            document.querySelectorAll('.script-item').forEach(el => el.classList.remove('selected'));
+            event.target.closest('.script-item').classList.add('selected');
+        }
+
+        function getActionIcon(action) {
+            const icons = {
+                'scan': '🔍', 'watch': '👁️', 'commit': '📦',
+                'search': '🔎', 'module': '📦', 'check-connections': '🔗', 'list-all': '📋',
+                'optimize': '⚡', 'analyze': '📊', 'train': '🎓', 'export': '📤',
+                'stress': '💪', 'warp': '⏰', 'entangle': '🔀', 'magnet': '🧲',
+                'gravity': '🌍', 'atoms': '⚛️', 'heal': '💚', 'place': '📍',
+                'audit': '🔒', 'encrypt': '🔐', 'evidence': '📁', 'vault': '🏦',
+                'prune': '✂️', 'evolve': '🧬', 'health': '💚', 'compress': '📦',
+                'fix': '🔧', 'report': '📋',
+                'hunt': '🎯', 'qualify': '✅', 'bomb': '💣', 'outreach': '📧',
+                'bond': '🔗', 'harmonize': '🎵', 'sync': '🔄', 'validate': '✓',
+                'run': '▶️'
+            };
+            return icons[action] || '▶️';
+        }
+
+        // ═══════════════════════════════════════════════════════════════════════════════
+        // EXECUTION
+        // ═══════════════════════════════════════════════════════════════════════════════
+
+        async function executeAction(action) {
+            if (!selectedScript) return;
+
+            const startTime = Date.now();
+            const command = buildCommand(selectedScript, action);
+
+            appendToTerminal(`$ ${command}`, 'command');
+            showLoading(true);
+
+            try {
+                // Send to backend via WebSocket or HTTP
+                const result = await executeCommand(command);
+
+                const duration = ((Date.now() - startTime) / 1000).toFixed(2);
+                appendToTerminal(result.output, result.success ? '' : 'error');
+                appendToTerminal(`\n✅ Completed in ${duration}s`, 'success');
+
+                // Update metrics
+                metrics.executions++;
+                if (result.success) metrics.successes++;
+                metrics.totalTime += parseFloat(duration);
+                updateMetrics();
+
+                // Add to history
+                addToHistory(selectedScript.name, action, result.success, duration);
+
+            } catch (error) {
+                appendToTerminal(`❌ Error: ${error.message}`, 'error');
+                addToHistory(selectedScript.name, action, false, '0');
+            }
+
+            showLoading(false);
+        }
+
+        function buildCommand(script, action) {
+            const ext = script.file.endsWith('.ts') ? 'ts-node' : 'node';
+            return `npx ${ext} ${script.file} --${action}`;
+        }
+
+        async function executeCommand(command) {
+            // В реална среда това ще се изпълни през WebSocket към сървъра
+            // За демо - симулираме output
+
+            if (ws && ws.readyState === WebSocket.OPEN) {
+                return new Promise((resolve) => {
+                    ws.send(JSON.stringify({ type: 'execute', command }));
+
+                    // Wait for response
+                    const handler = (event) => {
+                        const data = JSON.parse(event.data);
+                        if (data.type === 'output') {
+                            ws.removeEventListener('message', handler);
+                            resolve({ success: data.success, output: data.output });
+                        }
+                    };
+                    ws.addEventListener('message', handler);
+
+                    // Timeout
+                    setTimeout(() => {
+                        ws.removeEventListener('message', handler);
+                        resolve({ success: false, output: 'Timeout waiting for response' });
+                    }, 30000);
+                });
+            }
+
+            // Fallback demo output
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve({
+                        success: true,
+                        output: generateDemoOutput(command)
+                    });
+                }, 1500);
+            });
+        }
+
+        function generateDemoOutput(command) {
+            const outputs = {
+                'change-detector': `
+╔══════════════════════════════════════════════════════════════════════════════╗
+║           🔍 CHANGE DETECTOR v34.0 - Automatic Documentation                 ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+🔍 Scanning for changes across all repositories...
+   📊 QAntum Core: 7 changes detected
+   📊 MisteMind: 34 changes detected
+   ✅ MisterMindPage: No uncommitted changes
+
+📝 Updated CHANGE-LOG-LIVE.md
+📡 Signal sent to Nerve Center`,
+                'existence-checker': `
+╔══════════════════════════════════════════════════════════════════════════════╗
+║           🔍 EXISTENCE CHECKER v34.1                                         ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+✅ All modules connected and operational.
+📊 Found 156 classes, 423 functions, 89 exports`,
+                'default': `
+⚡ Executing: ${command}
+✓ Operation completed successfully
+📊 Processed 42 items`
+            };
+
+            for (const [key, output] of Object.entries(outputs)) {
+                if (command.includes(key)) return output;
+            }
+            return outputs.default;
+        }
+
+        // ═══════════════════════════════════════════════════════════════════════════════
+        // TERMINAL UI
+        // ═══════════════════════════════════════════════════════════════════════════════
+
+        function appendToTerminal(text, className = '') {
+            const output = document.getElementById('terminalOutput');
+            const line = document.createElement('span');
+            line.className = `terminal-line ${className}`;
+            line.textContent = text;
+            output.appendChild(line);
+            output.appendChild(document.createTextNode('\n'));
+            output.scrollTop = output.scrollHeight;
+        }
+
+        function clearTerminal() {
+            document.getElementById('terminalOutput').innerHTML = '';
+            appendToTerminal('Terminal cleared.', 'info');
+        }
+
+        function copyOutput() {
+            const output = document.getElementById('terminalOutput').textContent;
+            navigator.clipboard.writeText(output);
+            appendToTerminal('📋 Output copied to clipboard', 'success');
+        }
+
+        function downloadLog() {
+            const output = document.getElementById('terminalOutput').textContent;
+            const blob = new Blob([output], { type: 'text/plain' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = `execution-log-${new Date().toISOString().slice(0,10)}.txt`;
+            a.click();
+        }
+
+        function handleTerminalInput(event) {
+            if (event.key === 'Enter') {
+                const input = document.getElementById('terminalInput');
+                const command = input.value.trim();
+
+                if (command) {
+                    appendToTerminal(`$ ${command}`, 'command');
+                    executeCommand(command).then(result => {
+                        appendToTerminal(result.output);
+                    });
+                    input.value = '';
+                }
+            }
+        }
+
+        function showLoading(show) {
+            document.getElementById('loadingSpinner').style.display = show ? 'inline-block' : 'none';
+        }
+
+        // ═══════════════════════════════════════════════════════════════════════════════
+        // METRICS & HISTORY
+        // ═══════════════════════════════════════════════════════════════════════════════
+
+        function updateMetrics() {
+            document.getElementById('metricExecutions').textContent = metrics.executions;
+            document.getElementById('metricSuccess').textContent =
+                metrics.executions > 0
+                    ? Math.round((metrics.successes / metrics.executions) * 100) + '%'
+                    : '0%';
+            document.getElementById('metricAvgTime').textContent =
+                metrics.executions > 0
+                    ? (metrics.totalTime / metrics.executions).toFixed(1) + 's'
+                    : '0s';
+        }
+
+        function addToHistory(scriptName, action, success, duration) {
+            const history = document.getElementById('executionHistory');
+            const item = document.createElement('div');
+            item.className = 'history-item';
+            item.innerHTML = `
+                <span class="history-icon">${success ? '✅' : '❌'}</span>
+                <div class="history-content">
+                    <div class="history-script">${scriptName} --${action}</div>
+                    <div class="history-time">${new Date().toLocaleTimeString()} • ${duration}s</div>
+                </div>
+                <span class="history-status ${success ? 'success' : 'error'}">
+                    ${success ? 'SUCCESS' : 'FAILED'}
+                </span>
+            `;
+
+            history.insertBefore(item, history.firstChild);
+
+            // Keep only last 10
+            while (history.children.length > 10) {
+                history.removeChild(history.lastChild);
+            }
+        }
+
+        function runQuickCommand(cmd) {
+            const commands = {
+                'scan': 'npx ts-node scripts/change-detector.ts',
+                'health': 'npx ts-node scripts/nerve-templates/guardians-template.ts --health',
+                'sync': 'npx ts-node scripts/nerve-templates/chemistry-template.ts --sync',
+                'backup': 'git stash',
+                'commit': 'npx ts-node scripts/change-detector.ts --commit',
+                'stats': 'node scripts/count-loc.js'
+            };
+
+            const command = commands[cmd];
+            if (command) {
+                appendToTerminal(`$ ${command}`, 'command');
+                executeCommand(command).then(result => {
+                    appendToTerminal(result.output);
+                });
+            }
+        }
+
+        // ═══════════════════════════════════════════════════════════════════════════════
+        // WEBSOCKET
+        // ═══════════════════════════════════════════════════════════════════════════════
+
+        function connectWebSocket() {
+            const wsUrl = `ws://${window.location.hostname}:3401`;
+
+            try {
+                ws = new WebSocket(wsUrl);
+
+                ws.onopen = () => {
+                    document.getElementById('wsStatus').className = 'status-dot green';
+                    document.getElementById('wsStatusText').textContent = 'Connected';
+                    appendToTerminal('🔌 WebSocket connected to server', 'success');
+                };
+
+                ws.onclose = () => {
+                    document.getElementById('wsStatus').className = 'status-dot red';
+                    document.getElementById('wsStatusText').textContent = 'Disconnected';
+                    // Reconnect after 5s
+                    setTimeout(connectWebSocket, 5000);
+                };
+
+                ws.onerror = () => {
+                    document.getElementById('wsStatus').className = 'status-dot yellow';
+                    document.getElementById('wsStatusText').textContent = 'Demo Mode';
+                };
+
+                ws.onmessage = (event) => {
+                    const data = JSON.parse(event.data);
+
+                    if (data.type === 'stream') {
+                        // Real-time output streaming
+                        appendToTerminal(data.line, data.level);
+                    } else if (data.type === 'change') {
+                        // File change notification
+                        metrics.changes++;
+                        document.getElementById('metricChanges').textContent = metrics.changes;
+                        appendToTerminal(`📁 Change detected: ${data.file}`, 'info');
+                    }
+                };
+            } catch (e) {
+                document.getElementById('wsStatus').className = 'status-dot yellow';
+                document.getElementById('wsStatusText').textContent = 'Demo Mode';
+            }
+        }
+
+        function updateTime() {
+            document.getElementById('currentTime').textContent =
+                new Date().toLocaleTimeString();
+        }
+
+        function updateHostInfo() {
+            // In production, this would be the actual server IP
+            const hostUrl = `http://${window.location.hostname}:3400`;
+            document.getElementById('hostUrl').textContent = hostUrl;
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>

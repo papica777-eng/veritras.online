@@ -1,0 +1,31 @@
+{
+  "id": "bola_detected-1766966360368-0cf80d3e",
+  "timestamp": "2025-12-28T23:59:20.494Z",
+  "eventType": "BOLA_DETECTED",
+  "url": "https://juice-shop.herokuapp.com/#/",
+  "sessionId": "session-2025-12-28T23-58-13-890Z-68e10c6e",
+  "severity": "info",
+  "description": "Multi-user test initiated - requires authentication setup",
+  "maskingApplied": false,
+  "maskedFields": [],
+  "checksum": "d00623c246c9c1ce6b9aa1ed81890cab4a1cbe889c438530e4abeff30d69731b",
+  "captureMode": "aggressive",
+  "browserInfo": {
+    "name": "Chromium",
+    "version": "1.0.0-QAntum",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/143.0.7499.4 Safari/537.36",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "deviceScaleFactor": 1
+  },
+  "networkContext": {
+    "cookies": [
+      {
+        "name": "language",
+        "domain": "juice-shop.herokuapp.com"
+      }
+    ]
+  }
+}

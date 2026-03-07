@@ -1,0 +1,59 @@
+{
+  "id": "url_change-1766965028678-87206691",
+  "timestamp": "2025-12-28T23:37:08.982Z",
+  "eventType": "URL_CHANGE",
+  "url": "https://sso.revolut.com/signin?client_id=o3r08ao16zvdlf2y5fdc&redirect_uri=https%3A%2F%2Fapp.revolut.com%2Fhome%3Frwa_auth_type%3Dauth&response_type=code&code_challenge_method=S256&code_challenge=1hiwWYMKMoDJSwU6-dePqeTWzXK9pTVQHkAHW2JH5wQ&response_mode=query&ui_locales=bg&ui_color_scheme=dark&ui_background=blue&state=_pk_cZGZ12HmvShhYQy3",
+  "sessionId": "session-2025-12-28T23-37-07-609Z-cbf982e0",
+  "severity": "medium",
+  "description": "[AUTO] URL_CHANGE: {\"url\":\"https://app.revolut.com/home\"}",
+  "maskingApplied": false,
+  "maskedFields": [],
+  "checksum": "1f9c31e78bd666396c6408a074b4a82ccce508c341c351290408001f4e64789f",
+  "captureMode": "safe-hunter",
+  "browserInfo": {
+    "name": "Chromium",
+    "version": "1.0.0-QAntum",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "deviceScaleFactor": 1
+  },
+  "networkContext": {
+    "cookies": [
+      {
+        "name": "rwa_geo",
+        "domain": "app.revolut.com"
+      },
+      {
+        "name": "__cf_bm",
+        "domain": ".revolut.com"
+      },
+      {
+        "name": "_cfuvid",
+        "domain": ".revolut.com"
+      },
+      {
+        "name": "revo_hardware_id",
+        "domain": ".revolut.com"
+      },
+      {
+        "name": "revo_device_id",
+        "domain": ".revolut.com"
+      },
+      {
+        "name": "revo_theme_mode",
+        "domain": ".revolut.com"
+      },
+      {
+        "name": "revo_theme_background",
+        "domain": ".revolut.com"
+      },
+      {
+        "name": "sso_country_code",
+        "domain": "sso.revolut.com"
+      }
+    ]
+  }
+}

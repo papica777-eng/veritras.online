@@ -1,0 +1,108 @@
+[CHRONOS] ⏰ Paradox Engine initialized
+[CHRONOS] 🔮 "Проблемите са решени преди да съществуват."
+
+🔮 ChronosParadox — pre-run risk simulation (48h)
+
+[CHRONOS] 🚀 FastForward: Simulating 48h for visual-outreach
+[CHRONOS] ✅ Simulation complete in 0ms
+[CHRONOS] 🦋 Found 0 butterfly effects
+  FastForward: ✅ Safe
+  → Use behavioral_mimicry (90.0% success rate)
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  🎬 QANTUM HYBRID VISUAL AGENT v1.0                                         ║
+║  ⚠️  DRY-RUN — No emails sent                                      ║
+║  Targets: 8                                                                    ║
+║  Pipeline: Scan → Screenshot → MP4 → Email with proof → Phone alert         ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+━━━ [1/8] OZONE.BG ━━━
+  [1] HTTP Security Scan...
+      Score: 16/100 Grade: F | Missing: 7
+  [2] Playwright: capturing screenshots + recording video...
+      ✅ Screenshots: 3 | Video: 906KB
+  [3] Building HTML email with embedded screenshots...
+  [4] PREVIEW (dry-run) → privacy@ozone.bg
+      [DRY-RUN] Would send to privacy@ozone.bg
+      Evidence dir: C:\Users\papic\Desktop\ALL-POSITIONS\Blockchain\QAntum-1\data\visual-evidence\ozone.bg
+
+━━━ [2/8] PAYHAWK.COM ━━━
+  [1] HTTP Security Scan...
+      Score: 73/100 Grade: B | Missing: 2
+  [2] Playwright: capturing screenshots + recording video...
+      ✅ Screenshots: 3 | Video: 976KB
+  [3] Building HTML email with embedded screenshots...
+  [4] PREVIEW (dry-run) → hello@payhawk.com
+      [DRY-RUN] Would send to hello@payhawk.com
+      Evidence dir: C:\Users\papic\Desktop\ALL-POSITIONS\Blockchain\QAntum-1\data\visual-evidence\payhawk.com
+
+━━━ [3/8] TELERIK.COM ━━━
+  [1] HTTP Security Scan...
+      Score: 23/100 Grade: F | Missing: 6
+  [2] Playwright: capturing screenshots + recording video...
+      ✅ Screenshots: 3 | Video: 1059KB
+  [3] Building HTML email with embedded screenshots...
+  [4] PREVIEW (dry-run) → info@telerik.com
+      [DRY-RUN] Would send to info@telerik.com
+      Evidence dir: C:\Users\papic\Desktop\ALL-POSITIONS\Blockchain\QAntum-1\data\visual-evidence\telerik.com
+
+━━━ [4/8] KANBANIZE.COM ━━━
+  [1] HTTP Security Scan...
+      Score: 16/100 Grade: F | Missing: 7
+  [2] Playwright: capturing screenshots + recording video...
+      ✅ Screenshots: 3 | Video: 999KB
+  [3] Building HTML email with embedded screenshots...
+  [4] PREVIEW (dry-run) → hello@kanbanize.com
+      [DRY-RUN] Would send to hello@kanbanize.com
+      Evidence dir: C:\Users\papic\Desktop\ALL-POSITIONS\Blockchain\QAntum-1\data\visual-evidence\kanbanize.com
+
+━━━ [5/8] CHAOS.COM ━━━
+  [1] HTTP Security Scan...
+      Score: 16/100 Grade: F | Missing: 7
+  [2] Playwright: capturing screenshots + recording video...
+      ✅ Screenshots: 3 | Video: 1028KB
+  [3] Building HTML email with embedded screenshots...
+  [4] PREVIEW (dry-run) → security@chaos.com
+      [DRY-RUN] Would send to security@chaos.com
+      Evidence dir: C:\Users\papic\Desktop\ALL-POSITIONS\Blockchain\QAntum-1\data\visual-evidence\chaos.com
+
+━━━ [6/8] SUPERHOSTING.BG ━━━
+  [1] HTTP Security Scan...
+      Score: 23/100 Grade: F | Missing: 6
+  [2] Playwright: capturing screenshots + recording video...
+      ✅ Screenshots: 3 | Video: 1034KB
+  [3] Building HTML email with embedded screenshots...
+  [4] PREVIEW (dry-run) → support@superhosting.bg
+      [DRY-RUN] Would send to support@superhosting.bg
+      Evidence dir: C:\Users\papic\Desktop\ALL-POSITIONS\Blockchain\QAntum-1\data\visual-evidence\superhosting.bg
+
+━━━ [7/8] SITEGROUND.COM ━━━
+  [1] HTTP Security Scan...
+      Score: 62/100 Grade: C | Missing: 3
+  [2] Playwright: capturing screenshots + recording video...
+      ✅ Screenshots: 3 | Video: 1116KB
+  [3] Building HTML email with embedded screenshots...
+  [4] PREVIEW (dry-run) → security@siteground.com
+      [DRY-RUN] Would send to security@siteground.com
+      Evidence dir: C:\Users\papic\Desktop\ALL-POSITIONS\Blockchain\QAntum-1\data\visual-evidence\siteground.com
+
+━━━ [8/8] JOBS.BG ━━━
+  [1] HTTP Security Scan...
+      Score: 64/100 Grade: C | Missing: 3
+  [2] Playwright: capturing screenshots + recording video...
+      ⚠️  Visual capture failed: page.goto: net::ERR_NAME_NOT_RESOLVED at https://jobs.bg/
+Call log:
+[2m  - navigating to "https://jobs.bg/", waiting until "domcontentloaded"[22m
+
+  [3] Building HTML email with embedded screenshots...
+  [4] PREVIEW (dry-run) → office@jobs.bg
+      [DRY-RUN] Would send to office@jobs.bg
+      Evidence dir: C:\Users\papic\Desktop\ALL-POSITIONS\Blockchain\QAntum-1\data\visual-evidence\jobs.bg
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  📊 HYBRID VISUAL AGENT COMPLETE                                             ║
+╠══════════════════════════════════════════════════════════════════════════════╣
+║  Sent:     [DRY-RUN]                                                           ║
+║  Failed:   [DRY-RUN]                                                           ║
+║  Evidence: C:\Users\papic\Desktop\ALL-POSITIONS\Blockchain\QAntum-1\data\visual-evidence║
+╚══════════════════════════════════════════════════════════════════════════════╝

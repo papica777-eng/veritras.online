@@ -1,0 +1,49 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": [
+      "ES2022",
+      "DOM"
+    ],
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": false,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "downlevelIteration": true,
+    "outDir": "./dist",
+    "rootDir": ".",
+    "baseUrl": ".",
+    "paths": {
+      "*": [
+        "*"
+      ]
+    }
+  },
+  "include": [
+    "**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "QAntum-Anima",
+    ".ascension-backup",
+    "brutality-vortex-salvaged",
+    "salvaged-brutality-vortex",
+    "alpha",
+    "SaaS-master",
+    "scripts",
+    "tests",
+    "micro-saas",
+    "src/modules/GAMMA_INFRA",
+    "src/lib/vortex",
+    "OTHERS",
+    "src/security_core/ASCENSION_KERNEL",
+    "src/modules/BETA_SECURITY",
+    "src/departments/biology",
+    "src/departments/reality"
+  ]
+}

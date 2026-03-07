@@ -1,0 +1,17 @@
+{
+  "$schema": "https://raw.githubusercontent.com/cline/cline/main/schemas/cline_mcp_settings.json",
+  "mcpServers": {
+    "qantum-lite": {
+      "command": "node",
+      "args": ["C:/MisteMind/tools/mcp-lite.js"],
+      "disabled": false,
+      "alwaysAllow": [
+        "empire_stats",
+        "run_command",
+        "read_file",
+        "write_file",
+        "list_modules"
+      ]
+    }
+  }
+}

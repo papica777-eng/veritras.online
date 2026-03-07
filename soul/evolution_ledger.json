@@ -1,0 +1,23 @@
+[
+  {
+    "version": 1,
+    "timestamp": "2026-02-21T01:10:27.531975",
+    "complexity": 1.0,
+    "entropy": 100.0,
+    "traits": [
+      "Genesis_Core"
+    ],
+    "sovereign_index": 0.009999900000999989
+  },
+  {
+    "version": 2,
+    "timestamp": "2026-02-21T01:10:40.384106",
+    "complexity": 1.27,
+    "entropy": 90.0,
+    "traits": [
+      "Genesis_Core",
+      "Trait_2_2802"
+    ],
+    "sovereign_index": 0.028221908645459495
+  }
+]

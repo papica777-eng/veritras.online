@@ -1,0 +1,138 @@
+{
+	"folders": [
+		{
+			"name": "🛡️ QAntum Core",
+			"path": "."
+		},
+		{
+			"name": "🧠 MisteMind",
+			"path": "../MisteMind"
+		},
+		{
+			"name": "🌐 MisterMindPage",
+			"path": "../MisterMindPage"
+		}
+	],
+	"settings": {
+		// ╔═══════════════════════════════════════════════════════════════════╗
+		// ║  🚀 QANTUM EMPIRE - MAXIMUM VS CODE PERFORMANCE                   ║
+		// ║  📊 1,082,249 lines | 2,398 files | Optimized 02.01.2026          ║
+		// ╚═══════════════════════════════════════════════════════════════════╝
+
+		// === 👻 FILE EXCLUSIONS (Hidden from Explorer) ===
+		"files.exclude": {
+			"**/.git": true,
+			"**/.DS_Store": true,
+			"**/node_modules": true,
+			"**/dist": true,
+			"**/dist-forge": true,
+			"**/dist-protected": true,
+			"**/.venv": true,
+			"**/coverage": true,
+			"**/*.log": true,
+			"**/out": true,
+			"**/.tsbuildinfo": true,
+			"**/*.vsix": true,
+			"**/data/vectors": true,
+			"**/data/models": true,
+			"**/data/checkpoints": true
+		},
+
+		// === 👁️ FILE WATCHER EXCLUSIONS (35,937+ files excluded) ===
+		"files.watcherExclude": {
+			"**/.git/objects/**": true,
+			"**/.git/subtree-cache/**": true,
+			"**/node_modules/**": true,
+			"**/dist/**": true,
+			"**/dist-forge/**": true,
+			"**/dist-protected/**": true,
+			"**/.venv/**": true,
+			"**/data/**": true,
+			"**/out/**": true,
+			"**/coverage/**": true,
+			"**/*.vsix": true
+		},
+
+		// === 🔍 SEARCH EXCLUSIONS ===
+		"search.exclude": {
+			"**/node_modules": true,
+			"**/dist": true,
+			"**/dist-forge": true,
+			"**/dist-protected": true,
+			"**/package-lock.json": true,
+			"**/*.lock": true,
+			"**/data/vectors": true,
+			"**/data/models": true,
+			"**/data/checkpoints": true,
+			"**/.venv": true,
+			"**/out": true,
+			"**/*.vsix": true
+		},
+
+		// === 🦾 TYPESCRIPT PERFORMANCE ===
+		"typescript.tsserver.maxTsServerMemory": 3072,
+		"typescript.disableAutomaticTypeAcquisition": true,
+		"typescript.preferences.includePackageJsonAutoImports": "off",
+		"typescript.tsserver.experimental.enableProjectDiagnostics": false,
+		"typescript.workspaceSymbols.scope": "currentProject",
+
+		// === 🩸 CODE LENS OFF (The Vampire Killer) ===
+		"editor.codeLens": false,
+		"typescript.referencesCodeLens.enabled": false,
+		"typescript.implementationsCodeLens.enabled": false,
+
+		// === 🗺️ VISUAL NOISE OFF ===
+		"editor.minimap.enabled": false,
+		"breadcrumbs.enabled": false,
+		"editor.renderWhitespace": "none",
+		"editor.smoothScrolling": false,
+		"editor.cursorBlinking": "solid",
+		"editor.cursorSmoothCaretAnimation": "off",
+		"editor.occurrencesHighlight": "off",
+		"editor.renderLineHighlight": "line",
+		"editor.guides.indentation": false,
+		"editor.hover.delay": 500,
+		"editor.quickSuggestionsDelay": 100,
+		"editor.suggest.showStatusBar": false,
+		"editor.parameterHints.enabled": false,
+
+		// === 🐙 GIT PERFORMANCE ===
+		"git.autorefresh": false,
+		"git.decorations.enabled": false,
+		"git.enableSmartCommit": true,
+		"git.autofetch": false,
+
+		// === 🔇 TELEMETRY OFF ===
+		"telemetry.telemetryLevel": "off",
+
+		// === 🧹 AUTO-SAVE (Reduce manual saves) ===
+		"files.autoSave": "afterDelay",
+		"files.autoSaveDelay": 5000,
+
+		// === 🎯 EXPLORER OPTIMIZATION ===
+		"explorer.autoReveal": false,
+		"explorer.confirmDelete": false,
+		"explorer.confirmDragAndDrop": false,
+
+		// === 🔌 EXTENSIONS PERFORMANCE ===
+		"extensions.autoUpdate": false,
+		"extensions.autoCheckUpdates": false,
+
+		// === 💾 MEMORY OPTIMIZATION ===
+		"files.maxMemoryForLargeFilesMB": 1024,
+		"debug.console.fontFamily": "Consolas"
+	},
+	"extensions": {
+		"recommendations": [
+			"dbaeumer.vscode-eslint",
+			"esbenp.prettier-vscode"
+		],
+		"unwantedRecommendations": [
+			"ms-vscode.vscode-typescript-next"
+		]
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": []
+	}
+}

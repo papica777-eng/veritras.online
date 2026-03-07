@@ -1,0 +1,106 @@
+{
+  "category": "SECURITY",
+  "subCategories": {
+    "auth": {
+      "moduleCount": 4,
+      "modules": [
+        {
+          "name": "auth-guard.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\security\\auth-guard.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "auth.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\security\\auth.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "auth.js",
+          "path": "C:\\MisteMind\\PROJECT\\QA-SAAS\\packages\\cli\\dist\\commands\\auth.js",
+          "originalCategory": "core/ears"
+        },
+        {
+          "name": "auth.ts",
+          "path": "C:\\MisteMind\\PROJECT\\QA-SAAS\\packages\\cli\\src\\commands\\auth.ts",
+          "originalCategory": "core/ears"
+        }
+      ]
+    },
+    "threat": {
+      "moduleCount": 10,
+      "modules": [
+        {
+          "name": "GlobalThreatIntel.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\security\\GlobalThreatIntel.ts",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "magnet-scan.js",
+          "path": "C:\\MisteMind\\tools\\magnet-scan.js",
+          "originalCategory": "core/mouth"
+        },
+        {
+          "name": "anti-detection.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\ghost\\anti-detection.ts",
+          "originalCategory": "brain/learning"
+        },
+        {
+          "name": "scanner.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\security\\scanner.ts",
+          "originalCategory": "core/eyes"
+        },
+        {
+          "name": "scanner.ts",
+          "path": "C:\\MisteMind\\PROJECT\\PRIVATE\\MrMindQATool\\src\\scanner.ts",
+          "originalCategory": "core/eyes"
+        },
+        {
+          "name": "chronos-scanner.js",
+          "path": "C:\\MisteMind\\scripts\\chronos-scanner.js",
+          "originalCategory": "core/eyes"
+        },
+        {
+          "name": "index.ts",
+          "path": "C:\\MisteMind\\src\\security\\index.ts",
+          "originalCategory": "core/eyes"
+        },
+        {
+          "name": "KillSwitchGracePeriod.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\security\\KillSwitchGracePeriod.ts",
+          "originalCategory": "core/ears"
+        },
+        {
+          "name": "validator.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\security\\validator.ts",
+          "originalCategory": "core/ears"
+        },
+        {
+          "name": "security.js",
+          "path": "C:\\MisteMind\\PROJECT\\PRIVATE\\utils\\security.js",
+          "originalCategory": "core/ears"
+        }
+      ]
+    },
+    "encryption": {
+      "moduleCount": 1,
+      "modules": [
+        {
+          "name": "encryption.ts",
+          "path": "C:\\MisteMind\\data\\purge-backup\\purge-2026-01-02T18-37-36-902Z\\security\\encryption.ts",
+          "originalCategory": "security/auth"
+        }
+      ]
+    },
+    "guardians": {
+      "moduleCount": 1,
+      "modules": [
+        {
+          "name": "sentinel-demo.js",
+          "path": "C:\\MisteMind\\docs\\examples\\sentinel-demo.js",
+          "originalCategory": "core/eyes"
+        }
+      ]
+    }
+  },
+  "totalModules": 16
+}

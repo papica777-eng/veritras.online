@@ -1,0 +1,60 @@
+[package]
+name = "neural-substrate"
+version = "0.1.0"
+edition = "2021"
+authors = ["Dimitar Prodromov <dimitar@qantum.io>"]
+description = "🧠 NEURAL SUBSTRATE - Vector Memory + ML Infrastructure (Rust Core)"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+# Async
+tokio = { version = "1.35", features = ["full"] }
+async-trait = "0.1"
+
+# Math & ML
+ndarray = { version = "0.15", features = ["rayon"] }
+ndarray-rand = "0.14"
+rand = "0.8"
+rand_distr = "0.4"
+
+# Vector operations (SIMD)
+packed_simd_2 = "0.3"
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+bincode = "1.3"
+
+# Database
+rusqlite = { version = "0.30", features = ["bundled"] }
+
+# HTTP
+reqwest = { version = "0.11", features = ["json"] }
+
+# Hashing
+fasthash = "0.4"
+xxhash-rust = { version = "0.8", features = ["xxh3"] }
+
+# Concurrent structures
+dashmap = "5.5"
+parking_lot = "0.12"
+
+# FFI
+napi = { version = "2.14", features = ["async"] }
+napi-derive = "2.14"
+
+# Tracing
+tracing = "0.1"
+
+[build-dependencies]
+napi-build = "2.1"
+
+[profile.release]
+opt-level = 3
+lto = true
+
+[features]
+default = ["simd"]
+simd = []

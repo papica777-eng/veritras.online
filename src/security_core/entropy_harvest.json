@@ -1,0 +1,9 @@
+[
+  {
+    "timestamp": 1767825158940,
+    "slot": 314159265,
+    "latency": "24ms",
+    "entropy_score": 3.3569,
+    "signal_detected": false
+  }
+]

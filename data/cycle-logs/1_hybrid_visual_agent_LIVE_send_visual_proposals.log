@@ -1,0 +1,104 @@
+[CHRONOS] ⏰ Paradox Engine initialized
+[CHRONOS] 🔮 "Проблемите са решени преди да съществуват."
+
+🔮 ChronosParadox — pre-run risk simulation (48h)
+
+[CHRONOS] 🚀 FastForward: Simulating 48h for visual-outreach
+[CHRONOS] ✅ Simulation complete in 0ms
+[CHRONOS] 🦋 Found 0 butterfly effects
+  FastForward: ✅ Safe
+  → Use behavioral_mimicry (90.0% success rate)
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  🎬 QANTUM HYBRID VISUAL AGENT v1.0                                         ║
+║  🔥 LIVE — Emails WILL be sent                                   ║
+║  Targets: 8                                                                    ║
+║  Pipeline: Scan → Screenshot → MP4 → Email with proof → Phone alert         ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+━━━ [1/8] OZONE.BG ━━━
+  [1] HTTP Security Scan...
+      Score: 16/100 Grade: F | Missing: 7
+  [2] Playwright: capturing screenshots + recording video...
+      ✅ Screenshots: 3 | Video: 906KB
+  [3] Building HTML email with embedded screenshots...
+  [4] SENDING → privacy@ozone.bg
+      ✅ Sent! ID: <d8dc9ed7-ee30-6ad6-b021-e8b577979adf@qantum.site>
+  [5] Rate guard: 35s...
+
+━━━ [2/8] PAYHAWK.COM ━━━
+  [1] HTTP Security Scan...
+      Score: 73/100 Grade: B | Missing: 2
+  [2] Playwright: capturing screenshots + recording video...
+      ✅ Screenshots: 3 | Video: 987KB
+  [3] Building HTML email with embedded screenshots...
+  [4] SENDING → hello@payhawk.com
+      ✅ Sent! ID: <3b0c4c65-37d6-8fbe-d731-b3b7056b0f9f@qantum.site>
+  [5] Rate guard: 35s...
+
+━━━ [3/8] TELERIK.COM ━━━
+  [1] HTTP Security Scan...
+      Score: 23/100 Grade: F | Missing: 6
+  [2] Playwright: capturing screenshots + recording video...
+      ✅ Screenshots: 3 | Video: 1059KB
+  [3] Building HTML email with embedded screenshots...
+  [4] SENDING → info@telerik.com
+      ✅ Sent! ID: <9cfc2f24-bdf9-063d-21b3-bd3fe501fb9c@qantum.site>
+  [5] Rate guard: 35s...
+
+━━━ [4/8] KANBANIZE.COM ━━━
+  [1] HTTP Security Scan...
+      Score: 16/100 Grade: F | Missing: 7
+  [2] Playwright: capturing screenshots + recording video...
+      ✅ Screenshots: 3 | Video: 999KB
+  [3] Building HTML email with embedded screenshots...
+  [4] SENDING → hello@kanbanize.com
+      ✅ Sent! ID: <78b652b9-70eb-cd0c-f4a0-740b341a1b6a@qantum.site>
+  [5] Rate guard: 35s...
+
+━━━ [5/8] CHAOS.COM ━━━
+  [1] HTTP Security Scan...
+      Score: 16/100 Grade: F | Missing: 7
+  [2] Playwright: capturing screenshots + recording video...
+      ✅ Screenshots: 3 | Video: 1014KB
+  [3] Building HTML email with embedded screenshots...
+  [4] SENDING → security@chaos.com
+      ✅ Sent! ID: <04dfc051-e1b1-214d-c0a1-397a1aa99de8@qantum.site>
+  [5] Rate guard: 35s...
+
+━━━ [6/8] SUPERHOSTING.BG ━━━
+  [1] HTTP Security Scan...
+      Score: 23/100 Grade: F | Missing: 6
+  [2] Playwright: capturing screenshots + recording video...
+      ✅ Screenshots: 3 | Video: 1034KB
+  [3] Building HTML email with embedded screenshots...
+  [4] SENDING → support@superhosting.bg
+      ✅ Sent! ID: <7fa915a0-d0c0-6dcc-d801-bfa5835e8d00@qantum.site>
+  [5] Rate guard: 35s...
+
+━━━ [7/8] SITEGROUND.COM ━━━
+  [1] HTTP Security Scan...
+      Score: 62/100 Grade: C | Missing: 3
+  [2] Playwright: capturing screenshots + recording video...
+      ✅ Screenshots: 3 | Video: 1116KB
+  [3] Building HTML email with embedded screenshots...
+  [4] SENDING → security@siteground.com
+      ✅ Sent! ID: <2f855f68-b108-7e8e-cc41-3788b2664744@qantum.site>
+  [5] Rate guard: 35s...
+
+━━━ [8/8] JOBS.BG ━━━
+  [1] HTTP Security Scan...
+      Score: 64/100 Grade: C | Missing: 3
+  [2] Playwright: capturing screenshots + recording video...
+      ✅ Screenshots: 3 | Video: 355KB
+  [3] Building HTML email with embedded screenshots...
+  [4] SENDING → office@jobs.bg
+      ✅ Sent! ID: <21f90396-5176-b2fc-78b1-2b44ae622eb5@qantum.site>
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  📊 HYBRID VISUAL AGENT COMPLETE                                             ║
+╠══════════════════════════════════════════════════════════════════════════════╣
+║  Sent:     8                                                                   ║
+║  Failed:   0                                                                   ║
+║  Evidence: C:\Users\papic\Desktop\ALL-POSITIONS\Blockchain\QAntum-1\data\visual-evidence║
+╚══════════════════════════════════════════════════════════════════════════════╝

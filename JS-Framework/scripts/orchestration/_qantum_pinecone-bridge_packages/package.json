@@ -1,0 +1,104 @@
+{
+  "name": "@qantum/pinecone-bridge",
+  "version": "1.0.0",
+  "description": "🧠 QANTUM Pinecone Bridge - Eternal Context Memory for 52K+ Vectors",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "bin": {
+    "qbridge": "./dist/cli.js"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./cli": {
+      "types": "./dist/cli.d.ts",
+      "import": "./dist/cli.js"
+    },
+    "./server": {
+      "types": "./dist/server.d.ts",
+      "import": "./dist/server.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "npx tsx watch src/server.ts",
+    "serve": "npx tsx src/server.ts",
+    "cli": "npx tsx src/cli.ts",
+    "query": "npx tsx src/cli.ts query",
+    "status": "npx tsx src/cli.ts status",
+    "sessions": "npx tsx src/cli.ts sessions",
+    "knowledge": "npx tsx src/cli.ts knowledge",
+    "clean": "rimraf dist",
+    "test": "vitest",
+    "validate": "npx tsx src/validate-ecosystem.ts",
+    "daemon:start": "npx tsx src/daemon/index.ts",
+    "mega": "npx tsx src/daemon/MegaSupremeDaemon.ts",
+    "mega:aggressive": "npx tsx src/daemon/MegaSupremeDaemon.ts --aggressive",
+    "mega:ghost": "npx tsx src/daemon/MegaSupremeDaemon.ts --ghost",
+    "console": "npx tsx src/console/QAntumConsole.ts",
+    "console:debug": "npx tsx src/console/QAntumConsole.ts --debug",
+    "chat": "npx tsx src/console/QAntumConsole.ts",
+    
+    "sync:delta": "npx tsx src/scripts/vector-sync.ts delta",
+    "sync:run": "npx tsx src/scripts/vector-sync.ts sync",
+    "sync:all": "npx tsx src/scripts/vector-sync.ts sync-all",
+    "sync:cleanup": "npx tsx src/scripts/vector-sync.ts cleanup",
+    "sync:dry": "npx tsx src/scripts/vector-sync.ts dry-run",
+    
+    "watch": "npx tsx src/scripts/auto-watch.ts",
+    
+    "health": "npx tsx src/scripts/vector-health.ts health",
+    "health:cleanup": "npx tsx src/scripts/vector-health.ts cleanup",
+    "health:cleanup:dry": "npx tsx src/scripts/vector-health.ts cleanup --dry-run",
+    
+    "auto": "npm run sync:delta && npm run health",
+    
+    "ecosystem": "npx tsx src/scripts/ecosystem-health-monitor.ts",
+    "ecosystem:watch": "npx tsx src/scripts/ecosystem-health-monitor.ts --watch",
+    "ecosystem:heal": "npx tsx src/scripts/ecosystem-health-monitor.ts --heal",
+    "diagnose": "npx tsx src/scripts/ecosystem-health-monitor.ts",
+    "heal": "npx tsx src/scripts/ecosystem-health-monitor.ts --heal",
+    
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "qantum",
+    "pinecone",
+    "vector-search",
+    "ai",
+    "context-memory",
+    "semantic-search"
+  ],
+  "author": "Dimitar Prodromov <qantum@empire.io>",
+  "license": "MIT",
+  "dependencies": {
+    "@pinecone-database/pinecone": "^4.0.0",
+    "@tensorflow/tfjs-node": "^4.21.0",
+    "@tensorflow-models/universal-sentence-encoder": "^1.3.3",
+    "better-sqlite3": "^11.6.0",
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "ora": "^8.1.1",
+    "uuid": "^11.0.3",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.11",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.2",
+    "@types/uuid": "^10.0.0",
+    "rimraf": "^6.0.1",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^1.2.0"
+  }
+}

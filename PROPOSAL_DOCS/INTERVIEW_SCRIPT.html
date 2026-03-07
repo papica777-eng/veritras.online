@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Interview Script — 15:30</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0a0a0f;
+            color: #e0e0e0;
+            font-family: 'Inter', sans-serif;
+            padding: 20px 30px;
+            line-height: 1.6;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 1.4em;
+            color: #c9a84c;
+            margin-bottom: 6px;
+            letter-spacing: 2px;
+        }
+
+        .time {
+            text-align: center;
+            color: #666;
+            font-size: 0.8em;
+            margin-bottom: 20px;
+        }
+
+        .phase {
+            background: #111118;
+            border: 1px solid #1a1a2e;
+            border-radius: 10px;
+            padding: 18px 22px;
+            margin-bottom: 14px;
+        }
+
+        .phase-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .phase-num {
+            background: #c9a84c;
+            color: #0a0a0f;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.8em;
+            flex-shrink: 0;
+        }
+
+        .phase-title {
+            font-weight: 800;
+            font-size: 1em;
+            color: #c9a84c;
+        }
+
+        .phase-time {
+            margin-left: auto;
+            font-size: 0.7em;
+            color: #666;
+            background: #1a1a2e;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .bg,
+        .en {
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-size: 0.85em;
+            line-height: 1.7;
+        }
+
+        .bg {
+            background: #0d1a0d;
+            border-left: 3px solid #22c55e;
+        }
+
+        .en {
+            background: #0d0d1a;
+            border-left: 3px solid #3b82f6;
+        }
+
+        .label {
+            font-size: 0.6em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #666;
+            margin-bottom: 4px;
+        }
+
+        .bg .label {
+            color: #22c55e;
+        }
+
+        .en .label {
+            color: #3b82f6;
+        }
+
+        strong {
+            color: #c9a84c;
+        }
+
+        .killer {
+            color: #ff4444;
+            font-weight: 800;
+        }
+
+        .tip {
+            background: #1a1a0a;
+            border-left: 3px solid #c9a84c;
+            padding: 8px 14px;
+            font-size: 0.8em;
+            color: #c9a84c;
+            border-radius: 0 6px 6px 0;
+            margin-top: 6px;
+        }
+
+        .warning {
+            background: #1a0a0a;
+            border-left: 3px solid #ff4444;
+            padding: 8px 14px;
+            font-size: 0.8em;
+            color: #ff6666;
+            border-radius: 0 6px 6px 0;
+            margin-top: 6px;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid #1a1a2e;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🎯 INTERVIEW PISTOL</h1>
+    <div class="time">15:30 — Mihai Zainescu (Delivery Manager, Aptendo) | PQC Specialist Role</div>
+
+    <!-- ═══ PHASE 1: OPENING ═══ -->
+    <div class="phase">
+        <div class="phase-header">
+            <div class="phase-num">1</div>
+            <div class="phase-title">OPENING — Първо Впечатление</div>
+            <div class="phase-time">0:00 — 2:00</div>
+        </div>
+        <div class="row">
+            <div class="bg">
+                <div class="label">🇧🇬 Казваш (ако е на БГ)</div>
+                Здравейте, Михай. Благодаря за поканата. Радвам се, че ме потърсихте — темата с <strong>Post-Quantum
+                    криптографията</strong> е точно областта, в която работя последните месеци. Готов съм.
+            </div>
+            <div class="en">
+                <div class="label">🇬🇧 You say (if in EN)</div>
+                Hi Mihai, thank you for reaching out. I appreciate you contacting me — <strong>Post-Quantum
+                    Cryptography</strong> is exactly the domain I've been building in. I'm ready to discuss.
+            </div>
+        </div>
+        <div class="tip">💡 ТАКТИКА: Кратко, уверено. Не се разпъвай. Даваш му думата веднага след това.</div>
+    </div>
+
+    <!-- ═══ PHASE 2: LISTENING ═══ -->
+    <div class="phase">
+        <div class="phase-header">
+            <div class="phase-num">2</div>
+            <div class="phase-title">LISTENING — Нека Той Говори Първо</div>
+            <div class="phase-time">2:00 — 8:00</div>
+        </div>
+        <div class="row">
+            <div class="bg">
+                <div class="label">🇧🇬 Питаш</div>
+                Разкажете ми повече за проекта — какъв е <strong>обхватът</strong>, какъв е <strong>таймлайнът</strong>,
+                и какво <strong>точно търсите</strong> от PQC специалист?
+            </div>
+            <div class="en">
+                <div class="label">🇬🇧 You ask</div>
+                Could you tell me more about the project — what's the <strong>scope</strong>, the
+                <strong>timeline</strong>, and what exactly do you <strong>need from a PQC specialist</strong>?
+            </div>
+        </div>
+        <div class="tip">💡 ТАКТИКА: СЛУШАЙ. Записвай. Не прекъсвай. Колкото повече говори, толкова повече разкрива
+            какво му трябва.</div>
+    </div>
+
+    <!-- ═══ PHASE 3: YOUR VALUE ═══ -->
+    <div class="phase">
+        <div class="phase-header">
+            <div class="phase-num">3</div>
+            <div class="phase-title">YOUR VALUE — Позициониране</div>
+            <div class="phase-time">8:00 — 18:00</div>
+        </div>
+
+        <div class="row">
+            <div class="bg">
+                <div class="label">🇧🇬 Представяне</div>
+                Аз не идвам с теория. Идвам с <strong>работеща инфраструктура</strong>. Имам над <strong>3,200
+                    валидирани модула</strong> на Rust, TypeScript и Mojo. Включително <strong>PQC криптографски
+                    слой</strong> базиран на FIPS 203 и 204 — Kyber и Dilithium.
+            </div>
+            <div class="en">
+                <div class="label">🇬🇧 Presentation</div>
+                I don't come with theory. I come with <strong>working infrastructure</strong>. I have over <strong>3,200
+                    validated modules</strong> in Rust, TypeScript, and Mojo. Including a <strong>PQC cryptographic
+                    layer</strong> based on FIPS 203 and 204 — Kyber and Dilithium.
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="row">
+            <div class="bg">
+                <div class="label">🇧🇬 Killer Point #1 — Скорост</div>
+                Моят Mojo inference engine дава <strong class="killer">35,000 пъти ускорение</strong> спрямо стандартен
+                Python ML pipeline. Това означава, че симулация, която обикновено отнема месеци, при мен отнема часове.
+            </div>
+            <div class="en">
+                <div class="label">🇬🇧 Killer Point #1 — Speed</div>
+                My Mojo inference engine delivers <strong class="killer">35,000× acceleration</strong> over standard
+                Python ML pipelines. What takes months in simulation, I deliver in hours.
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="row">
+            <div class="bg">
+                <div class="label">🇧🇬 Killer Point #2 — Суверенност</div>
+                Цялата ми система е <strong>zero-dependency</strong>. Не зависи от AWS, Azure, или нечий друг облак.
+                Работи на <strong>bare-metal</strong>. Данните никога не напускат периметъра.
+            </div>
+            <div class="en">
+                <div class="label">🇬🇧 Killer Point #2 — Sovereignty</div>
+                My entire system is <strong>zero-dependency</strong>. No AWS, no Azure, no external cloud. It runs on
+                <strong>bare-metal</strong>. Data never leaves the sovereign perimeter.
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="row">
+            <div class="bg">
+                <div class="label">🇧🇬 Killer Point #3 — Математическа Гаранция</div>
+                Всеки модул минава през <strong>тройна верификация</strong> — геометрична, кинематична и енергийна.
+                Грешката не е малко вероятна — тя е <strong class="killer">структурно невъзможна</strong>.
+            </div>
+            <div class="en">
+                <div class="label">🇬🇧 Killer Point #3 — Mathematical Guarantee</div>
+                Every module passes through <strong>triple-path verification</strong> — geometric, kinematic, and energy
+                conservation. Error is not unlikely — it is <strong class="killer">structurally impossible</strong>.
+            </div>
+        </div>
+        <div class="tip">💡 ТАКТИКА: Ако иска демо → покажи sovereign_sentinel.rs (701 реда). Screen share, scroll
+            бавно.</div>
+    </div>
+
+    <!-- ═══ PHASE 4: IF THEY ASK ABOUT RATE ═══ -->
+    <div class="phase">
+        <div class="phase-header">
+            <div class="phase-num">4</div>
+            <div class="phase-title">MONEY TALK — Ако Питат За Цена</div>
+            <div class="phase-time">Когато стигнат</div>
+        </div>
+        <div class="row">
+            <div class="bg">
+                <div class="label">🇧🇬 Ако питат "Каква е ставката ви?"</div>
+                Зависи от обхвата. За consulting и интеграция на PQC модули — <strong>между €150-250 на час</strong>. Но
+                предпочитам да работя на <strong>milestone база</strong> — плащате за резултат, не за часове. Мога да ви
+                изпратя <strong>подробен proposal</strong> с разбивка.
+            </div>
+            <div class="en">
+                <div class="label">🇬🇧 If they ask "What's your rate?"</div>
+                It depends on scope. For PQC consulting and module integration — <strong>between €150-250 per
+                    hour</strong>. But I prefer working on a <strong>milestone basis</strong> — you pay for results, not
+                hours. I can send you a <strong>detailed proposal</strong> with breakdown.
+            </div>
+        </div>
+        <div class="warning">⚠️ НЕ давай цена пръв ако може. Кажи "зависи от обхвата" и ги остави ТЕ да кажат бюджета
+            си.</div>
+    </div>
+
+    <!-- ═══ PHASE 5: OBJECTION HANDLING ═══ -->
+    <div class="phase">
+        <div class="phase-header">
+            <div class="phase-num">5</div>
+            <div class="phase-title">OBJECTIONS — Ако Се Съмняват</div>
+            <div class="phase-time">По всяко време</div>
+        </div>
+
+        <div class="row">
+            <div class="bg">
+                <div class="label">🇧🇬 "Имате ли опит с екип?"</div>
+                Аз <strong>съм</strong> екипът. Architect, developer, validator — в едно. Затова доставям с <strong>3×
+                    по-малко overhead</strong> от традиционен екип. Нулева комуникационна загуба.
+            </div>
+            <div class="en">
+                <div class="label">🇬🇧 "Do you have team experience?"</div>
+                I <strong>am</strong> the team. Architect, developer, validator — in one. That's why I deliver with
+                <strong>3× less overhead</strong> than a traditional team. Zero communication loss.
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="row">
+            <div class="bg">
+                <div class="label">🇧🇬 "Защо не ползвате стандартни решения?"</div>
+                Стандартните решения са <strong>стандартно уязвими</strong>. Моята инфраструктура е суверенна — няма
+                supply chain атака, няма vendor lock-in. Клиентът притежава всичко.
+            </div>
+            <div class="en">
+                <div class="label">🇬🇧 "Why not use standard solutions?"</div>
+                Standard solutions have <strong>standard vulnerabilities</strong>. My infrastructure is sovereign — no
+                supply chain attack vector, no vendor lock-in. The client owns everything.
+            </div>
+        </div>
+
+        <hr class="divider">
+
+        <div class="row">
+            <div class="bg">
+                <div class="label">🇧🇬 "Скъпо е."</div>
+                Разбирам. Но помислете какво получавате — <strong>не наемате developer</strong>. Получавате
+                <strong>3,200 готови модула</strong> + PQC Layer + 35,000× acceleration. Алтернативата е екип от 5 души
+                за 18 месеца. Сметнете кое е по-скъпо.
+            </div>
+            <div class="en">
+                <div class="label">🇬🇧 "That's expensive."</div>
+                I understand. But consider what you're getting — you're not <strong>hiring a developer</strong>. You're
+                getting <strong>3,200 pre-built modules</strong> + PQC Layer + 35,000× acceleration. The alternative is
+                a team of 5 for 18 months. Do the math.
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══ PHASE 6: CLOSING ═══ -->
+    <div class="phase">
+        <div class="phase-header">
+            <div class="phase-num">6</div>
+            <div class="phase-title">CLOSING — Затваряне</div>
+            <div class="phase-time">Последните 3 мин</div>
+        </div>
+        <div class="row">
+            <div class="bg">
+                <div class="label">🇧🇬 Затваряне</div>
+                Михай, беше продуктивен разговор. Ще ви изпратя <strong>proposal документ</strong> с всичко, за което
+                говорихме — модули, технологии, ценова рамка. Кога бихте искали да продължим?
+            </div>
+            <div class="en">
+                <div class="label">🇬🇧 Closing</div>
+                Mihai, this was a productive conversation. I'll send you a <strong>proposal document</strong> with
+                everything we discussed — modules, technologies, pricing framework. When would you like to follow up?
+            </div>
+        </div>
+        <div class="tip">💡 ТАКТИКА: ВИНАГИ затваряй с конкретен next step. "Кога продължаваме?" — не "Ще ви се обадя."
+        </div>
+    </div>
+
+    <!-- ═══ GOLDEN RULES ═══ -->
+    <div class="phase" style="border-color: #c9a84c;">
+        <div class="phase-header">
+            <div class="phase-num" style="background: #ff4444;">!</div>
+            <div class="phase-title" style="color: #ff4444;">GOLDEN RULES — Запомни</div>
+        </div>
+        <div style="font-size: 0.9em; line-height: 2;">
+            🔴 <strong>ТЕ те потърсиха</strong> — ти не молиш, ти избираш<br>
+            🔴 <strong>Не давай source code</strong> — само демо, само screen share<br>
+            🔴 <strong>Не казвай цена пръв</strong> — нека те кажат бюджет<br>
+            🔴 <strong>Слушай повече отколкото говориш</strong> — 40/60 правило<br>
+            🔴 <strong>Никога не кажи "мога"</strong> — кажи <strong>"вече съм го направил"</strong><br>
+            🔴 <strong>Proposal-ът е оръжието</strong> — пращаш го СЛЕД разговора, не преди
+        </div>
+    </div>
+
+</body>
+
+</html>

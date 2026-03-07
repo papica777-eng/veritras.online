@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bio-Liveness Protocol Proof</title>
+    <!-- Mermiad.js за диаграми -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            background-color: #050505;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        /* HEADER */
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #00ff41;
+            padding-bottom: 20px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+        }
+
+        .subtitle {
+            color: #888;
+            font-size: 1.1em;
+            margin-top: 10px;
+            font-family: monospace;
+        }
+
+        /* CARDS */
+        .card {
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #00ff41, #008f11);
+        }
+
+        .card-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .badge {
+            background: #003300;
+            color: #00ff41;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            border: 1px solid #00ff41;
+        }
+
+        /* DIAGRAM */
+        .diagram-container {
+            display: flex;
+            justify-content: center;
+            background: #0a0a0a;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        /* TERMINAL */
+        .terminal {
+            background: #000;
+            color: #ccc;
+            font-family: 'Consolas', 'Monaco', monospace;
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            line-height: 1.5;
+            border-left: 4px solid #00ff41;
+        }
+
+        .green {
+            color: #00ff41;
+            font-weight: bold;
+        }
+
+        .red {
+            color: #ff3333;
+            font-weight: bold;
+        }
+
+        .yellow {
+            color: #ffcc00;
+        }
+
+        .gray {
+            color: #666;
+        }
+
+        .blink {
+            animation: blinker 1s linear infinite;
+        }
+
+        @keyframes blinker {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* FOOTER */
+        .footer {
+            color: #444;
+            font-size: 0.8em;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <h1>Sovereign AI Architecture</h1>
+            <div class="subtitle">PROJECT HYGEIA: BIO-LIVENESS PROTOCOL v1.0</div>
+        </div>
+
+        <!-- DIAGRAM CARD -->
+        <div class="card">
+            <div class="card-title">
+                <span>📐 SYSTEM LOGIC</span>
+                <span class="badge">PROTOCOL LEVEL</span>
+            </div>
+            <div class="diagram-container">
+                <div class="mermaid">
+                    graph LR
+                    Sensor[IoT Sensor / AI Agent] -->|Telemetry| TokenGen[LivenessTokenManager]
+                    TokenGen -->|Calc Entropy & HMAC| BioToken(BioLivenessToken)
+                    BioToken -->|Signed Packet| Immune[Apoptosis Immune System]
+
+                    subgraph "The Handshake"
+                    Immune -->|Decrypt| Check{Entropy > 0.3?}
+                    Check -->|NO (Stable)| Access[✅ ACCESS GRANTED]
+                    Check -->|YES (Toxic)| Kill[💀 KILL PROCESS]
+                    end
+
+                    style Kill fill:#330000,stroke:#ff0000,stroke-width:2px,color:#ff9999
+                    style Access fill:#002200,stroke:#00ff00,stroke-width:2px,color:#99ff99
+                    style Immune fill:#111,stroke:#fff,stroke-width:1px
+                </div>
+            </div>
+        </div>
+
+        <!-- TERMINAL CARD -->
+        <div class="card" style="margin-top: 30px;">
+            <div class="card-title">
+                <span>🖥️ EXECUTION LOG: CHERNOBYL TEST</span>
+                <span class="badge">LIVE EXECUTION</span>
+            </div>
+            <div class="terminal">
+                <span class="gray">> [SYSTEM] INITIALIZING IMMUNE DEFENSE... OK</span>
+                <span class="gray">> [SYSTEM] LOADED MODULE: BioLivenessTokenManager</span>
+
+                <span class="green">[PHASE 1] 🌿 NORMAL OPERATION (Clean Data)</span>
+                Target: SENSOR_AIR_SOFIA_01
+                Telemetry: { pm25: 12, co2: 400 }
+                Entropy Score: 0.05 (STABLE)
+                Auth Check: <span class="green">✅ TOKEN_ACCEPTED</span> (Hash: 9f8a...1b2)
+
+                <span class="yellow">[PHASE 2] ☣️ TOXIC ATTACK SIMULATION (Hallucination)</span>
+                Target: SENSOR_AIR_SOFIA_01
+                Telemetry: { pm25: 9999, co2: -50 } <span class="gray">// Physically Impossible</span>
+                Entropy Score: 0.85 (CRITICAL)
+
+                <span class="yellow">⚠️ SECURITY ALERT: High Entropy Signal (0.85 > 0.3)</span>
+                <span class="yellow">🛡️ VERITAS SHIELD: ENGAGED</span>
+
+                Action: <span class="red">💀 APOPTOSIS TRIGGERED</span>
+                Status: Connection Terminated. Data Rejected.
+
+                <span class="gray">> [SYSTEM] INTEGRITY CHECK: 100% PRESERVED</span>
+                <span class="gray">> _<span class="blink">█</span></span>
+            </div>
+        </div>
+
+        <div class="footer">
+            GENERATED: <span id="timestamp"></span> | ARCHITECT: DIMITAR PRODROMOV
+        </div>
+
+    </div>
+
+    <script>
+        mermaid.initialize({ startOnLoad: true, theme: 'dark', securityLevel: 'loose' });
+        document.getElementById('timestamp').innerText = new Date().toISOString().replace('T', ' ').substring(0, 19);
+    </script>
+</body>
+
+</html>

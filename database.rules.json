@@ -1,0 +1,16 @@
+{
+  "rules": {
+    "nerve-center": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "commands": {
+      ".read": true,
+      ".write": true
+    },
+    "telemetry": {
+      ".read": true,
+      ".write": true
+    }
+  }
+}

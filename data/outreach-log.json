@@ -1,0 +1,542 @@
+[
+  {
+    "ts": "2026-02-27T21:51:57.019Z",
+    "domain": "ozone.bg",
+    "to": "privacy@ozone.bg",
+    "score": 16,
+    "grade": "F",
+    "sent": false,
+    "err": "Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials ffacd0b85a97d-4399c71ad07sm9729424f8f.16 - gsmtp"
+  },
+  {
+    "ts": "2026-02-27T21:53:23.123Z",
+    "domain": "ozone.bg",
+    "to": "privacy@ozone.bg",
+    "score": 16,
+    "grade": "F",
+    "sent": true,
+    "id": "<1e91074e-56ac-aeec-04fd-af14224b1085@qantum.site>"
+  },
+  {
+    "ts": "2026-02-27T21:53:59.707Z",
+    "domain": "chaos.com",
+    "to": "security@chaos.com",
+    "score": 16,
+    "grade": "F",
+    "sent": true,
+    "id": "<c495a31c-995f-78ee-1bc0-57b695b877e4@qantum.site>"
+  },
+  {
+    "ts": "2026-02-27T21:54:36.104Z",
+    "domain": "kanbanize.com",
+    "to": "hello@kanbanize.com",
+    "score": 16,
+    "grade": "F",
+    "sent": true,
+    "id": "<a71d8987-0aed-3c00-ab6e-910ab66212bf@qantum.site>"
+  },
+  {
+    "ts": "2026-02-27T21:55:12.598Z",
+    "domain": "gtmhub.com",
+    "to": "hello@gtmhub.com",
+    "score": 16,
+    "grade": "F",
+    "sent": true,
+    "id": "<df010a96-4a1b-ee3a-e273-b0d445d155d5@qantum.site>"
+  },
+  {
+    "ts": "2026-02-27T21:55:50.104Z",
+    "domain": "telerik.com",
+    "to": "info@telerik.com",
+    "score": 23,
+    "grade": "F",
+    "sent": true,
+    "id": "<9fbf0c7e-a6c2-15c4-8256-59938104c7a7@qantum.site>"
+  },
+  {
+    "ts": "2026-02-27T21:56:26.505Z",
+    "domain": "superhosting.bg",
+    "to": "support@superhosting.bg",
+    "score": 23,
+    "grade": "F",
+    "sent": true,
+    "id": "<adbfa9a9-d534-f76a-e471-e67cf3c5d84a@qantum.site>"
+  },
+  {
+    "ts": "2026-02-27T21:57:03.230Z",
+    "domain": "payhawk.com",
+    "to": "hello@payhawk.com",
+    "score": 73,
+    "grade": "B",
+    "sent": true,
+    "id": "<e7a218fc-3be0-4f03-b7ac-f719a2ecb821@qantum.site>"
+  },
+  {
+    "ts": "2026-02-27T21:57:39.619Z",
+    "domain": "siteground.com",
+    "to": "security@siteground.com",
+    "score": 62,
+    "grade": "C",
+    "sent": true,
+    "id": "<ec5860d6-e54a-cccb-867f-11948a238e4d@qantum.site>"
+  },
+  {
+    "ts": "2026-02-27T21:58:16.059Z",
+    "domain": "jobs.bg",
+    "to": "office@jobs.bg",
+    "score": 64,
+    "grade": "C",
+    "sent": true,
+    "id": "<923f1481-d3a7-fd8a-e876-f24f484aacfb@qantum.site>"
+  },
+  {
+    "ts": "2026-02-28T17:21:35.247Z",
+    "domain": "ozone.bg",
+    "to": "privacy@ozone.bg",
+    "score": 16,
+    "grade": "F",
+    "sent": true,
+    "id": "<6b125b42-c4db-8906-2f36-cb027b081b27@qantum.site>",
+    "persona": "ALEX_DIRECT"
+  },
+  {
+    "ts": "2026-02-28T17:23:05.611Z",
+    "domain": "ozone.bg",
+    "to": "privacy@ozone.bg",
+    "score": 16,
+    "grade": "F",
+    "sent": true,
+    "id": "<357bb790-4b0f-7d97-bd8c-d2c341620982@qantum.site>",
+    "persona": "ALEX_DIRECT"
+  },
+  {
+    "ts": "2026-02-28T17:24:54.569Z",
+    "domain": "ozone.bg",
+    "to": "office@ozone.bg",
+    "score": 16,
+    "grade": "F",
+    "sent": true,
+    "id": "<a210aa33-29da-9f28-4e23-508d5023c741@qantum.site>",
+    "persona": "ALEX_DIRECT"
+  },
+  {
+    "ts": "2026-02-28T17:25:42.030Z",
+    "domain": "qantum.site",
+    "to": "dp@qantum.site",
+    "score": 16,
+    "grade": "F",
+    "sent": true,
+    "id": "<b7f98555-e592-617d-3216-dc3c8dccbfc0@qantum.site>",
+    "persona": "ALEX_DIRECT"
+  },
+  {
+    "ts": "2026-02-28T17:26:18.455Z",
+    "domain": "qantum.site",
+    "to": "papica777@gmail.com",
+    "score": 16,
+    "grade": "F",
+    "sent": true,
+    "id": "<90bf5c41-9c6a-aa52-a913-52aa12a0bca9@qantum.site>",
+    "persona": "DIMI_TECHNICAL"
+  },
+  {
+    "ts": "2026-02-28T17:57:45.491Z",
+    "domain": "qantum.site",
+    "to": "dp@qantum.site",
+    "score": 16,
+    "grade": "F",
+    "sent": true,
+    "id": "<5da5241c-c354-9efd-b1c4-987199f444b0@qantum.site>",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-02-28T17:58:22.170Z",
+    "domain": "qantum.site",
+    "to": "papica777@gmail.com",
+    "score": 16,
+    "grade": "F",
+    "sent": true,
+    "id": "<94acde47-7059-626d-fb5f-111e6c65775b@qantum.site>",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-02-28T18:14:32.929Z",
+    "domain": "qantum.site",
+    "to": "dp@qantum.site",
+    "score": 16,
+    "grade": "F",
+    "sent": true,
+    "id": "<212afbfa-e150-c010-8b39-d180fc46e64b@qantum.site>",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-02-28T18:15:09.402Z",
+    "domain": "qantum.site",
+    "to": "papica777@gmail.com",
+    "score": 16,
+    "grade": "F",
+    "sent": true,
+    "id": "<a076b389-0c65-ad5d-522a-6ceacdf8f40a@qantum.site>",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-03-01T00:11:14.960Z",
+    "domain": "qantum.site",
+    "to": "dp@qantum.site",
+    "score": 16,
+    "grade": "F",
+    "sent": true,
+    "id": "<6d4d60ef-9506-6ed1-6b1e-ef4ee6f02f94@qantum.site>",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-03-01T00:11:51.478Z",
+    "domain": "qantum.site",
+    "to": "papica777@gmail.com",
+    "score": 16,
+    "grade": "F",
+    "sent": true,
+    "id": "<c7be8fee-c7e6-4319-8013-e7aec209042b@qantum.site>",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-03-01T00:12:06.346Z",
+    "domain": "qantum.site",
+    "to": "dp@qantum.site",
+    "score": 16,
+    "grade": "F",
+    "sent": true,
+    "id": "<2636463c-b11d-f334-3ba3-8bd9e926d058@qantum.site>",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-03-01T00:12:42.849Z",
+    "domain": "qantum.site",
+    "to": "papica777@gmail.com",
+    "score": 16,
+    "grade": "F",
+    "sent": true,
+    "id": "<f37e5537-b79b-d015-f059-d0bcc84d37a6@qantum.site>",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-03-01T01:11:29.059Z",
+    "domain": "coinbase.com",
+    "to": "security@coinbase.com",
+    "score": 40,
+    "grade": "D",
+    "sent": false,
+    "err": "INVALID_MX_RECORD: No mail server found",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-03-01T06:12:46.761Z",
+    "domain": "coinbase.com",
+    "to": "security@coinbase.com",
+    "score": 40,
+    "grade": "D",
+    "sent": false,
+    "err": "INVALID_MX_RECORD: No mail server found",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-03-01T06:13:21.778Z",
+    "domain": "ethereum.org",
+    "to": "vitalik.buterin@ethereum.org",
+    "score": 47,
+    "grade": "D",
+    "sent": false,
+    "err": "INVALID_MX_RECORD: No mail server found",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-03-01T06:13:56.785Z",
+    "domain": "qantum.site",
+    "to": "dp@qantum.site",
+    "score": 16,
+    "grade": "F",
+    "sent": false,
+    "err": "INVALID_MX_RECORD: No mail server found",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-03-01T06:14:31.798Z",
+    "domain": "qantum.site",
+    "to": "papica777@gmail.com",
+    "score": 16,
+    "grade": "F",
+    "sent": false,
+    "err": "INVALID_MX_RECORD: No mail server found",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-03-01T06:15:06.820Z",
+    "domain": "a16z.com",
+    "to": "dealflow@a16z.com",
+    "score": 76,
+    "grade": "B",
+    "sent": false,
+    "err": "INVALID_MX_RECORD: No mail server found",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-03-01T06:15:41.828Z",
+    "domain": "modular.com",
+    "to": "chris@modular.com",
+    "score": 76,
+    "grade": "B",
+    "sent": false,
+    "err": "INVALID_MX_RECORD: No mail server found",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-03-01T06:16:16.840Z",
+    "domain": "openai.com",
+    "to": "partnerships@openai.com",
+    "score": 76,
+    "grade": "B",
+    "sent": false,
+    "err": "INVALID_MX_RECORD: No mail server found",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-03-01T12:12:48.361Z",
+    "domain": "coinbase.com",
+    "to": "security@coinbase.com",
+    "score": 40,
+    "grade": "D",
+    "sent": true,
+    "id": "<8d0f581a-b93a-d96b-7ea0-4b28221aec27@qantum.site>",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-03-01T12:13:25.022Z",
+    "domain": "ethereum.org",
+    "to": "vitalik.buterin@ethereum.org",
+    "score": 47,
+    "grade": "D",
+    "sent": true,
+    "id": "<3caa1e58-f431-fe3a-e2a9-ed2d127b7511@qantum.site>",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-03-01T12:14:01.956Z",
+    "domain": "qantum.site",
+    "to": "dp@qantum.site",
+    "score": 16,
+    "grade": "F",
+    "sent": true,
+    "id": "<33f0bf19-9c95-b240-34eb-e980ef1aa4e5@qantum.site>",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-03-01T12:14:38.748Z",
+    "domain": "qantum.site",
+    "to": "papica777@gmail.com",
+    "score": 16,
+    "grade": "F",
+    "sent": true,
+    "id": "<9fcf1376-d656-74b3-24eb-537aafd9d675@qantum.site>",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-03-01T12:15:15.259Z",
+    "domain": "a16z.com",
+    "to": "dealflow@a16z.com",
+    "score": 76,
+    "grade": "B",
+    "sent": true,
+    "id": "<48068264-3e21-c7b6-4621-0e457e4293e8@qantum.site>",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-03-01T12:15:52.118Z",
+    "domain": "modular.com",
+    "to": "chris@modular.com",
+    "score": 76,
+    "grade": "B",
+    "sent": true,
+    "id": "<64d1037f-f4ec-4482-c19b-dd7a7c55bf61@qantum.site>",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-03-01T12:16:29.639Z",
+    "domain": "openai.com",
+    "to": "partnerships@openai.com",
+    "score": 76,
+    "grade": "B",
+    "sent": true,
+    "id": "<e9025aa0-3e41-bb74-6a47-cce0309cb8bf@qantum.site>",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-03-01T21:45:47.152Z",
+    "domain": "coinbase.com",
+    "to": "security@coinbase.com",
+    "score": 40,
+    "grade": "D",
+    "sent": true,
+    "id": "<370a0580-6cc4-68c5-9071-6dcf1eb4a473@qantum.site>",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-03-01T21:46:23.705Z",
+    "domain": "ethereum.org",
+    "to": "vitalik.buterin@ethereum.org",
+    "score": 47,
+    "grade": "D",
+    "sent": true,
+    "id": "<86cd5bb5-075a-4c7a-2109-9735d63f9026@qantum.site>",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-03-01T21:47:00.256Z",
+    "domain": "qantum.site",
+    "to": "dp@qantum.site",
+    "score": 16,
+    "grade": "F",
+    "sent": true,
+    "id": "<fe52eeef-68f6-4055-6e83-4c0a3fd8f4ba@qantum.site>",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-03-01T21:47:36.800Z",
+    "domain": "qantum.site",
+    "to": "papica777@gmail.com",
+    "score": 16,
+    "grade": "F",
+    "sent": true,
+    "id": "<ff531e77-f085-aac6-479a-6a466f8c3f68@qantum.site>",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-03-01T21:48:13.398Z",
+    "domain": "a16z.com",
+    "to": "dealflow@a16z.com",
+    "score": 76,
+    "grade": "B",
+    "sent": true,
+    "id": "<253a9a28-d6c0-ea92-e50f-1bdceeef7209@qantum.site>",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-03-01T21:48:49.904Z",
+    "domain": "modular.com",
+    "to": "chris@modular.com",
+    "score": 76,
+    "grade": "B",
+    "sent": true,
+    "id": "<eae1e956-0cdb-e327-771b-65362a034121@qantum.site>",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-03-01T21:49:26.384Z",
+    "domain": "openai.com",
+    "to": "partnerships@openai.com",
+    "score": 76,
+    "grade": "B",
+    "sent": true,
+    "id": "<bf289a87-af60-54a5-d5ec-f204b6e2770a@qantum.site>",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-03-01T22:46:52.084Z",
+    "domain": "coinbase.com",
+    "to": "security@coinbase.com",
+    "score": 40,
+    "grade": "D",
+    "sent": true,
+    "id": "<6e7d7999-0fff-a1c9-d1a9-3d2ffe4ba275@qantum.site>",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-03-01T22:47:28.608Z",
+    "domain": "ethereum.org",
+    "to": "vitalik.buterin@ethereum.org",
+    "score": 47,
+    "grade": "D",
+    "sent": true,
+    "id": "<fa029b07-3eac-f8b1-a253-df734e193582@qantum.site>",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-03-01T22:48:05.404Z",
+    "domain": "qantum.site",
+    "to": "dp@qantum.site",
+    "score": 16,
+    "grade": "F",
+    "sent": true,
+    "id": "<3fade593-e50b-ac83-9ed4-9c23c8ed664a@qantum.site>",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-03-01T22:48:42.812Z",
+    "domain": "qantum.site",
+    "to": "papica777@gmail.com",
+    "score": 16,
+    "grade": "F",
+    "sent": true,
+    "id": "<127da54a-d428-9166-dd1e-725a29e1f833@qantum.site>",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-03-01T22:49:19.305Z",
+    "domain": "a16z.com",
+    "to": "dealflow@a16z.com",
+    "score": 76,
+    "grade": "B",
+    "sent": true,
+    "id": "<42be47d4-34be-b62e-e9bb-cd466c003c77@qantum.site>",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-03-01T22:49:56.831Z",
+    "domain": "modular.com",
+    "to": "chris@modular.com",
+    "score": 76,
+    "grade": "B",
+    "sent": true,
+    "id": "<37bc8c66-6be1-9a5b-b922-97122cb46ac5@qantum.site>",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-03-01T22:50:34.335Z",
+    "domain": "openai.com",
+    "to": "partnerships@openai.com",
+    "score": 76,
+    "grade": "B",
+    "sent": true,
+    "id": "<3b8a364c-c241-f4c3-4670-0492de94619f@qantum.site>",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-03-03T11:54:21.404Z",
+    "domain": "coinbase.com",
+    "to": "security@coinbase.com",
+    "score": 40,
+    "grade": "D",
+    "sent": false,
+    "err": "Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials ffacd0b85a97d-439b59723fesm15472202f8f.38 - gsmtp",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-03-03T11:54:57.348Z",
+    "domain": "ethereum.org",
+    "to": "vitalik.buterin@ethereum.org",
+    "score": 47,
+    "grade": "D",
+    "sent": false,
+    "err": "Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-483c3b3471asm363576495e9.3 - gsmtp",
+    "persona": "AETERNA_LOGOS"
+  },
+  {
+    "ts": "2026-03-03T11:55:33.398Z",
+    "domain": "qantum.site",
+    "to": "dp@qantum.site",
+    "score": 16,
+    "grade": "F",
+    "sent": false,
+    "err": "Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to\n535 5.7.8  https://support.google.com/mail/?p=BadCredentials a640c23a62f3a-b935ac84357sm586941066b.30 - gsmtp",
+    "persona": "AETERNA_LOGOS"
+  }
+]

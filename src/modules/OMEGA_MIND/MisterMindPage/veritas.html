@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veritas SDK | The Sovereign Truth Layer for AI | QAntum</title>
+    <meta name="description"
+        content="Ground your AI in reality. The anti-hallucination SDK that verifies every symbol, every import, every reference against your real codebase.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Veritas SDK - Stop AI Hallucinations">
+    <meta property="og:description" content="Ground your AI in reality. Verify code against truth.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://veritras.online">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: hsl(250, 85%, 65%);
+            --primary-glow: hsla(250, 85%, 65%, 0.4);
+            --accent: hsl(145, 80%, 50%);
+            --accent-glow: hsla(145, 80%, 50%, 0.4);
+            --danger: hsl(355, 85%, 60%);
+            --bg-obsidian: hsl(240, 25%, 4%);
+            --bg-glass: hsla(240, 25%, 8%, 0.7);
+            --text-platinum: hsl(210, 20%, 95%);
+            --text-muted: hsl(210, 15%, 70%);
+            --border-glass: hsla(210, 20%, 100%, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg-obsidian);
+            color: var(--text-platinum);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image:
+                radial-gradient(circle at 10% 20%, hsla(250, 80%, 20%, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, hsla(145, 80%, 15%, 0.1) 0%, transparent 40%);
+        }
+
+        /* Glassmorphism Utility */
+        .glass {
+            background: var(--bg-glass);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--border-glass);
+            border-radius: 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 2rem;
+            position: relative;
+        }
+
+        .hero-bg-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            opacity: 0.1;
+            z-index: -1;
+            filter: blur(40px);
+        }
+
+        .badge-sovereign {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: hsla(250, 85%, 65%, 0.15);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 0.6rem 1.25rem;
+            border-radius: 9999px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: glow-pulse 3s infinite;
+        }
+
+        @keyframes glow-pulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 10px var(--primary-glow);
+                border-color: var(--primary);
+            }
+
+            50% {
+                box-shadow: 0 0 30px var(--primary-glow);
+                border-color: var(--accent);
+            }
+        }
+
+        h1 {
+            font-size: clamp(3rem, 10vw, 6rem);
+            font-weight: 800;
+            line-height: 1.05;
+            margin-bottom: 2rem;
+            letter-spacing: -2px;
+            background: linear-gradient(135deg, #fff 20%, var(--primary) 60%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tagline {
+            font-size: clamp(1.25rem, 4vw, 1.85rem);
+            color: var(--text-muted);
+            max-width: 850px;
+            margin-bottom: 4rem;
+            font-weight: 300;
+        }
+
+        .tagline strong {
+            color: var(--danger);
+            font-weight: 600;
+        }
+
+        .cta-container {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            z-index: 10;
+        }
+
+        .btn-nexus {
+            padding: 1.25rem 2.5rem;
+            border-radius: 1rem;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .btn-primary-nexus {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 10px 30px var(--primary-glow);
+        }
+
+        .btn-primary-nexus:hover {
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 20px 50px var(--primary-glow);
+            filter: brightness(1.1);
+        }
+
+        .btn-outline-nexus {
+            background: transparent;
+            color: var(--text-platinum);
+            border: 2px solid var(--border-glass);
+        }
+
+        .btn-outline-nexus:hover {
+            background: var(--border-glass);
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* Neural QA Nexus Showcase */
+        .nexus-showcase {
+            width: 100%;
+            max-width: 1100px;
+            margin: 6rem auto;
+            position: relative;
+            z-index: 5;
+        }
+
+        .nexus-image {
+            width: 100%;
+            border-radius: 2rem;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.8);
+            border: 2px solid var(--border-glass);
+        }
+
+        /* Code Terminal */
+        .terminal-glass {
+            width: 100%;
+            max-width: 850px;
+            margin: 4rem auto;
+            text-align: left;
+        }
+
+        .terminal-header {
+            padding: 1.25rem;
+            background: hsla(240, 25%, 5%, 0.8);
+            border-bottom: 1px solid var(--border-glass);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-top-left-radius: 1.5rem;
+            border-top-right-radius: 1.5rem;
+        }
+
+        .terminal-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+        }
+
+        .dot-red {
+            background: var(--danger);
+        }
+
+        .dot-orange {
+            background: hsl(35, 90%, 55%);
+        }
+
+        .dot-green {
+            background: var(--accent);
+        }
+
+        .terminal-body {
+            padding: 2.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.95rem;
+            overflow-x: auto;
+        }
+
+        .code-keyword {
+            color: hsl(300, 70%, 75%);
+        }
+
+        .code-string {
+            color: var(--accent);
+        }
+
+        .code-comment {
+            color: hsl(210, 10%, 40%);
+        }
+
+        .code-error {
+            color: var(--danger);
+            font-weight: 700;
+            text-decoration: underline;
+        }
+
+        /* Feature Matrix */
+        .feature-section {
+            padding: 10rem 2rem;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 6rem;
+        }
+
+        .section-header h2 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .matrix-item {
+            padding: 3rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .matrix-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--primary);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .matrix-item:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+        }
+
+        .matrix-item:hover::after {
+            opacity: 1;
+        }
+
+        .matrix-icon {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        .matrix-item h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1.25rem;
+            font-weight: 700;
+        }
+
+        /* Pricing Architecture */
+        .pricing-section {
+            padding: 8rem 2rem;
+            background: linear-gradient(180deg, transparent, hsla(250, 80%, 10%, 0.3), transparent);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 4rem auto;
+        }
+
+        .plan-card {
+            padding: 3.5rem;
+            display: flex;
+            flex-direction: column;
+            border-radius: 2rem;
+        }
+
+        .plan-card.empire {
+            border: 2px solid var(--primary);
+            box-shadow: 0 0 50px var(--primary-glow);
+            transform: scale(1.05);
+        }
+
+        .plan-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary);
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .plan-price {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: baseline;
+        }
+
+        .plan-price span {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            margin-left: 0.5rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: 3rem;
+            flex-grow: 1;
+        }
+
+        .feature-list li {
+            padding: 0.75rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--text-muted);
+        }
+
+        .feature-list li::before {
+            content: '→';
+            color: var(--accent);
+            font-weight: 900;
+        }
+
+        /* Footer */
+        footer {
+            padding: 6rem 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border-glass);
+        }
+
+        .footer-brand {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            letter-spacing: -1px;
+        }
+
+        .footer-socials {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .social-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .social-link:hover {
+            color: var(--primary);
+        }
+
+        .architect-info {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive Flow */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3.5rem;
+            }
+
+            .matrix-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .plan-card.empire {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Global Navigation -->
+    <nav
+        style="position: fixed; top: 0; left: 0; right: 0; padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; z-index: 100; background: hsla(240, 25%, 4%, 0.8); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-glass);">
+        <div style="font-weight: 800; letter-spacing: 1px; color: var(--text-platinum);">VERITAS<span
+                style="color: var(--primary);">SDK</span></div>
+        <div style="display: flex; gap: 2rem;">
+            <a href="https://veritras.online"
+                style="color: var(--primary); text-decoration: none; font-weight: 600; font-size: 0.9rem; letter-spacing: 1px;">MARKETING</a>
+            <a href="https://veritras.website"
+                style="color: var(--text-muted); text-decoration: none; font-weight: 600; font-size: 0.9rem; letter-spacing: 1px; transition: color 0.3s;"
+                onmouseover="this.style.color='var(--primary)'"
+                onmouseout="this.style.color='var(--text-muted)'">DOCUMENTATION</a>
+            <a href="https://aeterna.website"
+                style="color: var(--text-muted); text-decoration: none; font-weight: 600; font-size: 0.9rem; letter-spacing: 1px; transition: color 0.3s;"
+                onmouseover="this.style.color='var(--primary)'"
+                onmouseout="this.style.color='var(--text-muted)'">AETERNA PLATFORM</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <img src="/brain/50bd67e4-5ba4-4e45-905f-f9fec4eb9c9c/neural_qa_nexus_dashboard_1772246277509.png"
+            class="hero-bg-image" alt="QAntum Background">
+
+        <div class="badge-sovereign">
+            <span>✧</span>
+            <span>Veritas SDK v1.0 Singularity</span>
+        </div>
+
+        <h1>ZERO ENTROPY.<br>ZERO HALLUCINATIONS.</h1>
+
+        <p class="tagline">
+            Ground your AI in biological reality. Veritas SDK verifies every symbol,
+            class, and dependency against the <strong>physical substrate</strong> of your codebase.
+        </p>
+
+        <div class="cta-container">
+            <a href="#matrix" class="btn-nexus btn-primary-nexus">
+                <span>Deploy Veritas</span>
+                <span>⚡</span>
+            </a>
+            <a href="https://veritras.website" class="btn-nexus btn-outline-nexus">
+                <span>Documentation</span>
+            </a>
+            <a href="https://aeterna.website" class="btn-nexus btn-outline-nexus"
+                style="border-color: var(--primary); color: var(--primary);">
+                <span>Aeterna Engine</span>
+            </a>
+        </div>
+
+        <!-- Neural Nexus Showcase -->
+        <div class="nexus-showcase">
+            <img src="/brain/50bd67e4-5ba4-4e45-905f-f9fec4eb9c9c/neural_qa_nexus_dashboard_1772246277509.png"
+                class="nexus-image" alt="Neural QA Nexus Dashboard">
+        </div>
+
+        <!-- Code Terminal -->
+        <div class="terminal-glass glass">
+            <div class="terminal-header">
+                <div class="terminal-dot dot-red"></div>
+                <div class="terminal-dot dot-orange"></div>
+                <div class="terminal-dot dot-green"></div>
+                <span style="font-size: 0.8rem; opacity: 0.5; margin-left: 1rem;">veritas_verification_log.sh</span>
+            </div>
+            <div class="terminal-body">
+                <pre><span class="code-comment">// AI attempting to use a hallucinated module</span>
+<span class="code-keyword">import</span> { <span class="code-error">GhostProtocol</span> } <span class="code-keyword">from</span> <span class="code-string">'@qantum/security'</span>;
+<span class="code-comment">// ERROR: Module '@qantum/security' does not export 'GhostProtocol'</span>
+
+<span class="code-comment">// Grounding via Veritas SDK</span>
+<span class="code-keyword">const</span> nexus = <span class="code-keyword">await</span> <span class="code-keyword">Veritas</span>.create();
+<span class="code-keyword">const</span> analysis = nexus.validateCode(suggestedSnippet);
+
+<span class="code-comment">// Output:</span>
+[VERITAS_NEXUS] Hallucination Detected: <span class="code-error">'GhostProtocol'</span>
+[VERITAS_NEXUS] Suggested alternative: <span class="code-string">'BastionController'</span>
+[VERITAS_NEXUS] Confidence: <span class="code-string">100% Reality Alignment</span></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- Matrix Features -->
+    <section class="feature-section" id="matrix">
+        <div class="section-header">
+            <div class="badge-sovereign" style="animation: none; margin-bottom: 1rem;">Core Capabilities</div>
+            <h2>Neural Architectural Integrity</h2>
+            <p class="tagline" style="margin: 0 auto;">Eliminating cognitive friction between AI and Code.</p>
+        </div>
+
+        <div class="matrix-grid">
+            <div class="matrix-item glass">
+                <span class="matrix-icon">🧠</span>
+                <h3>Cognitive Assimilation</h3>
+                <p>Veritas scans your entire ecosystem, building a persistent neural index of every valid symbol, type,
+                    and relationship.</p>
+            </div>
+            <div class="matrix-item glass">
+                <span class="matrix-icon">⚖️</span>
+                <h3>Truth Enforcement</h3>
+                <p>Real-time O(1) verification. If a symbol doesn't exist in the physical file system, Veritas rejects
+                    it as fiction.</p>
+            </div>
+            <div class="matrix-item glass">
+                <span class="matrix-icon">🕸️</span>
+                <h3>Semantic Mapping</h3>
+                <p>Visualize the flow of logic. Veritas identifies isolated code islands and prevents AI from inventing
+                    bridges.</p>
+            </div>
+            <div class="matrix-item glass">
+                <span class="matrix-icon">🛡️</span>
+                <h3>PR Guardian</h3>
+                <p>Automated CI/CD integration. Block any PR containing AI-generated hallucinations before they reach
+                    production.</p>
+            </div>
+            <div class="matrix-item glass">
+                <span class="matrix-icon">📊</span>
+                <h3>Entropy Monitoring</h3>
+                <p>Track the health of your codebase. Identify areas with high complexity or low testing coverage that
+                    trigger AI hallucination.</p>
+            </div>
+            <div class="matrix-item glass">
+                <span class="matrix-icon">⚡</span>
+                <h3>Atomic Operations</h3>
+                <p>Designed for multi-threaded performance on Ryzen hardware. Sub-millisecond verification for
+                    large-scale monorepos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="pricing-section">
+        <div class="section-header">
+            <h2>Economic Alignment</h2>
+        </div>
+
+        <div class="pricing-grid">
+            <div class="plan-card glass">
+                <span class="plan-name">SOVEREIGN</span>
+                <div class="plan-price">$0<span>/life</span></div>
+                <ul class="feature-list">
+                    <li>50 Source Files</li>
+                    <li>Basic Assimilation</li>
+                    <li>Symbol Verification</li>
+                    <li>Community Nexus Access</li>
+                </ul>
+                <a href="https://veritras.website" class="btn-nexus btn-outline-nexus">Initialize SDK</a>
+            </div>
+
+            <div class="plan-card glass empire">
+                <span class="plan-name">AETERNA ENTERPRISE</span>
+                <div class="plan-price">$999<span>/lifetime</span></div>
+                <ul class="feature-list">
+                    <li>Unlimited Architecture</li>
+                    <li>Neural Context Engine</li>
+                    <li>Type Generation (v2)</li>
+                    <li>CI/CD Guardian Mode</li>
+                    <li>Zero-Latency Support</li>
+                    <li>Autonomous Self-Healing</li>
+                </ul>
+                <a href="https://buy.stripe.com/6oU28r1odez7bHk6dO0Ba06" class="btn-nexus btn-primary-nexus">BUY
+                    ENTERPRISE NOW</a>
+            </div>
+
+            <div class="plan-card glass">
+                <span class="plan-name">SINGULARITY</span>
+                <div class="plan-price">Custom</div>
+                <ul class="feature-list">
+                    <li>White-Label Sovereignty</li>
+                    <li>On-Premise Deployment</li>
+                    <li>Custom Training Adapters</li>
+                    <li>Architect Direct Access</li>
+                    <li>Quantum Entropy Guard</li>
+                </ul>
+                <a href="mailto:dp@qantum.site" class="btn-nexus btn-outline-nexus">Connect to Nexus</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-brand">QANTUM SENTINEL</div>
+        <div class="footer-socials">
+            <a href="https://veritras.online" class="social-link">VERITRAS.ONLINE</a>
+            <a href="https://veritras.website" class="social-link">VERITRAS.WEBSITE</a>
+            <a href="https://aeterna.website" class="social-link">AETERNA.WEBSITE</a>
+            <a href="mailto:dp@qantum.site" class="social-link">CONTACT</a>
+        </div>
+        <div class="architect-info">
+            <p>© 2025-2026 QAntum Labs. All Rights Reserved.</p>
+            <p>Designed by THE ARCHITECT in Bulgaria 🇧🇬</p>
+            <p style="margin-top: 1rem; font-family: 'JetBrains Mono'; font-size: 0.8rem; color: var(--primary);">
+                STATUS: REALITY_GROUNDED_100%</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

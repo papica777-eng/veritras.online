@@ -1,0 +1,15 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /nerve-center/{document=**} {
+      allow read: if true;
+      allow write: if true;
+    }
+    match /commands/{document=**} {
+      allow read, write: if true;
+    }
+    match /telemetry/{document=**} {
+      allow read, write: if true;
+    }
+  }
+}

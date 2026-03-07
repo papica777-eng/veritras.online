@@ -1,0 +1,20 @@
+[
+  {
+    "success": true,
+    "timestamp": "2026-02-26T21:24:12.108Z",
+    "to": "contact@devrix.com",
+    "messageId": "<33f60c12-b1d3-b95c-9820-950f787c761b@gmail.com>"
+  },
+  {
+    "success": true,
+    "timestamp": "2026-02-26T21:24:20.360Z",
+    "to": "human@xplora.bg",
+    "messageId": "<9913118e-ca44-6e8b-21fb-384edc7168d6@gmail.com>"
+  },
+  {
+    "success": true,
+    "timestamp": "2026-02-26T21:24:26.975Z",
+    "to": "reklama@netinfo.bg",
+    "messageId": "<52f940a1-49a1-f9e2-28c1-a07cb30f0f7b@gmail.com>"
+  }
+]

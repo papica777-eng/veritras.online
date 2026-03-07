@@ -1,0 +1,75 @@
+{
+  // ╔═══════════════════════════════════════════════════════════════════╗
+  // ║  🛡️ QAntum CORE - MAXIMUM PERFORMANCE SETTINGS                   ║
+  // ║  📊 1,082,249 lines | 2,398 files | Optimized 02.01.2026          ║
+  // ║  ⚡ Use QAntum.code-workspace for full Empire experience          ║
+  // ╚═══════════════════════════════════════════════════════════════════╝
+
+  // === 🦾 TYPESCRIPT PERFORMANCE ===
+  "typescript.tsserver.maxTsServerMemory": 3072,
+  "typescript.disableAutomaticTypeAcquisition": true,
+  "typescript.preferences.includePackageJsonAutoImports": "off",
+  "typescript.tsserver.experimental.enableProjectDiagnostics": false,
+  "typescript.workspaceSymbols.scope": "currentProject",
+
+  // === 👁️ FILE WATCHER EXCLUSIONS ===
+  "files.watcherExclude": {
+    "**/node_modules/**": true,
+    "**/dist/**": true,
+    "**/dist-forge/**": true,
+    "**/dist-protected/**": true,
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/data/**": true,
+    "**/.venv/**": true,
+    "**/out/**": true,
+    "**/coverage/**": true
+  },
+
+  // === 🔍 SEARCH EXCLUSIONS ===
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/dist-forge": true,
+    "**/dist-protected": true,
+    "**/*.lock": true,
+    "**/package-lock.json": true,
+    "**/data/vectors": true,
+    "**/data/models": true,
+    "**/.venv": true
+  },
+
+  // === 🩸 CODE LENS OFF (The Vampire Killer) ===
+  "editor.codeLens": false,
+  "typescript.referencesCodeLens.enabled": false,
+  "typescript.implementationsCodeLens.enabled": false,
+
+  // === 🗺️ VISUAL NOISE OFF ===
+  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": false,
+  "editor.renderWhitespace": "none",
+  "editor.smoothScrolling": false,
+  "editor.cursorBlinking": "solid",
+  "editor.cursorSmoothCaretAnimation": "off",
+  "editor.occurrencesHighlight": "off",
+  "editor.renderLineHighlight": "line",
+  "editor.guides.indentation": false,
+  "editor.hover.delay": 500,
+  "editor.quickSuggestionsDelay": 100,
+  "editor.parameterHints.enabled": false,
+
+  // === 🐙 GIT PERFORMANCE ===
+  "git.autorefresh": false,
+  "git.decorations.enabled": false,
+  "git.autofetch": false,
+
+  // === 🔇 TELEMETRY OFF ===
+  "telemetry.telemetryLevel": "off",
+
+  // === 🎯 EXPLORER ===
+  "explorer.autoReveal": false,
+  "explorer.confirmDelete": false,
+
+  // === 🔌 EXTENSIONS ===
+  "extensions.autoUpdate": false
+}

@@ -1,0 +1,45 @@
+🚀 QANTUM INTEGRATION PLAN
+════════════════════════════════════════════════════════════
+
+📊 OVERVIEW:
+  Top Modules Analyzed: 50
+  OmniCore Integrations: 3
+  Shared Library Modules: 30
+  Training Examples: 469
+
+🏆 TOP 10 MOST VALUABLE MODULES:
+  1. core.types.ts (Score: 268.40)
+     Category: other, Complexity: 1, Reusability: 84.00
+  2. core.types.ts (Score: 268.40)
+     Category: other, Complexity: 1, Reusability: 84.00
+  3. types.ts (Score: 142.75)
+     Category: other, Complexity: 1, Reusability: 45.00
+  4. index.d.ts (Score: 134.40)
+     Category: other, Complexity: 1, Reusability: 42.00
+  5. index.ts (Score: 134.40)
+     Category: other, Complexity: 1, Reusability: 42.00
+  6. index.d.ts (Score: 134.40)
+     Category: other, Complexity: 1, Reusability: 42.00
+  7. index.ts (Score: 134.40)
+     Category: other, Complexity: 1, Reusability: 42.00
+  8. websocket-protocol.types.ts (Score: 123.75)
+     Category: other, Complexity: 2, Reusability: 37.00
+  9. websocket-protocol.types.ts (Score: 123.75)
+     Category: other, Complexity: 2, Reusability: 37.00
+  10. types.ts (Score: 122.40)
+     Category: security, Complexity: 1, Reusability: 28.00
+
+🧠 OMNICORE INTEGRATION CANDIDATES:
+  1. types.ts
+  2. types.ts
+  3. swarm-interfaces.ts
+
+📦 SHARED LIBRARY MODULES:
+  other: 32 modules
+  security: 2 modules
+  enterprise: 14 modules
+  infrastructure: 1 modules
+  swarm: 1 modules
+
+🤖 TRAINING DATASET STATISTICS:
+  TypeScript: 469 examples

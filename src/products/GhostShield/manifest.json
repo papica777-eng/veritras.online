@@ -1,0 +1,11 @@
+{
+    "name": "GhostShield SDK",
+    "version": "1.0.0-QAntum",
+    "type": "Security",
+    "description": "Enterprise-grade Bot Detection Bypass and Anti-Fingerprinting Shield.",
+    "price_model": "License (starts at €5k/year)",
+    "files": [
+        "core/Engine.ts"
+    ],
+    "status": "READY"
+}

@@ -1,0 +1,23 @@
+{
+  // ╔═══════════════════════════════════════════════════════════════════╗
+  // ║  🌐 MISTERMINDPAGE - LIGHTWEIGHT SETTINGS                         ║
+  // ║  ~7,249 lines | 8 files | Static HTML/CSS/JS                      ║
+  // ╚═══════════════════════════════════════════════════════════════════╝
+
+  // === MINIMAL EXCLUSIONS (Small repo) ===
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true
+  },
+
+  // === EDITOR ===
+  "editor.minimap.enabled": false,
+  "editor.codeLens": false,
+  "breadcrumbs.enabled": false,
+
+  // === GIT ===
+  "git.autorefresh": false,
+
+  // === TELEMETRY ===
+  "telemetry.telemetryLevel": "off"
+}

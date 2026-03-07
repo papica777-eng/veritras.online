@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>QAntum Sequence</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        body {
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .diagram-box {
+            background: #111;
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            box-shadow: 0 0 50px rgba(0, 255, 65, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="diagram-box">
+        <div class="mermaid">
+            sequenceDiagram
+            autonumber
+            participant Sensor as 📡 AirSensor (Sofia)
+            participant Nexus as 💠 HealingNexus
+            participant Apoptosis as 💀 ApoptosisModule
+            participant Ledger as 📜 TruthLedger
+
+            box rgb(20, 40, 20) PHASE 1: HEALTHY STATE
+            end
+
+            Sensor->>Nexus: 1. Send BioToken (Entropy: 0.05)
+            Nexus->>Apoptosis: 2. Verify Vitality
+            Apoptosis->>Apoptosis: 3. Check Signature ✅
+            Apoptosis->>Apoptosis: 4. Check Entropy (0.05 < 0.3) ✅ Apoptosis-->>Nexus: 5. VITALITY CONFIRMED
+                Nexus->>Ledger: 6. Record Clean Data
+
+                box rgb(60, 20, 20) PHASE 2: TOXIC ATTACK
+                end
+
+                Sensor->>Nexus: 7. Send BioToken (Entropy: 0.85)
+                Note right of Sensor: ⚠️ PM2.5 = 9999 (Impossible)
+                Nexus->>Apoptosis: 8. Verify Vitality
+                Apoptosis->>Apoptosis: 9. Check Signature ✅ (Auth OK)
+                Apoptosis->>Apoptosis: 10. Check Entropy (0.85 > 0.3) ❌
+
+                rect rgb(100, 0, 0)
+                Apoptosis->>Sensor: 11. 🔫 TRIGGER SHUTDOWN
+                Note over Apoptosis: APOPTOSIS EXECUTED
+                end
+
+                Apoptosis->>Ledger: 12. Log: "TOXIC EVENT BLOCKED"
+        </div>
+    </div>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'dark',
+            themeVariables: {
+                actorBkg: '#000',
+                actorBorder: '#00ff41',
+                actorTextColor: '#fff',
+                signalColor: '#00ff41',
+                signalTextColor: '#ddd',
+                noteBkgColor: '#222',
+                noteBorderColor: '#ffcc00'
+            }
+        });
+    </script>
+</body>
+
+</html>

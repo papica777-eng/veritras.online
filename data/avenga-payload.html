@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avenga | Senior SDET Proposal | Dimitar Prodromov</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap');
+
+        :root {
+            --bg-base: #0a0c10;
+            --bg-accent: #11141d;
+            --text-primary: #f0f2f5;
+            --text-secondary: #8b949e;
+            --accent-blue: #3b82f6;
+            --accent-purple: #8b5cf6;
+            --accent-indigo: #6366f1;
+            --glass-bg: rgba(20, 24, 36, 0.45);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            --entropy-teal: #14b8a6;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image:
+                radial-gradient(ellipse at top right, rgba(99, 102, 241, 0.12), transparent 40%),
+                radial-gradient(ellipse at bottom left, rgba(139, 92, 246, 0.1), transparent 40%);
+            background-attachment: fixed;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 4rem;
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .eyebrow {
+            display: inline-block;
+            padding: 0.4rem 1.2rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            color: var(--text-primary);
+            background: linear-gradient(90deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 100px;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin: 0 0 1rem 0;
+            line-height: 1.1;
+            background: linear-gradient(to right, #ffffff, #a5b4fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+        }
+
+        p.subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: var(--glass-shadow);
+            margin-bottom: 3rem;
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-panel:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Subtle top highlight for glass panels */
+        .glass-panel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-top: 0;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .icon-circle {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(99, 102, 241, 0.2);
+            border: 1px solid rgba(99, 102, 241, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .zero-entropy {
+            color: var(--entropy-teal);
+            font-weight: 600;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .ide-window {
+            background: #0d1117;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .ide-header {
+            background: #161b22;
+            padding: 8px 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+        }
+
+        .mac-dots {
+            display: flex;
+            gap: 6px;
+            margin-right: 12px;
+        }
+
+        .mac-dots span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .dot-red {
+            background: #ff5f56;
+        }
+
+        .dot-yellow {
+            background: #ffbd2e;
+        }
+
+        .dot-green {
+            background: #27c93f;
+        }
+
+        .ide-content {
+            padding: 1.5rem;
+            color: #c9d1d9;
+            overflow-x: auto;
+            line-height: 1.6;
+        }
+
+        /* Syntax Highlighting */
+        .token.keyword {
+            color: #ff7b72;
+        }
+
+        .token.function {
+            color: #d2a8ff;
+        }
+
+        .token.string {
+            color: #a5d6ff;
+        }
+
+        .token.comment {
+            color: #8b949e;
+            font-style: italic;
+        }
+
+        .token.class-name {
+            color: #79c0ff;
+        }
+
+        .token.punctuation {
+            color: #c9d1d9;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .check-icon {
+            color: var(--entropy-teal);
+            font-weight: bold;
+            margin-top: 2px;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin-top: 5rem;
+            background: linear-gradient(145deg, rgba(20, 24, 36, 0.6), rgba(15, 18, 29, 0.8));
+            padding: 4rem;
+            border-radius: 24px;
+            border: 1px solid rgba(139, 92, 246, 0.2);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+
+        .primary-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--accent-indigo), var(--accent-purple));
+            color: white;
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+            background: linear-gradient(135deg, #7174f3, #9d75f8);
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .profile-signature {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 2rem;
+        }
+
+        .avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--accent-indigo);
+            font-family: 'JetBrains Mono', monospace;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header class="hero">
+            <div class="eyebrow">Architectural Proposal // Avenga</div>
+            <h1>Quality Assurance Engineered for Absolute Certainty.</h1>
+            <p class="subtitle">A tailored response to the Senior Software Engineer in Test position, designed for
+                Avenga's cutting-edge lottery platform.</p>
+        </header>
+
+        <div class="glass-panel">
+            <h2>
+                <div class="icon-circle">🎯</div>
+                The Lottery Platform Mandate
+            </h2>
+            <p>At Avenga, you are building a digital lottery system designed to ensure operational reliability and drive
+                growth. In this domain, a single flaky test or a missed state mutation translates directly to financial
+                dissonance and degraded player trust.</p>
+            <p>You do not need a standard tester who logs bugs. You need a Systems Architect who prevents them. I
+                implement <span class="zero-entropy">Zero Entropy</span> frameworks—deterministic, mathematically robust
+                testing environments that guarantee code behaves exactly as intended, 100% of the time.</p>
+        </div>
+
+        <div class="grid-2">
+            <!-- IDE Demonstration Window -->
+            <div class="ide-window">
+                <div class="ide-header">
+                    <div class="mac-dots">
+                        <span class="dot-red"></span>
+                        <span class="dot-yellow"></span>
+                        <span class="dot-green"></span>
+                    </div>
+                    <span>lotteryPurchaseFlow.spec.ts</span>
+                </div>
+                <div class="ide-content">
+                    <span class="token comment">// Hybrid Verification: Ensuring API and UI state are atomic.</span>
+                    <span class="token keyword">import</span> <span class="token punctuation">{</span> test<span
+                        class="token punctuation">,</span> expect <span class="token punctuation">}</span> <span
+                        class="token keyword">from</span> <span class="token string">'@playwright/test'</span><span
+                        class="token punctuation">;</span>
+                    <span class="token keyword">import</span> <span class="token punctuation">{</span> <span
+                        class="token class-name">LotteryTerminal</span> <span class="token punctuation">}</span> <span
+                        class="token keyword">from</span> <span
+                        class="token string">'../pom/LotteryTerminal'</span><span class="token punctuation">;</span>
+
+                    <span class="token function">test</span><span class="token punctuation">(</span><span
+                        class="token string">'Zero-Entropy: Ticket purchase state mutation'</span><span
+                        class="token punctuation">,</span> <span class="token keyword">async</span> <span
+                        class="token punctuation">(</span><span class="token punctuation">{</span> page <span
+                        class="token punctuation">}</span><span class="token punctuation">)</span> <span
+                        class="token keyword">=></span> <span class="token punctuation">{</span>
+                    <span class="token keyword">const</span> terminal <span class="token operator">=</span> <span
+                        class="token keyword">new</span> <span class="token class-name">LotteryTerminal</span><span
+                        class="token punctuation">(</span>page<span class="token punctuation">);</span>
+
+                    <span class="token comment">// 1. Intercept backend transaction stream</span>
+                    <span class="token keyword">const</span> purchasePromise <span class="token operator">=</span>
+                    page<span class="token punctuation">.</span><span class="token function">waitForResponse</span><span
+                        class="token punctuation">(</span>res <span class="token keyword">=></span>
+                    res<span class="token punctuation">.</span><span class="token function">url</span><span
+                        class="token punctuation">(</span><span class="token punctuation">)</span><span
+                        class="token punctuation">.</span><span class="token function">includes</span><span
+                        class="token punctuation">(</span><span
+                        class="token string">'/api/v1/lottery/purchase'</span><span class="token punctuation">)</span>
+                    <span class="token operator">&&</span>
+                    res<span class="token punctuation">.</span><span class="token function">status</span><span
+                        class="token punctuation">(</span><span class="token punctuation">)</span> <span
+                        class="token operator">===</span> <span class="token number">200</span>
+                    <span class="token punctuation">);</span>
+
+                    <span class="token comment">// 2. Execute UI state mutation</span>
+                    <span class="token keyword">await</span> terminal<span class="token punctuation">.</span><span
+                        class="token function">selectNumbers</span><span class="token punctuation">([</span><span
+                        class="token number">7</span><span class="token punctuation">,</span> <span
+                        class="token number">14</span><span class="token punctuation">,</span> <span
+                        class="token number">21</span><span class="token punctuation">,</span> <span
+                        class="token number">28</span><span class="token punctuation">,</span> <span
+                        class="token number">35</span><span class="token punctuation">,</span> <span
+                        class="token number">42</span><span class="token punctuation">]);</span>
+                    <span class="token keyword">await</span> terminal<span class="token punctuation">.</span><span
+                        class="token function">confirmPurchase</span><span class="token punctuation">(</span><span
+                        class="token punctuation">);</span>
+
+                    <span class="token comment">// 3. Hybrid Verification: Synchronized assertions</span>
+                    <span class="token keyword">const</span> response <span class="token operator">=</span> <span
+                        class="token keyword">await</span> purchasePromise<span class="token punctuation">;</span>
+                    <span class="token keyword">const</span> txData <span class="token operator">=</span> <span
+                        class="token keyword">await</span> response<span class="token punctuation">.</span><span
+                        class="token function">json</span><span class="token punctuation">(</span><span
+                        class="token punctuation">);</span>
+
+                    <span class="token function">expect</span><span class="token punctuation">(</span>txData<span
+                        class="token punctuation">.</span>status<span class="token punctuation">)</span><span
+                        class="token punctuation">.</span><span class="token function">toBe</span><span
+                        class="token punctuation">(</span><span class="token string">'CONFIRMED'</span><span
+                        class="token punctuation">);</span>
+                    <span class="token keyword">await</span> <span class="token function">expect</span><span
+                        class="token punctuation">(</span>terminal<span class="token punctuation">.</span><span
+                        class="token function">receiptNode</span><span class="token punctuation">(</span>txData<span
+                        class="token punctuation">.</span>ticketId<span class="token punctuation">))</span><span
+                        class="token punctuation">.</span><span class="token function">toBeVisible</span><span
+                        class="token punctuation">(</span><span class="token punctuation">);</span>
+                    <span class="token punctuation">});</span>
+                </div>
+            </div>
+
+            <div class="glass-panel" style="margin-bottom: 0;">
+                <h2>
+                    <div class="icon-circle">⚙️</div>
+                    The Engineering Value
+                </h2>
+                <ul class="feature-list">
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <div><strong>Hybrid Verification (Playwright/Cypress):</strong> Checking the UI is not enough. I
+                            validate the DOM against the intercepted API responses simultaneously.</div>
+                    </li>
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <div><strong>TypeScript Architecture:</strong> Strict typing, self-documenting code, and highly
+                            scalable Page Object Models.</div>
+                    </li>
+                    <li>
+                        <span class="check-icon">✓</span>
+                        <div><strong>CI/CD Excellence:</strong> Seamless integration with GitLab CI/GitHub Actions,
+                            executing parallelized grids blocking regressions before they reach production.</div>
+                    </li>
+                </ul>
+
+                <div class="profile-signature">
+                    <div class="avatar">DP</div>
+                    <div>
+                        <div style="font-weight: 600; color: #fff;">Dimitar Prodromov</div>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary);">Senior SDET | 5+ Years Automation
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2 style="justify-content: center; font-size: 2.2rem; margin-bottom: 1rem;">Let's Build the Unbreakable.
+            </h2>
+            <p
+                style="color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto 2.5rem; line-height: 1.7;">
+                If Avenga is looking for an engineer who bridges the gap between software development and quality
+                assurance, I am ready to integrate.
+            </p>
+            <a href="mailto:dp@qantum.site?subject=Avenga%20%2F%2F%20Senior%20SDET%20Phase%201&body=Hi%20Dimitar%2C%20we%20reviewed%20your%20Engineering%20Proposal.%20Let's%20schedule%20a%20sync."
+                class="primary-btn">
+                <span>Initiate Technical Sync</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+
+            <div class="contact-info">
+                <span>✉️ dp@qantum.site</span>
+                <span>📞 +359896849882</span>
+                <span>🌐 veritras.website</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

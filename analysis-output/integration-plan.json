@@ -1,0 +1,492 @@
+{
+  "topModules": [
+    {
+      "file": "best-practices\\QAntum-QA\\src\\PR0DUCTION\\types\\core.types.ts",
+      "score": 268.4,
+      "category": "other",
+      "complexity": 1,
+      "dependencies": 0,
+      "exports": 84,
+      "reusability": 84
+    },
+    {
+      "file": "JS-Framework\\src\\types\\core.types.ts",
+      "score": 268.4,
+      "category": "other",
+      "complexity": 1,
+      "dependencies": 0,
+      "exports": 84,
+      "reusability": 84
+    },
+    {
+      "file": "src\\prediction-matrix\\types.ts",
+      "score": 142.75,
+      "category": "other",
+      "complexity": 1,
+      "dependencies": 0,
+      "exports": 45,
+      "reusability": 45
+    },
+    {
+      "file": "JS-Framework\\CyberCody\\dist\\types\\index.d.ts",
+      "score": 134.4,
+      "category": "other",
+      "complexity": 1,
+      "dependencies": 0,
+      "exports": 42,
+      "reusability": 42
+    },
+    {
+      "file": "JS-Framework\\CyberCody\\src\\types\\index.ts",
+      "score": 134.4,
+      "category": "other",
+      "complexity": 1,
+      "dependencies": 0,
+      "exports": 42,
+      "reusability": 42
+    },
+    {
+      "file": "scripts\\CyberCody\\dist\\types\\index.d.ts",
+      "score": 134.4,
+      "category": "other",
+      "complexity": 1,
+      "dependencies": 0,
+      "exports": 42,
+      "reusability": 42
+    },
+    {
+      "file": "scripts\\CyberCody\\src\\types\\index.ts",
+      "score": 134.4,
+      "category": "other",
+      "complexity": 1,
+      "dependencies": 0,
+      "exports": 42,
+      "reusability": 42
+    },
+    {
+      "file": "best-practices\\QAntum-QA\\src\\PR0DUCTION\\types\\websocket-protocol.types.ts",
+      "score": 123.75,
+      "category": "other",
+      "complexity": 2,
+      "dependencies": 0,
+      "exports": 37,
+      "reusability": 37
+    },
+    {
+      "file": "JS-Framework\\src\\types\\websocket-protocol.types.ts",
+      "score": 123.75,
+      "category": "other",
+      "complexity": 2,
+      "dependencies": 0,
+      "exports": 37,
+      "reusability": 37
+    },
+    {
+      "file": "JS-Framework\\src\\bastion\\types.ts",
+      "score": 122.4,
+      "category": "security",
+      "complexity": 1,
+      "dependencies": 0,
+      "exports": 28,
+      "reusability": 28
+    },
+    {
+      "file": "best-practices\\QAntum-QA\\src\\PR0DUCTION\\bastion\\types.ts",
+      "score": 119.4,
+      "category": "security",
+      "complexity": 1,
+      "dependencies": 0,
+      "exports": 27,
+      "reusability": 27
+    },
+    {
+      "file": "best-practices\\QAntum-QA\\src\\PR0DUCTION\\core\\di\\container.ts",
+      "score": 105,
+      "category": "other",
+      "complexity": 15,
+      "dependencies": 1,
+      "exports": 55,
+      "reusability": 27.5
+    },
+    {
+      "file": "JS-Framework\\src\\core\\di\\container.ts",
+      "score": 105,
+      "category": "other",
+      "complexity": 15,
+      "dependencies": 1,
+      "exports": 55,
+      "reusability": 27.5
+    },
+    {
+      "file": "src\\modules\\GAMMA_INFRA\\core\\brain\\energy\\container.ts",
+      "score": 105,
+      "category": "other",
+      "complexity": 15,
+      "dependencies": 1,
+      "exports": 55,
+      "reusability": 27.5
+    },
+    {
+      "file": "src\\types.ts",
+      "score": 104.4,
+      "category": "other",
+      "complexity": 1,
+      "dependencies": 0,
+      "exports": 28,
+      "reusability": 28
+    },
+    {
+      "file": "src\\types\\index.ts",
+      "score": 96.4,
+      "category": "other",
+      "complexity": 1,
+      "dependencies": 0,
+      "exports": 28,
+      "reusability": 28
+    },
+    {
+      "file": "scripts\\qantum\\SaaS-Framework\\scripts\\OTHERS\\MisteMind_brain_logic_strength_TranscendenceCore.ts",
+      "score": 94,
+      "category": "enterprise",
+      "complexity": 24,
+      "dependencies": 0,
+      "exports": 24,
+      "reusability": 24
+    },
+    {
+      "file": "scripts\\qantum\\SaaS-Framework\\scripts\\OTHERS\\TranscendenceCore.ts",
+      "score": 94,
+      "category": "enterprise",
+      "complexity": 24,
+      "dependencies": 0,
+      "exports": 24,
+      "reusability": 24
+    },
+    {
+      "file": "src\\SaaS-master\\SaaS-master\\brutality-vortex\\AETERNA-NEW\\aeterna-node\\data\\purge-backup\\purge-2026-01-30T13-55-06-793Z\\LogicSubstrate\\TranscendenceCore.ts",
+      "score": 94,
+      "category": "enterprise",
+      "complexity": 24,
+      "dependencies": 0,
+      "exports": 24,
+      "reusability": 24
+    },
+    {
+      "file": "src\\SaaS-master\\SaaS-master\\brutality-vortex\\AETERNA-NEW\\aeterna-node\\LogicSubstrate\\TranscendenceCore.ts",
+      "score": 94,
+      "category": "enterprise",
+      "complexity": 24,
+      "dependencies": 0,
+      "exports": 24,
+      "reusability": 24
+    },
+    {
+      "file": "src\\SaaS-master\\SaaS-master\\brutality-vortex\\Downloads\\AETERNA-NEW\\aeterna-node\\data\\purge-backup\\purge-2026-01-30T13-55-06-793Z\\LogicSubstrate\\TranscendenceCore.ts",
+      "score": 94,
+      "category": "enterprise",
+      "complexity": 24,
+      "dependencies": 0,
+      "exports": 24,
+      "reusability": 24
+    },
+    {
+      "file": "src\\SaaS-master\\SaaS-master\\brutality-vortex\\Downloads\\AETERNA-NEW\\aeterna-node\\LogicSubstrate\\TranscendenceCore.ts",
+      "score": 94,
+      "category": "enterprise",
+      "complexity": 24,
+      "dependencies": 0,
+      "exports": 24,
+      "reusability": 24
+    },
+    {
+      "file": "src\\SaaS-master\\SaaS-master\\brutality-vortex\\Downloads\\ENGINES_EXTRACTED\\ENGINES\\MisteMind_brain_logic_strength_TranscendenceCore.ts",
+      "score": 94,
+      "category": "enterprise",
+      "complexity": 24,
+      "dependencies": 0,
+      "exports": 24,
+      "reusability": 24
+    },
+    {
+      "file": "src\\SaaS-master\\SaaS-master\\brutality-vortex\\Downloads\\ENGINES_EXTRACTED\\ENGINES\\TranscendenceCore.ts",
+      "score": 94,
+      "category": "enterprise",
+      "complexity": 24,
+      "dependencies": 0,
+      "exports": 24,
+      "reusability": 24
+    },
+    {
+      "file": "src\\SaaS-master\\SaaS-master\\brutality-vortex\\Downloads\\jules_session_13118277658544720685\\AETERNAAA\\OmniCore\\engines\\TranscendenceCore.ts",
+      "score": 94,
+      "category": "enterprise",
+      "complexity": 24,
+      "dependencies": 0,
+      "exports": 24,
+      "reusability": 24
+    },
+    {
+      "file": "src\\SaaS-master\\SaaS-master\\brutality-vortex\\Downloads\\jules_session_13118277658544720685\\AETERNAAA\\OmniCore\\engines - Copy\\TranscendenceCore.ts",
+      "score": 94,
+      "category": "enterprise",
+      "complexity": 24,
+      "dependencies": 0,
+      "exports": 24,
+      "reusability": 24
+    },
+    {
+      "file": "src\\SaaS-master\\SaaS-master\\brutality-vortex\\Downloads\\jules_session_15905631261756712010 (2)\\TheArchitect\\src\\MisteMind_brain_logic_strength_TranscendenceCore.ts",
+      "score": 94,
+      "category": "enterprise",
+      "complexity": 24,
+      "dependencies": 0,
+      "exports": 24,
+      "reusability": 24
+    },
+    {
+      "file": "src\\SaaS-master\\SaaS-master\\brutality-vortex\\Downloads\\jules_session_15905631261756712010 (2)\\TheArchitect\\src\\TranscendenceCore.ts",
+      "score": 94,
+      "category": "enterprise",
+      "complexity": 24,
+      "dependencies": 0,
+      "exports": 24,
+      "reusability": 24
+    },
+    {
+      "file": "src\\SaaS-master\\SaaS-master\\brutality-vortex\\ENGINES_EXTRACTED\\ENGINES\\MisteMind_brain_logic_strength_TranscendenceCore.ts",
+      "score": 94,
+      "category": "enterprise",
+      "complexity": 24,
+      "dependencies": 0,
+      "exports": 24,
+      "reusability": 24
+    },
+    {
+      "file": "src\\SaaS-master\\SaaS-master\\brutality-vortex\\ENGINES_EXTRACTED\\ENGINES\\TranscendenceCore.ts",
+      "score": 94,
+      "category": "enterprise",
+      "complexity": 24,
+      "dependencies": 0,
+      "exports": 24,
+      "reusability": 24
+    },
+    {
+      "file": "best-practices\\QAntum-QA\\src\\PR0DUCTION\\chemistry\\tool-orchestrator\\types.ts",
+      "score": 91.15,
+      "category": "infrastructure",
+      "complexity": 1,
+      "dependencies": 0,
+      "exports": 23,
+      "reusability": 23
+    },
+    {
+      "file": "scripts\\qantum\\layers\\physics\\swarm-interfaces.ts",
+      "score": 82.5,
+      "category": "swarm",
+      "complexity": 1,
+      "dependencies": 0,
+      "exports": 20,
+      "reusability": 20
+    },
+    {
+      "file": "Arbitrage\\binance\\MisteMind_brain_logic_strength_TranscendenceCore.ts",
+      "score": 82,
+      "category": "other",
+      "complexity": 24,
+      "dependencies": 0,
+      "exports": 24,
+      "reusability": 24
+    },
+    {
+      "file": "BINANCE_TRADING_LAYER\\Arbitrage\\binance\\MisteMind_brain_logic_strength_TranscendenceCore.ts",
+      "score": 82,
+      "category": "other",
+      "complexity": 24,
+      "dependencies": 0,
+      "exports": 24,
+      "reusability": 24
+    },
+    {
+      "file": "brutality-vortex-salvaged\\AETERNA-NEW\\aeterna-node\\data\\purge-backup\\purge-2026-01-30T13-55-06-793Z\\LogicSubstrate\\TranscendenceCore.ts",
+      "score": 82,
+      "category": "other",
+      "complexity": 24,
+      "dependencies": 0,
+      "exports": 24,
+      "reusability": 24
+    },
+    {
+      "file": "brutality-vortex-salvaged\\AETERNA-NEW\\aeterna-node\\LogicSubstrate\\TranscendenceCore.ts",
+      "score": 82,
+      "category": "other",
+      "complexity": 24,
+      "dependencies": 0,
+      "exports": 24,
+      "reusability": 24
+    },
+    {
+      "file": "brutality-vortex-salvaged\\Downloads\\AETERNA-NEW\\aeterna-node\\LogicSubstrate\\TranscendenceCore.ts",
+      "score": 82,
+      "category": "other",
+      "complexity": 24,
+      "dependencies": 0,
+      "exports": 24,
+      "reusability": 24
+    },
+    {
+      "file": "brutality-vortex-salvaged\\Downloads\\ENGINES_EXTRACTED\\ENGINES\\MisteMind_brain_logic_strength_TranscendenceCore.ts",
+      "score": 82,
+      "category": "other",
+      "complexity": 24,
+      "dependencies": 0,
+      "exports": 24,
+      "reusability": 24
+    },
+    {
+      "file": "brutality-vortex-salvaged\\Downloads\\ENGINES_EXTRACTED\\ENGINES\\TranscendenceCore.ts",
+      "score": 82,
+      "category": "other",
+      "complexity": 24,
+      "dependencies": 0,
+      "exports": 24,
+      "reusability": 24
+    },
+    {
+      "file": "brutality-vortex-salvaged\\Downloads\\jules_session_13118277658544720685\\AETERNAAA\\OmniCore\\engines\\TranscendenceCore.ts",
+      "score": 82,
+      "category": "other",
+      "complexity": 24,
+      "dependencies": 0,
+      "exports": 24,
+      "reusability": 24
+    },
+    {
+      "file": "brutality-vortex-salvaged\\Downloads\\jules_session_13118277658544720685\\AETERNAAA\\OmniCore\\engines - Copy\\TranscendenceCore.ts",
+      "score": 82,
+      "category": "other",
+      "complexity": 24,
+      "dependencies": 0,
+      "exports": 24,
+      "reusability": 24
+    },
+    {
+      "file": "brutality-vortex-salvaged\\Downloads\\jules_session_15905631261756712010 (2)\\TheArchitect\\src\\TranscendenceCore.ts",
+      "score": 82,
+      "category": "other",
+      "complexity": 24,
+      "dependencies": 0,
+      "exports": 24,
+      "reusability": 24
+    },
+    {
+      "file": "brutality-vortex-salvaged\\ENGINES_EXTRACTED\\ENGINES\\MisteMind_brain_logic_strength_TranscendenceCore.ts",
+      "score": 82,
+      "category": "other",
+      "complexity": 24,
+      "dependencies": 0,
+      "exports": 24,
+      "reusability": 24
+    },
+    {
+      "file": "brutality-vortex-salvaged\\ENGINES_EXTRACTED\\ENGINES\\TranscendenceCore.ts",
+      "score": 82,
+      "category": "other",
+      "complexity": 24,
+      "dependencies": 0,
+      "exports": 24,
+      "reusability": 24
+    },
+    {
+      "file": "salvaged-brutality-vortex\\Downloads\\AETERNA-NEW\\aeterna-node\\LogicSubstrate\\TranscendenceCore.ts",
+      "score": 82,
+      "category": "other",
+      "complexity": 24,
+      "dependencies": 0,
+      "exports": 24,
+      "reusability": 24
+    },
+    {
+      "file": "salvaged-brutality-vortex\\Downloads\\ENGINES_EXTRACTED\\ENGINES\\MisteMind_brain_logic_strength_TranscendenceCore.ts",
+      "score": 82,
+      "category": "other",
+      "complexity": 24,
+      "dependencies": 0,
+      "exports": 24,
+      "reusability": 24
+    },
+    {
+      "file": "salvaged-brutality-vortex\\Downloads\\ENGINES_EXTRACTED\\ENGINES\\TranscendenceCore.ts",
+      "score": 82,
+      "category": "other",
+      "complexity": 24,
+      "dependencies": 0,
+      "exports": 24,
+      "reusability": 24
+    },
+    {
+      "file": "salvaged-brutality-vortex\\Downloads\\jules_session_13118277658544720685\\AETERNAAA\\OmniCore\\engines\\TranscendenceCore.ts",
+      "score": 82,
+      "category": "other",
+      "complexity": 24,
+      "dependencies": 0,
+      "exports": 24,
+      "reusability": 24
+    },
+    {
+      "file": "salvaged-brutality-vortex\\Downloads\\jules_session_13118277658544720685\\AETERNAAA\\OmniCore\\engines - Copy\\TranscendenceCore.ts",
+      "score": 82,
+      "category": "other",
+      "complexity": 24,
+      "dependencies": 0,
+      "exports": 24,
+      "reusability": 24
+    },
+    {
+      "file": "salvaged-brutality-vortex\\Downloads\\jules_session_15905631261756712010 (2)\\TheArchitect\\src\\TranscendenceCore.ts",
+      "score": 82,
+      "category": "other",
+      "complexity": 24,
+      "dependencies": 0,
+      "exports": 24,
+      "reusability": 24
+    }
+  ],
+  "omniCoreIntegrations": [
+    "JS-Framework\\src\\bastion\\types.ts",
+    "best-practices\\QAntum-QA\\src\\PR0DUCTION\\bastion\\types.ts",
+    "scripts\\qantum\\layers\\physics\\swarm-interfaces.ts"
+  ],
+  "sharedLibraryModules": [
+    "best-practices\\QAntum-QA\\src\\PR0DUCTION\\types\\core.types.ts",
+    "JS-Framework\\src\\types\\core.types.ts",
+    "src\\prediction-matrix\\types.ts",
+    "JS-Framework\\CyberCody\\dist\\types\\index.d.ts",
+    "JS-Framework\\CyberCody\\src\\types\\index.ts",
+    "scripts\\CyberCody\\dist\\types\\index.d.ts",
+    "scripts\\CyberCody\\src\\types\\index.ts",
+    "best-practices\\QAntum-QA\\src\\PR0DUCTION\\types\\websocket-protocol.types.ts",
+    "JS-Framework\\src\\types\\websocket-protocol.types.ts",
+    "JS-Framework\\src\\bastion\\types.ts",
+    "best-practices\\QAntum-QA\\src\\PR0DUCTION\\bastion\\types.ts",
+    "best-practices\\QAntum-QA\\src\\PR0DUCTION\\core\\di\\container.ts",
+    "JS-Framework\\src\\core\\di\\container.ts",
+    "src\\modules\\GAMMA_INFRA\\core\\brain\\energy\\container.ts",
+    "src\\types.ts",
+    "src\\types\\index.ts",
+    "scripts\\qantum\\SaaS-Framework\\scripts\\OTHERS\\MisteMind_brain_logic_strength_TranscendenceCore.ts",
+    "scripts\\qantum\\SaaS-Framework\\scripts\\OTHERS\\TranscendenceCore.ts",
+    "src\\SaaS-master\\SaaS-master\\brutality-vortex\\AETERNA-NEW\\aeterna-node\\data\\purge-backup\\purge-2026-01-30T13-55-06-793Z\\LogicSubstrate\\TranscendenceCore.ts",
+    "src\\SaaS-master\\SaaS-master\\brutality-vortex\\AETERNA-NEW\\aeterna-node\\LogicSubstrate\\TranscendenceCore.ts",
+    "src\\SaaS-master\\SaaS-master\\brutality-vortex\\Downloads\\AETERNA-NEW\\aeterna-node\\data\\purge-backup\\purge-2026-01-30T13-55-06-793Z\\LogicSubstrate\\TranscendenceCore.ts",
+    "src\\SaaS-master\\SaaS-master\\brutality-vortex\\Downloads\\AETERNA-NEW\\aeterna-node\\LogicSubstrate\\TranscendenceCore.ts",
+    "src\\SaaS-master\\SaaS-master\\brutality-vortex\\Downloads\\ENGINES_EXTRACTED\\ENGINES\\MisteMind_brain_logic_strength_TranscendenceCore.ts",
+    "src\\SaaS-master\\SaaS-master\\brutality-vortex\\Downloads\\ENGINES_EXTRACTED\\ENGINES\\TranscendenceCore.ts",
+    "src\\SaaS-master\\SaaS-master\\brutality-vortex\\Downloads\\jules_session_13118277658544720685\\AETERNAAA\\OmniCore\\engines\\TranscendenceCore.ts",
+    "src\\SaaS-master\\SaaS-master\\brutality-vortex\\Downloads\\jules_session_13118277658544720685\\AETERNAAA\\OmniCore\\engines - Copy\\TranscendenceCore.ts",
+    "src\\SaaS-master\\SaaS-master\\brutality-vortex\\Downloads\\jules_session_15905631261756712010 (2)\\TheArchitect\\src\\MisteMind_brain_logic_strength_TranscendenceCore.ts",
+    "src\\SaaS-master\\SaaS-master\\brutality-vortex\\Downloads\\jules_session_15905631261756712010 (2)\\TheArchitect\\src\\TranscendenceCore.ts",
+    "src\\SaaS-master\\SaaS-master\\brutality-vortex\\ENGINES_EXTRACTED\\ENGINES\\MisteMind_brain_logic_strength_TranscendenceCore.ts",
+    "src\\SaaS-master\\SaaS-master\\brutality-vortex\\ENGINES_EXTRACTED\\ENGINES\\TranscendenceCore.ts"
+  ],
+  "trainingDatasetSize": 469
+}

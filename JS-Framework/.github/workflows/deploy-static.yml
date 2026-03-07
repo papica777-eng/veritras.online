@@ -1,0 +1,52 @@
+# Deploy QAntum/Veritras static site to GitHub Pages
+# Custom domain: veritras.website
+
+name: Deploy to veritras.website
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup static site
+        run: |
+          mkdir -p output
+          cp index.html output/
+          cp -r app output/
+          # Custom domain for veritras.website (GitHub Pages)
+          echo "veritras.website" > output/CNAME
+          # Copy any assets if needed
+          [ -d "assets" ] && cp -r assets output/ || true
+          [ -d "public" ] && cp -r public output/ || true
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@3
+        with:
+          path: ./output
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@4

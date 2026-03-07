@@ -1,0 +1,184 @@
+// Prisma schema for QAntum QA SaaS
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Tenant {
+  id          String   @id @default(cuid())
+  clerkId     String   @unique
+  name        String
+  email       String
+  plan        String   @default("FREE") // FREE, TEAM, ENTERPRISE
+  testsLimit  Int      @default(1000)
+  testsUsed   Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  projects      Project[]
+  selectorKnowledge SelectorKnowledge[]
+  aiGenerations AIGeneration[]
+  subscription  Subscription?
+
+  @@map("tenants")
+}
+
+model Project {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  url         String?
+  tenantId    String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  tenant      Tenant     @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  testSuites  TestSuite[]
+  testRuns    TestRun[]
+
+  @@map("projects")
+}
+
+model TestSuite {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  projectId   String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  project     Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  tests       Test[]
+
+  @@map("test_suites")
+}
+
+model Test {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  code        String
+  suiteId     String
+  timeout     Int      @default(30000)
+  retries     Int      @default(2)
+  ghostMode   Boolean  @default(false)
+  selfHealing Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  suite       TestSuite @relation(fields: [suiteId], references: [id], onDelete: Cascade)
+  results     TestResult[]
+
+  @@map("tests")
+}
+
+model TestRun {
+  id            String   @id @default(cuid())
+  projectId     String
+  userId        String
+  totalTests    Int
+  passed        Int      @default(0)
+  failed        Int      @default(0)
+  skipped       Int      @default(0)
+  status        String   @default("PENDING") // PENDING, RUNNING, COMPLETED, FAILED
+  browser       String   @default("CHROMIUM")
+  parallelism   Int      @default(1)
+  ghostMode     Boolean  @default(false)
+  selfHealing   Boolean  @default(true)
+  commitSha     String?
+  branch        String?
+  triggeredBy   String   @default("manual")
+  startedAt     DateTime?
+  completedAt   DateTime?
+  duration      Int?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  project       Project      @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  results       TestResult[]
+
+  @@map("test_runs")
+}
+
+model TestResult {
+  id             String   @id @default(cuid())
+  runId          String
+  testId         String
+  status         String   @default("PENDING") // PENDING, PASSED, FAILED, SKIPPED
+  duration       Int?
+  error          String?
+  errorStack     String?
+  selectorsHealed Int     @default(0)
+  healingDetails String?
+  ghostSuccess   Boolean?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  run            TestRun   @relation(fields: [runId], references: [id], onDelete: Cascade)
+  test           Test      @relation(fields: [testId], references: [id])
+
+  @@map("test_results")
+}
+
+model SelectorKnowledge {
+  id               String   @id @default(cuid())
+  tenantId         String
+  originalSelector String
+  alternatives     String     // Array of alternative selectors
+  successCount     Int      @default(0)
+  lastUsed         DateTime @default(now())
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  tenant           Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@unique([tenantId, originalSelector])
+  @@map("selector_knowledge")
+}
+
+model AIGeneration {
+  id          String   @id @default(cuid())
+  tenantId    String
+  type        String   // 'test', 'selector', etc.
+  prompt      String
+  response    String
+  tokensUsed  Int
+  createdAt   DateTime @default(now())
+
+  tenant      Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@map("ai_generations")
+}
+
+// Billing models
+model Subscription {
+  id            String   @id @default(cuid())
+  tenantId      String   @unique
+  stripeId      String   @unique
+  status        String
+  plan          String
+  currentPeriodStart DateTime
+  currentPeriodEnd   DateTime
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  tenant        Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@map("subscriptions")
+}
+
+model WebhookEvent {
+  id            String   @id @default(cuid())
+  stripeId      String   @unique
+  type          String
+  data          String
+  processed     Boolean  @default(false)
+  createdAt     DateTime @default(now())
+
+  @@map("webhook_events")
+}

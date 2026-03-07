@@ -1,0 +1,31 @@
+{
+  "id": "auth_bypass-1766964672500-b74f5b0f",
+  "timestamp": "2025-12-28T23:31:12.629Z",
+  "eventType": "AUTH_BYPASS",
+  "url": "https://juice-shop.herokuapp.com/#/search?q=test",
+  "sessionId": "session-2025-12-28T23-31-07-378Z-08828959",
+  "severity": "critical",
+  "description": "Auth bypass candidates: /dashboard, /account, /settings, /admin",
+  "maskingApplied": false,
+  "maskedFields": [],
+  "checksum": "2667fc4c6df7a9d7fb1c7dd7e14ceaa60ea67a0747993facf5dc299e29d1dc33",
+  "captureMode": "aggressive",
+  "browserInfo": {
+    "name": "Chromium",
+    "version": "1.0.0-QAntum",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/143.0.7499.4 Safari/537.36",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "deviceScaleFactor": 1
+  },
+  "networkContext": {
+    "cookies": [
+      {
+        "name": "language",
+        "domain": "juice-shop.herokuapp.com"
+      }
+    ]
+  }
+}

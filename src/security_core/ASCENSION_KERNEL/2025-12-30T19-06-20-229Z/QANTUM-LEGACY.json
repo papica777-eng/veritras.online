@@ -1,0 +1,44 @@
+{
+  "missions": [
+    {
+      "timestamp": "2025-12-30T18:58:44.985Z",
+      "input": "rename class QAntum to QAntum",
+      "strategy": "semanticClassRename",
+      "success": true,
+      "filesModified": 0,
+      "replacements": 0
+    },
+    {
+      "timestamp": "2025-12-30T18:58:50.099Z",
+      "input": "cleanup console logs",
+      "strategy": "consoleToLogger",
+      "success": true,
+      "filesModified": 0,
+      "replacements": 0
+    },
+    {
+      "timestamp": "2025-12-30T18:59:00.276Z",
+      "input": "fix typescript errors",
+      "strategy": "fixTypeScriptErrors",
+      "success": true,
+      "filesModified": 0,
+      "replacements": 0
+    }
+  ],
+  "patterns": {
+    "semanticClassRename": {
+      "attempts": 1,
+      "successes": 1
+    },
+    "consoleToLogger": {
+      "attempts": 1,
+      "successes": 1
+    },
+    "fixTypeScriptErrors": {
+      "attempts": 1,
+      "successes": 1
+    }
+  },
+  "successRate": "100.0",
+  "totalMissions": 3
+}

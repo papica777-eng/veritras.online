@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AETERNA | Sovereign Subscription</title>
+    <style>
+        :root {
+            --neon-cyan: #00f2ff;
+            --neon-magenta: #ff00ff;
+            --dark-bg: #050505;
+            --glass-bg: rgba(20, 20, 20, 0.8);
+            --border-glow: 0 0 10px rgba(0, 242, 255, 0.3);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--dark-bg);
+            color: #fff;
+            font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+            overflow-x: hidden;
+            background: radial-gradient(circle at center, #111 0%, #050505 100%);
+        }
+
+        .u-mt10 {
+            margin-top: 10px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 4rem;
+            background: linear-gradient(90deg, var(--neon-cyan), var(--neon-magenta));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 0.5rem;
+            margin-bottom: 1rem;
+            filter: drop-shadow(0 0 10px rgba(0, 242, 255, 0.5));
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #888;
+            margin-bottom: 4rem;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            perspective: 1000px;
+        }
+
+        .card {
+            background: var(--glass-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 3rem;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-15px) scale(1.02);
+            border-color: var(--neon-cyan);
+            box-shadow: 0 20px 40px rgba(0, 242, 255, 0.2);
+        }
+
+        .card.premium {
+            border-color: var(--neon-magenta);
+        }
+
+        .card.premium:hover {
+            box-shadow: 0 20px 40px rgba(255, 0, 255, 0.2);
+        }
+
+        .card h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .price span {
+            font-size: 1.2rem;
+            color: #888;
+        }
+
+        .features {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin-bottom: 3rem;
+        }
+
+        .features li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .features li::before {
+            content: "✦";
+            color: var(--neon-cyan);
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 1.2rem;
+            border-radius: 12px;
+            border: none;
+            background: linear-gradient(90deg, var(--neon-cyan), #00a2ff);
+            color: #000;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.1rem;
+        }
+
+        .btn:hover {
+            filter: brightness(1.2);
+            box-shadow: 0 0 20px var(--neon-cyan);
+        }
+
+        .btn.secondary {
+            background: linear-gradient(90deg, var(--neon-magenta), #a200ff);
+            color: #fff;
+        }
+
+        .btn.secondary:hover {
+            box-shadow: 0 0 20px var(--neon-magenta);
+        }
+
+        .stats-hud {
+            margin-top: 6rem;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.5);
+            border-top: 1px solid var(--neon-cyan);
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            color: var(--neon-cyan);
+        }
+
+        #pulse-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: #f00;
+            border-radius: 50%;
+            margin-right: 10px;
+            animation: pulse 1s infinite alternate;
+        }
+
+        @keyframes pulse {
+            from {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            to {
+                opacity: 0.3;
+                transform: scale(0.8);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>AETERNA LOGOS</h1>
+            <p class="subtitle">Secure Your Domain in the Universal Substrate</p>
+        </header>
+
+        <div class="pricing-grid">
+            <!-- Node Access -->
+            <div class="card">
+                <h2>NODE ACCESS</h2>
+                <div class="price">€29<span>/mo</span></div>
+                <ul class="features">
+                    <li>Single Manifold Deployment</li>
+                    <li>24/7 Logic Pulse Monitoring</li>
+                    <li>Basic Wealth Bridge API</li>
+                    <li>Community Support</li>
+                </ul>
+                <button class="btn" onclick="subscribe('stripe', 29, 'NODE_ACCESS')">Initialize Node</button>
+            </div>
+
+            <!-- Sovereign Empire -->
+            <div class="card premium">
+                <h2>SOVEREIGN EMPIRE</h2>
+                <div class="price">€99<span>/mo</span></div>
+                <ul class="features">
+                    <li>Multi-Manifold Clusters (Up to 10)</li>
+                    <li>Real-time Logic Surgery (The Scribe)</li>
+                    <li>Priority Wealth Bridge Routing</li>
+                    <li>Direct Architect Support (High Res)</li>
+                    <li>White-label Helios Interface</li>
+                </ul>
+                <button class="btn secondary" onclick="subscribe('paypal', 99, 'SOVEREIGN_EMPIRE')">Establish
+                    Empire</button>
+            </div>
+
+            <!-- Galactic Core -->
+            <div class="card">
+                <h2>GALACTIC CORE</h2>
+                <div class="price">€499<span>/mo</span></div>
+                <ul class="features">
+                    <li>Unlimited Logical Substrate</li>
+                    <li>Autonomous Reality Mapping</li>
+                    <li>LwaS Custom Language Extension</li>
+                    <li>Full Sovereign Encryption Vault</li>
+                    <li>Dedicated Metal Hardware Access</li>
+                </ul>
+                <button class="btn" onclick="subscribe('stripe', 499, 'GALACTIC_CORE')">Ignite Core</button>
+            </div>
+        </div>
+
+        <div class="stats-hud">
+            <div><span id="pulse-dot"></span> [NETWORK_STATUS]: SOVEREIGN_STABLE | [ACTIVE_NODES]: 127 | [ENTROPY]:
+                0.0000</div>
+            <div class="u-mt10">[CASHFLOW_API]: LIVE_FEED | [VERITIZED_VALUE]: €4,128,793.56</div>
+        </div>
+    </div>
+
+    <script>
+        async function subscribe(provider, amount, plan) {
+            console.log(`Initiating ${plan} subscription via ${provider} for €${amount}`);
+
+            try {
+                const response = await fetch('/api/economy/pay', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        amount,
+                        provider,
+                        metadata: {
+                            plan,
+                            timestamp: Date.now().toString()
+                        }
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.id) {
+                    alert(`[AETERNA]: Payment bridge established. ID: ${data.id}\nStatus: ${data.status}\n\nRedirecting to ${provider} gateway...`);
+                    // In a real scenario, we would redirect to data.checkoutUrl or popup a modal
+                } else {
+                    alert('[ERROR]: Failed to connect to Wealth Bridge.');
+                }
+            } catch (error) {
+                console.error('Payment error:', error);
+                alert('[CRITICAL_ERROR]: Noetic Resonance failed.');
+            }
+        }
+    </script>
+</body>
+
+</html>

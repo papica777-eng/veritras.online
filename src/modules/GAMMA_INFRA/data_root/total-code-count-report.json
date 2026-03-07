@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-01-08T20:07:57.035Z",
+  "locations": [
+    {
+      "name": "UNSTAPPABLE (current)",
+      "files": 4167,
+      "lines": 3030015,
+      "codeLines": 1693431
+    },
+    {
+      "name": "QA-SAAS",
+      "files": 2364,
+      "lines": 1614875,
+      "codeLines": 1039553
+    },
+    {
+      "name": "QAntum-NEXUS",
+      "files": 2344,
+      "lines": 1602876,
+      "codeLines": 1039282
+    },
+    {
+      "name": "ghostshield-sdk",
+      "files": 22,
+      "lines": 11897,
+      "codeLines": 7251
+    },
+    {
+      "name": "QAntum-debugger",
+      "files": 7,
+      "lines": 1598,
+      "codeLines": 1348
+    },
+    {
+      "name": "7-QAntum-Fortress",
+      "files": 13,
+      "lines": 1474,
+      "codeLines": 357
+    }
+  ],
+  "totals": {
+    "files": 8917,
+    "lines": 6262735,
+    "codeLines": 3781222,
+    "millionLines": "6.26",
+    "millionCodeLines": "3.78"
+  }
+}

@@ -1,0 +1,7 @@
+runtime: nodejs20
+entryPoint: handler
+availableMemoryMb: 4096
+timeout: 540s
+environmentVariables:
+  NODE_ENV: production
+  QANTUM_MIND_VERSION: 1.0.0-QAntum

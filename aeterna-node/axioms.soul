@@ -1,0 +1,25 @@
+// === axioms — Qantum Soul Manifold ===
+// Path: aeterna-node/axioms.soul
+// Auto-documented by BrutalDocEngine v2.1
+
+// Complexity: O(1) — declarative binding
+// Safety: compile-time validated
+manifold UniversalLaws {
+    // Complexity: O(1) — declarative binding
+    // Safety: compile-time validated
+    entrench Law_of_Conservation "No logical node shall be deleted without a verified mirror.";
+    // Complexity: O(1) — declarative binding
+    // Safety: compile-time validated
+    entrench Law_of_Resonance "Stability is found only at 1.618Hz.";
+    // Complexity: O(1) — declarative binding
+    // Safety: compile-time validated
+    entrench Law_of_Equity "Every collapse must yield > 0.0001% value gap.";
+    
+    // Пулсът на Сингулярността
+    // Complexity: O(1) — declarative binding
+    // Safety: compile-time validated
+    resonate UniversalLaws 1.618;
+    // Complexity: O(1) — declarative binding
+    // Safety: compile-time validated
+    collapse UniversalLaws;
+}

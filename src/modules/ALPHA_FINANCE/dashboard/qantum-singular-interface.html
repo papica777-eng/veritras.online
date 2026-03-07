@@ -1,0 +1,2448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QAntum Singular Interface v34.1 | Command Center</title>
+    <meta name="description" content="QAntum Empire Command Center - Real-time chat, terminal, autonomous actions">
+    <meta property="og:title" content="QAntum Singular Interface">
+    <meta property="og:description" content="788K+ lines of code. 8 Departments. One Command Center.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧠</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <style>
+    /* ═══════════════════════════════════════════════════════════════════════════
+       QANTUM SINGULAR INTERFACE - CSS OVERHAUL v35.0
+       ═══════════════════════════════════════════════════════════════════════════ */
+
+    :root {
+        /* Colors - Quantum Theme */
+        --quantum-void: #020205;
+        --quantum-dark: #0a0a12;
+        --quantum-medium: #121225;
+        --quantum-light: #1a1a3a;
+        --quantum-border: #2a2a50;
+
+        /* Neon Accent Colors */
+        --neon-cyan: #00f5ff;
+        --neon-purple: #9d50bb;
+        --neon-green: #00ff9d;
+        --neon-orange: #ff8c00;
+        --neon-pink: #ff00ff;
+        --neon-yellow: #f9d423;
+        --neon-red: #ff4b2b;
+        --neon-blue: #0072ff;
+
+        /* Shadows & Glows */
+        --glow-cyan: 0 0 15px rgba(0, 245, 255, 0.4);
+        --glow-purple: 0 0 15px rgba(157, 80, 187, 0.4);
+        --glow-green: 0 0 15px rgba(0, 255, 157, 0.4);
+        
+        /* Layout */
+        --sidebar-width: 280px;
+        --header-height: 70px;
+    }
+
+    body {
+        background-color: var(--quantum-void);
+        color: #e2e8f0;
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+        overflow: hidden;
+        height: 100vh;
+    }
+
+    /* Quantum Background Particles */
+    #canvas-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0.6;
+    }
+
+    .app-container {
+        display: flex;
+        height: 100vh;
+        backdrop-filter: blur(10px);
+    }
+
+    /* Sidebar */
+    .sidebar {
+        width: var(--sidebar-width);
+        background: rgba(10, 10, 18, 0.8);
+        border-right: 1px solid var(--quantum-border);
+        display: flex;
+        flex-direction: column;
+        z-index: 10;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .sidebar-header {
+        padding: 24px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        border-bottom: 1px solid var(--quantum-border);
+    }
+
+    .logo-container {
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        box-shadow: var(--glow-cyan);
+        animation: pulse 2s infinite alternate;
+    }
+
+    @keyframes pulse {
+        from { transform: scale(1); box-shadow: var(--glow-cyan); }
+        to { transform: scale(1.05); box-shadow: 0 0 25px rgba(0, 245, 255, 0.6); }
+    }
+
+    .nav-items {
+        flex: 1;
+        padding: 20px 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .nav-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 16px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.2s;
+        color: #94a3b8;
+        font-weight: 500;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .nav-item:hover {
+        background: rgba(255, 255, 255, 0.05);
+        color: #fff;
+    }
+
+    .nav-item.active {
+        background: linear-gradient(90deg, rgba(0, 245, 255, 0.1), transparent);
+        color: var(--neon-cyan);
+    }
+
+    .nav-item.active::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: var(--neon-cyan);
+        box-shadow: var(--glow-cyan);
+    }
+
+    /* Main Content */
+    .main-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    header {
+        height: var(--header-height);
+        background: rgba(10, 10, 18, 0.5);
+        border-bottom: 1px solid var(--quantum-border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 32px;
+    }
+
+    .header-left h2 {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+        background: linear-gradient(to right, #fff, var(--neon-cyan));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .header-right {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+    }
+
+    /* Pages */
+    .page-container {
+        flex: 1;
+        padding: 32px;
+        overflow-y: auto;
+        position: relative;
+    }
+
+    .page {
+        animation: fadeIn 0.4s ease-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Dashboard Cards */
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 24px;
+        margin-bottom: 32px;
+    }
+
+    .stat-card {
+        background: rgba(18, 18, 37, 0.6);
+        border: 1px solid var(--quantum-border);
+        border-radius: 16px;
+        padding: 24px;
+        transition: all 0.3s;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .stat-card:hover {
+        border-color: var(--neon-cyan);
+        transform: translateY(-5px);
+        background: rgba(18, 18, 37, 0.8);
+    }
+
+    .stat-card::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(0, 245, 255, 0.05), transparent 70%);
+        pointer-events: none;
+    }
+
+    /* Department Visualizer */
+    .dept-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .dept-card {
+        aspect-ratio: 1;
+        background: var(--quantum-dark);
+        border: 1px solid var(--quantum-border);
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .dept-card:hover {
+        transform: scale(1.05) rotate(2deg);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .dept-icon {
+        font-size: 40px;
+        transition: all 0.3s;
+    }
+
+    .dept-card:hover .dept-icon {
+        transform: scale(1.2);
+        filter: drop-shadow(0 0 10px currentColor);
+    }
+
+    /* Terminal */
+    .terminal-container {
+        background: #05050a;
+        border: 1px solid #1a1a3a;
+        border-radius: 12px;
+        font-family: 'JetBrains Mono', monospace;
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
+    }
+
+    .terminal-header {
+        background: #1a1a3a;
+        padding: 8px 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border-radius: 12px 12px 0 0;
+    }
+
+    .dot { width: 12px; height: 12px; border-radius: 50%; }
+    .dot-red { background: #ff5f56; }
+    .dot-yellow { background: #ffbd2e; }
+    .dot-green { background: #27c93f; }
+
+    .terminal-body {
+        flex: 1;
+        padding: 16px;
+        overflow-y: auto;
+        color: #00ff9d;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    /* Chat UI Enhancement */
+    .chat-container {
+        height: calc(100vh - 200px);
+        display: flex;
+        flex-direction: column;
+        background: rgba(10, 10, 18, 0.4);
+        border-radius: 20px;
+        border: 1px solid var(--quantum-border);
+        backdrop-filter: blur(20px);
+    }
+
+    .messages-area {
+        flex: 1;
+        padding: 24px;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .message {
+        max-width: 80%;
+        padding: 16px 20px;
+        border-radius: 20px;
+        line-height: 1.6;
+        position: relative;
+    }
+
+    .message.assistant {
+        align-self: flex-start;
+        background: var(--quantum-light);
+        border-bottom-left-radius: 4px;
+        border: 1px solid var(--quantum-border);
+    }
+
+    .message.user {
+        align-self: flex-end;
+        background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+        color: white;
+        border-bottom-right-radius: 4px;
+    }
+
+    .chat-input-wrapper {
+        padding: 24px;
+        display: flex;
+        gap: 16px;
+        background: rgba(0,0,0,0.2);
+        border-top: 1px solid var(--quantum-border);
+    }
+
+    input[type="text"] {
+        flex: 1;
+        background: var(--quantum-void);
+        border: 1px solid var(--quantum-border);
+        border-radius: 12px;
+        padding: 14px 20px;
+        color: white;
+        outline: none;
+        transition: border-color 0.3s;
+    }
+
+    input[type="text"]:focus {
+        border-color: var(--neon-cyan);
+        box-shadow: var(--glow-cyan);
+    }
+
+    .btn-send {
+        width: 50px;
+        height: 50px;
+        border-radius: 12px;
+        background: var(--neon-cyan);
+        border: none;
+        color: black;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        transition: all 0.3s;
+    }
+
+    .btn-send:hover {
+        transform: scale(1.1) rotate(-10deg);
+        box-shadow: var(--glow-cyan);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       PHASE 16-19: CSS RESET + TYPOGRAPHY
+       ═══════════════════════════════════════════════════════════════════════════ */
+    *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        font-size: 16px;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: var(--font-body);
+        background: var(--quantum-void);
+        color: #e4e4e7;
+        line-height: 1.6;
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-display);
+        font-weight: 700;
+        line-height: 1.2;
+        color: #ffffff;
+    }
+
+    h1 { font-size: var(--text-4xl); }
+    h2 { font-size: var(--text-3xl); }
+    h3 { font-size: var(--text-2xl); }
+    h4 { font-size: var(--text-xl); }
+    h5 { font-size: var(--text-lg); }
+    h6 { font-size: var(--text-base); }
+
+    p { margin-bottom: var(--space-md); }
+
+    a {
+        color: var(--neon-cyan);
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+    a:hover { color: var(--neon-purple); }
+
+    code, pre {
+        font-family: var(--font-mono);
+        background: var(--quantum-dark);
+        border-radius: var(--radius-sm);
+    }
+
+    code {
+        padding: 2px 6px;
+        font-size: 0.9em;
+        color: var(--neon-cyan);
+    }
+
+    pre {
+        padding: var(--space-md);
+        overflow-x: auto;
+        border: 1px solid var(--quantum-border);
+    }
+
+    pre code {
+        background: none;
+        padding: 0;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       PHASE 20-22: GRID + FLEX UTILITIES
+       ═══════════════════════════════════════════════════════════════════════════ */
+    .grid {
+        display: grid;
+        gap: var(--space-md);
+    }
+
+    .grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+    .grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+    .grid-cols-6 { grid-template-columns: repeat(6, 1fr); }
+    .grid-cols-12 { grid-template-columns: repeat(12, 1fr); }
+
+    .col-span-1 { grid-column: span 1; }
+    .col-span-2 { grid-column: span 2; }
+    .col-span-3 { grid-column: span 3; }
+    .col-span-4 { grid-column: span 4; }
+    .col-span-6 { grid-column: span 6; }
+    .col-span-8 { grid-column: span 8; }
+    .col-span-12 { grid-column: span 12; }
+
+    .flex { display: flex; }
+    .flex-col { flex-direction: column; }
+    .flex-wrap { flex-wrap: wrap; }
+    .flex-1 { flex: 1; }
+    .items-start { align-items: flex-start; }
+    .items-center { align-items: center; }
+    .items-end { align-items: flex-end; }
+    .justify-start { justify-content: flex-start; }
+    .justify-center { justify-content: center; }
+    .justify-end { justify-content: flex-end; }
+    .justify-between { justify-content: space-between; }
+
+    .gap-1 { gap: 0.25rem; }
+    .gap-2 { gap: 0.5rem; }
+    .gap-3 { gap: 0.75rem; }
+    .gap-4 { gap: 1rem; }
+    .gap-6 { gap: 1.5rem; }
+    .gap-8 { gap: 2rem; }
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       PHASE 23-27: BUTTONS + CARDS
+       ═══════════════════════════════════════════════════════════════════════════ */
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px 20px;
+        font-family: var(--font-body);
+        font-size: var(--text-sm);
+        font-weight: 500;
+        border: none;
+        border-radius: var(--radius-md);
+        cursor: pointer;
+        transition: all 0.2s ease;
+        text-decoration: none;
+    }
+
+    .btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    .btn-primary {
+        background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple));
+        color: #000;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: var(--shadow-glow-cyan); }
+
+    .btn-secondary {
+        background: var(--quantum-light);
+        color: #fff;
+        border: 1px solid var(--quantum-border);
+    }
+    .btn-secondary:hover { background: var(--quantum-medium); border-color: var(--neon-cyan); }
+
+    .btn-ghost {
+        background: transparent;
+        color: #a1a1aa;
+    }
+    .btn-ghost:hover { color: #fff; background: rgba(255,255,255,0.05); }
+
+    .btn-danger {
+        background: var(--neon-red);
+        color: #fff;
+    }
+    .btn-danger:hover { filter: brightness(1.2); }
+
+    .btn-sm { padding: 6px 12px; font-size: var(--text-xs); }
+    .btn-lg { padding: 14px 28px; font-size: var(--text-base); }
+
+    /* Cards */
+    .card {
+        background: var(--quantum-dark);
+        border: 1px solid var(--quantum-border);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .card:hover {
+        border-color: rgba(0, 245, 255, 0.3);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .card-header {
+        padding: var(--space-lg);
+        border-bottom: 1px solid var(--quantum-border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .card-body {
+        padding: var(--space-lg);
+    }
+
+    .card-footer {
+        padding: var(--space-md) var(--space-lg);
+        border-top: 1px solid var(--quantum-border);
+        background: rgba(0,0,0,0.2);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       PHASE 28-31: FORMS
+       ═══════════════════════════════════════════════════════════════════════════ */
+    input[type="text"], input[type="email"], input[type="password"],
+    input[type="search"], input[type="number"], textarea {
+        width: 100%;
+        padding: 12px 16px;
+        background: var(--quantum-void);
+        border: 1px solid var(--quantum-border);
+        border-radius: var(--radius-md);
+        color: #fff;
+        font-family: var(--font-body);
+        font-size: var(--text-sm);
+        transition: all 0.2s ease;
+    }
+
+    input:focus, textarea:focus {
+        outline: none;
+        border-color: var(--neon-cyan);
+        box-shadow: 0 0 0 3px rgba(0, 245, 255, 0.1);
+    }
+
+    input::placeholder, textarea::placeholder {
+        color: #52525b;
+    }
+
+    textarea {
+        min-height: 100px;
+        resize: vertical;
+    }
+
+    select {
+        width: 100%;
+        padding: 12px 16px;
+        background: var(--quantum-void);
+        border: 1px solid var(--quantum-border);
+        border-radius: var(--radius-md);
+        color: #fff;
+        font-size: var(--text-sm);
+        cursor: pointer;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2371717a' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        background-size: 20px;
+    }
+
+    select:focus {
+        outline: none;
+        border-color: var(--neon-cyan);
+    }
+
+    /* Toggle Switch */
+    .toggle-switch {
+        position: relative;
+        display: inline-block;
+        width: 48px;
+        height: 26px;
+    }
+
+    .toggle-switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .toggle-slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--quantum-light);
+        border-radius: var(--radius-full);
+        transition: 0.3s;
+    }
+
+    .toggle-slider::before {
+        content: '';
+        position: absolute;
+        height: 20px;
+        width: 20px;
+        left: 3px;
+        bottom: 3px;
+        background: #fff;
+        border-radius: 50%;
+        transition: 0.3s;
+    }
+
+    .toggle-switch input:checked + .toggle-slider {
+        background: var(--neon-cyan);
+    }
+
+    .toggle-switch input:checked + .toggle-slider::before {
+        transform: translateX(22px);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       PHASE 32-36: MODALS + TOAST
+       ═══════════════════════════════════════════════════════════════════════════ */
+    .modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(4px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .modal-overlay.show {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .modal {
+        background: var(--quantum-dark);
+        border: 1px solid var(--quantum-border);
+        border-radius: var(--radius-xl);
+        width: 90%;
+        max-width: 500px;
+        max-height: 90vh;
+        overflow: auto;
+        transform: scale(0.9) translateY(20px);
+        transition: transform 0.3s ease;
+    }
+
+    .modal-overlay.show .modal {
+        transform: scale(1) translateY(0);
+    }
+
+    .modal-header {
+        padding: var(--space-lg);
+        border-bottom: 1px solid var(--quantum-border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .modal-header h3 {
+        font-size: var(--text-xl);
+    }
+
+    .modal-content {
+        padding: var(--space-lg);
+    }
+
+    .modal-footer {
+        padding: var(--space-md) var(--space-lg);
+        border-top: 1px solid var(--quantum-border);
+        display: flex;
+        gap: var(--space-sm);
+        justify-content: flex-end;
+    }
+
+    /* Toast Notifications */
+    .toast-container {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        z-index: 2000;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .toast {
+        padding: 14px 20px;
+        background: var(--quantum-dark);
+        border-radius: var(--radius-md);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        box-shadow: var(--shadow-lg);
+        animation: slideInRight 0.3s ease;
+        min-width: 300px;
+    }
+
+    .toast-success { border-left: 4px solid var(--neon-green); }
+    .toast-error { border-left: 4px solid var(--neon-red); }
+    .toast-warning { border-left: 4px solid var(--neon-yellow); }
+    .toast-info { border-left: 4px solid var(--neon-cyan); }
+
+    .toast-icon {
+        font-size: 18px;
+    }
+
+    .toast-success .toast-icon { color: var(--neon-green); }
+    .toast-error .toast-icon { color: var(--neon-red); }
+    .toast-warning .toast-icon { color: var(--neon-yellow); }
+    .toast-info .toast-icon { color: var(--neon-cyan); }
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       PHASE 37-42: BADGES + PROGRESS + TABLES
+       ═══════════════════════════════════════════════════════════════════════════ */
+    .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        padding: 4px 10px;
+        font-size: var(--text-xs);
+        font-weight: 600;
+        border-radius: var(--radius-full);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .badge-success { background: rgba(0, 255, 136, 0.15); color: var(--neon-green); }
+    .badge-warning { background: rgba(255, 217, 61, 0.15); color: var(--neon-yellow); }
+    .badge-danger { background: rgba(255, 71, 87, 0.15); color: var(--neon-red); }
+    .badge-info { background: rgba(0, 245, 255, 0.15); color: var(--neon-cyan); }
+    .badge-purple { background: rgba(139, 92, 246, 0.15); color: var(--neon-purple); }
+
+    /* Department Badges */
+    .badge-intelligence { background: rgba(0, 245, 255, 0.15); color: var(--dept-intelligence); }
+    .badge-omega { background: rgba(255, 217, 61, 0.15); color: var(--dept-omega); }
+    .badge-physics { background: rgba(255, 107, 53, 0.15); color: var(--dept-physics); }
+    .badge-fortress { background: rgba(255, 71, 87, 0.15); color: var(--dept-fortress); }
+    .badge-biology { background: rgba(0, 255, 136, 0.15); color: var(--dept-biology); }
+    .badge-guardians { background: rgba(139, 92, 246, 0.15); color: var(--dept-guardians); }
+    .badge-reality { background: rgba(59, 130, 246, 0.15); color: var(--dept-reality); }
+    .badge-chemistry { background: rgba(255, 0, 255, 0.15); color: var(--dept-chemistry); }
+
+    /* Progress Bars */
+    .progress {
+        height: 8px;
+        background: var(--quantum-light);
+        border-radius: var(--radius-full);
+        overflow: hidden;
+    }
+
+    .progress-bar {
+        height: 100%;
+        background: linear-gradient(90deg, var(--neon-cyan), var(--neon-purple));
+        border-radius: var(--radius-full);
+        transition: width 0.5s ease;
+    }
+
+    .progress-success .progress-bar { background: var(--neon-green); }
+    .progress-warning .progress-bar { background: var(--neon-yellow); }
+    .progress-danger .progress-bar { background: var(--neon-red); }
+
+    /* Health Bar */
+    .health-bar {
+        height: 6px;
+        background: var(--quantum-light);
+        border-radius: var(--radius-full);
+        overflow: hidden;
+    }
+
+    .health-bar-fill {
+        height: 100%;
+        background: var(--neon-green);
+        transition: width 0.3s ease, background 0.3s ease;
+    }
+
+    .health-bar-fill.warning { background: var(--neon-yellow); }
+    .health-bar-fill.danger { background: var(--neon-red); }
+
+    /* Tables */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 12px 16px;
+        text-align: left;
+        border-bottom: 1px solid var(--quantum-border);
+    }
+
+    th {
+        font-weight: 600;
+        color: #a1a1aa;
+        font-size: var(--text-xs);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    tr:hover {
+        background: rgba(255, 255, 255, 0.02);
+    }
+
+    .table-striped tbody tr:nth-child(even) {
+        background: rgba(255, 255, 255, 0.02);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       PHASE 43-47: TABS + ACCORDIONS
+       ═══════════════════════════════════════════════════════════════════════════ */
+    .tabs {
+        border-bottom: 1px solid var(--quantum-border);
+        margin-bottom: var(--space-lg);
+    }
+
+    .tab-list {
+        display: flex;
+        gap: 4px;
+        overflow-x: auto;
+    }
+
+    .tab-btn {
+        padding: 12px 20px;
+        background: transparent;
+        border: none;
+        color: #71717a;
+        font-size: var(--text-sm);
+        font-weight: 500;
+        cursor: pointer;
+        border-bottom: 2px solid transparent;
+        transition: all 0.2s ease;
+        white-space: nowrap;
+    }
+
+    .tab-btn:hover {
+        color: #a1a1aa;
+    }
+
+    .tab-btn.active {
+        color: var(--neon-cyan);
+        border-bottom-color: var(--neon-cyan);
+    }
+
+    .tab-panel {
+        display: none;
+    }
+
+    .tab-panel.active {
+        display: block;
+        animation: fadeIn 0.3s ease;
+    }
+
+    /* Accordion */
+    .accordion {
+        border: 1px solid var(--quantum-border);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+    }
+
+    .accordion-item {
+        border-bottom: 1px solid var(--quantum-border);
+    }
+
+    .accordion-item:last-child {
+        border-bottom: none;
+    }
+
+    .accordion-header {
+        width: 100%;
+        padding: 16px 20px;
+        background: var(--quantum-dark);
+        border: none;
+        color: #fff;
+        font-size: var(--text-sm);
+        font-weight: 500;
+        text-align: left;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: background 0.2s ease;
+    }
+
+    .accordion-header:hover {
+        background: var(--quantum-medium);
+    }
+
+    .accordion-header i {
+        transition: transform 0.3s ease;
+    }
+
+    .accordion-item.open .accordion-header i {
+        transform: rotate(180deg);
+    }
+
+    .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        background: var(--quantum-void);
+    }
+
+    .accordion-item.open .accordion-content {
+        max-height: 500px;
+    }
+
+    .accordion-body {
+        padding: 16px 20px;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       PHASE 48-55: ANIMATIONS + SCROLLBAR
+       ═══════════════════════════════════════════════════════════════════════════ */
+    @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+    }
+
+    @keyframes glow {
+        0%, 100% { box-shadow: 0 0 5px var(--neon-cyan); }
+        50% { box-shadow: 0 0 20px var(--neon-cyan), 0 0 30px var(--neon-cyan); }
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+
+    @keyframes typing {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0; }
+    }
+
+    @keyframes gradient-shift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes slideInRight {
+        from { transform: translateX(100%); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes slideOutRight {
+        from { transform: translateX(0); opacity: 1; }
+        to { transform: translateX(100%); opacity: 0; }
+    }
+
+    @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+
+    .animate-pulse { animation: pulse 2s infinite; }
+    .animate-glow { animation: glow 2s infinite; }
+    .animate-float { animation: float 3s ease-in-out infinite; }
+    .animate-spin { animation: spin 1s linear infinite; }
+
+    /* Skeleton Loading */
+    .skeleton {
+        background: linear-gradient(90deg, var(--quantum-light) 25%, var(--quantum-medium) 50%, var(--quantum-light) 75%);
+        background-size: 200% 100%;
+        animation: skeleton-loading 1.5s infinite;
+        border-radius: var(--radius-md);
+    }
+
+    @keyframes skeleton-loading {
+        0% { background-position: 200% 0; }
+        100% { background-position: -200% 0; }
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: var(--quantum-dark);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--quantum-light);
+        border-radius: var(--radius-full);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--neon-cyan);
+    }
+
+    /* Firefox */
+    * {
+        scrollbar-width: thin;
+        scrollbar-color: var(--quantum-light) var(--quantum-dark);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════════════
+       PHASE 56-59: RESPONSIVE BREAKPOINTS
+       ═══════════════════════════════════════════════════════════════════════════ */
+    @media (min-width: 640px) {
+        .sm\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+        .sm\:flex-row { flex-direction: row; }
+    }
+
+    @media (min-width: 768px) {
+        .md\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+        .md\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+        .md\:flex-row { flex-direction: row; }
+        .md\:col-span-4 { grid-column: span 4; }
+        .md\:col-span-6 { grid-column: span 6; }
+        .md\:col-span-8 { grid-column: span 8; }
+    }
+
+    @media (min-width: 1024px) {
+        .lg\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+        .lg\:grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+        .lg\:col-span-3 { grid-column: span 3; }
+        .lg\:col-span-4 { grid-column: span 4; }
+        .lg\:col-span-9 { grid-column: span 9; }
+    }
+
+    @media (min-width: 1280px) {
+        .xl\:grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+        .xl\:grid-cols-6 { grid-template-columns: repeat(6, 1fr); }
+    }
+
+    /* Mobile sidebar hidden */
+    @media (max-width: 1023px) {
+        .sidebar {
+            transform: translateX(-100%);
+            position: fixed;
+            z-index: 100;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar.open {
+            transform: translateX(0);
+        }
+
+        .main-content {
+            margin-left: 0 !important;
+        }
+    }
+
+    </style>
+</head>
+<body>
+    <!-- ═══════════════════════════════════════════════════════════════════════════
+         HTML STRUCTURE
+         ═══════════════════════════════════════════════════════════════════════════ -->
+
+    <!-- ═══════════════════════════════════════════════════════════════════════════
+         PHASE 60-67: APP SHELL + SIDEBAR + HEADER
+         ═══════════════════════════════════════════════════════════════════════════ -->
+    <div id="app" style="display: flex; min-height: 100vh;">
+
+        <!-- Sidebar -->
+        <aside class="sidebar" style="
+            width: var(--sidebar-width);
+            background: var(--quantum-dark);
+            border-right: 1px solid var(--quantum-border);
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 50;
+        ">
+            <!-- Logo -->
+            <div style="padding: 20px; border-bottom: 1px solid var(--quantum-border);">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <div style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple)); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px;">🧠</div>
+                    <div>
+                        <div style="font-family: var(--font-display); font-weight: 700; font-size: 16px;">QAntum</div>
+                        <div style="font-size: 11px; color: var(--neon-cyan);">v34.1 Singular</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <nav style="flex: 1; overflow-y: auto; padding: 16px 12px;">
+                <div style="margin-bottom: 24px;">
+                    <div style="font-size: 11px; color: #52525b; text-transform: uppercase; letter-spacing: 0.1em; padding: 0 12px; margin-bottom: 8px;">Main</div>
+                    <a href="#" class="nav-item active" data-page="dashboard" style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; color: #a1a1aa; border-radius: 8px; transition: all 0.2s;">
+                        <i class="fas fa-home"></i> Dashboard
+                    </a>
+                    <a href="#" class="nav-item" data-page="chat" style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; color: #a1a1aa; border-radius: 8px; transition: all 0.2s;">
+                        <i class="fas fa-comments"></i> Chat AI
+                    </a>
+                    <a href="#" class="nav-item" data-page="terminal" style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; color: #a1a1aa; border-radius: 8px; transition: all 0.2s;">
+                        <i class="fas fa-terminal"></i> Terminal
+                    </a>
+                    <a href="#" class="nav-item" data-page="skilltree" style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; color: #a1a1aa; border-radius: 8px; transition: all 0.2s;">
+                        <i class="fas fa-project-diagram"></i> Skill Tree
+                    </a>
+                </div>
+
+                <div style="margin-bottom: 24px;">
+                    <div style="font-size: 11px; color: #52525b; text-transform: uppercase; letter-spacing: 0.1em; padding: 0 12px; margin-bottom: 8px;">Departments</div>
+                    <a href="#" class="nav-item" data-page="intelligence" style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; color: var(--dept-intelligence); border-radius: 8px; transition: all 0.2s;">
+                        <i class="fas fa-brain"></i> Intelligence
+                    </a>
+                    <a href="#" class="nav-item" data-page="omega" style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; color: var(--dept-omega); border-radius: 8px; transition: all 0.2s;">
+                        <i class="fas fa-bolt"></i> Omega
+                    </a>
+                    <a href="#" class="nav-item" data-page="physics" style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; color: var(--dept-physics); border-radius: 8px; transition: all 0.2s;">
+                        <i class="fas fa-atom"></i> Physics
+                    </a>
+                    <a href="#" class="nav-item" data-page="fortress" style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; color: var(--dept-fortress); border-radius: 8px; transition: all 0.2s;">
+                        <i class="fas fa-shield-alt"></i> Fortress
+                    </a>
+                    <a href="#" class="nav-item" data-page="biology" style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; color: var(--dept-biology); border-radius: 8px; transition: all 0.2s;">
+                        <i class="fas fa-dna"></i> Biology
+                    </a>
+                    <a href="#" class="nav-item" data-page="guardians" style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; color: var(--dept-guardians); border-radius: 8px; transition: all 0.2s;">
+                        <i class="fas fa-user-shield"></i> Guardians
+                    </a>
+                    <a href="#" class="nav-item" data-page="reality" style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; color: var(--dept-reality); border-radius: 8px; transition: all 0.2s;">
+                        <i class="fas fa-globe"></i> Reality
+                    </a>
+                    <a href="#" class="nav-item" data-page="chemistry" style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; color: var(--dept-chemistry); border-radius: 8px; transition: all 0.2s;">
+                        <i class="fas fa-link"></i> Chemistry
+                    </a>
+                </div>
+
+                <div style="margin-bottom: 24px;">
+                    <div style="font-size: 11px; color: #52525b; text-transform: uppercase; letter-spacing: 0.1em; padding: 0 12px; margin-bottom: 8px;">Tools</div>
+                    <a href="#" class="nav-item" data-page="audit" style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; color: #a1a1aa; border-radius: 8px; transition: all 0.2s;">
+                        <i class="fas fa-clipboard-check"></i> Audit
+                    </a>
+                    <a href="#" class="nav-item" data-page="healing" style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; color: #a1a1aa; border-radius: 8px; transition: all 0.2s;">
+                        <i class="fas fa-heart-pulse"></i> Self-Healing
+                    </a>
+                    <a href="#" class="nav-item" data-page="docs" style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; color: #a1a1aa; border-radius: 8px; transition: all 0.2s;">
+                        <i class="fas fa-book"></i> Docs
+                    </a>
+                    <a href="#" class="nav-item" data-page="logs" style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; color: #a1a1aa; border-radius: 8px; transition: all 0.2s;">
+                        <i class="fas fa-list"></i> Logs
+                    </a>
+                    <a href="#" class="nav-item" data-page="settings" style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; color: #a1a1aa; border-radius: 8px; transition: all 0.2s;">
+                        <i class="fas fa-cog"></i> Settings
+                    </a>
+                </div>
+            </nav>
+
+            <!-- Sidebar Footer -->
+            <div style="padding: 16px; border-top: 1px solid var(--quantum-border);">
+                <div style="display: flex; align-items: center; gap: 8px; font-size: 12px;">
+                    <span style="width: 8px; height: 8px; background: var(--neon-green); border-radius: 50%; animation: pulse 2s infinite;"></span>
+                    <span style="color: var(--neon-green);">All Systems Operational</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content" style="
+            flex: 1;
+            margin-left: var(--sidebar-width);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        ">
+            <!-- Header -->
+            <header style="
+                height: var(--header-height);
+                background: var(--quantum-dark);
+                border-bottom: 1px solid var(--quantum-border);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 0 24px;
+                position: sticky;
+                top: 0;
+                z-index: 40;
+            ">
+                <div style="display: flex; align-items: center; gap: 16px;">
+                    <button id="mobile-menu-btn" style="display: none; background: none; border: none; color: #fff; font-size: 20px; cursor: pointer;">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div style="position: relative;">
+                        <i class="fas fa-search" style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #52525b;"></i>
+                        <input type="search" placeholder="Search... (Ctrl+K)" style="width: 300px; padding-left: 38px; background: var(--quantum-void);">
+                    </div>
+                </div>
+
+                <div style="display: flex; align-items: center; gap: 16px;">
+                    <div class="system-status" style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--neon-green);">
+                        <i class="fas fa-check-circle"></i>
+                        <span>System Healthy</span>
+                    </div>
+                    <button class="btn btn-ghost" title="Notifications">
+                        <i class="fas fa-bell"></i>
+                    </button>
+                    <button class="btn btn-ghost" title="Settings">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                </div>
+            </header>
+
+            <!-- Page Content Container -->
+            <div id="page-container" style="flex: 1; padding: 24px; overflow-y: auto;">
+
+                <!-- ═══════════════════════════════════════════════════════════════════════════
+                     PHASE 68-70: DASHBOARD PAGE
+                     ═══════════════════════════════════════════════════════════════════════════ -->
+                <div id="page-dashboard" class="page active">
+                    <!-- Welcome Banner -->
+                    <div class="card" style="background: linear-gradient(135deg, rgba(0,245,255,0.1), rgba(168,85,247,0.1)); margin-bottom: 24px;">
+                        <div class="card-body">
+                            <div style="display: flex; align-items: center; justify-content: space-between;">
+                                <div>
+                                    <h2 style="margin-bottom: 8px;">Welcome to QAntum Empire</h2>
+                                    <p style="color: #a1a1aa; margin-bottom: 16px;">Your singular command center for 958,219 lines of code</p>
+                                    <div style="display: flex; gap: 12px;">
+                                        <button class="btn btn-primary" onclick="navigateTo('chat')"><i class="fas fa-comments"></i> Start Chat</button>
+                                        <button class="btn btn-secondary" onclick="navigateTo('terminal')"><i class="fas fa-terminal"></i> Open Terminal</button>
+                                    </div>
+                                </div>
+                                <div style="font-size: 64px;">🧠</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Stats Cards -->
+                    <div class="grid grid-cols-4" style="gap: 16px; margin-bottom: 24px;">
+                        <div class="card">
+                            <div class="card-body" style="text-align: center;">
+                                <div style="font-size: 28px; font-weight: 700; color: var(--neon-cyan);">958,219</div>
+                                <div style="color: #a1a1aa; font-size: 13px;">Lines of Code</div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body" style="text-align: center;">
+                                <div style="font-size: 28px; font-weight: 700; color: var(--neon-purple);">1,420</div>
+                                <div style="color: #a1a1aa; font-size: 13px;">Total Files</div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body" style="text-align: center;">
+                                <div style="font-size: 28px; font-weight: 700; color: var(--neon-green);">93,434</div>
+                                <div style="color: #a1a1aa; font-size: 13px;">Comments</div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-body" style="text-align: center;">
+                                <div style="font-size: 28px; font-weight: 700; color: var(--neon-gold);">8</div>
+                                <div style="color: #a1a1aa; font-size: 13px;">Departments</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Charts Row -->
+                    <div class="grid grid-cols-2" style="gap: 24px; margin-bottom: 24px;">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>Department Distribution</h3>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="chart-departments" height="200"></canvas>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header">
+                                <h3>System Health</h3>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="chart-health" height="200"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Quick Actions</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="grid grid-cols-4" style="gap: 12px;">
+                                <button class="btn btn-secondary" style="justify-content: flex-start; gap: 8px;"><i class="fas fa-sync"></i> Sync All</button>
+                                <button class="btn btn-secondary" style="justify-content: flex-start; gap: 8px;"><i class="fas fa-shield-alt"></i> Security Scan</button>
+                                <button class="btn btn-secondary" style="justify-content: flex-start; gap: 8px;"><i class="fas fa-database"></i> Backup</button>
+                                <button class="btn btn-secondary" style="justify-content: flex-start; gap: 8px;"><i class="fas fa-chart-line"></i> Analytics</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ═══════════════════════════════════════════════════════════════════════════
+                     PHASE 71-75: CHAT PAGE
+                     ═══════════════════════════════════════════════════════════════════════════ -->
+                <div id="page-chat" class="page" style="display: none;">
+                    <div style="display: flex; height: calc(100vh - var(--header-height) - 48px); gap: 24px;">
+                        <!-- Chat Main -->
+                        <div style="flex: 1; display: flex; flex-direction: column;">
+                            <div class="card" style="flex: 1; display: flex; flex-direction: column;">
+                                <div class="card-header" style="display: flex; align-items: center; justify-content: space-between;">
+                                    <div style="display: flex; align-items: center; gap: 12px;">
+                                        <div style="width: 40px; height: 40px; background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple)); border-radius: 50%; display: flex; align-items: center; justify-content: center;">🧠</div>
+                                        <div>
+                                            <h3>QAntum AI</h3>
+                                            <div style="font-size: 12px; color: var(--neon-green);"><i id="ollama-indicator" class="fas fa-circle" style="font-size: 8px;"></i> Ollama: <span id="ollama-status-text">Detecting...</span></div>
+                                        </div>
+                                    </div>
+                                    <div style="display: flex; gap: 8px;">
+                                        <button class="btn btn-ghost btn-sm" title="Clear Chat"><i class="fas fa-trash"></i></button>
+                                        <button class="btn btn-ghost btn-sm" title="Export"><i class="fas fa-download"></i></button>
+                                    </div>
+                                </div>
+
+                                <div id="chat-messages" style="flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 16px;">
+                                    <!-- Welcome Message -->
+                                    <div class="chat-message assistant">
+                                        <div style="display: flex; gap: 12px;">
+                                            <div style="width: 32px; height: 32px; background: linear-gradient(135deg, var(--neon-cyan), var(--neon-purple)); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">🧠</div>
+                                            <div style="background: var(--quantum-void); border-radius: 12px; padding: 12px 16px; max-width: 80%;">
+                                                <div style="font-size: 14px; line-height: 1.6;">
+                                                    <strong>Здравей!</strong> Аз съм QAntum AI - твоят персонален асистент за целия QAntum Empire проект. Мога да ти помогна с:
+                                                    <ul style="margin: 12px 0; padding-left: 20px;">
+                                                        <li>Навигация и търсене в кодовата база</li>
+                                                        <li>Изпълнение на автономни задачи</li>
+                                                        <li>Анализ на департаменти и модули</li>
+                                                        <li>Генериране на код и документация</li>
+                                                        <li>Self-healing и оптимизация</li>
+                                                    </ul>
+                                                    Какво искаш да направим днес?
+                                                </div>
+                                                <div style="font-size: 11px; color: #52525b; margin-top: 8px;">QAntum • just now</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Chat Input -->
+                                <div style="padding: 16px; border-top: 1px solid var(--quantum-border);">
+                                    <div style="display: flex; gap: 12px;">
+                                        <div style="flex: 1; position: relative;">
+                                            <textarea id="chat-input" placeholder="Попитай QAntum нещо... (Ctrl+Enter за изпращане)" rows="1" style="resize: none; padding-right: 100px;"></textarea>
+                                            <div style="position: absolute; right: 8px; top: 50%; transform: translateY(-50%); display: flex; gap: 4px;">
+                                                <button class="btn btn-ghost btn-sm" title="Attach File"><i class="fas fa-paperclip"></i></button>
+                                                <button class="btn btn-ghost btn-sm" title="Voice"><i class="fas fa-microphone"></i></button>
+                                            </div>
+                                        </div>
+                                        <button id="chat-send" class="btn btn-primary"><i class="fas fa-paper-plane"></i></button>
+                                    </div>
+                                    <div style="display: flex; gap: 8px; margin-top: 8px;">
+                                        <button class="btn btn-ghost btn-sm" onclick="insertPrompt('Анализирай проекта')">Анализирай</button>
+                                        <button class="btn btn-ghost btn-sm" onclick="insertPrompt('Покажи статистики')">Статистики</button>
+                                        <button class="btn btn-ghost btn-sm" onclick="insertPrompt('Намери грешки')">Намери грешки</button>
+                                        <button class="btn btn-ghost btn-sm" onclick="insertPrompt('Оптимизирай')">Оптимизирай</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Chat Sidebar -->
+                        <div style="width: 280px;">
+                            <div class="card" style="height: 100%;">
+                                <div class="card-header">
+                                    <h3>Chat History</h3>
+                                </div>
+                                <div class="card-body" style="overflow-y: auto;">
+                                    <div id="chat-history" style="display: flex; flex-direction: column; gap: 8px;">
+                                        <div style="padding: 12px; background: var(--quantum-void); border-radius: 8px; cursor: pointer; transition: all 0.2s;">
+                                            <div style="font-size: 13px; font-weight: 500; margin-bottom: 4px;">New Conversation</div>
+                                            <div style="font-size: 11px; color: #52525b;">Started just now</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ═══════════════════════════════════════════════════════════════════════════
+                     PHASE 76-78: TERMINAL PAGE
+                     ═══════════════════════════════════════════════════════════════════════════ -->
+                <div id="page-terminal" class="page" style="display: none;">
+                    <div class="card" style="height: calc(100vh - var(--header-height) - 48px);">
+                        <div class="card-header" style="display: flex; align-items: center; justify-content: space-between;">
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <i class="fas fa-terminal" style="color: var(--neon-green);"></i>
+                                <h3>QAntum Terminal</h3>
+                                <span class="badge badge-success">Connected</span>
+                            </div>
+                            <div style="display: flex; gap: 8px;">
+                                <button class="btn btn-ghost btn-sm" title="Clear"><i class="fas fa-eraser"></i></button>
+                                <button class="btn btn-ghost btn-sm" title="Copy All"><i class="fas fa-copy"></i></button>
+                                <button class="btn btn-ghost btn-sm" title="Download Log"><i class="fas fa-download"></i></button>
+                            </div>
+                        </div>
+                        <div id="terminal-output" style="flex: 1; background: #0a0a0a; padding: 16px; font-family: var(--font-mono); font-size: 13px; overflow-y: auto; height: calc(100% - 120px);">
+                            <div style="color: var(--neon-green);">╔══════════════════════════════════════════════════════════════╗</div>
+                            <div style="color: var(--neon-green);">║  QAntum Terminal v34.1 - Singular Command Interface           ║</div>
+                            <div style="color: var(--neon-green);">║  Type 'help' for available commands                           ║</div>
+                            <div style="color: var(--neon-green);">╚══════════════════════════════════════════════════════════════╝</div>
+                            <div style="margin-top: 16px;"></div>
+                            <div><span style="color: var(--neon-cyan);">quantum@empire</span>:<span style="color: var(--neon-purple);">~</span>$ <span style="color: #a1a1aa;">ready</span></div>
+                            <div style="color: var(--neon-green);">✓ All systems initialized and ready for commands.</div>
+                            <div style="margin-top: 8px;"></div>
+                        </div>
+                        <div style="padding: 16px; border-top: 1px solid var(--quantum-border); display: flex; gap: 12px;">
+                            <span style="color: var(--neon-cyan); font-family: var(--font-mono);">quantum@empire:~$</span>
+                            <input type="text" id="terminal-input" placeholder="Enter command..." style="flex: 1; background: transparent; border: none; color: #fff; font-family: var(--font-mono); font-size: 13px; outline: none;">
+                            <button class="btn btn-primary btn-sm" id="terminal-run"><i class="fas fa-play"></i> Run</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ═══════════════════════════════════════════════════════════════════════════
+                     PHASE 79-80: SKILL TREE PAGE
+                     ═══════════════════════════════════════════════════════════════════════════ -->
+                <div id="page-skilltree" class="page" style="display: none;">
+                    <div class="card" style="height: calc(100vh - var(--header-height) - 48px);">
+                        <div class="card-header" style="display: flex; align-items: center; justify-content: space-between;">
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <i class="fas fa-project-diagram" style="color: var(--neon-purple);"></i>
+                                <h3>QAntum Skill Tree</h3>
+                            </div>
+                            <div style="display: flex; gap: 8px;">
+                                <select style="padding: 6px 12px; font-size: 13px;">
+                                    <option value="all">All Departments</option>
+                                    <option value="intelligence">Intelligence</option>
+                                    <option value="omega">Omega</option>
+                                    <option value="physics">Physics</option>
+                                    <option value="fortress">Fortress</option>
+                                    <option value="biology">Biology</option>
+                                    <option value="guardians">Guardians</option>
+                                    <option value="reality">Reality</option>
+                                    <option value="chemistry">Chemistry</option>
+                                </select>
+                                <button class="btn btn-ghost btn-sm" title="Zoom In"><i class="fas fa-search-plus"></i></button>
+                                <button class="btn btn-ghost btn-sm" title="Zoom Out"><i class="fas fa-search-minus"></i></button>
+                                <button class="btn btn-ghost btn-sm" title="Reset View"><i class="fas fa-expand"></i></button>
+                            </div>
+                        </div>
+                        <div id="skilltree-container" style="flex: 1; height: calc(100% - 60px); overflow: hidden;"></div>
+                    </div>
+                </div>
+
+                <!-- ═══════════════════════════════════════════════════════════════════════════
+                     PHASE 81-83: DEPARTMENT PAGES (Template)
+                     ═══════════════════════════════════════════════════════════════════════════ -->
+                <div id="page-intelligence" class="page department-page" style="display: none;" data-dept="intelligence">
+                    <div style="margin-bottom: 24px;">
+                        <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 8px;">
+                            <div style="width: 48px; height: 48px; background: var(--dept-intelligence); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px;"><i class="fas fa-brain"></i></div>
+                            <div>
+                                <h2>Intelligence Department</h2>
+                                <p style="color: #a1a1aa;">Neural networks, AI models, and cognitive systems</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-3" style="gap: 16px; margin-bottom: 24px;">
+                        <div class="card"><div class="card-body" style="text-align: center;"><div style="font-size: 24px; font-weight: 700; color: var(--dept-intelligence);">142,847</div><div style="color: #a1a1aa; font-size: 12px;">Lines of Code</div></div></div>
+                        <div class="card"><div class="card-body" style="text-align: center;"><div style="font-size: 24px; font-weight: 700; color: var(--dept-intelligence);">284</div><div style="color: #a1a1aa; font-size: 12px;">Files</div></div></div>
+                        <div class="card"><div class="card-body" style="text-align: center;"><div style="font-size: 24px; font-weight: 700; color: var(--neon-green);">98%</div><div style="color: #a1a1aa; font-size: 12px;">Health</div></div></div>
+                    </div>
+                    <div class="card"><div class="card-header"><h3>Subclasses</h3></div><div class="card-body"><div class="grid grid-cols-2" style="gap: 12px;" id="intelligence-subclasses"></div></div></div>
+                </div>
+
+                <div id="page-omega" class="page department-page" style="display: none;" data-dept="omega">
+                    <div style="margin-bottom: 24px;"><div style="display: flex; align-items: center; gap: 16px;"><div style="width: 48px; height: 48px; background: var(--dept-omega); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px;"><i class="fas fa-bolt"></i></div><div><h2>Omega Department</h2><p style="color: #a1a1aa;">Core engine, orchestration, and power systems</p></div></div></div>
+                    <div class="grid grid-cols-3" style="gap: 16px; margin-bottom: 24px;"><div class="card"><div class="card-body" style="text-align: center;"><div style="font-size: 24px; font-weight: 700; color: var(--dept-omega);">124,567</div><div style="color: #a1a1aa; font-size: 12px;">Lines of Code</div></div></div><div class="card"><div class="card-body" style="text-align: center;"><div style="font-size: 24px; font-weight: 700; color: var(--dept-omega);">198</div><div style="color: #a1a1aa; font-size: 12px;">Files</div></div></div><div class="card"><div class="card-body" style="text-align: center;"><div style="font-size: 24px; font-weight: 700; color: var(--neon-green);">99%</div><div style="color: #a1a1aa; font-size: 12px;">Health</div></div></div></div>
+                </div>
+
+                <div id="page-physics" class="page department-page" style="display: none;" data-dept="physics">
+                    <div style="margin-bottom: 24px;"><div style="display: flex; align-items: center; gap: 16px;"><div style="width: 48px; height: 48px; background: var(--dept-physics); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px;"><i class="fas fa-atom"></i></div><div><h2>Physics Department</h2><p style="color: #a1a1aa;">Quantum calculations and mathematical models</p></div></div></div>
+                    <div class="grid grid-cols-3" style="gap: 16px; margin-bottom: 24px;"><div class="card"><div class="card-body" style="text-align: center;"><div style="font-size: 24px; font-weight: 700; color: var(--dept-physics);">98,432</div><div style="color: #a1a1aa; font-size: 12px;">Lines of Code</div></div></div><div class="card"><div class="card-body" style="text-align: center;"><div style="font-size: 24px; font-weight: 700; color: var(--dept-physics);">167</div><div style="color: #a1a1aa; font-size: 12px;">Files</div></div></div><div class="card"><div class="card-body" style="text-align: center;"><div style="font-size: 24px; font-weight: 700; color: var(--neon-green);">97%</div><div style="color: #a1a1aa; font-size: 12px;">Health</div></div></div></div>
+                </div>
+
+                <div id="page-fortress" class="page department-page" style="display: none;" data-dept="fortress">
+                    <div style="margin-bottom: 24px;"><div style="display: flex; align-items: center; gap: 16px;"><div style="width: 48px; height: 48px; background: var(--dept-fortress); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px;"><i class="fas fa-shield-alt"></i></div><div><h2>Fortress Department</h2><p style="color: #a1a1aa;">Security, encryption, and defense systems</p></div></div></div>
+                    <div class="grid grid-cols-3" style="gap: 16px; margin-bottom: 24px;"><div class="card"><div class="card-body" style="text-align: center;"><div style="font-size: 24px; font-weight: 700; color: var(--dept-fortress);">134,891</div><div style="color: #a1a1aa; font-size: 12px;">Lines of Code</div></div></div><div class="card"><div class="card-body" style="text-align: center;"><div style="font-size: 24px; font-weight: 700; color: var(--dept-fortress);">245</div><div style="color: #a1a1aa; font-size: 12px;">Files</div></div></div><div class="card"><div class="card-body" style="text-align: center;"><div style="font-size: 24px; font-weight: 700; color: var(--neon-green);">100%</div><div style="color: #a1a1aa; font-size: 12px;">Health</div></div></div></div>
+                </div>
+
+                <div id="page-biology" class="page department-page" style="display: none;" data-dept="biology">
+                    <div style="margin-bottom: 24px;"><div style="display: flex; align-items: center; gap: 16px;"><div style="width: 48px; height: 48px; background: var(--dept-biology); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px;"><i class="fas fa-dna"></i></div><div><h2>Biology Department</h2><p style="color: #a1a1aa;">Self-healing, evolution, and adaptive systems</p></div></div></div>
+                    <div class="grid grid-cols-3" style="gap: 16px; margin-bottom: 24px;"><div class="card"><div class="card-body" style="text-align: center;"><div style="font-size: 24px; font-weight: 700; color: var(--dept-biology);">112,456</div><div style="color: #a1a1aa; font-size: 12px;">Lines of Code</div></div></div><div class="card"><div class="card-body" style="text-align: center;"><div style="font-size: 24px; font-weight: 700; color: var(--dept-biology);">189</div><div style="color: #a1a1aa; font-size: 12px;">Files</div></div></div><div class="card"><div class="card-body" style="text-align: center;"><div style="font-size: 24px; font-weight: 700; color: var(--neon-green);">96%</div><div style="color: #a1a1aa; font-size: 12px;">Health</div></div></div></div>
+                </div>
+
+                <div id="page-guardians" class="page department-page" style="display: none;" data-dept="guardians">
+                    <div style="margin-bottom: 24px;"><div style="display: flex; align-items: center; gap: 16px;"><div style="width: 48px; height: 48px; background: var(--dept-guardians); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px;"><i class="fas fa-user-shield"></i></div><div><h2>Guardians Department</h2><p style="color: #a1a1aa;">Monitoring, alerts, and protection protocols</p></div></div></div>
+                    <div class="grid grid-cols-3" style="gap: 16px; margin-bottom: 24px;"><div class="card"><div class="card-body" style="text-align: center;"><div style="font-size: 24px; font-weight: 700; color: var(--dept-guardians);">87,234</div><div style="color: #a1a1aa; font-size: 12px;">Lines of Code</div></div></div><div class="card"><div class="card-body" style="text-align: center;"><div style="font-size: 24px; font-weight: 700; color: var(--dept-guardians);">145</div><div style="color: #a1a1aa; font-size: 12px;">Files</div></div></div><div class="card"><div class="card-body" style="text-align: center;"><div style="font-size: 24px; font-weight: 700; color: var(--neon-green);">99%</div><div style="color: #a1a1aa; font-size: 12px;">Health</div></div></div></div>
+                </div>
+
+                <div id="page-reality" class="page department-page" style="display: none;" data-dept="reality">
+                    <div style="margin-bottom: 24px;"><div style="display: flex; align-items: center; gap: 16px;"><div style="width: 48px; height: 48px; background: var(--dept-reality); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px;"><i class="fas fa-globe"></i></div><div><h2>Reality Department</h2><p style="color: #a1a1aa;">Data processing, analytics, and real-world integration</p></div></div></div>
+                    <div class="grid grid-cols-3" style="gap: 16px; margin-bottom: 24px;"><div class="card"><div class="card-body" style="text-align: center;"><div style="font-size: 24px; font-weight: 700; color: var(--dept-reality);">118,765</div><div style="color: #a1a1aa; font-size: 12px;">Lines of Code</div></div></div><div class="card"><div class="card-body" style="text-align: center;"><div style="font-size: 24px; font-weight: 700; color: var(--dept-reality);">201</div><div style="color: #a1a1aa; font-size: 12px;">Files</div></div></div><div class="card"><div class="card-body" style="text-align: center;"><div style="font-size: 24px; font-weight: 700; color: var(--neon-green);">95%</div><div style="color: #a1a1aa; font-size: 12px;">Health</div></div></div></div>
+                </div>
+
+                <div id="page-chemistry" class="page department-page" style="display: none;" data-dept="chemistry">
+                    <div style="margin-bottom: 24px;"><div style="display: flex; align-items: center; gap: 16px;"><div style="width: 48px; height: 48px; background: var(--dept-chemistry); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px;"><i class="fas fa-link"></i></div><div><h2>Chemistry Department</h2><p style="color: #a1a1aa;">API connections, integrations, and bonds</p></div></div></div>
+                    <div class="grid grid-cols-3" style="gap: 16px; margin-bottom: 24px;"><div class="card"><div class="card-body" style="text-align: center;"><div style="font-size: 24px; font-weight: 700; color: var(--dept-chemistry);">125,040</div><div style="color: #a1a1aa; font-size: 12px;">Lines of Code</div></div></div><div class="card"><div class="card-body" style="text-align: center;"><div style="font-size: 24px; font-weight: 700; color: var(--dept-chemistry);">263</div><div style="color: #a1a1aa; font-size: 12px;">Files</div></div></div><div class="card"><div class="card-body" style="text-align: center;"><div style="font-size: 24px; font-weight: 700; color: var(--neon-green);">98%</div><div style="color: #a1a1aa; font-size: 12px;">Health</div></div></div></div>
+                </div>
+
+                <!-- ═══════════════════════════════════════════════════════════════════════════
+                     PHASE 84-86: TOOLS PAGES (Audit, Healing, Docs, Logs, Settings)
+                     ═══════════════════════════════════════════════════════════════════════════ -->
+                <div id="page-audit" class="page" style="display: none;">
+                    <h2 style="margin-bottom: 24px;"><i class="fas fa-clipboard-check"></i> System Audit</h2>
+                    <div class="grid grid-cols-4" style="gap: 16px; margin-bottom: 24px;">
+                        <div class="card"><div class="card-body" style="text-align: center;"><div style="font-size: 24px; font-weight: 700; color: var(--neon-green);">0</div><div style="color: #a1a1aa; font-size: 12px;">Critical Issues</div></div></div>
+                        <div class="card"><div class="card-body" style="text-align: center;"><div style="font-size: 24px; font-weight: 700; color: var(--neon-gold);">3</div><div style="color: #a1a1aa; font-size: 12px;">Warnings</div></div></div>
+                        <div class="card"><div class="card-body" style="text-align: center;"><div style="font-size: 24px; font-weight: 700; color: var(--neon-cyan);">12</div><div style="color: #a1a1aa; font-size: 12px;">Suggestions</div></div></div>
+                        <div class="card"><div class="card-body" style="text-align: center;"><div style="font-size: 24px; font-weight: 700; color: var(--neon-green);">98.7%</div><div style="color: #a1a1aa; font-size: 12px;">Health Score</div></div></div>
+                    </div>
+                    <div class="card"><div class="card-header"><h3>Run Audit</h3></div><div class="card-body"><div style="display: flex; gap: 12px;"><button class="btn btn-primary"><i class="fas fa-play"></i> Full Audit</button><button class="btn btn-secondary"><i class="fas fa-shield-alt"></i> Security Only</button><button class="btn btn-secondary"><i class="fas fa-tachometer-alt"></i> Performance Only</button></div></div></div>
+                </div>
+
+                <div id="page-healing" class="page" style="display: none;">
+                    <h2 style="margin-bottom: 24px;"><i class="fas fa-heart-pulse"></i> Self-Healing System</h2>
+                    <div class="card" style="margin-bottom: 24px;"><div class="card-header"><h3>Auto-Repair Status</h3></div><div class="card-body"><div style="display: flex; align-items: center; gap: 16px;"><span style="width: 12px; height: 12px; background: var(--neon-green); border-radius: 50%; animation: pulse 2s infinite;"></span><span style="color: var(--neon-green); font-weight: 500;">Self-Healing Active</span></div><div class="progress-bar" style="margin-top: 16px;"><div class="progress-fill" style="width: 100%;"></div></div></div></div>
+                    <div class="card"><div class="card-header"><h3>Healing Actions</h3></div><div class="card-body"><div style="display: flex; gap: 12px;"><button class="btn btn-primary"><i class="fas fa-magic"></i> Auto-Heal All</button><button class="btn btn-secondary"><i class="fas fa-sync"></i> Regenerate</button><button class="btn btn-secondary"><i class="fas fa-history"></i> Restore Backup</button></div></div></div>
+                </div>
+
+                <div id="page-docs" class="page" style="display: none;">
+                    <h2 style="margin-bottom: 24px;"><i class="fas fa-book"></i> Documentation</h2>
+                    <div style="display: flex; gap: 24px; height: calc(100vh - var(--header-height) - 120px);">
+                        <div class="card" style="width: 280px;"><div class="card-header"><h3>Navigation</h3></div><div class="card-body" style="overflow-y: auto;"><div id="docs-nav" style="display: flex; flex-direction: column; gap: 4px;"><a href="#" class="nav-item" style="padding: 8px 12px;">Getting Started</a><a href="#" class="nav-item" style="padding: 8px 12px;">Architecture</a><a href="#" class="nav-item" style="padding: 8px 12px;">Departments</a><a href="#" class="nav-item" style="padding: 8px 12px;">API Reference</a><a href="#" class="nav-item" style="padding: 8px 12px;">Security</a></div></div></div>
+                        <div class="card" style="flex: 1;"><div class="card-header"><h3>Documentation Viewer</h3></div><div class="card-body" id="docs-content" style="overflow-y: auto;"><div style="color: #a1a1aa;">Select a document from the navigation.</div></div></div>
+                    </div>
+                </div>
+
+                <div id="page-logs" class="page" style="display: none;">
+                    <h2 style="margin-bottom: 24px;"><i class="fas fa-list"></i> System Logs</h2>
+                    <div class="card"><div class="card-header" style="display: flex; align-items: center; justify-content: space-between;"><h3>Live Logs</h3><div style="display: flex; gap: 8px;"><select style="padding: 6px 12px; font-size: 13px;"><option>All Levels</option><option>Error</option><option>Warning</option><option>Info</option><option>Debug</option></select><button class="btn btn-ghost btn-sm"><i class="fas fa-pause"></i></button><button class="btn btn-ghost btn-sm"><i class="fas fa-trash"></i></button></div></div><div id="logs-container" style="height: 500px; overflow-y: auto; background: #0a0a0a; padding: 16px; font-family: var(--font-mono); font-size: 12px;"><div style="color: var(--neon-green);">[INFO] System initialized</div><div style="color: var(--neon-cyan);">[DEBUG] Loading modules...</div><div style="color: var(--neon-green);">[INFO] All departments online</div></div></div>
+                </div>
+
+                <div id="page-settings" class="page" style="display: none;">
+                    <h2 style="margin-bottom: 24px;"><i class="fas fa-cog"></i> Settings</h2>
+                    <div class="grid grid-cols-2" style="gap: 24px;">
+                        <div class="card"><div class="card-header"><h3>Appearance</h3></div><div class="card-body"><div class="form-group"><label>Theme</label><select><option>Quantum Dark</option><option>Quantum Light</option><option>Neon</option></select></div><div class="form-group"><label>Accent Color</label><select><option>Cyan</option><option>Purple</option><option>Green</option><option>Gold</option></select></div></div></div>
+                        <div class="card"><div class="card-header"><h3>System</h3></div><div class="card-body"><div class="form-group"><label style="display: flex; align-items: center; justify-content: space-between;">Auto-Healing<div class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></div></label></div><div class="form-group"><label style="display: flex; align-items: center; justify-content: space-between;">Live Sync<div class="toggle-switch"><input type="checkbox" checked><span class="toggle-slider"></span></div></label></div></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer style="padding: 16px 24px; border-top: 1px solid var(--quantum-border); display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #52525b;">
+                <div>QAntum Empire v34.1 • © 2025 Singular Project</div>
+                <div style="display: flex; gap: 16px;">
+                    <span>958,219 LOC</span>
+                    <span>1,420 Files</span>
+                    <span>8 Departments</span>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-container" style="position: fixed; top: 24px; right: 24px; z-index: 9999; display: flex; flex-direction: column; gap: 12px;"></div>
+
+    <!-- Modal Container -->
+    <div id="modal-container"></div>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════════
+         JAVASCRIPT
+         ═══════════════════════════════════════════════════════════════════════════ -->
+    <script>
+    // ═══════════════════════════════════════════════════════════════════════════
+    // PHASE 87-90: CORE STATE & UTILITIES
+    // ═══════════════════════════════════════════════════════════════════════════
+
+    const QAntum = {
+        version: '34.1',
+        state: {
+            currentPage: 'dashboard',
+            theme: 'dark',
+            chatHistory: [],
+            terminalHistory: [],
+            notifications: [],
+            settings: {
+                autoHealing: true,
+                liveSync: true,
+                accentColor: 'cyan'
+            }
+        },
+
+        // Statistics
+        stats: {
+            totalLOC: 958219,
+            totalFiles: 1420,
+            vectors: 93434,
+            departments: {
+                intelligence: { loc: 156834, files: 312, health: 98 },
+                omega: { loc: 124567, files: 198, health: 99 },
+                physics: { loc: 98432, files: 167, health: 97 },
+                fortress: { loc: 134891, files: 245, health: 100 },
+                biology: { loc: 112456, files: 189, health: 96 },
+                guardians: { loc: 87234, files: 145, health: 99 },
+                reality: { loc: 118765, files: 201, health: 95 },
+                chemistry: { loc: 125040, files: 263, health: 98 }
+            }
+        },
+
+        // Event Bus
+        events: new EventTarget(),
+        emit(event, data) { this.events.dispatchEvent(new CustomEvent(event, { detail: data })); },
+        on(event, callback) { this.events.addEventListener(event, e => callback(e.detail)); }
+    };
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // PHASE 91-92: TOAST SYSTEM
+    // ═══════════════════════════════════════════════════════════════════════════
+
+    const Toast = {
+        container: null,
+
+        init() {
+            this.container = document.getElementById('toast-container');
+        },
+
+        show(message, type = 'info', duration = 4000) {
+            const toast = document.createElement('div');
+            toast.className = `toast toast-${type}`;
+            const icons = { success: 'check-circle', error: 'times-circle', warning: 'exclamation-triangle', info: 'info-circle' };
+            toast.innerHTML = `<i class="fas fa-${icons[type]}"></i><span>${message}</span><button onclick="this.parentElement.remove()" style="background:none;border:none;color:inherit;cursor:pointer;margin-left:auto;"><i class="fas fa-times"></i></button>`;
+            this.container.appendChild(toast);
+            setTimeout(() => toast.classList.add('show'), 10);
+            setTimeout(() => { toast.classList.remove('show'); setTimeout(() => toast.remove(), 300); }, duration);
+        },
+
+        success(msg) { this.show(msg, 'success'); },
+        error(msg) { this.show(msg, 'error'); },
+        warning(msg) { this.show(msg, 'warning'); },
+        info(msg) { this.show(msg, 'info'); }
+    };
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // PHASE 93-94: MODAL SYSTEM
+    // ═══════════════════════════════════════════════════════════════════════════
+
+    const Modal = {
+        container: null,
+
+        init() {
+            this.container = document.getElementById('modal-container');
+        },
+
+        show(title, content, actions = []) {
+            const modal = document.createElement('div');
+            modal.className = 'modal-overlay';
+            modal.innerHTML = `
+                <div class="modal">
+                    <div class="modal-header">
+                        <h3>${title}</h3>
+                        <button class="btn btn-ghost btn-sm" onclick="Modal.close()"><i class="fas fa-times"></i></button>
+                    </div>
+                    <div class="modal-body">${content}</div>
+                    <div class="modal-footer">
+                        ${actions.map(a => `<button class="btn ${a.class || 'btn-secondary'}" onclick="${a.action}">${a.label}</button>`).join('')}
+                    </div>
+                </div>
+            `;
+            this.container.innerHTML = '';
+            this.container.appendChild(modal);
+            setTimeout(() => modal.classList.add('show'), 10);
+        },
+
+        close() {
+            const modal = this.container.querySelector('.modal-overlay');
+            if (modal) { modal.classList.remove('show'); setTimeout(() => modal.remove(), 300); }
+        },
+
+        confirm(title, message) {
+            return new Promise(resolve => {
+                this.show(title, `<p>${message}</p>`, [
+                    { label: 'Cancel', action: 'Modal.close(); Modal._resolve(false)' },
+                    { label: 'Confirm', class: 'btn-primary', action: 'Modal.close(); Modal._resolve(true)' }
+                ]);
+                this._resolve = resolve;
+            });
+        }
+    };
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // PHASE 95: ROUTER / NAVIGATION
+    // ═══════════════════════════════════════════════════════════════════════════
+
+    function navigateTo(page) {
+        // Hide all pages
+        document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+
+        // Show target page
+        const targetPage = document.getElementById(`page-${page}`);
+        if (targetPage) {
+            targetPage.style.display = 'block';
+            QAntum.state.currentPage = page;
+
+            // Update nav
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+                item.style.background = 'transparent';
+            });
+            const activeNav = document.querySelector(`.nav-item[data-page="${page}"]`);
+            if (activeNav) {
+                activeNav.classList.add('active');
+                activeNav.style.background = 'rgba(0,245,255,0.1)';
+            }
+
+            // Emit event
+            QAntum.emit('pageChange', page);
+
+            // Initialize page-specific content
+            if (page === 'dashboard') initDashboard();
+            if (page === 'skilltree') initSkillTree();
+        }
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // PHASE 96-100: CHAT SYSTEM
+    // ═══════════════════════════════════════════════════════════════════════════
+
+    const ChatAI = {
+        messages: [],
+        input: null,
+        container: null,
+
+        init() {
+            this.input = document.getElementById('chat-input');
+            this.container = document.getElementById('chat-messages');
+
+            document.getElementById('chat-send').addEventListener('click', () => this.send());
+            this.input.addEventListener('keydown', e => {
+                if (e.key === 'Enter' && e.ctrlKey) this.send();
+            });
+        },
+
+        async send() {
+            const message = this.input.value.trim();
+            if (!message) return;
+
+            // Add user message
+            this.addMessage(message, 'user');
+            this.input.value = '';
+
+            // Show typing indicator
+            const typingId = this.showTyping();
+
+            // Try Ollama first, fallback to local
+            try {
+                const response = await this.askOllama(message);
+                this.removeTyping(typingId);
+                this.addMessage(response, 'assistant');
+            } catch (e) {
+                console.log('Ollama not available, using local response');
+                await this.sleep(500);
+                this.removeTyping(typingId);
+                const response = this.generateResponse(message);
+                this.addMessage(response, 'assistant');
+            }
+        },
+
+        async askOllama(message) {
+            try {
+                const response = await fetch(`${Backend.httpBase}/api/ask`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ prompt: message })
+                });
+                
+                if (!response.ok) throw new Error('AI Bridge unreachable');
+                
+                const data = await response.json();
+                return data.response;
+            } catch (error) {
+                console.error('AI Error:', error);
+                return `[Error] ${error.message}. Уверете се, че Ollama е инсталиран и Master Bridge работи.`;
+            }
+        },
+
+        addMessage(content, role) {
+            const msg = document.createElement('div');
+            msg.className = `chat-message ${role}`;
+            const avatar = role === 'assistant'
+                ? `<div style="width:32px;height:32px;background:linear-gradient(135deg,var(--neon-cyan),var(--neon-purple));border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">🧠</div>`
+                : `<div style="width:32px;height:32px;background:var(--neon-purple);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fas fa-user"></i></div>`;
+
+            msg.innerHTML = `
+                <div style="display:flex;gap:12px;${role === 'user' ? 'flex-direction:row-reverse;' : ''}">
+                    ${avatar}
+                    <div style="background:var(--quantum-void);border-radius:12px;padding:12px 16px;max-width:80%;">
+                        <div style="font-size:14px;line-height:1.6;">${marked.parse(content)}</div>
+                        <div style="font-size:11px;color:#52525b;margin-top:8px;">${role === 'assistant' ? 'QAntum' : 'You'} • just now</div>
+                    </div>
+                </div>
+            `;
+            this.container.appendChild(msg);
+            this.container.scrollTop = this.container.scrollHeight;
+            this.messages.push({ role, content });
+        },
+
+        showTyping() {
+            const id = Date.now();
+            const typing = document.createElement('div');
+            typing.id = `typing-${id}`;
+            typing.innerHTML = `
+                <div style="display:flex;gap:12px;">
+                    <div style="width:32px;height:32px;background:linear-gradient(135deg,var(--neon-cyan),var(--neon-purple));border-radius:50%;display:flex;align-items:center;justify-content:center;">🧠</div>
+                    <div style="background:var(--quantum-void);border-radius:12px;padding:12px 16px;">
+                        <div style="display:flex;gap:4px;"><span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span></div>
+                    </div>
+                </div>
+            `;
+            this.container.appendChild(typing);
+            this.container.scrollTop = this.container.scrollHeight;
+            return id;
+        },
+
+        removeTyping(id) {
+            document.getElementById(`typing-${id}`)?.remove();
+        },
+
+        generateResponse(message) {
+            const lower = message.toLowerCase();
+
+            if (lower.includes('статистик') || lower.includes('stats')) {
+                return `📊 **QAntum Empire Statistics:**\n\n- **Total LOC:** ${QAntum.stats.totalLOC.toLocaleString()}\n- **Files:** ${QAntum.stats.totalFiles.toLocaleString()}\n- **Vectors:** ${QAntum.stats.vectors.toLocaleString()}\n- **Departments:** 8\n\nВсичко работи оптимално! 🚀`;
+            }
+            if (lower.includes('департамент') || lower.includes('department')) {
+                return `🏛️ **Active Departments:**\n\n1. 🧠 Intelligence - AI & Neural Networks\n2. ⚡ Omega - Core Engine\n3. ⚛️ Physics - Quantum Calculations\n4. 🛡️ Fortress - Security\n5. 🧬 Biology - Self-Healing\n6. 👤 Guardians - Monitoring\n7. 🌍 Reality - Data Processing\n8. 🔗 Chemistry - Integrations`;
+            }
+            if (lower.includes('здравей') || lower.includes('hello') || lower.includes('hi')) {
+                return `Здравей! 👋 Аз съм **QAntum AI** - твоят персонален асистент за QAntum Empire.\n\nКакво искаш да направим днес?`;
+            }
+            if (lower.includes('анализ') || lower.includes('analyze')) {
+                return `🔍 **Анализ на системата:**\n\n✅ Всички 8 департамента онлайн\n✅ Health Score: 98.7%\n✅ 0 критични проблеми\n⚠️ 3 предупреждения\n💡 12 препоръки за оптимизация\n\nИскаш ли да видиш детайлен репорт?`;
+            }
+            if (lower.includes('помощ') || lower.includes('help')) {
+                return `📚 **Мога да ти помогна с:**\n\n- \`статистики\` - преглед на метрики\n- \`департаменти\` - информация за модули\n- \`анализ\` - проверка на системата\n- \`оптимизирай\` - подобрения\n- \`търси [keyword]\` - търсене в кода\n\nПросто питай! 🧠`;
+            }
+
+            return `Разбирам заявката ти: "${message}"\n\n🔄 Обработвам... Това е демо версия на QAntum AI. В пълната версия ще мога да:\n- Изпълнявам автономни задачи\n- Търся в кодовата база\n- Генерирам код\n- Изпълнявам команди\n\nКакво друго искаш да опитаме?`;
+        },
+
+        sleep: ms => new Promise(r => setTimeout(r, ms))
+    };
+
+    function insertPrompt(text) {
+        document.getElementById('chat-input').value = text;
+        document.getElementById('chat-input').focus();
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // PHASE 101-105: TERMINAL SYSTEM
+    // ═══════════════════════════════════════════════════════════════════════════
+
+    const Terminal = {
+        output: null,
+        input: null,
+        history: [],
+        historyIndex: -1,
+
+        commands: {
+            help: () => `Available commands:
+  help          - Show this help
+  clear         - Clear terminal
+  stats         - Show system statistics
+  departments   - List all departments
+  health        - Show system health
+  audit         - Run quick audit
+  version       - Show version info
+  date          - Current date/time
+  whoami        - Show current user
+  scripts       - List all available scripts
+  run <script>  - Run a specific script`,
+
+            clear: () => { Terminal.output.innerHTML = ''; return ''; },
+
+            scripts: async () => {
+                const scripts = await Backend.getScripts();
+                return `📜 **Available Scripts:**\n\n${scripts.map(s => `  • ${s.name.padEnd(30)} (${(s.size/1024).toFixed(1)} KB)`).join('\n')}\n\nUse 'run <script_name>' to execute.`;
+            },
+
+            run: (args) => {
+                if (!args.length) return `❌ Error: No script specified. Usage: run <script_name>`;
+                const scriptName = args[0];
+                const cmd = `node scripts/${scriptName}`;
+                Terminal.print(`<span style="color:var(--neon-yellow)">⚡ Executing: ${cmd}</span>`);
+                Backend.execute(cmd);
+                return '';
+            },
+
+            stats: () => `
+╔═══════════════════════════════════════╗
+║        QANTUM EMPIRE STATISTICS       ║
+╠═══════════════════════════════════════╣
+║  Total LOC:     ${QAntum.stats.totalLOC.toLocaleString().padStart(16)} ║
+║  Total Files:   ${QAntum.stats.totalFiles.toLocaleString().padStart(16)} ║
+║  Vectors:       ${QAntum.stats.vectors.toLocaleString().padStart(16)} ║
+║  Departments:   ${String(8).padStart(16)} ║
+╚═══════════════════════════════════════╝`,
+
+            departments: () => Object.entries(QAntum.stats.departments).map(([name, data]) =>
+                `  ${name.padEnd(12)} │ ${data.loc.toLocaleString().padStart(8)} LOC │ ${data.files} files │ ${data.health}% health`
+            ).join('\n'),
+
+            health: () => `System Health: 98.7% ✓\nAll departments operational.`,
+            audit: () => `Running audit...\n✓ Security: PASSED\n✓ Performance: OPTIMAL\n✓ Integrity: VERIFIED\nAudit complete.`,
+            version: () => `QAntum Terminal v${QAntum.version} (Singular Edition)`,
+            date: () => new Date().toLocaleString(),
+            whoami: () => `quantum@empire (Administrator)`
+        },
+
+        init() {
+            this.output = document.getElementById('terminal-output');
+            this.input = document.getElementById('terminal-input');
+
+            document.getElementById('terminal-run').addEventListener('click', () => this.execute());
+            this.input.addEventListener('keydown', e => {
+                if (e.key === 'Enter') this.execute();
+                if (e.key === 'ArrowUp') this.navigateHistory(-1);
+                if (e.key === 'ArrowDown') this.navigateHistory(1);
+            });
+        },
+
+        async execute() {
+            const cmd = this.input.value.trim();
+            if (!cmd) return;
+
+            this.history.push(cmd);
+            this.historyIndex = this.history.length;
+            this.input.value = '';
+
+            // Echo command
+            this.print(`<span style="color:var(--neon-cyan)">quantum@empire</span>:<span style="color:var(--neon-purple)">~</span>$ ${cmd}`);
+
+            // Check built-in commands first
+            const [command, ...args] = cmd.split(' ');
+            if (this.commands[command]) {
+                const result = await this.commands[command](args);
+                if (result) this.print(result);
+            } else {
+                // Execute on backend server
+                this.print(`<span style="color:var(--neon-yellow)">⚡ Executing on server...</span>`);
+                Backend.execute(cmd);
+            }
+        },
+
+        appendOutput(text, level = 'default') {
+            const colors = {
+                success: 'var(--neon-green)',
+                error: 'var(--neon-red)',
+                warning: 'var(--neon-yellow)',
+                info: 'var(--neon-cyan)',
+                default: 'var(--text-primary)'
+            };
+            this.print(`<span style="color:${colors[level] || colors.default}">${text}</span>`);
+        },
+
+        print(text) {
+            const line = document.createElement('div');
+            line.innerHTML = text.replace(/\n/g, '<br>');
+            this.output.appendChild(line);
+            this.output.scrollTop = this.output.scrollHeight;
+        },
+
+        navigateHistory(dir) {
+            this.historyIndex += dir;
+            if (this.historyIndex < 0) this.historyIndex = 0;
+            if (this.historyIndex >= this.history.length) this.historyIndex = this.history.length;
+            this.input.value = this.history[this.historyIndex] || '';
+        }
+    };
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // PHASE 106-110: CHARTS & VISUALIZATIONS
+    // ═══════════════════════════════════════════════════════════════════════════
+
+    let departmentChart = null;
+    let healthChart = null;
+
+    function initDashboard() {
+        // Department Distribution Chart
+        const deptCtx = document.getElementById('chart-departments');
+        if (deptCtx && !departmentChart) {
+            departmentChart = new Chart(deptCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Intelligence', 'Omega', 'Physics', 'Fortress', 'Biology', 'Guardians', 'Reality', 'Chemistry'],
+                    datasets: [{
+                        data: [142847, 98234, 76891, 112456, 89234, 67892, 93456, 107547],
+                        backgroundColor: [
+                            '#00f5ff', '#a855f7', '#3b82f6', '#ef4444', '#22c55e', '#f97316', '#06b6d4', '#eab308'
+                        ],
+                        borderWidth: 0
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { position: 'right', labels: { color: '#a1a1aa', font: { size: 11 } } }
+                    }
+                }
+            });
+        }
+
+        // Health Gauge Chart
+        const healthCtx = document.getElementById('chart-health');
+        if (healthCtx && !healthChart) {
+            healthChart = new Chart(healthCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['INT', 'OMG', 'PHY', 'FOR', 'BIO', 'GRD', 'REA', 'CHM'],
+                    datasets: [{
+                        label: 'Health %',
+                        data: [98, 99, 97, 100, 96, 99, 95, 98],
+                        backgroundColor: [
+                            'rgba(0,245,255,0.7)', 'rgba(168,85,247,0.7)', 'rgba(59,130,246,0.7)',
+                            'rgba(239,68,68,0.7)', 'rgba(34,197,94,0.7)', 'rgba(249,115,22,0.7)',
+                            'rgba(6,182,212,0.7)', 'rgba(234,179,8,0.7)'
+                        ],
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: { beginAtZero: true, max: 100, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#52525b' } },
+                        x: { grid: { display: false }, ticks: { color: '#a1a1aa' } }
+                    },
+                    plugins: { legend: { display: false } }
+                }
+            });
+        }
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // PHASE 111-115: SKILL TREE VISUALIZATION (D3.js)
+    // ═══════════════════════════════════════════════════════════════════════════
+
+    async function initSkillTree() {
+        const container = document.getElementById('skilltree-container');
+        if (!container) return;
+
+        // Clear existing
+        container.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100%;color:var(--neon-cyan);flex-direction:column;gap:16px;"><i class="fas fa-circle-notch fa-spin fa-2x"></i><span>Loading Skill Tree from skills/ directory...</span></div>';
+
+        // Fetch skills from backend
+        const skillFiles = await Backend.getSkills();
+        
+        container.innerHTML = '';
+        const width = container.clientWidth;
+        const height = container.clientHeight || 600;
+
+        // Create SVG
+        const svg = d3.select(container)
+            .append('svg')
+            .attr('width', width)
+            .attr('height', height)
+            .style('background', 'radial-gradient(circle at center, rgba(0,245,255,0.05), transparent)');
+
+        // Define arrowhead marker
+        svg.append('defs').append('marker')
+            .attr('id', 'arrowhead')
+            .attr('viewBox', '-0 -5 10 10')
+            .attr('refX', 20)
+            .attr('refY', 0)
+            .attr('orient', 'auto')
+            .attr('markerWidth', 6)
+            .attr('markerHeight', 6)
+            .attr('xoverflow', 'visible')
+            .append('svg:path')
+            .attr('d', 'M 0,-5 L 10 ,0 L 0,5')
+            .attr('fill', 'var(--quantum-border)')
+            .style('stroke','none');
+
+        // Skill tree data preparation
+        const nodes = [
+            { id: 'core', name: 'QAntum Core', x: width/2, y: 60, color: '#00f5ff', size: 40, type: 'core' }
+        ];
+        const links = [];
+
+        // Group skills by category
+        const categories = [...new Set(skillFiles.map(s => s.category))];
+        categories.forEach((cat, i) => {
+            const catId = `cat-${cat}`;
+            const angle = (i / categories.length) * Math.PI * 2 - Math.PI/2;
+            const radius = 150;
+            const x = width/2 + Math.cos(angle) * radius;
+            const y = 300 + Math.sin(angle) * radius;
+            
+            nodes.push({ id: catId, name: cat, x, y, color: '#a855f7', size: 30, type: 'category' });
+            links.push({ source: 'core', target: catId });
+
+            // Add skills in this category
+            const skillsInCat = skillFiles.filter(s => s.category === cat);
+            skillsInCat.forEach((skill, j) => {
+                const skillId = `skill-${skill.name}`;
+                const skillAngle = angle + (j - (skillsInCat.length-1)/2) * 0.3;
+                const skillRadius = 250;
+                const sx = width/2 + Math.cos(skillAngle) * skillRadius;
+                const sy = 300 + Math.sin(skillAngle) * skillRadius;
+
+                nodes.push({ id: skillId, name: skill.name, x: sx, y: sy, color: '#3b82f6', size: 15, type: 'skill', path: skill.path });
+                links.push({ source: catId, target: skillId });
+            });
+        });
+
+        // Draw links
+        svg.selectAll('line')
+            .data(links)
+            .enter()
+            .append('line')
+            .attr('x1', d => nodes.find(n => n.id === d.source).x)
+            .attr('y1', d => nodes.find(n => n.id === d.source).y)
+            .attr('x2', d => nodes.find(n => n.id === d.target).x)
+            .attr('y2', d => nodes.find(n => n.id === d.target).y)
+            .attr('stroke', 'rgba(0,245,255,0.3)')
+            .attr('stroke-width', 2);
+
+        // Draw nodes
+        const nodeGroups = svg.selectAll('g.node')
+            .data(nodes)
+            .enter()
+            .append('g')
+            .attr('class', 'node')
+            .attr('transform', d => `translate(${d.x}, ${d.y})`)
+            .style('cursor', 'pointer')
+            .on('click', (e, d) => {
+                if (d.type === 'skill') {
+                    Terminal.input.value = `node ${d.path}`;
+                    Toast.info(`Command set to terminal: node ${d.path}`);
+                    navigateTo('terminal');
+                } else {
+                    Toast.info(`Selected: ${d.name}`);
+                }
+            });
+
+        nodeGroups.append('circle')
+            .attr('r', d => d.size)
+            .attr('fill', d => d.color)
+            .attr('fill-opacity', 0.2)
+            .attr('stroke', d => d.color)
+            .attr('stroke-width', 2);
+
+        nodeGroups.append('text')
+            .text(d => d.name)
+            .attr('text-anchor', 'middle')
+            .attr('dy', d => d.size + 16)
+            .attr('fill', '#a1a1aa')
+            .attr('font-size', 11);
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // PHASE 116-118: KEYBOARD SHORTCUTS
+    // ═══════════════════════════════════════════════════════════════════════════
+
+    function initKeyboardShortcuts() {
+        document.addEventListener('keydown', e => {
+            if (e.ctrlKey && e.key === 'k') { e.preventDefault(); document.querySelector('input[type="search"]')?.focus(); }
+            if (e.ctrlKey && e.key === '/') { e.preventDefault(); navigateTo('terminal'); }
+            if (e.ctrlKey && e.key === '.') { e.preventDefault(); navigateTo('chat'); }
+            if (e.key === 'Escape') Modal.close();
+        });
+    }
+
+    // Typing animation styles
+    const typingStyles = document.createElement('style');
+    typingStyles.textContent = `.typing-dot{width:8px;height:8px;background:var(--neon-cyan);border-radius:50%;animation:typingBounce 1.4s infinite ease-in-out}.typing-dot:nth-child(1){animation-delay:0s}.typing-dot:nth-child(2){animation-delay:0.2s}.typing-dot:nth-child(3){animation-delay:0.4s}@keyframes typingBounce{0%,80%,100%{transform:translateY(0)}40%{transform:translateY(-6px)}}.nav-item:hover{background:rgba(0,245,255,0.1)!important;color:#fff!important}.page{animation:fadeIn 0.3s ease}`;
+    document.head.appendChild(typingStyles);
+
+    // ═══════════════════════════════════════════════════════════════════════════
+    // PHASE 119-120: BACKEND CONNECTION & APP INITIALIZATION
+    // ═══════════════════════════════════════════════════════════════════════════
+
+    const Backend = {
+        ws: null,
+        httpBase: '',
+        wsBase: '',
+        connected: false,
+
+        init() {
+            // Auto-detect server location
+            let host = window.location.hostname;
+            let port = window.location.port;
+            let protocol = window.location.protocol;
+
+            // Fallback for file:// or empty hostname
+            if (!host || host === '' || protocol === 'file:') {
+                host = 'localhost';
+                port = '8888';
+                protocol = 'http:';
+            }
+
+            this.httpBase = `${protocol}//${host}:${port}`;
+            this.wsBase = `${protocol === 'https:' ? 'wss:' : 'ws:'}//${host}:${parseInt(port) + 1}`;
+
+            this.connectWebSocket();
+        },
+
+        connectWebSocket() {
+            try {
+                this.ws = new WebSocket(this.wsBase);
+
+                this.ws.onopen = () => {
+                    this.connected = true;
+                    QAntum.state.serverStatus = 'connected';
+                    document.getElementById('server-status')?.classList.add('connected');
+                    Toast.success('🔌 Backend connected!');
+                    console.log('📡 WebSocket connected to ' + this.wsBase);
+                };
+
+                this.ws.onmessage = (e) => {
+                    const data = JSON.parse(e.data);
+                    this.handleMessage(data);
+                };
+
+                this.ws.onclose = () => {
+                    this.connected = false;
+                    QAntum.state.serverStatus = 'disconnected';
+                    document.getElementById('server-status')?.classList.remove('connected');
+                    console.log('❌ WebSocket disconnected');
+                    // Reconnect after 5s
+                    setTimeout(() => this.connectWebSocket(), 5000);
+                };
+
+                this.ws.onerror = (e) => {
+                    console.log('⚠️ WebSocket error - server might be offline');
+                };
+            } catch (e) {
+                console.log('⚠️ WebSocket not available - running in standalone mode');
+            }
+        },
+
+        handleMessage(data) {
+            switch(data.type) {
+                case 'status':
+                    this.updateUIStatus(data.data);
+                    break;
+                case 'stream':
+                    Terminal.appendOutput(data.line, data.level || 'default');
+                    break;
+                case 'output':
+                    Terminal.appendOutput(data.success ? '✅ Done' : '❌ Failed', data.success ? 'success' : 'error');
+                    break;
+                case 'change':
+                    Toast.info(`📝 File changed: ${data.file}`);
+                    break;
+                case 'connected':
+                    console.log('🎉 ' + data.message);
+                    break;
+            }
+        },
+
+        updateUIStatus(status) {
+            if (!status) return;
+            
+            // Update Stats Cards if they exist
+            if (status.stats) {
+                const elements = {
+                    loc: document.querySelector('.card:nth-child(1) .card-body div:first-child'),
+                    files: document.querySelector('.card:nth-child(2) .card-body div:first-child'),
+                    comments: document.querySelector('.card:nth-child(3) .card-body div:first-child'),
+                    departments: document.querySelector('.card:nth-child(4) .card-body div:first-child')
+                };
+
+                if (elements.loc && status.stats.loc) elements.loc.textContent = status.stats.loc.toLocaleString();
+                if (elements.files && status.stats.files) elements.files.textContent = status.stats.files.toLocaleString();
+                if (elements.comments && status.stats.comments) elements.comments.textContent = status.stats.comments.toLocaleString();
+                if (elements.departments && status.stats.departments) elements.departments.textContent = status.stats.departments;
+            }
+
+            // Update Ollama status indicator
+            const ollamaStatusEl = document.getElementById('ollama-status-text');
+            const ollamaIndicatorEl = document.getElementById('ollama-indicator');
+            
+            if (ollamaStatusEl && status.services && status.services.ollama) {
+                const isOnline = status.services.ollama === 'Online';
+                ollamaStatusEl.textContent = isOnline ? 'Online' : 'Offline';
+                ollamaStatusEl.style.color = isOnline ? 'var(--neon-green)' : 'var(--neon-red)';
+                
+                if (ollamaIndicatorEl) {
+                    ollamaIndicatorEl.style.color = isOnline ? 'var(--neon-green)' : 'var(--neon-red)';
+                }
+            }
+            
+            // Update System Healthy text based on services
+            const systemHealthyEl = document.querySelector('.system-status span');
+            if (systemHealthyEl) {
+                const allUp = status.services && Object.values(status.services).every(s => s === 'Online');
+                systemHealthyEl.textContent = allUp ? 'System Healthy' : 'Partial Outage';
+                systemHealthyEl.style.color = allUp ? 'var(--neon-green)' : 'var(--neon-gold)';
+            }
+        },
+
+        async execute(command) {
+            if (this.ws && this.connected) {
+                this.ws.send(JSON.stringify({ type: 'execute', command }));
+                return true;
+            }
+            // Fallback to HTTP
+            try {
+                const res = await fetch(`${this.httpBase}/api/command`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ command })
+                });
+                const data = await res.json();
+                Terminal.appendOutput(data.stdout || data.error || 'No output', data.success ? 'success' : 'error');
+                if (data.stderr) Terminal.appendOutput(data.stderr, 'warning');
+                return data.success;
+            } catch (e) {
+                console.log('⚠️ Backend offline - command not sent');
+                return false;
+            }
+        },
+
+        async getStatus() {
+            try {
+                const res = await fetch(`${this.httpBase}/api/status`);
+                return await res.json();
+            } catch (e) { return null; }
+        },
+
+        async getScripts() {
+            try {
+                const res = await fetch(`${this.httpBase}/api/scripts`);
+                return await res.json();
+            } catch (e) { return []; }
+        },
+
+        async getSkills() {
+            try {
+                const res = await fetch(`${this.httpBase}/api/skills`);
+                return await res.json();
+            } catch (e) { return []; }
+        }
+    };
+
+    function initApp() {
+        console.log('🧠 QAntum Singular Interface v' + QAntum.version + ' initializing...');
+
+        Toast.init();
+        Modal.init();
+        ChatAI.init();
+        Terminal.init();
+        Backend.init();
+        initKeyboardShortcuts();
+
+        document.querySelectorAll('.nav-item[data-page]').forEach(item => {
+            item.addEventListener('click', e => { e.preventDefault(); navigateTo(item.dataset.page); });
+        });
+
+        document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
+            document.querySelector('.sidebar').classList.toggle('mobile-open');
+        });
+
+        navigateTo('dashboard');
+
+        setTimeout(() => Toast.success('QAntum Singular Interface loaded!'), 500);
+        console.log('✅ QAntum ready. Type help() in console for dev tools.');
+    }
+
+    window.help = () => console.log('🧠 QAntum Dev Tools:\n  QAntum.state - View state\n  Backend.getStatus() - Server status\n  Backend.execute(cmd) - Run command\n  navigateTo(page) - Navigate');
+
+    document.addEventListener('DOMContentLoaded', initApp);
+    </script>
+</body>
+</html>

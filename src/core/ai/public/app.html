@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧠 QANTUM - Test Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --bg: #0a0a1a;
+            --card: #12122a;
+            --border: #2d2d5a;
+            --accent: #8b5cf6;
+            --green: #10b981;
+            --red: #ef4444;
+            --orange: #f59e0b;
+            --blue: #3b82f6;
+            --text: #ffffff;
+            --muted: #a0a0c0;
+        }
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container { max-width: 1400px; margin: 0 auto; }
+        
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .logo-icon { font-size: 2rem; }
+        .status {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--green);
+        }
+        .status-dot {
+            width: 10px;
+            height: 10px;
+            background: var(--green);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        /* Stats Grid */
+        .stats { 
+            display: grid; 
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 20px; 
+            margin-bottom: 30px; 
+        }
+        .stat-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+        }
+        .stat-card.purple::before { background: var(--accent); }
+        .stat-card.green::before { background: var(--green); }
+        .stat-card.blue::before { background: var(--blue); }
+        .stat-card.orange::before { background: var(--orange); }
+        
+        .stat-icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+        .stat-label {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+        .stat-change {
+            margin-top: 8px;
+            font-size: 0.85rem;
+        }
+        .stat-change.up { color: var(--green); }
+        .stat-change.down { color: var(--red); }
+        
+        /* Main Grid */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        /* Card */
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 24px;
+        }
+        .card-title {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* Chart */
+        .chart {
+            display: flex;
+            align-items: flex-end;
+            gap: 8px;
+            height: 200px;
+            padding: 20px 0;
+        }
+        .bar {
+            flex: 1;
+            background: linear-gradient(to top, var(--accent), #a78bfa);
+            border-radius: 4px 4px 0 0;
+            position: relative;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .bar:hover { opacity: 0.8; }
+        .bar::after {
+            content: attr(data-value) '%';
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.75rem;
+            color: var(--muted);
+        }
+        
+        /* Donut */
+        .donut-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        .donut {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .donut-inner {
+            width: 120px;
+            height: 120px;
+            background: var(--card);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .donut-value {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .donut-label {
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+        .legend {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        /* Recent Tests */
+        .tests-table {
+            width: 100%;
+        }
+        .test-row {
+            display: flex;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .test-row:last-child { border-bottom: none; }
+        .test-name { flex: 1; }
+        .test-status {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .test-status.passed { background: rgba(16, 185, 129, 0.2); color: var(--green); }
+        .test-status.failed { background: rgba(239, 68, 68, 0.2); color: var(--red); }
+        .test-status.healed { background: rgba(139, 92, 246, 0.2); color: var(--accent); }
+        .test-status.running { background: rgba(245, 158, 11, 0.2); color: var(--orange); }
+        .test-duration {
+            width: 80px;
+            text-align: right;
+            color: var(--muted);
+        }
+        
+        /* Engines */
+        .engines-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+        }
+        .engine {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid var(--accent);
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+        }
+        .engine-icon { font-size: 1.5rem; margin-bottom: 8px; }
+        .engine-name { font-weight: 600; margin-bottom: 4px; }
+        .engine-tests { font-size: 0.85rem; color: var(--muted); }
+        
+        /* Buttons */
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent), #7c3aed);
+            color: white;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+        }
+        .btn-success {
+            background: linear-gradient(135deg, var(--green), #059669);
+            color: white;
+        }
+        
+        /* Loading */
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: var(--muted);
+        }
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 16px;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .stats { grid-template-columns: repeat(2, 1fr); }
+            .main-grid { grid-template-columns: 1fr; }
+            .engines-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .stats { grid-template-columns: 1fr; }
+            .engines-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">🧠</span>
+                <span>QANTUM</span>
+            </div>
+            <div class="status">
+                <span class="status-dot"></span>
+                <span>Server Running</span>
+            </div>
+        </header>
+        
+        <!-- Stats -->
+        <div class="stats" id="stats">
+            <div class="stat-card purple">
+                <div class="stat-icon">🧪</div>
+                <div class="stat-value" id="totalTests">-</div>
+                <div class="stat-label">Total Tests</div>
+                <div class="stat-change up" id="testsChange">Loading...</div>
+            </div>
+            <div class="stat-card green">
+                <div class="stat-icon">✅</div>
+                <div class="stat-value" id="passRate">-</div>
+                <div class="stat-label">Pass Rate</div>
+                <div class="stat-change up" id="passedCount">Loading...</div>
+            </div>
+            <div class="stat-card blue">
+                <div class="stat-icon">🔄</div>
+                <div class="stat-value" id="healed">-</div>
+                <div class="stat-label">Self-Healed</div>
+                <div class="stat-change up" id="healedInfo">Loading...</div>
+            </div>
+            <div class="stat-card orange">
+                <div class="stat-icon">⏱️</div>
+                <div class="stat-value" id="avgTime">-</div>
+                <div class="stat-label">Avg. Duration</div>
+                <div class="stat-change up">Fast execution</div>
+            </div>
+        </div>
+        
+        <!-- Main Grid -->
+        <div class="main-grid">
+            <!-- Chart Card -->
+            <div class="card">
+                <div class="card-title">
+                    <span>📈 Test Results (Last 7 Days)</span>
+                    <button class="btn btn-primary" onclick="runTests()">▶️ Run All Tests</button>
+                </div>
+                <div class="chart" id="chart">
+                    <!-- Bars generated by JS -->
+                </div>
+            </div>
+            
+            <!-- Donut Card -->
+            <div class="card">
+                <div class="card-title">Test Status Distribution</div>
+                <div class="donut-container">
+                    <div class="donut" id="donut">
+                        <div class="donut-inner">
+                            <div class="donut-value" id="donutValue">-</div>
+                            <div class="donut-label">Pass Rate</div>
+                        </div>
+                    </div>
+                    <div class="legend" id="legend">
+                        <!-- Generated by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Recent Tests & Engines -->
+        <div class="main-grid">
+            <!-- Recent Tests -->
+            <div class="card">
+                <div class="card-title">🧪 Recent Test Runs</div>
+                <div class="tests-table" id="testsTable">
+                    <div class="loading">
+                        <div class="spinner"></div>
+                        Loading tests...
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Engines -->
+            <div class="card">
+                <div class="card-title">⚡ Active Engines</div>
+                <div class="engines-grid" id="engines">
+                    <div class="loading">
+                        <div class="spinner"></div>
+                        Loading...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Load data from API
+        async function loadDashboard() {
+            try {
+                const response = await fetch('/api/dashboard');
+                const data = await response.json();
+                
+                // Update stats
+                document.getElementById('totalTests').textContent = data.totalTests.toLocaleString();
+                document.getElementById('passRate').textContent = data.passRate + '%';
+                document.getElementById('healed').textContent = data.healed;
+                document.getElementById('avgTime').textContent = data.avgTime + 's';
+                
+                document.getElementById('testsChange').textContent = '↑ ' + (data.engines?.length || 6) + ' modules';
+                document.getElementById('passedCount').textContent = '↑ ' + data.chartData.statusDistribution.passed + ' passed';
+                document.getElementById('healedInfo').textContent = (data.totalFixes || 16) + ' fixes successful';
+                
+                // Update chart
+                const chartEl = document.getElementById('chart');
+                chartEl.innerHTML = data.chartData.daily.map(val => 
+                    `<div class="bar" style="height: ${val}%" data-value="${val}"></div>`
+                ).join('');
+                
+                // Update donut
+                const { passed, failed, skipped } = data.chartData.statusDistribution;
+                const total = passed + failed + skipped;
+                const passPercent = ((passed / total) * 100).toFixed(1);
+                const failPercent = ((failed / total) * 100).toFixed(1);
+                const skipPercent = ((skipped / total) * 100).toFixed(1);
+                
+                document.getElementById('donutValue').textContent = passPercent + '%';
+                document.getElementById('donut').style.background = `conic-gradient(
+                    var(--green) 0deg ${passed/total*360}deg,
+                    var(--red) ${passed/total*360}deg ${(passed+failed)/total*360}deg,
+                    var(--orange) ${(passed+failed)/total*360}deg 360deg
+                )`;
+                
+                document.getElementById('legend').innerHTML = `
+                    <div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div> Passed (${passed.toLocaleString()})</div>
+                    <div class="legend-item"><div class="legend-dot" style="background:var(--red)"></div> Failed (${failed})</div>
+                    <div class="legend-item"><div class="legend-dot" style="background:var(--orange)"></div> Skipped (${skipped})</div>
+                `;
+                
+                // Update recent tests
+                document.getElementById('testsTable').innerHTML = data.recentTests.map(test => `
+                    <div class="test-row">
+                        <div class="test-name">${test.name}</div>
+                        <div class="test-status ${test.status}">${test.status.charAt(0).toUpperCase() + test.status.slice(1)}</div>
+                        <div class="test-duration">${test.duration}</div>
+                    </div>
+                `).join('');
+                
+                // Update engines
+                if (data.engines) {
+                    const icons = ['⏰', '🛡️', '⚛️', '🌌', '🧠', '👑'];
+                    document.getElementById('engines').innerHTML = data.engines.map((eng, i) => `
+                        <div class="engine">
+                            <div class="engine-icon">${icons[i] || '⚡'}</div>
+                            <div class="engine-name">${eng.name}</div>
+                            <div class="engine-tests">${eng.tests} tests</div>
+                        </div>
+                    `).join('');
+                }
+                
+                console.log('✅ Dashboard loaded:', data);
+            } catch (error) {
+                console.error('❌ Failed to load dashboard:', error);
+            }
+        }
+        
+        // Run tests
+        async function runTests() {
+            try {
+                const response = await fetch('/api/tests/run', { method: 'POST' });
+                const data = await response.json();
+                alert('🚀 ' + data.message + '\nJob ID: ' + data.jobId);
+            } catch (error) {
+                alert('❌ Failed to start tests');
+            }
+        }
+        
+        // Load on start
+        loadDashboard();
+        
+        // Refresh every 30 seconds
+        setInterval(loadDashboard, 30000);
+    </script>
+</body>
+</html>

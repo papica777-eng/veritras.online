@@ -1,0 +1,22 @@
+[package]
+name = "qantum_cli"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = { version = "4.4", features = ["derive"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+anyhow = "1.0"
+thiserror = "2.0.17"
+rand = "0.9.2"
+notify = "8.2.0"
+syn = { version = "2.0.114", features = ["full", "parsing", "printing", "visit", "visit-mut"] }
+rayon = "1.11.0"
+ndarray = "0.17.2"
+walkdir = "2.5.0"
+quote = "1.0.43"
+proc-macro2 = "1.0.105"
+sha2 = "0.10.9"
+hmac = "0.12.1"
+sysinfo = "0.37.2"

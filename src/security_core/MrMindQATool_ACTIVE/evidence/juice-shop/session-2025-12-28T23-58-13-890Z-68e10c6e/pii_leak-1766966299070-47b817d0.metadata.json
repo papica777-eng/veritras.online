@@ -1,0 +1,31 @@
+{
+  "id": "pii_leak-1766966299070-47b817d0",
+  "timestamp": "2025-12-28T23:58:19.197Z",
+  "eventType": "PII_LEAK",
+  "url": "https://juice-shop.herokuapp.com/#/",
+  "sessionId": "session-2025-12-28T23-58-13-890Z-68e10c6e",
+  "severity": "critical",
+  "description": "REAL PII leaks detected: phone: 7 REAL instances (filtered 2 placeholders)",
+  "maskingApplied": false,
+  "maskedFields": [],
+  "checksum": "12b16fdca530f040f8071345ddf9eb5fe545fa2f48b6f1be0fc74e07eb10b12a",
+  "captureMode": "aggressive",
+  "browserInfo": {
+    "name": "Chromium",
+    "version": "1.0.0-QAntum",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/143.0.7499.4 Safari/537.36",
+    "viewport": {
+      "width": 1920,
+      "height": 1080
+    },
+    "deviceScaleFactor": 1
+  },
+  "networkContext": {
+    "cookies": [
+      {
+        "name": "language",
+        "domain": "juice-shop.herokuapp.com"
+      }
+    ]
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "target": "https://httpbin.org",
+  "startTime": "2025-12-28T19:30:28.519Z",
+  "endTime": "2025-12-28T19:33:16.214Z",
+  "authorization": {
+    "authorized": true,
+    "reason": "Target authorized for scanning",
+    "target": "https://httpbin.org",
+    "timestamp": "2025-12-28T19:30:28.519Z",
+    "guardrailsApplied": [
+      "critical-infrastructure-check",
+      "domain-allowlist-check",
+      "rate-limit-check"
+    ]
+  },
+  "apiMap": {
+    "totalEndpoints": 0,
+    "totalRequests": 0,
+    "bolaTargets": 0,
+    "authTokensFound": 0
+  },
+  "bolaReport": {
+    "totalTests": 0,
+    "vulnerabilitiesFound": 0,
+    "confirmedBOLA": 0,
+    "criticalVulns": 0
+  },
+  "logicReport": {
+    "totalExposures": 0,
+    "totalLogicFlaws": 0,
+    "overallRiskScore": 0,
+    "complianceViolations": {
+      "GDPR": 0,
+      "HIPAA": 0,
+      "PCI-DSS": 0,
+      "SOX": 0,
+      "CCPA": 0
+    }
+  },
+  "shadowReport": {
+    "totalEndpoints": 3,
+    "criticalFindings": 0,
+    "deprecatedAPIs": 0,
+    "debugEndpoints": 0
+  },
+  "patchesGenerated": 0,
+  "summary": {
+    "overallRiskScore": 0,
+    "criticalIssues": 0,
+    "recommendations": [
+      "💡 Implement API versioning strategy",
+      "💡 Use API gateway for centralized security",
+      "💡 Enable rate limiting on all endpoints"
+    ]
+  },
+  "fullReports": {
+    "apiMap": {
+      "target": "https://httpbin.org",
+      "scanStarted": "2025-12-28T19:30:28.520Z",
+      "endpoints": {},
+      "requests": [],
+      "authTokens": [],
+      "sensitiveEndpoints": [],
+      "bolaTargets": [],
+      "statistics": {
+        "totalEndpoints": 0,
+        "totalRequests": 2,
+        "uniquePaths": 0,
+        "authenticatedEndpoints": 0,
+        "sensitiveEndpoints": 0,
+        "bolaTargets": 0
+      },
+      "scanEnded": "2025-12-28T19:30:33.260Z"
+    },
+    "bolaReport": {
+      "target": "https://httpbin.org",
+      "startTime": "2025-12-28T19:30:33.301Z",
+      "endTime": "2025-12-28T19:30:33.302Z",
+      "totalTargets": 0,
+      "totalTests": 0,
+      "vulnerabilitiesFound": 0,
+      "results": [],
+      "summary": {
+        "criticalVulns": 0,
+        "highVulns": 0,
+        "mediumVulns": 0,
+        "lowVulns": 0,
+        "confirmedBOLA": [],
+        "potentialBOLA": []
+      },
+      "recommendations": [
+        "Run API Interceptor first to identify BOLA targets"
+      ]
+    },
+    "logicReport": {
+      "target": "https://httpbin.org",
+      "analyzedAt": "2025-12-28T19:30:33.302Z",
+      "totalEndpoints": 0,
+      "totalExposures": 0,
+      "totalLogicFlaws": 0,
+      "results": [],
+      "summary": {
+        "criticalExposures": [],
+        "highRiskEndpoints": [],
+        "complianceViolations": {
+          "GDPR": 0,
+          "HIPAA": 0,
+          "PCI-DSS": 0,
+          "SOX": 0,
+          "CCPA": 0
+        },
+        "overallRiskScore": 0
+      },
+      "recommendations": [
+        "💡 Implement response filtering middleware",
+        "💡 Use DTOs to control API response shapes",
+        "💡 Add data classification labels to sensitive fields"
+      ]
+    },
+    "shadowReport": {
+      "target": "https://httpbin.org",
+      "startTime": "2025-12-28T19:30:33.303Z",
+      "endTime": "2025-12-28T19:33:16.214Z",
+      "totalEndpointsFound": 3,
+      "endpoints": [
+        {
+          "path": "/robots.txt",
+          "method": "GET",
+          "statusCode": 200,
+          "responseSize": 30,
+          "discoveryMethod": "sitemap",
+          "risk": "low",
+          "category": "undocumented",
+          "evidence": [
+            "File found: robots.txt",
+            "Found 1 disallowed paths"
+          ]
+        },
+        {
+          "path": "/spec.json",
+          "method": "GET",
+          "statusCode": 200,
+          "responseSize": 41019,
+          "discoveryMethod": "sitemap",
+          "risk": "high",
+          "category": "undocumented",
+          "evidence": [
+            "File found: spec.json"
+          ]
+        },
+        {
+          "path": "//deny",
+          "method": "GET",
+          "statusCode": 200,
+          "responseSize": 239,
+          "discoveryMethod": "path_bruteforce",
+          "risk": "high",
+          "category": "undocumented",
+          "evidence": [
+            "Discovered via path enumeration"
+          ]
+        }
+      ],
+      "summary": {
+        "criticalFindings": [],
+        "deprecatedAPIs": [],
+        "debugEndpoints": [],
+        "adminEndpoints": [],
+        "versionMatrix": {}
+      },
+      "recommendations": [
+        "💡 Implement endpoint inventory and documentation",
+        "💡 Use API gateway for centralized access control"
+      ]
+    }
+  }
+}

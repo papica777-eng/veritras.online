@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | QAntum Prime v1.0.0</title>
+    <meta name="description" content="Simple, transparent pricing for QAntum Prime. Start free, scale infinitely.">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    
+    <!-- Stripe for Payments -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <style>
+        .pricing-page {
+            min-height: 100vh;
+            padding-top: 100px;
+            padding-bottom: 4rem;
+        }
+        
+        .pricing-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .pricing-header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .pricing-header p {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .pricing-toggle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .pricing-toggle label {
+            color: var(--text-secondary);
+            cursor: pointer;
+        }
+        
+        .pricing-toggle label.active {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        
+        .toggle-switch {
+            width: 60px;
+            height: 30px;
+            background: var(--bg-card);
+            border-radius: 15px;
+            position: relative;
+            cursor: pointer;
+            border: 2px solid var(--border-color);
+        }
+        
+        .toggle-switch::before {
+            content: '';
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: var(--primary);
+            top: 2px;
+            left: 2px;
+            transition: transform 0.3s;
+        }
+        
+        .toggle-switch.annual::before {
+            transform: translateX(30px);
+        }
+        
+        .save-badge {
+            background: var(--success);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .pricing-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .pricing-card {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 2.5rem;
+            position: relative;
+            transition: all 0.3s;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary);
+        }
+        
+        .pricing-card.featured {
+            border-color: var(--primary);
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.05) 100%);
+            transform: scale(1.05);
+        }
+        
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-8px);
+        }
+        
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gradient-primary);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 9999px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .pricing-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .pricing-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .pricing-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .pricing-price {
+            margin-bottom: 2rem;
+        }
+        
+        .price-value {
+            font-size: 3.5rem;
+            font-weight: 800;
+            font-family: var(--font-mono);
+        }
+        
+        .price-currency {
+            font-size: 1.5rem;
+            vertical-align: super;
+            color: var(--text-secondary);
+        }
+        
+        .price-period {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .pricing-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-check {
+            color: var(--success);
+            font-weight: bold;
+        }
+        
+        .feature-x {
+            color: var(--text-muted);
+        }
+        
+        .pricing-cta {
+            width: 100%;
+            padding: 1rem 2rem;
+        }
+        
+        /* Enterprise Section */
+        .enterprise-section {
+            background: var(--bg-dark);
+            border-radius: 24px;
+            padding: 3rem;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+        
+        .enterprise-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .enterprise-section p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        
+        .enterprise-features {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        
+        .enterprise-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            margin-top: 4rem;
+        }
+        
+        .faq-section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+        
+        .faq-item {
+            background: var(--bg-glass);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 1.5rem;
+        }
+        
+        .faq-item h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+        
+        .faq-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        
+        @media (max-width: 1024px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+                margin: 0 auto 4rem;
+            }
+            
+            .pricing-card.featured {
+                transform: none;
+            }
+            
+            .pricing-card.featured:hover {
+                transform: translateY(-8px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .pricing-header h1 {
+                font-size: 2rem;
+            }
+            
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <div class="particles"></div>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">⚛️</span>
+                <span class="logo-text">QAntum<span class="version">v1.0.0</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#features">Features</a></li>
+                <li><a href="demo.html">Demo</a></li>
+                <li><a href="pricing.html" class="active">Pricing</a></li>
+                <li><a href="docs.html">Docs</a></li>
+            </ul>
+            <div class="nav-cta">
+                <a href="demo.html" class="btn btn-ghost">Live Demo</a>
+                <a href="#starter" class="btn btn-primary">Get Started →</a>
+            </div>
+            <button class="mobile-menu">☰</button>
+        </div>
+    </nav>
+
+    <!-- Pricing Page -->
+    <main class="pricing-page">
+        <div class="pricing-container">
+            <div class="pricing-header">
+                <h1>Simple, <span class="gradient">Honest</span> Pricing</h1>
+                <p>No hidden fees. No surprises. Start free and scale as you grow.</p>
+                
+                <div class="pricing-toggle">
+                    <label class="active" data-period="monthly">Monthly</label>
+                    <div class="toggle-switch" onclick="togglePricing()"></div>
+                    <label data-period="annual">Annual</label>
+                    <span class="save-badge">Save 20%</span>
+                </div>
+            </div>
+            
+            <!-- Pricing Cards -->
+            <div class="pricing-grid">
+                <!-- Starter -->
+                <div class="pricing-card" id="starter">
+                    <div class="pricing-icon">🚀</div>
+                    <div class="pricing-name">Starter</div>
+                    <div class="pricing-description">Perfect for solo developers and small projects</div>
+                    
+                    <div class="pricing-price">
+                        <span class="price-currency">$</span>
+                        <span class="price-value" data-monthly="0" data-annual="0">0</span>
+                        <span class="price-period">/month</span>
+                    </div>
+                    
+                    <ul class="pricing-features">
+                        <li><span class="feature-check">✓</span> Up to 100 tests/month</li>
+                        <li><span class="feature-check">✓</span> Basic self-healing</li>
+                        <li><span class="feature-check">✓</span> 2 parallel workers</li>
+                        <li><span class="feature-check">✓</span> Community support</li>
+                        <li><span class="feature-check">✓</span> Basic reports</li>
+                        <li><span class="feature-x">✗</span> Ghost Protocol</li>
+                        <li><span class="feature-x">✗</span> Swarm execution</li>
+                    </ul>
+                    
+                    <button class="btn btn-secondary pricing-cta" onclick="startFree()">
+                        <span class="btn-icon">🚀</span> Start Free
+                    </button>
+                </div>
+                
+                <!-- Pro -->
+                <div class="pricing-card featured">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="pricing-icon">⚡</div>
+                    <div class="pricing-name">Pro</div>
+                    <div class="pricing-description">For growing teams that need power</div>
+                    
+                    <div class="pricing-price">
+                        <span class="price-currency">$</span>
+                        <span class="price-value" data-monthly="49" data-annual="39">49</span>
+                        <span class="price-period">/month</span>
+                    </div>
+                    
+                    <ul class="pricing-features">
+                        <li><span class="feature-check">✓</span> Unlimited tests</li>
+                        <li><span class="feature-check">✓</span> Advanced self-healing (97%)</li>
+                        <li><span class="feature-check">✓</span> 50 parallel workers</li>
+                        <li><span class="feature-check">✓</span> Ghost Protocol v2</li>
+                        <li><span class="feature-check">✓</span> Priority support</li>
+                        <li><span class="feature-check">✓</span> The Oracle (auto-discovery)</li>
+                        <li><span class="feature-check">✓</span> Advanced analytics</li>
+                    </ul>
+                    
+                    <button class="btn btn-primary pricing-cta" onclick="checkout('pro')" id="pro-btn">
+                        <span class="btn-icon">💳</span> Start 14-Day Trial
+                    </button>
+                </div>
+                
+                <!-- Enterprise -->
+                <div class="pricing-card">
+                    <div class="pricing-icon">🏢</div>
+                    <div class="pricing-name">Enterprise</div>
+                    <div class="pricing-description">For organizations that demand the best</div>
+                    
+                    <div class="pricing-price">
+                        <span class="price-currency">$</span>
+                        <span class="price-value" data-monthly="199" data-annual="159">199</span>
+                        <span class="price-period">/month</span>
+                    </div>
+                    
+                    <ul class="pricing-features">
+                        <li><span class="feature-check">✓</span> Everything in Pro</li>
+                        <li><span class="feature-check">✓</span> Unlimited workers</li>
+                        <li><span class="feature-check">✓</span> Swarm execution (5 regions)</li>
+                        <li><span class="feature-check">✓</span> Chronos predictive engine</li>
+                        <li><span class="feature-check">✓</span> Fortress security scanning</li>
+                        <li><span class="feature-check">✓</span> SSO/SAML</li>
+                        <li><span class="feature-check">✓</span> Dedicated support</li>
+                    </ul>
+                    
+                    <button class="btn btn-secondary pricing-cta" onclick="checkout('enterprise')" id="enterprise-btn">
+                        <span class="btn-icon">🏢</span> Contact Sales
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Enterprise Custom -->
+            <div class="enterprise-section" id="contact">
+                <h2>Need something <span class="gradient">custom</span>?</h2>
+                <p>For large organizations with specific requirements, we offer tailored solutions with dedicated infrastructure and support.</p>
+                
+                <div class="enterprise-features">
+                    <div class="enterprise-feature">
+                        <span class="feature-check">✓</span> On-premise deployment
+                    </div>
+                    <div class="enterprise-feature">
+                        <span class="feature-check">✓</span> Custom integrations
+                    </div>
+                    <div class="enterprise-feature">
+                        <span class="feature-check">✓</span> SLA guarantee
+                    </div>
+                    <div class="enterprise-feature">
+                        <span class="feature-check">✓</span> Training & onboarding
+                    </div>
+                </div>
+                
+                <a href="https://dpengeneering.site" target="_blank" class="btn btn-primary btn-large">Talk to Sales</a>
+            </div>
+            
+            <!-- FAQ -->
+            <section class="faq-section">
+                <h2>Frequently Asked <span class="gradient">Questions</span></h2>
+                
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>Can I switch plans anytime?</h3>
+                        <p>Yes! You can upgrade or downgrade your plan at any time. Changes take effect immediately, and we'll prorate the difference.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>What happens after the trial?</h3>
+                        <p>After your 14-day Pro trial, you can continue with a paid plan or downgrade to Starter (free) to keep using basic features.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>Is Ghost Protocol really 100% undetectable?</h3>
+                        <p>Ghost Protocol v2 has been tested against all major bot detection systems. While we can't guarantee 100% in all scenarios, our success rate is consistently above 99.5%.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>Do you offer refunds?</h3>
+                        <p>Yes! If you're not satisfied within the first 30 days, we offer a full refund, no questions asked.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>What browsers are supported?</h3>
+                        <p>QAntum supports Chrome, Firefox, Safari, and Edge. Ghost Protocol works best with Chrome-based browsers.</p>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <h3>Can I self-host QAntum?</h3>
+                        <p>Enterprise plans include on-premise deployment options. Contact our sales team for details on self-hosted solutions.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer style="margin-top: 4rem;">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2025 Dimitar Prodromov | QAntum Labs. All rights reserved.</p>
+                <p class="footer-quote">"Честни цени. Честен код. Честна работа."</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // ═══════════════════════════════════════════════════════════════════════════════
+        // STRIPE PAYMENT INTEGRATION
+        // ═══════════════════════════════════════════════════════════════════════════════
+        
+        // Initialize Stripe (Replace with your publishable key in production)
+        const STRIPE_CONFIG = {
+            // Demo mode - replace with real keys for production
+            publishableKey: 'pk_test_DEMO_KEY',
+            prices: {
+                pro: {
+                    monthly: 'price_pro_monthly_49',
+                    annual: 'price_pro_annual_468'
+                },
+                enterprise: {
+                    monthly: 'price_enterprise_monthly_199',
+                    annual: 'price_enterprise_annual_1908'
+                }
+            }
+        };
+        
+        let stripe = null;
+        
+        // Initialize Stripe when ready
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+                // In production, use real Stripe key
+                // stripe = Stripe(STRIPE_CONFIG.publishableKey);
+                console.log('%c💳 Payment System Ready (Demo Mode)', 'color: #10b981; font-weight: bold;');
+            } catch(e) {
+                console.log('%c💳 Payment System: Demo Mode', 'color: #f59e0b;');
+            }
+        });
+        
+        // Start Free Plan
+        function startFree() {
+            showPaymentModal('starter', 'Free Plan Activated!', [
+                '✅ 100 tests/month',
+                '✅ Basic self-healing', 
+                '✅ 2 parallel workers',
+                '✅ Community support'
+            ]);
+        }
+        
+        // Checkout with Stripe
+        async function checkout(plan) {
+            const toggle = document.querySelector('.toggle-switch');
+            const isAnnual = toggle.classList.contains('annual');
+            const period = isAnnual ? 'annual' : 'monthly';
+            
+            const planDetails = {
+                pro: {
+                    name: 'Pro Plan',
+                    price: isAnnual ? '$39/mo (billed annually)' : '$49/mo',
+                    features: [
+                        '✅ Unlimited tests',
+                        '✅ Ghost Protocol v2',
+                        '✅ 50 parallel workers',
+                        '✅ The Oracle AI',
+                        '✅ Advanced analytics'
+                    ]
+                },
+                enterprise: {
+                    name: 'Enterprise Plan',
+                    price: isAnnual ? '$159/mo (billed annually)' : '$199/mo',
+                    features: [
+                        '✅ Everything in Pro',
+                        '✅ Unlimited workers',
+                        '✅ Swarm execution',
+                        '✅ Chronos Engine',
+                        '✅ Fortress Security'
+                    ]
+                }
+            };
+            
+            const details = planDetails[plan];
+            
+            // Show payment modal
+            showPaymentModal(plan, `Subscribe to ${details.name}`, details.features, details.price);
+        }
+        
+        // Payment Modal
+        function showPaymentModal(plan, title, features, price = null) {
+            // Remove existing modal
+            const existing = document.getElementById('payment-modal');
+            if (existing) existing.remove();
+            
+            const modal = document.createElement('div');
+            modal.id = 'payment-modal';
+            modal.className = 'payment-modal';
+            modal.innerHTML = `
+                <div class="pm-overlay" onclick="closePaymentModal()"></div>
+                <div class="pm-content">
+                    <button class="pm-close" onclick="closePaymentModal()">✕</button>
+                    <div class="pm-header">
+                        <span class="pm-icon">${plan === 'starter' ? '🚀' : plan === 'pro' ? '⚡' : '🏢'}</span>
+                        <h3>${title}</h3>
+                        ${price ? `<div class="pm-price">${price}</div>` : ''}
+                    </div>
+                    <div class="pm-features">
+                        ${features.map(f => `<div class="pm-feature">${f}</div>`).join('')}
+                    </div>
+                    ${plan === 'starter' ? `
+                        <button class="btn btn-primary pm-action" onclick="activateFree()">
+                            🚀 Activate Free Plan
+                        </button>
+                    ` : `
+                        <div class="pm-payment-form">
+                            <div class="pm-card-input">
+                                <label>Card Details</label>
+                                <div class="card-element" id="card-element">
+                                    <input type="text" placeholder="4242 4242 4242 4242" class="card-number">
+                                    <input type="text" placeholder="MM/YY" class="card-expiry">
+                                    <input type="text" placeholder="CVC" class="card-cvc">
+                                </div>
+                            </div>
+                            <div class="pm-email-input">
+                                <label>Email</label>
+                                <input type="email" placeholder="your@email.com" id="pm-email">
+                            </div>
+                            <button class="btn btn-primary pm-action" onclick="processPayment('${plan}')">
+                                💳 Subscribe Now
+                            </button>
+                            <p class="pm-secure">🔒 Secured by Stripe • 256-bit encryption</p>
+                        </div>
+                    `}
+                    <p class="pm-guarantee">✨ 30-day money-back guarantee</p>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            setTimeout(() => modal.classList.add('active'), 10);
+        }
+        
+        function closePaymentModal() {
+            const modal = document.getElementById('payment-modal');
+            if (modal) {
+                modal.classList.remove('active');
+                setTimeout(() => modal.remove(), 300);
+            }
+        }
+        
+        function activateFree() {
+            showSuccessMessage('Welcome to QAntum!', 'Your free account is ready. Let\'s start testing!');
+        }
+        
+        async function processPayment(plan) {
+            const email = document.getElementById('pm-email')?.value;
+            if (!email || !email.includes('@')) {
+                alert('Please enter a valid email');
+                return;
+            }
+            
+            // Show loading
+            const btn = document.querySelector('.pm-action');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<span class="spinner"></span> Processing...';
+            btn.disabled = true;
+            
+            // Simulate payment processing
+            setTimeout(() => {
+                closePaymentModal();
+                showSuccessMessage(
+                    'Payment Successful! 🎉',
+                    `Welcome to QAntum ${plan.charAt(0).toUpperCase() + plan.slice(1)}! Check your email for setup instructions.`
+                );
+            }, 2000);
+        }
+        
+        function showSuccessMessage(title, message) {
+            const existing = document.getElementById('success-modal');
+            if (existing) existing.remove();
+            
+            const modal = document.createElement('div');
+            modal.id = 'success-modal';
+            modal.className = 'payment-modal';
+            modal.innerHTML = `
+                <div class="pm-overlay" onclick="closeSuccessModal()"></div>
+                <div class="pm-content success">
+                    <div class="success-icon">✅</div>
+                    <h3>${title}</h3>
+                    <p>${message}</p>
+                    <button class="btn btn-primary" onclick="closeSuccessModal()">
+                        Start Testing →
+                    </button>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            setTimeout(() => modal.classList.add('active'), 10);
+        }
+        
+        function closeSuccessModal() {
+            const modal = document.getElementById('success-modal');
+            if (modal) {
+                modal.classList.remove('active');
+                setTimeout(() => {
+                    modal.remove();
+                    window.location.href = 'demo.html';
+                }, 300);
+            }
+        }
+        
+        // Pricing Toggle
+        function togglePricing() {
+            const toggle = document.querySelector('.toggle-switch');
+            const labels = document.querySelectorAll('.pricing-toggle label');
+            const prices = document.querySelectorAll('.price-value');
+            
+            toggle.classList.toggle('annual');
+            
+            const isAnnual = toggle.classList.contains('annual');
+            
+            labels.forEach(label => {
+                label.classList.toggle('active', 
+                    (isAnnual && label.dataset.period === 'annual') ||
+                    (!isAnnual && label.dataset.period === 'monthly')
+                );
+            });
+            
+            prices.forEach(price => {
+                const value = isAnnual ? price.dataset.annual : price.dataset.monthly;
+                price.textContent = value;
+            });
+        }
+    </script>
+    
+    <style>
+        /* Payment Modal Styles */
+        .payment-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 10000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+        
+        .payment-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .pm-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+        }
+        
+        .pm-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 2rem;
+            max-width: 420px;
+            width: 90%;
+            transition: transform 0.3s;
+        }
+        
+        .payment-modal.active .pm-content {
+            transform: translate(-50%, -50%) scale(1);
+        }
+        
+        .pm-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.25rem;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        
+        .pm-close:hover {
+            color: var(--text-primary);
+        }
+        
+        .pm-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .pm-icon {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .pm-header h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .pm-price {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            font-family: var(--font-mono);
+        }
+        
+        .pm-features {
+            margin-bottom: 1.5rem;
+        }
+        
+        .pm-feature {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.9rem;
+        }
+        
+        .pm-payment-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .pm-card-input label,
+        .pm-email-input label {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+        
+        .card-element {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .card-element input,
+        .pm-email-input input {
+            flex: 1;
+            background: var(--bg-darker);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 0.75rem;
+            color: var(--text-primary);
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+        }
+        
+        .card-number { flex: 2; }
+        .card-expiry, .card-cvc { flex: 1; max-width: 80px; }
+        
+        .card-element input:focus,
+        .pm-email-input input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .pm-action {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1rem;
+        }
+        
+        .pm-secure {
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+        
+        .pm-guarantee {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--success);
+            margin-top: 1rem;
+        }
+        
+        .pm-content.success {
+            text-align: center;
+        }
+        
+        .success-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .pm-content.success h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--success);
+            -webkit-text-fill-color: var(--success);
+        }
+        
+        .pm-content.success p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .btn-icon {
+            margin-right: 0.5rem;
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+  <meta name="theme-color" content="#020408">
+  <title>QANTUM PRIME · Sovereign Dashboard</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'qantum-dark': '#020408',
+            'qantum-panel': '#0b101b',
+            'qantum-border': '#1e293b',
+            'qantum-primary': '#a78bfa',
+            'qantum-dim': '#64748b',
+            'qantum-text': '#f1f5f9',
+            'qantum-success': '#34d399',
+            'qantum-danger': '#f87171',
+            'qantum-warning': '#fbbf24',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          boxShadow: {
+            'panel': '0 8px 32px -8px rgba(0,0,0,0.5)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #020408;
+      color: #f1f5f9;
+      overflow: hidden;
+      margin: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #0f1115;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #2a2d35;
+      border-radius: 3px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #8b5cf6;
+    }
+
+    .crt-overlay {
+      pointer-events: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='1' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    }
+
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 4px;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #2a2d35;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-in {
+      animation: fadeIn 0.3s ease forwards;
+    }
+
+    /* Allow text-shadow utility manually just in case */
+    .text-shadow-primary {
+      text-shadow: 0 0 15px rgba(167, 139, 250, 0.5);
+    }
+
+    .text-shadow-success {
+      text-shadow: 0 0 15px rgba(52, 211, 153, 0.5);
+    }
+
+    .text-shadow-cyan {
+      text-shadow: 0 0 15px rgba(6, 182, 212, 0.5);
+    }
+
+    .text-shadow-warning {
+      text-shadow: 0 0 15px rgba(251, 191, 36, 0.5);
+    }
+  </style>
+</head>
+
+<body class="font-sans text-sm bg-qantum-dark text-qantum-text h-screen w-screen overflow-hidden">
+
+  <div id="root" class="flex h-full w-full">
+    <!-- SIDEBAR -->
+    <aside class="w-56 shrink-0 bg-qantum-panel border-r border-qantum-border flex flex-col shadow-panel z-20">
+      <div class="p-5 border-b border-qantum-border">
+        <h1 class="text-lg font-bold font-mono tracking-tight text-white">QANTUM<span
+            class="text-qantum-primary">PRIME</span></h1>
+        <div class="text-[11px] text-qantum-dim mt-1 font-mono tracking-wide">v35 · SINGULARITY</div>
+      </div>
+
+      <nav class="flex-1 overflow-y-auto py-3 custom-scrollbar flex flex-col gap-1">
+        <a href="#"
+          class="flex items-center gap-3 px-4 py-2.5 mx-2 rounded-lg bg-qantum-primary/15 text-white border border-qantum-primary/30 transition-all duration-150">
+          <i data-lucide="activity" class="text-qantum-primary w-4 h-4"></i>
+          <span class="font-mono text-xs tracking-wide">NERVE CENTER</span>
+        </a>
+        <a href="#"
+          class="flex items-center gap-3 px-4 py-2.5 mx-2 rounded-lg text-qantum-dim hover:text-qantum-text hover:bg-white/[0.04] border border-transparent transition-all duration-150">
+          <i data-lucide="brain" class="w-4 h-4 opacity-70"></i>
+          <span class="font-mono text-xs tracking-wide">INTELLIGENCE</span>
+        </a>
+        <a href="#"
+          class="flex items-center gap-3 px-4 py-2.5 mx-2 rounded-lg text-qantum-dim hover:text-qantum-text hover:bg-white/[0.04] border border-transparent transition-all duration-150">
+          <i data-lucide="shield" class="w-4 h-4 opacity-70"></i>
+          <span class="font-mono text-xs tracking-wide">FORTRESS</span>
+        </a>
+        <a href="#"
+          class="flex items-center gap-3 px-4 py-2.5 mx-2 rounded-lg text-qantum-dim hover:text-qantum-text hover:bg-white/[0.04] border border-transparent transition-all duration-150">
+          <i data-lucide="zap" class="w-4 h-4 opacity-70"></i>
+          <span class="font-mono text-xs tracking-wide">OMEGA</span>
+        </a>
+        <a href="#"
+          class="flex items-center gap-3 px-4 py-2.5 mx-2 rounded-lg text-qantum-dim hover:text-qantum-text hover:bg-white/[0.04] border border-transparent transition-all duration-150">
+          <i data-lucide="atom" class="w-4 h-4 opacity-70"></i>
+          <span class="font-mono text-xs tracking-wide">PHYSICS</span>
+        </a>
+        <a href="#"
+          class="flex items-center gap-3 px-4 py-2.5 mx-2 rounded-lg text-qantum-dim hover:text-qantum-text hover:bg-white/[0.04] border border-transparent transition-all duration-150">
+          <i data-lucide="database" class="w-4 h-4 opacity-70"></i>
+          <span class="font-mono text-xs tracking-wide">BIOLOGY</span>
+        </a>
+        <a href="#"
+          class="flex items-center gap-3 px-4 py-2.5 mx-2 rounded-lg text-qantum-dim hover:text-qantum-text hover:bg-white/[0.04] border border-transparent transition-all duration-150">
+          <i data-lucide="eye" class="w-4 h-4 opacity-70"></i>
+          <span class="font-mono text-xs tracking-wide">GUARDIANS</span>
+        </a>
+        <a href="#"
+          class="flex items-center gap-3 px-4 py-2.5 mx-2 rounded-lg text-qantum-dim hover:text-qantum-text hover:bg-white/[0.04] border border-transparent transition-all duration-150">
+          <i data-lucide="layers" class="w-4 h-4 opacity-70"></i>
+          <span class="font-mono text-xs tracking-wide">REALITY</span>
+        </a>
+        <!-- Auto Doc Engine specific links -->
+        <a href="#"
+          class="flex items-center gap-3 px-4 py-2.5 mx-2 rounded-lg text-qantum-dim hover:text-qantum-text hover:bg-white/[0.04] border border-transparent transition-all duration-150">
+          <i data-lucide="file-check-2" class="w-4 h-4 opacity-70"></i>
+          <span class="font-mono text-xs tracking-wide">AUTO-DOCS</span>
+        </a>
+      </nav>
+
+      <div class="p-4 border-t border-qantum-border bg-qantum-dark/50 rounded-t-lg">
+        <div class="flex items-center justify-between mb-2">
+          <span class="text-[11px] text-qantum-dim uppercase tracking-wider">Health</span>
+          <span class="text-xs font-semibold text-qantum-success">100%</span>
+        </div>
+        <div class="w-full bg-qantum-border h-1.5 rounded-full overflow-hidden">
+          <div class="bg-qantum-success h-full rounded-full transition-all" style="width: 100%;"></div>
+        </div>
+        <div class="mt-3 text-[11px] text-qantum-dim font-mono flex flex-col gap-1">
+          <div class="flex justify-between"><span>LOC:</span> <span class="text-qantum-text">1,848,570</span></div>
+          <div class="flex justify-between"><span>FILES:</span> <span class="text-qantum-text">3,641</span></div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- MAIN AREA -->
+    <main class="flex-1 flex flex-col relative min-w-0 overflow-hidden">
+      <div class="crt-overlay"></div>
+
+      <!-- HEADER -->
+      <header
+        class="h-14 shrink-0 border-b border-qantum-border flex items-center justify-between px-6 bg-qantum-panel/80 backdrop-blur-md z-10 shadow-sm">
+        <div class="flex items-center gap-4">
+          <div
+            class="w-2 h-2 rounded-full bg-qantum-success shadow-[0_0_8px_theme(colors.qantum-success)] animate-pulse">
+          </div>
+          <span class="font-mono text-xs text-qantum-dim uppercase tracking-widest">Dashboard</span>
+          <div class="flex items-center gap-2 px-2.5 py-1 rounded-lg bg-qantum-dark/60 border border-qantum-border/50">
+            <span
+              class="w-1.5 h-1.5 rounded-full bg-qantum-primary shadow-[0_0_6px_theme(colors.qantum-primary)]"></span>
+            <span class="font-mono text-[11px] text-qantum-dim">Probability Core</span>
+            <span
+              class="font-mono text-[10px] text-qantum-success tracking-widest font-bold drop-shadow-[0_0_5px_rgba(52,211,153,0.8)]">ONLINE</span>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <button
+            class="px-3 py-1.5 rounded-lg bg-qantum-border/50 hover:bg-qantum-border text-qantum-text text-xs font-mono border border-qantum-border transition-colors">Run
+            audit</button>
+          <button
+            class="px-3 py-1.5 rounded-lg bg-qantum-danger/10 hover:bg-qantum-danger/20 text-qantum-danger text-xs font-mono border border-qantum-danger/30 transition-colors shadow-[0_0_15px_rgba(248,113,113,0.1)]">Kill
+            switch</button>
+        </div>
+      </header>
+
+      <!-- SCROLLABLE CONTENT -->
+      <div class="flex-1 overflow-y-auto p-6 md:p-8 relative z-0 custom-scrollbar">
+        <div class="max-w-7xl mx-auto px-2 sm:px-4 animate-in">
+
+          <div class="mb-8 flex flex-wrap items-start justify-between gap-4">
+            <div>
+              <h1
+                class="text-3xl font-bold text-white mb-2 font-mono tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-qantum-primary/80">
+                Neural Logic Hub</h1>
+              <p class="text-qantum-dim text-sm tracking-wide">Gemini AI · Script Manager · Real-time metrics</p>
+            </div>
+            <div class="flex items-center gap-3">
+              <button
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-qantum-panel/80 backdrop-blur-md border border-qantum-border hover:border-amber-500/40 hover:bg-amber-500/10 transition-all text-qantum-text hover:text-amber-400 text-sm font-mono shadow-panel">
+                <span>🧠</span><span>ALPHA FINANCE</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5 opacity-60"></i>
+              </button>
+              <button
+                class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-qantum-panel/80 backdrop-blur-md border border-qantum-border hover:border-qantum-primary/40 hover:bg-qantum-primary/10 transition-all text-qantum-text hover:text-qantum-primary text-sm font-mono shadow-panel">
+                <i data-lucide="shield-check" class="w-4 h-4 text-qantum-primary"></i>
+                <span>Veritas</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- SYSTEM NOTIFICATION -->
+          <div
+            class="mb-8 p-4 rounded-xl bg-qantum-success/10 border border-qantum-success/30 flex items-center justify-between gap-3 shadow-[0_0_20px_rgba(52,211,153,0.05)] backdrop-blur-md relative overflow-hidden">
+            <div class="absolute inset-y-0 left-0 w-1 bg-qantum-success shadow-[0_0_15px_rgba(52,211,153,1)]"></div>
+            <div class="flex items-center gap-3 pl-2">
+              <i data-lucide="check-circle"
+                class="w-5 h-5 text-qantum-success flex-shrink-0 filter drop-shadow-[0_0_5px_rgba(52,211,153,1)]"></i>
+              <span class="text-qantum-success font-mono text-sm tracking-wide">System integrity: 100%. Auto-Doc hooks
+                installed and actively monitoring commits. Zero entropy state confirmed.</span>
+            </div>
+            <button
+              class="px-4 py-2 rounded-lg bg-qantum-success/20 border border-qantum-success/40 text-qantum-success font-mono text-sm hover:bg-qantum-success/30 transition-all shadow-[0_0_10px_rgba(52,211,153,0.1)]">Verify</button>
+          </div>
+
+          <!-- METRICS GRID -->
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mb-8">
+            <div
+              class="p-6 rounded-xl border border-qantum-primary/30 bg-qantum-primary/5 bg-qantum-panel/80 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(167,139,250,0.15)] hover:border-qantum-primary/50 relative overflow-hidden group">
+              <div
+                class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-qantum-primary/80 to-transparent">
+              </div>
+              <div class="flex items-center justify-between mb-4">
+                <span
+                  class="text-qantum-dim text-xs uppercase tracking-widest font-mono group-hover:text-qantum-text transition-colors">Total
+                  LOC</span>
+                <i data-lucide="code-2"
+                  class="w-5 h-5 text-qantum-primary opacity-50 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(167,139,250,0.5)]"></i>
+              </div>
+              <div class="text-3xl font-bold font-mono text-qantum-primary text-shadow-primary tracking-tight">1,848,570
+              </div>
+            </div>
+
+            <div
+              class="p-6 rounded-xl border border-qantum-success/30 bg-qantum-success/5 bg-qantum-panel/80 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(52,211,153,0.15)] hover:border-qantum-success/50 relative overflow-hidden group">
+              <div
+                class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-qantum-success/80 to-transparent">
+              </div>
+              <div class="flex items-center justify-between mb-4">
+                <span
+                  class="text-qantum-dim text-xs uppercase tracking-widest font-mono group-hover:text-qantum-text transition-colors">Files</span>
+                <i data-lucide="file-text"
+                  class="w-5 h-5 text-qantum-success opacity-50 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(52,211,153,0.5)]"></i>
+              </div>
+              <div class="text-3xl font-bold font-mono text-qantum-success text-shadow-success tracking-tight">3,641
+              </div>
+            </div>
+
+            <div
+              class="p-6 rounded-xl border border-cyan-500/30 bg-cyan-500/5 bg-qantum-panel/80 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(6,182,212,0.15)] hover:border-cyan-500/50 relative overflow-hidden group">
+              <div
+                class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-500/80 to-transparent">
+              </div>
+              <div class="flex items-center justify-between mb-4">
+                <span
+                  class="text-qantum-dim text-xs uppercase tracking-widest font-mono group-hover:text-qantum-text transition-colors">Vectors</span>
+                <i data-lucide="layers"
+                  class="w-5 h-5 text-cyan-400 opacity-50 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(6,182,212,0.5)]"></i>
+              </div>
+              <div class="text-3xl font-bold font-mono text-cyan-400 text-shadow-cyan tracking-tight">500</div>
+            </div>
+
+            <div
+              class="p-6 rounded-xl border border-qantum-warning/30 bg-qantum-warning/5 bg-qantum-panel/80 backdrop-blur-md transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_40px_rgba(251,191,36,0.15)] hover:border-qantum-warning/50 relative overflow-hidden group">
+              <div
+                class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-qantum-warning/80 to-transparent">
+              </div>
+              <div class="flex items-center justify-between mb-4">
+                <span
+                  class="text-qantum-dim text-xs uppercase tracking-widest font-mono group-hover:text-qantum-text transition-colors">Active
+                  Nodes</span>
+                <i data-lucide="cpu"
+                  class="w-5 h-5 text-qantum-warning opacity-50 group-hover:opacity-100 transition-opacity drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]"></i>
+              </div>
+              <div class="text-3xl font-bold font-mono text-qantum-warning text-shadow-warning tracking-tight">500</div>
+            </div>
+          </div>
+
+          <!-- CONTROLS ROW -->
+          <div
+            class="mb-8 flex items-center gap-2 bg-qantum-panel/80 backdrop-blur-lg rounded-2xl border border-qantum-border p-2 shadow-panel">
+            <button
+              class="flex-1 flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl text-sm font-mono transition-all bg-qantum-primary/20 text-qantum-primary border border-qantum-primary/40 shadow-[0_0_20px_rgba(167,139,250,0.15)] hover:bg-qantum-primary/30 hover:border-qantum-primary/60 hover:shadow-[0_0_30px_rgba(167,139,250,0.25)]">
+              <i data-lucide="play" class="w-4 h-4"></i>
+              <span class="tracking-wide">Script Manager</span>
+            </button>
+            <button
+              class="flex-1 flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl text-sm font-mono transition-all text-qantum-dim hover:text-qantum-text hover:bg-white/[0.04] border border-transparent hover:border-qantum-border/50">
+              <i data-lucide="sparkles" class="w-4 h-4 text-amber-300"></i>
+              <span class="tracking-wide">Gemini AI</span>
+            </button>
+            <button
+              class="flex-1 flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl text-sm font-mono transition-all text-qantum-dim hover:text-qantum-text hover:bg-white/[0.04] border border-transparent hover:border-qantum-border/50">
+              <i data-lucide="bot" class="w-4 h-4"></i>
+              <span class="tracking-wide">Auto-Docs</span>
+            </button>
+            <button
+              class="flex-1 flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl text-sm font-mono transition-all text-qantum-dim hover:text-qantum-text hover:bg-white/[0.04] border border-transparent hover:border-qantum-border/50">
+              <i data-lucide="terminal" class="w-4 h-4"></i>
+              <span class="tracking-wide">Raw Terminal</span>
+            </button>
+          </div>
+
+          <!-- SCRIPT MANAGER UI -->
+          <div
+            class="rounded-2xl bg-qantum-panel/90 backdrop-blur-xl border border-qantum-border p-7 shadow-panel relative overflow-hidden">
+            <div
+              class="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-qantum-primary/30 to-transparent">
+            </div>
+
+            <div class="flex items-center gap-4 mb-6">
+              <div
+                class="p-3 rounded-xl bg-qantum-primary/10 border border-qantum-primary/20 shadow-[0_0_15px_rgba(167,139,250,0.15)]">
+                <i data-lucide="terminal-square" class="text-qantum-primary w-6 h-6"></i>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-qantum-text font-mono tracking-tight">Omni-Command Interface</h3>
+                <p class="text-sm text-qantum-dim font-mono mt-1 tracking-wide">Enter execution directive (e.g.,
+                  'eagle', 'vortex audit', 'run hooks')</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="relative flex-1 group">
+                <div
+                  class="absolute inset-0 bg-qantum-primary/5 rounded-xl blur-md transition-opacity opacity-0 group-focus-within:opacity-100">
+                </div>
+                <i data-lucide="chevron-right"
+                  class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-qantum-primary pointer-events-none"></i>
+                <input type="text" placeholder="metrics:count, generate:docs..."
+                  class="w-full pl-12 pr-4 py-4 rounded-xl bg-qantum-dark/80 border border-qantum-border text-qantum-text placeholder-qantum-dim font-mono text-base focus:border-qantum-primary/60 focus:ring-1 focus:ring-qantum-primary/60 outline-none transition-all shadow-inner relative z-10">
+              </div>
+              <button
+                class="px-8 py-4 rounded-xl bg-qantum-primary/20 border border-qantum-primary/40 text-qantum-primary font-mono text-base hover:bg-qantum-primary/30 hover:shadow-[0_0_25px_rgba(167,139,250,0.3)] transition-all flex items-center gap-3 font-bold uppercase tracking-widest group">
+                <i data-lucide="zap" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
+                Execute
+              </button>
+            </div>
+
+            <!-- TERMINAL LOG -->
+            <div
+              class="mt-8 p-5 rounded-xl bg-[#010204] border border-qantum-border/80 font-mono text-sm shadow-inner relative group">
+              <div class="absolute top-0 right-0 p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                <button class="text-qantum-dim hover:text-qantum-text"><i data-lucide="copy"
+                    class="w-4 h-4"></i></button>
+              </div>
+              <div class="h-40 overflow-y-auto custom-scrollbar flex flex-col gap-1.5">
+                <div class="text-qantum-dim">## QANTUM_PRIME_TERMINAL v35 ##</div>
+                <div class="text-qantum-text flex gap-2"><span class="text-qantum-primary">root@qantum:~#</span>
+                  <span>systemctl status modules</span></div>
+                <div class="text-qantum-success">> QANTUM_PRIME ready for directives.</div>
+                <div class="text-qantum-success">> Auto-Doc initialized with zero friction.</div>
+                <div class="text-qantum-success">> Arbitrage endpoints connected.</div>
+                <div class="text-qantum-dim">> System state: ZERO ENTROPY</div>
+                <div class="text-qantum-warning animate-pulse">> Awaiting command_</div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Initialize standard lucide icons
+    lucide.createIcons();
+  </script>
+</body>
+
+</html>
