@@ -517,30 +517,28 @@
         
         // Initialize Stripe (Replace with your publishable key in production)
         const STRIPE_CONFIG = {
-            // Demo mode - replace with real keys for production
-            publishableKey: 'pk_test_DEMO_KEY',
+            publishableKey: 'pk_live_51T0L3MEL9CYqtF0JXnm4CRkH4YGlPKelDQajz3N59w2R6ihlknUOxE1b4lxBGcXV7CXV4hXH5z5ZIaJyaYHFsZd00elLlkTf0',
             prices: {
                 pro: {
-                    monthly: 'price_pro_monthly_49',
-                    annual: 'price_pro_annual_468'
+                    monthly: 'price_1TNi0FEL9CYqtF0J0YJJDvnW',
+                    annual: 'price_1TNi0FEL9CYqtF0J0YJJDvnW'  // TODO: create annual price
                 },
                 enterprise: {
-                    monthly: 'price_enterprise_monthly_199',
-                    annual: 'price_enterprise_annual_1908'
+                    monthly: 'price_1TNi0GEL9CYqtF0J41yCLebi',
+                    annual: 'price_1TNi0GEL9CYqtF0J41yCLebi'   // TODO: create annual price
                 }
             }
         };
         
         let stripe = null;
         
-        // Initialize Stripe when ready
+        // Initialize Stripe LIVE
         document.addEventListener('DOMContentLoaded', function() {
             try {
-                // In production, use real Stripe key
-                // stripe = Stripe(STRIPE_CONFIG.publishableKey);
-                console.log('%c💳 Payment System Ready (Demo Mode)', 'color: #10b981; font-weight: bold;');
+                stripe = Stripe(STRIPE_CONFIG.publishableKey);
+                console.log('%c💳 Payment System: LIVE MODE 🔴', 'color: #10b981; font-weight: bold;');
             } catch(e) {
-                console.log('%c💳 Payment System: Demo Mode', 'color: #f59e0b;');
+                console.error('%c💳 Stripe init failed:', 'color: red;', e);
             }
         });
         
@@ -663,20 +661,41 @@
                 return;
             }
             
+            if (!stripe) {
+                alert('Payment system unavailable. Please refresh and try again.');
+                return;
+            }
+
             // Show loading
             const btn = document.querySelector('.pm-action');
-            const originalText = btn.innerHTML;
-            btn.innerHTML = '<span class="spinner"></span> Processing...';
+            btn.innerHTML = '<span class="spinner"></span> Redirecting to Stripe...';
             btn.disabled = true;
-            
-            // Simulate payment processing
-            setTimeout(() => {
-                closePaymentModal();
-                showSuccessMessage(
-                    'Payment Successful! 🎉',
-                    `Welcome to QAntum ${plan.charAt(0).toUpperCase() + plan.slice(1)}! Check your email for setup instructions.`
-                );
-            }, 2000);
+
+            const toggle = document.querySelector('.toggle-switch');
+            const isAnnual = toggle.classList.contains('annual');
+            const period = isAnnual ? 'annual' : 'monthly';
+            const priceId = STRIPE_CONFIG.prices[plan][period];
+
+            try {
+                // Redirect to Stripe Checkout
+                const result = await stripe.redirectToCheckout({
+                    lineItems: [{ price: priceId, quantity: 1 }],
+                    mode: 'subscription',
+                    customerEmail: email,
+                    successUrl: window.location.origin + '/src/modules/OMEGA_MIND/MisterMindPage/index.html?payment=success',
+                    cancelUrl: window.location.origin + '/src/modules/OMEGA_MIND/MisterMindPage/pricing.html?payment=cancelled',
+                });
+                if (result.error) {
+                    alert(result.error.message);
+                    btn.innerHTML = '💳 Subscribe Now';
+                    btn.disabled = false;
+                }
+            } catch(err) {
+                console.error('Stripe error:', err);
+                alert('Payment error: ' + err.message);
+                btn.innerHTML = '💳 Subscribe Now';
+                btn.disabled = false;
+            }
         }
         
         function showSuccessMessage(title, message) {
