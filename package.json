@@ -69,6 +69,7 @@
     "puppeteer-extra": "^3.3.6",
     "puppeteer-extra-plugin-stealth": "^2.11.2",
     "puppeteer-screen-recorder": "^3.0.6",
+    "stripe": "^22.0.2",
     "ws": "^8.19.0"
   },
   "devDependencies": {

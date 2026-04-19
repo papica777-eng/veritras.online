@@ -1,40 +1,68 @@
 {
-    "version": 2,
-    "name": "qantum-monolith",
-    "builds": [
+  "version": 2,
+  "name": "qantum-monolith",
+  "builds": [
+    {
+      "src": "api/*.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "src/apps/mister-mind/veritas.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "src/modules/OMEGA_MIND/MisterMindPage/**",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "dashboard/index.html",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/payment",
+      "dest": "/api/payment.js"
+    },
+    {
+      "src": "/link",
+      "dest": "/api/link.js"
+    },
+    {
+      "src": "/pricing",
+      "dest": "/src/modules/OMEGA_MIND/MisterMindPage/pricing.html"
+    },
+    {
+      "src": "/demo",
+      "dest": "/src/modules/OMEGA_MIND/MisterMindPage/demo.html"
+    },
+    {
+      "src": "/docs",
+      "dest": "/src/modules/OMEGA_MIND/MisterMindPage/docs.html"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/src/apps/mister-mind/veritas.html",
+      "has": [
         {
-            "src": "src/apps/mister-mind/veritas.html",
-            "use": "@vercel/static"
-        },
-        {
-            "src": "dashboard/index.html",
-            "use": "@vercel/static"
+          "type": "host",
+          "value": "veritras.website"
         }
-    ],
-    "rewrites": [
+      ]
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/dashboard/index.html",
+      "has": [
         {
-            "source": "/",
-            "destination": "/src/apps/mister-mind/veritas.html",
-            "has": [
-                {
-                    "type": "host",
-                    "value": "veritras.website"
-                }
-            ]
-        },
-        {
-            "source": "/",
-            "destination": "/dashboard/index.html",
-            "has": [
-                {
-                    "type": "host",
-                    "value": "qantum.site"
-                }
-            ]
-        },
-        {
-            "source": "/(.*)",
-            "destination": "/src/apps/mister-mind/veritas.html"
+          "type": "host",
+          "value": "qantum.site"
         }
-    ]
+      ]
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/src/apps/mister-mind/veritas.html"
+    }
+  ]
 }
