@@ -17,3 +17,9 @@ native/.sandbox/
 # Rust build artifacts
 **/target/
 .vercel
+
+# Secrets
+.env
+.env.local
+.env.*.local
+
