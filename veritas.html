@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VERITRAS // SOVEREIGN_COMMAND_CENTER</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap');
+        
+        :root {
+            --brand-cyan: #00e5ff;
+            --brand-purple: #a855f7;
+            --bg-base: #0a0c10;
+            --panel-bg: #11141b;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: #d1d5db;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .accent-gradient {
+            background: linear-gradient(90deg, var(--brand-cyan), var(--brand-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .card {
+            background: var(--panel-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--brand-cyan);
+            box-shadow: 0 0 30px rgba(0, 229, 255, 0.05);
+        }
+
+        .status-pulse {
+            width: 8px;
+            height: 8px;
+            background: var(--brand-cyan);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--brand-cyan);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.5); opacity: 0.5; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--bg-base); }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--brand-cyan); }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+        const { 
+            Shield, Activity, Cpu, Globe, Terminal, Zap, Lock, Code, 
+            Power, RefreshCw, Layers, Radio, AlertTriangle, Fingerprint,
+            LayoutDashboard, Network, Database, Crosshair, Hexagon, FileCode2,
+            TrendingUp, DollarSign, Target, Snail
+        } = lucide;
+
+        const App = () => {
+            const [activeTab, setActiveTab] = useState('dashboard');
+            const [systemActive, setSystemActive] = useState(true);
+            const [mrr, setMrr] = useState(1450320.50);
+            const [nodes, setNodes] = useState(1999942);
+
+            // Simulation for dynamic data
+            useEffect(() => {
+                const interval = setInterval(() => {
+                    setNodes(prev => prev + Math.floor(Math.random() * 5));
+                }, 3000);
+                return () => clearInterval(interval);
+            }, []);
+
+            return (
+                <div className="min-h-screen flex flex-col">
+                    {/* Navigation Bar */}
+                    <nav className="border-b border-white/5 bg-black/40 backdrop-blur-xl sticky top-0 z-50">
+                        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+                            <div className="flex items-center gap-3">
+                                <div className="status-pulse"></div>
+                                <span className="font-black tracking-[0.2em] text-white uppercase text-sm">VERITRAS // SYSTEM</span>
+                            </div>
+                            
+                            <div className="flex gap-8">
+                                <NavItem active={activeTab === 'dashboard'} onClick={() => setActiveTab('dashboard')} icon={<LayoutDashboard size={16}/>} label="Dashboard" />
+                                <NavItem active={activeTab === 'wealth'} onClick={() => setActiveTab('wealth')} icon={<DollarSign size={16}/>} label="Wealth Bridge" />
+                                <NavItem active={activeTab === 'forensics'} onClick={() => setActiveTab('forensics')} icon={<Shield size={16}/>} label="Forensics" />
+                            </div>
+
+                            <div className="flex items-center gap-4">
+                                <div className="text-[10px] mono text-gray-500 text-right">
+                                    NODE_ID: QN-99X-ALPHA<br/>
+                                    LATENCY: 0.04ms
+                                </div>
+                                <button className="p-2 hover:bg-white/5 rounded-lg text-gray-400">
+                                    <Power size={20} />
+                                </button>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <main className="flex-1 p-8 max-w-7xl mx-auto w-full">
+                        {activeTab === 'dashboard' && <DashboardView mrr={mrr} nodes={nodes} />}
+                        {activeTab === 'wealth' && <WealthBridgeView />}
+                        {activeTab === 'forensics' && <ForensicsView />}
+                    </main>
+
+                    <footer className="p-6 border-t border-white/5 text-center text-[10px] text-gray-600 uppercase tracking-widest">
+                        Ryzen 7000 Series Substrate // Zero Entropy Architecture // 2026
+                    </footer>
+                </div>
+            );
+        };
+
+            const NavItem = ({ active, onClick, icon, label }) => (
+                <button 
+                    onClick={onClick}
+                    className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${active ? 'bg-cyan-500/10 text-cyan-400' : 'text-gray-500 hover:text-white'}`}
+                >
+                    {icon}
+                    <span className="text-xs font-bold uppercase tracking-widest">{label}</span>
+                </button>
+            );
+
+            const DashboardView = ({ mrr, nodes }) => (
+                <div className="space-y-8 animate-in fade-in duration-500">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <StatCard label="Monthly Recurring Revenue" value={`$${mrr.toLocaleString()}`} sub="Active Liquidation Yield" icon={<TrendingUp className="text-emerald-400"/>} color="emerald" />
+                        <StatCard label="Active Sovereign Nodes" value={nodes.toLocaleString()} sub="Global Swarm Capacity" icon={<Network className="text-cyan-400"/>} color="cyan" />
+                        <StatCard label="Entropy Level" value="0.0000" sub="Zero Fluctuation State" icon={<Hexagon className="text-purple-400"/>} color="purple" />
+                    </div>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        <div className="card p-8">
+                            <h3 className="text-sm font-black text-gray-500 uppercase tracking-[0.2em] mb-6 flex items-center gap-2">
+                                <Terminal size={14} className="text-cyan-400" />
+                                Live_Substrate_Telemetry
+                            </h3>
+                            <div className="space-y-4">
+                                <ProgressBar label="CPU Optimization (AVX-512)" value={98} color="cyan" />
+                                <ProgressBar label="Memory Arena Utilization" value={14} color="purple" />
+                                <ProgressBar label="Network Throughput" value={82} color="emerald" />
+                            </div>
+                        </div>
+                        
+                        <div className="card p-8">
+                            <h3 className="text-sm font-black text-gray-500 uppercase tracking-[0.2em] mb-6 flex items-center gap-2">
+                                <Activity size={14} className="text-purple-400" />
+                                Resonance_Frequency
+                            </h3>
+                            <div className="h-32 flex items-end gap-1 px-4">
+                                {[...Array(20)].map((_, i) => (
+                                    <div 
+                                        key={i} 
+                                        className="w-full bg-purple-500/20 rounded-t-sm animate-pulse" 
+                                        style={{ height: `${Math.random() * 80 + 20}%`, animationDelay: `${i * 0.1}s` }}
+                                    ></div>
+                                ))}
+                            </div>
+                            <div className="mt-4 flex justify-between text-[10px] mono text-gray-600">
+                                <span>SCHUMANN: 7.83 HZ</span>
+                                <span>STABLE</span>
+                                <span>1.618 PHI</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+
+            const WealthBridgeView = () => (
+                <div className="space-y-8 animate-in slide-in-from-bottom-4 duration-500">
+                    <div className="card p-12 text-center relative overflow-hidden">
+                        <div className="absolute top-0 right-0 p-8">
+                            <div className="p-4 bg-emerald-500/10 rounded-full border border-emerald-500/20 text-emerald-400">
+                                <Lock size={32} />
+                            </div>
+                        </div>
+                        
+                        <h2 className="text-3xl font-black mb-4">SOVEREIGN <span className="accent-gradient">UPGRADE</span></h2>
+                        <p className="text-gray-400 max-w-lg mx-auto mb-8">
+                            Отключете пълния капацитет на QAntum Omega Pro. Директен достъп доWealth Bridge и автономни ликвидационни агенти.
+                        </p>
+                        
+                        <div className="flex flex-col items-center gap-6">
+                            <div className="text-5xl font-black text-white italic">$999 <span className="text-lg text-gray-500 not-italic">/ month</span></div>
+                            
+                            <button 
+                                onClick={() => window.open('https://buy.stripe.com/test_eVaeVf2Ny9CyqtF0J99NyxTh4', '_blank')}
+                                className="bg-cyan-400 text-black font-black px-12 py-4 rounded-full hover:bg-white transition-all transform hover:scale-105 shadow-[0_0_30px_rgba(0,229,255,0.3)]"
+                            >
+                                ACTIVATE OMEGA PRO
+                            </button>
+                            
+                            <div className="flex gap-4 mt-4">
+                                <FeatureBadge label="Stripe Secured" />
+                                <FeatureBadge label="Noetic Sync" />
+                                <FeatureBadge label="AVX-512 Ready" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+
+            const ForensicsView = () => (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 animate-in zoom-in-95 duration-500">
+                    <div className="card p-8 border-l-cyan-400 border-l-4">
+                        <h3 className="text-xl font-bold mb-4">LAZARUS_STRX_AUDIT</h3>
+                        <p className="text-sm text-gray-500 mb-6">Пълен анализ на $3.37B ликвидацията. Traced to Genesis.</p>
+                        <button 
+                            onClick={() => window.location.href='aeterna.html'}
+                            className="text-cyan-400 font-bold text-xs flex items-center gap-2 hover:gap-4 transition-all"
+                        >
+                            VIEW FULL TESTAMENT <i data-lucide="arrow-right" className="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+            );
+
+            const StatCard = ({ label, value, sub, icon, color }) => (
+                <div className="card p-8 relative overflow-hidden">
+                    <div className="absolute -right-4 -bottom-4 opacity-5 transform rotate-12">{icon}</div>
+                    <div className="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-2">{label}</div>
+                    <div className="text-3xl font-black text-white mb-1 italic tracking-tighter">{value}</div>
+                    <div className={`text-[10px] text-${color}-400 font-bold uppercase tracking-widest`}>● {sub}</div>
+                </div>
+            );
+
+            const ProgressBar = ({ label, value, color }) => (
+                <div className="space-y-2">
+                    <div className="flex justify-between text-[10px] font-bold uppercase tracking-widest text-gray-500">
+                        <span>{label}</span>
+                        <span>{value}%</span>
+                    </div>
+                    <div className="w-full bg-white/5 h-1.5 rounded-full overflow-hidden">
+                        <div className={`bg-${color}-400 h-full rounded-full transition-all duration-1000`} style={{ width: `${value}%` }}></div>
+                    </div>
+                </div>
+            );
+
+            const FeatureBadge = ({ label }) => (
+                <span className="text-[10px] font-black text-gray-500 border border-white/10 px-3 py-1 rounded-full uppercase tracking-widest">{label}</span>
+            );
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+
+        // Fix for Lucide icons in React Standalone
+        setTimeout(() => lucide.createIcons(), 100);
+    </script>
+</body>
+</html>
