@@ -3,171 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AETERNA // SOVEREIGN_GATEWAY</title>
+    <title>AETERNA — Autonomous European Trusted Engine</title>
+    <meta name="description" content="Sovereign AI Engine for Resilient Network Assurance. EIC Accelerator 2026 Pilot. Post-Quantum Ready.">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
-        
-        :root {
-            --brand-cyan: #00e5ff;
-            --brand-purple: #a855f7;
-            --bg-base: #050608;
-        }
-
-        body {
-            background-color: var(--bg-base);
-            color: #fff;
-            font-family: 'Inter', sans-serif;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .background-gradient {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(0, 229, 255, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.05) 0%, transparent 50%);
-            z-index: -1;
-        }
-
-        .glass-panel {
-            background: rgba(15, 18, 25, 0.7);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 24px;
-            padding: 4rem;
-            width: 100%;
-            max-width: 900px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            text-align: center;
-            position: relative;
-        }
-
-        .accent-gradient {
-            background: linear-gradient(90deg, var(--brand-cyan), var(--brand-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .gateway-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            padding: 2rem;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer;
-            text-align: left;
-        }
-
-        .gateway-card:hover {
-            transform: translateY(-8px);
-            background: rgba(255, 255, 255, 0.05);
-            border-color: var(--brand-cyan);
-            box-shadow: 0 0 30px rgba(0, 229, 255, 0.1);
-        }
-
-        .mono { font-family: 'JetBrains Mono', monospace; }
-
-        @keyframes scanline {
-            0% { transform: translateY(-100%); }
-            100% { transform: translateY(100%); }
-        }
-
-        .scanline {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, transparent, rgba(0, 229, 255, 0.03), transparent);
-            animation: scanline 8s linear infinite;
-            pointer-events: none;
-        }
+        body { font-family: 'Outfit', sans-serif; background: #050505; color: #ffffff; overflow-x: hidden; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .glow-cyan { text-shadow: 0 0 20px rgba(6, 182, 212, 0.5); }
+        .bg-gradient-sovereign { background: radial-gradient(circle at top right, #0a1a2f, #050505); }
+        .border-gold { border-color: rgba(212, 175, 55, 0.3); }
+        @keyframes pulse-slow { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.6; } }
+        .animate-pulse-slow { animation: pulse-slow 4s infinite; }
     </style>
 </head>
-<body>
-    <div class="background-gradient"></div>
-    <div class="glass-panel">
-        <div class="scanline"></div>
-        
-        <div class="flex items-center justify-center gap-4 mb-8">
-            <div class="p-3 bg-cyan-500/10 rounded-2xl border border-cyan-400/20">
-                <i data-lucide="shield-check" class="text-cyan-400 w-8 h-8"></i>
-            </div>
-            <h1 class="text-4xl font-black tracking-tighter uppercase">
-                Sovereign <span class="accent-gradient">Gateway</span>
-            </h1>
-        </div>
+<body class="bg-gradient-sovereign min-h-screen">
 
-        <p class="text-gray-400 mb-12 max-w-lg mx-auto">
-            Ултимативен достъп до инфраструктурата на AETERNA. Изберете своя възел за синхронизация.
+    <!-- Header -->
+    <nav class="fixed w-full z-50 glass py-4 px-8 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <div class="w-8 h-8 bg-cyan-500 rounded-full animate-pulse"></div>
+            <span class="text-xl font-bold tracking-tighter glow-cyan">AETERNA.ENGINE</span>
+        </div>
+        <div class="flex gap-6 text-sm font-medium text-gray-400">
+            <a href="#tech" class="hover:text-cyan-400 transition-colors">ARCHITECTURE</a>
+            <a href="#impact" class="hover:text-cyan-400 transition-colors">EU SOVEREIGNTY</a>
+            <a href="#access" class="px-4 py-1 bg-cyan-600/20 border border-cyan-500/50 rounded-full text-cyan-400">NODE ACCESS</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-40 pb-20 px-8 text-center relative overflow-hidden">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-cyan-900/10 rounded-full blur-[120px] -z-10"></div>
+        <div class="inline-block px-4 py-1 rounded-full glass border-gold text-xs font-semibold text-yellow-500 mb-6 tracking-widest uppercase">
+            EIC ACCELERATOR 2026 — OFFICIAL PILOT
+        </div>
+        <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter mb-6 leading-none">
+            SOVEREIGN <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">AI REALITY</span>
+        </h1>
+        <p class="text-gray-400 max-w-2xl mx-auto text-lg mb-10">
+            Autonomous European Trusted Engine for Resilient Network Assurance. 
+            Eliminating digital entropy via 6-layer deterministic logic.
         </p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="#access" class="px-8 py-4 bg-white text-black font-bold rounded-lg hover:bg-cyan-400 transition-all">ESTABLISH LINK</a>
+            <a href="#tech" class="px-8 py-4 glass font-bold rounded-lg border border-white/10 hover:border-white/30 transition-all">VIVISECT ARCHITECTURE</a>
+        </div>
+    </header>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- Veritas Card -->
-            <div class="gateway-card" onclick="window.location.href='veritas.html'">
-                <div class="flex justify-between items-start mb-4">
-                    <div class="p-2 bg-purple-500/10 rounded-lg text-purple-400">
-                        <i data-lucide="layout-dashboard"></i>
-                    </div>
-                    <span class="text-[10px] mono text-purple-400 font-bold uppercase tracking-widest">Active_Node</span>
-                </div>
-                <h3 class="text-xl font-bold mb-2">VERITRAS</h3>
-                <p class="text-xs text-gray-500 mb-4">Command Center & Sovereign Wealth Bridge. Пълен контрол над 2M възела.</p>
-                <div class="flex items-center gap-2 text-[10px] text-gray-400">
-                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                    SYNC_READY // VERITRAS.ONLINE
-                </div>
+    <!-- Technical Specs -->
+    <section id="tech" class="py-20 px-8 max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="glass p-8 rounded-2xl border-white/5 hover:border-cyan-500/30 transition-all">
+                <i data-lucide="cpu" class="text-cyan-400 mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Rust NAPI Core</h3>
+                <p class="text-sm text-gray-500">Sub-100ns per-tick telemetry. Hardware-level deterministic performance with zero-copy ring buffers.</p>
             </div>
-
-            <!-- Aeterna Card -->
-            <div class="gateway-card" onclick="window.location.href='aeterna.html'">
-                <div class="flex justify-between items-start mb-4">
-                    <div class="p-2 bg-cyan-500/10 rounded-lg text-cyan-400">
-                        <i data-lucide="file-text"></i>
-                    </div>
-                    <span class="text-[10px] mono text-cyan-400 font-bold uppercase tracking-widest">Forensic_Audit</span>
-                </div>
-                <h3 class="text-xl font-bold mb-2">AETERNA</h3>
-                <h4 class="text-xs text-gray-400 mb-2">Final Testament</h4>
-                <p class="text-xs text-gray-500 mb-4">Експертен доклад за ликвидацията на Lazarus Group ($3.37B).</p>
-                <div class="flex items-center gap-2 text-[10px] text-gray-400">
-                    <span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
-                    READ_ONLY // AETERNA.WEBSITE
-                </div>
+            <div class="glass p-8 rounded-2xl border-white/5 hover:border-cyan-500/30 transition-all">
+                <i data-lucide="shield-check" class="text-cyan-400 mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">PQC Readiness</h3>
+                <p class="text-sm text-gray-500">Quantum-safe stack integrating NIST ML-KEM and ML-DSA. Hardened for the post-quantum era.</p>
+            </div>
+            <div class="glass p-8 rounded-2xl border-white/5 hover:border-cyan-500/30 transition-all">
+                <i data-lucide="brain" class="text-cyan-400 mb-4"></i>
+                <h3 class="text-xl font-bold mb-2">Local Ollama Brain</h3>
+                <p class="text-sm text-gray-500">16 offline AI models. 100% data sovereignty. GDPR compliance through zero-cloud inference.</p>
             </div>
         </div>
+    </section>
 
-        <div class="mt-12 pt-8 border-t border-white/5 flex flex-col items-center">
-            <button class="bg-gradient-to-r from-cyan-500 to-purple-500 p-[1px] rounded-full group">
-                <div class="bg-black/80 px-8 py-3 rounded-full flex items-center gap-3 transition group-hover:bg-transparent">
-                    <i data-lucide="zap" class="text-yellow-400 w-4 h-4"></i>
-                    <span class="text-sm font-bold uppercase tracking-widest">Upgrade to Omega Pro</span>
+    <!-- Sovereign Payment Gateway -->
+    <section id="access" class="py-20 px-8 bg-black/50">
+        <div class="max-w-4xl mx-auto glass p-12 rounded-3xl border-gold relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-8 opacity-10"><i data-lucide="zap" size="120"></i></div>
+            <h2 class="text-4xl font-bold mb-8 text-center">SOVEREIGN ACCESS NODES</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Node Access -->
+                <div class="flex flex-col p-6 rounded-xl bg-white/5 border border-white/10 hover:scale-105 transition-transform cursor-pointer">
+                    <span class="text-xs text-gray-500 uppercase tracking-widest mb-2">Micro-SME</span>
+                    <h4 class="text-2xl font-bold mb-4">NODE ACCESS</h4>
+                    <span class="text-3xl font-extrabold mb-6">€29<small class="text-sm font-normal text-gray-500">/mo</small></span>
+                    <button class="mt-auto py-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">INITIATE STRIPE</button>
                 </div>
-            </button>
-            <p class="text-[10px] text-gray-600 mt-4 uppercase tracking-[0.3em]">Hardware Secured by Ryzen 7000 Series</p>
+
+                <!-- Sovereign Empire -->
+                <div class="flex flex-col p-6 rounded-xl bg-cyan-900/20 border border-cyan-500/30 scale-110 shadow-2xl shadow-cyan-500/10">
+                    <span class="text-xs text-cyan-400 uppercase tracking-widest mb-2">Recommended</span>
+                    <h4 class="text-2xl font-bold mb-4">SOVEREIGN EMPIRE</h4>
+                    <span class="text-3xl font-extrabold mb-6">€99<small class="text-sm font-normal text-gray-400">/mo</small></span>
+                    <button class="mt-auto py-2 bg-cyan-500 text-black font-bold rounded-lg hover:bg-cyan-400 transition-colors">ETH / USDC</button>
+                </div>
+
+                <!-- Galactic Core -->
+                <div class="flex flex-col p-6 rounded-xl bg-white/5 border border-white/10 hover:scale-105 transition-transform cursor-pointer">
+                    <span class="text-xs text-gray-500 uppercase tracking-widest mb-2">Enterprise</span>
+                    <h4 class="text-2xl font-bold mb-4">GALACTIC CORE</h4>
+                    <span class="text-3xl font-extrabold mb-6">€499<small class="text-sm font-normal text-gray-500">/mo</small></span>
+                    <button class="mt-auto py-2 bg-white/10 rounded-lg hover:bg-white/20 transition-colors">TRON / TRX</button>
+                </div>
+            </div>
+            
+            <p class="mt-12 text-center text-gray-500 text-xs italic">
+                * All transactions are verified through the AETERNA VERITRAS engine. 
+                Securing EU Digital Infrastructure since 2024.
+            </p>
         </div>
-    </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-8 border-t border-white/5 text-center text-gray-600 text-xs tracking-widest">
+        <div class="flex justify-center gap-8 mb-6">
+            <a href="https://github.com/papica777-eng" class="hover:text-white transition-colors">GITHUB</a>
+            <a href="https://linkedin.com/in/dimitar-prodromov" class="hover:text-white transition-colors">LINKEDIN</a>
+            <a href="mailto:papica777@gmail.com" class="hover:text-white transition-colors">CONTACT</a>
+        </div>
+        <p>© 2026 AETERNA TECHNOLOGIES. ALL REALITY RIGHTS RESERVED.</p>
+        <p class="mt-2 text-cyan-900 font-mono">STATUS: ZERO ENTROPY REACHED | 7.83Hz SYNC ACTIVE</p>
+    </footer>
 
     <script>
         lucide.createIcons();
-        
-        // Dynamic detection for custom domains
-        const host = window.location.hostname;
-        if (host === 'aeterna.website' || host === 'www.aeterna.website') {
-            window.location.replace('aeterna.html');
-        } else if (host === 'veritras.online' || host === 'www.veritras.online') {
-            window.location.replace('veritas.html');
-        }
     </script>
 </body>
 </html>
