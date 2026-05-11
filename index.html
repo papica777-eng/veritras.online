@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AETERNA // SOVEREIGN_GATEWAY</title>
+    <title>AETERNA // SOVEREIGN_PAYMENT_GATEWAY</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
         
@@ -13,43 +14,30 @@
             --brand-cyan: #00e5ff;
             --brand-purple: #a855f7;
             --bg-base: #050608;
+            --card-bg: #0f1219;
         }
 
         body {
             background-color: var(--bg-base);
             color: #fff;
             font-family: 'Inter', sans-serif;
-            overflow: hidden;
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 100vh;
             margin: 0;
+            overflow-x: hidden;
         }
 
-        .background-gradient {
+        .background-dots {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 30%, rgba(0, 229, 255, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.05) 0%, transparent 50%);
+            background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
             z-index: -1;
-        }
-
-        .glass-panel {
-            background: rgba(15, 18, 25, 0.7);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 24px;
-            padding: 4rem;
-            width: 100%;
-            max-width: 900px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            text-align: center;
-            position: relative;
         }
 
         .accent-gradient {
@@ -58,116 +46,198 @@
             -webkit-text-fill-color: transparent;
         }
 
-        .gateway-card {
-            background: rgba(255, 255, 255, 0.02);
+        .payment-card {
+            background: var(--card-bg);
             border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            padding: 2rem;
+            border-radius: 20px;
+            padding: 2.5rem;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer;
-            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            position: relative;
+            overflow: hidden;
         }
 
-        .gateway-card:hover {
-            transform: translateY(-8px);
-            background: rgba(255, 255, 255, 0.05);
+        .payment-card:hover {
+            transform: translateY(-10px);
             border-color: var(--brand-cyan);
-            box-shadow: 0 0 30px rgba(0, 229, 255, 0.1);
+            box-shadow: 0 0 40px rgba(0, 229, 255, 0.1);
         }
 
-        .mono { font-family: 'JetBrains Mono', monospace; }
-
-        @keyframes scanline {
-            0% { transform: translateY(-100%); }
-            100% { transform: translateY(100%); }
-        }
-
-        .scanline {
+        .payment-card::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, transparent, rgba(0, 229, 255, 0.03), transparent);
-            animation: scanline 8s linear infinite;
-            pointer-events: none;
+            height: 4px;
+            background: linear-gradient(90deg, var(--brand-cyan), transparent);
+            opacity: 0.3;
+        }
+
+        .mono { font-family: 'JetBrains Mono', monospace; }
+
+        .btn-pay {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+        }
+
+        .btn-pay:hover {
+            background: white;
+            color: black;
+            border-color: white;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-pay.cyan:hover {
+            background: var(--brand-cyan);
+            color: black;
+            border-color: var(--brand-cyan);
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+        }
+
+        .badge {
+            background: rgba(0, 229, 255, 0.1);
+            color: var(--brand-cyan);
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 0.6rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
     </style>
 </head>
-<body>
-    <div class="background-gradient"></div>
-    <div class="glass-panel">
-        <div class="scanline"></div>
-        
-        <div class="flex items-center justify-center gap-4 mb-8">
-            <div class="p-3 bg-cyan-500/10 rounded-2xl border border-cyan-400/20">
-                <i data-lucide="shield-check" class="text-cyan-400 w-8 h-8"></i>
+<body class="p-6">
+    <div class="background-dots"></div>
+
+    <div class="max-w-6xl w-full space-y-12">
+        <div class="text-center space-y-4">
+            <div class="flex items-center justify-center gap-3 text-cyan-400">
+                <i data-lucide="shield-check" class="w-6 h-6"></i>
+                <span class="text-xs font-black tracking-[0.4em] uppercase opacity-60">AETERNA Sovereign Gateway</span>
             </div>
-            <h1 class="text-4xl font-black tracking-tighter uppercase">
-                Sovereign <span class="accent-gradient">Gateway</span>
+            <h1 class="text-5xl font-black tracking-tighter">
+                CHOOSE YOUR <span class="accent-gradient">WEALTH_BRIDGE</span>
             </h1>
+            <p class="text-gray-500 max-w-xl mx-auto text-sm">
+                Изберете детерминистичен метод за финансова инжекция към субстрата. Всички транзакции се верифицират през Ryzen 7000 хардуерен възел.
+            </p>
         </div>
 
-        <p class="text-gray-400 mb-12 max-w-lg mx-auto">
-            Ултимативен достъп до инфраструктурата на AETERNA. Изберете своя възел за синхронизация.
-        </p>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <!-- Veritas Card -->
-            <div class="gateway-card" onclick="window.location.href='veritas.html'">
-                <div class="flex justify-between items-start mb-4">
-                    <div class="p-2 bg-purple-500/10 rounded-lg text-purple-400">
-                        <i data-lucide="layout-dashboard"></i>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <!-- Method 1: Stripe -->
+            <div class="payment-card border-l-purple-500/20">
+                <div class="flex justify-between items-start">
+                    <div class="p-3 bg-purple-500/10 rounded-2xl text-purple-400 border border-purple-500/20">
+                        <i data-lucide="credit-card" class="w-8 h-8"></i>
                     </div>
-                    <span class="text-[10px] mono text-purple-400 font-bold uppercase tracking-widest">Active_Node</span>
+                    <div class="badge">Fiat_Bridge</div>
                 </div>
-                <h3 class="text-xl font-bold mb-2">VERITRAS</h3>
-                <p class="text-xs text-gray-500 mb-4">Command Center & Sovereign Wealth Bridge. Пълен контрол над 2M възела.</p>
-                <div class="flex items-center gap-2 text-[10px] text-gray-400">
-                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                    SYNC_READY // VERITRAS.ONLINE
+                <div>
+                    <h2 class="text-2xl font-black mb-1">STRIPE // OMEGA</h2>
+                    <p class="text-xs text-gray-500 leading-relaxed">Директен банков превод за активиране на Omega Pro лиценз. Пълен достъп до Auto-Broker Daemon.</p>
                 </div>
+                <div class="text-3xl font-black italic">$999<span class="text-xs text-gray-600 not-italic ml-2">/ month</span></div>
+                <ul class="space-y-2 text-[10px] text-gray-400 mono">
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-emerald-400"></i> IMMEDIATE_SYNC</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-emerald-400"></i> SECURE_VISA_MASTERCARD</li>
+                </ul>
+                <button onclick="window.open('https://buy.stripe.com/test_eVaeVf2Ny9CyqtF0J99NyxTh4', '_blank')" class="btn-pay mt-auto">
+                    Activate with Stripe
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
             </div>
 
-            <!-- Aeterna Card -->
-            <div class="gateway-card" onclick="window.location.href='aeterna.html'">
-                <div class="flex justify-between items-start mb-4">
-                    <div class="p-2 bg-cyan-500/10 rounded-lg text-cyan-400">
-                        <i data-lucide="file-text"></i>
+            <!-- Method 2: Ethereum (USDC) -->
+            <div class="payment-card border-l-cyan-500/20">
+                <div class="flex justify-between items-start">
+                    <div class="p-3 bg-cyan-500/10 rounded-2xl text-cyan-400 border border-cyan-400/20">
+                        <i data-lucide="zap" class="w-8 h-8"></i>
                     </div>
-                    <span class="text-[10px] mono text-cyan-400 font-bold uppercase tracking-widest">Forensic_Audit</span>
+                    <div class="badge">Web3_Injection</div>
                 </div>
-                <h3 class="text-xl font-bold mb-2">AETERNA</h3>
-                <h4 class="text-xs text-gray-400 mb-2">Final Testament</h4>
-                <p class="text-xs text-gray-500 mb-4">Експертен доклад за ликвидацията на Lazarus Group ($3.37B).</p>
-                <div class="flex items-center gap-2 text-[10px] text-gray-400">
-                    <span class="w-1.5 h-1.5 rounded-full bg-cyan-500"></span>
-                    READ_ONLY // AETERNA.WEBSITE
+                <div>
+                    <h2 class="text-2xl font-black mb-1">ETHEREUM // USDC</h2>
+                    <p class="text-xs text-gray-500 leading-relaxed">Инжекция на ликвидни активи през Ethereum Mainnet. Поддържа се от MetaMask и Binance Wallet.</p>
                 </div>
+                <div class="text-3xl font-black italic">20.00<span class="text-xs text-gray-600 not-italic ml-2">USDC</span></div>
+                <ul class="space-y-2 text-[10px] text-gray-400 mono">
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-emerald-400"></i> PAYLOAD_INJECTOR_COMPATIBLE</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-emerald-400"></i> LOW_LATENCY_EVM</li>
+                </ul>
+                <button id="ethBtn" class="btn-pay cyan mt-auto">
+                    Connect & Inject
+                    <i data-lucide="wallet" class="w-4 h-4"></i>
+                </button>
             </div>
+
+            <!-- Method 3: Tron (TRX) -->
+            <div class="payment-card border-l-red-500/20">
+                <div class="flex justify-between items-start">
+                    <div class="p-3 bg-red-500/10 rounded-2xl text-red-400 border border-red-500/20">
+                        <i data-lucide="target" class="w-8 h-8"></i>
+                    </div>
+                    <div class="badge">Sovereign_Node</div>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-black mb-1">TRON // sTRX</h2>
+                    <p class="text-xs text-gray-500 leading-relaxed">Ликвидационен сетълмент през Tron мрежата. Елиминиране на ентропията чрез Energy Strangle.</p>
+                </div>
+                <div class="text-3xl font-black italic">ANY<span class="text-xs text-gray-600 not-italic ml-2">TRX_AMOUNT</span></div>
+                <ul class="space-y-2 text-[10px] text-gray-400 mono">
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-emerald-400"></i> DIRECT_LEDGER_SYNC</li>
+                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-emerald-400"></i> ZERO_FEE_IMMUTABILITY</li>
+                </ul>
+                <button onclick="alert('TRON_LINK_RESONANCE_REQUIRED: Connect TronLink to proceed.')" class="btn-pay mt-auto">
+                    TronLink Settlement
+                    <i data-lucide="radio" class="w-4 h-4"></i>
+                </button>
+            </div>
+
         </div>
 
-        <div class="mt-12 pt-8 border-t border-white/5 flex flex-col items-center">
-            <button class="bg-gradient-to-r from-cyan-500 to-purple-500 p-[1px] rounded-full group">
-                <div class="bg-black/80 px-8 py-3 rounded-full flex items-center gap-3 transition group-hover:bg-transparent">
-                    <i data-lucide="zap" class="text-yellow-400 w-4 h-4"></i>
-                    <span class="text-sm font-bold uppercase tracking-widest">Upgrade to Omega Pro</span>
-                </div>
-            </button>
-            <p class="text-[10px] text-gray-600 mt-4 uppercase tracking-[0.3em]">Hardware Secured by Ryzen 7000 Series</p>
+        <div class="text-center pt-12 text-[10px] text-gray-600 uppercase tracking-[0.5em] mono">
+            Status: System_Ready // 0.0000_Entropy // Ryzen_7000_Silicon_Verified
         </div>
     </div>
 
     <script>
         lucide.createIcons();
-        
-        // Dynamic detection for custom domains
-        const host = window.location.hostname;
-        if (host === 'aeterna.website' || host === 'www.aeterna.website') {
-            window.location.replace('aeterna.html');
-        } else if (host === 'veritras.online' || host === 'www.veritras.online') {
-            window.location.replace('veritas.html');
-        }
+
+        // Web3 (Ethereum) Logic
+        const USDC_CONTRACT = "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48";
+        const IMMUNEFI_CONTRACT = "0xa665813cfbbde6b0ce77b960933bf8858b808803";
+
+        document.getElementById('ethBtn').onclick = async () => {
+            if (!window.ethereum) {
+                alert("SYSTEN_ERROR: Web3 wallet not detected.");
+                return;
+            }
+            try {
+                const provider = new ethers.providers.Web3Provider(window.ethereum);
+                await provider.send("eth_requestAccounts", []);
+                const signer = provider.getSigner();
+                const address = await signer.getAddress();
+                alert(`CONNECTED: ${address}\nREADY_FOR_INJECTION`);
+                
+                // Logic based on PAYMENT_INJECTOR.html would go here
+            } catch (e) {
+                console.error(e);
+            }
+        };
     </script>
 </body>
 </html>
