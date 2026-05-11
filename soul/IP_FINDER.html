@@ -15,7 +15,7 @@
         .mono { font-family: 'JetBrains Mono', monospace; }
         .glass-panel { background: var(--glass); backdrop-filter: blur(40px); border: 1px solid rgba(255, 255, 255, 0.05); }
         .glow-cyan { box-shadow: 0 0 40px rgba(6, 182, 212, 0.1); }
-        #map { height: 100%; width: 100%; filter: grayscale(1) invert(1) contrast(1.2) brightness(0.8); }
+        #map { height: 100%; width: 100%; }
         .scanline { position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: linear-gradient(to right, transparent, var(--cyan), transparent); opacity: 0.2; animation: scan 4s linear infinite; z-index: 100; }
         @keyframes scan { 0% { transform: translateY(-100px); } 100% { transform: translateY(100vh); } }
         .terminal-scroll::-webkit-scrollbar { width: 2px; }
@@ -118,7 +118,9 @@
         lucide.createIcons();
         
         const map = L.map('map', { zoomControl: false }).setView([20, 0], 2);
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            subdomains: 'abcd',
             maxZoom: 20
         }).addTo(map);
 
