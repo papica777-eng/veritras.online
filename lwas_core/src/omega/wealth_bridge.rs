@@ -13,6 +13,7 @@ pub struct Transaction {
     pub amount_eur: f64,
     pub asset_source: String,
     pub timestamp: String,
+    pub checkout_url: Option<String>,
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
@@ -156,7 +157,9 @@ impl WealthBridge {
         }
 
         let stripe_key = std::env::var("STRIPE_SECRET_KEY").unwrap_or_else(|_| "NONE".into());
+        let jay_bisen_connect_id = std::env::var("JAY_BISEN_CONNECT_ID").unwrap_or_else(|_| "acct_1ObB5x2eR99Bisen".into());
         let mut stripe_id = String::new();
+        let mut checkout_url = None;
 
         if stripe_key != "NONE"
             && !stripe_key.contains("PLACEHOLDER")
@@ -167,29 +170,37 @@ impl WealthBridge {
             let amount_cents = (amount * 100.0) as u64;
 
             // СЪЗДАВАМЕ CHECKOUT SESSION (ЗА ДИРЕКТЕН ФИНАНСОВ ПОТОК)
-            let params = [
+            let mut params = vec![
                 (
-                    "success_url",
+                    "success_url".to_string(),
                     std::env::var("STRIPE_SUCCESS_URL")
                         .unwrap_or_else(|_| "https://aeterna.website/success".into()),
                 ),
                 (
-                    "cancel_url",
+                    "cancel_url".to_string(),
                     std::env::var("STRIPE_CANCEL_URL")
                         .unwrap_or_else(|_| "https://aeterna.website/cancel".into()),
                 ),
-                ("line_items[0][price_data][currency]", "eur".to_string()),
+                ("line_items[0][price_data][currency]".to_string(), "eur".to_string()),
                 (
-                    "line_items[0][price_data][product_data][name]",
+                    "line_items[0][price_data][product_data][name]".to_string(),
                     format!("AETERNA_YIELD: {}", saas_name),
                 ),
                 (
-                    "line_items[0][price_data][unit_amount]",
+                    "line_items[0][price_data][unit_amount]".to_string(),
                     amount_cents.to_string(),
                 ),
-                ("line_items[0][quantity]", "1".to_string()),
-                ("mode", "payment".to_string()),
+                ("line_items[0][quantity]".to_string(), "1".to_string()),
+                ("mode".to_string(), "payment".to_string()),
             ];
+
+            // 10% commission split for Jay Bisen on $5000+ purchases
+            if amount >= 5000.0 {
+                params.push((
+                    "payment_intent_data[transfer_data][destination]".to_string(),
+                    jay_bisen_connect_id.clone(),
+                ));
+            }
 
             match client
                 .post("https://api.stripe.com/v1/checkout/sessions")
@@ -203,6 +214,7 @@ impl WealthBridge {
                         if let Some(url) = json["url"].as_str() {
                             println!("🚀 [STRIPE_LIVE]: СЕСИЯТА Е СЪЗДАДЕНА: {}", url);
                             stripe_id = json["id"].as_str().unwrap_or("LIVE_SUCCESS").to_string();
+                            checkout_url = Some(url.to_string());
                         }
                     }
                 }
@@ -222,6 +234,15 @@ impl WealthBridge {
             amount_eur: amount,
             asset_source: saas_name.to_string(),
             timestamp: chrono::Local::now().to_rfc3339(),
+            checkout_url: if stripe_id.is_empty() {
+                if saas_name == "valuation_gate" {
+                    Some("https://buy.stripe.com/test_eVaeVf2Ny9CyqtF0J99NyxTh4".to_string())
+                } else {
+                    None
+                }
+            } else {
+                checkout_url
+            },
         };
 
         println!(

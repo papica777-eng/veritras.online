@@ -131,10 +131,12 @@ async fn handle_payment_checkout(
     match state.wealth_bridge.process_extraction(&plan, amount).await {
         Ok(tx) => {
             println!("✅ [PAYMENTS]: Transaction created: {}", tx.id);
-            // For now, redirect to success page (in production, this would be the Stripe URL)
-            let success_url = std::env::var("STRIPE_SUCCESS_URL")
-                .unwrap_or_else(|_| "https://aeterna.website/success".into());
-            Redirect::temporary(&success_url).into_response()
+            // Redirect to the actual Stripe Checkout session URL if present, closing the bypass!
+            let redirect_url = tx.checkout_url.unwrap_or_else(|| {
+                std::env::var("STRIPE_SUCCESS_URL")
+                    .unwrap_or_else(|_| "https://aeterna.website/success".into())
+            });
+            Redirect::temporary(&redirect_url).into_response()
         }
         Err(e) => {
             println!("❌ [PAYMENTS]: Transaction failed: {:?}", e);
