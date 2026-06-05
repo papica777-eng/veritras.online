@@ -1,6 +1,6 @@
 # AETERNA — EIC Step 2: Jury Q&A Preparation
 ## 50+ Anticipated Questions with Prepared Answers
-### Grant №101327948 | Interview Defense Guide
+### Proposal №101327948 | Interview Defense Guide
 
 ---
 

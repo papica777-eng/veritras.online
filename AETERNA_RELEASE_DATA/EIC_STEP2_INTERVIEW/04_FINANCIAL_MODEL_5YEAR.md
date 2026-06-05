@@ -1,6 +1,6 @@
 # AETERNA — 5-Year Financial Model
 ## EIC Accelerator Step 2: Financial Summary
-### Grant №101327948 | All values in EUR
+### Proposal №101327948 | All values in EUR
 
 ---
 
@@ -185,4 +185,4 @@
 *Financial model version: 2.0*
 *Last updated: 2026-04-06*
 *All projections are forward-looking estimates based on market research and operational assumptions.*
-*Prepared for: EIC Accelerator Step 2 Interview | Grant №101327948*
+*Prepared for: EIC Accelerator Step 2 Interview | Proposal №101327948*

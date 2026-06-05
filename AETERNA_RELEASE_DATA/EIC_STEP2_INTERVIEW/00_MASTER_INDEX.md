@@ -1,6 +1,6 @@
 # AETERNA — EIC Step 2 Interview Package
 ## Master Index & Pre-Interview Checklist
-### Grant №101327948 | Dimitar Prodromov
+### Proposal №101327948 | Dimitar Prodromov
 
 ---
 

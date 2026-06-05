@@ -1,6 +1,6 @@
 # AETERNA — EIC Step 2 Pitch Script
 ## 10-Minute Presentation Guide
-### Grant №101327948 | Dimitar Prodromov
+### Proposal №101327948 | Dimitar Prodromov
 
 ---
 
